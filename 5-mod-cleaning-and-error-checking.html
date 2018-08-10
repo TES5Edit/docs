@@ -69,7 +69,7 @@ title: Tome of xEdit
                 <p>What is the mod cleaning process anyway? The mod cleaning process involves cleaning a mod file of duplicate/un-necessary records and un-deleting objects in the masters that were inadvertently deleted - setting them to disabled instead. We also check for errors as well as looped level lists. The itemized cleaning process is:</p>
                 <ol>
                     <li>Identifying and removing records in a mod file that is identical to those in the master files, which user useless in a mod-file and can cause conflicts with other mods. Removing these from your mod file is a primary goal of this process.</li>
-                    <li>Identifying any records in the master files that was marked as deleted, which FO3Edit un-deletes and marks as, &#8220;disabled&#8221; instead. This ensures that any change made to that object by other mods won't cause crashes or conflicts, which can happen if a modder accidentally deletes a base object, which is modified by another mod and you get a null pointer &#8211; poof!</li>
+                    <li>Identifying any records in the master files that was marked as deleted, which FO3Edit un-deletes and marks as, "disabled" instead. This ensures that any change made to that object by other mods won't cause crashes or conflicts, which can happen if a modder accidentally deletes a base object, which is modified by another mod and you get a null pointer &#8211; poof!</li>
                     <li>Identifying any infinite loops in the leveled-lists, and ensure there are no physical/data errors with the mod file to round-out the clean-up.</li>
                 </ol>
                 <div class="p-img">
@@ -81,14 +81,14 @@ title: Tome of xEdit
                         Modder A could avoid both of these issues with the mod cleaning process, which un-deletes references that were deleted on accident and un-does inadvertent changes to things in the game that were not intended. The screenshot below illustrates the start of the process, in which you must load-up FO3Edit and follow the steps herein:
                     </p>
                 </div>
-                <p>Once, &#8220;OK&#8221; is clicked (D), FO3Edit will load the selected plug-in for cleaning.</p>
-                <p>Note that you can also, &#8220;Select All&#8221; or &#8220;Invert Selection&#8221;, which gives you additional controls over which mod-files are selected for loading into FO3Edit. For the mod cleaning process, we only want to load the plug-in being cleaned. You can do this using the, &#8220;Select None&#8221; menu option, and then clicking on the mod file to be cleaned.</p>
+                <p>Once, "OK" is clicked (D), FO3Edit will load the selected plug-in for cleaning.</p>
+                <p>Note that you can also, "Select All" or "Invert Selection", which gives you additional controls over which mod-files are selected for loading into FO3Edit. For the mod cleaning process, we only want to load the plug-in being cleaned. You can do this using the, "Select None" menu option, and then clicking on the mod file to be cleaned.</p>
                 <p>You should only clean one mod file at a time, and you should not clean other people's mod files! There is no harm in running through the process to see if mod A or mod B is filled with dirty edits (after which you can send them a PM on the forums!), but it is considered a bad idea to clean other people's mods.</p>
                 <div class="p-img">
                     <p class="img"><img  height="484" src="img/image118.jpg" width="576"></p>
                     <p>Once loaded into FO3Edit, we need to apply a Filter to detect all of the Identical to Master references in the mod being cleaned as shown below:</p>
                 </div>
-                <p>Clicking on, &#8220;Apply Filter&#8221; (B) will present the Filter window, just as it did with the <a href="4-conflict-detection-and-resolution.html#s_4-5">Conflict Resolution Process</a>. This filter window however will utilize different options than with conflict detection, as in this case we are only looking at one mod file and one specific kind of conflict &#8211; the Identical to Master references.</p>
+                <p>Clicking on, "Apply Filter" (B) will present the Filter window, just as it did with the <a href="4-conflict-detection-and-resolution.html#s_4-5">Conflict Resolution Process</a>. This filter window however will utilize different options than with conflict detection, as in this case we are only looking at one mod file and one specific kind of conflict &#8211; the Identical to Master references.</p>
                 <p>The options to select for Mod Cleaning are:</p>
                 <ol>
                     <li>By conflict status for this particular record</li>
@@ -101,7 +101,7 @@ title: Tome of xEdit
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="92" src="img/image122.jpg" width="576"></p>
-                    <p>Clicking on, &#8220;Filter&#8221; (D) will launch the FO3Edit analysis for Identical to Master records, which should complete in a short period of time (perhaps 1-20 seconds). If your system is very slow or bogged down or the mod is really huge, it is possible for the process to take longer. The status of FO3Edit can be viewed in the upper-right corner of the screen, as shown in the screenshot below:</p>
+                    <p>Clicking on, "Filter" (D) will launch the FO3Edit analysis for Identical to Master records, which should complete in a short period of time (perhaps 1-20 seconds). If your system is very slow or bogged down or the mod is really huge, it is possible for the process to take longer. The status of FO3Edit can be viewed in the upper-right corner of the screen, as shown in the screenshot below:</p>
                 </div>
                 <p>Both the elapsed time and processed records are shown in the upper-right window. When FO3Edit completes the analysis, the <a href="2-overview.html#s_2-3-5">Messages Tab</a> will reveal the result as shown on the next page. You should also not expect to see in anything yet in the <a href="2-overview.html#s_2-3-7">View Tab</a>.</p>
                 <div class="p-img">
@@ -111,23 +111,23 @@ title: Tome of xEdit
                 <p>The total number of records filtered and the elapsed time are given, which should be quick. Also note the Yellow/Green text and backgrounds in the screenshot above, which are the references to be cleaned out.</p>
                 <div class="p-img">
                     <p class="img"><img  height="198" src="img/image126.jpg" width="576"></p>
-                    <p>The records to be cleaned will be shown in the <a href="2-overview.html#s_2-3-7">View Tab</a>, though at first you won't see anything in the view. This is because the default setting for the <a href="2-overview.html#s_2-3-7">View Tab</a> is the, &#8220;Hide no conflict rows&#8221;, which means any rows that don't have a conflict are normally not shown (as they play no role in conflict resolution, they are not conflicted!). The screenshot below shows you the simple operation you can perform to see the records that need cleaning:</p>
+                    <p>The records to be cleaned will be shown in the <a href="2-overview.html#s_2-3-7">View Tab</a>, though at first you won't see anything in the view. This is because the default setting for the <a href="2-overview.html#s_2-3-7">View Tab</a> is the, "Hide no conflict rows", which means any rows that don't have a conflict are normally not shown (as they play no role in conflict resolution, they are not conflicted!). The screenshot below shows you the simple operation you can perform to see the records that need cleaning:</p>
                 </div>
-                <p>Once you un-check the, &#8220;Hide no conflict rows&#8221; setting in the <a href="2-overview.html#s_2-3-7">View Tab</a>, you will be able to see all of records just as you do during conflict detection.</p>
+                <p>Once you un-check the, "Hide no conflict rows" setting in the <a href="2-overview.html#s_2-3-7">View Tab</a>, you will be able to see all of records just as you do during conflict detection.</p>
                 <div class="p-img">
                     <p class="img"><img  height="297" src="img/image128.jpg" width="470"></p>
-                    <p>Note the grey text with green background in the mod we are cleaning; indicating that they are identical to the master versions of the same record and should be removed (cleaned). These are often called, &#8220;dirty edits&#8221;.</p>
+                    <p>Note the grey text with green background in the mod we are cleaning; indicating that they are identical to the master versions of the same record and should be removed (cleaned). These are often called, "dirty edits".</p>
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="366" src="img/image129.jpg" width="470"></p>
-                    <p>A simple visual inspection between the Fallout3.esm and <a href="http://www.fallout3nexus.com/downloads/file.php?id=867">BetterCaravans</a> mod reveals the duplicated records that really don't need to be in the <a href="http://www.fallout3nexus.com/downloads/file.php?id=867">BetterCaravans</a> mod at all. Removing these will have no negative impact on the mod or Fallout3. The process of removing the duplicated, &#8220;identical to master&#8221; records involve applying a slightly different filter to the mod, followed by several context menu options as shown below:</p>
+                    <p>A simple visual inspection between the Fallout3.esm and <a href="http://www.fallout3nexus.com/downloads/file.php?id=867">BetterCaravans</a> mod reveals the duplicated records that really don't need to be in the <a href="http://www.fallout3nexus.com/downloads/file.php?id=867">BetterCaravans</a> mod at all. Removing these will have no negative impact on the mod or Fallout3. The process of removing the duplicated, "identical to master" records involve applying a slightly different filter to the mod, followed by several context menu options as shown below:</p>
                 </div>
                 <div class="level-3" id="s_5-2-1">
-                    <h3 class="ctrl">5.2.1 Removing &#8220;Identical to Master&#8221; Records</h3>
+                    <h3 class="ctrl">5.2.1 Removing "Identical to Master" Records</h3>
                     <div class="content">
                         <div class="p-img">
                             <p class="img"><img  height="380" src="img/image131.jpg" width="532"></p>
-                            <p>Clicking on the, &#8220;Apply Filter&#8221; button from the <a href="2-overview.html#s_2-3-2">Left-Side Panel's</a> context menu will present the Filter window once again. This time choose the Mod Cleaning settings as shown below:</p>
+                            <p>Clicking on the, "Apply Filter" button from the <a href="2-overview.html#s_2-3-2">Left-Side Panel's</a> context menu will present the Filter window once again. This time choose the Mod Cleaning settings as shown below:</p>
                         </div>
                         <div class="p-img">
                             <p class="img"><img  height="262" src="img/image132.jpg" width="530"></p>
@@ -135,13 +135,13 @@ title: Tome of xEdit
                         </div>
                         <div class="p-img">
                             <p class="img"><img  height="392" src="img/image134.jpg" width="446"></p>
-                            <p>With the Mod Cleaning filter applied, Golly! It's time to get out the <a href="http://www.mrclean.com/en_US/magic-eraser.do">Mr. Clean</a> and make this puppy sparkle with goodness! Grab the mop by Left-clicking on the mod that you want to clean, in our case <a href="http://www.fallout3nexus.com/downloads/file.php?id=867">BetterCaravans</a> (A). Splash the <a href="http://www.mrclean.com/en_US/magic-eraser.do">Mr. Clean</a> on by Right-clicking the shiny white space beneath the mod your cleaning (B), and spin that mop into action by clicking on, &#8216;Remove &#8220;Identical to Master&#8221; records' (C) &#8211; and watch as FO3Edit puts the shine on that puppy!</p>
+                            <p>With the Mod Cleaning filter applied, Golly! It's time to get out the <a href="http://www.mrclean.com/en_US/magic-eraser.do">Mr. Clean</a> and make this puppy sparkle with goodness! Grab the mop by Left-clicking on the mod that you want to clean, in our case <a href="http://www.fallout3nexus.com/downloads/file.php?id=867">BetterCaravans</a> (A). Splash the <a href="http://www.mrclean.com/en_US/magic-eraser.do">Mr. Clean</a> on by Right-clicking the shiny white space beneath the mod your cleaning (B), and spin that mop into action by clicking on, &#8216;Remove "Identical to Master" records' (C) &#8211; and watch as FO3Edit puts the shine on that puppy!</p>
                         </div>
                         <div class="p-img">
                             <p class="img"><img  height="200" src="img/image136.jpg" width="382"></p>
-                            <p>You will be presented with the Warning screen, press, &#8220;Yes&#8221; when prompted:</p>
+                            <p>You will be presented with the Warning screen, press, "Yes" when prompted:</p>
                         </div>
-                        <p>As FO3Edit completes the mod-cleaning process, you can see the output in the Messages Tab, which shows you every record that is being removed along with its hex ID number. Once complete, you get a line of text reading, [Removing &#8220;Identical to Master&#8221; records done] &#8211; along with statistics on the number of records processed and removed as well as the elapsed time (A).</p>
+                        <p>As FO3Edit completes the mod-cleaning process, you can see the output in the Messages Tab, which shows you every record that is being removed along with its hex ID number. Once complete, you get a line of text reading, [Removing "Identical to Master" records done] &#8211; along with statistics on the number of records processed and removed as well as the elapsed time (A).</p>
                         <div class="p-img">
                             <p class="img"><img  height="194" src="img/image138.jpg" width="575"></p>
                             <p>The screenshot below illustrates the output:</p>
@@ -160,7 +160,7 @@ title: Tome of xEdit
                     <div class="content">
                         <div class="p-img">
                             <p class="img"><img  height="360" src="img/image140.jpg" width="398"></p>
-                            <p>There are times in which the load-order of Master files gets switched around when you add/change load-orders. It can become a problem when the Master load order becomes different then how they are listed in the MASTer list, header section of your Plug-in. The, &#8220;Sort Masters&#8221; function corrects the master file load-order in the Plug-ins MASTer list, and correctly renumbers all file specific FormIDs. The screenshot below illustrates:</p>
+                            <p>There are times in which the load-order of Master files gets switched around when you add/change load-orders. It can become a problem when the Master load order becomes different then how they are listed in the MASTer list, header section of your Plug-in. The, "Sort Masters" function corrects the master file load-order in the Plug-ins MASTer list, and correctly renumbers all file specific FormIDs. The screenshot below illustrates:</p>
                         </div>
                         <p>There is no specific log-output from the function unless there is a problem. If you see no issues or errors in the Messages Tab, then the function sorted the masters correctly.</p>
                     </div>
@@ -174,7 +174,7 @@ title: Tome of xEdit
                 <div class="level-3" id="s_5-2-3">
                     <h3 class="ctrl">5.2.3 Un-deleting and Disabling References</h3>
                     <div class="content">
-                        <p>The next step in the cleaning process is to Undelete and Disable References from the mod being cleaned. The, &#8220;Undelete and Disable References&#8221; function scans through the mod and the master files it depends upon, looking for any records that you may have deleted by accident. If it finds some, it will un-delete them and then set the reference to, &#8220;disabled&#8221; so that it will never be seen in-game nor affect your mod.</p>
+                        <p>The next step in the cleaning process is to Undelete and Disable References from the mod being cleaned. The, "Undelete and Disable References" function scans through the mod and the master files it depends upon, looking for any records that you may have deleted by accident. If it finds some, it will un-delete them and then set the reference to, "disabled" so that it will never be seen in-game nor affect your mod.</p>
                         <div class="p-img">
                             <p class="img"><img  height="201" src="img/image142.jpg" width="502"></p>
                             <p>This ensures that if another mod tweaks/changes the item you deleted, that the item will still be in the files (just disabled), and thus won't cause Fallout3 to crash. If your mod file loads with the item deleted and another mod tries to change it, Fallout3 will crash! L These are among the more serious conflicts that can occur and the reason why it is important for mod authors to run this function as part of the mod cleaning process. The screenshot below illustrates how to activate it:</p>
@@ -196,11 +196,11 @@ title: Tome of xEdit
                 <div class="level-3" id="s_5-2-4">
                     <h3 class="ctrl">5.2.4 Purging un-used Master File References</h3>
                     <div class="content">
-                        <p>Master File References are links or references from your Plug-in to any Master files (ESMs) that it depends on to run, and stores the list in a record called, &#8220;MAST&#8221;. Most mods have Fallout3.<abbr title="Elder-Scrolls Master File">ESM</abbr> in their MASTer list, but you can have many such links in a plug-in. In fact when FO3Edit creates a <a href="4-conflict-detection-and-resolution.html#s_4-8">Merged Patch,</a> it puts links to many or nearly-all of the master files in your mod list. It is possible in some cases for a Plug-in to contain a link to a master file that it does not need.</p>
+                        <p>Master File References are links or references from your Plug-in to any Master files (ESMs) that it depends on to run, and stores the list in a record called, "MAST". Most mods have Fallout3.<abbr title="Elder-Scrolls Master File">ESM</abbr> in their MASTer list, but you can have many such links in a plug-in. In fact when FO3Edit creates a <a href="4-conflict-detection-and-resolution.html#s_4-8">Merged Patch,</a> it puts links to many or nearly-all of the master files in your mod list. It is possible in some cases for a Plug-in to contain a link to a master file that it does not need.</p>
                         <p>For example, suppose the Plug-in we are cleaning had MasterB.esm in its MASTer list but it doesn't contain any overrides for, or makes any other references to, records from MasterB.esm. In that case we would not need nor want MasterB.esm listed in the MASTer record for our Plug-in! This function detects any un-used MASTer references in the Plug-in we are cleaning, and removes them from the MASTer list. FO3Edit also renumbers any file specific FormIDs in the Plug-in to ensure that it is cleaned properly.</p>
                         <div class="p-img">
                             <p class="img"><img  height="332" src="img/image146.jpg" width="562"></p>
-                            <p>The screenshot below illustrates how to activate the, &#8220;Clean Masters&#8221; function:</p>
+                            <p>The screenshot below illustrates how to activate the, "Clean Masters" function:</p>
                         </div>
                         <p>Unfortunately there is no log-file output for this function, so you'll have to trust me that this works correctly.</p>
                         <div class="p-img">
@@ -233,7 +233,7 @@ title: Tome of xEdit
             <div class="content">
                 <div class="p-img">
                     <p class="img"><img  height="343" src="img/image150.jpg" width="576"></p>
-                    <p>The &#8220;Check for Reference Errors&#8221; function reports any case in which the information contained in a module file does not match the <a href="http://www.fallout3nexus.com/downloads/file.php?id=637">FO3Edit</a> record definitions. There is a very minimal chance that something that's reported as an error is actually an oversight in the FO3Edit record definitions and not in the module, but all cases should be reported to be safe). Note that there are errors in the Fallout3.esm and the DLCs. Both <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=380528">Elminster</a> and <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=20313">Quarn</a> have gone through them all to ensure they are genuine errors. Running the check is a recommended practice as part of the mod-cleaning process as shown below:</p>
+                    <p>The "Check for Reference Errors" function reports any case in which the information contained in a module file does not match the <a href="http://www.fallout3nexus.com/downloads/file.php?id=637">FO3Edit</a> record definitions. There is a very minimal chance that something that's reported as an error is actually an oversight in the FO3Edit record definitions and not in the module, but all cases should be reported to be safe). Note that there are errors in the Fallout3.esm and the DLCs. Both <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=380528">Elminster</a> and <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=20313">Quarn</a> have gone through them all to ensure they are genuine errors. Running the check is a recommended practice as part of the mod-cleaning process as shown below:</p>
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="230" src="img/image152.jpg" width="576"></p>
