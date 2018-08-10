@@ -69,21 +69,21 @@ title: Tome of xEdit
                 <p>What is the mod cleaning process anyway? The mod cleaning process involves cleaning a mod file of duplicate/un-necessary records and un-deleting objects in the masters that were inadvertently deleted - setting them to disabled instead. We also check for errors as well as looped level lists. The itemized cleaning process is:</p>
                 <ol>
                     <li>Identifying and removing records in a mod file that is identical to those in the master files, which user useless in a mod-file and can cause conflicts with other mods. Removing these from your mod file is a primary goal of this process.</li>
-                    <li>Identifying any records in the master files that was marked as deleted, which FO3Edit un-deletes and marks as, &#8220;disabled&#8221; instead. This ensures that any change made to that object by other mods won&#8217;t cause crashes or conflicts, which can happen if a modder accidentally deletes a base object, which is modified by another mod and you get a null pointer &#8211; poof!</li>
+                    <li>Identifying any records in the master files that was marked as deleted, which FO3Edit un-deletes and marks as, &#8220;disabled&#8221; instead. This ensures that any change made to that object by other mods won't cause crashes or conflicts, which can happen if a modder accidentally deletes a base object, which is modified by another mod and you get a null pointer &#8211; poof!</li>
                     <li>Identifying any infinite loops in the leveled-lists, and ensure there are no physical/data errors with the mod file to round-out the clean-up.</li>
                 </ol>
                 <div class="p-img">
                     <p class="img"><img  height="427" src="img/image116.jpg" width="576"></p>
-                    <p>For example, modder A inadvertently double-clicks on a wine bottle and it gets marked for save &#8211; becoming one of the changes introduced by modder A&#8217;s plug-in. Modder A makes things worse by deleting the whiskey bottle record, removing it from the game!
+                    <p>For example, modder A inadvertently double-clicks on a wine bottle and it gets marked for save &#8211; becoming one of the changes introduced by modder A's plug-in. Modder A makes things worse by deleting the whiskey bottle record, removing it from the game!
                         <br>
-                        Mod B is added to the player&#8217;s mod-list, which changes the wine bottle making it stronger. Mod A&#8217;s plug-in however conflicts with this and can over-ride Mob B&#8217;s changes without cause (as Mod A&#8217;s author did not intend to change the wine bottle). Furthermore all occurrences of the whiskey bottle are now bogus. When Mod B tries to change the whiskey bottle, it finds no whiskey bottle to change and Fallout3 will crash.
+                        Mod B is added to the player's mod-list, which changes the wine bottle making it stronger. Mod A's plug-in however conflicts with this and can over-ride Mob B's changes without cause (as Mod A's author did not intend to change the wine bottle). Furthermore all occurrences of the whiskey bottle are now bogus. When Mod B tries to change the whiskey bottle, it finds no whiskey bottle to change and Fallout3 will crash.
                         <br>
                         Modder A could avoid both of these issues with the mod cleaning process, which un-deletes references that were deleted on accident and un-does inadvertent changes to things in the game that were not intended. The screenshot below illustrates the start of the process, in which you must load-up FO3Edit and follow the steps herein:
                     </p>
                 </div>
                 <p>Once, &#8220;OK&#8221; is clicked (D), FO3Edit will load the selected plug-in for cleaning.</p>
                 <p>Note that you can also, &#8220;Select All&#8221; or &#8220;Invert Selection&#8221;, which gives you additional controls over which mod-files are selected for loading into FO3Edit. For the mod cleaning process, we only want to load the plug-in being cleaned. You can do this using the, &#8220;Select None&#8221; menu option, and then clicking on the mod file to be cleaned.</p>
-                <p>You should only clean one mod file at a time, and you should not clean other people&#8217;s mod files! There is no harm in running through the process to see if mod A or mod B is filled with dirty edits (after which you can send them a PM on the forums!), but it is considered a bad idea to clean other people&#8217;s mods.</p>
+                <p>You should only clean one mod file at a time, and you should not clean other people's mod files! There is no harm in running through the process to see if mod A or mod B is filled with dirty edits (after which you can send them a PM on the forums!), but it is considered a bad idea to clean other people's mods.</p>
                 <div class="p-img">
                     <p class="img"><img  height="484" src="img/image118.jpg" width="576"></p>
                     <p>Once loaded into FO3Edit, we need to apply a Filter to detect all of the Identical to Master references in the mod being cleaned as shown below:</p>
@@ -111,7 +111,7 @@ title: Tome of xEdit
                 <p>The total number of records filtered and the elapsed time are given, which should be quick. Also note the Yellow/Green text and backgrounds in the screenshot above, which are the references to be cleaned out.</p>
                 <div class="p-img">
                     <p class="img"><img  height="198" src="img/image126.jpg" width="576"></p>
-                    <p>The records to be cleaned will be shown in the <a href="2-overview.html#s_2-3-7">View Tab</a>, though at first you won&#8217;t see anything in the view. This is because the default setting for the <a href="2-overview.html#s_2-3-7">View Tab</a> is the, &#8220;Hide no conflict rows&#8221;, which means any rows that don&#8217;t have a conflict are normally not shown (as they play no role in conflict resolution, they are not conflicted!). The screenshot below shows you the simple operation you can perform to see the records that need cleaning:</p>
+                    <p>The records to be cleaned will be shown in the <a href="2-overview.html#s_2-3-7">View Tab</a>, though at first you won't see anything in the view. This is because the default setting for the <a href="2-overview.html#s_2-3-7">View Tab</a> is the, &#8220;Hide no conflict rows&#8221;, which means any rows that don't have a conflict are normally not shown (as they play no role in conflict resolution, they are not conflicted!). The screenshot below shows you the simple operation you can perform to see the records that need cleaning:</p>
                 </div>
                 <p>Once you un-check the, &#8220;Hide no conflict rows&#8221; setting in the <a href="2-overview.html#s_2-3-7">View Tab</a>, you will be able to see all of records just as you do during conflict detection.</p>
                 <div class="p-img">
@@ -120,14 +120,14 @@ title: Tome of xEdit
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="366" src="img/image129.jpg" width="470"></p>
-                    <p>A simple visual inspection between the Fallout3.esm and <a href="http://www.fallout3nexus.com/downloads/file.php?id=867">BetterCaravans</a> mod reveals the duplicated records that really don&#8217;t need to be in the <a href="http://www.fallout3nexus.com/downloads/file.php?id=867">BetterCaravans</a> mod at all. Removing these will have no negative impact on the mod or Fallout3. The process of removing the duplicated, &#8220;identical to master&#8221; records involve applying a slightly different filter to the mod, followed by several context menu options as shown below:</p>
+                    <p>A simple visual inspection between the Fallout3.esm and <a href="http://www.fallout3nexus.com/downloads/file.php?id=867">BetterCaravans</a> mod reveals the duplicated records that really don't need to be in the <a href="http://www.fallout3nexus.com/downloads/file.php?id=867">BetterCaravans</a> mod at all. Removing these will have no negative impact on the mod or Fallout3. The process of removing the duplicated, &#8220;identical to master&#8221; records involve applying a slightly different filter to the mod, followed by several context menu options as shown below:</p>
                 </div>
                 <div class="level-3" id="s_5-2-1">
                     <h3 class="ctrl">5.2.1 Removing &#8220;Identical to Master&#8221; Records</h3>
                     <div class="content">
                         <div class="p-img">
                             <p class="img"><img  height="380" src="img/image131.jpg" width="532"></p>
-                            <p>Clicking on the, &#8220;Apply Filter&#8221; button from the <a href="2-overview.html#s_2-3-2">Left-Side Panel&#8217;s</a> context menu will present the Filter window once again. This time choose the Mod Cleaning settings as shown below:</p>
+                            <p>Clicking on the, &#8220;Apply Filter&#8221; button from the <a href="2-overview.html#s_2-3-2">Left-Side Panel's</a> context menu will present the Filter window once again. This time choose the Mod Cleaning settings as shown below:</p>
                         </div>
                         <div class="p-img">
                             <p class="img"><img  height="262" src="img/image132.jpg" width="530"></p>
@@ -135,7 +135,7 @@ title: Tome of xEdit
                         </div>
                         <div class="p-img">
                             <p class="img"><img  height="392" src="img/image134.jpg" width="446"></p>
-                            <p>With the Mod Cleaning filter applied, Golly! It&#8217;s time to get out the <a href="http://www.mrclean.com/en_US/magic-eraser.do">Mr. Clean</a> and make this puppy sparkle with goodness! Grab the mop by Left-clicking on the mod that you want to clean, in our case <a href="http://www.fallout3nexus.com/downloads/file.php?id=867">BetterCaravans</a> (A). Splash the <a href="http://www.mrclean.com/en_US/magic-eraser.do">Mr. Clean</a> on by Right-clicking the shiny white space beneath the mod your cleaning (B), and spin that mop into action by clicking on, &#8216;Remove &#8220;Identical to Master&#8221; records&#8217; (C) &#8211; and watch as FO3Edit puts the shine on that puppy!</p>
+                            <p>With the Mod Cleaning filter applied, Golly! It's time to get out the <a href="http://www.mrclean.com/en_US/magic-eraser.do">Mr. Clean</a> and make this puppy sparkle with goodness! Grab the mop by Left-clicking on the mod that you want to clean, in our case <a href="http://www.fallout3nexus.com/downloads/file.php?id=867">BetterCaravans</a> (A). Splash the <a href="http://www.mrclean.com/en_US/magic-eraser.do">Mr. Clean</a> on by Right-clicking the shiny white space beneath the mod your cleaning (B), and spin that mop into action by clicking on, &#8216;Remove &#8220;Identical to Master&#8221; records' (C) &#8211; and watch as FO3Edit puts the shine on that puppy!</p>
                         </div>
                         <div class="p-img">
                             <p class="img"><img  height="200" src="img/image136.jpg" width="382"></p>
@@ -177,14 +177,14 @@ title: Tome of xEdit
                         <p>The next step in the cleaning process is to Undelete and Disable References from the mod being cleaned. The, &#8220;Undelete and Disable References&#8221; function scans through the mod and the master files it depends upon, looking for any records that you may have deleted by accident. If it finds some, it will un-delete them and then set the reference to, &#8220;disabled&#8221; so that it will never be seen in-game nor affect your mod.</p>
                         <div class="p-img">
                             <p class="img"><img  height="201" src="img/image142.jpg" width="502"></p>
-                            <p>This ensures that if another mod tweaks/changes the item you deleted, that the item will still be in the files (just disabled), and thus won&#8217;t cause Fallout3 to crash. If your mod file loads with the item deleted and another mod tries to change it, Fallout3 will crash! L These are among the more serious conflicts that can occur and the reason why it is important for mod authors to run this function as part of the mod cleaning process. The screenshot below illustrates how to activate it:</p>
+                            <p>This ensures that if another mod tweaks/changes the item you deleted, that the item will still be in the files (just disabled), and thus won't cause Fallout3 to crash. If your mod file loads with the item deleted and another mod tries to change it, Fallout3 will crash! L These are among the more serious conflicts that can occur and the reason why it is important for mod authors to run this function as part of the mod cleaning process. The screenshot below illustrates how to activate it:</p>
                         </div>
                         <p>Note that you must Right-click on the mod in the <a href="2-overview.html#s_2-3-2">Left-Side Panel</a> to pull the right context menu. In this case you do not want to click on open-space.</p>
                         <div class="p-img">
                             <p class="img"><img  height="229" src="img/image144.jpg" width="504"></p>
                             <p>The screenshot below shows the results, which show the log-file output in two places (A and B) in the <a href="2-overview.html#s_2-3-5">Messages Tab</a> and on the lower status bar:</p>
                         </div>
-                        <p>Now we know for sure that other mods will not run into missing references that were a consequence of changes made in the mod your cleaning. With the second step in the cleaning process complete, it&#8217;s time for the final step.</p>
+                        <p>Now we know for sure that other mods will not run into missing references that were a consequence of changes made in the mod your cleaning. With the second step in the cleaning process complete, it's time for the final step.</p>
                     </div>
                     <!--/.content-->
                     <div class="level-nav">
@@ -202,13 +202,13 @@ title: Tome of xEdit
                             <p class="img"><img  height="332" src="img/image146.jpg" width="562"></p>
                             <p>The screenshot below illustrates how to activate the, &#8220;Clean Masters&#8221; function:</p>
                         </div>
-                        <p>Unfortunately there is no log-file output for this function, so you&#8217;ll have to trust me that this works correctly.</p>
+                        <p>Unfortunately there is no log-file output for this function, so you'll have to trust me that this works correctly.</p>
                         <div class="p-img">
                             <p class="img"><img  height="194" src="img/image148.jpg" width="575"></p>
-                            <p>The screenshot below illustrates how the <a href="http://www.fallout3nexus.com/downloads/file.php?id=867">BetterCaravans</a> mod looks now that it&#8217;s clean, with it&#8217;s new sparkly (bold)-Green text in both the <a href="2-overview.html#s_2-3-7">View Tab</a> (B) and the <a href="2-overview.html#s_2-3-2">Left-Side Panel</a> (A):</p>
+                            <p>The screenshot below illustrates how the <a href="http://www.fallout3nexus.com/downloads/file.php?id=867">BetterCaravans</a> mod looks now that it's clean, with it's new sparkly (bold)-Green text in both the <a href="2-overview.html#s_2-3-7">View Tab</a> (B) and the <a href="2-overview.html#s_2-3-2">Left-Side Panel</a> (A):</p>
                         </div>
                         <p>At this point you should save your mod and load it up in-game to make sure that everything is still happy. There are a few notes about the process to be aware of:</p>
-                        <p class="Note"><strong>Note:</strong> You should not clean other people&#8217;s mods! It is the responsibility of each mod owner to clean their own mods, and with the creation of this tutorial there is no longer any excuse why people can do this. If you find a dirty mod, send the mod author a PM on Nexus and tell them they have a dirty mod and reference them to FO3Edit (please?)
+                        <p class="Note"><strong>Note:</strong> You should not clean other people's mods! It is the responsibility of each mod owner to clean their own mods, and with the creation of this tutorial there is no longer any excuse why people can do this. If you find a dirty mod, send the mod author a PM on Nexus and tell them they have a dirty mod and reference them to FO3Edit (please?)
                             <br>
                             <strong>Note:</strong> Make sure that you run Master Update again before testing your mod in-game, as the cleaning process will undoubtedly change references and you want to make sure FO3Edit synchs everything up. This has shown to prevent crashes.
                         </p>
@@ -255,7 +255,7 @@ title: Tome of xEdit
                     <p class="img"><img  height="343" src="img/image154.jpg" width="576"></p>
                     <p>With mods it is possible to have Leveled Lists that reference other Leveled Lists that are perfectly valid. However, it's possible in some cases that a mod builds a circular reference (with as little as 2 leveled lists directly referencing each other, or any number of additional leveled lists in the chain). When the game engine then tries to resolve that leveled lists down to a particular item/creature/NPC, it can get caught in the endless loop and crash. This function looks for such cases and identifies them if they exist:</p>
                 </div>
-                <p>I have not yet found an example in any mod of such a circular leveled list, but I do know that they exist and that <a href="http://www.fallout3nexus.com/downloads/file.php?id=637">FO3Edit</a> can spot them. If you don&#8217;t get any output from running this function, then the checked mod is clean of such loops.</p>
+                <p>I have not yet found an example in any mod of such a circular leveled list, but I do know that they exist and that <a href="http://www.fallout3nexus.com/downloads/file.php?id=637">FO3Edit</a> can spot them. If you don't get any output from running this function, then the checked mod is clean of such loops.</p>
             </div>
             <!--/.content-->
             <div class="level-nav">
