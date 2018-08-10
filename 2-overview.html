@@ -83,21 +83,22 @@ title: Tome of xEdit
             <h2 class="ctrl">2.2 Acquisition and Installation</h2>
             <div class="content">
                 <div class="level-3" id="s_2-2-1">
-                    <h3 class="ctrl">2.2.1 Downloading xEdit from SSEEdit Nexus</h3>
+                    <h3 class="ctrl">2.2.1 Downloading xEdit from TES5Edit Nexus</h3>
                     <div class="content">
-                        <p>xEdit works on Windows XP, Vista, Windows 7, 8, and 10.  Other platforms or Windows simulators may or may not work and are not officially supported. xEdit is available for download from Nexus, one of the most outstanding sources for Bethesda content. Downloading from the <a href="https://www.nexusmods.com/skyrimspecialedition/mods/164">SSEEdit Nexus</a>.</p>
+                        <p>xEdit works on Windows XP, Vista, Windows 7, 8, and 10.  Other platforms or Windows simulators may or may not work and are not officially supported. xEdit is available for download from Nexus, one of the most outstanding sources for Bethesda content. Downloading from the <a href="https://www.nexusmods.com/skyrim/mods/25859">TES5Edit Nexus</a>.</p>
                         <div class="p-img">
 						<img  height="490" src="img/image002.jpg" width="576">
-                        <p>The following page will display from the SSEEdit Nexus site. You will need to first click on, "Files" to display the list of FO3Edit versions. Once loaded, check the Version number in the upper-right corner (B) to ensure you download the most current revision. Then click on that revision of FO3Edit in the Mail Files section (C).</p>
+                        <p>The following page will display from the TES5Edit Nexus site. You will need to first click on, "Files" to display the list of xEdit versions. Once loaded, check the Version number in the upper-right corner (B) to ensure you download the most current revision. Then click on that revision of xEdit in the Main Files section (C).</p>
                         </div>
                         <p>Once you download the program, you will need an archive extraction tool that can handle 7-Zip files (.7z), such as 7-Zip, which is available at: <a href="http://www.7-zip.org/">http://www.7-zip.org/</a></p>
                         <div class="p-img">
                             <p class="img"><img  height="434" src="img/image004.jpg" width="578"></p>
-                            <p>Once the archive is open, you will need to extract the FO3Edit files into the right place in order for it to function. That place is the Fallout3\ directory, where the Fallout3.exe program is installed. Do Not install into the Fallout3\Data directory or the program will not function correctly as shown below.</p>
+                            <p>Once the archive is open, you will need to extract the TES5Edit files into the right place in order for it to function. That place is the Skyrim\ directory, where the TESV.exe program is installed. Do Not install into the Skyrim\Data directory or the program will not function correctly. Also refer to <a href="#s_2-2-3">2.2.3 Windows Vista and UAC Security</a>.</p>
+                            <p>Technically you can run the xEdit exe from any location except the game's Data folder.</p>
                         </div>
-                        <p>Note: the FO3Edit package also contains a special file called <em>"Fallout3.&shy;Hardcoded.&shy;keep.&shy;this.&shy;with.&shy;the.&shy;exe.&shy;and.&shy;otherwise.&shy;ignore.&shy;it.&shy;I.&shy;really.&shy;mean.&shy;it.&shy;dat"</em>. This file needs to be in the same folder as the FO3Edit.exe. It contains records which are hardcoded in the Fallout3 game engine.</p>
-                        <p>What makes these special is that the records are referenced in Fallout3.esm but are NOT contained in Fallout3.esm (they are in the binary). FO3Edit automatically loads fallout3.hardcoded.esp&#8230; at the same load order index [00] as Fallout3.esm so that these hardcoded values can be used in conflict detection and resolution. You shouldn't touch this file until your ready to un-install.</p>
-                        <p>The fallout3.hardcoded.esp simply needs to be in the same folder as the FO3Edit.exe. FO3Edit automatically loads fallout3.hardcoded.esp at the same load order index [00] as Fallout3.esm so that these hardcoded values show up as coming from, "Fallout3.exe" while working in FO3Edit.</p>
+                        <p>All xEdit packages contain a special file of hard coded values not found in the main ESM or DLC. For TES5Edit it would be called <em>"TES5Edit.&shy;Hardcoded.&shy;keep.&shy;this.&shy;with.&shy;the.&shy;exe.&shy;and.&shy;otherwise.&shy;ignore.&shy;it.&shy;I.&shy;really.&shy;mean.&shy;it.&shy;dat"</em>. This file needs to be in the same folder as the TES5Edit.exe. It contains records which are hardcoded in the Skyrim game engine.</p>
+                        <p>What makes these special is that the records are referenced in Skyrim.esm but are NOT contained in Skyrim.esm (they are in the binary). TES5Edit automatically loads TES5Edit.hardcoded.esp&#8230; at the same load order index [00] as Skyrim.esm so that these hardcoded values can be used in conflict detection and resolution. You shouldn't touch this file until your ready to un-install.</p>
+                        <p>The TES5Edit.hardcoded.esp simply needs to be in the same folder as the TES5Edit.exe. TES5Edit automatically loads TES5Edit.hardcoded.esp at the same load order index [00] as Skyrim.esm so that these hardcoded values show up as coming from, "TESV.exe" while working in TES5Edit.</p>
                     </div>
                     <!--/.content-->
                     <div class="level-nav">
@@ -123,10 +124,10 @@ title: Tome of xEdit
                 <div class="level-3" id="s_2-2-3">
                     <h3 class="ctrl">2.2.3 Windows Vista and UAC Security</h3>
                     <div class="content">
-                        <p>The UAC Security feature of Vista protects the Program Files directory from un-authorized access. Unfortunately this also causes problems for FO3Edit and Fallout3, and requires some manual intervention on your part to resolve. You have 3 options for dealing with UAC Security: </p>
+                        <p>The UAC Security feature of Vista, Windows 7, 8, and 10 protects the Program Files directory from un-authorized access. Unfortunately this also causes problems for xEdit and Bethesda games, and requires some manual intervention on your part to resolve. You have 3 options for dealing with UAC Security: </p>
                         <ol>
                             <li>Disable the UAC completely, but this will leave your system more vulnerable. (not recommended)</li>
-                            <li>Install Fallout3 and FO3Edit in the C:\Games\Fallout3 folder, which is not controlled by UAC and will prevent conflicts. (recommended)</li>
+                            <li>Install your Bethesda game and xEdit in the C:\Games folder. For example C:\Games\steamapps\common\Skyrim. Which is not controlled by UAC and will prevent conflicts. (recommended)</li>
                             <li>Assign the &quot;Users&quot; group &quot;Full Control&quot; of the Fallout 3 folder in UAC, which will prevent UAC from causing problems.</li>
                         </ol>
                         <p>Any of the above options will work, though it is probably a better option to install Fallout3 and FO3Edit into C:\Games\Fallout3 directory and avoid the Program Files directory all-together. That leaves your system secure and averts the UAC problem for Fallout3.</p>
