@@ -34,7 +34,7 @@ title: Tome of xEdit
                     <li><a href="#s_2-2-1">2.2.1 Downloading xEdit from the Nexus</a></li>
                     <li><a href="#s_2-2-2">2.2.2 DirectX and Requirements</a></li>
                     <li><a href="#s_2-2-3">2.2.3 Windows Vista and UAC Security</a></li>
-                    <li><a href="#s_2-2-4">2.2.4 Starting FO3Edit</a></li>
+                    <li><a href="#s_2-2-4">2.2.4 Starting xEdit</a></li>
                 </ul>
             </li>
             <li>
@@ -64,9 +64,9 @@ title: Tome of xEdit
             <h2 class="ctrl">2.1 Introducing xEdit</h2>
             <div class="content">
                 <p>xEdit is short for any version for example <a href="https://www.nexusmods.com/skyrimspecialedition/mods/164">SSEEdit</a>. xEdit is an advanced graphical module viewer/editor and conflict detector, with many additional functions that make it akin to a Swiss-army knife for modders and mod-authors alike. The primary function of xEdit is to help you spot conflicts between mods and resolve them, as well as to prepare your mod-list for a smooth run-time.</p>
-				<h3>Fallout3/FalloutNV</h3>
+                <h3>Fallout3/FalloutNV</h3>
                 <p>One such function is <a href="3-master-update-and-master-restore.html"><abbr title="Master Update Mode">MUM</abbr></a> which resolves some bugs with Fallout3/FalloutNV and improves mod compatibility during run-time by turning all mod files into masters (<abbr title="Elder-Scrolls Master File">ESM</abbr>) and creating the special ONAM records that allow the mod files to work together smoothly. The process of <a href="3-master-update-and-master-restore.html#s_3-4">Modding-Up</a> involves using both <a href="3-master-update-and-master-restore.html"><abbr title="Master Update Mode">MUM</abbr></a> and a Merged-Patch to create the best-possible compatibility situation.</p>
-				<h3>Any xEdit Version</h3>
+                <h3>Any xEdit Version</h3>
                 <p>For the mod author xEdit provides the capability of viewing mod files at great depth, cleaning mod files of extraneous and duplicated records, merging mods together, changing ESPs to ESMs and scanning references in mod files for reach ability, form errors and specific references. These functions are very important to mod authors in the Fallout3 environment, as they will clean the mod of un-intended changes, erroneous records and potential conflicts with other mainstream mods that players run.</p>
                 <p>Thus whether you use mods to enhance your gaming experience or create mods for others to enjoy, using xEdit is both a wise investment in time and a beneficial act for the modding community. Authors who clean and prepare their mods with xEdit will experience fewer conflict and compatibility problems once published, and Players who <a href="4-conflict-detection-and-resolution.html">de-conflict</a> and <a href="3-master-update-and-master-restore.html"><abbr title="Master Update Mode">MUM</abbr></a>ify [FO3/FNV] their load-orders will be <a href="3-master-update-and-master-restore.html#s_3-4">Modding-Up</a> [FO3/FNV], and are much less likely to experience crashes and head-aches. In general the use of xEdit can only improve the inter-operability of all mods, and this can only be a good thing.</p>
                 <p>If I have not convinced you by now to invest an evening to learn how to use xEdit, then you should be sacked and have a live Nuka-grenade stuffed down your trousers. If however you wish to do the right thing by the modding community, grab a coffee and let's get to work! xEdit is not a difficult tool to use, but it does require that your CPU (brain) be involved in the process, and that is what this tutorial is designed to teach.</p>
@@ -82,8 +82,8 @@ title: Tome of xEdit
                     <div class="content">
                         <p>xEdit works on Windows XP, Vista, Windows 7, 8, and 10.  Other platforms or Windows simulators may or may not work and are not officially supported. xEdit is available for download from Nexus, one of the most outstanding sources for Bethesda content. Downloading from the <a href="https://www.nexusmods.com/skyrim/mods/25859">TES5Edit Nexus</a>.</p>
                         <div class="p-img">
-						<img src="img/image002.jpg">
-                        <p>The following page will display from the TES5Edit Nexus site. You will need to first click on, "Files" to display the list of xEdit versions. Once loaded, check the Version number in the upper-right corner (B) to ensure you download the most current revision. Then click on that revision of xEdit in the Main Files section (C).</p>
+                            <img src="img/image002.jpg">
+                            <p>The following page will display from the TES5Edit Nexus site. You will need to first click on, "Files" to display the list of xEdit versions. Once loaded, check the Version number in the upper-right corner (B) to ensure you download the most current revision. Then click on that revision of xEdit in the Main Files section (C).</p>
                         </div>
                         <p>Once you download the program, you will need an archive extraction tool that can handle 7-Zip files (.7z), such as 7-Zip, which is available at: <a href="http://www.7-zip.org/">http://www.7-zip.org/</a></p>
                         <div class="p-img">
@@ -97,7 +97,7 @@ title: Tome of xEdit
                     </div>
                     <!--/.content-->
                     <div class="level-nav">
-						<a href="#s_2-2" class="drkbtn">Top of this Group</a>
+                        <a href="#s_2-2" class="drkbtn">Top of this Group</a>
                     </div>
                     <!--/.level-nav-->
                 </div>
@@ -113,7 +113,7 @@ title: Tome of xEdit
                     <!--/.content-->
                     <div class="level-nav">
                         <a href="#s_2-2-1" class="drkbtn">Previous Section</a>
-						<a href="#s_2-2" class="drkbtn">Top of this Group</a>
+                        <a href="#s_2-2" class="drkbtn">Top of this Group</a>
                     </div>
                     <!--/.level-nav-->
                 </div>
@@ -125,32 +125,54 @@ title: Tome of xEdit
                         <ol>
                             <li>Disable the UAC completely, but this will leave your system more vulnerable. (not recommended)</li>
                             <li>Install your Bethesda game and xEdit in the C:\Games folder. For example C:\Games\steamapps\common\Skyrim. Which is not controlled by UAC and will prevent conflicts. (recommended)</li>
-                            <li>Assign the &quot;Users&quot; group &quot;Full Control&quot; of the Fallout 3 folder in UAC, which will prevent UAC from causing problems.</li>
+                            <li>Assign the &quot;Users&quot; group &quot;Full Control&quot; of the C:\Games folder (and subfolders) in UAC, which will prevent UAC from causing problems.</li>
                         </ol>
-                        <p>Any of the above options will work, though it is probably a better option to install Fallout3 and FO3Edit into C:\Games\Fallout3 directory and avoid the Program Files directory all-together. That leaves your system secure and averts the UAC problem for Fallout3.</p>
-                        <p>If you are unable to get past the UAC restrictions, post the details of the problem to the Fallout3 GECK forum for additional assistance. If all went well with the install, you should be able to successfully run FO3Edit.</p>
+                        <p>Any of the above options will work, though it is probably a better option to install your Bethesda game and xEdit into C:\Games directory and avoid the Program Files directory all-together. That leaves your system secure and averts the UAC problem for Bethesda fames.</p>
+                        <p>If you are unable to get past the UAC restrictions, you may want to look for forums that people frequent for additional assistance with Windows. If all went well with the install, you should be able to successfully run xEdit.</p>
                     </div>
                     <!--/.content-->
                     <div class="level-nav">
-                        <a href="#s_2-2-2" class="up">Previous Section</a><a href="#s_2-2" class="top">Top of this Group</a>
+                        <a href="#s_2-2-2" class="drkbtn">Previous Section</a>
+                        <a href="#s_2-2" class="drkbtn">Top of this Group</a>
                     </div>
                     <!--/.level-nav-->
                 </div>
                 <!--/.level-3-->
                 <div class="level-3" id="s_2-2-4">
-                    <h3 class="ctrl">2.2.4 Starting FO3Edit</h3>
+                    <h3 class="ctrl">2.2.4 Starting xEdit</h3>
                     <div class="content">
-                        <p>When started it will automatically find your Fallout 3 Data directory via the system registry (not by where it was installed). If you immediately get errors indicating that FO3Edit can't find the Fallout3 files, it means you moved the files to another directory after installing FO3Edit. You need to re-install the Fallout 3 Game again and place it into whatever directory you want as part of the install process.</p>
-                        <p>If FO3Edit starts, you get a dialog to select which modules you want to load with the current selection from your Plugins.txt as default value. This order will have been set by <a href="http://www.fallout3nexus.com/downloads/file.php?id=640"><abbr title="Fallout Mod Manager">FOMM</abbr></a>, and cannot be changed in FO3Edit. If you need to change your load order, close FO3Edit and change the load-order in <abbr title="Fallout Mod Manager">FOMM</abbr>, then re-launch FO3Edit.</p>
-                        <p>Select the mods that you want to load into FO3Edit, which can be All (for conflict detection) or just one if your working on a specific mod-file. Once you have confirmed that dialog the selected modules will start loading in the background. Depending on your system it should take 30 seconds to a few minutes (!) for all modules to load. You can follow the progress in the message window. (Don't panic if it seems to freeze, it just takes time).</p>
+                        <p>When started it will automatically find your game's Data directory via the system registry (not by where it was installed). If you immediately get errors indicating that xEdit can't find the game's configuration files, it means one of two things. You moved the files to another directory or for games installed with Steam, you verified the integrity of your game cache.</p>
+                        <p>This is what the error would look like from FNVEdit.</p>
+                        <p><img src="img/error_part_1.jpg"></p>
+                        <p>After you click OK xEdit will finish loading and the messages tab will display the following.</p>
+                        <p><img src="img/error_part_2.jpg"></p>
+                        <p>If you moved the install it is recomended to move the files back to their original location or re-install the Game again. If you verified the game cache from Steam, run the game's official launcher. Below is an example of the Fallout 4 launcher.</p>
+                        <p><img src="img/Fallout-4-game-launcher.jpg"></p>
+                        <p>If xEdit starts, you get a dialog to select which modules you want to load. Fallout 3, Fallout NV, and Oblivion use the time date stamp of the files to determine load order. Skyrim, Skyrim SE, and Fallout 4 use other files maintained by your mod manager. Load order can not be changed with xEdit. If you need to change your load order, close xEdit and change the load-order, then re-launch xEdit.</p>
+                        <p>For FO3/FNV some prefer to use FOMM as a mod manager. There are several versions available.
+                        <ul>
+                            <li><a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM Q and Timeslip v0.13.21(Last update 24 Nov 2010)</abbr></a></li>
+                            <li><a href="https://www.nexusmods.com/newvegas/mods/36901"><abbr title="Fallout Mod Manager">FOMM by Q, Timeslip, and kaburke v0.13.21(Last update 24 Nov 2010)</abbr></a></li>
+                            <li><a href="https://www.nexusmods.com/newvegas/mods/54991"><abbr title="Fallout Mod Manager">FOMM by NiveusEverto v0.14.14.3(Last update 02 Jun 2018)</abbr></a></li>
+                        </ul>
+                        </p>
+                        <p>BOSS and LOOT will also sort mods if you are familiar with them.
+                        <ul>
+                            <li><a href="https://github.com/boss-developers/boss/releases/tag/v2.3.2">BOSS v2.3.2 by  deathssoul (latest version)</a></li>
+                            <li><a href="https://github.com/boss-developers/boss/releases/tag/v2.3.2">BOSS v2.3.0 by  WrinklyNinja (last version by this author)</a></li>
+                            <li><a href="https://github.com/boss-developers/boss/releases/tag/v2.3.2">LOOT v0.13.1 by  WrinklyNinja</a></li>
+                        </ul>
+                        </p>
+                        <p class="img"><img  src="img/module_select.jpg"></p>
+                        <p>Select the mods that you want to load into xEdit, which can be all (for conflict detection) or just one if your working on a specific mod-file. Once you have confirmed that dialog the selected modules will start loading in the background. The first time you run xEdit, depending on your system, it will take several minutes to load while it creates a cache of important data. xEdit subsequently loads much faster after building the cache.</p>
                         <div class="p-img">
-                            <p class="img"><img  height="494" src="img/image006.jpg" width="547"></p>
-                            <p>The tree view on the left side now shows all active modules in their correct load order. By navigating that tree view you can look at every single record in any of your modules. An example of a successful launch of FO3Edit is shown below, though you may also see additional error information if errors were found during start-up.</p>
+                            <p class="img"><img  src="img/image006.jpg"></p>
+                            <p>The navagation treeview on the left side now shows all active modules in their correct load order. By navigating that tree view you can look at every single record in any of your modules. An example of a successful launch of xEdit is shown, though you may also see additional error information if errors were found during start-up.</p>
                         </div>
                     </div>
                     <!--/.content-->
                     <div class="level-nav">
-                        <a href="#s_2-2-3" class="up">Previous Section</a><a href="#s_2-2" class="top">Top of this Group</a>
+                        <a href="#s_2-2-3" class="drkbtn">Previous Section</a><a href="#s_2-2" class="drkbtn">Top of this Group</a>
                     </div>
                     <!--/.level-nav-->
                 </div>
@@ -158,7 +180,7 @@ title: Tome of xEdit
             </div>
             <!--/.content-->
             <div class="level-nav">
-                <a href="#s_2-1" class="up">Previous Section</a>
+                <a href="#s_2-1" class="drkbtn">Previous Section</a>
             </div>
             <!--/.level-nav-->
         </div>
@@ -373,4 +395,3 @@ title: Tome of xEdit
     </div>
     <!--/.section-nav-->
 </section>
-
