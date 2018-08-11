@@ -54,8 +54,8 @@ a {
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
 
   &:hover {
-    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
     background-color: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.3);
   }
@@ -80,6 +80,50 @@ a {
     font-size: 0.9rem;
 
     + .btn {
+      margin-top: 1rem;
+      margin-left: 0;
+    }
+  }
+}
+
+.drkbtn {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 1.0);
+  background-color: rgba(23, 130, 130, 0.9);
+  border-color: rgba(23, 130, 130, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 0.3rem;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+
+  &:hover {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(34, 195, 195, 0.7);
+    border-color: rgba(255, 255, 255, 0.3)
+  }
+
+  + .drkbtn {
+    margin-left: 1rem;
+  }
+
+  @include large {
+    padding: 0.75rem 1rem;
+  }
+
+  @include medium {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  @include small {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+
+    + .drkbtn {
       margin-top: 1rem;
       margin-left: 0;
     }
