@@ -42,7 +42,7 @@ title: Tome of xEdit
                 <a href="#s_2-3">2.3 Tour of User Interface</a>
                 <ul class="third">
                     <li><a href="#s_2-3-1">2.3.1 Master/Plug-in Selection View"</a></li>
-                    <li><a href="#s_2-3-2">2.3.2 Left-Side Panel</a></li>
+                    <li><a href="#s_2-3-2">2.3.2 Navagation Treeview</a></li>
                     <li><a href="#s_2-3-3">2.3.3 Main Context Menu</a></li>
                     <li><a href="#s_2-3-4">2.3.4 Right-Side Information Tab</a></li>
                     <li><a href="#s_2-3-5">2.3.5 Right-Side Messages Tab</a></li>
@@ -143,13 +143,14 @@ title: Tome of xEdit
                     <h3 class="ctrl">2.2.4 Starting xEdit</h3>
                     <div class="content">
                         <p>When xEdit starts, you get a dialog to select which modules you want to load. Fallout 3, Fallout NV, and Oblivion use the time date stamp of the files to determine load order. Skyrim, Skyrim SE, and Fallout 4 use other files maintained by your mod manager. Load order can not be changed with xEdit. If you need to change your load order, close xEdit and change the load-order, then re-launch xEdit.</p>
-                        <p>For FO3/FNV some prefer to use FOMM as a mod manager. There are several versions available.
+						<div class="level-4" id="links_fomm">
+                        For FO3/FNV some prefer to use FOMM as a mod manager. There are several versions available.
                         <ul>
                             <li><a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM Q and Timeslip v0.13.21(Last update 24 Nov 2010)</abbr></a></li>
                             <li><a href="https://www.nexusmods.com/newvegas/mods/36901"><abbr title="Fallout Mod Manager">FOMM by Q, Timeslip, and kaburke v0.13.21(Last update 24 Nov 2010)</abbr></a></li>
                             <li><a href="https://www.nexusmods.com/newvegas/mods/54991"><abbr title="Fallout Mod Manager">FOMM by NiveusEverto v0.14.14.3(Last update 02 Jun 2018)</abbr></a></li>
                         </ul>
-                        </p>
+                        </div>
                         <p>BOSS and LOOT will also sort mods if you are familiar with them.
                         <ul>
                             <li><a href="https://github.com/boss-developers/boss/releases/tag/v2.3.2">BOSS v2.3.2 by  deathssoul (latest version)</a></li>
@@ -200,15 +201,15 @@ title: Tome of xEdit
         <div class="level-2" id="s_2-3">
             <h2 class="ctrl">2.3 Tour of User Interface</h2>
             <div class="content">
-                <p>This section of the manual will take you on a brief tour of <a href="http://www.fallout3nexus.com/downloads/file.php?id=637">FO3Edit</a> to introduce you to the different views and screens that you will be working with. This tour is designed for beginner-level users, and does not discuss the functionality of the views at any depth just yet. The tour is recommended for all levels of user, especially if you have not used FO3Edit within the last several months as there have been many updates.</p>
+                <p>This section of the manual will take you on a brief tour of FO3Edit to introduce you to the different views and screens that you will be working with. This tour is designed for beginner-level users, and does not discuss the functionality of the views at any depth just yet. The tour is recommended for all levels of user, especially if you have not used FO3Edit within the last several months as there have been many updates.</p>
                 <div class="level-3" id="s_2-3-1">
-                    <h3 class="ctrl">2.3.1 Master/Plug-in Selection View</h3>
+                    <h3 class="ctrl">2.3.1 Master/Plug-in Selection View [FO3/FNV]</h3>
                     <div class="content">
                         <div class="p-img">
                             <p class="img"><img  height="474" src="img/image008.jpg" width="532"></p>
                             <p>The Master/Plug-in Selection view is presented to you when FO3Edit is first launched, and allows you to select/un-select the mods that you want FO3Edit to load. You can also Right-Click in open space to access more options, such as "Select All" or "Select None".</p>
                         </div>
-                        <p>To change the load-order of mods, close FO3Edit and open <a href="http://www.fallout3nexus.com/downloads/file.php?id=640"><abbr title="Fallout Mod Manager">FOMM</abbr></a>. Change the load-order as desired, close <abbr title="Fallout Mod Manager">FOMM</abbr> and re-open FO3Edit.</p>
+                        <p>To change the load-order of mods, close FO3Edit and open <a href="#s_2-2-4"><abbr title="Fallout Mod Manager">FOMM</abbr></a>. Change the load-order as desired, close <abbr title="Fallout Mod Manager">FOMM</abbr> and re-open FO3Edit.</p>
                         <p>There is an additional option you can use to quickly load a single mod &#8211; simply Double-Click on a mod file in the list. Double-clicking a mod will automatically un-select all other mod files, and will load the selected mod file. It's a short-cut to loading single mods.</p>
                     </div>
                     <!--/.content-->
@@ -219,7 +220,7 @@ title: Tome of xEdit
                 </div>
                 <!--/.level-3-->
                 <div class="level-3" id="s_2-3-2">
-                    <h3 class="ctrl">2.3.2 Left-Side Panel</h3>
+                    <h3 class="ctrl">2.3.2 Navagation Treeview</h3>
                     <div class="content">
                         <div class="p-img">
                             <p class="img"><img  height="561" src="img/image010.jpg" width="576"></p>
@@ -239,7 +240,7 @@ title: Tome of xEdit
                     <div class="content">
                         <div class="p-img">
                             <p class="img"><img  height="584" src="img/image012.jpg" width="697"></p>
-                            <p>The main context menu is accessed by Right-clicking in the <a href="2-overview.html#s_2-3-2">Left-Side Panel</a>, and acts as the main navigation and function selection point for FO3Edit. As such, much time and explanation is provided on how to utilize this menu, as well as a Reference Chart (shown below) to help illustrate what each function does.</p>
+                            <p>The main context menu is accessed by Right-clicking in the <a href="2-overview.html#s_2-3-2">Navagation Treeview</a>, and acts as the main navigation and function selection point for FO3Edit. As such, much time and explanation is provided on how to utilize this menu, as well as a Reference Chart (shown below) to help illustrate what each function does.</p>
                         </div>
                         <p>There are some functions such as, "Generate Object LOD" and the "Set VWD for all REFR&#8230;" options that only work on Oblivion, and should not be used with Fallout3. With some functions you will be presented with additional options, while with others such as "Check for Errors", the output is sent to the <a href="#s_2-3-5">Messages Tab</a> (or other tabs with other functions).</p>
                         <p>Each of these functions is described in-detail within the tutorial, and Quick Links to those detailed sections can be found in the list below for easy-access. Additional description is provided below for each function on the main context menu.</p>
@@ -327,7 +328,7 @@ title: Tome of xEdit
                     <div class="content">
                         <div class="p-img">
                             <p class="img"><img  height="527" src="img/image020.jpg" width="576"></p>
-                            <p>The View Tab is used to display the details about any record that you click-select in the Left-Side Panel. The View Tab is where most of the work of conflict resolution takes place. Each mod that has a copy/version of a selected record is shown in the view with its own Column. This way, all of the mods that have a version of the same record can be shown side-by-side to more easily navigated and spot conflicts. The screenshot below high-lights details about the View Tab.</p>
+                            <p>The View Tab is used to display the details about any record that you click-select in the Navagation Treeview. The View Tab is where most of the work of conflict resolution takes place. Each mod that has a copy/version of a selected record is shown in the view with its own Column. This way, all of the mods that have a version of the same record can be shown side-by-side to more easily navigated and spot conflicts. The screenshot below high-lights details about the View Tab.</p>
                         </div>
                         <p>We discuss this view at depth in the chapter on <a href="4-conflict-detection-and-resolution.html">Conflict Detection and Resolution</a>, but for now it's only important to understand its high-level function and how to navigate to it. As in the Referenced-By Tab, within the View Tab you can Right-click on any reference to receive an additional context menu. You can edit and remove any entry, as well as tell FO3Edit what kind of view your looking for; with or without de-conflicted rows (rows without a conflict of any kind).</p>
                     </div>
