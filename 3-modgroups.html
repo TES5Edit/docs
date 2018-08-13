@@ -1,0 +1,120 @@
+---
+layout: default
+title: Tome of xEdit
+---
+<head>
+    <title>Miax's Tome of FO3Edit</title>
+</head>
+<div class="toc">
+    <div class="global">
+        <h2>Main Table of Contents</h2>
+        <ul class="first">
+            <li><a href="index.html">1. Introduction</a></li>
+            <li><a href="2-overview.html">2. Overview</a></li>
+            <li><a href="3-modgroups.html">3. Modgroups</a></li>
+            <li><a href="4-conflict-detection-and-resolution.html">4. Conflict Detection and Resolution</a></li>
+            <li><a href="5-mod-cleaning-and-error-checking.html">5. Mod Cleaning and Error Checking</a></li>
+            <li><a href="6-managing-mod-files.html">6. Managing Mod Files</a></li>
+            <li><a href="7-mod-utilities.html">7. Mod Utilities</a></li>
+            <li><a href="8-fo3edit-faq.html">8. FO3Edit FAQ</a></li>
+            <li><a href="9-appendix.html">9. Appendix</a></li>
+            <li><a href="10-cheat-sheets-and-quick-reference-charts.html">10. Cheat Sheets and Quick Reference Charts</a></li>
+            <li><a href="11-Scripting-Functions.html">11. Scripting Functions</a></li>
+            <li><a href="12-Frequently-Asked-Questions.html">12. Frequently Asked Questions</a></li>
+        </ul>
+    </div>
+    <!--/.global-->
+    <div class="local">
+        <h3>Section Table of Contents</h3>
+        <ul class="second">
+            <li><a href="#s_3-1">3.1 Overview</a></li>
+            <li><a href="#s_3-2">3.2 Built In Editor</a></li>
+            <li><a href="#s_3-3">3.3 Modgroup Syntax</a></li>
+            <li><a href="#s_3-4">3.4 Example Modgroups"</a></li>
+        </ul>
+    </div>
+    <!--/.local-->
+</div>
+<!--/.toc-->
+<section id="_Toc237480249">
+    <h1>3. Modgroups</h1>
+    <div class="content clearfix">
+        <div class="level-2" id="s_3-1">
+            <h2 class="ctrl">3.1 Overview</h2>
+            <p>For a modgroup the be activateable, the order of the mods in the load order and modgroup must match.</p>
+            <p>If a modgroup is active, what it essentially means is that for each record that is contained in more than one mod of the modgroup, only the last (in load order) is visible. That's it. The invisible record versions simply don't participate in the normal conflict detection mechanisms at all.</p>
+            <p>A modgroup does not perform any merge or make any changes to any mod. All it does it hide away version of records that you've stated (by defining the modgroup) that you've already checked them against each other and the hidden record is simply irrelevant.</p>
+            <div class="content">
+            </div>
+            <!--/.content-->
+        </div>
+        <!--/.level-2-->
+        <div class="level-2" id="s_3-2">
+            <h2 class="ctrl">3.2 Built In Editor</h2>
+            <div class="content">
+                <p class="img"><img  src="img/Create-modgroup.jpg"></p>
+                <p class="img"><img  src="img/EditModgroup.jpg"></p>
+                <p class="img"><img  src="img/SaveModgroup.jpg"></p>
+                <p class="img"><img  src="img/ModgroupError.jpg"></p>
+            </div>
+            <!--/.content-->
+            <div class="level-nav">
+                <a href="#s_3-1" class="drkbtn">Previous Section</a>
+            </div>
+            <!--/.level-nav-->
+        </div>
+        <!--/.level-2-->
+        <div class="level-2" id="s_3-3">
+            <h2 class="ctrl">3.3 Modgroup Syntax</h2>
+            <div class="content">
+                <p>[xEdit EXE Name].modgroups i.e. SSEEdit.modgroups for SSEEdit. Save in the same folder as the EXE.<br>
+                    [Plugin Name].modgroups i.e. for Someplugin.esp, Someplugin.modgroups. Save the file in your Data folder instead.
+                </p>
+                <p>Prefixes are processed from left to right. #@Plugin.esp is the same -Plugin.esp. They combine "negatively" not positively.</p>
+                <ul class="first">
+                    <li>without prefix file is both a target and a source</li>
+                    <li>+ The file is optional</li>
+                    <li>- The file is neither a target nor a source.</li>
+                    <li>} Ignore load order completely</li>
+                    <li>{ Ignore load order among a consecutive block of mods marked with this.</li>
+                    <li>@ File is not a source</li>
+                    <li># File is not a target</li>
+                    <li>! File is forbidden. If the listed module is active, the modgroup is invalid.</li>
+                    <li>&lt;filename&gt;:CRC32</li>
+                </ul>
+                <p>If a module is followed by a list of one or more CRC values, the modgroup is only available if the module has one of the listed CRCs. Source means that if a record in this mod is found, then it will hide the versions of the same record from all mods listed above it that are targets.</p>
+            </div>
+            <!--/.content-->
+            <div class="level-nav">
+                <a href="#s_3-2" class="drkbtn">Previous Section</a>
+            </div>
+            <!--/.level-nav-->
+        </div>
+        <!--/.level-2-->
+        <div class="level-2" id="s_3-4">
+            <h2 class="ctrl">3.4 Example Modgroups</h2>
+            <div class="content">
+                <p>File: Bells of Skyrim.modgroups
+                <pre class="modgroupsyn">
+[Bells of Skyrim]
+@Update.esm
++@Unofficial Skyrim Special Edition Patch.esp
+#Bells of Skyrim.esp
+			    </pre>
+                </p>
+            </div>
+            <!--/.content-->
+            <div class="level-nav">
+                <a href="#s_3-3" class="drkbtn">Previous Section</a>
+            </div>
+            <!--/.level-nav-->
+        </div>
+        <!--/.level-2-->
+    </div>
+    <!--/.content-->
+    <div class="section-nav">
+        <a href="2-overview.html" class="drkbtn">&laquo; Previous Page</a>
+        <a href="4-conflict-detection-and-resolution.html" class="drkbtn">Next Page &raquo;</a>
+    </div>
+    <!--/.section-nav-->
+</section>
