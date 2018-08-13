@@ -79,7 +79,7 @@ title: Tome of xEdit
                     <li><a href="#s_8-4-4">8.4.4 "Is there a "Goto" option in the context menu for pulling-up a FormID?"</a></li>
                     <li><a href="#s_8-4-5">8.4.5 "Can you help me with the Optcodes for IsInCombat?"</a></li>
                     <li><a href="#s_8-4-6">8.4.6 "During the loading process, I notice some of the mods show Errors"</a></li>
-                    <li><a href="#s_8-4-7">8.4.7 "Is there a way to look up the records opt-codes?"</a></li>
+                    <li><a href="#s_8-4-7">8.4.7 "Is there a way to look up the records op-codes?"</a></li>
                     <li><a href="#s_8-4-8">8.4.8 "is "HasPerk" available in the CTDAs?"</a></li>
                     <li><a href="#s_8-4-9">8.4.9 "Can we edit text in the expanded windows?"</a></li>
                     <li><a href="#s_8-4-10">8.4.10 "Where can I learn more about FLST Lists?"</a></li>
@@ -245,11 +245,10 @@ title: Tome of xEdit
                 <div class="level-3" id="s_8-2-10">
                     <h3 class="ctrl">8.2.10 "I get an error, &#8216;Record XXXX is not contained in a group'? "</h3>
                     <div class="content">
-                        <p><strong>Question:</strong> What should I do when I get an error during loading FO3Edit like this:</p>
+                        <p><strong>Question:</strong> What should I do when I get an error during loading xEdit like this:</p>
                         <p>&quot;Record fBloodSplatterFadeStart [GMST:080304D5] is not contained in a group.&quot; and I had to disable it to get the master update to complete. Is this something I've done wrong with load order or some sort of conflict, or something that needs to be reported to the mod author to correct in the esp?</p>
                         <p><strong>Answer:</strong> As I said before, there are still many mods out there that have been hacked together in <a href="http://www.fallout3nexus.com/downloads/file.php?id=640"><abbr title="Fallout Mod Manager">FOMM</abbr></a> and are not actually structurally valid Fallout 3 module files.</p>
-                        <p>Important with such mods: Do NOT just disable it, run <a href="3-master-update-and-master-restore.html">FO3MasterUpdate</a> and then ENABLE it again. <a href="3-master-update-and-master-restore.html">FO3MasterUpdate</a> will only work correctly if it has processed ALL the modules you load into your game. This is an all or nothing deal.</p>
-                        <p>Any module that gives trouble during loading or saving in FO3Edit/ <a href="3-master-update-and-master-restore.html">FO3MasterUpdate</a> is BROKEN anyway and should never be loaded into any game, no matter if it's as Plug-in into pre-1.5 or ESMified into 1.5.</p>
+                        <p>Any module that gives trouble during loading or saving in xEdit is BROKEN anyway and should never be loaded into any game.</p>
                     </div>
                     <!--/.content-->
                     <div class="level-nav">
@@ -262,7 +261,7 @@ title: Tome of xEdit
                     <h3 class="ctrl">8.2.11 "What's with all these backup files building-up in my Data directory? "</h3>
                     <div class="content">
                         <p><strong>Question:</strong> I've been getting a lot of 0/1kb insertmodnamehere.esp save/backup files in my data folder. What exactly are these?</p>
-                        <p><strong>Answer:</strong> When FO3Edit/ <a href="3-master-update-and-master-restore.html">FO3MasterUpdate</a> saves a file, it first writes a new file with .esp/m.save.&lt;datetime&gt; as extension. When you then close the program (and in case of <a href="3-master-update-and-master-restore.html">FO3MasterUpdate</a>, only if there weren't any errors when saving any of the files) then the existing original module files are renamed to .esp/m.backup.&lt;datetime&gt; and the newest .esp/m.save.&lt;datetime&gt; file for each module is renamed to .esp/m. These can be deleted without worry of harming your game or mods, and are purely for backup purposes.</p>
+                        <p><strong>Answer:</strong> When xEdit saves a file, it first writes a new file with .esp/m.save.&lt;datetime&gt; as extension. When you then close the program then the existing original module files are renamed to .esp/m.backup.&lt;datetime&gt; and the newest .esp/m.save.&lt;datetime&gt; file for each module is renamed to .esp/m. These can be deleted without worry of harming your game or mods, and are purely for backup purposes.</p>
                     </div>
                     <!--/.content-->
                     <div class="level-nav">
@@ -687,9 +686,9 @@ title: Tome of xEdit
                 </div>
                 <!--/.level-3-->
                 <div class="level-3" id="s_8-4-7">
-                    <h3 class="ctrl">8.4.7 " Is there a way to look up the records opt-codes?"</h3>
+                    <h3 class="ctrl">8.4.7 " Is there a way to look up the records op-codes?"</h3>
                     <div class="content">
-                        <p><strong>Question:</strong> Is there a way to look up the records opt-codes?</p>
+                        <p><strong>Question:</strong> Is there a way to look up the records op-codes?</p>
                         <p><strong>Answer:</strong> The numbers there are the opcodes for the functions used. The full list of functions is here: http://fose.silverlock.org/Fallout3Commands.html.</p>
                     </div>
                     <!--/.content-->
@@ -755,8 +754,8 @@ title: Tome of xEdit
                     <h3 class="ctrl">8.4.12 "I have a lot of house-mods that are conflicting, how do I fix this? "</h3>
                     <div class="content">
                         <p><strong>Question:</strong> My load list is smaller than most here, but I have a large selection of houses that were causing problems, as well as a few others like the vertibird that would crash if you left it and walked away. How do I fix this?</p>
-                        <p><strong>Answer:</strong> First, check if any of your active modules are NOT masters. You can see that easily in <a href="http://www.fallout3nexus.com/downloads/file.php?id=640"><abbr title="Fallout Mod Manager">FOMM</abbr></a> if any of them are not shown in bold. If yes, run FO3MasterUpdate again and see if the problem if gone.</p>
-                        <p>If not, determine the FormID of the problematic character(s). Then start FO3Edit and don't make any changes to the to-be-loaded modules. Now put the FormID into the FormID search box (above the navigation tree view) and hit enter. Check if that record is touched by any of you installed mods. Also check the NPC record that the ACHR is based on (you can hold down CTRL and then click on the NAME field to jump to that record).</p>
+                        <p><strong>Answer:</strong> First, check if any of your active modules are NOT masters. You can see that easily in <a href="http://www.fallout3nexus.com/downloads/file.php?id=640"><abbr title="Fallout Mod Manager">FOMM</abbr></a> if any of them are not shown in bold. If yes, run xEdit and you may need to make a manual patch.</p>
+                        <p>If not, determine the FormID of the problematic character(s). Then start xEdit and don't make any changes to the to-be-loaded modules. Now put the FormID into the FormID search box (above the navigation tree view) and hit enter. Check if that record is touched by any of you installed mods. Also check the NPC record that the ACHR is based on (you can hold down CTRL and then click on the NAME field to jump to that record).</p>
                     </div>
                     <!--/.content-->
                     <div class="level-nav">
