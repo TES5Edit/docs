@@ -26,10 +26,11 @@ title: Tome of xEdit
     <div class="local">
         <h3>Section Table of Contents</h3>
         <ul class="second">
-            <li><a href="#s_3-1">3.1 Overview</a></li>
-            <li><a href="#s_3-2">3.2 Built In Editor</a></li>
-            <li><a href="#s_3-3">3.3 Modgroup Syntax</a></li>
-            <li><a href="#s_3-4">3.4 Example Modgroups"</a></li>
+            <li><a href="#s_3-1">3.1 What are Mod Groups?</a></li>
+            <li><a href="#s_3-2">3.2 How do I choose a Mod Group?</a></li>
+            <li><a href="#s_3-3">3.3 Built In Editor</a></li>
+            <li><a href="#s_3-4">3.4 Modgroup Syntax</a></li>
+            <li><a href="#s_3-5">3.5 Example Modgroups</a></li>
         </ul>
     </div>
     <!--/.local-->
@@ -39,22 +40,40 @@ title: Tome of xEdit
     <h1>3. Modgroups</h1>
     <div class="content clearfix">
         <div class="level-2" id="s_3-1">
-            <h2 class="ctrl">3.1 Overview</h2>
-            <p>For a modgroup the be activateable, the order of the mods in the load order and modgroup must match.</p>
-            <p>If a modgroup is active, what it essentially means is that for each record that is contained in more than one mod of the modgroup, only the last (in load order) is visible. That's it. The invisible record versions simply don't participate in the normal conflict detection mechanisms at all.</p>
-            <p>A modgroup does not perform any merge or make any changes to any mod. All it does it hide away version of records that you've stated (by defining the modgroup) that you've already checked them against each other and the hidden record is simply irrelevant.</p>
+            <h2 class="ctrl">3.1 What are Mod Groups?</h2>
             <div class="content">
+                <h3 class="ctrl">The answer to the "I installed FCOM and everything is red! What do I do now?" question.</h3>
+                <p>There are groups of mods that, while raising heaps of conflict warnings, should be considered as
+                    non-conflicting. e.g. if you've installed FCOM then you are not interested in seeing conflicts between the mods
+                    that make up FCOM. The solution for this is to define a mod group. Mod groups are stored in a TES4View.modgroups
+                    file in the same directory as TES4View.exe. There already is such a file included with a few example mod groups
+                    defined. This is just an example and not meant as a guarantee that these specific mod groups are "clean" and
+                    conflicts can safely be ignored.
+                </p>
+                <p>Not all mod groups defined in that file will necessarily show up in the selection list. Mod groups for which
+                    less then 2 plugins are currently active are filtered. If the load order of plugins doesn't match the order in
+                    the mod group it is also filtered.
+                </p>
+                <h3 class="ctrl">What's the effect of having a mod group active?</h3>
+                <p>When the detail view for a record is generated and multiple files of the same mod group modify this record, then
+                    only the newest of the files in that modgroup will be shown. So instead of seeing 5 different files with
+                    numerous conflicts you are only seeing the newest file in that mod group. This also affects conflict
+                    classification.
+                </p>
+                <p>It's worth pointing out here that if a record is overriden by both plugins in a mod group and other plugins that
+                    normal conflict detection will still work perfectly.
+                </p>
+                <p>Basically this system can be used to reduce a lot of noise from the conflict reports.</p>
             </div>
             <!--/.content-->
         </div>
         <!--/.level-2-->
         <div class="level-2" id="s_3-2">
-            <h2 class="ctrl">3.2 Built In Editor</h2>
+            <h2 class="ctrl">3.2 How do I choose a Mod Group?</h2>
             <div class="content">
-                <p class="img"><img  src="img/Create-modgroup.jpg"></p>
-                <p class="img"><img  src="img/EditModgroup.jpg"></p>
-                <p class="img"><img  src="img/SaveModgroup.jpg"></p>
-                <p class="img"><img  src="img/ModgroupError.jpg"></p>
+                <p>For a modgroup the be activateable, the order of the mods in the load order and modgroup must match.</p>
+                <p>If a modgroup is active, what it essentially means is that for each record that is contained in more than one mod of the modgroup, only the last (in load order) is visible. That's it. The invisible record versions simply don't participate in the normal conflict detection mechanisms at all.</p>
+                <p>A modgroup does not perform any merge or make any changes to any mod. All it does it hide away version of records that you've stated (by defining the modgroup) that you've already checked them against each other and the hidden record is simply irrelevant.</p>
             </div>
             <!--/.content-->
             <div class="level-nav">
@@ -64,7 +83,22 @@ title: Tome of xEdit
         </div>
         <!--/.level-2-->
         <div class="level-2" id="s_3-3">
-            <h2 class="ctrl">3.3 Modgroup Syntax</h2>
+            <h2 class="ctrl">3.3 Built In Editor</h2>
+            <div class="content">
+                <p class="img"><img  src="img/Create-modgroup.jpg"></p>
+                <p class="img"><img  src="img/EditModgroup.jpg"></p>
+                <p class="img"><img  src="img/SaveModgroup.jpg"></p>
+                <p class="img"><img  src="img/ModgroupError.jpg"></p>
+            </div>
+            <!--/.content-->
+            <div class="level-nav">
+                <a href="#s_3-2" class="drkbtn">Previous Section</a>
+            </div>
+            <!--/.level-nav-->
+        </div>
+        <!--/.level-2-->
+        <div class="level-2" id="s_3-4">
+            <h2 class="ctrl">3.4 Modgroup Syntax</h2>
             <div class="content">
                 <p>[xEdit EXE Name].modgroups i.e. SSEEdit.modgroups for SSEEdit. Save in the same folder as the EXE.<br>
                     [Plugin Name].modgroups i.e. for Someplugin.esp, Someplugin.modgroups. Save the file in your Data folder instead.
@@ -85,13 +119,13 @@ title: Tome of xEdit
             </div>
             <!--/.content-->
             <div class="level-nav">
-                <a href="#s_3-2" class="drkbtn">Previous Section</a>
+                <a href="#s_3-3" class="drkbtn">Previous Section</a>
             </div>
             <!--/.level-nav-->
         </div>
         <!--/.level-2-->
-        <div class="level-2" id="s_3-4">
-            <h2 class="ctrl">3.4 Example Modgroups</h2>
+        <div class="level-2" id="s_3-5">
+            <h2 class="ctrl">3.5 Example Modgroups</h2>
             <div class="content">
                 <p>File: Bells of Skyrim.modgroups
                 <pre class="modgroupsyn">
@@ -104,7 +138,7 @@ title: Tome of xEdit
             </div>
             <!--/.content-->
             <div class="level-nav">
-                <a href="#s_3-3" class="drkbtn">Previous Section</a>
+                <a href="#s_3-4" class="drkbtn">Previous Section</a>
             </div>
             <!--/.level-nav-->
         </div>
