@@ -25,112 +25,71 @@ title: Tome of xEdit
         </ul>
     </div>
     <!--/.global-->
-    <div id="toc" class="local">
-        <div id="toctitle">
-            <h2>Contents</h2>
-        </div>
-        <ul>
-            <li class="toclevel-1 tocsection-1">
-                <a href="#TES5Edit_Scripting"><span class="tocnumber">1</span>
-                <span class="toctext">TES5Edit Scripting</span></a>
-                <ul>
-                    <li class="toclevel-2 tocsection-2"><a href="#Description"><span
-                        class="tocnumber">1.1</span> <span class="toctext">Description</span></a></li>
-                    <li class="toclevel-2 tocsection-3"><a
-                        href="#Using_the_Delphi_IDE_to_Edit_TES5Edit_Scripts"><span
-                        class="tocnumber">1.2</span> <span class="toctext">Using the Delphi IDE to Edit TES5Edit Scripts</span></a>
-                    </li>
-                    <li class="toclevel-2 tocsection-4"><a href="#TES5Edit_Global_Variables"><span
-                        class="tocnumber">1.3</span> <span class="toctext">TES5Edit Global Variables</span></a>
-                    </li>
-                    <li class="toclevel-2 tocsection-5">
-                        <a href="#TES5Edit_Scripting_Functions"><span
-                            class="tocnumber">1.4</span> <span
-                            class="toctext">TES5Edit Scripting Functions</span></a>
-                        <ul>
-                            <li class="toclevel-3 tocsection-6"><a href="#Global_functions"><span
-                                class="tocnumber">1.4.1</span> <span class="toctext">Global functions</span></a>
-                            </li>
-                            <li class="toclevel-3 tocsection-7"><a href="#IwbElement"><span class="tocnumber">1.4.2</span>
-                                <span class="toctext">IwbElement</span></a>
-                            </li>
-                            <li class="toclevel-3 tocsection-8"><a href="#IwbContainer"><span class="tocnumber">1.4.3</span>
-                                <span class="toctext">IwbContainer</span></a>
-                            </li>
-                            <li class="toclevel-3 tocsection-9"><a href="#IwbFile"><span
-                                class="tocnumber">1.4.4</span> <span class="toctext">IwbFile</span></a></li>
-                            <li class="toclevel-3 tocsection-10"><a href="#IwbMainRecord"><span
-                                class="tocnumber">1.4.5</span> <span
-                                class="toctext">IwbMainRecord</span></a></li>
-                            <li class="toclevel-3 tocsection-11"><a href="#IwbGroupRecord"><span
-                                class="tocnumber">1.4.6</span> <span
-                                class="toctext">IwbGroupRecord</span></a></li>
-                            <li class="toclevel-3 tocsection-12"><a href="#IwbResource"><span class="tocnumber">1.4.7</span>
-                                <span class="toctext">IwbResource</span></a>
-                            </li>
-                            <li class="toclevel-3 tocsection-13">
-                                <a href="#Misc_functions"><span
-                                    class="tocnumber">1.4.8</span> <span
-                                    class="toctext">Misc functions</span></a>
-                                <ul>
-                                    <li class="toclevel-4 tocsection-14"><a href="#NIF_functions"><span
-                                        class="tocnumber">1.4.8.1</span> <span
-                                        class="toctext">NIF functions</span></a></li>
-                                    <li class="toclevel-4 tocsection-15"><a href="#DDS_functions"><span
-                                        class="tocnumber">1.4.8.2</span> <span
-                                        class="toctext">DDS functions</span></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="toclevel-2 tocsection-16">
-                        <a href="#Script_Structure"><span
-                            class="tocnumber">1.5</span> <span class="toctext">Script Structure</span></a>
-                        <ul>
-                            <li class="toclevel-3 tocsection-17"><a href="#Base_Script_Functions"><span
-                                class="tocnumber">1.5.1</span> <span
-                                class="toctext">Base Script Functions</span></a></li>
-                            <li class="toclevel-3 tocsection-18"><a href="#Hotkeys"><span class="tocnumber">1.5.2</span>
-                                <span class="toctext">Hotkeys</span></a>
-                            </li>
-                            <li class="toclevel-3 tocsection-19"><a href="#Script_References"><span
-                                class="tocnumber">1.5.3</span> <span
-                                class="toctext">Script References</span></a></li>
-                            <li class="toclevel-3 tocsection-20"><a href="#Script_User_Interface"><span
-                                class="tocnumber">1.5.4</span> <span
-                                class="toctext">Script User Interface</span></a></li>
-                        </ul>
-                    </li>
-                    <li class="toclevel-2 tocsection-21"><a href="#Simple_Script_Sample"><span
-                        class="tocnumber">1.6</span> <span class="toctext">Simple Script Sample</span></a>
-                    </li>
-                    <li class="toclevel-2 tocsection-22">
-                        <a href="#Pascal_implementation"><span
-                            class="tocnumber">1.7</span> <span class="toctext">Pascal implementation</span></a>
-                        <ul>
-                            <li class="toclevel-3 tocsection-23"><a
-                                href="#xEdit_extensions_to_JvInterpreter"><span
-                                class="tocnumber">1.7.1</span> <span class="toctext">xEdit extensions to JvInterpreter</span></a>
-                            </li>
-                            <li class="toclevel-3 tocsection-24"><a href="#Unsupported_language_features"><span
-                                class="tocnumber">1.7.2</span> <span class="toctext">Unsupported language features</span></a>
-                            </li>
-                            <li class="toclevel-3 tocsection-25"><a href="#Unsupported_operators"><span
-                                class="tocnumber">1.7.3</span> <span
-                                class="toctext">Unsupported operators</span></a></li>
-                            <li class="toclevel-3 tocsection-26"><a href="#Unsupported_keywords"><span
-                                class="tocnumber">1.7.4</span> <span
-                                class="toctext">Unsupported keywords</span></a></li>
-                            <li class="toclevel-3 tocsection-27"><a href="#Unsupported_classes_and_tools"><span
-                                class="tocnumber">1.7.5</span> <span class="toctext">Unsupported classes and tools</span></a>
-                            </li>
-                        </ul>
-                    </li>
+    <div class="local">
+        <h3>Contents</h3>
+        <ul class="second">
+            <li><a href="#Description">11.1 Description</a></li>
+            <li><a href="#Using_the_Delphi_IDE_to_Edit_TES5Edit_Scripts">11.2 Using the Delphi IDE to Edit TES5Edit Scripts</a></li>
+            <li><a href="#TES5Edit_Global_Variables">11.3 TES5Edit Global Variables</a></li>
+            <li><a href="#TES5Edit_Scripting_Functions">11.4 TES5Edit Scripting Functions</a></li>
+            <ul class="third">
+                <li><a href="#Global_functions">11.4.1 Global functions</a></li>
+                <li><a href="#IwbElement">11.4.2 IwbElement</a></li>
+                <li><a href="#IwbContainer">11.4.3 IwbContainer</a></li>
+                <li><a href="#IwbFile">11.4.4 IwbFile</a></li>
+                <li><a href="#IwbMainRecord">11.4.5 IwbMainRecord</a></li>
+                <li><a href="#IwbGroupRecord">11.4.6 IwbGroupRecord</a></li>
+                <li><a href="#IwbResource">11.4.7 IwbResource</a></li>
+                <li><a href="#Misc_functions">11.4.8 Misc functions</a></li>
+                <ul class="fourth">
+                    <li><a href="#NIF_functions">11.4.8.1 NIF functions</a></li>
+                    <li><a href="#DDS_functions">11.4.8.2 DDS functions</a></li>
                 </ul>
-            </li>
-            <li class="toclevel-1 tocsection-28"><a href="#Additional_TES5Edit_Resources"><span
-                class="tocnumber">2</span> <span class="toctext">Additional TES5Edit Resources</span></a>
-            </li>
+            </ul>
+        </ul>
+        <li class="toclevel-2 tocsection-16">
+            <a href="#Script_Structure"><span
+                class="tocnumber">11.5</span> <span class="toctext">Script Structure</span></a>
+            <ul>
+                <li class="toclevel-3 tocsection-17"><a href="#Base_Script_Functions"><span
+                    class="tocnumber">11.5.1</span> <span
+                    class="toctext">Base Script Functions</span></a></li>
+                <li class="toclevel-3 tocsection-18"><a href="#Hotkeys"><span class="tocnumber">11.5.2</span>
+                    <span class="toctext">Hotkeys</span></a>
+                </li>
+                <li class="toclevel-3 tocsection-19"><a href="#Script_References"><span
+                    class="tocnumber">11.5.3</span> <span
+                    class="toctext">Script References</span></a></li>
+                <li class="toclevel-3 tocsection-20"><a href="#Script_User_Interface"><span
+                    class="tocnumber">11.5.4</span> <span
+                    class="toctext">Script User Interface</span></a></li>
+            </ul>
+        </li>
+        <li class="toclevel-2 tocsection-21"><a href="#Simple_Script_Sample"><span
+            class="tocnumber">11.6</span> <span class="toctext">Simple Script Sample</span></a>
+        </li>
+        <li class="toclevel-2 tocsection-22">
+            <a href="#Pascal_implementation"><span
+                class="tocnumber">11.7</span> <span class="toctext">Pascal implementation</span></a>
+            <ul>
+                <li class="toclevel-3 tocsection-23"><a
+                    href="#xEdit_extensions_to_JvInterpreter"><span
+                    class="tocnumber">11.7.1</span> <span class="toctext">xEdit extensions to JvInterpreter</span></a>
+                </li>
+                <li class="toclevel-3 tocsection-24"><a href="#Unsupported_language_features"><span
+                    class="tocnumber">11.7.2</span> <span class="toctext">Unsupported language features</span></a>
+                </li>
+                <li class="toclevel-3 tocsection-25"><a href="#Unsupported_operators"><span
+                    class="tocnumber">11.7.3</span> <span
+                    class="toctext">Unsupported operators</span></a></li>
+                <li class="toclevel-3 tocsection-26"><a href="#Unsupported_keywords"><span
+                    class="tocnumber">11.7.4</span> <span
+                    class="toctext">Unsupported keywords</span></a></li>
+                <li class="toclevel-3 tocsection-27"><a href="#Unsupported_classes_and_tools"><span
+                    class="tocnumber">11.7.5</span> <span class="toctext">Unsupported classes and tools</span></a>
+                </li>
+            </ul>
+        </li>
         </ul>
     </div>
     <!--/.local-->
@@ -2967,4 +2926,3 @@ end.
     </div>
     <!--/.section-nav-->
 </section>
-
