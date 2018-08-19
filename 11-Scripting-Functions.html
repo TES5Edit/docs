@@ -109,12 +109,12 @@ title: Tome of xEdit
          <li>Then add/update the <code>interface</code>, <code>implementation</code>, and <code>uses</code>
             clauses to your script below. Afterwards, the top of your script file should look like this:
          </li>
-         <pre>  unit GreatScript;
+{% highlight Pascal %}  unit GreatScript;
 
   interface
   implementation
   uses xEditAPI, Classes, SysUtils, StrUtils, Windows;
-</pre>
+{% endhighlight %}
          <li>You can add additional Delphi units to the <code>uses</code> clause needed, for example <code>IniFiles</code>
             if script works with them.
          </li>
@@ -127,7 +127,8 @@ title: Tome of xEdit
          <li>You can also modify the GreatScriptApp file and have it run your xEdit script from Delphi by
             pressing <code>F9</code>. Make GreatScriptApp look something like this:
          </li>
-         <pre>  program GreatScriptApp;
+{% highlight Pascal %}		 
+  program GreatScriptApp;
 
   {$APPTYPE CONSOLE}
 
@@ -148,7 +149,7 @@ title: Tome of xEdit
         Writeln(E.ClassName, ': ', E.Message);
     end;
   end.
-</pre>
+{% endhighlight %}
       </ol>
       </div>
       <h3><span class="mw-headline" id="TES5Edit_Global_Variables">TES5Edit Global Variables</span></h3>
@@ -2155,43 +2156,44 @@ title: Tome of xEdit
       <h3><span class="mw-headline" id="Simple_Script_Sample">Simple Script Sample</span></h3>
       <p>This is a sample script which will only export every selected NPC to a TXT file:
       </p>
-      <pre>{
+{% highlight Pascal %}
+{% raw %}{
 	Script description: Exports the FormID and EditorID of the selected NPCs
-}
+}{% endraw %}
 
 // This is the unit name that will contain all the script functions
 unit ExportScripts;
 
 // Global variables
-var NPCList&#160;: TStringList;
+var NPCList : TStringList;
 
 // Called when the script starts
-function Initialize&#160;: integer;
+function Initialize : integer;
 begin
-	NPCList&#160;:= TStringList.Create;
+	NPCList := TStringList.Create;
 	NPCList.Add('FormID;EditorID');
 end;
 
 // Called for each selected record in the TES5Edit tree
 // If an entire plugin is selected then all records in the plugin will be processed
-function Process(e&#160;: IInterface)&#160;: integer;
+function Process(e : IInterface) : integer;
 begin
-	if Signature(e) &lt;&gt; 'NPC_' then exit;
+	if Signature(e) <> 'NPC_' then exit;
 	NPCList.Add(IntToHex(FixedFormID(e), 8) + ';' + GetElementEditValues(e, 'EDID'));
 end;
 
 // Called after the script has finished processing every record
-function Finalize&#160;: integer;
-var filename&#160;: string;
+function Finalize : integer;
+var filename : string;
 begin
-	filename&#160;:= ProgramPath + 'Edit Scripts\NPCs.txt';
+	filename := ProgramPath + 'Edit Scripts\NPCs.txt';
 	AddMessage('Saving NPC list to ' + filename);
 	NPCList.SaveToFile(filename);
 	NPCList.Free;
 end;
 
 end.
-</pre>
+{% endhighlight %}
       <h3><span class="mw-headline" id="Pascal_implementation">Pascal implementation</span></h3>
       <p>TES5Edit uses JvInterpreter from <a rel="nofollow" target="_blank" class="external text"
          href="http://jvcl.delphi-jedi.org/">JVCL</a> to execute Delphi as a
