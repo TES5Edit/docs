@@ -139,9 +139,9 @@ title: Tome of xEdit
 {% highlight Pascal %}		 
   program GreatScriptApp;
 
-  {$APPTYPE CONSOLE}
+  {% raw %}{$APPTYPE CONSOLE}
 
-  {$R *.res}
+  {$R *.res}{% endraw %}
 
   uses
     Windows,
@@ -2315,9 +2315,11 @@ title: Tome of xEdit
             <p>This is a sample script which will only export every selected NPC to a TXT file:
             </p>
             <pre>{% highlight Pascal %}
-{% raw %}{
+{% raw %}
+{
 	Script description: Exports the FormID and EditorID of the selected NPCs
-}{% endraw %}
+}
+{% endraw %}
 
 // This is the unit name that will contain all the script functions
 unit ExportScripts;
