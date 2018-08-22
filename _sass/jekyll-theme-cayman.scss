@@ -373,13 +373,15 @@ a {
 }
 
 .short-column {
-  background: yellow;
+  width: 5%;
+}
+
+.medium-column {
   width: 15%;
 }
 
 .long-column {
-  background: lime;
-  width: 70%;
+  width: 55%;
 }
 
 .site-footer {
