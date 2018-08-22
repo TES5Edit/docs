@@ -11,7 +11,8 @@ a {
   color: #63a52a;
   text-decoration: none;
   transition: opacity ease-in-out 0.3s;
-  -webkit-transition: opacity ease-in-out 0.3s;  /* Safari <=6.1, Android <= 4.3 */
+  -webkit-transition: opacity ease-in-out 0.3s;
+  /* Safari <=6.1, Android <= 4.3 */
 }
 
 a:hover {
@@ -24,7 +25,7 @@ h1.title {
   font-size: 60px;
   font-weight: bold;
   font-style: italic;
-  font-family:Georgia, serif;
+  font-family: Georgia, serif;
   text-align: center;
 }
 
@@ -69,12 +70,14 @@ p.tagline {
   border-right: 1px solid #ddd;
   padding-right: 5px;
 }
+
 .download-bar .watch-fork iframe.last {
   border-right: 0 none;
   padding-right: 0;
   padding-left: 5px;
   border-left: 1px solid #fff;
 }
+
 .download-bar .watch-fork {
   overflow: hidden;
   float: right;
@@ -93,13 +96,15 @@ p.tagline {
   bottom: -15px;
   left: 0;
   transform: rotate(45deg);
-  -ms-transform: rotate(45deg);  /* IE9 */
-  -webkit-transform: rotate(45deg); /* 2014 current */
+  -ms-transform: rotate(45deg);
+  /* IE9 */
+  -webkit-transform: rotate(45deg);
+  /* 2014 current */
 }
 
 .download-bar .trc {
   border: 10px solid black;
-  border-color:  black transparent transparent;
+  border-color: black transparent transparent;
   width: 0;
   height: 0;
   display: block;
@@ -107,8 +112,10 @@ p.tagline {
   top: -15px;
   right: 0;
   transform: rotate(45deg);
-  -ms-transform: rotate(45deg);  /* IE9 */
-  -webkit-transform: rotate(45deg); /* 2014 current */
+  -ms-transform: rotate(45deg);
+  /* IE9 */
+  -webkit-transform: rotate(45deg);
+  /* 2014 current */
 }
 
 .download-bar .avatar {
@@ -132,7 +139,8 @@ p.tagline {
   width: auto;
   height: auto;
   opacity: 1;
-  filter:alpha(opacity=100);  /* IE 5-7 */
+  filter: alpha(opacity=100);
+  /* IE 5-7 */
 }
 
 .current-section {
@@ -147,7 +155,8 @@ p.tagline {
   opacity: 0;
   visibility: hidden;
   transition: opacity ease-in-out 0.3s;
-  -webkit-transition: opacity ease-in-out 0.3s;  /* Safari <=6.1, Android <= 4.3 */
+  -webkit-transition: opacity ease-in-out 0.3s;
+  /* Safari <=6.1, Android <= 4.3 */
 }
 
 .current-section p {
@@ -166,14 +175,17 @@ p.tagline {
   margin-right: 12px;
   margin-top: 12px;
   opacity: 0.8;
-  filter:alpha(opacity=80);  /* IE 5-7 */
+  filter: alpha(opacity=80);
+  /* IE 5-7 */
   transition: opacity ease-in-out 0.3s;
-  -webkit-transition: opacity ease-in-out 0.3s;  /* Safari <=6.1, Android <= 4.3 */
+  -webkit-transition: opacity ease-in-out 0.3s;
+  /* Safari <=6.1, Android <= 4.3 */
 }
 
 .current-section a:hover {
   opacity: 1;
-  filter:alpha(opacity=100);  /* IE 5-7 */
+  filter: alpha(opacity=100);
+  /* IE 5-7 */
 }
 
 .current-section a.zip {
@@ -188,9 +200,11 @@ a.zip span {
   display: inline-block;
   text-indent: -10000px;
   opacity: 0.8;
-  filter:alpha(opacity=80);  /* IE 5-7 */
+  filter: alpha(opacity=80);
+  /* IE 5-7 */
   transition: opacity ease-in-out 0.3s;
-  -webkit-transition: opacity ease-in-out 0.3s;  /* Safari <=6.1, Android <= 4.3 */
+  -webkit-transition: opacity ease-in-out 0.3s;
+  /* Safari <=6.1, Android <= 4.3 */
 }
 
 a.tar,
@@ -201,9 +215,11 @@ a.tar span {
   display: inline-block;
   text-indent: -10000px;
   opacity: 0.8;
-  filter:alpha(opacity=80);  /* IE 5-7 */
+  filter: alpha(opacity=80);
+  /* IE 5-7 */
   transition: opacity ease-in-out 0.3s;
-  -webkit-transition: opacity ease-in-out 0.3s;  /* Safari <=6.1, Android <= 4.3 */
+  -webkit-transition: opacity ease-in-out 0.3s;
+  /* Safari <=6.1, Android <= 4.3 */
 }
 
 a.code {
@@ -214,16 +230,18 @@ a.code {
   display: inline-block;
   text-indent: -10000px;
   opacity: 0.8;
-  filter:alpha(opacity=80);  /* IE 5-7 */
+  filter: alpha(opacity=80);
+  /* IE 5-7 */
   transition: opacity ease-in-out 0.3s;
-  -webkit-transition: opacity ease-in-out 0.3s;  /* Safari <=6.1, Android <= 4.3 */
+  -webkit-transition: opacity ease-in-out 0.3s;
+  /* Safari <=6.1, Android <= 4.3 */
 }
 
 a.zip:hover,
 a.tar:hover,
 a.code:hover {
   opacity: 1;
-  filter:alpha(opacity=100);
+  filter: alpha(opacity=100);
 }
 
 a.download-button {
@@ -233,11 +251,15 @@ a.download-button {
   text-indent: 0!important;
   width: auto;
   float: right;
-  background: #999; /* for non-css3 browsers */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#37ADD4', endColorstr='#1B657E'); /* IE <= 9 */
-  background: -webkit-gradient(linear, left top, left bottom, from(#37ADD4), to(#1B657E)); /* ancient webkit browsers */
-  background: -webkit-linear-gradient(top,  #37ADD4,  #1B657E);  /* Safari <=6.1, Android <= 4.3 */
-  background: linear-gradient(to bottom,  #37ADD4,  #1B657E);
+  background: #999;
+  /* for non-css3 browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#37ADD4', endColorstr='#1B657E');
+  /* IE <= 9 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#37ADD4), to(#1B657E));
+  /* ancient webkit browsers */
+  background: -webkit-linear-gradient(top, #37ADD4, #1B657E);
+  /* Safari <=6.1, Android <= 4.3 */
+  background: linear-gradient(to bottom, #37ADD4, #1B657E);
   height: auto;
   margin-left: 10px;
 }
@@ -288,7 +310,7 @@ footer .owner img {
 }
 
 footer .owner p {
-  font-family:Georgia, serif;
+  font-family: Georgia, serif;
 }
 
 footer .owner p a {
@@ -296,7 +318,9 @@ footer .owner p a {
   font-style: italic;
 }
 
+
 /* Markdown */
+
 .markdown-body h1,
 .markdown-body h2,
 .markdown-body h3,
@@ -352,19 +376,19 @@ footer .owner p a {
   line-height: 20px;
   box-shadow: inset 0 0 5px #000;
   word-wrap: break-word;
-  background-color:#3b3b3b;
+  background-color: #3b3b3b;
   color: #d6d6d6;
 }
 
 .markdown-body pre.lines {
   font-size: 12px;
-  margin:0 10px 0 -20px;
+  margin: 0 10px 0 -20px;
   padding: 10px;
-  float:  left;
+  float: left;
   display: block;
   text-align: right;
   box-shadow: none;
-  background-color:#2a2a2a;
+  background-color: #2a2a2a;
   color: #d6d6d6;
 }
 
@@ -444,14 +468,14 @@ footer .owner p a {
 }
 
 .markdown-body tt {
-  background-color:#3b3b3b;
+  background-color: #3b3b3b;
   color: #d6d6d6;
   padding: 2px 3px;
 }
 
 .markdown-body blockquote {
   font-style: italic;
-  font-family:Georgia, serif;
+  font-family: Georgia, serif;
   font-size: 17px;
   border-top: 3px solid #333;
   border-bottom: 3px solid #333;
