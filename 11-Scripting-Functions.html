@@ -174,32 +174,32 @@ title: xEdit Scripting Functions
                 <h3>11.3 TES5Edit Global Variables</h3>
                 <p>These are predefined <b>read-only</b> variables that can be called at any time.
                 </p>
-                <table class="wikitable" style="background-color: #AAAAAA; cellpadding: 0">
+                <table>
                     <tr>
-                        <th style="background-color: #DDDDDD"> Name
+                        <th> Name
                         </th>
-                        <th style="background-color: #DDDDDD"> Type
+                        <th> Type
                         </th>
-                        <th style="background-color: #DDDDDD"> Description
+                        <th> Description
                         </th>
-                        <th style="background-color: #DDDDDD"> Note
+                        <th> Note
                         </th>
                     </tr>
-                    <tr style="background-color: #F8F8F8">
+                    <tr>
                         <td><b>DataPath</b></td>
                         <td> String</td>
                         <td> Provides the file path to Skyrim's data folder as a String</td>
                         <td>
                         </td>
                     </tr>
-                    <tr style="background-color: #EEEEEE">
+                    <tr>
                         <td><b>ProgramPath</b></td>
                         <td> String</td>
                         <td> Provides the file path to Tes5edit's installation folder as a String</td>
                         <td>
                         </td>
                     </tr>
-                    <tr style="background-color: #F8F8F8">
+                    <tr>
                         <td><b>ScriptsPath</b></td>
                         <td> String</td>
                         <td> Provides the file path to Tes5Edit's 'Edit Scripts' folder as a String.</td>
@@ -208,7 +208,7 @@ title: xEdit Scripting Functions
                             from, they also need to be in the that same directory.)
                         </td>
                     </tr>
-                    <tr style="background-color: #EEEEEE">
+                    <tr>
                         <td><b>FileCount</b></td>
                         <td> Integer</td>
                         <td> Provides the number of loaded files in your current TES5Edit session</td>
@@ -216,14 +216,14 @@ title: xEdit Scripting Functions
                             variable.
                         </td>
                     </tr>
-                    <tr style="background-color: #F8F8F8">
+                    <tr>
                         <td><b>wbAppName</b></td>
                         <td> String</td>
                         <td> Returns 'TES5','TES4','FNV','FO3'</td>
                         <td>
                         </td>
                     </tr>
-                    <tr style="background-color: #EEEEEE">
+                    <tr>
                         <td><b>wbVersionNumber</b></td>
                         <td> Integer</td>
                         <td> Returns xEdit version number.</td>
@@ -302,18 +302,18 @@ title: xEdit Scripting Functions
             <div class="content">
                 <p>These functions can be called on anything and should return a meaningful result.
                 </p>
-                <table class="wikitable" style="background-color: #AAAAAA; cellpadding: 0">
+                <table>
                     <tr>
-                        <th style="background-color: #DDDDDD"> Function
+                        <th> Function
                         </th>
-                        <th style="background-color: #DDDDDD"> Returns
+                        <th> Returns
                         </th>
-                        <th style="background-color: #DDDDDD"> Arguments
+                        <th> Arguments
                         </th>
-                        <th style="background-color: #DDDDDD"> Description
+                        <th> Description
                         </th>
                     </tr>
-                    <tr style="background-color:#F8F8F8">
+                    <tr>
                         <td><b>AddMessage</b></td>
                         <td></td>
                         <td> asMessage: string
@@ -321,7 +321,7 @@ title: xEdit Scripting Functions
                         <td> Pushes a line to TES5Edit's Information tab.
                         </td>
                     </tr>
-                    <tr style="background-color:#EEEEEE">
+                    <tr>
                         <td><b>Assigned</b></td>
                         <td> boolean</td>
                         <td> aeElement: IwbElement
@@ -331,7 +331,7 @@ title: xEdit Scripting Functions
                             function: returns true if <i>aeElement</i> is not <i>Nil</i>, and returns false otherwise.
                         </td>
                     </tr>
-                    <tr style="background-color:#F8F8F8">
+                    <tr>
                         <td><b>ObjectToElement</b></td>
                         <td> IInterface</td>
                         <td> akObject
@@ -340,7 +340,7 @@ title: xEdit Scripting Functions
                             when retrieving the object from the list, i.e. <code>ObjectToElement(myList.Items[0])</code>.
                         </td>
                     </tr>
-                    <tr style="background-color:#EEEEEE">
+                    <tr>
                         <td><b>FileByIndex</b></td>
                         <td> IwbFile</td>
                         <td> aiFile: integer
@@ -349,7 +349,7 @@ title: xEdit Scripting Functions
                             See also: <i>FileCount</i>.
                         </td>
                     </tr>
-                    <tr style="background-color:#F8F8F8">
+                    <tr>
                         <td><b>FileByLoadOrder</b></td>
                         <td> IwbFile</td>
                         <td> aiLoadOrder: integer
@@ -357,7 +357,7 @@ title: xEdit Scripting Functions
                         <td> Returns a file by load order. 0 is Fallout4.esm, 1 is DLC or first mod loaded.
                         </td>
                     </tr>
-                    <tr style="background-color:#EEEEEE">
+                    <tr>
                         <td><b>FullPathToFilename</b></td>
                         <td> string</td>
                         <td> asFilename: string
@@ -365,7 +365,7 @@ title: xEdit Scripting Functions
                         <td> Returns the full path to the filename <i>asFilename</i>.
                         </td>
                     </tr>
-                    <tr style="background-color:#F8F8F8">
+                    <tr>
                         <td><b>EnableSkyrimSaveFormat</b></td>
                         <td></td>
                         <td>
@@ -373,7 +373,7 @@ title: xEdit Scripting Functions
                         <td> As of xEdit 3.1.2, calling this function will corrupt saved plugins until xEdit is restarted.
                         </td>
                     </tr>
-                    <tr style="background-color:#EEEEEE">
+                    <tr>
                         <td><b>GetRecordDefNames</b></td>
                         <td></td>
                         <td> akList: TStrings
@@ -381,7 +381,7 @@ title: xEdit Scripting Functions
                         <td> Unverified: Modifies <i>akList</i> by adding entries based on the contents of the global <i>wbRecordDefs</i>.
                         </td>
                     </tr>
-                    <tr style="background-color:#F8F8F8">
+                    <tr>
                         <td><b>wbFilterStrings</b></td>
                         <td></td>
                         <td> akListIn: TStrings;<br/> akListOut: TStrings;<br/> asFilter: String
@@ -390,7 +390,7 @@ title: xEdit Scripting Functions
                             <i>asFilter</i>.
                         </td>
                     </tr>
-                    <tr style="background-color:#EEEEEE">
+                    <tr>
                         <td><b>wbRemoveDuplicateStrings</b></td>
                         <td></td>
                         <td> akList: TStringList
@@ -411,18 +411,18 @@ title: xEdit Scripting Functions
             <h3>11.4.2 IwbElement</h3>
             <p>These functions can be called on any IwbElement IInterface.
             </p>
-            <table class="wikitable" style="background-color: #AAAAAA; cellpadding: 0">
+            <table>
                 <tr>
-                    <th style="background-color: #DDDDDD"> Function
+                    <th> Function
                     </th>
-                    <th style="background-color: #DDDDDD"> Returns
+                    <th> Returns
                     </th>
-                    <th style="background-color: #DDDDDD"> Arguments
+                    <th> Arguments
                     </th>
-                    <th style="background-color: #DDDDDD"> Description
+                    <th> Description
                     </th>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>BaseName</b></td>
                     <td> string</td>
                     <td> aeElement: IwbElement
@@ -431,7 +431,7 @@ title: xEdit Scripting Functions
                         a load order index (i.e. <code>[02] PluginName.esp</code>), while <i>BaseName</i> will not.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>BuildRef</b></td>
                     <td></td>
                     <td> aeElement: IwbElement
@@ -440,7 +440,7 @@ title: xEdit Scripting Functions
                         function will run even if reference information has already been built.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>CanContainFormIDs</b></td>
                     <td> boolean</td>
                     <td> aeElement: IwbElement
@@ -451,7 +451,7 @@ title: xEdit Scripting Functions
                         elements.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>CanMoveDown</b></td>
                     <td> boolean</td>
                     <td> aeElement: IwbElement
@@ -460,7 +460,7 @@ title: xEdit Scripting Functions
                         <i>MoveDown</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>CanMoveUp</b></td>
                     <td> boolean</td>
                     <td> aeElement: IwbElement
@@ -468,7 +468,7 @@ title: xEdit Scripting Functions
                     <td> Returns true if the element is part of an array and can be moved further up using <i>MoveUp</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>Check</b></td>
                     <td> string</td>
                     <td> aeElement: IwbElement
@@ -477,7 +477,7 @@ title: xEdit Scripting Functions
                         or else an empty string if no error is found.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>ClearElementState</b></td>
                     <td></td>
                     <td> aeElement: IwbElement;<br/> aiState: TwbElementState
@@ -486,7 +486,7 @@ title: xEdit Scripting Functions
                         esModified);</code>. See also: <i>GetElementState</i>, <i>SetElementState</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>ContainingMainRecord</b></td>
                     <td> IwbMainRecord</td>
                     <td> aeElement: IwbElement
@@ -494,7 +494,7 @@ title: xEdit Scripting Functions
                     <td> Returns the main record that contains the element.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>DefType</b></td>
                     <td> TwbDefType</td>
                     <td> aeElement: IwbElement
@@ -502,7 +502,7 @@ title: xEdit Scripting Functions
                     <td> Returns the def-type of the element.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>DisplayName</b></td>
                     <td> string</td>
                     <td> aeElement: IwbElement
@@ -511,7 +511,7 @@ title: xEdit Scripting Functions
                         <i>Name</i>. See also: <i>BaseName</i>, <i>ShortName</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>ElementAssign</b></td>
                     <td> IwbElement</td>
                     <td> aeContainer: IwbContainer;<br/> aiIndex: integer;<br/> aeSource: IwbElement;<br/> abOnlySK:
@@ -540,7 +540,7 @@ title: xEdit Scripting Functions
                         </p>
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>ElementType</b></td>
                     <td> TwbElementType</td>
                     <td> aeElement: IwbElement
@@ -550,7 +550,7 @@ title: xEdit Scripting Functions
                         etStruct, etValue, etFlag, etStringListTerminator,etUnion, etStructChapter.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>EnumValues</b></td>
                     <td> string</td>
                     <td> aeElement: IwbElement
@@ -559,7 +559,7 @@ title: xEdit Scripting Functions
                         values that have been set, separated with spaces.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>Equals</b></td>
                     <td> boolean</td>
                     <td> aeElement1: IwbElement;<br/> aeElement2: IwbElement
@@ -569,7 +569,7 @@ title: xEdit Scripting Functions
                         <code>=</code> operator.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>FlagValues</b></td>
                     <td> string</td>
                     <td> aeElement: IwbElement
@@ -578,7 +578,7 @@ title: xEdit Scripting Functions
                         separated with spaces.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>FullPath</b></td>
                     <td> string</td>
                     <td> aeElement: IwbElement
@@ -587,7 +587,7 @@ title: xEdit Scripting Functions
                         <i>Path</i>, <i>PathName</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>GetContainer</b></td>
                     <td> IwbContainer</td>
                     <td> aeElement: IwbElement
@@ -595,7 +595,7 @@ title: xEdit Scripting Functions
                     <td> Returns the element's container.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>GetEditValue</b></td>
                     <td> string</td>
                     <td> aeElement: IwbElement
@@ -604,7 +604,7 @@ title: xEdit Scripting Functions
                         <i>SetElementEditValues</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>GetElementState</b></td>
                     <td> TwbElementState</td>
                     <td> aeElement: IwbElement;<br/> aiState: TwbElementState
@@ -613,7 +613,7 @@ title: xEdit Scripting Functions
                         <i>SetElementState</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>GetFile</b></td>
                     <td> IwbFile</td>
                     <td> aeElement: IwbElement
@@ -621,7 +621,7 @@ title: xEdit Scripting Functions
                     <td> Returns the file that contains the element.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>GetNativeValue</b></td>
                     <td> variant</td>
                     <td> aeElement: IwbElement
@@ -630,7 +630,7 @@ title: xEdit Scripting Functions
                         <i>SetElementNativeValues</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>IsEditable</b></td>
                     <td> boolean</td>
                     <td> aeElement: IwbElement
@@ -639,7 +639,7 @@ title: xEdit Scripting Functions
                         Skyrim.esm.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>IsInjected</b></td>
                     <td> boolean</td>
                     <td> aeElement: IwbElement
@@ -647,7 +647,7 @@ title: xEdit Scripting Functions
                     <td> Returns true if the element is an injected record.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>LinksTo</b></td>
                     <td> IwbElement</td>
                     <td> aeElement: IwbElement
@@ -658,7 +658,7 @@ title: xEdit Scripting Functions
                         IwbMainRecord of that record).
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>MarkModifiedRecursive</b></td>
                     <td></td>
                     <td> aeElement: IwbElement
@@ -666,7 +666,7 @@ title: xEdit Scripting Functions
                     <td> Marks the element and all of its descendants as modified. This forces xEdit to serialize them.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>MoveDown</b></td>
                     <td></td>
                     <td> aeElement: IwbElement
@@ -674,7 +674,7 @@ title: xEdit Scripting Functions
                     <td> If the element is part of an array, this function moves it down by one slot. See also: <i>CanMoveDown</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>MoveUp</b></td>
                     <td></td>
                     <td> aeElement: IwbElement
@@ -682,7 +682,7 @@ title: xEdit Scripting Functions
                     <td> If the element is part of an array, this function moves it up by one slot. See also: <i>CanMoveUp</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>Name</b></td>
                     <td> string</td>
                     <td> aeElement: IwbElement
@@ -692,7 +692,7 @@ title: xEdit Scripting Functions
                         will return a more basic string. See also: <i>DisplayName</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>Path</b></td>
                     <td> string</td>
                     <td> aeElement: IwbElement
@@ -702,7 +702,7 @@ title: xEdit Scripting Functions
                         to supply to <i>ElementByPath</i>. See also (and don't confuse with): <i>FullPath</i>, <i>PathName</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>PathName</b></td>
                     <td> string</td>
                     <td> aeElement: IwbElement
@@ -715,7 +715,7 @@ title: xEdit Scripting Functions
                         </p>
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>Remove</b></td>
                     <td></td>
                     <td> aeElement: IwbElement
@@ -723,7 +723,7 @@ title: xEdit Scripting Functions
                     <td> Removes the element from its file.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>ReportRequiredMasters</b></td>
                     <td></td>
                     <td> aeElement: IwbElement;<br/> akListOut: TStrings;<br/> akUnknown1: boolean;<br/> akUnknown2:
@@ -734,7 +734,7 @@ title: xEdit Scripting Functions
                         second is Initial which is false by default.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>SetEditValue</b></td>
                     <td> string</td>
                     <td> aeElement: IwbElement;<br/> asValue: string
@@ -743,7 +743,7 @@ title: xEdit Scripting Functions
                         <i>GetElementEditValues</i>, <i>SetElementEditValues</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>SetElementState</b></td>
                     <td> TwbElementState</td>
                     <td> aeElement: IwbElement;<br/> aiState: TwbElementState
@@ -752,7 +752,7 @@ title: xEdit Scripting Functions
                         also: <i>ClearElementState</i>, <i>GetElementState</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>SetNativeValue</b></td>
                     <td> string</td>
                     <td> aeElement: IwbElement;<br/> avValue: variant
@@ -760,7 +760,7 @@ title: xEdit Scripting Functions
                     <td> Sets the element's value. See also: <i>GetNativeValue</i>, <i>GetElementNativeValues</i>, <i>SetElementNativeValues</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>SetToDefault</b></td>
                     <td></td>
                     <td> aeElement: IwbElement
@@ -768,7 +768,7 @@ title: xEdit Scripting Functions
                     <td> Resets the element's data and adds missing fields if any
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>ShortName</b></td>
                     <td> string</td>
                     <td> aeElement: IwbElement
@@ -778,7 +778,7 @@ title: xEdit Scripting Functions
                         will return the signature and form ID in the format <code>[XXXX:01234567]</code>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>SortKey</b></td>
                     <td> string</td>
                     <td> aeElement: IwbElement
@@ -788,7 +788,7 @@ title: xEdit Scripting Functions
                         override each other to see if they are different from each other.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>wbCopyElementToFile</b></td>
                     <td> IwbElement</td>
                     <td> aeElement: IwbElement;<br/> aeFile: IwbFile;<br/> abAsNew: boolean;<br/> abDeepCopy: boolean
@@ -798,7 +798,7 @@ title: xEdit Scripting Functions
                         Returns the copied element.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>wbCopyElementToFileWithPrefix</b></td>
                     <td> IwbElement</td>
                     <td> aeElement: IwbElement;<br/> aeFile: IwbFile;<br/> abAsNew: boolean;<br/> abDeepCopy:
@@ -807,7 +807,7 @@ title: xEdit Scripting Functions
                     <td> Details unknown. Returns the copied element.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>wbCopyElementToRecord</b></td>
                     <td> IwbElement</td>
                     <td> aeElement: IwbElement;<br/> aeRecord: IwbMainRecord;<br/> abAsNew: boolean;<br/> abDeepCopy:
@@ -829,18 +829,18 @@ title: xEdit Scripting Functions
         </div>
         <div class="level-3" id="s_11-4-3">
             <h3>11.4.3 IwbContainer</h3>
-            <table class="wikitable" style="background-color: #AAAAAA; cellpadding: 0">
+            <table>
                 <tr>
-                    <th style="background-color: #DDDDDD"> Function
+                    <th> Function
                     </th>
-                    <th style="background-color: #DDDDDD"> Returns
+                    <th> Returns
                     </th>
-                    <th style="background-color: #DDDDDD"> Arguments
+                    <th> Arguments
                     </th>
-                    <th style="background-color: #DDDDDD"> Description
+                    <th> Description
                     </th>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>Add</b></td>
                     <td> IwbElement</td>
                     <td> aeContainer: IwbContainer;<br/> asNameOrSignature: string;<br/> abSilent: boolean
@@ -850,7 +850,7 @@ title: xEdit Scripting Functions
                         modified. Returns the created or existing element.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>AddElement</b></td>
                     <td></td>
                     <td> aeContainer: IwbContainer;<br/> aeElement: IwbElement
@@ -859,7 +859,7 @@ title: xEdit Scripting Functions
                         already has a container.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>AdditionalElementCount</b></td>
                     <td> integer</td>
                     <td> aeContainer: IwbContainer
@@ -870,7 +870,7 @@ title: xEdit Scripting Functions
                         times. Seems to return 1 or 2 for (main?) records, and 0 for record fields (sub-records).
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>ContainerStates</b></td>
                     <td> byte</td>
                     <td> aeContainer: IwbContainer
@@ -880,7 +880,7 @@ title: xEdit Scripting Functions
                         example.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>ElementByIndex</b></td>
                     <td> IwbElement</td>
                     <td> aeContainer: IwbContainer;<br/> aiIndex: integer
@@ -889,7 +889,7 @@ title: xEdit Scripting Functions
                         <i>ElementCount</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>ElementByName</b></td>
                     <td> IwbElement</td>
                     <td> aeContainer: IwbContainer;<br/> asName: string
@@ -898,7 +898,7 @@ title: xEdit Scripting Functions
                         found element or <i>Nil</i>. See also: <i>ElementExists</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>ElementByPath</b></td>
                     <td> IwbElement</td>
                     <td> aeContainer: IwbContainer;<br/> asPath: string
@@ -907,7 +907,7 @@ title: xEdit Scripting Functions
                         returns the found element or <i>Nil</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>ElementBySignature</b></td>
                     <td> IwbElement</td>
                     <td> aeContainer: IwbContainer;<br/> asSignature: string
@@ -916,7 +916,7 @@ title: xEdit Scripting Functions
                         returns the found element or <i>Nil</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>ElementCount</b></td>
                     <td> integer</td>
                     <td> aeContainer: IwbContainer
@@ -924,7 +924,7 @@ title: xEdit Scripting Functions
                     <td> Returns the number of child elements in <i>aeContainer</i>. See also: <i>ElementByIndex</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>ElementExists</b></td>
                     <td> boolean</td>
                     <td> aeContainer: IwbContainer;<br/> asName: string
@@ -933,7 +933,7 @@ title: xEdit Scripting Functions
                         <i>ElementByName</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>GetElementEditValues</b></td>
                     <td> string</td>
                     <td> aeContainer: IwbContainer;<br/> asPath: string
@@ -942,7 +942,7 @@ title: xEdit Scripting Functions
                         representation of its value.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>GetElementNativeValues</b></td>
                     <td> variant</td>
                     <td> aeContainer: IwbContainer;<br/> asPath: string
@@ -950,7 +950,7 @@ title: xEdit Scripting Functions
                     <td> Finds the element within <i>aeContainer</i> specified by <i>asPath</i>, and returns its value.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>IndexOf</b></td>
                     <td> integer</td>
                     <td> aeContainer: IwbContainer;<br/> aeChild: IwbElement
@@ -959,7 +959,7 @@ title: xEdit Scripting Functions
                         child element of <i>aeContainer</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>InsertElement</b></td>
                     <td></td>
                     <td> aeContainer: IwbContainer;<br/> aiPosition: Integer;<br/> aeElement: IwbElement
@@ -967,7 +967,7 @@ title: xEdit Scripting Functions
                     <td> Inserts <i>aeElement</i> as a child of <i>aeContainer</i> at the specified position.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>IsSorted</b></td>
                     <td> boolean</td>
                     <td> aeContainer: IwbSortableContainer
@@ -977,7 +977,7 @@ title: xEdit Scripting Functions
                         return <i>False</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>LastElement</b></td>
                     <td> IwbElement</td>
                     <td> aeContainer: IwbContainer
@@ -986,7 +986,7 @@ title: xEdit Scripting Functions
                         elements.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>RemoveByIndex</b></td>
                     <td> IwbElement</td>
                     <td> aeContainer: IwbContainer;<br/> aiIndex: integer;<br/> abMarkModified: boolean
@@ -994,7 +994,7 @@ title: xEdit Scripting Functions
                     <td> Removes the <i>aiIndex</i>-th child from <i>aeContainer</i>, and returns it.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>RemoveElement</b></td>
                     <td> IwbElement</td>
                     <td> aeContainer: IwbContainer;<br/> avChild: variant
@@ -1004,7 +1004,7 @@ title: xEdit Scripting Functions
                         name or signature of an element to remove; or an IwbElement to remove.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>ReverseElements</b></td>
                     <td></td>
                     <td> aeContainer: IwbContainer
@@ -1012,7 +1012,7 @@ title: xEdit Scripting Functions
                     <td> Reverses the order of the child elements in <i>aeContainer</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>SetElementEditValues</b></td>
                     <td></td>
                     <td> aeContainer: IwbContainer;<br/> asPath: string;<br/> asValue: string
@@ -1021,7 +1021,7 @@ title: xEdit Scripting Functions
                         based on the string representation <i>asValue</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>SetElementNativeValues</b></td>
                     <td></td>
                     <td> aeContainer: IwbContainer;<br/> asPath: string;<br/> avValue: variant
@@ -1040,18 +1040,18 @@ title: xEdit Scripting Functions
         </div>
         <div class="level-3" id="s_11-4-4">
             <h3>11.4.4 IwbFile</h3>
-            <table class="wikitable" style="background-color: #AAAAAA; cellpadding: 0">
+            <table>
                 <tr>
-                    <th style="background-color: #DDDDDD"> Function
+                    <th> Function
                     </th>
-                    <th style="background-color: #DDDDDD"> Returns
+                    <th> Returns
                     </th>
-                    <th style="background-color: #DDDDDD"> Arguments
+                    <th> Arguments
                     </th>
-                    <th style="background-color: #DDDDDD"> Description
+                    <th> Description
                     </th>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>AddMasterIfMissing</b></td>
                     <td></td>
                     <td> aeFile: IwbFile;<br/> asMasterFilename: string
@@ -1059,7 +1059,7 @@ title: xEdit Scripting Functions
                     <td> Adds the specified file as a master for <i>aeFile</i>, if it isn't already a master.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>AddNewFileName</b></td>
                     <td></td>
                     <td> aeFile: IwbFile<br/>
@@ -1068,7 +1068,7 @@ title: xEdit Scripting Functions
                         plugins list.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>CleanMasters</b></td>
                     <td></td>
                     <td> aeFile: IwbFile
@@ -1078,7 +1078,7 @@ title: xEdit Scripting Functions
                         and UDRs from official DLCs." This function is used in "Skyrim - Book Covers Patch.pas".
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>FileFormIDtoLoadOrderFormID</b></td>
                     <td> cardinal</td>
                     <td> aeFile: IwbFile; aiFormID: cardinal
@@ -1088,7 +1088,7 @@ title: xEdit Scripting Functions
                         See also: <i>LoadOrderFormIDtoFileFormID</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>FileWriteToStream</b></td>
                     <td></td>
                     <td> aeFile: IwbFile;<br/> akOutStream: TStream
@@ -1098,7 +1098,7 @@ title: xEdit Scripting Functions
                         this function to write to it.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>GetFileName</b></td>
                     <td> string</td>
                     <td> aeFile: IwbFile
@@ -1106,7 +1106,7 @@ title: xEdit Scripting Functions
                     <td> Returns <i>aeFile</i>'s filename.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>GetIsESM</b></td>
                     <td> boolean</td>
                     <td> aeFile: IwbFile
@@ -1114,7 +1114,7 @@ title: xEdit Scripting Functions
                     <td> Returns <i>True</i> if <i>aeFile</i> is flagged as an ESM. See also: <i>SetIsESM</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>GetLoadOrder</b></td>
                     <td> integer</td>
                     <td> aeFile: IwbFile
@@ -1123,7 +1123,7 @@ title: xEdit Scripting Functions
                         IwbFile.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>GetNewFormID</b></td>
                     <td> cardinal</td>
                     <td> aeFile: IwbFile
@@ -1131,7 +1131,7 @@ title: xEdit Scripting Functions
                     <td> Returns a new form ID, the same way that <code>Add(..., ..., True)</code> does.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>GroupBySignature</b></td>
                     <td> IwbGroupRecord</td>
                     <td> aeFile: IwbFile;<br/> asSignature: string
@@ -1139,7 +1139,7 @@ title: xEdit Scripting Functions
                     <td> If <i>aeFile</i> has a top-level group with the specified signature, that group is returned.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>HasGroup</b></td>
                     <td> boolean</td>
                     <td> aeFile: IwbFile;<br/> asSignature: string
@@ -1147,7 +1147,7 @@ title: xEdit Scripting Functions
                     <td> Returns <i>True</i> if <i>aeFile</i> contains a top-level group with the specified signature.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>HasMaster</b></td>
                     <td> boolean</td>
                     <td> aeFile: IwbFile;<br/> asMasterFilename: string
@@ -1156,7 +1156,7 @@ title: xEdit Scripting Functions
                         master.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>LoadOrderFormIDtoFileFormID</b></td>
                     <td> cardinal</td>
                     <td> aeFile: IwbFile; aiFormID: cardinal
@@ -1166,7 +1166,7 @@ title: xEdit Scripting Functions
                         See also: <i>FileFormIDtoLoadOrderFormID</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>MasterByIndex</b></td>
                     <td> IwbFile</td>
                     <td> aeFile: IwbFile;<br/> aiIndex: integer
@@ -1174,7 +1174,7 @@ title: xEdit Scripting Functions
                     <td> Returns the <i>aiIndex</i>-th master file for <i>aeFile</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>MasterCount</b></td>
                     <td> cardinal</td>
                     <td> aeFile: IwbFile
@@ -1182,7 +1182,7 @@ title: xEdit Scripting Functions
                     <td> Returns the number of master files that <i>aeFile</i> has.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>RecordByEditorID</b></td>
                     <td> IwbMainRecord</td>
                     <td> aeFile: IwbFile;<br/> asEditorID: string
@@ -1194,7 +1194,7 @@ title: xEdit Scripting Functions
                         'ECZN'), 'RandomEncounterZone1')</code>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>RecordByFormID</b></td>
                     <td> IwbMainRecord</td>
                     <td> aeFile: IwbFile;<br/> aiFormID: integer;<br/> abAllowInjected: boolean
@@ -1203,7 +1203,7 @@ title: xEdit Scripting Functions
                         records match. The form ID must be local to the file (see <i>FixedFormID</i>).
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>RecordByIndex</b></td>
                     <td> IwbMainRecord</td>
                     <td> aeFile: IwbFile;<br/> aiIndex: integer
@@ -1211,7 +1211,7 @@ title: xEdit Scripting Functions
                     <td> Returns the <i>aiIndex</i>-th record in <i>aeFile</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>RecordCount</b></td>
                     <td> cardinal</td>
                     <td> aeFile: IwbFile
@@ -1219,7 +1219,7 @@ title: xEdit Scripting Functions
                     <td> Returns the number of records that <i>aeFile</i> has.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>SetIsESM</b></td>
                     <td></td>
                     <td> aeFile: IwbFile;<br/> abFlag: boolean
@@ -1227,7 +1227,7 @@ title: xEdit Scripting Functions
                     <td> Modifies the ESM flag for <i>aeFile</i>. See also: <i>GetIsESM</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>SortMasters</b></td>
                     <td></td>
                     <td> aeFile: IwbFile
@@ -1245,18 +1245,18 @@ title: xEdit Scripting Functions
         </div>
         <div class="level-3" id="s_11-4-5">
             <h3>11.4.5 IwbMainRecord</h3>
-            <table class="wikitable" style="background-color: #AAAAAA; cellpadding: 0">
+            <table>
                 <tr>
-                    <th style="background-color: #DDDDDD"> Function
+                    <th> Function
                     </th>
-                    <th style="background-color: #DDDDDD"> Returns
+                    <th> Returns
                     </th>
-                    <th style="background-color: #DDDDDD"> Arguments
+                    <th> Arguments
                     </th>
-                    <th style="background-color: #DDDDDD"> Description
+                    <th> Description
                     </th>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>BaseRecord</b></td>
                     <td> IwbMainRecord</td>
                     <td> aeRecord: IwbMainRecord
@@ -1266,7 +1266,7 @@ title: xEdit Scripting Functions
                         <i>Nil</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>BaseRecordID</b></td>
                     <td> cardinal</td>
                     <td> aeRecord: IwbMainRecord
@@ -1274,7 +1274,7 @@ title: xEdit Scripting Functions
                     <td> Appears to return the load-order-relative form ID of <i>aeRecord</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>ChangeFormSignature</b></td>
                     <td></td>
                     <td> aeRecord: IwbMainRecord;<br/> asNewSignature: string
@@ -1282,7 +1282,7 @@ title: xEdit Scripting Functions
                     <td> Changes <i>aeRecord</i>'s signature to <i>asNewSignature</i>. No other information is modified.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>ChildGroup</b></td>
                     <td> IwbGroupRecord</td>
                     <td> aeRecord: IwbMainRecord
@@ -1295,7 +1295,7 @@ title: xEdit Scripting Functions
                         would use this function to retrieve that group.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>CompareExchangeFormID</b></td>
                     <td> boolean</td>
                     <td> aeRecord: IwbMainRecord;<br/> aiOldFormID: cardinal;<br/> aiNewFormID: cardinal
@@ -1304,7 +1304,7 @@ title: xEdit Scripting Functions
                         returns <i>True</i> if the operation succeeds.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>EditorID</b></td>
                     <td> string</td>
                     <td> aeRecord: IwbMainRecord
@@ -1312,7 +1312,7 @@ title: xEdit Scripting Functions
                     <td> Returns the record's editor ID.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>FixedFormID</b></td>
                     <td> cardinal</td>
                     <td> aeRecord: IwbMainRecord
@@ -1322,7 +1322,7 @@ title: xEdit Scripting Functions
                         <i>FormID</i>, <i>GetLoadOrderFormID</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>FormID</b></td>
                     <td> cardinal</td>
                     <td> aeRecord: IwbMainRecord
@@ -1330,7 +1330,7 @@ title: xEdit Scripting Functions
                     <td> Returns the record's form ID. See also: <i>FixedFormID</i>, <i>GetLoadOrderFormID</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>GetFormVCS1</b></td>
                     <td> cardinal</td>
                     <td> aeRecord: IwbMainRecord
@@ -1338,7 +1338,7 @@ title: xEdit Scripting Functions
                     <td> Returns the value of the Version Control Info 1 field. See also: <i>SetFormVCS1</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>GetFormVCS2</b></td>
                     <td> cardinal</td>
                     <td> aeRecord: IwbMainRecord
@@ -1346,7 +1346,7 @@ title: xEdit Scripting Functions
                     <td> Returns the value of the Version Control Info 2 field. See also: <i>SetFormVCS2</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>GetFormVersion</b></td>
                     <td> cardinal</td>
                     <td> aeRecord: IwbMainRecord
@@ -1354,7 +1354,7 @@ title: xEdit Scripting Functions
                     <td> Get Form Version field from the record's header. See also: <i>SetFormVersion</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>GetGridCell</b></td>
                     <td> TwbGridCell</td>
                     <td> aeRecord: IwbMainRecord
@@ -1365,7 +1365,7 @@ title: xEdit Scripting Functions
                         and <code>returnValue.y</code>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>GetIsDeleted</b></td>
                     <td> boolean</td>
                     <td> aeRecord: IwbMainRecord
@@ -1373,7 +1373,7 @@ title: xEdit Scripting Functions
                     <td> Checks the record's "deleted" flag. See also: <i>SetIsDeleted</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>GetIsInitiallyDisabled</b></td>
                     <td> boolean</td>
                     <td> aeRecord: IwbMainRecord
@@ -1381,7 +1381,7 @@ title: xEdit Scripting Functions
                     <td> Checks the record's "initially disabled" flag. See also: <i>SetIsInitiallyDisabled</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>GetIsPersistent</b></td>
                     <td> boolean</td>
                     <td> aeRecord: IwbMainRecord
@@ -1389,7 +1389,7 @@ title: xEdit Scripting Functions
                     <td> Checks the record's "persistent" flag. See also: <i>SetIsPersistent</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>GetIsVisibleWhenDistant</b></td>
                     <td> boolean</td>
                     <td> aeRecord: IwbMainRecord
@@ -1397,7 +1397,7 @@ title: xEdit Scripting Functions
                     <td> Checks the record's "visible when distant" flag. See also: <i>SetIsVisibleWhenDistant</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>GetLoadOrderFormID</b></td>
                     <td> cardinal</td>
                     <td> aeRecord: IwbMainRecord
@@ -1406,7 +1406,7 @@ title: xEdit Scripting Functions
                         <i>SetLoadOrderFormID</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>GetPosition</b></td>
                     <td> TwbVector</td>
                     <td> aeRecord: IwbMainRecord
@@ -1415,7 +1415,7 @@ title: xEdit Scripting Functions
                         (or a subtype, like ACHR), this function will return its position.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>GetRotation</b></td>
                     <td> TwbVector</td>
                     <td> aeRecord: IwbMainRecord
@@ -1424,7 +1424,7 @@ title: xEdit Scripting Functions
                         (or a subtype, like ACHR), this function will return its rotation.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>HasPrecombinedMesh</b></td>
                     <td> boolean</td>
                     <td> aeRecord: IwbMainRecord
@@ -1434,7 +1434,7 @@ title: xEdit Scripting Functions
                         precombined mesh data generated. See also: <i>PrecombinedMesh</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>HighestOverrideOrSelf</b></td>
                     <td> IwbMainRecord</td>
                     <td> aeRecord: IwbMainRecord
@@ -1442,7 +1442,7 @@ title: xEdit Scripting Functions
                     <td> See also: <i>WinningOverride</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>IsMaster</b></td>
                     <td> boolean</td>
                     <td> aeRecord: IwbMainRecord
@@ -1451,7 +1451,7 @@ title: xEdit Scripting Functions
                         IwbMainRecord. See also: <i>Master</i>, <i>MasterOrSelf</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>IsWinningOverride</b></td>
                     <td> boolean</td>
                     <td> aeRecord: IwbMainRecord
@@ -1460,7 +1460,7 @@ title: xEdit Scripting Functions
                         <i>Master</i>, <i>MasterOrSelf</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>Master</b></td>
                     <td> IwbMainRecord</td>
                     <td> aeRecord: IwbMainRecord
@@ -1468,7 +1468,7 @@ title: xEdit Scripting Functions
                     <td>
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>MasterOrSelf</b></td>
                     <td> IwbMainRecord</td>
                     <td> aeRecord: IwbMainRecord
@@ -1477,7 +1477,7 @@ title: xEdit Scripting Functions
                         Otherwise, the function returns <i>aeRecord</i> itself. See also: <i>IsMaster</i>, <i>IsWinningOverride</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>OverrideByIndex</b></td>
                     <td> IwbMainRecord</td>
                     <td> aeRecord: IwbMainRecord;<br/> aiIndex: integer
@@ -1485,7 +1485,7 @@ title: xEdit Scripting Functions
                     <td> Returns the <i>aiIndex</i>-th override of <i>aeRecord</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>OverrideCount</b></td>
                     <td> cardinal</td>
                     <td> aeRecord: IwbMainRecord
@@ -1493,7 +1493,7 @@ title: xEdit Scripting Functions
                     <td> Returns the number of records that override <i>aeRecord</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>PrecombinedMesh</b></td>
                     <td> string</td>
                     <td> aeRecord: IwbMainRecord
@@ -1503,7 +1503,7 @@ title: xEdit Scripting Functions
                         (i.e. not a placed actor). See also: <i>HasPrecombinedMesh</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>ReferencedByIndex</b></td>
                     <td> IwbMainRecord</td>
                     <td> aeRecord: IwbMainRecord;<br/> aiIndex: integer
@@ -1511,7 +1511,7 @@ title: xEdit Scripting Functions
                     <td> Returns the <i>aiIndex</i>-th record that references <i>aeRecord</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>ReferencedByCount</b></td>
                     <td> cardinal</td>
                     <td> aeRecord: IwbMainRecord
@@ -1519,7 +1519,7 @@ title: xEdit Scripting Functions
                     <td> Returns the number of records that refer to <i>aeRecord</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>SetEditorID</b></td>
                     <td> string</td>
                     <td> aeRecord: IwbMainRecord;<br/> asEditorID: string
@@ -1527,7 +1527,7 @@ title: xEdit Scripting Functions
                     <td> Sets the record's editor ID, and then returns it.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>SetFormVersion</b></td>
                     <td></td>
                     <td> aeRecord: IwbMainRecord;<br/> aiVersion: cardinal
@@ -1535,7 +1535,7 @@ title: xEdit Scripting Functions
                     <td> Set Form Version field for the record's header. See also: <i>GetFormVersion</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>SetIsDeleted</b></td>
                     <td> boolean</td>
                     <td> aeRecord: IwbMainRecord;<br/> abFlag: boolean
@@ -1543,7 +1543,7 @@ title: xEdit Scripting Functions
                     <td> Modifies the record's "deleted" flag. See also: <i>GetIsDeleted</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>SetIsInitiallyDisabled</b></td>
                     <td> boolean</td>
                     <td> aeRecord: IwbMainRecord;<br/> abFlag: boolean
@@ -1551,7 +1551,7 @@ title: xEdit Scripting Functions
                     <td> Modifies the record's "initially disabled" flag. See also: <i>GetIsInitiallyDisabled</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>SetIsPersistent</b></td>
                     <td> boolean</td>
                     <td> aeRecord: IwbMainRecord;<br/> abFlag: boolean
@@ -1559,7 +1559,7 @@ title: xEdit Scripting Functions
                     <td> Modifies the record's "persistent" flag. See also: <i>GetIsPersistent</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>SetIsVisibleWhenDistant</b></td>
                     <td> boolean</td>
                     <td> aeRecord: IwbMainRecord;<br/> abFlag: boolean
@@ -1567,7 +1567,7 @@ title: xEdit Scripting Functions
                     <td> Modifies the record's "visible when distant" flag. See also: <i>GetIsVisibleWhenDistant</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>SetLoadOrderFormID</b></td>
                     <td> cardinal</td>
                     <td> aeRecord: IwbMainRecord;<br/> aiFormID: cardinal;
@@ -1576,7 +1576,7 @@ title: xEdit Scripting Functions
                         also: <i>GetLoadOrderFormID</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>SetFormVCS1</b></td>
                     <td></td>
                     <td> aeRecord: IwbMainRecord;<br/> aiValue: cardinal
@@ -1584,7 +1584,7 @@ title: xEdit Scripting Functions
                     <td> Modifies the Version Control Info 1 field. See also: <i>GetFormVCS1</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>SetFormVCS2</b></td>
                     <td></td>
                     <td> aeRecord: IwbMainRecord;<br/> aiValue: cardinal
@@ -1592,7 +1592,7 @@ title: xEdit Scripting Functions
                     <td> Modifies the Version Control Info 2 field. See also: <i>GetFormVCS2</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>Signature</b></td>
                     <td> string</td>
                     <td> aeRecord: IwbMainRecord
@@ -1602,7 +1602,7 @@ title: xEdit Scripting Functions
                         href="/index.php?title=Topic" title="Topic">DIAL</a>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>UpdateRefs</b></td>
                     <td></td>
                     <td> aeRecord: IwbMainRecord
@@ -1611,7 +1611,7 @@ title: xEdit Scripting Functions
                         the middle of being built.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>WinningOverride</b></td>
                     <td> IwbMainRecord</td>
                     <td> aeRecord: IwbMainRecord
@@ -1630,18 +1630,18 @@ title: xEdit Scripting Functions
         <div class="level-3" id="s_11-4-6">
             <h3>
             11.4.6 IwbGroupRecord</h4>
-            <table class="wikitable" style="background-color: #AAAAAA; cellpadding: 0">
+            <table>
                 <tr>
-                    <th style="background-color: #DDDDDD"> Function
+                    <th> Function
                     </th>
-                    <th style="background-color: #DDDDDD"> Returns
+                    <th> Returns
                     </th>
-                    <th style="background-color: #DDDDDD"> Arguments
+                    <th> Arguments
                     </th>
-                    <th style="background-color: #DDDDDD"> Description
+                    <th> Description
                     </th>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>ChildrenOf</b></td>
                     <td> IwbMainRecord</td>
                     <td> aeGroup: IwbGroupRecord
@@ -1657,7 +1657,7 @@ title: xEdit Scripting Functions
                         them as well.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>FindChildGroup</b></td>
                     <td> IwbGroupRecord</td>
                     <td> aeGroup: IwbGroupRecord;<br/>aiType: integer;<br/> aeMainRecord: IwbMainRecord;<br/>
@@ -1669,7 +1669,7 @@ title: xEdit Scripting Functions
                         9, cell);</code> to get the "Temporary" group within a CELL.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>GroupLabel</b></td>
                     <td> cardinal</td>
                     <td> aeGroup: IwbGroupRecord
@@ -1680,7 +1680,7 @@ title: xEdit Scripting Functions
                         file format</a>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>GroupType</b></td>
                     <td> integer</td>
                     <td> aeGroup: IwbGroupRecord
@@ -1691,7 +1691,7 @@ title: xEdit Scripting Functions
                         file format</a>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>MainRecordByEditorID</b></td>
                     <td> IwbMainRecord</td>
                     <td> aeGroup: IwbGroupRecord;<br/> asEditorID: string
@@ -1714,18 +1714,18 @@ title: xEdit Scripting Functions
             <p>These functions are used in "Assets browser.pas", "Assets manager.pas", and "Skyrim - List used
                 scripts.pas".
             </p>
-            <table class="wikitable" style="background-color: #AAAAAA; cellpadding: 0">
+            <table>
                 <tr>
-                    <th style="background-color: #DDDDDD"> Function
+                    <th> Function
                     </th>
-                    <th style="background-color: #DDDDDD"> Returns
+                    <th> Returns
                     </th>
-                    <th style="background-color: #DDDDDD"> Arguments
+                    <th> Arguments
                     </th>
-                    <th style="background-color: #DDDDDD"> Description
+                    <th> Description
                     </th>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>ResourceContainerList</b></td>
                     <td></td>
                     <td> akContainers: TwbFastStringList
@@ -1735,7 +1735,7 @@ title: xEdit Scripting Functions
                         or a TStringList.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>ResourceCopy</b></td>
                     <td></td>
                     <td> asContainerName: string;<br/> asFilename: string;<br/> asPathOut: string
@@ -1745,7 +1745,7 @@ title: xEdit Scripting Functions
                         The "Assets browser.pas" script uses this to let users extract a resource from a BSA/BA2.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>ResourceCount</b></td>
                     <td> cardinal</td>
                     <td> asFilename: string;<br/> akContainers: TStrings
@@ -1756,7 +1756,7 @@ title: xEdit Scripting Functions
                         within their load order.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>ResourceExists</b></td>
                     <td> boolean</td>
                     <td> asFilename: string
@@ -1764,7 +1764,7 @@ title: xEdit Scripting Functions
                     <td> Checks whether any loaded container has a file with the specified name.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>ResourceList</b></td>
                     <td></td>
                     <td> asContainerName: string;<br/> akContainers: TStrings
@@ -1774,7 +1774,7 @@ title: xEdit Scripting Functions
                         unsorted, and there may be duplicates among them.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>ResourceOpenData</b></td>
                     <td> TBytesStream</td>
                     <td> asContainerName: string;<br/> asFilename: string
@@ -1796,18 +1796,18 @@ title: xEdit Scripting Functions
         <div class="level-3" id="s_11-4-8">
             <h3>
             11.4.8 Misc functions</h4>
-            <table class="wikitable" style="background-color: #AAAAAA; cellpadding: 0">
+            <table>
                 <tr>
-                    <th style="background-color: #DDDDDD"> Function
+                    <th> Function
                     </th>
-                    <th style="background-color: #DDDDDD"> Returns
+                    <th> Returns
                     </th>
-                    <th style="background-color: #DDDDDD"> Arguments
+                    <th> Arguments
                     </th>
-                    <th style="background-color: #DDDDDD"> Description
+                    <th> Description
                     </th>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>LocalizationGetStringsFromFile</b></td>
                     <td></td>
                     <td> asFilename: string;<br/> akListOut: TStrings
@@ -1815,7 +1815,7 @@ title: xEdit Scripting Functions
                     <td>
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>wbAlphaBlend</b></td>
                     <td> boolean</td>
                     <td> akDestinationDeviceContext: unknown;<br/> aiDestinationX: integer;<br/> aiDestinationY:
@@ -1826,7 +1826,7 @@ title: xEdit Scripting Functions
                     <td> A wrapper for <i>Windows.AlphaBlend</i> which returns its result.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>wbBlockFromSubBlock</b></td>
                     <td> TwbGridCell</td>
                     <td> akSubBlock: TwbGridCell
@@ -1835,7 +1835,7 @@ title: xEdit Scripting Functions
                         <i>wbGridCellToGroupLabel</i>, <i>wbIsInGridCell</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>wbCRC32Data</b></td>
                     <td> cardinal</td>
                     <td> akData: TBytes
@@ -1843,7 +1843,7 @@ title: xEdit Scripting Functions
                     <td> See also: <i>wbCRC32File</i>, <i>wbSHA1Data</i>, <i>wbSHA1File</i>, <i>wbMD5Data</i>, <i>wbMD5File</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>wbCRC32File</b></td>
                     <td> cardinal</td>
                     <td> asFilename: string
@@ -1851,7 +1851,7 @@ title: xEdit Scripting Functions
                     <td> See also: <i>wbCRC32Data</i>, <i>wbSHA1Data</i>, <i>wbSHA1File</i>, <i>wbMD5Data</i>, <i>wbMD5File</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>wbCRC32Resource</b></td>
                     <td> cardinal</td>
                     <td> asContainerName: string; asFileName: string
@@ -1859,7 +1859,7 @@ title: xEdit Scripting Functions
                     <td>
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>wbFindREFRsByBase</b></td>
                     <td></td>
                     <td> aeREFR: IwbMainRecord;<br/> asSignatures: string;<br/> aiFlags: integer;<br/> akOutList: TList
@@ -1870,7 +1870,7 @@ title: xEdit Scripting Functions
                         references that have an enable parent.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>wbFlipBitmap</b></td>
                     <td></td>
                     <td> akBitmap: TBitmap;<br/> aiAxes: integer
@@ -1879,7 +1879,7 @@ title: xEdit Scripting Functions
                         flip horizontally, 2 to flip vertically, or 0 to flip on both axes.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>wbGetSiblingRecords</b></td>
                     <td></td>
                     <td> aeRecord: IwbElement;<br/> asSignatures: string;<br/> abIncludeOverrides: boolean;<br/>
@@ -1890,7 +1890,7 @@ title: xEdit Scripting Functions
                         result.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>wbGridCellToGroupLabel</b></td>
                     <td> cardinal</td>
                     <td> akGridCell: TwbGridCell
@@ -1899,7 +1899,7 @@ title: xEdit Scripting Functions
                         <i>wbIsInGridCell</i>, <i>wbSubBlockFromGridCell</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>wbIsInGridCell</b></td>
                     <td> boolean</td>
                     <td> akPosition: TwbVector;<br/> akGridCell: TwbGridCell
@@ -1908,7 +1908,7 @@ title: xEdit Scripting Functions
                         <i>wbPositionToGridCell</i>, <i>wbSubBlockFromGridCell</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>wbMD5Data</b></td>
                     <td> cardinal</td>
                     <td> akData: TBytes
@@ -1916,7 +1916,7 @@ title: xEdit Scripting Functions
                     <td> See also: <i>wbCRC32Data</i>, <i>wbCRC32File</i>, <i>wbMD5File</i>, <i>SHA1Data</i>, <i>wbSH1Data</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>wbMD5File</b></td>
                     <td> cardinal</td>
                     <td> asFilename: string
@@ -1925,7 +1925,7 @@ title: xEdit Scripting Functions
                         <i>wbMD5Data</i>, <i>SHA1Data</i>, <i>wbSH1Data</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>wbNormalizeResourceName</b></td>
                     <td> string</td>
                     <td> asResourceName: string; akResourceType: TGameResourceType
@@ -1934,7 +1934,7 @@ title: xEdit Scripting Functions
                         <i>resMusic</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>wbPositionToGridCell</b></td>
                     <td> TwbGridCell</td>
                     <td> akPosition: TwbVector
@@ -1944,7 +1944,7 @@ title: xEdit Scripting Functions
                         <i>wbGridCellToGroupLabel</i>, <i>wbIsInGridCell</i>, <i>wbSubBlockFromGridCell</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>wbSHA1Data</b></td>
                     <td> cardinal</td>
                     <td> akData: TBytes
@@ -1952,7 +1952,7 @@ title: xEdit Scripting Functions
                     <td> See also: <i>wbCRC32Data</i>, <i>wbCRC32File</i>, <i>SHA1File</i>, <i>wbMD5Data</i>, <i>wbMD5File</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>wbSHA1File</b></td>
                     <td> cardinal</td>
                     <td> asFilename: string
@@ -1961,7 +1961,7 @@ title: xEdit Scripting Functions
                         <i>SHA1Data</i>, <i>wbMD5Data</i>, <i>wbMD5File</i>.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>wbStringListInString</b></td>
                     <td> integer</td>
                     <td> akList: TStringList; asSubstring: string
@@ -1970,7 +1970,7 @@ title: xEdit Scripting Functions
                         the first matching entry, or -1. Checks are case-insensitive.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>wbSubBlockFromGridCell</b></td>
                     <td> TwbGridCell</td>
                     <td> akGridCell: TwbGridCell
@@ -1988,18 +1988,18 @@ title: xEdit Scripting Functions
         </div>
         <div class="level-3" id="s_11-4-8-1">
             <h3>11.4.8.1 NIF functions</h3>
-            <table class="wikitable" style="background-color: #AAAAAA; cellpadding: 0">
+            <table>
                 <tr>
-                    <th style="background-color: #DDDDDD"> Function
+                    <th> Function
                     </th>
-                    <th style="background-color: #DDDDDD"> Returns
+                    <th> Returns
                     </th>
-                    <th style="background-color: #DDDDDD"> Arguments
+                    <th> Arguments
                     </th>
-                    <th style="background-color: #DDDDDD"> Description
+                    <th> Description
                     </th>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>NifBlockList</b></td>
                     <td> boolean</td>
                     <td> akData: TBytes;<br/> akListOut: TStrings
@@ -2010,7 +2010,7 @@ title: xEdit Scripting Functions
                         if the operation succeeded.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>NifTextureList</b></td>
                     <td> boolean</td>
                     <td> akData: TBytes;<br/> akListOut: TStrings
@@ -2019,7 +2019,7 @@ title: xEdit Scripting Functions
                         Returns <i>True</i> if the operation succeeded.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>NifTextureListResource</b></td>
                     <td> boolean</td>
                     <td> akData: variant;<br/> akListOut: TStrings
@@ -2028,7 +2028,7 @@ title: xEdit Scripting Functions
                         Returns <i>True</i> if the operation succeeded.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>NifTextureListUVRange</b></td>
                     <td> boolean</td>
                     <td> akData: TBytes;<br/> afUVRange: Single;<br/> akListOut: TStrings
@@ -2048,18 +2048,18 @@ title: xEdit Scripting Functions
         </div>
         <div class="level-3" id="s_11-4-8-2">
             <h3>11.4.8.2 DDS functions</h3>
-            <table class="wikitable" style="background-color: #AAAAAA; cellpadding: 0">
+            <table>
                 <tr>
-                    <th style="background-color: #DDDDDD"> Function
+                    <th> Function
                     </th>
-                    <th style="background-color: #DDDDDD"> Returns
+                    <th> Returns
                     </th>
-                    <th style="background-color: #DDDDDD"> Arguments
+                    <th> Arguments
                     </th>
-                    <th style="background-color: #DDDDDD"> Description
+                    <th> Description
                     </th>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>wbDDSStreamToBitmap</b></td>
                     <td> boolean</td>
                     <td> akStream: TStream;<br/> akBitmapOut: TBitmap
@@ -2068,7 +2068,7 @@ title: xEdit Scripting Functions
                         Returns <i>True</i> if the operation succeeds.
                     </td>
                 </tr>
-                <tr style="background-color:#EEEEEE">
+                <tr>
                     <td><b>wbDDSDataToBitmap</b></td>
                     <td> boolean</td>
                     <td> akData: TBytes;<br/> akBitmapOut: TBitmap
@@ -2077,7 +2077,7 @@ title: xEdit Scripting Functions
                         <i>True</i> if the operation succeeds.
                     </td>
                 </tr>
-                <tr style="background-color:#F8F8F8">
+                <tr>
                     <td><b>wbDDSResourceToBitmap</b></td>
                     <td> boolean</td>
                     <td> akUnknown;<br/> akBitmapOut: TBitmap
@@ -2188,20 +2188,20 @@ title: xEdit Scripting Functions
                     for examples as well.</i>
                 </li>
             </ul>
-            <table class="wikitable" style="background-color: #AAAAAA; cellpadding: 0">
+            <table>
                 <tr>
-                    <th style="background-color: #DDDDDD"> Class
+                    <th> Class
                     </th>
-                    <th style="background-color: #DDDDDD"> Reference
+                    <th> Reference
                     </th>
-                    <th style="background-color: #DDDDDD"> Description
+                    <th> Description
                     </th>
-                    <th style="background-color: #DDDDDD"> Use example
+                    <th> Use example
                     </th>
-                    <th style="background-color: #DDDDDD"> Note
+                    <th> Note
                     </th>
                 </tr>
-                <tr style="background-color: #F8F8F8">
+                <tr>
                     <td><b>TButton</b></td>
                     <td><a rel="nofollow" target="_blank" class="external text"
                         href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TButton.html">TButton</a>
@@ -2211,7 +2211,7 @@ title: xEdit Scripting Functions
                     <td> The button doesn't automatically expand its width to accommodate its contents.
                     </td>
                 </tr>
-                <tr style="background-color: #EEEEEE">
+                <tr>
                     <td><b>TCheckBox</b></td>
                     <td><a rel="nofollow" target="_blank" class="external text"
                         href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TCheckBox.html">TCheckBox</a>
@@ -2225,7 +2225,7 @@ title: xEdit Scripting Functions
                         to <code>nil</code>, change <code>Checked</code>, and then restore <code>OnClick</code>'s value.
                     </td>
                 </tr>
-                <tr style="background-color: #F8F8F8">
+                <tr>
                     <td><b>TComboBox</b></td>
                     <td><a rel="nofollow" target="_blank" class="external text"
                         href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TComboBox.html">TComboBox</a>
@@ -2236,7 +2236,7 @@ title: xEdit Scripting Functions
                         entry, mimicking the function of a typical drop-down menu
                     </td>
                 </tr>
-                <tr style="background-color: #EEEEEE">
+                <tr>
                     <td><b>TForm</b></td>
                     <td><a rel="nofollow" target="_blank" class="external text"
                         href="http://lazarus-ccr.sourceforge.net/docs/lcl/forms/tform.html">TForm</a></td>
@@ -2245,7 +2245,7 @@ title: xEdit Scripting Functions
                     <td>
                     </td>
                 </tr>
-                <tr style="background-color: #F8F8F8">
+                <tr>
                     <td><b>TLabel</b></td>
                     <td><a rel="nofollow" target="_blank" class="external text"
                         href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TLabel.html">TLabel</a>
@@ -2258,7 +2258,7 @@ title: xEdit Scripting Functions
                         (e.g. <code>'Line 1' + #13#10 + 'Line 2'</code>).
                     </td>
                 </tr>
-                <tr style="background-color: #EEEEEE">
+                <tr>
                     <td><b>TPanel</b></td>
                     <td><a rel="nofollow" target="_blank" class="external text"
                         href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/ExtCtrls_TPanel.html">TPanel</a>
@@ -2268,7 +2268,7 @@ title: xEdit Scripting Functions
                     <td>
                     </td>
                 </tr>
-                <tr style="background-color: #F8F8F8">
+                <tr>
                     <td><b>TStaticText</b></td>
                     <td><a rel="nofollow" target="_blank" class="external text"
                         href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TStaticText.html">TStaticText</a>
@@ -2283,18 +2283,18 @@ title: xEdit Scripting Functions
             <p><br/>
                 TES5Edit appears to provide the following variables:
             </p>
-            <table class="wikitable" style="background-color: #AAAAAA; cellpadding: 0">
+            <table>
                 <tr>
-                    <th style="background-color: #DDDDDD"> Name
+                    <th> Name
                     </th>
-                    <th style="background-color: #DDDDDD"> Type
+                    <th> Type
                     </th>
-                    <th style="background-color: #DDDDDD"> Description
+                    <th> Description
                     </th>
-                    <th style="background-color: #DDDDDD"> Note
+                    <th> Note
                     </th>
                 </tr>
-                <tr style="background-color: #F8F8F8">
+                <tr>
                     <td><b>frmFileSelect</b></td>
                     <td> TForm</td>
                     <td> Returns a copy of the plug-in select dialog, which can be shown by calling <code>fMyDialogVariable.ShowModal</code>
@@ -2862,7 +2862,7 @@ end.
         </div>
         <div class="level-3" id="s_11-7-2">
             <h3>11.7.2 Unsupported language features</h3>
-            <table class="wikitable" width="100%">
+            <table width="100%">
                 <tr>
                     <th>Feature
                     </th>
@@ -2941,7 +2941,7 @@ end.
         </div>
         <div class="level-3" id="s_11-7-3">
             <h3>11.7.3 Unsupported operators</h3>
-            <table class="wikitable" width="100%">
+            <table width="100%">
                 <tr>
                     <th>Operator
                     </th>
@@ -2989,7 +2989,7 @@ end.
         </div>
         <div class="level-3" id="s_11-7-4">
             <h3>11.7.4 Unsupported keywords</h3>
-            <table class="wikitable" width="100%">
+            <table width="100%">
                 <tr>
                     <th>Keyword
                     </th>
@@ -3061,7 +3061,7 @@ end.
         <div class="level-3" id="s_11-7-5">
             <h3>11.7.5 Unsupported classes and tools</h3>
             <div class="content">
-                <table class="wikitable" width="100%">
+                <table width="100%">
                     <tr>
                         <th>Feature
                         </th>
