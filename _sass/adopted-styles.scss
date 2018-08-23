@@ -1,3 +1,9 @@
+// Table Color Variables
+$child-odd-bg-color: #8accab !default;
+$child-even-bg-color: #b8e0cc !default;
+$hover-bg-color: #72c19a !default;
+$table-header-color: #8accab !default;
+
 /*
  * Clearfix: contain floats
  *
@@ -36,4 +42,15 @@ html * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+// Table Row Highlighting
+tr:nth-child(odd) {
+  background: $child-odd-bg-color;
+}
+tr:nth-child(even) {
+  background: $child-even-bg-color;
+}
+tr:hover {
+    background-color: $hover-bg-color;
 }

@@ -344,6 +344,7 @@ a {
         -webkit-overflow-scrolling: touch;
         th {
             font-weight: bold;
+            background-color: $table-header-color;
         }
         th,
         td {
