@@ -31,7 +31,12 @@ title: xEdit Appendix
         <ul class="second">
             <li><a href="#s_9-1">9.1 Sorting is not Alignment (SINA)</a></li>
             <li><a href="#s_9-2">9.2 ESL vs ESM</a></li>
-            <li><a href="#s_9-3">9.3 Testimonials</a></li>
+            <li><a href="#s_9-3">9.3 Advanced Editing</a></li>
+            <ul class="second">
+                <li><a href="#s_9-3-1">9.3.1 I Know What I'm Doing</a></li>
+                <li><a href="#s_9-3-2">9.3.2 Editing the Module's Header</a></li>
+            </ul>
+            <li><a href="#s_9-4">9.4 Testimonials</a></li>
         </ul>
     </div>
     <!--/.local-->
@@ -102,7 +107,31 @@ title: xEdit Appendix
         </div>
         <!--/.level-2-->
         <div class="level-2" id="s_9-3">
-            <h2 class="ctrl">9.2 Testimonials</h2>
+            <h2 class="ctrl">9.3 Advanced Editing</h2>
+            <div class="content">
+                <div class="level-2" id="s_9-3-1">
+                    <h2 class="ctrl">9.3.1 I Know What I'm Doing</h2>
+                    <p>Beginners will be presented with the Warning screen when choosing to make changes to a module.</p>
+                    <p class="img"><img src="img/EditWarning.jpg"></p>
+                    <p>Pressing, "Yes" when prompted will allow you to make changes.</p>
+                    <p class="img"><img src="img/image136.jpg"></p>
+                    <p>However, adding the command line parameter <code>-IKnowWhatImDoing</code> will disable that prompt.</p>
+                </div>
+                <div class="level-2" id="s_9-3-2">
+                    <h2 class="ctrl">9.3.2 Editing the Module's Header</h2>
+                    <p class="img"><img src="img/warn-edit-header.jpg"></p>
+                    <p>Unless you are an advanced user and know what you are doing you should not alter the module's header. One example is removing masters from the module's header.  Removing masters without using <a href="https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#s_5-2-4">Clean Master</a> will cause unresolved references for any records that still reference the master. You should always remove masters using Clean Masters.  However, if you need to make an alteration and know exactly what you are doing then adding the command line parameter <code>-AllowMasterFilesEdit</code> along with <code>-IKnowWhatImDoing</code> will enable you to edit the module's header.</p>
+                </div>
+                <div class="level-nav">
+                    <a href="#s_9-2" class="drkbtn">Previous Section</a>
+                </div>
+                <!--/.level-nav-->
+            </div>
+            <!--/.content-->
+        </div>
+        <!--/.level-2-->
+        <div class="level-2" id="s_9-4">
+            <h2 class="ctrl">9.4 Testimonials</h2>
             <div class="content">
                 <div class="level-3 quote">
                     <h3 class="ctrl">JustinOther:</h3>
@@ -231,7 +260,7 @@ title: xEdit Appendix
             </div>
             <!--/.content-->
             <div class="level-nav">
-                <a href="#s_9-2" class="drkbtn">Previous Section</a>
+                <a href="#s_9-3" class="drkbtn">Previous Section</a>
                 <a href="#s_toc" class="drkbtn">Top of this Page</a>
             </div>
             <!--/.level-nav-->
