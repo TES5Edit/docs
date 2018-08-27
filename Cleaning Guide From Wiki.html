@@ -1,0 +1,207 @@
+---
+layout: navagation
+title: xEdit Cleaning and-Error Checking
+---
+<html lang="en" dir="ltr" class="client-nojs">
+    <body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-TES5Edit_Cleaning_Guide_-_TES5Edit skin-vector action-view">
+        <div id="mw-page-base" class="noprint"></div>
+        <div id="mw-head-base" class="noprint"></div>
+        <div id="content" class="mw-body" role="main">
+            <a id="top"></a>
+            <div class="mw-indicators"></div>
+            <h1 id="firstHeading" class="firstHeading" lang="en">TES5Edit Cleaning Guide - TES5Edit</h1>
+            <div id="bodyContent" class="mw-body-content">
+                <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+                    <div id="toc" class="toc">
+                        <div id="toctitle">
+                            <h2>Contents</h2>
+                        </div>
+                        <ul>
+                            <li class="toclevel-1 tocsection-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+                            <li class="toclevel-1 tocsection-2">
+                                <a href="#Understanding_Mod_Cleaning"><span class="tocnumber">2</span> <span class="toctext">Understanding Mod Cleaning</span></a>
+                                <ul>
+                                    <li class="toclevel-2 tocsection-3">
+                                        <a href="#Dirty_Edits"><span class="tocnumber">2.1</span> <span class="toctext">Dirty Edits</span></a>
+                                        <ul>
+                                            <li class="toclevel-3 tocsection-4">
+                                                <a href="#Types_of_Dirty_Edit"><span class="tocnumber">2.1.1</span> <span class="toctext">Types of Dirty Edit</span></a>
+                                                <ul>
+                                                    <li class="toclevel-4 tocsection-5"><a href="#Identical_To_Master"><span class="tocnumber">2.1.1.1</span> <span class="toctext">Identical To Master</span></a></li>
+                                                    <li class="toclevel-4 tocsection-6"><a href="#Deleted_Reference"><span class="tocnumber">2.1.1.2</span> <span class="toctext">Deleted Reference</span></a></li>
+                                                    <li class="toclevel-4 tocsection-7"><a href="#Deleted_Navmeshes"><span class="tocnumber">2.1.1.3</span> <span class="toctext">Deleted Navmeshes</span></a></li>
+                                                    <li class="toclevel-4 tocsection-8"><a href="#Wild_Edits"><span class="tocnumber">2.1.1.4</span> <span class="toctext">Wild Edits</span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="toclevel-3 tocsection-9"><a href="#What_.28Not.29_to_Clean"><span class="tocnumber">2.1.2</span> <span class="toctext">What (Not) to Clean</span></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="toclevel-2 tocsection-10">
+                                        <a href="#What_Is_Cleaning.3F"><span class="tocnumber">2.2</span> <span class="toctext">What Is Cleaning?</span></a>
+                                        <ul>
+                                            <li class="toclevel-3 tocsection-11"><a href="#Automated_Cleaning"><span class="tocnumber">2.2.1</span> <span class="toctext">Automated Cleaning</span></a></li>
+                                            <li class="toclevel-3 tocsection-12"><a href="#Manual_Cleaning"><span class="tocnumber">2.2.2</span> <span class="toctext">Manual Cleaning</span></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="toclevel-2 tocsection-13">
+                                        <a href="#How_To_Clean.3F"><span class="tocnumber">2.3</span> <span class="toctext">How To Clean?</span></a>
+                                        <ul>
+                                            <li class="toclevel-3 tocsection-14"><a href="#Order_Of_Cleaning"><span class="tocnumber">2.3.1</span> <span class="toctext">Order Of Cleaning</span></a></li>
+                                            <li class="toclevel-3 tocsection-15"><a href="#Loading_Plugins_Correctly"><span class="tocnumber">2.3.2</span> <span class="toctext">Loading Plugins Correctly</span></a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="toclevel-2 tocsection-16"><a href="#A_Community_Effort"><span class="tocnumber">2.4</span> <span class="toctext">A Community Effort</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="toclevel-1 tocsection-17"><a href="#Glossary"><span class="tocnumber">3</span> <span class="toctext">Glossary</span></a></li>
+                            <li class="toclevel-1 tocsection-18"><a href="#Additional_Resources"><span class="tocnumber">4</span> <span class="toctext">Additional Resources</span></a></li>
+                            <li class="toclevel-1 tocsection-19"><a href="#Closing_Remarks_.26_Credits"><span class="tocnumber">5</span> <span class="toctext">Closing Remarks &amp; Credits</span></a></li>
+                        </ul>
+                    </div>
+                    <h1><span class="mw-headline" id="Introduction">Introduction</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=1" title="Edit section: Introduction">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+                    <p>Clean mods are essential to the creation of a stable modded game environment in which there are minimal conflicts between the mods used. This guide is designed to introduce mod authors and mod users to the concept of mod cleaning and to direct them to instructions on how to clean mods using TES5Edit. There is also a <a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit#Glossary" title="TES5Edit Cleaning Guide - TES5Edit">Glossary</a> at the end of the guide that may be used as a quick reference if you forget what a term means.</p>
+                    <p>While this guide may seem intimidating, cleaning is not hard once you understand it. Devote some time to reading through this guide and you'll be well on your way to have a squeaky-clean mod list and a fun, more stable game environment.</p>
+                    <h1><span class="mw-headline" id="Understanding_Mod_Cleaning">Understanding Mod Cleaning</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=2" title="Edit section: Understanding Mod Cleaning">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+                    <h2><span class="mw-headline" id="Dirty_Edits">Dirty Edits</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=3" title="Edit section: Dirty Edits">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+                    <p>Many mods make unintentional or unnecessary edits to game elements, collectively known as dirty edits. They are often a side-effect of mod creation, and are often due to bugs in the utilities Bethesda has provided to create mods, rather than bad practice by mod authors. Dirty edits can cause a wide range of issues, including incorrect game settings, missing content, broken quests and crashing to desktop. The more dirty edits there are in a mod, and the more mods with dirty edits you use, the more likely you are to experience issues.</p>
+                    <h3><span class="mw-headline" id="Types_of_Dirty_Edit">Types of Dirty Edit</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=4" title="Edit section: Types of Dirty Edit">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+                    <h4><span class="mw-headline" id="Identical_To_Master">Identical To Master</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=5" title="Edit section: Identical To Master">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+                    <p>Identical to Master (ITM) edits are the most common type of dirty edit. They're where a mod has overwritten something in the game without actually changing anything. If another mod higher up in the load order makes an intentional change to that thing, it will have its effect cancelled out by the ITM record, which can cause problems. ITM edits can be cleaned automatically using TES5Edit.</p>
+                    <dl>
+                        <dd><b><i>Example 1: Identical To Master Edits</i></b></dd>
+                    </dl>
+                    <dl>
+                        <dd> Consider a quest mod in which the author has also changed the properties of some sneaking settings to better fit with other areas of the quest mod. The author then later decides the sneaking changes are unnecessary, and sets them back to their original values. If this quest mod were then loaded after a mod that overhauls the sneaking system, the sneaking overhaul's effects would be at least partially undone by the quest mod, which is not the effect intended by the author of either mod, nor the effect desired by the user.</dd>
+                    </dl>
+                    <dl>
+                        <dd> The solution would be to clean the quest mod, which would remove the ITM edits and allow the sneaking overhaul mod to function as intended.</dd>
+                    </dl>
+                    <h4><span class="mw-headline" id="Deleted_Reference">Deleted Reference</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=6" title="Edit section: Deleted Reference">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+                    <p>Deleted references are a significant cause of crashes and game bugs. This is because if one mod tries to modify a reference that another mod has deleted, then the first mod cannot find the reference, and this then causes problems. A deleted reference can be fixed by undeleting then disabling the references and moving it to a position where it is no longer visible in the Creation Kit (TES5Edit sets the Z axis position to -30,000 units). This has the same effect as deleting the reference, without causing issues. Deleted references can be cleaned automatically using TES5Edit.</p>
+                    <h4><span class="mw-headline" id="Deleted_Navmeshes">Deleted Navmeshes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=7" title="Edit section: Deleted Navmeshes">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+                    <p>Like deleting records, deleting navmeshes can cause crashes. However, these cannot be automatically corrected, and require manual cleaning.</p>
+                    <h4><span class="mw-headline" id="Wild_Edits">Wild Edits</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=8" title="Edit section: Wild Edits">edit</a><span class="mw-editsection-bracket">]</span></span></h4>
+                    <p>Wild edits are unintentional or misdirected edits to game elements by a mod author that cause unnecessary conflicts with other mods. They are called wild edits because they often appear to have been made haphazardly with no relation to the author's stated intentions. Because detecting wild edits involves knowing what the mod is supposed to do, they must be cleaned manually.</p>
+                    <p>One example of a wild edit would be when a container is incorrectly modified to include an item, but instead of only that one container including the item, the result is that all containers of the same type include the item. If the description of the mod states that an item is added to a specific container, then it is clear this is a wild edit and the mod should be cleaned by fixing the wild edit.</p>
+                    <h3><span class="mw-headline" id="What_.28Not.29_to_Clean">What (Not) to Clean</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=9" title="Edit section: What (Not) to Clean">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+                    <p>The <a href="/index.php?title=Skyrim_Dirty_Plugins_List" title="Skyrim Dirty Plugins List">Skyrim Dirty Plugins List</a> is an incomplete list of information on how to manually clean certain plugins and what plugins should not be cleaned. As it's an incomplete list, mod descriptions and readme files should be read in case a mod author has stated a plugin should not be cleaned there, but not updated the list.</p>
+                    <h2><span class="mw-headline" id="What_Is_Cleaning.3F">What Is Cleaning?</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=10" title="Edit section: What Is Cleaning?">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+                    <p>Cleaning very broadly defined is a process that analyzes all the changes a mod makes and determines which edits are actually supposed to be in the mod, then removes those that are not.</p>
+                    <p>Cleaning can be automated when dealing with Identical To Master edits and deleted references, but must be performed manually when dealing with deleted navmeshes and wild edits.</p>
+                    <h3><span class="mw-headline" id="Automated_Cleaning">Automated Cleaning</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=11" title="Edit section: Automated Cleaning">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+                    <p>Automated cleaning requires knowledge of exactly which other mods the mod to be cleaned is dependent on, both implicitly and explicitly.</p>
+                    <p>If cleaning dirty edits, the program analyses every record edit a mod makes and compares each one against the record without the edit, removing any edits that match the technical definitions of dirty edits.</p>
+                    <p>If cleaning deleted references, the program analyses each reference a mod edits checking if it has been deleted or not, then undeleting and disabling any deleted references encountered.</p>
+                    <h3><span class="mw-headline" id="Manual_Cleaning">Manual Cleaning</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=12" title="Edit section: Manual Cleaning">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+                    <p>Manual cleaning is a fairly advanced technique that requires those performing it without the aid of specific step-by-step instructions to know how TES5Edit works and to know a bit about how mods work. Mod users will generally not need to perform manual cleaning most of the time, and so the specifics are not covered in this guide.</p>
+                    <p>Manual cleaning is all about using your judgement to decide whether an edit is a valid, intentional edit or a wild edit that should be removed. Wild edits may be obvious such as in the example below, or not obvious, such as some rocks that were accidentally moved a small amount while editing a cell. Once you have judged that an edit is wild, you must then use your knowledge of modding to decide on the correct method of fixing it, and perform the fix correctly. Incorrectly judging an edit to be wild, choosing the wrong method of fixing a wild edit and performing the fix incorrectly will all lead to making the situation worse, which is why knowledge and experience are required when manually cleaning plugins.</p>
+                    <dl>
+                        <dd><i><b>Example 2: Manually Cleaning A Wild Edit</b></i></dd>
+                    </dl>
+                    <dl>
+                        <dd> Consider a mod that is intended to add a powerful sword named the Super Sword of Slaying to the bottom of a new dungeon. However, what it instead does is to change the Silver Sword so that it is now the Super Sword of Slaying, and adds one to the bottom of a new dungeon. The result is that every Silver Sword in the game will now be a Super Sword of Slaying.</dd>
+                        <dd> To fix this wild edit, the FormID of the edited Silver Sword record in the mod plugin can be changed from 00###### to 01######, which will make it a new type of weapon instead of an edited Silver Sword. The reference placed in the dungeon can then be updated to use the new FormID. This will result in a Super Sword of Slaying being present in the dungeon, while all Silver Swords remain Silver Swords.</dd>
+                    </dl>
+                    <p>If you don't understand the above example and the fix, you don't possess the knowledge required for manual cleaning, so don't worry about it and just stick to automated cleaning.</p>
+                    <h2><span class="mw-headline" id="How_To_Clean.3F">How To Clean?</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=13" title="Edit section: How To Clean?">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+                    <p>There are two cleaning tutorials available on this wiki:</p>
+                    <ul>
+                        <li> <a href="/index.php?title=TES5Edit_Mod_Cleaning_Tutorial" title="TES5Edit Mod Cleaning Tutorial">TES5Edit Mod Cleaning Tutorial</a></li>
+                        <li> <a href="/index.php?title=Fixing_Navmesh_Deletion_Tutorial" title="Fixing Navmesh Deletion Tutorial">Fixing Navmesh Deletion Tutorial</a></li>
+                    </ul>
+                    <p>There are also several video tutorials linked to on TES5Edit's <a rel="nofollow" target="_blank" class="external text" href="https://www.nexusmods.com/skyrim/mods/25859/?">Nexus Mods</a> page.</p>
+                    <p><a href="/index.php?title=File:Tes5EditVideo.jpg" class="image" title="TES5EDIT&#160;: Cleaning your mods"><img alt="TES5EDIT&#160;: Cleaning your mods" src="/images/thumb/1/10/Tes5EditVideo.jpg/425px-Tes5EditVideo.jpg" width="425" height="354" srcset="/images/1/10/Tes5EditVideo.jpg 1.5x, /images/1/10/Tes5EditVideo.jpg 2x" /></a></p>
+                    <dl>
+                        <dd> <a rel="nofollow" target="_blank" class="external text" href="https://www.youtube.com/watch?v=UOQO2S6HDBw">TES5EDIT&#160;: Cleaning your mods</a></dd>
+                    </dl>
+                    <p>Even when performing automated cleaning, it is important to ensure everything is set up so that cleaning can be performed correctly. Gophers video on TES5Edit: Cleaning your mods is a great way to become familiar with the cleaning process and gives a good example of why it's important to fix deleted references. The information below covers some information that may not be covered in the tutorials.</p>
+                    <h3><span class="mw-headline" id="Order_Of_Cleaning">Order Of Cleaning</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=14" title="Edit section: Order Of Cleaning">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+                    <p>It is recommended that you begin cleaning at the top of your load order and just do down the list. This will ensure that dependencies will be cleaned before the mods that are dependent on them, so long as your load order is correct.</p>
+                    <p>It is important to ensure a mod's dependencies are clean before cleaning the mod itself because the automated cleaning process will assume that the dependencies are clean. If this assumption is incorrect, it may lead to the mod being incorrectly cleaned.</p>
+                    <h3><span class="mw-headline" id="Loading_Plugins_Correctly">Loading Plugins Correctly</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=15" title="Edit section: Loading Plugins Correctly">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+                    <p>The terms <b>explicit dependency</b> and <b>implicit dependency</b> are used in this section. It is important that you understand these terms, so before continuing, here are their definitions:</p>
+                    <dl>
+                        <dd> An <b>explicit dependency</b> is a plugin that another plugin relies on, and which has its filename explicitly referenced within the latter plugin. Explicit dependencies are easily determined because they can be viewed in Wrye Bash, and if an explicit dependency is missing or loaded after the plugin that depends on it, the game will crash on startup. A plugin's explicit dependencies are also known as its masters.</dd>
+                    </dl>
+                    <dl>
+                        <dd> An <b>implicit dependency</b> is a plugin that another plugin depends on, but which is not referenced by the latter plugin. Implicit dependencies must be determined by checking if the mod author has listed any required mods for their mod, and by considering the nature of the mod. For example, compatibility patch plugins are often implicitly dependent on the plugins of the mods they resolve compatibility issues for.</dd>
+                    </dl>
+                    <p>Having the correct load order set for your mod plugins is essential for them to be cleaned correctly. Load ordering is outside the scope of this guide, but the easiest way to get a load order that is likely to be correct is to use <a rel="nofollow" target="_blank" class="external text" href="https://loot.github.io">LOOT</a>.</p>
+                    <p>It is highly recommended that when cleaning a plugin, only the plugin itself and the plugins it depends on should be loaded. Having any other plugins loaded introduces the risk of their contents interfering with the cleaning process and leading to invalid results.</p>
+                    <p>There are two absolute requirements to loading plugins for cleaning:</p>
+                    <ol>
+                        <li> The plugin to be cleaned must be the last loaded plugin in your load order.</li>
+                        <li> Any plugins upon which the plugin to be cleaned depends must be loaded. This includes both implicit and explicit dependencies.</li>
+                    </ol>
+                    <p>Due to these rules, you cannot clean more than one mod in the same TES5Edit session. If you have multiple plugins to clean, then they must each be loaded into separate TES5Edit sessions and cleaned separately.</p>
+                    <dl>
+                        <dd><i><b>Example 3: Loading Explicit And Implicit Dependencies</b></i></dd>
+                    </dl>
+                    <dl>
+                        <dd> Consider a plugin "VillageMod-QuestMod Patch.esp" that acts as a compatibility patch between VillageMod.esp and QuestMod.esp.</dd>
+                    </dl>
+                    <dl>
+                        <dd> VillageMod.esp changes (among other things) some of the names of the NPCs in the village and changes the landscaping around it, but QuestMod.esp includes voice-acted dialogue that uses the original NPC names, and adds a wall around the village that is partially buried by the landscape changes of VillageMod.esp when the two are used together.</dd>
+                    </dl>
+                    <dl>
+                        <dd>"VillageMod-QuestMod Patch.esp" reverts the names of the NPCs back to their originals to match with QuestMod.esp's voice acting and moves the walls added by QuestMod.esp so that they are no longer buried. As it changes the NPC names, it has Skyrim.esm as an explicit dependency, and as it changes the walls, it has QuestMod.esp as an explicit dependency. However, because it doesn't change anything added by VillageMod.esp, VillageMod.esp is an implicit dependency.</dd>
+                    </dl>
+                    <dl>
+                        <dd>"VillageMod-QuestMod Patch.esp" will refuse to load without also loading Skyrim.esm and QuestMod.esp as they are explicit dependencies, but it is possible to load it without also loading VillageMod.esp. However, if this is done then the name changes in "VillageMod-QuestMod Patch.esp" will appear to be Identical To Master edits, as they will be identical to the names in Skyrim.esm and QuestMod.esp does not touch them, and so the name changes in the patch will be incorrectly removed. If all three plugins are loaded, then the name changes will not appear to be Identical To Master edits, as they are different to the names in VillageMod.esp.</dd>
+                    </dl>
+                    <h2><span class="mw-headline" id="A_Community_Effort">A Community Effort</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=16" title="Edit section: A Community Effort">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+                    <p>The principal reason for the presence of dirty mods is a lack of awareness of the issues surrounding dirty mods and the importance of mod cleaning. As such, a community-wide effort is required to raise awareness and so reduce the incidence of dirty mods.</p>
+                    <p>It's <b>NOT</b> a good idea for everyone to just go ahead and clean their full load order and then forget about it.</p>
+                    <p>The problem is twofold. First, to properly clean mods usually requires an understanding of the <b>intent</b> of the mod author. There might be implicit dependencies on other mods which are not part of the master list. Second, and following from the first, depending on how the cleaning was done, people end up with slightly different versions of these modules, which is going to make support in case of problems a nightmare for the mod author.</p>
+                    <p>Mod quality is a community-wide problem that needs to be properly addressed on a community level. Mod authors need to ensure that their mods are clean, because they only need to clean their mod once for all future users to benefit, whereas each and every user of a dirty mod would have to clean it themselves, which is hugely inefficient.</p>
+                    <p>The LOOT team provides a focus for community efforts to raise awareness regarding mod cleaning, by accepting reports of dirty mods and attaching them to the relevant plugins in the LOOT masterlist as messages containing a link to this wiki page, along with any additional information supplied. This data is then extracted and displayed to the user by LOOT when it runs, and the data can also be accessed by other utilities that make use of the LOOT API. The result is a central repository of information that can be accessed by a large number of people.</p>
+                    <p>For mod authors:</p>
+                    <ol>
+                        <li> <b>Clean</b> your mods properly. All of them. You are the one who really knows the intention of your mod. Closely review all changes to make sure they preserve the intent of your mod.</li>
+                        <li> Cleaning mods is NOT just limited to running the automated functions and be done with it. Manually review every override record your module(s) contain to make sure that that's really what you intended to do.</li>
+                        <li> <b>List in your documentation</b> that you HAVE cleaned your mods and which version of TES5Edit you used for it. If there were any implicit dependencies that you had to observe while doing the cleaning, specifically list them and the rational for them.</li>
+                    </ol>
+                    <p>For mod users:</p>
+                    <ol>
+                        <li> <b>Check</b> any mods you use that do not specifically mention being properly cleaned (by basically doing a dry run of the cleaning process).</li>
+                        <li> If any of your mods are dirty, <b>inform the author</b>. The mod authors are the ones that really understand the intention of their mods. They are the ones that are in the best position to properly clean them. And if they only publish properly cleaned mods, the whole community benefits from it.</li>
+                        <li> If a mod has been deserted by its author or the author is unwilling to fix his mess, just <b>leave a short note</b> on the comments and/or in the RELz thread to save other mod users from wasting their time. Remember: stay civil; flaming doesn't help anyone.</li>
+                        <li> If any of your mods are dirty, submit them to the LOOT team as directed in the LOOT readme, so that others can benefit from your findings.</li>
+                    </ol>
+                    <h1><span class="mw-headline" id="Glossary">Glossary</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=17" title="Edit section: Glossary">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+                    <p>This glossary contains definitions for the general modding terms and cleaning-specific terms used in this guide.</p>
+                    <p><b>Mod</b>: A modification for Skyrim. Can be player-made or official DLC.</p>
+                    <p><b>Plugin</b>: A file with a .esp or .esm file extension (well, it's what's inside the file that matters, but the file extension is a pretty good clue).</p>
+                    <p><b>Record</b>: A data structure inside a plugin that holds the information on one element of the game. For example, each type of weapon, each race, each potion, etc. have different records.</p>
+                    <p><b>Rule of One</b>: Only one plugin's changes to a record can be applied by the game. If multiple plugins change the same record, then the changes from the last of those plugins in the load order will be applied. There are a few exemptions, eg. if multiple plugins put things into the same cell, then all those things will be seen in-game, but in general the rule holds for non-complex record types (and complex record types are beyond the scope of this guide).</p>
+                    <p><b>Load order</b>: The order in which plugins are loaded.</p>
+                    <p><b>Dirty mod</b>: A mod that contains dirty edits, wild edits, deleted references or any combination of them.</p>
+                    <p><b>Dirty edit</b>: An edit made which is unnecessary, often caused by Creation Kit bugs or authors making unintended edits then undoing them incorrectly. Such edits can be cleaned automatically.</p>
+                    <p><b>Identical To Master edit</b>: A type of dirty edit made where the edited value(s) is/are identical to the value(s) without the edit.</p>
+                    <p><b>Wild edit</b>: An edit made which is not consistent with the intent of the mod, often caused by authors accidentally making small edits or trying to perform an edit in the wrong way. Such edits must be cleaned manually.</p>
+                    <p><b>Deleted reference</b>: A reference to a record that has been deleted. For example, placing a Silver Sword into the game world creates a Silver Sword reference there, which may then be removed by deleting it.</p>
+                    <p><b>Dependency</b>: A plugin upon which another plugin relies. For example, Skyrim.esm is a dependency for most mods.</p>
+                    <p><b>Explicit dependency</b>: A dependency that is recorded within the dependent plugin, such that the game cannot be loaded without the dependency being satisfied.</p>
+                    <p><b>Implicit dependency</b>: A dependency for which there is no indication given within the dependent plugin, and which can only be determined by considering author intent.</p>
+                    <h1><span class="mw-headline" id="Additional_Resources">Additional Resources</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=18" title="Edit section: Additional Resources">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+                    <ul>
+                        <li> <a href="/index.php?title=TES5Edit" title="TES5Edit" class="mw-redirect">TES5Edit</a></li>
+                        <li> <a href="/index.php?title=TES5Edit_Mod_Cleaning_Tutorial" title="TES5Edit Mod Cleaning Tutorial">TES5Edit Mod Cleaning Tutorial</a></li>
+                        <li> <a href="/index.php?title=Fixing_Navmesh_Deletion_Tutorial" title="Fixing Navmesh Deletion Tutorial">Fixing Navmesh Deletion Tutorial</a></li>
+                        <li> <a href="/index.php?title=Skyrim_Dirty_Plugins_List" title="Skyrim Dirty Plugins List">Skyrim Dirty Plugins List</a></li>
+                        <li> <a href="/index.php?title=TES5Edit_Scripting_Functions" title="TES5Edit Scripting Functions">TES5Edit Scripting Functions</a></li>
+                        <li> <a rel="nofollow" target="_blank" class="external text" href="https://bethesda.net/community/topic/57570/relz-sseedit/">Official Elderscrolls TES5Edit forum topic</a></li>
+                    </ul>
+                    <h1><span class="mw-headline" id="Closing_Remarks_.26_Credits">Closing Remarks &amp; Credits</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit&amp;action=edit&amp;section=19" title="Edit section: Closing Remarks &amp; Credits">edit</a><span class="mw-editsection-bracket">]</span></span></h1>
+                    <p>This guide has been adapted from the <a rel="nofollow" target="_blank" class="external text" href="https://cs.elderscrolls.com/index.php/TES4Edit_Cleaning_Guide">TES4Edit Cleaning Guide</a>. Much of the content of that guide has been removed for this guide, with all lists of mods being absent: this is partly because there are as yet no mods to list, but mainly because such lists belong on a separate wiki page from the guide. The special cleaning instructions section is also missing for the same reason, and the tips on avoiding dirty mods section is missing because I felt it was counter to the topic of the guide. I also left out the review of key concepts because I felt that having such a section would cause many readers to skip the rest of the information, and so put them in a position of false confidence from where they could do significant harm to their modded game.</p>
+                    <p>I have also created a <a href="/index.php?title=Skyrim_Dirty_Plugins_List" title="Skyrim Dirty Plugins List">Skyrim Dirty Plugins List</a> page for the listing of any plugins that need cleaning, plugins that should not be cleaned, and plugins for which manual cleaning instructions are required.</p>
+                    <p>Many thanks go to the various authors of and contributors to that article, including but not limited to: Brumbek, Arthmoor, Vorians, ElminsterEU, WrinklyNinja, and dev_akm.</p>
+                    <p>Thanks also go to ElminsterEU, Sharlikran, and Zilav for their work in getting TES5Edit released.</p>
+                    <p>Finally, thanks go to the LOOT team members responsible for Skyrim's masterlist, for their efforts in collating dirty mod reports.
+                        <br />
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
