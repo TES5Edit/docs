@@ -276,6 +276,25 @@ title: xEdit Cleaning and-Error Checking
         <!--/.level-2-->
     </div>
     <!--/.content-->
+    <!--/.glossary-->
+    <div id="Glossary">
+        <h1>Glossary</h1>
+        <p>This glossary contains definitions for the general modding terms and cleaning-specific terms used in this guide.</p>
+        <p><b>Mod</b>: A modification for Skyrim. Can be player-made or official DLC.</p>
+        <p><b>Plugin</b>: A file with a .esp or .esm file extension (well, it's what's inside the file that matters, but the file extension is a pretty good clue).</p>
+        <p><b>Record</b>: A data structure inside a plugin that holds the information on one element of the game. For example, each type of weapon, each race, each potion, etc. have different records.</p>
+        <p><b>Rule of One</b>: Only one plugin's changes to a record can be applied by the game. If multiple plugins change the same record, then the changes from the last of those plugins in the load order will be applied. There are a few exemptions, eg. if multiple plugins put things into the same cell, then all those things will be seen in-game, but in general the rule holds for non-complex record types (and complex record types are beyond the scope of this guide).</p>
+        <p><b>Load order</b>: The order in which plugins are loaded.</p>
+        <p><b>Dirty mod</b>: A mod that contains dirty edits, wild edits, deleted references or any combination of them.</p>
+        <p><b>Dirty edit</b>: An edit made which is unnecessary, often caused by Creation Kit bugs or authors making unintended edits then undoing them incorrectly. Such edits can be cleaned automatically.</p>
+        <p><b>Identical To Master edit</b>: A type of dirty edit made where the edited value(s) is/are identical to the value(s) without the edit.</p>
+        <p><b>Wild edit</b>: An edit made which is not consistent with the intent of the mod, often caused by authors accidentally making small edits or trying to perform an edit in the wrong way. Such edits must be cleaned manually.</p>
+        <p><b>Deleted reference</b>: A reference to a record that has been deleted. For example, placing a Silver Sword into the game world creates a Silver Sword reference there, which may then be removed by deleting it.</p>
+        <p><b>Dependency</b>: A plugin upon which another plugin relies. For example, Skyrim.esm is a dependency for most mods.</p>
+        <p><b>Explicit dependency</b>: A dependency that is recorded within the dependent plugin, such that the game cannot be loaded without the dependency being satisfied.</p>
+        <p><b>Implicit dependency</b>: A dependency for which there is no indication given within the dependent plugin, and which can only be determined by considering author intent.</p>
+    </div>
+    <!--/.glossary-->
     <div class="section-nav">
         <a href="4-conflict-detection-and-resolution.html" class="drkbtn">&laquo; Previous Page</a>
         <a href="6-managing-mod-files.html" class="drkbtn">Next Page &raquo;</a>
