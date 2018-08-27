@@ -3,7 +3,7 @@ layout: navagation
 title: xEdit Conflict Detection and Resolution
 ---
 <head>
-    <title>Miax's Tome of FO3Edit</title>
+    <title>Miax's Tome of xEdit</title>
 </head>
 <div class="toc">
     <div class="global">
@@ -66,7 +66,7 @@ title: xEdit Conflict Detection and Resolution
                 <p>There is a huge difference between a &quot;conflict&quot; and an &quot;override&quot;. There are mods which override changes from a master file, such as changing the level cap. If for example, ModA changes the level cap to 40 from the default, this over-rides the level 20 cap in the Fallout3 master files and is a normal. Overrides are not conflicting in any way. Overrides show up in xEdit with a Yellow background color and Green text color. In most cases you don't need to do anything with Overrides.</p>
                 <div class="p-img">
                     <p class="img"><img  height="367" src="img/image056.jpg" width="576"></p>
-                    <p>To get a <strong><em>conflict</em></strong> you need to have the same FormID defined in at least 3 modules, a master, and 2 overrides. The conflict arises when the two overrides change different aspects of the same record, so that when the mods are loaded by Fallout3, the last-mod loaded overrides the changes of the first-mod. Thus the last loaded mod is the, "Conflict Winner" while the first mod, whose changes were overridden, is the, "Conflict Loser". Conflict Losers will show up with a red background, red text. The screenshot below illustrates the differences as seen in FO3Edit:</p>
+                    <p>To get a <strong><em>conflict</em></strong> you need to have the same FormID defined in at least 3 modules, a master, and 2 overrides. The conflict arises when the two overrides change different aspects of the same record, so that when the mods are loaded by Fallout3, the last-mod loaded overrides the changes of the first-mod. Thus the last loaded mod is the, "Conflict Winner" while the first mod, whose changes were overridden, is the, "Conflict Loser". Conflict Losers will show up with a red background, red text. The screenshot below illustrates the differences as seen in xEdit:</p>
                 </div>
                 <p>In all this it's important to say, it's perfectly possible for 10 modules to override the same record without a single conflict, as long as the last loaded version of that record includes all the changes from the 10 other modules. That's what creating Patch Plug-ins is all about, and the process starts with applying a Filter.</p>
             </div>
@@ -80,7 +80,7 @@ title: xEdit Conflict Detection and Resolution
         <div class="level-2" id="s_4-3">
             <h2 class="ctrl">4.3 Applying Conflict Filters</h2>
             <div class="content">
-                <p>The application of Filters is the primary means of conflict detection for xEdit. When you apply a filter, the loaded mod data in FO3Edit is parsed and analyzed via a complex algorithm (described below) to detect all conflicts and overrides. The list of mods in the <a href="2-overview.html#s_2-3-2">Navagation treeview</a> changes color (text and background) based on conflict status of each, and the results are shown in the <a href="2-overview.html#s_2-3-7">View Tab</a> which also changes color (text and background). The color-schema matches throughout FO3Edit, so you won't have to memorize more than one (described in detail below).</p>
+                <p>The application of Filters is the primary means of conflict detection for xEdit. When you apply a filter, the loaded mod data in xEdit is parsed and analyzed via a complex algorithm (described below) to detect all conflicts and overrides. The list of mods in the <a href="2-overview.html#s_2-3-2">Navagation treeview</a> changes color (text and background) based on conflict status of each, and the results are shown in the <a href="2-overview.html#s_2-3-7">View Tab</a> which also changes color (text and background). The color-schema matches throughout xEdit, so you won't have to memorize more than one (described in detail below).</p>
                 <div class="p-img">
                     <p class="img"><img  height="520" src="img/image058.jpg" width="576"></p>
                     <p>To begin, Right-click in the <a href="2-overview.html#s_2-3-2">Navagation treeview</a> and select, "Apply Filter" as shown in Step 1 and 2 below:</p>
@@ -92,19 +92,19 @@ title: xEdit Conflict Detection and Resolution
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="121" src="img/image062.jpg" width="575"></p>
-                    <p>Once you click on Filter (F), FO3Edit will filter and analyze all of the loaded mods against the conflict-detection algorithm. This may take some time depending on how many mods you have loaded and how robust your computer is. The progress is shown in the upper-right corner of FO3Edit as the screenshot below illustrates:</p>
+                    <p>Once you click on Filter (F), xEdit will filter and analyze all of the loaded mods against the conflict-detection algorithm. This may take some time depending on how many mods you have loaded and how robust your computer is. The progress is shown in the upper-right corner of xEdit as the screenshot below illustrates:</p>
                 </div>
-                <p>FO3Edit also keeps track of how long the filter takes to apply. If you run 100+ mods, it can take several minutes to process all of the data. Conflict detection is not simply based on the existence of multiple records for the same FormID in different modules but instead performs a comparison of the parsed sub-record data via an algorithm.</p>
+                <p>xEdit also keeps track of how long the filter takes to apply. If you run 100+ mods, it can take several minutes to process all of the data. Conflict detection is not simply based on the existence of multiple records for the same FormID in different modules but instead performs a comparison of the parsed sub-record data via an algorithm.</p>
                 <p>As such the conflict detection process requires a lot of memory, and systems with less than 2 Gigabytes of RAM may suffer. If you receive an, "Out of Memory" error, then your computer does not have enough memory to process the number of mods you have chosen. Upgrade your computer or reduce the number of mods you run.</p>
                 <div class="p-img">
                     <p class="img"><img  height="318" src="img/image064.jpg" width="575"></p>
-                    <p>The screenshot below illustrates how FO3Edit will look once the conflict detection process is complete. Note the [Filtering done] block in the <a href="2-overview.html#s_2-3-5">Messages Tab</a> below (A), indicating both the success of the conflict filtering process as well as record and time statistics about the filtration result. The screenshot below shows a typical outcome:</p>
+                    <p>The screenshot below illustrates how xEdit will look once the conflict detection process is complete. Note the [Filtering done] block in the <a href="2-overview.html#s_2-3-5">Messages Tab</a> below (A), indicating both the success of the conflict filtering process as well as record and time statistics about the filtration result. The screenshot below shows a typical outcome:</p>
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="257" src="img/image066.jpg" width="576"></p>
                     <p>The mods-list in the <a href="2-overview.html#s_2-3-2">Navagation treeview</a> changes as the filter adjusts the text color and background color based on conflict status. The <a href="2-overview.html#s_2-3-7">View Tab</a> will show the actual conflicts, but only when you select on a record in the <a href="2-overview.html#s_2-3-2">Navagation treeview</a> as shown below:</p>
                 </div>
-                <p>With that you now understand how to detect for conflicts with FO3Edit and where to look at the data. You're now ready to learn about colors and display order. Understanding the color schemes behind the text and backgrounds is critical to understanding the conflicts, and how to resolve them.</p>
+                <p>With that you now understand how to detect for conflicts with xEdit and where to look at the data. You're now ready to learn about colors and display order. Understanding the color schemes behind the text and backgrounds is critical to understanding the conflicts, and how to resolve them.</p>
             </div>
             <!--/.content-->
             <div class="level-nav">
@@ -125,11 +125,11 @@ title: xEdit Conflict Detection and Resolution
                 <p>There also is the case when a module contains a record that is identical to the master (which is usually un-intentional). If you have this module loaded alone the record will show up with a Green Background (signaling, no conflict) and Grey Text (identical to master). Named, "dirty edits", these can be purged with the <a href="5-mod-cleaning-and-error-checking.html#s_5-2">Mod Cleaning Process</a>.</p>
                 <div class="p-img">
                     <p class="img"><img  height="181" src="img/image070.jpg" width="575"></p>
-                    <p>The sample below shows both the color schema and the display-order together to better illustrate how conflict detection works. FO3Edit displays each conflict in the order that the files are loaded ( <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a>'s load order), with the first mod loaded listed on the Left (Purple) and the last mod loaded listed on the Right (Orange).</p>
+                    <p>The sample below shows both the color schema and the display-order together to better illustrate how conflict detection works. xEdit displays each conflict in the order that the files are loaded ( <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a>'s load order), with the first mod loaded listed on the Left (Purple) and the last mod loaded listed on the Right (Orange).</p>
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="543" src="img/image072.jpg" width="576"></p>
-                    <p>All conflicts are ordered this way, with any mods loaded in-between either in a conflict state (Red) or that is identical to the master (Grey) as described above. The Load Order Workflow chart below is designed to help you understand the different color-combinations that you will encounter when de-conflicting mods. The FO3Edit display order as shown above was transposed into the vertical diagram below to help better illustrate how FO3Edit determines conflict winners and losers:</p>
+                    <p>All conflicts are ordered this way, with any mods loaded in-between either in a conflict state (Red) or that is identical to the master (Grey) as described above. The Load Order Workflow chart below is designed to help you understand the different color-combinations that you will encounter when de-conflicting mods. The xEdit display order as shown above was transposed into the vertical diagram below to help better illustrate how xEdit determines conflict winners and losers:</p>
                 </div>
                 <p>As the chart above illustrates, the last-file loaded is always the conflict winner and ultimately determines what loads into Fallout3. In this example <a href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a> and <a href="https://www.nexusmods.com/fallout3/mods/2761">FWE</a> both got lucky that the <a href="https://www.nexusmods.com/fallout3/mods/2781">RoadWardens</a> mod shared the same Flagging, or they would have been conflict losers to the Flagging set by <a href="https://www.nexusmods.com/fallout3/mods/2781">RoadWardens</a>. Not all of the mods were winners however, as <a href="https://www.nexusmods.com/fallout3/mods/867">BetterCaravans</a> Flagging conflicted with <a href="https://www.nexusmods.com/fallout3/mods/2781">RoadWardens</a> and lost the Conflict, meaning the Essential and Respawn flags are not set in-game.</p>
                 <p>The <a href="https://www.nexusmods.com/fallout3/mods/4968">FOIP (Fallout Interoperability Patch)</a>was designed to merge changes made in <a href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a>, <a href="https://www.nexusmods.com/fallout3/mods/2761">FWE</a> and <a href="https://www.nexusmods.com/fallout3/mods/334">XFO</a> into merged patches that load last (after <a href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a>, <a href="https://www.nexusmods.com/fallout3/mods/334">XFO</a>, <a href="https://www.nexusmods.com/fallout3/mods/2761">FWE</a>, etc) and resolve all conflicts between them. However all that work can be lost if a mod that loads later has different flagging, which is why conflict detection is important for all mod users.</p>
@@ -139,7 +139,7 @@ title: xEdit Conflict Detection and Resolution
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="64" src="img/image076.jpg" width="570"></p>
-                    <p>In this example, there is a 5-way conflict over a single NPC script. <a href="https://www.nexusmods.com/fallout3/mods/1925">FO3Phalanx</a>, <a href="https://www.nexusmods.com/fallout3/mods/867">BetterCaravans</a>, <a href="https://www.nexusmods.com/fallout3/mods/1663">The Yard</a>, Broken Steel and the Fallout3 master all lose this conflict, and their version of the RL3SCRIPT will not be loaded into Fallout3 at run-time. For mods like <a href="https://www.nexusmods.com/fallout3/mods/1925">FO3Phalanx</a> and <a href="https://www.nexusmods.com/fallout3/mods/867">BetterCaravans</a>, this conflict will break the mod's functionality as critical script changes will not be there when the mod expects them to be. In FO3Edit the example above looks like the screenshot below (with conflict winner on the right), which should tie everything together that we just reviewed:</p>
+                    <p>In this example, there is a 5-way conflict over a single NPC script. <a href="https://www.nexusmods.com/fallout3/mods/1925">FO3Phalanx</a>, <a href="https://www.nexusmods.com/fallout3/mods/867">BetterCaravans</a>, <a href="https://www.nexusmods.com/fallout3/mods/1663">The Yard</a>, Broken Steel and the Fallout3 master all lose this conflict, and their version of the RL3SCRIPT will not be loaded into Fallout3 at run-time. For mods like <a href="https://www.nexusmods.com/fallout3/mods/1925">FO3Phalanx</a> and <a href="https://www.nexusmods.com/fallout3/mods/867">BetterCaravans</a>, this conflict will break the mod's functionality as critical script changes will not be there when the mod expects them to be. In xEdit the example above looks like the screenshot below (with conflict winner on the right), which should tie everything together that we just reviewed:</p>
                 </div>
                 <p>The next question is how do we fix it and resolve the conflicts?</p>
             </div>
@@ -179,7 +179,7 @@ title: xEdit Conflict Detection and Resolution
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="277" src="img/image084.jpg" width="576"></p>
-                    <p>Closing <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a> (to save the load order), re-opening FO3Edit with the new load order and applying a conflict Filter yields the following results:</p>
+                    <p>Closing <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a> (to save the load order), re-opening xEdit with the new load order and applying a conflict Filter yields the following results:</p>
                 </div>
                 <p>Notice how on the left that Jericho 's essential flag conflict is now resolved, because we swapped the load order so that <a href="https://www.nexusmods.com/fallout3/mods/867">BetterCaravans</a> came after <a href="https://www.nexusmods.com/fallout3/mods/1925">FO3Phalanx</a>. This worked because <a href="https://www.nexusmods.com/fallout3/mods/867">BetterCaravans</a> had all of the same flags on Jericho that <a href="https://www.nexusmods.com/fallout3/mods/1925">FO3Phalanx</a> had plus the additional Essential flag. By forcing <a href="https://www.nexusmods.com/fallout3/mods/867">BetterCaravans</a> to load last, the conflict is effectively resolved because Jericho gets all of the flags that each mod intended for him.</p>
                 <p>This conflict resolution did not unfortunately fix our level-cap problem, and loading the Broken Steel.esm file last is not an option. To resolve this conflict, we need to create a patch plug-in. The patch plug-in always loads last in the mod-list order, so that the records we copy into it will win all conflicts and solve poor Jericho 's problems.</p>
@@ -223,11 +223,11 @@ title: xEdit Conflict Detection and Resolution
                 <p>Note how your new patch plug-in, "MyPatchPlug-in.esp", has been created and now occupies the right-most column, making it the conflict winner. Also note that BetterCaravans is now in conflict because the Essential flag has not yet been moved over, as well as the level-cap and quest key. Now that our patch Plug-in has been created, we can correct all of the conflicts on poor Jericho (but does he <em>Deserve</em> it?!?)</p>
                 <div class="p-img">
                     <p class="img"><img  height="264" src="img/image092.jpg" width="576"></p>
-                    <p>We can now literally &#8216;drag n' drop' each of these items into our new patch plug-in. We do this operation more than any other in FO3Edit when making a plug-in, as once the initial creation step is complete, its simply a matter of dragging all of the overrides that we want into the patch plug-in as shown below:</p>
+                    <p>We can now literally &#8216;drag n' drop' each of these items into our new patch plug-in. We do this operation more than any other in xEdit when making a plug-in, as once the initial creation step is complete, its simply a matter of dragging all of the overrides that we want into the patch plug-in as shown below:</p>
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="264" src="img/image094.jpg" width="576"></p>
-                    <p>Note that for the key we dragged it from the top-level, "Item" entry for that record, and not from the key item row itself. The Item row is the root-level for this particular object (including its Count variable, etc). As such FO3Edit will only let you "drag" from the correct row-level, so you don't have to worry about getting it wrong! The screenshot below shows the result, with the key now replicated into our patch plug-in.</p>
+                    <p>Note that for the key we dragged it from the top-level, "Item" entry for that record, and not from the key item row itself. The Item row is the root-level for this particular object (including its Count variable, etc). As such xEdit will only let you "drag" from the correct row-level, so you don't have to worry about getting it wrong! The screenshot below shows the result, with the key now replicated into our patch plug-in.</p>
                     <p>A few notes here;<br>
                         Text color changed to Green, indicating the conflict is resolved!<br>
                         The Essential flag and level-cap still need to be Drag n' Dropped.
@@ -264,7 +264,7 @@ title: xEdit Conflict Detection and Resolution
         <div class="level-2" id="s_4-8">
             <h2 class="ctrl">4.8 Creating a Merged Patch (Automatic Method)</h2>
             <div class="content">
-                <p>FO3Edit provides an automatic method of generated a merged patch, which is the same as a patch Plug-in but contains resolved conflicts from All of the loaded mods. This will greatly speed the conflict resolution process, as most of the common types of conflicts are automatically merged into the patch Plug-in. It's very unlikely that the generated patch is going to be any worse then using the originally conflicting mods without the patch would be, and as such this method is recommended for everyone that runs mods.</p>
+                <p>xEdit provides an automatic method of generated a merged patch, which is the same as a patch Plug-in but contains resolved conflicts from All of the loaded mods. This will greatly speed the conflict resolution process, as most of the common types of conflicts are automatically merged into the patch Plug-in. It's very unlikely that the generated patch is going to be any worse then using the originally conflicting mods without the patch would be, and as such this method is recommended for everyone that runs mods.</p>
                 <div class="p-img">
                     <p class="img"><img  height="537" src="img/image104.jpg" width="424"></p>
                     <p>What this merge function is doing is nothing more and nothing less then what <a href="http://wrye.ufrealms.net/Wrye%20Bash.html">Wrye Bash</a> has been doing for <a href="http://www.elderscrolls.com/home/home.php">TES4 (Oblivion)</a> for years now. The functionality is specifically not aimed at modders making pre-generated patches and distributing them. The whole point of such a list merger is to generate a merged patch that is custom built for a specific load order (yours).However not every load-order conflict can be anticipated, and too often mod authors create messy plug-ins that create unforeseen outcomes. That's why it is important to review each of the overrides that the merged function creates. The screenshot below shows you how to start the action:</p>
@@ -311,18 +311,18 @@ title: xEdit Conflict Detection and Resolution
                 <p class="Note"><strong>Note:</strong> The Surgeon General has declared that reading code without a blood/caffeine content of 0.20 may be
                     hazardous to your sanity.
                 </p>
-                <p>FO3Edit uses a complex algorithm that parses the mod sub-record data at depth, and performs a number of operations on the data to detect conflicts and overrides. While you do not have to memorize this, the main conflict-detection algorithm is described below for reference (and those brave enough to noodle it out):</p>
+                <p>xEdit uses a complex algorithm that parses the mod sub-record data at depth, and performs a number of operations on the data to detect conflicts and overrides. While you do not have to memorize this, the main conflict-detection algorithm is described below for reference (and those brave enough to noodle it out):</p>
                 <ol>
-                    <li>FO3Edit makes a list with all entries from the master record, and designates this as the, "TargetList".</li>
+                    <li>xEdit makes a list with all entries from the master record, and designates this as the, "TargetList".</li>
                     <li>
-                        FO3Edit Loops and repeats the following for each existing override record:
+                        xEdit Loops and repeats the following for each existing override record:
                         <ol>
-                            <li>FO3Edit determines the file containing this override record, and designates it as, "CurrentFile".</li>
-                            <li>FO3Edit makes a list with all entries from that override record, and designates it as, "CurrentList".</li>
-                            <li>FO3Edit goes through the list of master files for CurrentFile, from last to first, and stops when the first is found containing an override for this record, designated as, "CurrentMaster".</li>
-                            <li>FO3Edit makes a list with all entries from CurrentMaster, and designates it as "CurrentMasterList".</li>
+                            <li>xEdit determines the file containing this override record, and designates it as, "CurrentFile".</li>
+                            <li>xEdit makes a list with all entries from that override record, and designates it as, "CurrentList".</li>
+                            <li>xEdit goes through the list of master files for CurrentFile, from last to first, and stops when the first is found containing an override for this record, designated as, "CurrentMaster".</li>
+                            <li>xEdit makes a list with all entries from CurrentMaster, and designates it as "CurrentMasterList".</li>
                             <li>
-                                FO3Edit goes over CurrentList and CurrentMasterList, for each entry that:
+                                xEdit goes over CurrentList and CurrentMasterList, for each entry that:
                                 <ul>
                                     <li>+ Exists only in CurrentList, adds this entry to TargetList if not yet present.</li>
                                     <li>+ Exists only in CurrentMasterList, removes this entry from TargetList if present.</li>
@@ -330,21 +330,21 @@ title: xEdit Conflict Detection and Resolution
                             </li>
                         </ol>
                     </li>
-                    <li>FO3Edit then makes a list with all entries from the winning override record, and designates it as, "WinningList".</li>
+                    <li>xEdit then makes a list with all entries from the winning override record, and designates it as, "WinningList".</li>
                     <li>
-                        FO3Edit then compares TargetList and WinningList, and if different:
+                        xEdit then compares TargetList and WinningList, and if different:
                         <ol>
-                            <li>FO3Edit copies the currently winning record as override into the new file, designated as, "TargetRecord".</li>
-                            <li>FO3Edit then removes all list entries from "TargetRecord".</li>
-                            <li>FO3Edit goes over TargetList and for each entry add a new entry to the "TargetRecord."</li>
+                            <li>xEdit copies the currently winning record as override into the new file, designated as, "TargetRecord".</li>
+                            <li>xEdit then removes all list entries from "TargetRecord".</li>
+                            <li>xEdit goes over TargetList and for each entry add a new entry to the "TargetRecord."</li>
                         </ol>
                     </li>
                     <li>
-                        FO3Edit then makes the master list (as it applies to leveled list entries) which is also important to understand what's going on:
+                        xEdit then makes the master list (as it applies to leveled list entries) which is also important to understand what's going on:
                         <ol>
-                            <li>For each entry, FO3Edit generates a string representation including: Level, Reference, Count, Item Condition, Owner, and Owner Rank.</li>
-                            <li>FO3Edit sorts the generated list of strings.</li>
-                            <li>FO3Edit walks over the sorted list, add numbers to duplicated entries, and so suppose you have a list: A, B, B, C, D, D after this step it will be A#0, B#0, B#1, C#0, D#0, D#1.</li>
+                            <li>For each entry, xEdit generates a string representation including: Level, Reference, Count, Item Condition, Owner, and Owner Rank.</li>
+                            <li>xEdit sorts the generated list of strings.</li>
+                            <li>xEdit walks over the sorted list, add numbers to duplicated entries, and so suppose you have a list: A, B, B, C, D, D after this step it will be A#0, B#0, B#1, C#0, D#0, D#1.</li>
                         </ol>
                     </li>
                 </ol>

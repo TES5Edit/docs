@@ -3,7 +3,7 @@ layout: navagation
 title: xEdit Overview
 ---
 <head>
-    <title>Miax's Tome of FO3Edit</title>
+    <title>Miax's Tome of xEdit</title>
 </head>
 <div class="toc">
     <div class="global">
@@ -29,7 +29,7 @@ title: xEdit Overview
     <div class="local">
         <h3>Section Table of Contents</h3>
         <ul class="second">
-            <li><a href="#s_2-1">2.1 Introducing FO3Edit</a></li>
+            <li><a href="#s_2-1">2.1 Introducing xEdit</a></li>
             <li>
                 <a href="#s_2-2">2.2 Acquisition and Installation</a>
                 <ul class="third">
@@ -221,15 +221,15 @@ title: xEdit Overview
         <div class="level-2" id="s_2-3">
             <h2 class="ctrl">2.3 Tour of User Interface</h2>
             <div class="content">
-                <p>This section of the manual will take you on a brief tour of FO3Edit to introduce you to the different views and screens that you will be working with. This tour is designed for beginner-level users, and does not discuss the functionality of the views at any depth just yet. The tour is recommended for all levels of user, especially if you have not used FO3Edit within the last several months as there have been many updates.</p>
+                <p>This section of the manual will take you on a brief tour of xEdit to introduce you to the different views and screens that you will be working with. This tour is designed for beginner-level users, and does not discuss the functionality of the views at any depth just yet. The tour is recommended for all levels of user, especially if you have not used xEdit within the last several months as there have been many updates.</p>
                 <div class="level-3" id="s_2-3-1">
                     <h3 class="ctrl">2.3.1 Master/Plug-in Selection View [FO3/FNV]</h3>
                     <div class="content">
                         <div class="p-img">
                             <p class="img"><img width="640" src="img/image008.jpg"></p>
-                            <p>The Master/Plug-in Selection view is presented to you when FO3Edit is first launched, and allows you to select/un-select the mods that you want FO3Edit to load. You can also Right-Click in open space to access more options, such as "Select All" or "Select None".</p>
+                            <p>The Master/Plug-in Selection view is presented to you when xEdit is first launched, and allows you to select/un-select the mods that you want xEdit to load. You can also Right-Click in open space to access more options, such as "Select All" or "Select None".</p>
                         </div>
-                        <p>To change the load-order of mods, close FO3Edit and open <a href="#links_fomm"><abbr title="Fallout Mod Manager">FOMM</abbr></a>. Change the load-order as desired, close <abbr title="Fallout Mod Manager">FOMM</abbr> and re-open FO3Edit.</p>
+                        <p>To change the load-order of mods, close xEdit and open <a href="#links_fomm"><abbr title="Fallout Mod Manager">FOMM</abbr></a>. Change the load-order as desired, close <abbr title="Fallout Mod Manager">FOMM</abbr> and re-open xEdit.</p>
                         <p>There is an additional option you can use to quickly load a single mod &#8211; simply Double-Click on a mod file in the list. Double-clicking a mod will automatically un-select all other mod files, and will load the selected mod file. It's a short-cut to loading single mods.</p>
                     </div>
                     <!--/.content-->
@@ -259,16 +259,16 @@ title: xEdit Overview
                     <div class="content">
                         <div class="p-img">
                             <p class="img"><img width="532" src="img/image012.jpg"></p>
-                            <p>The main context menu is accessed by Right-clicking in the <a href="2-overview.html#s_2-3-2">Navagation Treeview</a>, and acts as the main navigation and function selection point for FO3Edit. As such, much time and explanation is provided on how to utilize this menu, as well as a Reference Chart (shown below) to help illustrate what each function does.</p>
+                            <p>The main context menu is accessed by Right-clicking in the <a href="2-overview.html#s_2-3-2">Navagation Treeview</a>, and acts as the main navigation and function selection point for xEdit. As such, much time and explanation is provided on how to utilize this menu, as well as a Reference Chart (shown below) to help illustrate what each function does.</p>
                         </div>
                         <p>There are some functions such as, "Generate Object LOD" and the "Set VWD for all REFR&#8230;" options that only work on Oblivion, and should not be used with Fallout3. With some functions you will be presented with additional options, while with others such as "Check for Errors", the output is sent to the <a href="#s_2-3-5">Messages Tab</a> (or other tabs with other functions).</p>
                         <p>Each of these functions is described in-detail within the tutorial, and Quick Links to those detailed sections can be found in the list below for easy-access. Additional description is provided below for each function on the main context menu.</p>
                         <p><a href="6-managing-mod-files.html#s_6-7">Compare To</a> &#8211; Loads another module at the same load order index as the one under the cursor when you right clicked. Works very well to compare 2 different versions of the same module against each other.</p>
-                        <p><a href="4-conflict-detection-and-resolution.html#s_4-3">Apply Filter</a> &#8211; This function will present you with the <a href="2-overview.html#s_2-3-8">Filter Menu</a>, where you can select options on how you want to filter (restrict) the data shown in FO3Edit.</p>
+                        <p><a href="4-conflict-detection-and-resolution.html#s_4-3">Apply Filter</a> &#8211; This function will present you with the <a href="2-overview.html#s_2-3-8">Filter Menu</a>, where you can select options on how you want to filter (restrict) the data shown in xEdit.</p>
                         <p><a href="2-overview.html#s_2-3-3">Remove Filter</a> &#8211; This function will remove the current filter, so that all loaded-data will be presented and processed.</p>
                         <p><a href="7-mod-utilities.html#s_7-2">Building Reference Info</a> &#8211; This function will build reference information for the currently select mod, which can be used after extensive changes are made.</p>
                         <p><a href="7-mod-utilities.html#s_7-3">Building Reachable Info</a> &#8211; This function scans all references in a selected mod and will determine which are reachable (by the player in-game) from those that cannot ever be reached or accessed by the player. This function takes into account the totality of all loaded modules (looking only at the contents of the winning version of each record). So it's possible for the reachable status to be different for a record, depending on which other modules you've loaded.</p>
-                        <p><a href="5-mod-cleaning-and-error-checking.html">Checking for Errors</a> &#8211; This function is used to check for reports any case where the information in the module file does not match the FO3Edit record definitions. This is Not a check for missing references, physical or data errors &#8211; that is done during the loading process with results available in the <a href="#s_2-3-5">Messages Tab</a>.</p>
+                        <p><a href="5-mod-cleaning-and-error-checking.html">Checking for Errors</a> &#8211; This function is used to check for reports any case where the information in the module file does not match the xEdit record definitions. This is Not a check for missing references, physical or data errors &#8211; that is done during the loading process with results available in the <a href="#s_2-3-5">Messages Tab</a>.</p>
                         <p><a href="5-mod-cleaning-and-error-checking.html#s_5-4">Checking for Circular Leveled Lists</a> &#8211; Leveled Lists can reference other Leveled Lists, it's possible in this case to build a circular reference (with as little as 2 leveled lists directly referencing each other, or any number of additional leveled lists in the chain). When the game engine then tries to resolve that leveled lists down to a particular item/creature/NPC it can get caught in the endless loop and crash.</p>
                         <p><a href="6-managing-mod-files.html#s_6-3">Renumbering FormIDs</a> &#8211; This function will re-number all references in a selected mod file, starting from a number that you specify. This function does not in any way resolve conflicts, and should be used only if you know exactly what you are doing (as it will result in incompatiblities with existing save games and any module which uses this module as a master). This function was implemented for the BetterCities team, so that they could assign non-overlapping FormIDs to each of their city specific esp's, to prevent the need for changing FormIDs when merging the city-specific esp's into the alternative &quot;full&quot; esp which contains all cities.</p>
                         <p><a href="5-mod-cleaning-and-error-checking.html#s_5-2-3">Un-deleting and Disabling References</a> &#8211; This function is used to un-delete any references in a selected mod file that were deleted in a previous edit, and instead mark them as "disabled". That will ensure that no conflicts occur if another mod depends on the object being deleted, and setting it to "disabled" will ensure that the original intent of the mod author (to remove the object from the game) is true as the player will never see a disabled object. More on this in the section on <a href="5-mod-cleaning-and-error-checking.html">Mod Cleaning</a>.</p>
@@ -279,12 +279,12 @@ title: xEdit Overview
                         <p><a href="7-mod-utilities.html#s_7-8">Set VWD for all REFR with VWD Mesh copy as override</a> - This function only works with Oblivion, and should not be used for Fallout3 mods under any circumstances.</p>
                         <p><a href="7-mod-utilities.html#s_7-8">Generate Object LOD</a> &#8211; This function only works with Oblivion, and should not be used for Fallout3 mods under any circumstances.</p>
                         <p><a href="6-managing-mod-files.html#s_6-3">Add (Reference)</a> &#8211; What exactly that menu shows you is depending on the context, if you right click on a file node you will get a list of all groups that don't exist yet, if you right click on a group you get a list of all records that can be added to it and so on. And yes, this can be used to add new records, so you can basically build a mod from scratch with it.</p>
-                        <p><a href="7-mod-utilities.html#s_7-5">Mark Modified</a> &#8211; It will mark the currently selected node and all child nodes as modified. To minimize the chance that FO3Edit breaks something that it doesn't fully understand when saving, only records that are marked as modified are assembled field by field, sub record by sub record. Any record or even complete group that is not marked as modified is simply copied unchanged as a blob of bytes from the old module file into the newly saved one.</p>
+                        <p><a href="7-mod-utilities.html#s_7-5">Mark Modified</a> &#8211; It will mark the currently selected node and all child nodes as modified. To minimize the chance that xEdit breaks something that it doesn't fully understand when saving, only records that are marked as modified are assembled field by field, sub record by sub record. Any record or even complete group that is not marked as modified is simply copied unchanged as a blob of bytes from the old module file into the newly saved one.</p>
                         <p><a href="6-managing-mod-files.html#s_6-2">Add Masters</a> &#8211; This adds a new master to the MAST sub record in the file header and correctly renumbers the FormIDs in the module. This function is also used to create an <abbr title="Elder-Scrolls Master File">ESM</abbr>/ESP pair from a single ESP plug-in.</p>
                         <p><a href="5-mod-cleaning-and-error-checking.html#s_5-2-2">Sort Masters</a> &#8211; This function will sort the global load-order of master files to match the order of global load order.</p>
                         <p><a href="5-mod-cleaning-and-error-checking.html#s_5-2-4">Clean Masters</a> &#8211; This function will scan a Plug-in for Master <abbr title="Elder Scrolls Master">ESM</abbr> dependencies, determine if any Masters are un-used by the plug-in and remove them.</p>
                         <p><a href="7-mod-utilities.html#s_7-6">Copy Idle Animations Into</a> &#8211; This function is used to copy all of the idle animations from one skeleton to another, which replicating monsters.</p>
-                        <p><a href="6-managing-mod-files.html#s_6-7">Hidden</a>&#8211; This function hides the selected mod file(s) or references from further view/processing by FO3Edit.</p>
+                        <p><a href="6-managing-mod-files.html#s_6-7">Hidden</a>&#8211; This function hides the selected mod file(s) or references from further view/processing by xEdit.</p>
                     </div>
                     <!--/.content-->
                     <div class="level-nav">

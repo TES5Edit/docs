@@ -3,7 +3,7 @@ layout: navagation
 title: xEdit Cleaning and-Error Checking
 ---
 <head>
-    <title>Miax's Tome of FO3Edit</title>
+    <title>Miax's Tome of xEdit</title>
 </head>
 <div class="toc">
     <div class="global">
@@ -67,17 +67,17 @@ title: xEdit Cleaning and-Error Checking
                 <p>What is the mod cleaning process anyway? The mod cleaning process involves cleaning a mod file of duplicate/un-necessary records and un-deleting objects in the masters that were inadvertently deleted - setting them to disabled instead. We also check for errors as well as looped level lists. The itemized cleaning process is:</p>
                 <ol>
                     <li>Identifying and removing records in a mod file that is identical to those in the master files, which user useless in a mod-file and can cause conflicts with other mods. Removing these from your mod file is a primary goal of this process.</li>
-                    <li>Identifying any records in the master files that was marked as deleted, which FO3Edit un-deletes and marks as, "disabled" instead. This ensures that any change made to that object by other mods won't cause crashes or conflicts, which can happen if a modder accidentally deletes a base object, which is modified by another mod and you get a null pointer &#8211; poof!</li>
+                    <li>Identifying any records in the master files that was marked as deleted, which xEdit un-deletes and marks as, "disabled" instead. This ensures that any change made to that object by other mods won't cause crashes or conflicts, which can happen if a modder accidentally deletes a base object, which is modified by another mod and you get a null pointer &#8211; poof!</li>
                     <li>Identifying any infinite loops in the leveled-lists, and ensure there are no physical/data errors with the mod file to round-out the clean-up.</li>
                 </ol>
                 <div class="p-img">
                     <p class="img"><img  height="427" src="img/image116.jpg" width="576"></p>
                     <p>For example, modder A inadvertently double-clicks on a wine bottle and it gets marked for save &#8211; becoming one of the changes introduced by modder A's plug-in. Modder A makes things worse by deleting the whiskey bottle record, removing it from the game!</p>
                     <p>Mod B is added to the player's mod-list, which changes the wine bottle making it stronger. Mod A's plug-in however conflicts with this and can over-ride Mob B's changes without cause (as Mod A's author did not intend to change the wine bottle). Furthermore all occurrences of the whiskey bottle are now bogus. When Mod B tries to change the whiskey bottle, it finds no whiskey bottle to change and Fallout3 will crash.</p>
-                    <p>Modder A could avoid both of these issues with the mod cleaning process, which un-deletes references that were deleted on accident and un-does inadvertent changes to things in the game that were not intended. The screenshot below illustrates the start of the process, in which you must load-up FO3Edit and follow the steps herein:</p>
+                    <p>Modder A could avoid both of these issues with the mod cleaning process, which un-deletes references that were deleted on accident and un-does inadvertent changes to things in the game that were not intended. The screenshot below illustrates the start of the process, in which you must load-up xEdit and follow the steps herein:</p>
                 </div>
-                <p>Once, "OK" is clicked (D), FO3Edit will load the selected plug-in for cleaning.</p>
-                <p>Note that you can also, "Select All" or "Invert Selection", which gives you additional controls over which mod-files are selected for loading into FO3Edit. For the mod cleaning process, we only want to load the plug-in being cleaned. You can do this using the, "Select None" menu option, and then clicking on the mod file to be cleaned.</p>
+                <p>Once, "OK" is clicked (D), xEdit will load the selected plug-in for cleaning.</p>
+                <p>Note that you can also, "Select All" or "Invert Selection", which gives you additional controls over which mod-files are selected for loading into xEdit. For the mod cleaning process, we only want to load the plug-in being cleaned. You can do this using the, "Select None" menu option, and then clicking on the mod file to be cleaned.</p>
                 <p>You should only clean one mod file at a time, and you should not clean other people's mod files! There is no harm in running through the process to see if mod A or mod B is filled with dirty edits (after which you can send them a PM on the forums!), but it is considered a bad idea to clean other people's mods.</p>
                 <div class="p-img">
                     <p class="img"><img  height="484" src="img/image118.jpg" width="576"></p>
@@ -98,7 +98,7 @@ title: xEdit Cleaning and-Error Checking
                     <p>Clicking on, "Filter" (D) will launch the xEdit analysis for Identical to Master records, which should complete in a short period of time (perhaps 1-20 seconds). If your system is very slow or bogged down or the mod is really huge, it is possible for the process to take longer. The status of xEdit can be viewed in the upper-right corner of the screen, as shown in the screenshot below:</p>
                     <p class="img"><img  height="92" src="img/image122.jpg" width="576"></p>
                 </div>
-                <p>Both the elapsed time and processed records are shown in the upper-right window. When FO3Edit completes the analysis, the <a href="2-overview.html#s_2-3-5">Messages Tab</a> will reveal the result as shown on the next page. You should also not expect to see in anything yet in the <a href="2-overview.html#s_2-3-7">View Tab</a>.</p>
+                <p>Both the elapsed time and processed records are shown in the upper-right window. When xEdit completes the analysis, the <a href="2-overview.html#s_2-3-5">Messages Tab</a> will reveal the result as shown on the next page. You should also not expect to see in anything yet in the <a href="2-overview.html#s_2-3-7">View Tab</a>.</p>
                 <div class="p-img">
                     <p>The output of the filter can be seen in the <a href="2-overview.html#s_2-3-5">Messages Tab</a> as shown below:</p>
                     <p class="img"><img  height="283" src="img/image124.jpg" width="575"></p>
@@ -130,13 +130,13 @@ title: xEdit Cleaning and-Error Checking
                         </div>
                         <div class="p-img">
                             <p class="img"><img  height="392" src="img/image134.jpg" width="446"></p>
-                            <p>With the Mod Cleaning filter applied, Golly! It's time to get out the <a href="http://www.mrclean.com/en_US/magic-eraser.do">Mr. Clean</a> and make this puppy sparkle with goodness! Grab the mop by Left-clicking on the mod that you want to clean, in our case <a href="https://www.nexusmods.com/fallout3/mods/867">BetterCaravans</a> (A). Splash the <a href="http://www.mrclean.com/en_US/magic-eraser.do">Mr. Clean</a> on by Right-clicking the shiny white space beneath the mod your cleaning (B), and spin that mop into action by clicking on, &#8216;Remove "Identical to Master" records' (C) &#8211; and watch as FO3Edit puts the shine on that puppy!</p>
+                            <p>With the Mod Cleaning filter applied, Golly! It's time to get out the <a href="http://www.mrclean.com/en_US/magic-eraser.do">Mr. Clean</a> and make this puppy sparkle with goodness! Grab the mop by Left-clicking on the mod that you want to clean, in our case <a href="https://www.nexusmods.com/fallout3/mods/867">BetterCaravans</a> (A). Splash the <a href="http://www.mrclean.com/en_US/magic-eraser.do">Mr. Clean</a> on by Right-clicking the shiny white space beneath the mod your cleaning (B), and spin that mop into action by clicking on, &#8216;Remove "Identical to Master" records' (C) &#8211; and watch as xEdit puts the shine on that puppy!</p>
                         </div>
                         <div class="p-img">
                             <p class="img"><img  height="200" src="img/image136.jpg" width="382"></p>
                             <p>You will be presented with the Warning screen, press, "Yes" when prompted:</p>
                         </div>
-                        <p>As FO3Edit completes the mod-cleaning process, you can see the output in the Messages Tab, which shows you every record that is being removed along with its hex ID number. Once complete, you get a line of text reading, [Removing "Identical to Master" records done] &#8211; along with statistics on the number of records processed and removed as well as the elapsed time (A).</p>
+                        <p>As xEdit completes the mod-cleaning process, you can see the output in the Messages Tab, which shows you every record that is being removed along with its hex ID number. Once complete, you get a line of text reading, [Removing "Identical to Master" records done] &#8211; along with statistics on the number of records processed and removed as well as the elapsed time (A).</p>
                         <div class="p-img">
                             <p class="img"><img  height="194" src="img/image138.jpg" width="575"></p>
                             <p>The screenshot below illustrates the output:</p>
@@ -193,8 +193,8 @@ title: xEdit Cleaning and-Error Checking
                 <div class="level-3" id="s_5-2-4">
                     <h3 class="ctrl">5.2.4 Using Clean Masters to purge un-used Master File References</h3>
                     <div class="content">
-                        <p>Master File References are links or references from your Plug-in to any Master files (ESMs) that it depends on to run, and stores the list in a record called, "MAST". Most Plug-ins have the game's ESM file in their master list, but you can have many such links in a plug-in. For example for Fallout3 each file will start with Fallout3.esm. If when you create a <a href="4-conflict-detection-and-resolution.html#s_4-8">Merged Patch</a> with FO3Edit, it puts links to many or nearly-all of the master files in your mod list. It is possible in some cases for a Plug-in to contain a link to a master file that it does not need.</p>
-                        <p>For example, suppose the Plug-in we are cleaning had MasterB.esm in its MASTer list but it doesn't contain any overrides for, or makes any other references to, records from MasterB.esm. In that case we would not need nor want MasterB.esm listed in the MASTer record for our Plug-in! This function detects any un-used MASTer references in the Plug-in we are cleaning, and removes them from the MASTer list. FO3Edit also renumbers any file specific FormIDs in the Plug-in to ensure that it is cleaned properly.</p>
+                        <p>Master File References are links or references from your Plug-in to any Master files (ESMs) that it depends on to run, and stores the list in a record called, "MAST". Most Plug-ins have the game's ESM file in their master list, but you can have many such links in a plug-in. For example for Fallout3 each file will start with Fallout3.esm. If when you create a <a href="4-conflict-detection-and-resolution.html#s_4-8">Merged Patch</a> with xEdit, it puts links to many or nearly-all of the master files in your mod list. It is possible in some cases for a Plug-in to contain a link to a master file that it does not need.</p>
+                        <p>For example, suppose the Plug-in we are cleaning had MasterB.esm in its MASTer list but it doesn't contain any overrides for, or makes any other references to, records from MasterB.esm. In that case we would not need nor want MasterB.esm listed in the MASTer record for our Plug-in! This function detects any un-used MASTer references in the Plug-in we are cleaning, and removes them from the MASTer list. xEdit also renumbers any file specific FormIDs in the Plug-in to ensure that it is cleaned properly.</p>
                         <p>The screenshot below illustrates how to activate the, "Clean Masters" function:</p>
                         <p class="img"><img  height="332" src="img/image146.jpg" width="562"></p>
                         <p>Unfortunately there is no log-file output for this function, so you'll have to trust me that this works correctly.</p>
@@ -243,13 +243,13 @@ title: xEdit Cleaning and-Error Checking
             <div class="content">
                 <div class="p-img">
                     <p class="img"><img  height="343" src="img/image150.jpg" width="576"></p>
-                    <p>The "Check for Reference Errors" function reports any case in which the information contained in a module file does not match the xEdit record definitions. There is a very minimal chance that something that's reported as an error is actually an oversight in the FO3Edit record definitions and not in the module, but all cases should be reported to be safe). Note that there are errors in the Fallout3.esm and the DLCs. Both <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=380528">Elminster</a> and <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=20313">Quarn</a> have gone through them all to ensure they are genuine errors. Running the check is a recommended practice as part of the mod-cleaning process as shown below:</p>
+                    <p>The "Check for Reference Errors" function reports any case in which the information contained in a module file does not match the xEdit record definitions. There is a very minimal chance that something that's reported as an error is actually an oversight in the xEdit record definitions and not in the module, but all cases should be reported to be safe). Note that there are errors in the Fallout3.esm and the DLCs. Both <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=380528">Elminster</a> and <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=20313">Quarn</a> have gone through them all to ensure they are genuine errors. Running the check is a recommended practice as part of the mod-cleaning process as shown below:</p>
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="230" src="img/image152.jpg" width="576"></p>
                     <p>When the error-check is complete, the screenshot below shows you how the output will look when errors are found in a module:</p>
                 </div>
-                <p>In this example we found both kinds of errors (Ouch!), which was ideal for our tutorial. In the first case FO3Edit found reference errors where data is missing such as Flags and Idle Timer Settings (A). These errors should be corrected by the mod author and not by you! The error we see in (B) is the result of an unknown Flags type, (Unknown: 15), which FO3Edit did not understand. These kinds of errors should be sent to <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=380528">Elminster</a> for to ensure FO3Edit has the right information, or if the mod has some strange error.</p>
+                <p>In this example we found both kinds of errors (Ouch!), which was ideal for our tutorial. In the first case xEdit found reference errors where data is missing such as Flags and Idle Timer Settings (A). These errors should be corrected by the mod author and not by you! The error we see in (B) is the result of an unknown Flags type, (Unknown: 15), which xEdit did not understand. These kinds of errors should be sent to <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=380528">Elminster</a> for to ensure xEdit has the right information, or if the mod has some strange error.</p>
             </div>
             <!--/.content-->
             <div class="level-nav">
