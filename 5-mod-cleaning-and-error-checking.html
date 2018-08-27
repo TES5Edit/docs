@@ -282,8 +282,8 @@ title: xEdit Cleaning and-Error Checking
     <div id="Appendix">
         <div id="Apendix-A">
             <h1>Appendix A</h1>
-            <h3>Types of Dirty Edits:</h3>
-            <h4>Identical To Master</h4>
+            <h2>Types of Dirty Edits:</h2>
+            <h3>Identical To Master</h3>
             <p>Identical to Master (ITM) edits are the most common type of dirty edit. They're where a mod has overwritten something in the game without actually changing anything. If another mod higher up in the load order makes an intentional change to that thing, it will have its effect cancelled out by the ITM record, which can cause problems. ITM edits can be cleaned automatically using TES5Edit.</p>
             <dl>
                 <dd><b><i>Example 1: Identical To Master Edits</i></b></dd>
@@ -294,11 +294,11 @@ title: xEdit Cleaning and-Error Checking
             <dl>
                 <dd> The solution would be to clean the quest mod, which would remove the ITM edits and allow the sneaking overhaul mod to function as intended.</dd>
             </dl>
-            <h4>Deleted Reference</h4>
+            <h3>Deleted Reference</h3>
             <p>Deleted references are a significant cause of crashes and game bugs. This is because if one mod tries to modify a reference that another mod has deleted, then the first mod cannot find the reference, and this then causes problems. A deleted reference can be fixed by undeleting then disabling the references and moving it to a position where it is no longer visible in the Creation Kit (TES5Edit sets the Z axis position to -30,000 units). This has the same effect as deleting the reference, without causing issues. Deleted references can be cleaned automatically using TES5Edit.</p>
-            <h4>Deleted Navmeshes</h4>
+            <h3>Deleted Navmeshes</h3>
             <p>Like deleting records, deleting navmeshes can cause crashes. However, these cannot be automatically corrected, and require manual cleaning.</p>
-            <h4>Wild Edits</h4>
+            <h3>Wild Edits</h3>
             <p>Wild edits are unintentional or misdirected edits to game elements by a mod author that cause unnecessary conflicts with other mods. They are called wild edits because they often appear to have been made haphazardly with no relation to the author's stated intentions. Because detecting wild edits involves knowing what the mod is supposed to do, they must be cleaned manually.</p>
             <p>One example of a wild edit would be when a container is incorrectly modified to include an item, but instead of only that one container including the item, the result is that all containers of the same type include the item. If the description of the mod states that an item is added to a specific container, then it is clear this is a wild edit and the mod should be cleaned by fixing the wild edit.</p>
         </div>
@@ -307,8 +307,8 @@ title: xEdit Cleaning and-Error Checking
         </div>
         <!--/.level-nav-->
         <div id="Apendix-B">
-            <h2>Appendix B</h2>
-            <h3>Mod Cleaning (Abridged Version)</h3>
+            <h1>Appendix B</h1>
+            <h2>Mod Cleaning (Abridged Version)</h2>
             <p class="img"><img src="img/cleaning-select-none.jpg"></p>
             <p>Right click on the Module Selection window and choose, Select None</p>
             <p class="img"><img src="img/cleaning-select-onlyone.jpg"></p>
