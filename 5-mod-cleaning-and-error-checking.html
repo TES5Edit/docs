@@ -1,3 +1,5 @@
+
+
 ---
 layout: navagation
 title: xEdit Cleaning and-Error Checking
@@ -72,19 +74,16 @@ title: xEdit Cleaning and-Error Checking
                 </ol>
                 <div class="p-img">
                     <p class="img"><img  height="427" src="img/image116.jpg" width="576"></p>
-                    <p>For example, modder A inadvertently double-clicks on a wine bottle and it gets marked for save &#8211; becoming one of the changes introduced by modder A's plug-in. Modder A makes things worse by deleting the whiskey bottle record, removing it from the game!
-                        <br>
-                        Mod B is added to the player's mod-list, which changes the wine bottle making it stronger. Mod A's plug-in however conflicts with this and can over-ride Mob B's changes without cause (as Mod A's author did not intend to change the wine bottle). Furthermore all occurrences of the whiskey bottle are now bogus. When Mod B tries to change the whiskey bottle, it finds no whiskey bottle to change and Fallout3 will crash.
-                        <br>
-                        Modder A could avoid both of these issues with the mod cleaning process, which un-deletes references that were deleted on accident and un-does inadvertent changes to things in the game that were not intended. The screenshot below illustrates the start of the process, in which you must load-up FO3Edit and follow the steps herein:
-                    </p>
+                    <p>For example, modder A inadvertently double-clicks on a wine bottle and it gets marked for save &#8211; becoming one of the changes introduced by modder A's plug-in. Modder A makes things worse by deleting the whiskey bottle record, removing it from the game!</p>
+                    <p>Mod B is added to the player's mod-list, which changes the wine bottle making it stronger. Mod A's plug-in however conflicts with this and can over-ride Mob B's changes without cause (as Mod A's author did not intend to change the wine bottle). Furthermore all occurrences of the whiskey bottle are now bogus. When Mod B tries to change the whiskey bottle, it finds no whiskey bottle to change and Fallout3 will crash.</p>
+                    <p>Modder A could avoid both of these issues with the mod cleaning process, which un-deletes references that were deleted on accident and un-does inadvertent changes to things in the game that were not intended. The screenshot below illustrates the start of the process, in which you must load-up FO3Edit and follow the steps herein:</p>
                 </div>
                 <p>Once, "OK" is clicked (D), FO3Edit will load the selected plug-in for cleaning.</p>
                 <p>Note that you can also, "Select All" or "Invert Selection", which gives you additional controls over which mod-files are selected for loading into FO3Edit. For the mod cleaning process, we only want to load the plug-in being cleaned. You can do this using the, "Select None" menu option, and then clicking on the mod file to be cleaned.</p>
                 <p>You should only clean one mod file at a time, and you should not clean other people's mod files! There is no harm in running through the process to see if mod A or mod B is filled with dirty edits (after which you can send them a PM on the forums!), but it is considered a bad idea to clean other people's mods.</p>
                 <div class="p-img">
                     <p class="img"><img  height="484" src="img/image118.jpg" width="576"></p>
-                    <p>Once loaded into FO3Edit, we need to apply a Filter to detect all of the Identical to Master references in the mod being cleaned as shown below:</p>
+                    <p>Once loaded into xEdit, we need to apply a Filter to detect all of the Identical to Master references in the mod being cleaned.</p>
                 </div>
                 <p>Clicking on, "Apply Filter" (B) will present the Filter window, just as it did with the <a href="4-conflict-detection-and-resolution.html#s_4-5">Conflict Resolution Process</a>. This filter window however will utilize different options than with conflict detection, as in this case we are only looking at one mod file and one specific kind of conflict &#8211; the Identical to Master references.</p>
                 <p>The options to select for Mod Cleaning are:</p>
@@ -94,17 +93,17 @@ title: xEdit Cleaning and-Error Checking
                     <li>Conflict status inherited by parent</li>
                 </ol>
                 <div class="p-img">
-                    <p class="img"><img  src="img/image343.jpg"></p>
                     <p>The screenshot below illustrates the filter options to select:</p>
+                    <p class="img"><img  src="img/image343.jpg"></p>
                 </div>
                 <div class="p-img">
+                    <p>Clicking on, "Filter" (D) will launch the xEdit analysis for Identical to Master records, which should complete in a short period of time (perhaps 1-20 seconds). If your system is very slow or bogged down or the mod is really huge, it is possible for the process to take longer. The status of Xedit can be viewed in the upper-right corner of the screen, as shown in the screenshot below:</p>
                     <p class="img"><img  height="92" src="img/image122.jpg" width="576"></p>
-                    <p>Clicking on, "Filter" (D) will launch the FO3Edit analysis for Identical to Master records, which should complete in a short period of time (perhaps 1-20 seconds). If your system is very slow or bogged down or the mod is really huge, it is possible for the process to take longer. The status of FO3Edit can be viewed in the upper-right corner of the screen, as shown in the screenshot below:</p>
                 </div>
                 <p>Both the elapsed time and processed records are shown in the upper-right window. When FO3Edit completes the analysis, the <a href="2-overview.html#s_2-3-5">Messages Tab</a> will reveal the result as shown on the next page. You should also not expect to see in anything yet in the <a href="2-overview.html#s_2-3-7">View Tab</a>.</p>
                 <div class="p-img">
-                    <p class="img"><img  height="283" src="img/image124.jpg" width="575"></p>
                     <p>The output of the filter can be seen in the <a href="2-overview.html#s_2-3-5">Messages Tab</a> as shown below:</p>
+                    <p class="img"><img  height="283" src="img/image124.jpg" width="575"></p>
                 </div>
                 <p>The total number of records filtered and the elapsed time are given, which should be quick. Also note the Yellow/Green text and backgrounds in the screenshot above, which are the references to be cleaned out.</p>
                 <div class="p-img">
@@ -125,7 +124,7 @@ title: xEdit Cleaning and-Error Checking
                     <div class="content">
                         <div class="p-img">
                             <p class="img"><img  src="img/image131.jpg"></p>
-                            <p>Clicking on the, "Apply Filter" button from the <a href="2-overview.html#s_2-3-2">Left-Side Panel's</a> context menu will present the Filter window once again. This time choose the Mod Cleaning settings as shown below:</p>
+                            <p>Clicking on the, "Apply Filter" button from the <a href="2-overview.html#s_2-3-2">Navagation treeview</a> context menu will present the Filter window once again. This time choose the Mod Cleaning settings as shown below:</p>
                         </div>
                         <div class="p-img">
                             <p class="img"><img  height="262" src="img/image132.jpg" width="530"></p>
@@ -178,7 +177,7 @@ title: xEdit Cleaning and-Error Checking
                             <p class="img"><img  height="201" src="img/image142.jpg" width="502"></p>
                             <p>This ensures that if another mod tweaks/changes the item you deleted, that the item will still be in the files (just disabled), and thus won't cause Fallout3 to crash. If your mod file loads with the item deleted and another mod tries to change it, Fallout3 will crash! L These are among the more serious conflicts that can occur and the reason why it is important for mod authors to run this function as part of the mod cleaning process. The screenshot below illustrates how to activate it:</p>
                         </div>
-                        <p>Note that you must Right-click on the mod in the <a href="2-overview.html#s_2-3-2">Left-Side Panel</a> to pull the right context menu. In this case you do not want to click on open-space.</p>
+                        <p>Note that you must Right-click on the mod in the <a href="2-overview.html#s_2-3-2">Navagation treeview</a> to pull the right context menu. In this case you do not want to click on open-space.</p>
                         <div class="p-img">
                             <p class="img"><img  height="229" src="img/image144.jpg" width="504"></p>
                             <p>The screenshot below shows the results, which show the log-file output in two places (A and B) in the <a href="2-overview.html#s_2-3-5">Messages Tab</a> and on the lower status bar:</p>
@@ -285,3 +284,4 @@ title: xEdit Cleaning and-Error Checking
     </div>
     <!--/.section-nav-->
 </section>
+
