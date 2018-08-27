@@ -34,8 +34,8 @@ title: xEdit Cleaning and-Error Checking
                 <a href="#s_5-2">5.2 Mod Cleaning Process</a>
                 <ul class="third">
                     <li><a href="#s_5-2-1">5.2.1 Removing "Identical to Master" Records"</a></li>
-                    <li><a href="#s_5-2-2">5.2.2 Sorting Master File Load Orders</a></li>
-                    <li><a href="#s_5-2-3">5.2.3 Un-deleting and Disabling References</a></li>
+                    <li><a href="#s_5-2-2">5.2.2 Un-deleting and Disabling References</a></li>
+                    <li><a href="#s_5-2-3">5.2.3 Sorting Master File Load Orders</a></li>
                     <li><a href="#s_5-2-4">5.2.4 Using Clean Masters to purge un-used Master File References</a></li>
                     <li><a href="#s_5-2-5">5.2.5 Listing Master File References from a specific plugin</a></li>
                 </ul>
@@ -117,7 +117,7 @@ title: xEdit Cleaning and-Error Checking
                     <p>Note the grey text with green background in the mod we are cleaning; indicating that they are identical to the master versions of the same record and should be removed (cleaned). These are often called, "dirty edits".</p>
                 </div>
                 <div class="p-img">
-                    <p>A simple visual inspection between the Fallout3.esm and <a href="https://www.nexusmods.com/fallout3/mods/867">BetterCaravans</a> mod reveals the duplicated records that really don't need to be in the <a href="https://www.nexusmods.com/fallout3/mods/867">BetterCaravans</a> mod at all. Removing these will have no negative impact on the mod or Fallout3. The process of removing the duplicated, "identical to master" records involve applying a slightly different filter to the mod, followed by several context menu options as shown in <a href="#s_5-2-1">5.2.1 Removing "Identical to Master" Records"</a>.</p>
+                    <p>A simple visual inspection between the Fallout3.esm and <a href="https://www.nexusmods.com/fallout3/mods/867">BetterCaravans</a> mod reveals the duplicated records that really don't need to be in the <a href="https://www.nexusmods.com/fallout3/mods/867">BetterCaravans</a> mod at all. Removing these will have no negative impact on the mod or Fallout3. The process of removing the duplicated, "identical to master" records involve applying a slightly different filter to the mod, followed by several context menu options as shown in <a href="#s_5-2-1">5.2.1 Removing "Identical to Master" Records"</a> and in <a href="#s_5-2-2">5.2.2 Un-deleting and Disabling References</a>.</p>
                 </div>
                 <div class="level-3" id="s_5-2-1">
                     <h3 class="ctrl">5.2.1 Removing "Identical to Master" Records</h3>
@@ -153,24 +153,7 @@ title: xEdit Cleaning and-Error Checking
                 </div>
                 <!--/.level-3-->
                 <div class="level-3" id="s_5-2-2">
-                    <h3 class="ctrl">5.2.2 Sorting Master File Load Orders</h3>
-                    <div class="content">
-                        <div class="p-img">
-                            <p class="img"><img  height="360" src="img/image140.jpg" width="398"></p>
-                            <p>There are times in which the load-order of Master files gets switched around when you add/change load-orders. It can become a problem when the Master load order becomes different then how they are listed in the MASTer list, header section of your Plug-in. The, "Sort Masters" function corrects the master file load-order in the Plug-ins MASTer list, and correctly renumbers all file specific FormIDs. The screenshot below illustrates:</p>
-                        </div>
-                        <p>There is no specific log-output from the function unless there is a problem. If you see no issues or errors in the Messages Tab, then the function sorted the masters correctly.</p>
-                    </div>
-                    <!--/.content-->
-                    <div class="level-nav">
-                        <a href="#s_5-2-1" class="drkbtn">Previous Section</a>
-                        <a href="#s_5-2" class="drkbtn">Top of this Group</a>
-                    </div>
-                    <!--/.level-nav-->
-                </div>
-                <!--/.level-3-->
-                <div class="level-3" id="s_5-2-3">
-                    <h3 class="ctrl">5.2.3 Un-deleting and Disabling References</h3>
+                    <h3 class="ctrl">5.2.2 Un-deleting and Disabling References</h3>
                     <div class="content">
                         <p>The next step in the cleaning process is to Undelete and Disable References from the mod being cleaned. The, "Undelete and Disable References" function scans through the mod and the master files it depends upon, looking for any records that you may have deleted by accident. If it finds some, it will un-delete them and then set the reference to, "disabled" so that it will never be seen in-game nor affect your mod.</p>
                         <div class="p-img">
@@ -183,6 +166,23 @@ title: xEdit Cleaning and-Error Checking
                             <p>The screenshot below shows the results, which show the log-file output in two places (A and B) in the <a href="2-overview.html#s_2-3-5">Messages Tab</a> and on the lower status bar:</p>
                         </div>
                         <p>Now we know for sure that other mods will not run into missing references that were a consequence of changes made in the mod your cleaning. With the second step in the cleaning process complete, it's time for the final step.</p>
+                    </div>
+                    <!--/.content-->
+                    <div class="level-nav">
+                        <a href="#s_5-2-1" class="drkbtn">Previous Section</a>
+                        <a href="#s_5-2" class="drkbtn">Top of this Group</a>
+                    </div>
+                    <!--/.level-nav-->
+                </div>
+                <!--/.level-3-->
+                <div class="level-3" id="s_5-2-3">
+                    <h3 class="ctrl">5.2.3 Sorting Master File Load Orders</h3>
+                    <div class="content">
+                        <div class="p-img">
+                            <p class="img"><img  height="360" src="img/image140.jpg" width="398"></p>
+                            <p>There are times in which the load-order of Master files gets switched around when you add/change load-orders. It can become a problem when the Master load order becomes different then how they are listed in the MASTer list, header section of your Plug-in. The, "Sort Masters" function corrects the master file load-order in the Plug-ins MASTer list, and correctly renumbers all file specific FormIDs. The screenshot below illustrates:</p>
+                        </div>
+                        <p>There is no specific log-output from the function unless there is a problem. If you see no issues or errors in the Messages Tab, then the function sorted the masters correctly.</p>
                     </div>
                     <!--/.content-->
                     <div class="level-nav">
