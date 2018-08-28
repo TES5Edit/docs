@@ -2364,27 +2364,12 @@ end.
         <div class="level-3" id="s_11-7">
             <h3>11.7 Pascal implementation</h3>
             <p>TES5Edit uses JvInterpreter from <a rel="nofollow" target="_blank" class="external text"
-                href="http://jvcl.delphi-jedi.org/">JVCL</a> to execute Delphi as a
-                scripting language; the interpreter version used is no older than 1.51.2 and no newer than 1.54.
-                According to its own source code JvInterpreter has incomplete support for Delphi 5, and nothing newer:
-                however, it lacks support for certain Delphi 5 language features (e.g. <code>var PerInitialisedVariable:
-                Integer = 42;</code>); and it has scripts return values by assigning to <code>Result</code>, while
-                Borland Delphi 5 (released in 1999) has authors assign to the function name instead.
-            </p>
-            <p>The standard libraries offered by JvInterpreter directly wrap whatever libraries the containing
-                application (xEdit) was compiled with; however, wrappers only exist for the functions offered in Delphi
-                5. This means that the API (the selection of functions and the arguments they support) is limited to
-                Delphi 5 with extra quirks introduced by JvInterpreter, but the internal behavior of the functions
-                depends on what version of Delphi xEdit was compiled with (possibly Delphi 10).
-            </p>
-            <p>No online documentation of language reference appears to be available for Borland Delphi 5. Modern
-                reference documentation for Delphi (e.g. <a rel="nofollow" target="_blank" class="external text"
-                    href="http://docwiki.embarcadero.com/Libraries/XE8/en/System.RegularExpressionsCore.TPerlRegEx">TPerlRegex
-                docs</a>) will generally have accurate class descriptions, but large swaths of functionality will be
-                missing from whatever xEdit!JvInterpreter supports.
+                href="https://github.com/project-jedi/jvcl">JVCL</a> to execute Delphi as a
+                scripting language. The standard libraries offered by JvInterpreter directly wrap whatever libraries the containing
+                application (xEdit) was compiled with
             </p>
             <p>An examination of <a rel="nofollow" target="_blank" class="external text"
-                href="https://github.com/TES5Edit/TES5Edit/blob/sharlikran-fo4dump/wbScriptAdapter.pas">xEdit's
+                href="https://github.com/TES5Edit/TES5Edit/blob/dev-elminster/wbScriptAdapter.pas">xEdit's
                 own source code</a> indicates that it provides (JvInterpreter's versions of) the following standard
                 libraries to scripts, even if those scripts do not include the libraries via the <code>uses</code>
                 command:
@@ -2427,11 +2412,7 @@ end.
                     <ul>
                         <li>
                             In addition to this, including a unit multiple times triggers these errors, as its own
-                            definitions conflict with themselves. This may be a standard Delphi limitation if <a
-                                rel="nofollow" target="_blank" class="external text"
-                                href="https://stackoverflow.com/questions/11258996/delphi-xe-dcc-error-e2004-identifier-redeclared-system">the
-                            behavior of the System unit</a> is of any indication, but literally no official or
-                            unofficial documentation on the Internet mentions it as a general rule.
+                            definitions conflict with themselves. 
                             <ul>
                                 <li> And no, Delphi has no equivalent to <code>#pragma once</code>, and JvInterpreter
                                     wouldn't support it anyway
