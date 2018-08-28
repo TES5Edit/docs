@@ -431,6 +431,23 @@ title: xEdit Scripting Functions
                         a load order index (i.e. <code>[02] PluginName.esp</code>), while <i>BaseName</i> will not.
                     </td>
                 </tr>
+                <tr id="BeginUpdate">
+                    <td><b>BeginUpdate</b></td>
+                    <td></td>
+                    <td>aeElement: IwbElement</td>
+                    <td>
+                        <p>For use on container elements only when performing a lot of operations with it like adding/removing children elements in batch.</p>
+                        <pre>
+                        BeginUpdate(e);
+                        try
+                          // do things with e
+                        finally
+                          EndUpdate(e);
+                        end;
+                        <pre>
+                        <p>Needs to be paired with <a href="#EndUpdate">EndUpdate</a> 
+                    </td>
+                </tr>
                 <tr>
                     <td><b>BuildRef</b></td>
                     <td></td>
@@ -548,6 +565,23 @@ title: xEdit Scripting Functions
                     <td> Returns the type of the element. This is one of the following values: etFile, etMainRecord,
                         etGroupRecord, etSubRecord, etSubRecordStruct, etSubRecordArray, etSubRecordUnion, etArray,
                         etStruct, etValue, etFlag, etStringListTerminator,etUnion, etStructChapter.
+                    </td>
+                </tr>
+                <tr id="EndUpdate">
+                    <td><b>EndUpdate</b></td>
+                    <td></td>
+                    <td>aeElement: IwbElement</td>
+                    <td>
+                        <p>For use on container elements only when performing a lot of operations with it like adding/removing children elements in batch.</p>
+                        <pre>
+                        BeginUpdate(e);
+                        try
+                          // do things with e
+                        finally
+                          EndUpdate(e);
+                        end;
+                        <pre>
+                        <p>Needs to be paired with <a href="#BeginUpdate">BeginUpdate</a> 
                     </td>
                 </tr>
                 <tr>
