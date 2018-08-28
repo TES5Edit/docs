@@ -276,7 +276,7 @@ title: xEdit Cleaning and-Error Checking
             <h2 class="ctrl">5.4 Checking for Circular Leveled Lists</h2>
             <div class="content">
                 <div class="p-img">
-                    <p class="img"><img  height="343" src="img/image154.jpg" width="576"></p>
+                    <p class="img"><img src="img/image154.jpg"></p>
                     <p>With mods it is possible to have Leveled Lists that reference other Leveled Lists that are perfectly valid. However, it's possible in some cases that a mod builds a circular reference (with as little as 2 leveled lists directly referencing each other, or any number of additional leveled lists in the chain). When the game engine then tries to resolve that leveled lists down to a particular item/creature/NPC, it can get caught in the endless loop and crash. This function looks for such cases and identifies them if they exist:</p>
                 </div>
                 <p>I have not yet found an example in any mod of such a circular leveled list, but I do know that they exist and that xEdit can spot them. If you don't get any output from running this function, then the checked mod is clean of such loops.</p>
