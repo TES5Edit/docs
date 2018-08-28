@@ -186,7 +186,7 @@ title: xEdit Cleaning and-Error Checking
                         <p class="img"><img src="img/image140.jpg"></p>
                         <p>There is no specific log-output from the function unless there is a problem. If you see "Done sorting masters" and no issues or errors in the Messages Tab, then the function sorted the masters correctly.</p>
                         <p class="img"><img src="img/cleanmasters-done.jpg"></p>
-						<h3 class="ctrl">When should you use Sort Masters?</h3>
+                        <h3 class="ctrl">When should you use Sort Masters?</h3>
                         <p>According to Elminster: If a plugin has two masters that are siblings (one doesn't have the other as a master, so they can load in either order) and they are overriding the same record from an earlier master (e.g. both are overriding a record from the main game master file), then loading them in a different order will result in a different version of the overridden record being the "winner". But the plugin might depend on the winner being the one indicated by the order in which it references the masters.</p>
                     </div>
                     <!--/.content-->
@@ -249,14 +249,21 @@ title: xEdit Cleaning and-Error Checking
             <h2 class="ctrl">5.3 Checking For Reference Errors</h2>
             <div class="content">
                 <div class="p-img">
-                    <p class="img"><img  height="343" src="img/image150.jpg" width="576"></p>
-                    <p>The "Check for Reference Errors" function reports any case in which the information contained in a module file does not match the xEdit record definitions. There is a very minimal chance that something that's reported as an error is actually an oversight in the xEdit record definitions and not in the module, but all cases should be reported to be safe). Note that there are errors in the Fallout3.esm and the DLCs. Both <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=380528">Elminster</a> and <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=20313">Quarn</a> have gone through them all to ensure they are genuine errors. Running the check is a recommended practice as part of the mod-cleaning process as shown below:</p>
+                    <p>The "Check for Reference Errors" function reports any case in which the information contained in a module file does not match the xEdit record definitions. There is a very minimal chance that something that's reported as an error is actually an oversight in the xEdit record definitions and not in the module, but all cases should be reported to be safe. Note that there are errors in the Fallout3.esm and the DLCs. Both <a href="https://www.nexusmods.com/newvegas/users/167469">Elminster</a> and Quarn have gone through them all to ensure they are genuine errors. Running the check is a recommended practice as part of the mod-cleaning process as shown below:</p>
+                    <p class="img"><img src="img/image150.jpg"></p>
                 </div>
                 <div class="p-img">
-                    <p class="img"><img  height="230" src="img/image152.jpg" width="576"></p>
                     <p>When the error-check is complete, the screenshot below shows you how the output will look when errors are found in a module:</p>
+                    <p>PACK \ Locations \ PLDT - Location 1 \ Location -> Found a NULL reference, expected: ACHR,ACRE,PBEA,PGRE,PLYR,PMIS,REFR</p>
+                    <p>In this example a reference was found but xEdit expected a different type of reference. These kinds of errors are not serious and should be sent to <a href="https://www.nexusmods.com/newvegas/users/167469">Elminster</a> to ensure xEdit has the right information.</p>
+                    <p class="img"><img src="img/checkerrors-expected.jpg"></p>
                 </div>
-                <p>In this example we found both kinds of errors (Ouch!), which was ideal for our tutorial. In the first case xEdit found reference errors where data is missing such as Flags and Idle Timer Settings (A). These errors should be corrected by the mod author and not by you! The error we see in (B) is the result of an unknown Flags type, (Unknown: 15), which xEdit did not understand. These kinds of errors should be sent to <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=380528">Elminster</a> for to ensure xEdit has the right information, or if the mod has some strange error.</p>
+                <div class="p-img">
+                    <p>TES4 \ ONAM - Overriden Forms \ Form #0 -> [1300DBC4] < Error: Could not be resolved ></p>
+                    <p>In this example we found Unresolved Reference errors (Ouch!) These errors are very serious as they indicate a record from the mod is trying to reference something, but what it is looking for is missing from the mod or the master of the mod. Mod authors should never leave these uncorrected! They should be corrected by the mod author and not by you!.</p>
+                    <p class="img"><img src="img/checkerrors-unresolved.jpg"></p>
+                </div>
+                <p>If other errors were found such as data that is missing, Flags or Idle Timer Settings, then those errors should be corrected by the mod author and not by you!.</p>
             </div>
             <!--/.content-->
             <div class="level-nav">
