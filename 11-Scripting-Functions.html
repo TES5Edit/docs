@@ -436,7 +436,7 @@ title: xEdit Scripting Functions
                     <td></td>
                     <td>aeElement: IwbElement</td>
                     <td>
-                        <p>For use on container elements only when performing a lot of operations with it like adding/removing children elements in batch.</p>
+                        <p>For use on container elements only when performing a lot of operations with it like adding/removing children elements in batch. Needs to be paired with <a href="#EndUpdate">EndUpdate</a> </p>
                         <pre>
                         BeginUpdate(e);
                         try
@@ -444,8 +444,7 @@ title: xEdit Scripting Functions
                         finally
                           EndUpdate(e);
                         end;
-                        <pre>
-                        <p>Needs to be paired with <a href="#EndUpdate">EndUpdate</a> 
+                        </pre>
                     </td>
                 </tr>
                 <tr>
@@ -572,7 +571,7 @@ title: xEdit Scripting Functions
                     <td></td>
                     <td>aeElement: IwbElement</td>
                     <td>
-                        <p>For use on container elements only when performing a lot of operations with it like adding/removing children elements in batch.</p>
+                        <p>For use on container elements only when performing a lot of operations with it like adding/removing children elements in batch. Needs to be paired with <a href="#BeginUpdate">BeginUpdate</a></p>
                         <pre>
                         BeginUpdate(e);
                         try
@@ -581,7 +580,6 @@ title: xEdit Scripting Functions
                           EndUpdate(e);
                         end;
                         <pre>
-                        <p>Needs to be paired with <a href="#BeginUpdate">BeginUpdate</a> 
                     </td>
                 </tr>
                 <tr>
