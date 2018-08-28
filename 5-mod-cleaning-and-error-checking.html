@@ -182,11 +182,12 @@ title: xEdit Cleaning and-Error Checking
                 <div class="level-3" id="s_5-2-3">
                     <h3 class="ctrl">5.2.3 Sorting Master File Load Orders</h3>
                     <div class="content">
-                        <div class="p-img">
-                            <p class="img"><img  height="360" src="img/image140.jpg" width="398"></p>
-                            <p>There are times in which the load-order of Master files gets switched around when you add/change load-orders. It can become a problem when the Master load order becomes different then how they are listed in the MASTer list, header section of your Plug-in. The, "Sort Masters" function corrects the master file load-order in the Plug-ins MASTer list, and correctly renumbers all file specific FormIDs. The screenshot below illustrates:</p>
-                        </div>
-                        <p>There is no specific log-output from the function unless there is a problem. If you see no issues or errors in the Messages Tab, then the function sorted the masters correctly.</p>
+                        <p>There are times in which the load-order of Master files gets switched around when you add/change load-orders.  The, "Sort Masters" function corrects the master file load-order in the Plug-ins MASTer list, and correctly renumbers all file specific FormIDs.</p>
+                        <p class="img"><img src="img/image140.jpg"></p>
+                        <p>There is no specific log-output from the function unless there is a problem. If you see "Done sorting masters" and no issues or errors in the Messages Tab, then the function sorted the masters correctly.</p>
+                        <p class="img"><img src="img/cleanmasters-done.jpg"></p>
+						<h3 class="ctrl">When should you use Sort Masters?</h3>
+                        <p>According to Elminster: If a plugin has two masters that are siblings (one doesn't have the other as a master, so they can load in either order) and they are overriding the same record from an earlier master (e.g. both are overriding a record from the main game master file), then loading them in a different order will result in a different version of the overridden record being the "winner". But the plugin might depend on the winner being the one indicated by the order in which it references the masters.</p>
                     </div>
                     <!--/.content-->
                     <div class="level-nav">
