@@ -30,14 +30,14 @@ title: xEdit Mod Utilities
         <h3>Section Table of Contents</h3>
         <ul class="second">
             <li><a href="#s_7-1">7.1 Overview</a></li>
-            <li><a href="#s_7-2">7.2 Building Reference Information</a></li>
-            <li><a href="#s_7-3">7.3 Building Reachable Information</a></li>
-            <li><a href="#s_7-4">7.4 Changing and Adding References</a></li>
-            <li><a href="#s_7-5">7.5 Marking Nodes as Modified</a></li>
-            <li><a href="#s_7-6">7.6 Copying and Replicating Idle Animations</a></li>
-            <li><a href="#s_7-7">7.7 Applying Scripts Into</a></li>
-            <li><a href="#s_7-8">7.8 Creating Start-Game Enabled Quest (SEQ) Files [TES5/SSE]</a></li>
-            <li><a href="#s_7-9">7.9 Deprecated Functions</a></li>
+            <li><a href="#s_7-2">7.2 Building Reachable Information</a></li>
+            <li><a href="#s_7-3">7.3 Changing and Adding References</a></li>
+            <li><a href="#s_7-4">7.4 Marking Nodes as Modified</a></li>
+            <li><a href="#s_7-5">7.5 Copying and Replicating Idle Animations</a></li>
+            <li><a href="#s_7-6">7.6 Applying Scripts Into</a></li>
+            <li><a href="#s_7-7">7.7 Creating Start-Game Enabled Quest (SEQ) Files [TES5/SSE]</a></li>
+            <li><a href="#s_7-8">7.8 Deprecated Functions</a></li>
+            <li><a href="#Apendix-A">Apendix A: Caching Reference Information</a></li>
         </ul>
     </div>
     <!--/.local-->
@@ -54,43 +54,9 @@ title: xEdit Mod Utilities
             <!--/.content-->
         </div>
         <!--/.level-2-->
-        <div class="level-2" id="s_7-2">
-            <h2 class="ctrl">7.2 Building Reference Information</h2>
-            <div class="content">
-                <p>Building reference information is a common task that is often performed behind the scenes by xEdit, and essentially finds all instances of a "Thing" in the game. Be it a script, NPC or a toilet, the build reference info function will show you all of them across the mod files loaded into xEdit. In this section we feature <a href="https://www.nexusmods.com/fallout3/users/212187">Xodarap's</a> <a href="https://www.nexusmods.com/fallout3/mods/334">Fallout Overhaul</a> (XFO) mod, which is known as one of the bigger, stable mods that changes that make your gaming experience much more challenging and immersive (I use this myself, so I had to feature Xodaraps fine work!)</p>
-                <div class="p-img">
-                    <p class="img"><img  height="309" src="img/image262.jpg" width="576"></p>
-                    <p>For our example of building reference information, there are a couple of choices to consider; If you are trying to find All instances of that Thing, then load all of the mod files when loading xEdit. If however you are looking for instances of a Thing in a single mod-file, then you'll only want to load that mod-file as shown in the screenshot below:</p>
-                </div>
-                <p>Here we start the action by Right-clicking in the open white-space of the Master/Plugin Selection window (A) which presents a small context menu. From this menu choose, "Select None" (B) to clear all check marks. Then you can select just the <a href="https://www.nexusmods.com/fallout3/mods/334">XFO</a> mod we want to load (C) and click, "OK" to bring it up into xEdit.</p>
-                <div class="p-img">
-                    <p class="img"><img  height="384" src="img/image264.jpg" width="499"></p>
-                    <p>Once xEdit is loaded, you will be presented with a screenshot similar to that below. There you can see the three mods loaded, the <a href="https://www.nexusmods.com/fallout3/mods/334">XFO</a> stand-alone version and its two masters. To build reference information, Right-click on the <a href="https://www.nexusmods.com/fallout3/mods/334">XFO</a> entry in the Left-side Panel (A) which will present the main context menu. Select, "Build Reference Info" (B) from this menu as shown below:</p>
-                </div>
-                <div class="p-img">
-                    <p class="img"><img  height="266" src="img/image266.jpg" width="238"></p>
-                    <p>This will present you with a new window for, "Building reference information", where you can select the master files or other mod files that you want to build reference information for (A). If you are looking through all mod files, make sure that you select everything (you can also use the Right-click, "Select None" method to quickly check them all:</p>
-                </div>
-                <div class="p-img">
-                    <p class="img"><img  height="249" src="img/image268.jpg" width="575"></p>
-                    <p>This process can take some time depending on how many mods you are building reference information for. Fortunately there is a status indicator in the top window (A) that shows you the time elapsed during parsing as shown below:</p>
-                </div>
-                <div class="p-img">
-                    <p class="img"><img  height="231" src="img/image270.jpg" width="576"></p>
-                    <p>Note how there is a new Tab at the bottom the <a href="2-overview.html#s_2-3-6">Referenced By Tab</a>, which displays the output of our reference check. As shown above, the <a href="2-overview.html#s_2-3-5">Messages Tab</a> shows the overall outcome of the function, while the screenshot below shows you the <a href="2-overview.html#s_2-3-6">Referenced By Tab</a> and its output.</p>
-                </div>
-                <p>In this case we Left-clicked on the Drink Toilet record in <a href="https://www.nexusmods.com/fallout3/mods/334">XFO</a>, and can see very instance of the toilet in the <a href="2-overview.html#s_2-3-6">Referenced By Tab</a>. Each row in the output shows you extensive information about the reference, the cell it's placed in, the name of the location, it's FormID, etc. You can run this function for any time in any mod that you wish!</p>
-            </div>
-            <!--/.content-->
-            <div class="level-nav">
-                <a href="#s_7-1" class="drkbtn">Previous Section</a>
-				<a href="#s_7-2" class="drkbtn">Top of this Section</a>
-            </div>
-            <!--/.level-nav-->
-        </div>
         <!--/.level-2-->
-        <div class="level-2" id="s_7-3">
-            <h2 class="ctrl">7.3 Building Reachable Information</h2>
+        <div class="level-2" id="s_7-2">
+            <h2 class="ctrl">7.2 Building Reachable Information</h2>
             <div class="content">
                 <p>For our example of building reference information, there are a couple of choices to consider; If you are trying to find All instances of that Thing, then load all of the mod files when loading xEdit. If however you are looking for instances of a Thing in a single mod-file, then you'll only want to load that mod-file instead of the entire list. Some important notes about the &quot;Build Reachable Info&quot; function:</p>
                 <ul>
@@ -146,14 +112,14 @@ title: xEdit Mod Utilities
             </div>
             <!--/.content-->
             <div class="level-nav">
-                <a href="#s_7-2" class="drkbtn">Previous Section</a>
-				<a href="#s_7-3" class="drkbtn">Top of this Section</a>
+                <a href="#s_7-1" class="drkbtn">Previous Section</a>
+				<a href="#s_7-2" class="drkbtn">Top of this Section</a>
             </div>
             <!--/.level-nav-->
         </div>
         <!--/.level-2-->
-        <div class="level-2" id="s_7-4">
-            <h2 class="ctrl">7.4 Changing and Adding References</h2>
+        <div class="level-2" id="s_7-3">
+            <h2 class="ctrl">7.3 Changing and Adding References</h2>
             <div class="content">
                 <p>One of the less-used features of xEdit allows you to actually insert to records (items, scripts, NPCs, etc) into a mod-file directly from xEdit. The GECK is of course the preferred method of adding new things to your mod, but in certain circumstances it is easier or simpler to add the thing directly to the file without the GECK. This function saw its most use just prior to the release of the GECK, when there was no tool to use for such purposes. Now with the GECK in play, there is less of a need for this capability, but it still exists in xEdit and is documented for cases in which you want to add references directly to the game.</p>
                 <div class="p-img">
@@ -207,14 +173,14 @@ title: xEdit Mod Utilities
             </div>
             <!--/.content-->
             <div class="level-nav">
-                <a href="#s_7-3" class="drkbtn">Previous Section</a>
-				<a href="#s_7-4" class="drkbtn">Top of this Section</a>
+                <a href="#s_7-2" class="drkbtn">Previous Section</a>
+				<a href="#s_7-3" class="drkbtn">Top of this Section</a>
             </div>
             <!--/.level-nav-->
         </div>
         <!--/.level-2-->
-        <div class="level-2" id="s_7-5">
-            <h2 class="ctrl">7.5 Marking Nodes as Modified</h2>
+        <div class="level-2" id="s_7-4">
+            <h2 class="ctrl">7.4 Marking Nodes as Modified</h2>
             <div class="content">
                 <div class="p-img">
                     <p class="img"><img  height="397" src="img/image309.jpg" width="473"></p>
@@ -227,14 +193,14 @@ title: xEdit Mod Utilities
             </div>
             <!--/.content-->
             <div class="level-nav">
-                <a href="#s_7-4" class="drkbtn">Previous Section</a>
-				<a href="#s_7-5" class="drkbtn">Top of this Section</a>
+                <a href="#s_7-3" class="drkbtn">Previous Section</a>
+				<a href="#s_7-4" class="drkbtn">Top of this Section</a>
             </div>
             <!--/.level-nav-->
         </div>
         <!--/.level-2-->
-        <div class="level-2" id="s_7-6">
-            <h2 class="ctrl">7.6 Copying and Replicating Idle Animations</h2>
+        <div class="level-2" id="s_7-5">
+            <h2 class="ctrl">7.5 Copying and Replicating Idle Animations</h2>
             <div class="content">
                 <p>Copying and Replicating Idle Animations is a specialized function that was written for <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=7327">Martigen</a> in support of <a href="https://www.nexusmods.com/fallout3/mods/3211">Marts Mutant Mod (MMM)</a>. What the function does is to copy a set of NPC idle animations from a list of available animations into an NPC. In this way, the process of creating new NPCs is dramatically improved and much less prone to errors when assigning idle animations. This process describes how that function works, and is clearly geared towards the mod author.</p>
                 <div class="p-img">
@@ -299,6 +265,20 @@ title: xEdit Mod Utilities
             </div>
             <!--/.content-->
             <div class="level-nav">
+                <a href="#s_7-4" class="drkbtn">Previous Section</a>
+				<a href="#s_7-5" class="drkbtn">Top of this Section</a>
+            </div>
+            <!--/.level-nav-->
+        </div>
+        <!--/.level-2-->
+        <div class="level-2" id="s_7-6">
+            <h2 class="ctrl">7.6 Applying Scripts Into</h2>
+            <div class="content">
+                <p>Download this: <a href="http://fallout3nexus.com/downloads/file.php?id=1904">http://fallout3nexus.com/downloads/file.php?id=1904</a><br> It makes use of this function. If you have still questions about it afterward feel free to ask again.</p>
+                <p>NEED MORE INFO!</p>
+            </div>
+            <!--/.content-->
+            <div class="level-nav">
                 <a href="#s_7-5" class="drkbtn">Previous Section</a>
 				<a href="#s_7-6" class="drkbtn">Top of this Section</a>
             </div>
@@ -306,10 +286,16 @@ title: xEdit Mod Utilities
         </div>
         <!--/.level-2-->
         <div class="level-2" id="s_7-7">
-            <h2 class="ctrl">7.7 Applying Scripts Into</h2>
+            <h2 class="ctrl">7.7 Creating Start-Game Enabled Quest (SEQ) Files [TES5/SSE]</h2>
             <div class="content">
-                <p>Download this: <a href="http://fallout3nexus.com/downloads/file.php?id=1904">http://fallout3nexus.com/downloads/file.php?id=1904</a><br> It makes use of this function. If you have still questions about it afterward feel free to ask again.</p>
-                <p>NEED MORE INFO!</p>
+                    <p>As of version 1.7, Skyrim uses SEQ files in order to track Start-Game Enabled quests you've added, and possibly ones you've altered. These files are needed for your dialogue and scenes to work properly.  To create one</p>
+                    <ol>
+                        <li> Load your mod</li>
+                        <li> Right-click on your mod from the left-side panel</li>
+                        <li> In the pop-up menu choose "Other" / "Create SEQ File"</li>
+                    </ol>
+                    <p>xEdit will automatically place the SEQ file into the SEQ folder for you.</p>
+                    <p>Note: you may need to repeat this process after editing your Quest</p>
             </div>
             <!--/.content-->
             <div class="level-nav">
@@ -320,27 +306,7 @@ title: xEdit Mod Utilities
         </div>
         <!--/.level-2-->
         <div class="level-2" id="s_7-8">
-            <h2 class="ctrl">7.8 Creating Start-Game Enabled Quest (SEQ) Files [TES5/SSE]</h2>
-            <div class="content">
-                    <p>As of version 1.7, Skyrim uses SEQ files in order to track Start-Game Enabled quests you've added, and possibly ones you've altered. These files are needed for your dialogue and scenes to work properly.  To create one</p>
-                    <ol>
-                        <li> Load your mod (see <a href="/index.php?title=TES5Edit_Mod_Cleaning_Tutorial#Warming_up" title="TES5Edit Mod Cleaning Tutorial">Mod Cleaning Tutorial</a>)</li>
-                        <li> Right-click on your mod from the left-side panel</li>
-                        <li> In the pop-up menu choose "Other" / "Create SEQ File"</li>
-                    </ol>
-                    <p>xEdit will automatically place the SEQ file into the SEQ folder for you.</p>
-                    <p>Note: you may need to repeat this process after editing your Quest</p>
-            </div>
-            <!--/.content-->
-            <div class="level-nav">
-                <a href="#s_7-7" class="drkbtn">Previous Section</a>
-				<a href="#s_7-8" class="drkbtn">Top of this Section</a>
-            </div>
-            <!--/.level-nav-->
-        </div>
-        <!--/.level-2-->
-        <div class="level-2" id="s_7-9">
-            <h2 class="ctrl">7.9 Deprecated xEdit Functions</h2>
+            <h2 class="ctrl">7.8 Deprecated xEdit Functions</h2>
             <div class="content">
                 <p>Sometimes options in the main context menu are considered Deprecated functions which should not be used for any reason.</p>
                 <ul>
@@ -349,11 +315,27 @@ title: xEdit Mod Utilities
             </div>
             <!--/.content-->
             <div class="level-nav">
-                <a href="#s_7-8" class="drkbtn">Previous Section</a>
+                <a href="#s_7-7" class="drkbtn">Previous Section</a>
             </div>
             <!--/.level-nav-->
         </div>
         <!--/.level-2-->
+        <div class="level-2" id="Apendix-A">
+            <h2 class="ctrl">Apendix A: Caching Reference Information</h2>
+            <div class="content">
+                <p>Caching Reference Information is performed behind the scenes by xEdit. It finds all instances of a "Thing" in the game. Be it a script, NPC or a toilet.  The Reference Information is used to show you all of the occurrences across all mod files loaded into xEdit.</p>
+                <div class="p-img">
+                    <p>For our example I selected Console01 [ACTI:000041F2] in the Navagation treeview. From the View treeview after selecting the "Referenced By" tab you can see all the uses of the "Thing" selected.</p>
+                    <p class="img"><img src="img/cache-referenced-by.jpg"></p>
+                </div>
+            </div>
+            <!--/.content-->
+            <div class="level-nav">
+                <a href="#s_7-1" class="drkbtn">Previous Section</a>
+				<a href="#s_7-2" class="drkbtn">Top of this Section</a>
+            </div>
+            <!--/.level-nav-->
+        </div>
     </div>
     <!--/.content-->
     <div class="section-nav">
