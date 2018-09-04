@@ -66,21 +66,23 @@ title: xEdit Mod Utilities
                         <ul>
                             <li>Start a new game with exactly the mods you've currently loaded.</li>
                             <li>Do not use the console in any way.</li>
-                            <li>There are no <a href="https://www.nexusmods.com/fallout3/mods/4888"><abbr title="Fallout Script Extender">FOSE</abbr></a> scripts involved that use some dirty tricks to get hold of a reference to something without that something showing up in the SCRO's of the script.</li>
+                            <li>There are no <a href="http://fose.silverlock.org/"><abbr title="Fallout Script Extender">FOSE</abbr></a> scripts involved that use some dirty tricks to get hold of a reference to something without that something showing up in the SCRO's of the script.</li>
                         </ul>
                     </li>
                 </ul>
                 <p>Also the meaning of &quot;reachable&quot; is sometimes a bit gray. For example; For Activator's, Statics, Weapons, Armor, and so on "reachable" means that the player character should be able to get somewhere from where he can see the object and/or somehow get it into his inventory. For Quests it means that the quest either starts enabled or that there is probably some way how it can become enabled or at least that somewhere the variables belonging to the quest script get accessed. For DIAL's and INFO's it means that it's probably possible to select the topic somewhere or hear the response somewhere. For CELL's and WRLD's it means that the player character is probably somehow able to enter it.</p>
                 <div class="p-img">
-                    <p class="img"><img  height="258" src="img/image271.jpg" width="481"></p>
-                    <p>Start the action by Right-clicking in the open white-space of the Master/Plugin Selection window (A), which will present a small context menu. From this menu choose, "Select None" (B) to clear all check marks. Then you can select just the <a href="https://www.nexusmods.com/fallout3/mods/334">XFO</a> mod we want to load (C) and click, "OK" to bring it up into xEdit as shown below:</p>
+                    <p>Start the action by Right-clicking in the open white-space of the Master/Plugin Selection window (A), which will present a small context menu. From this menu choose, "Select None" (B) to clear all check marks.</p>
+                    <p class="img"><img src="img/image271.jpg"></p>
+					<p>Then you can select just the <a href="https://www.nexusmods.com/fallout3/mods/334">XFO</a> mod we want to load (A) and click, "OK" (B) to bring it up into xEdit as shown below:</p>
+                    <p class="img"><img src="img/reachableloadmod.jpg"></p>
                 </div>
                 <div class="p-img">
-                    <p class="img"><img  height="423" src="img/image273.jpg" width="558"></p>
+                    <p class="img"><img src="img/image273.jpg"></p>
                     <p>Once loaded, Right-click on the mod to build reachable info for (A) to render the main context menu. Select, "Build reachable info" from the menu to run the function as shown below:</p>
                 </div>
                 <div class="p-img">
-                    <p class="img"><img  height="166" src="img/image275.jpg" width="575"></p>
+                    <p class="img"><img src="img/image275.jpg"></p>
                     <p>As with the <a href="7-mod-utilities.html#s_7-2">Build Reference Information</a> function, the build reach ability function may take some time to process all of the records depending on how many mods you are loading for the comparison. The status bar at the very top will give you indication of how far along the function is during parsing as shown below. The <a href="2-overview.html#s_2-3-5">Messages Tab</a> shows the log-file output as it happens, and overall this function can take some time to complete:</p>
                 </div>
                 <p>Be aware that half-way through the process, the Elapsed Time clock on top will appear to stop, and xEdit will appear to be frozen or locked-up. In truth the Elapsed Clock only counts through half of the Build Reachable Info function, so be patient &#8211; the process will complete within a minute or two.</p>
