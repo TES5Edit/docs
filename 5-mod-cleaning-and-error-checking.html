@@ -29,19 +29,20 @@ title: xEdit Cleaning and-Error Checking
     <div class="local">
         <h3>Section Table of Contents</h3>
         <ul class="second">
-            <li><a href="#s_5-1">5.1 Overview</a></li>
+            <li><a href="#s_5-1">5.1 Preface</a></li>
+            <li><a href="#s_5-2">5.2 Overview</a></li>
             <li>
-                <a href="#s_5-2">5.2 Mod Cleaning Process</a>
+                <a href="#s_5-3">5.3 Mod Cleaning Process</a>
                 <ul class="third">
-                    <li><a href="#s_5-2-1">5.2.1 Removing "Identical to Master" Records"</a></li>
-                    <li><a href="#s_5-2-2">5.2.2 Un-deleting and Disabling References</a></li>
-                    <li><a href="#s_5-2-3">5.2.3 Sorting Master File Load Orders</a></li>
-                    <li><a href="#s_5-2-4">5.2.4 Using Clean Masters to purge un-used Master File References</a></li>
-                    <li><a href="#s_5-2-5">5.2.5 Listing Master File References from a specific plugin</a></li>
+                    <li><a href="#s_5-3-1">5.3.1 Removing "Identical to Master" Records"</a></li>
+                    <li><a href="#s_5-3-2">5.3.2 Un-deleting and Disabling References</a></li>
+                    <li><a href="#s_5-3-3">5.3.3 Sorting Master File Load Orders</a></li>
+                    <li><a href="#s_5-3-4">5.3.4 Using Clean Masters to purge un-used Master File References</a></li>
+                    <li><a href="#s_5-3-5">5.3.5 Listing Master File References from a specific plugin</a></li>
                 </ul>
             </li>
-            <li><a href="#s_5-3">5.3 Checking For Reference Errors</a></li>
-            <li><a href="#s_5-4">5.4 Checking for Circular Leveled Lists</a></li>
+            <li><a href="#s_5-4">5.4 Checking For Reference Errors</a></li>
+            <li><a href="#s_5-5">5.5 Checking for Circular Leveled Lists</a></li>
             <li><a href="#Apendix-A">Apendix A: Types of Dirty Edits</a></li>
             <li><a href="#Apendix-B">Apendix B: Mod Cleaning (Abridged Version)</a></li>
             <li><a href="#Glossary">Glossary</a></li>
@@ -54,7 +55,32 @@ title: xEdit Cleaning and-Error Checking
     <h1>5. Mod Cleaning and Error Checking</h1>
     <div class="content clearfix">
         <div class="level-2" id="s_5-1">
-            <h2 class="ctrl">5.1 Overview</h2>
+            <h2 class="ctrl">5.1 Preface</h2>
+            <div class="content">
+                <p>The principal reason for the presence of dirty mods is a lack of awareness of the issues surrounding dirty mods and the importance of mod cleaning. As such, a community-wide effort is required to raise awareness and so reduce the incidence of dirty mods.</p>
+                <p>It's <b>NOT</b> a good idea for everyone to just go ahead and clean their full load order and then forget about it.</p>
+                <p>The problem is twofold. First, to properly clean mods usually requires an understanding of the <b>intent</b> of the mod author. There might be implicit dependencies on other mods which are not part of the master list. Second, and following from the first, depending on how the cleaning was done, people end up with slightly different versions of these modules, which is going to make support in case of problems a nightmare for the mod author.</p>
+                <p>Mod quality is a community-wide problem that needs to be properly addressed on a community level. Mod authors need to ensure that their mods are clean, because they only need to clean their mod once for all future users to benefit, whereas each and every user of a dirty mod would have to clean it themselves, which is hugely inefficient.</p>
+                <p>The LOOT team provides a focus for community efforts to raise awareness regarding mod cleaning, by accepting reports of dirty mods and attaching them to the relevant plugins in the LOOT masterlist as messages containing a link to this wiki page, along with any additional information supplied. This data is then extracted and displayed to the user by LOOT when it runs, and the data can also be accessed by other utilities that make use of the LOOT API. The result is a central repository of information that can be accessed by a large number of people.</p>
+                <p>For mod authors:</p>
+                <ol>
+                    <li> <b>Clean</b> your mods properly. All of them. You are the one who really knows the intention of your mod. Closely review all changes to make sure they preserve the intent of your mod.</li>
+                    <li> Cleaning mods is NOT just limited to running the automated functions and be done with it. Manually review every override record your module(s) contain to make sure that that's really what you intended to do.</li>
+                    <li> <b>List in your documentation</b> that you HAVE cleaned your mods and which version of TES5Edit you used for it. If there were any implicit dependencies that you had to observe while doing the cleaning, specifically list them and the rational for them.</li>
+                </ol>
+                <p>For mod users:</p>
+                <ol>
+                    <li> <b>Check</b> any mods you use that do not specifically mention being properly cleaned (by basically doing a dry run of the cleaning process).</li>
+                    <li> If any of your mods are dirty, <b>inform the author</b>. The mod authors are the ones that really understand the intention of their mods. They are the ones that are in the best position to properly clean them. And if they only publish properly cleaned mods, the whole community benefits from it.</li>
+                    <li> If a mod has been deserted by its author or the author is unwilling to fix his mess, just <b>leave a short note</b> on the comments and/or in the RELz thread to save other mod users from wasting their time. Remember: stay civil; flaming doesn't help anyone.</li>
+                    <li> If any of your mods are dirty, submit them to the LOOT team as directed in the LOOT readme, so that others can benefit from your findings.</li>
+                </ol>
+            </div>
+            <!--/.content-->
+        </div>
+        <!--/.level-2-->
+        <div class="level-2" id="s_5-2">
+            <h2 class="ctrl">5.2 Overview</h2>
             <div class="content">
                 <p>xEdit provides several tools that help mod authors to clean their mods of extraneous / duplicated references, fix deleted references and to merge plug-ins together. These utilities can help a mod author avoid many conflicts with other mods and is considered a best practice. It is highly recommended that mod authors clean their mods before they are released to the general public, which can avert silly and embarrassing compatibility problems after release and make for a more professional showing in the community.</p>
                 <p>Mod quality is a community wide problem and needs to be addressed on that level. If everyone just tweaks their load order around and cleans mods they installed that's not going to move us forward as a community. It is important that if there are general issues with a mod that these be made public and the author of the mod fixes them. With many of the possibly conflicting changes that a mod makes, it becomes a question of intent when cleaning them up, and only the mod author can give an authoritative answer to that.</p>
@@ -62,10 +88,16 @@ title: xEdit Cleaning and-Error Checking
                 <p class="Note"><strong>Note:</strong> Those not convinced by now to read-through and understand the mod cleaning and merging process are sloppy and should be sacked. For the honorable modders who want to contribute to the community in the right way, read-on.</p>
             </div>
             <!--/.content-->
+            <!--/.content-->
+            <div class="level-nav">
+                <a href="#s_5-1" class="drkbtn">Previous Section</a>
+                <a href="#s_5-2" class="drkbtn">Top of this Group</a>
+            </div>
+            <!--/.level-nav-->
         </div>
         <!--/.level-2-->
-        <div class="level-2" id="s_5-2">
-            <h2 class="ctrl">5.2 Mod Cleaning Process</h2>
+        <div class="level-2" id="s_5-3">
+            <h2 class="ctrl">5.3 Mod Cleaning Process</h2>
             <div class="content">
                 <p>What is the mod cleaning process anyway? The mod cleaning process involves cleaning a mod file of duplicate/un-necessary records and un-deleting objects in the masters that were inadvertently deleted - setting them to disabled instead. We also check for errors as well as looped level lists. The itemized cleaning process is:</p>
                 <ol>
@@ -81,7 +113,7 @@ title: xEdit Cleaning and-Error Checking
                 </div>
                 <p>Once, "OK" is clicked (D), xEdit will load the selected plug-in for cleaning.</p>
                 <p>Note that you can also, "Select All" or "Invert Selection", which gives you additional controls over which mod-files are selected for loading into xEdit. For the mod cleaning process, we only want to load the plug-in being cleaned. You can do this using the, "Select None" menu option, and then clicking on the mod file to be cleaned.</p>
-                <p>You should only clean one mod file at a time, and you should not clean other people's mod files! There is no harm in running through the process to see if mod A or mod B is filled with dirty edits (after which you can send them a PM on the forums!), but it is considered a bad idea to clean other people's mods.</p>
+                <p>You should only clean one mod file at a time. There is no harm in running through the process to see if mod A or mod B is filled with dirty edits. Depending on what you find, you can send the mod author a PM.</p>
                 <div class="p-img">
                     <p class="img"><img src="img/image118.jpg"></p>
                     <p>Once loaded into xEdit, we need to apply a Filter to detect all of the Identical to Master references in the mod being cleaned.</p>
@@ -119,8 +151,8 @@ title: xEdit Cleaning and-Error Checking
                 <div class="p-img">
                     <p>A simple visual inspection between the Fallout3.esm and <a href="https://www.nexusmods.com/fallout3/mods/867">BetterCaravans</a> mod reveals the duplicated records that really don't need to be in the <a href="https://www.nexusmods.com/fallout3/mods/867">BetterCaravans</a> mod at all. Removing these will have no negative impact on the mod or Fallout3. The process of removing the duplicated, "identical to master" records involve applying a slightly different filter to the mod, followed by several context menu options as shown in <a href="#s_5-2-1">5.2.1 Removing "Identical to Master" Records"</a> and in <a href="#s_5-2-2">5.2.2 Un-deleting and Disabling References</a>.</p>
                 </div>
-                <div class="level-3" id="s_5-2-1">
-                    <h3 class="ctrl">5.2.1 Removing "Identical to Master" Records</h3>
+                <div class="level-3" id="s_5-3-1">
+                    <h3 class="ctrl">5.3.1 Removing "Identical to Master" Records</h3>
                     <div class="content">
                         <div class="p-img">
                             <p class="img"><img  src="img/cleaning-select-applyfilter.jpg"></p>
@@ -151,13 +183,14 @@ title: xEdit Cleaning and-Error Checking
                     </div>
                     <!--/.content-->
                     <div class="level-nav">
-                        <a href="#s_5-2" class="drkbtn">Top of this Group</a>
+                        <a href="#s_5-3" class="drkbtn">Previous Section</a>
+                        <a href="#s_5-3-1" class="drkbtn">Top of this Group</a>
                     </div>
                     <!--/.level-nav-->
                 </div>
                 <!--/.level-3-->
-                <div class="level-3" id="s_5-2-2">
-                    <h3 class="ctrl">5.2.2 Un-deleting and Disabling References</h3>
+                <div class="level-3" id="s_5-3-2">
+                    <h3 class="ctrl">5.3.2 Un-deleting and Disabling References</h3>
                     <div class="content">
                         <p>The next step in the cleaning process is to Undelete and Disable References from the mod being cleaned. The, "Undelete and Disable References" function scans through the mod and the master files it depends upon, looking for any records that you may have deleted by accident. If it finds some, it will un-delete them and then set the reference to, "disabled" so that it will never be seen in-game nor affect your mod.</p>
                         <div class="p-img">
@@ -173,14 +206,14 @@ title: xEdit Cleaning and-Error Checking
                     </div>
                     <!--/.content-->
                     <div class="level-nav">
-                        <a href="#s_5-2-1" class="drkbtn">Previous Section</a>
-                        <a href="#s_5-2" class="drkbtn">Top of this Group</a>
+                        <a href="#s_5-3-1" class="drkbtn">Previous Section</a>
+                        <a href="#s_5-3-2" class="drkbtn">Top of this Group</a>
                     </div>
                     <!--/.level-nav-->
                 </div>
                 <!--/.level-3-->
-                <div class="level-3" id="s_5-2-3">
-                    <h3 class="ctrl">5.2.3 Sorting Master File Load Orders</h3>
+                <div class="level-3" id="s_5-3-3">
+                    <h3 class="ctrl">5.3.3 Sorting Master File Load Orders</h3>
                     <div class="content">
                         <p>There are times in which the load-order of Master files gets switched around when you add/change load-orders.  The, "Sort Masters" function corrects the master file load-order in the Plug-ins MASTer list, and correctly renumbers all file specific FormIDs.</p>
                         <p class="img"><img src="img/image140.jpg"></p>
@@ -191,14 +224,14 @@ title: xEdit Cleaning and-Error Checking
                     </div>
                     <!--/.content-->
                     <div class="level-nav">
-                        <a href="#s_5-2-2" class="drkbtn">Previous Section</a>
-                        <a href="#s_5-2" class="drkbtn">Top of this Group</a>
+                        <a href="#s_5-3-2" class="drkbtn">Previous Section</a>
+                        <a href="#s_5-3-3" class="drkbtn">Top of this Group</a>
                     </div>
                     <!--/.level-nav-->
                 </div>
                 <!--/.level-3-->
-                <div class="level-3" id="s_5-2-4">
-                    <h3 class="ctrl">5.2.4 Using Clean Masters to purge un-used Master File References</h3>
+                <div class="level-3" id="s_5-3-4">
+                    <h3 class="ctrl">5.3.4 Using Clean Masters to purge un-used Master File References</h3>
                     <div class="content">
                         <p>Master File References are links or references from your Plug-in to any Master files (ESMs) that it depends on to run, and stores the list in a record called, "MAST". Most Plug-ins have the game's ESM file in their master list, but you can have many such links in a plug-in. For example for Fallout3 each file will start with Fallout3.esm. If when you create a <a href="4-conflict-detection-and-resolution.html#s_4-8">Merged Patch</a> with xEdit, it puts links to many or nearly-all of the master files in your mod list. It is possible in some cases for a Plug-in to contain a link to a master file that it does not need.</p>
                         <p>For example, suppose the Plug-in we are cleaning had MasterB.esm in its MASTer list but it doesn't contain any overrides for, or makes any other references to, records from MasterB.esm. In that case we would not need nor want MasterB.esm listed in the MASTer record for our Plug-in! This function detects any un-used MASTer references in the Plug-in we are cleaning, and removes them from the MASTer list. xEdit also renumbers any file specific FormIDs in the Plug-in to ensure that it is cleaned properly.</p>
@@ -208,31 +241,30 @@ title: xEdit Cleaning and-Error Checking
                         <p>The screenshot below illustrates how the <a href="https://www.nexusmods.com/fallout3/mods/867">BetterCaravans</a> mod looks now that it's clean, with it's new sparkly (bold)-Green text in the <a href="2-overview.html#s_2-3-2">Navagation Treeview</a> (A):</p>
                         <p class="img"><img src="img/image148.jpg"></p>
                         <p>At this point you should save your mod and load it up in-game to make sure that everything is still happy.</p>
-                        <p class="Note"><strong>Note:</strong> You should not clean other people's mods! It is the responsibility of each mod owner to clean their own mods, and with the creation of this tutorial there is no longer any excuse why people can do this. If you find a dirty mod, send the mod author a PM on Nexus and tell them they have a dirty mod and reference them to xEdit (please?)
-                        </p>
+                        <p class="Note"><strong>Note:</strong> You should not remove masters from other people's mods! You will drastically effect the mod and it will no longer perform the changes the author intended. It is the responsibility of each mod atuhor to remove unused masters. You can request that the mod author provide another version. Please be respectful if they refuse to remove masters as some mod authors intentionally override specific records in order for the mod to effect the game the way they intended.</p>
                     </div>
                     <!--/.content-->
                     <div class="level-nav">
-                        <a href="#s_5-2-3" class="drkbtn">Previous Section</a>
-                        <a href="#s_5-2" class="drkbtn">Top of this Group</a>
+                        <a href="#s_5-3-3" class="drkbtn">Previous Section</a>
+                        <a href="#s_5-3-4" class="drkbtn">Top of this Group</a>
                     </div>
                     <!--/.level-nav-->
                 </div>
                 <!--/.level-3-->
-                <div class="level-2" id="s_5-2-5">
-                    <h3 class="ctrl">5.2.5 Listing Master File References from a specific plugin</h3>
+                <div class="level-2" id="s_5-3-5">
+                    <h3 class="ctrl">5.3.5 Listing Master File References from a specific plugin</h3>
                     <div class="content">
                         <p class="img"><img src="img/list-ref-master.jpg"></p>
                         <p>When using Clean Masters if references are still in use the Master will not be removed from the master list. In order to list references we will be using a script named <code>List records referencing specific plugin.pas</code>. This may take a while depending on how many references there are in the Plug-in.</p>
                         <p class="img"><img src="img/list-ref-master-done.jpg"></p>
                         <p>For the above example I chose to list the references used by 04 for <code>PointLookout.esm</code>.
                         <p>A notification will appear in the messages tab when the operation is complete. All of the records referencing the plugin will be listed. You will need to properly deal with all the references before xEdit will remove the master. This could mean changing a reference to reference another master or removing the reference entirely.</p>
-                        <p class="Note"><strong>Note:</strong> You should not remove masters from other people's mods! You will drastically effect the mod and it will no longer perform the changes the author intended. It is the responsibility of each mod owner to remove unused masters. You can request that the mod author provide another version. Please be respectful if they refuse to remove masters as some mod authors intentionally override specific records in order for the mod to effect the game the way they intended.</p>
+                        <p class="Note"><strong>Note:</strong> You should not remove masters from other people's mods! You will drastically effect the mod and it will no longer perform the changes the author intended. It is the responsibility of each mod atuhor to remove unused masters. You can request that the mod author provide another version. Please be respectful if they refuse to remove masters as some mod authors intentionally override specific records in order for the mod to effect the game the way they intended.</p>
                     </div>
                     <!--/.content-->
                     <div class="level-nav">
-                        <a href="#s_5-2-4" class="drkbtn">Previous Section</a>
-                        <a href="#s_5-2" class="drkbtn">Top of this Group</a>
+                        <a href="#s_5-3-4" class="drkbtn">Previous Section</a>
+                        <a href="#s_5-3-5" class="drkbtn">Top of this Group</a>
                     </div>
                     <!--/.level-nav-->
                 </div>
@@ -245,8 +277,8 @@ title: xEdit Cleaning and-Error Checking
             <!--/.level-nav-->
         </div>
         <!--/.level-2-->
-        <div class="level-2" id="s_5-3">
-            <h2 class="ctrl">5.3 Checking For Reference Errors</h2>
+        <div class="level-2" id="s_5-4">
+            <h2 class="ctrl">5.4 Checking For Reference Errors</h2>
             <div class="content">
                 <div class="p-img">
                     <p>The "Check for Reference Errors" function reports any case in which the information contained in a module file does not match the xEdit record definitions. There is a very minimal chance that something that's reported as an error is actually an oversight in the xEdit record definitions and not in the module, but all cases should be reported to be safe. Note that there are errors in the Fallout3.esm and the DLCs. Both <a href="https://www.nexusmods.com/newvegas/users/167469">Elminster</a> and Quarn have gone through them all to ensure they are genuine errors. Running the check is a recommended practice as part of the mod-cleaning process as shown below:</p>
@@ -267,13 +299,13 @@ title: xEdit Cleaning and-Error Checking
             </div>
             <!--/.content-->
             <div class="level-nav">
-                <a href="#s_5-2" class="drkbtn">Previous Section</a>
+                <a href="#s_5-3" class="drkbtn">Previous Section</a>
             </div>
             <!--/.level-nav-->
         </div>
         <!--/.level-2-->
-        <div class="level-2" id="s_5-4">
-            <h2 class="ctrl">5.4 Checking for Circular Leveled Lists</h2>
+        <div class="level-2" id="s_5-5">
+            <h2 class="ctrl">5.5 Checking for Circular Leveled Lists</h2>
             <div class="content">
                 <div class="p-img">
                     <p class="img"><img src="img/image154.jpg"></p>
@@ -283,7 +315,7 @@ title: xEdit Cleaning and-Error Checking
             </div>
             <!--/.content-->
             <div class="level-nav">
-                <a href="#s_5-3" class="drkbtn">Previous Section</a>
+                <a href="#s_5-4" class="drkbtn">Previous Section</a>
             </div>
             <!--/.level-nav-->
         </div>
@@ -314,7 +346,7 @@ title: xEdit Cleaning and-Error Checking
             <p>One example of a wild edit would be when a container is incorrectly modified to include an item, but instead of only that one container including the item, the result is that all containers of the same type include the item. If the description of the mod states that an item is added to a specific container, then it is clear this is a wild edit and the mod should be cleaned by fixing the wild edit.</p>
         </div>
         <div class="level-nav">
-            <a href="#s_5-4" class="drkbtn">Previous Section</a>
+            <a href="#s_5-5" class="drkbtn">Previous Section</a>
         </div>
         <!--/.level-nav-->
         <div id="Apendix-B">
