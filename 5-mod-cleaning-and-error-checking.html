@@ -11,7 +11,7 @@ title: xEdit Cleaning and-Error Checking
         <ul class="first">
             <li><a href="index.html">1. Introduction</a></li>
             <li><a href="2-overview.html">2. Overview</a></li>
-            <li><a href="3-modgroups.html">3. Modgroups</a></li>
+            <li><a href="3-modgroups.html">3. ModGroups</a></li>
             <li><a href="4-conflict-detection-and-resolution.html">4. Conflict Detection and Resolution</a></li>
             <li><a href="5-mod-cleaning-and-error-checking.html">5. Mod Cleaning and Error Checking</a></li>
             <li><a href="6-managing-mod-files.html">6. Managing Mod Files</a></li>
@@ -38,7 +38,7 @@ title: xEdit Cleaning and-Error Checking
                     <li><a href="#s_5-3-2">5.3.2 Un-deleting and Disabling References</a></li>
                     <li><a href="#s_5-3-3">5.3.3 Sorting Master File Load Orders</a></li>
                     <li><a href="#s_5-3-4">5.3.4 Using Clean Masters to purge un-used Master File References</a></li>
-                    <li><a href="#s_5-3-5">5.3.5 Listing Master File References from a specific plugin</a></li>
+                    <li><a href="#s_5-3-5">5.3.5 Listing Master File References from a Specific Plugin</a></li>
                 </ul>
             </li>
             <li><a href="#s_5-4">5.4 Checking For Reference Errors</a></li>
@@ -82,7 +82,7 @@ title: xEdit Cleaning and-Error Checking
         <div class="level-2" id="s_5-2">
             <h2 class="ctrl">5.2 Overview</h2>
             <div class="content">
-                <p>xEdit provides several tools that help mod authors to clean their mods of extraneous / duplicated references, fix deleted references and to merge plug-ins together. These utilities can help a mod author avoid many conflicts with other mods and is considered a best practice. It is highly recommended that mod authors clean their mods before they are released to the general public, which can avert silly and embarrassing compatibility problems after release and make for a more professional showing in the community.</p>
+                <p>xEdit provides several tools that help mod authors to clean their mods of extraneous / duplicated references, fix deleted references and to merge plugins together. These utilities can help a mod author avoid many conflicts with other mods and is considered a best practice. It is highly recommended that mod authors clean their mods before they are released to the general public, which can avert silly and embarrassing compatibility problems after release and make for a more professional showing in the community.</p>
                 <p>Mod quality is a community wide problem and needs to be addressed on that level. If everyone just tweaks their load order around and cleans mods they installed that's not going to move us forward as a community. It is important that if there are general issues with a mod that these be made public and the author of the mod fixes them. With many of the possibly conflicting changes that a mod makes, it becomes a question of intent when cleaning them up, and only the mod author can give an authoritative answer to that.</p>
                 <p>This chapter is really dedicated to mod authors, and can be safely ignored by mod-users (whew!). Mod Authors that use the GECK should realize that the GECK can set the modified flag on a thing very easily, and that gets saved into your mod as an override to some standard object. The problem comes when players integrate your mod with others that make intentional changes to the standard object that you inadvertently saved &#8211; which is the cause of more conflicts than any other kind between mods today.</p>
                 <p class="Note"><strong>Note:</strong> Those not convinced by now to read-through and understand the mod cleaning and merging process are sloppy and should be sacked. For the honorable modders who want to contribute to the community in the right way, read-on.</p>
@@ -107,12 +107,12 @@ title: xEdit Cleaning and-Error Checking
                 </ol>
                 <div class="p-img">
                     <p class="img"><img  height="427" src="img/image116.jpg" width="576"></p>
-                    <p>For example, modder A inadvertently double-clicks on a wine bottle and it gets marked for save &#8211; becoming one of the changes introduced by modder A's plug-in. Modder A makes things worse by deleting the whiskey bottle record, removing it from the game!</p>
-                    <p>Mod B is added to the player's mod-list, which changes the wine bottle making it stronger. Mod A's plug-in however conflicts with this and can over-ride Mob B's changes without cause (as Mod A's author did not intend to change the wine bottle). Furthermore all occurrences of the whiskey bottle are now bogus. When Mod B tries to change the whiskey bottle, it finds no whiskey bottle to change and Fallout3 will crash.</p>
+                    <p>For example, modder A inadvertently double-clicks on a wine bottle and it gets marked for save &#8211; becoming one of the changes introduced by modder A's plugin. Modder A makes things worse by deleting the whiskey bottle record, removing it from the game!</p>
+                    <p>Mod B is added to the player's mod-list, which changes the wine bottle making it stronger. Mod A's plugin however conflicts with this and can over-ride Mob B's changes without cause (as Mod A's author did not intend to change the wine bottle). Furthermore all occurrences of the whiskey bottle are now bogus. When Mod B tries to change the whiskey bottle, it finds no whiskey bottle to change and Fallout3 will crash.</p>
                     <p>Modder A could avoid both of these issues with the mod cleaning process, which un-deletes references that were deleted on accident and un-does inadvertent changes to things in the game that were not intended. The screenshot below illustrates the start of the process, in which you must load-up xEdit and follow the steps herein:</p>
                 </div>
-                <p>Once, "OK" is clicked (D), xEdit will load the selected plug-in for cleaning.</p>
-                <p>Note that you can also, "Select All" or "Invert Selection", which gives you additional controls over which mod-files are selected for loading into xEdit. For the mod cleaning process, we only want to load the plug-in being cleaned. You can do this using the, "Select None" menu option, and then clicking on the mod file to be cleaned.</p>
+                <p>Once, "OK" is clicked (D), xEdit will load the selected plugin for cleaning.</p>
+                <p>Note that you can also, "Select All" or "Invert Selection", which gives you additional controls over which mod-files are selected for loading into xEdit. For the mod cleaning process, we only want to load the plugin being cleaned. You can do this using the, "Select None" menu option, and then clicking on the mod file to be cleaned.</p>
                 <p>You should only clean one mod file at a time. There is no harm in running through the process to see if mod A or mod B is filled with dirty edits. Depending on what you find, you can send the mod author a PM.</p>
                 <div class="p-img">
                     <p class="img"><img src="img/image118.jpg"></p>
@@ -215,7 +215,7 @@ title: xEdit Cleaning and-Error Checking
                 <div class="level-3" id="s_5-3-3">
                     <h3 class="ctrl">5.3.3 Sorting Master File Load Orders</h3>
                     <div class="content">
-                        <p>There are times in which the load-order of Master files gets switched around when you add/change load-orders.  The, "Sort Masters" function corrects the master file load-order in the Plug-ins MASTer list, and correctly renumbers all file specific FormIDs.</p>
+                        <p>There are times in which the load order of Master files gets switched around when you add/change load orders.  The, "Sort Masters" function corrects the master file load order in the Plugins MASTer list, and correctly renumbers all file specific FormIDs.</p>
                         <p class="img"><img src="img/image140.jpg"></p>
                         <p>There is no specific log-output from the function unless there is a problem. If you see "Done sorting masters" and no issues or errors in the Messages Tab, then the function sorted the masters correctly.</p>
                         <p class="img"><img src="img/cleanmasters-done.jpg"></p>
@@ -233,8 +233,8 @@ title: xEdit Cleaning and-Error Checking
                 <div class="level-3" id="s_5-3-4">
                     <h3 class="ctrl">5.3.4 Using Clean Masters to purge un-used Master File References</h3>
                     <div class="content">
-                        <p>Master File References are links or references from your Plug-in to any Master files (ESMs) that it depends on to run, and stores the list in a record called, "MAST". Most Plug-ins have the game's ESM file in their master list, but you can have many such links in a plug-in. For example for Fallout3 each file will start with Fallout3.esm. If when you create a <a href="4-conflict-detection-and-resolution.html#s_4-8">Merged Patch</a> with xEdit, it puts links to many or nearly-all of the master files in your mod list. It is possible in some cases for a Plug-in to contain a link to a master file that it does not need.</p>
-                        <p>For example, suppose the Plug-in we are cleaning had MasterB.esm in its MASTer list but it doesn't contain any overrides for, or makes any other references to, records from MasterB.esm. In that case we would not need nor want MasterB.esm listed in the MASTer record for our Plug-in! This function detects any un-used MASTer references in the Plug-in we are cleaning, and removes them from the MASTer list. xEdit also renumbers any file specific FormIDs in the Plug-in to ensure that it is cleaned properly.</p>
+                        <p>Master File References are links or references from your Plugin to any Master files (ESMs) that it depends on to run, and stores the list in a record called, "MAST". Most Plugins have the game's ESM file in their master list, but you can have many such links in a plugin. For example for Fallout3 each file will start with Fallout3.esm. If when you create a <a href="4-conflict-detection-and-resolution.html#s_4-8">Merged Patch</a> with xEdit, it puts links to many or nearly-all of the master files in your mod list. It is possible in some cases for a Plugin to contain a link to a master file that it does not need.</p>
+                        <p>For example, suppose the Plugin we are cleaning had MasterB.esm in its MASTer list but it doesn't contain any overrides for, or makes any other references to, records from MasterB.esm. In that case we would not need nor want MasterB.esm listed in the MASTer record for our Plugin! This function detects any un-used MASTer references in the Plugin we are cleaning, and removes them from the MASTer list. xEdit also renumbers any file specific FormIDs in the Plugin to ensure that it is cleaned properly.</p>
                         <p>The screenshot below illustrates how to activate the, "Clean Masters" function:</p>
                         <p class="img"><img src="img/image146.jpg"></p>
                         <p>Unfortunately there is no log-file output for this function. If you see "Done cleaning masters" and no issues or errors in the Messages Tab, then the function cleaned the masters correctly.</p>
@@ -255,7 +255,7 @@ title: xEdit Cleaning and-Error Checking
                     <h3 class="ctrl">5.3.5 Listing Master File References from a specific plugin</h3>
                     <div class="content">
                         <p class="img"><img src="img/list-ref-master.jpg"></p>
-                        <p>When using Clean Masters if references are still in use the Master will not be removed from the master list. In order to list references we will be using a script named <code>List records referencing specific plugin.pas</code>. This may take a while depending on how many references there are in the Plug-in.</p>
+                        <p>When using Clean Masters if references are still in use the Master will not be removed from the master list. In order to list references we will be using a script named <code>List records referencing specific plugin.pas</code>. This may take a while depending on how many references there are in the Plugin.</p>
                         <p class="img"><img src="img/list-ref-master-done.jpg"></p>
                         <p>For the above example I chose to list the references used by 04 for <code>PointLookout.esm</code>.
                         <p>A notification will appear in the messages tab when the operation is complete. All of the records referencing the plugin will be listed. You will need to properly deal with all the references before xEdit will remove the master. This could mean changing a reference to reference another master or removing the reference entirely.</p>

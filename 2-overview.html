@@ -11,7 +11,7 @@ title: xEdit Overview
         <ul class="first">
             <li><a href="index.html">1. Introduction</a></li>
             <li><a href="2-overview.html">2. Overview</a></li>
-            <li><a href="3-modgroups.html">3. Modgroups</a></li>
+            <li><a href="3-modgroups.html">3. ModGroups</a></li>
             <li><a href="4-conflict-detection-and-resolution.html">4. Conflict Detection and Resolution</a></li>
             <li><a href="5-mod-cleaning-and-error-checking.html">5. Mod Cleaning and Error Checking</a></li>
             <li><a href="6-managing-mod-files.html">6. Managing Mod Files</a></li>
@@ -44,7 +44,7 @@ title: xEdit Overview
             <li>
                 <a href="#s_2-3">2.3 Tour of User Interface</a>
                 <ul class="third">
-                    <li><a href="#s_2-3-1">2.3.1 Master/Plug-in Selection View"</a></li>
+                    <li><a href="#s_2-3-1">2.3.1 Master/Plugin Selection View"</a></li>
                     <li><a href="#s_2-3-2">2.3.2 Navagation Treeview</a></li>
                     <li><a href="#s_2-3-3">2.3.3 Main Context Menu</a></li>
                     <li><a href="#s_2-3-4">2.3.4 Right-Side Information Tab</a></li>
@@ -68,8 +68,8 @@ title: xEdit Overview
             <h2 class="ctrl">2.1 Introducing xEdit</h2>
             <div class="content">
                 <p>xEdit is short for any version for example <a href="https://www.nexusmods.com/skyrimspecialedition/mods/164">SSEEdit</a>. xEdit is an advanced graphical module viewer/editor and conflict detector, with many additional functions that make it akin to a Swiss-army knife for modders and mod-authors alike. The primary function of xEdit is to help you spot conflicts between mods and resolve them, as well as to prepare your mod-list for a smooth run-time.</p>
-                <p>For the mod author xEdit provides the capability of viewing mod files at great depth, cleaning mod files of extraneous and duplicated records, merging mods together, changing ESPs to ESMs and scanning references in mod files for reach ability, form errors and specific references. These functions are very important to mod authors in the Fallout3 environment, as they will clean the mod of un-intended changes, erroneous records and potential conflicts with other mainstream mods that players run.</p>
-                <p>Thus whether you use mods to enhance your gaming experience or create mods for others to enjoy, using xEdit is both a wise investment in time and a beneficial act for the modding community. Authors who clean and prepare their mods with xEdit will experience fewer conflict and compatibility problems once published, and Players who <a href="4-conflict-detection-and-resolution.html">de-conflict</a> their load-orders are much less likely to experience crashes and head-aches. In general the use of xEdit can only improve the inter-operability of all mods, and this can only be a good thing.</p>
+                <p>For the mod author xEdit provides the capability of viewing mod files at great depth, cleaning mod files of extraneous and duplicated records, merging mods together, changing ESPs to ESMs and scanning references in mod files for reach ability, form errors and specific references. These functions are very important to mod authors in the Fallout3 environment, as they will clean the mod of unintended changes, erroneous records and potential conflicts with other mainstream mods that players run.</p>
+                <p>Thus whether you use mods to enhance your gaming experience or create mods for others to enjoy, using xEdit is both a wise investment in time and a beneficial act for the modding community. Authors who clean and prepare their mods with xEdit will experience fewer conflict and compatibility problems once published, and Players who <a href="4-conflict-detection-and-resolution.html">de-conflict</a> their load orders are much less likely to experience crashes and head-aches. In general the use of xEdit can only improve the inter-operability of all mods, and this can only be a good thing.</p>
                 <p>If I have not convinced you by now to invest an evening to learn how to use xEdit, then you should be sacked and have a live Nuka-grenade stuffed down your trousers. If however you wish to do the right thing by the modding community, grab a coffee and let's get to work! xEdit is not a difficult tool to use, but it does require that your CPU (brain) be involved in the process, and that is what this tutorial is designed to teach.</p>
             </div>
             <!--/.content-->
@@ -90,8 +90,8 @@ title: xEdit Overview
                         <p>Once you download the program, you will need an archive extraction tool that can handle 7-Zip files (.7z), such as 7-Zip, which is available at: <a href="http://www.7-zip.org/">http://www.7-zip.org/</a></p>
                         <div class="p-img">
                             <p class="img"><img width="1028" src="img/image004.jpg"></p>
-                            <p>Once the archive is open, you will need to extract the TES5Edit files into the right place in order for it to function. That place is the Skyrim\ directory, where the TESV.exe program is installed. Do Not install into the Skyrim\Data directory or the program will not function correctly. Also refer to <a href="#s_2-2-3">2.2.3 Windows Vista and UAC Security</a>.</p>
-                            <p>Technically you can run the xEdit exe from any location except the game's Data folder.</p>
+                            <p>Once the archive is open, you will need to extract the TES5Edit files into the right place in order for it to function. That place is the Skyrim\ directory, where the TESV.exe program is installed. Also refer to <a href="#s_2-2-3">2.2.3 Windows Vista and UAC Security</a>.</p>
+                            <p>Technically you can run the xEdit exe from any location.</p>
                         </div>
                         <p>All xEdit packages contain a special file of hard coded values not found in the main ESM or DLC. For TES5Edit it would be called <em>"Skyrim.&shy;Hardcoded.&shy;dat"</em>. This file needs to be in the same folder as the TES5Edit.exe. It contains records which are hardcoded in the Skyrim game engine.</p>
                         <p>What makes these special is that the records are referenced in Skyrim.esm but are NOT contained in Skyrim.esm (they are in the binary). TES5Edit automatically loads <em>"Skyrim.&shy;Hardcoded.&shy;dat"</em> at the same load order index [00] as Skyrim.esm so that these hardcoded values can be used in conflict detection and resolution. You shouldn't touch this file until your ready to un-install.</p>
@@ -108,7 +108,7 @@ title: xEdit Overview
                     <h3 class="ctrl">2.2.2 DirectX and Requirements - [FO3Edit/FNVEdit/TES4Edit]</h3>
                     <div class="content">
                         <p>This does not apply to TES5Edit, SSEEedit, or FO4Edit!</p>
-                        <p>With FO3Edit, FNVEdit, or TES4Edit installed let's review some system parameters and drivers that you will need in order to successfully operate the tool for Windows XP. xEdit will require current DirectX drivers from Microsoft. You can tell if your system is up-to-spec by simply launching the tool. If xEdit loads and presents you with a Master/Plug-in Selector view, your good to go but you can skip this next step. If you get an error about d3dx9_*.dll not being installed, you need to update your DirectX to at <em>least</em> the March 2008 Version.</p>
+                        <p>With FO3Edit, FNVEdit, or TES4Edit installed let's review some system parameters and drivers that you will need in order to successfully operate the tool for Windows XP. xEdit will require current DirectX drivers from Microsoft. You can tell if your system is up-to-spec by simply launching the tool. If xEdit loads and presents you with a Master/Plugin Selector view, your good to go but you can skip this next step. If you get an error about d3dx9_*.dll not being installed, you need to update your DirectX to at <em>least</em> the March 2008 Version.</p>
                         <p>The most current DirectX version can be found here: DirectX End-User <a href="http://www.microsoft.com/downloads/details.aspx?familyid=2DA43D38-DB71-4C1B-BC6A-9B6652CD92A3&amp;displaylang=en">Runtime Web Installer</a>;<br> Or here: DirectX End-User <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=740ac79a-5b72-447d-84f9-ee6407ed1a91&amp;DisplayLang=en">Runtimes Redistributable</a> (install it after unpacking it).</p>
                         <p>Once DirectX is installed, you should be able launch the xEdit application successfully. If you still get errors, please report them to ElminsterAU.</p>
                     </div>
@@ -143,7 +143,7 @@ title: xEdit Overview
                 <div class="level-3" id="s_2-2-4">
                     <h3 class="ctrl">2.2.4 Starting xEdit</h3>
                     <div class="content">
-                        <p>When xEdit starts, you get a dialog to select which modules you want to load. Fallout 3, Fallout NV, and Oblivion use the time date stamp of the files to determine load order. Skyrim, Skyrim SE, and Fallout 4 use other files maintained by your mod manager. Load order can not be changed with xEdit. If you need to change your load order, close xEdit and change the load-order, then re-launch xEdit.</p>
+                        <p>When xEdit starts, you get a dialog to select which modules you want to load. Fallout 3, Fallout NV, and Oblivion use the time date stamp of the files to determine load order. Skyrim, Skyrim SE, and Fallout 4 use other files maintained by your mod manager. Load order can not be changed with xEdit. If you need to change your load order, close xEdit and change the load order, then re-launch xEdit.</p>
                         <div class="level-4" id="links_fomm">
                             For FO3/FNV some prefer to use FOMM as a mod manager. There are several versions available.
                             <ul>
@@ -223,13 +223,13 @@ title: xEdit Overview
             <div class="content">
                 <p>This section of the manual will take you on a brief tour of xEdit to introduce you to the different views and screens that you will be working with. This tour is designed for beginner-level users, and does not discuss the functionality of the views at any depth just yet. The tour is recommended for all levels of user, especially if you have not used xEdit within the last several months as there have been many updates.</p>
                 <div class="level-3" id="s_2-3-1">
-                    <h3 class="ctrl">2.3.1 Master/Plug-in Selection View [FO3/FNV]</h3>
+                    <h3 class="ctrl">2.3.1 Master/Plugin Selection View [FO3/FNV]</h3>
                     <div class="content">
                         <div class="p-img">
                             <p class="img"><img width="640" src="img/image008.jpg"></p>
-                            <p>The Master/Plug-in Selection view is presented to you when xEdit is first launched, and allows you to select/un-select the mods that you want xEdit to load. You can also Right-Click in open space to access more options, such as "Select All" or "Select None".</p>
+                            <p>The Master/Plugin Selection view is presented to you when xEdit is first launched, and allows you to select/un-select the mods that you want xEdit to load. You can also Right-Click in open space to access more options, such as "Select All" or "Select None".</p>
                         </div>
-                        <p>To change the load-order of mods, close xEdit and open <a href="#links_fomm"><abbr title="Fallout Mod Manager">FOMM</abbr></a>. Change the load-order as desired, close <abbr title="Fallout Mod Manager">FOMM</abbr> and re-open xEdit.</p>
+                        <p>To change the load order of mods, close xEdit and open <a href="#links_fomm"><abbr title="Fallout Mod Manager">FOMM</abbr></a>. Change the load order as desired, close <abbr title="Fallout Mod Manager">FOMM</abbr> and re-open xEdit.</p>
                         <p>There is an additional option you can use to quickly load a single mod &#8211; simply Double-Click on a mod file in the list. Double-clicking a mod will automatically un-select all other mod files, and will load the selected mod file. It's a short-cut to loading single mods.</p>
                     </div>
                     <!--/.content-->
@@ -280,9 +280,9 @@ title: xEdit Overview
                         <p><a href="7-mod-utilities.html#s_7-8">Generate Object LOD</a> &#8211; This function only works with Oblivion, and should not be used for Fallout3 mods under any circumstances.</p>
                         <p><a href="6-managing-mod-files.html#s_6-3">Add (Reference)</a> &#8211; What exactly that menu shows you is depending on the context, if you right click on a file node you will get a list of all groups that don't exist yet, if you right click on a group you get a list of all records that can be added to it and so on. And yes, this can be used to add new records, so you can basically build a mod from scratch with it.</p>
                         <p><a href="7-mod-utilities.html#s_7-5">Mark Modified</a> &#8211; It will mark the currently selected node and all child nodes as modified. To minimize the chance that xEdit breaks something that it doesn't fully understand when saving, only records that are marked as modified are assembled field by field, sub record by sub record. Any record or even complete group that is not marked as modified is simply copied unchanged as a blob of bytes from the old module file into the newly saved one.</p>
-                        <p><a href="6-managing-mod-files.html#s_6-2">Add Masters</a> &#8211; This adds a new master to the MAST sub record in the file header and correctly renumbers the FormIDs in the module. This function is also used to create an <abbr title="Elder-Scrolls Master File">ESM</abbr>/ESP pair from a single ESP plug-in.</p>
-                        <p><a href="5-mod-cleaning-and-error-checking.html#s_5-2-2">Sort Masters</a> &#8211; This function will sort the global load-order of master files to match the order of global load order.</p>
-                        <p><a href="5-mod-cleaning-and-error-checking.html#s_5-2-4">Clean Masters</a> &#8211; This function will scan a Plug-in for Master <abbr title="Elder Scrolls Master">ESM</abbr> dependencies, determine if any Masters are un-used by the plug-in and remove them.</p>
+                        <p><a href="6-managing-mod-files.html#s_6-2">Add Masters</a> &#8211; This adds a new master to the MAST sub record in the file header and correctly renumbers the FormIDs in the module. This function is also used to create an <abbr title="Elder-Scrolls Master File">ESM</abbr>/ESP pair from a single ESP plugin.</p>
+                        <p><a href="5-mod-cleaning-and-error-checking.html#s_5-2-2">Sort Masters</a> &#8211; This function will sort the global load order of master files to match the order of global load order.</p>
+                        <p><a href="5-mod-cleaning-and-error-checking.html#s_5-2-4">Clean Masters</a> &#8211; This function will scan a Plugin for Master <abbr title="Elder Scrolls Master">ESM</abbr> dependencies, determine if any Masters are un-used by the plugin and remove them.</p>
                         <p><a href="7-mod-utilities.html#s_7-6">Copy Idle Animations Into</a> &#8211; This function is used to copy all of the idle animations from one skeleton to another, which replicating monsters.</p>
                         <p><a href="6-managing-mod-files.html#s_6-7">Hidden</a>&#8211; This function hides the selected mod file(s) or references from further view/processing by xEdit.</p>
                     </div>
@@ -298,7 +298,7 @@ title: xEdit Overview
                     <h3 class="ctrl">2.3.4 View Treeview - Information Tab</h3>
                     <div class="content">
                         <p class="img"><img width="1028"  src="img/image014.jpg"></p>
-                        <p>The Information Tab holds a textural version of the xEdit help guide, including basic information on mod conflict resolution and a legend on <a href="4-conflict-detection-and-resolution.html#s_4-4">how to interpret the color-scheme</a> of text and background. You can reference this tab at any time as a cheat-sheet of sorts on how to use xEdit.</p>
+                        <p>The Information Tab holds a textural version of the xEdit help guide, including basic information on mod conflict resolution and a legend on <a href="4-conflict-detection-and-resolution.html#s_4-4">how to interpret the color scheme</a> of text and background. You can reference this tab at any time as a cheat-sheet of sorts on how to use xEdit.</p>
                     </div>
                     <p>You can also capture any/all sections of the help information by Right-Clicking in the view-pane and selecting one of the textural options presented to you.</p>
                 </div>
@@ -311,7 +311,7 @@ title: xEdit Overview
             </div>
             <!--/.level-3-->
             <div class="level-3" id="s_2-3-5">
-                <h3 class="ctrl">2.3.5 View Treeview - Messages Tab</h3>
+                <h3 class="cstrl">2.3.5 View Treeview - Messages Tab</h3>
                 <div class="content">
                     <div class="p-img">
                         <p class="img"><img width="1028"  src="img/image016.jpg"></p>
@@ -332,9 +332,9 @@ title: xEdit Overview
                 <div class="content">
                     <div class="p-img">
                         <p class="img"><img width="1028"  src="img/image018.jpg"></p>
-                        <p>The References Tab is used to locate all occurrences of a particular reference such as Soda Bottles, Projectiles and Explosions. If you select a reference in the Navagation treeview, such as the "Glass Explosion" from the <a href="https://www.nexusmods.com/fallout3/mods/1904">Destroyable Environments</a> Mod by <a href="https://www.nexusmods.com/fallout3/users/173512">Bigkid7834</a>, where every occurrence of that Glass Explosion in the in the game is displayed.</p>
+                        <p>The References Tab is used to locate all occurrences of a particular reference such as Soda Bottles, Projectiles and Explosions. If you select a reference in the Navigation treeview, such as the "Glass Explosion" from the <a href="https://www.nexusmods.com/fallout3/mods/1904">Destroyable Environments</a> Mod by <a href="https://www.nexusmods.com/fallout3/users/173512">Bigkid7834</a>, where every occurrence of that Glass Explosion in the in the game is displayed.</p>
                     </div>
-                    <p>You can also Left-Click on any reference in the Referenced By view to present a copy/remove menu. Here you can literally delete the reference of the object out of the mod, or copy it into another mod (perhaps a patch plug-in, discussed in detail in the chapter on <a href="4-conflict-detection-and-resolution.html">Conflict Detection and Resolution</a>. These functions are especially useful for gaining a high-level understanding of what the mod contains, and where references can be found (a task which can be exceedingly difficult in the GECK).</p>
+                    <p>You can also Left-Click on any reference in the Referenced By view to present a copy/remove menu. Here you can literally delete the reference of the object out of the mod, or copy it into another mod (perhaps a patch plugin, discussed in detail in the chapter on <a href="4-conflict-detection-and-resolution.html">Conflict Detection and Resolution</a>. These functions are especially useful for gaining a high-level understanding of what the mod contains, and where references can be found (a task which can be exceedingly difficult in the GECK).</p>
                     <p>You can also double click entries in that list to directly jump to that record (and switch to the View tab), you can then use the backward button in the top right corner or on your mouse (if it got more then 2 buttons).</p>
                 </div>
                 <!--/.content-->
@@ -416,7 +416,7 @@ title: xEdit Overview
                     <li><strong>Ctrl+click on a FormID in the right side pane:</strong> Jump to the selected Record in the tree view.</li>
                     <li><strong>Double click on an entry in the Referenced By tab:</strong> Jump to the selected Record in the tree view.</li>
                     <li><strong>Press F2 with the field selected in the View treeview :</strong> Edit the field with the In-Place Editor.</li>
-                    <li><strong>Press F2 with the record selected in the Navagation treeview:</strong> Edit the Form ID of the selected Record.</li>
+                    <li><strong>Press F2 with the record selected in the Navagation treeview:</strong> Edit the FormID of the selected Record.</li>
                 </ul>
             </div>
             <!--/.content-->
