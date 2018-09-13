@@ -11,7 +11,7 @@ title: xEdit Managing Mod Files
         <ul class="first">
             <li><a href="index.html">1. Introduction</a></li>
             <li><a href="2-overview.html">2. Overview</a></li>
-            <li><a href="3-modgroups.html">3. Modgroups</a></li>
+            <li><a href="3-modgroups.html">3. ModGroups</a></li>
             <li><a href="4-conflict-detection-and-resolution.html">4. Conflict Detection and Resolution</a></li>
             <li><a href="5-mod-cleaning-and-error-checking.html">5. Mod Cleaning and Error Checking</a></li>
             <li><a href="6-managing-mod-files.html">6. Managing Mod Files</a></li>
@@ -30,11 +30,11 @@ title: xEdit Managing Mod Files
         <h3>Section Table of Contents</h3>
         <ul class="second">
             <li><a href="#s_6-1">6.1 Overview</a></li>
-            <li><a href="#s_6-2">6.2 Adding Master Files to a Plug-in</a></li>
+            <li><a href="#s_6-2">6.2 Adding Master Files to a Plugin</a></li>
             <li><a href="#s_6-3">6.3 Changing Mod FormIDs</a></li>
-            <li><a href="#s_6-4">6.4 Merging a Plug-in into another Plug-in or Master</a></li>
-            <li><a href="#s_6-5">6.5 Converting a Plug-in into a Master</a></li>
-            <li><a href="#s_6-6">6.6 Splitting a Plug-in into a Plug-in/Master Pair"</a></li>
+            <li><a href="#s_6-4">6.4 Merging a Plugin into another Plugin or Master</a></li>
+            <li><a href="#s_6-5">6.5 Converting a Plugin into a Master</a></li>
+            <li><a href="#s_6-6">6.6 Splitting a Plugin into a Plugin/Master Pair"</a></li>
             <li><a href="#s_6-7">6.7 Comparing Two Versions of a Mod</a></li>
             <li><a href="#s_6-8">6.8 Assets Manager</a></li>
         </ul>
@@ -48,26 +48,26 @@ title: xEdit Managing Mod Files
         <div class="level-2" id="s_6-1">
             <h2 class="ctrl">6.1 Overview</h2>
             <div class="content">
-                <p>This chapter is dedicated to mod authors, and describes a number of functions and actions that xEdit provides to make mod authors lives easier and their products more standardized. Like the chapter on <a href="5-mod-cleaning-and-error-checking.html">Mod Cleaning and Error Checking</a>, these functions hole mod authors produce products that will be less conflicting with other mods, and will open doors to possibilities that mod authors may not have known existed. Actions like merging mods, splitting them apart into Plug-in/Master pairs, adding Master file references and more are documented in the sections below.</p>
+                <p>This chapter is dedicated to mod authors, and describes a number of functions and actions that xEdit provides to make mod authors lives easier and their products more standardized. Like the chapter on <a href="5-mod-cleaning-and-error-checking.html">Mod Cleaning and Error Checking</a>, these functions hole mod authors produce products that will be less conflicting with other mods, and will open doors to possibilities that mod authors may not have known existed. Actions like merging mods, splitting them apart into Plugin/Master pairs, adding Master file references and more are documented in the sections below.</p>
             </div>
             <!--/.content-->
         </div>
         <!--/.level-2-->
         <div class="level-2" id="s_6-2">
-            <h2 class="ctrl">6.2 Adding Master Files to a Plug-in</h2>
+            <h2 class="ctrl">6.2 Adding Master Files to a Plugin</h2>
             <div class="content">
-                <p>To reference a record from ExampleMaster.<abbr title="Elder-Scrolls Master File">ESM</abbr> in Plug-in.esp you need to add ExampleMaster.<abbr title="Elder-Scrolls Master File">ESM</abbr> to the MASTer list in the File Header of Plug-in.esp. This allows the plug-in to add/change items found in the ExampleMaster.<abbr title="Elder-Scrolls Master File">ESM</abbr>. xEdit does this by adding a new master to the MAST sub record in the file header and correctly renumbering the FormIDs in the module. This can be very handy for mod authors, as it simplifies the process down to a few mouse clicks, so the mod author can focus on more important things like modding!</p>
+                <p>To reference a record from ExampleMaster.<abbr title="Elder-Scrolls Master File">ESM</abbr> in Plugin.esp you need to add ExampleMaster.<abbr title="Elder-Scrolls Master File">ESM</abbr> to the MASTer list in the File Header of Plugin.esp. This allows the plugin to add/change items found in the ExampleMaster.<abbr title="Elder-Scrolls Master File">ESM</abbr>. xEdit does this by adding a new master to the MAST sub record in the file header and correctly renumbering the FormIDs in the module. This can be very handy for mod authors, as it simplifies the process down to a few mouse clicks, so the mod author can focus on more important things like modding!</p>
                 <div class="p-img">
                     <p class="img"><img  height="331" src="img/image156.jpg" width="371"></p>
-                    <p>In this example we showcase <a href="https://www.nexusmods.com/fallout3/mods/5178">Saiden Storm's Weapon Effects</a> mod and the taylorsd's <a href="https://www.nexusmods.com/fallout3/mods/503">Better Frag Grenade Physics</a> mods, two excellent enhancements to Fallout3. Here we will add the SS Weapon Effects.esm Master file to the Better Frag Grenade Physics plug-in, so that we can add one of Saiden Storm's cool plasma blasts to a frag grenade for kicks! To start the action, select "Add Masters" from the context menu as shown:</p>
+                    <p>In this example we showcase <a href="https://www.nexusmods.com/fallout3/mods/5178">Saiden Storm's Weapon Effects</a> mod and the taylorsd's <a href="https://www.nexusmods.com/fallout3/mods/503">Better Frag Grenade Physics</a> mods, two excellent enhancements to Fallout3. Here we will add the SS Weapon Effects.esm Master file to the Better Frag Grenade Physics plugin, so that we can add one of Saiden Storm's cool plasma blasts to a frag grenade for kicks! To start the action, select "Add Masters" from the context menu as shown:</p>
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="192" src="img/image158.jpg" width="216"></p>
-                    <p>This will present the File selection menu, from which you can Check the Master file(s) that you want to add as references in the Plug-in's header as shown:</p>
+                    <p>This will present the File selection menu, from which you can Check the Master file(s) that you want to add as references in the Plugin's header as shown:</p>
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="201" src="img/image160.jpg" width="576"></p>
-                    <p>Once xEdit adds the master file as a reference in the Plug-in, you see results similar to the screenshot below showing the <a href="2-overview.html#s_2-3-5">Messages Tab</a> log-entry:</p>
+                    <p>Once xEdit adds the master file as a reference in the Plugin, you see results similar to the screenshot below showing the <a href="2-overview.html#s_2-3-5">Messages Tab</a> log-entry:</p>
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="201" src="img/image162.jpg" width="576"></p>
@@ -85,20 +85,20 @@ title: xEdit Managing Mod Files
                         <li>[04] MasterA.esm</li>
                         <li>[10] MasterB.esm</li>
                         <li>[15] MasterC.esm</li>
-                        <li>[20] Plug-in.esp</li>
+                        <li>[20] Plugin.esp</li>
                     </ul>
-                    <p>And lets suppose the MAST sub record in the File Header of Plug-in.esp lists:</p>
+                    <p>And lets suppose the MAST sub record in the File Header of Plugin.esp lists:</p>
                     <ul>
                         <li>Fallout3.esm</li>
                         <li>MasterB.esm</li>
                         <li>MasterA.esm</li>
                     </ul>
-                    <p>If you now see a record in Plug-in.esp that overrides a record from Fallout3.esm, then you would see a FormID like 00123456 for it. In this particular case that record would also have the same (00123456) FormID inside the Plug-in.esp module file.</p>
-                    <p>But if you have a record that overrides a record from MasterA.esm, e.g. with a FormID like 04ABCDEF (you can see the 04 as &quot;module index&quot; matches the load order of MasterA.esm) then it would be saved as 02ABCDEF in the Plug-in.esp module file, because 02 is the index of MasterA.esm in the list of MASTer files in the File Header of Plug-in.esp.</p>
-                    <p>And an override for a record in MasterB.esm (e.g. 10654321) would be saved as 01654321 in the Plug-in.esp module file because 01 is the index of MasterB.esm in the list of MASTer files in the File Header.</p>
-                    <p>Last but not least, a NEW record in Plug-in.esp which belongs to Plug-in.esp and which xEdit would show you e.g. as 20FEDCBA gets stored as 03FEDCBA in the file (because 03 is equal to the number of entries in the MASTer list, as indices into that list start at 00, 03 is one higher then the highest valid index into that list).</p>
-                    <p>You will also notice that it's not possible to have an override record for a record from Master3.esm in Plug-in.esp or in any other form reference such a record, because there is no way to map a load order corrected FormID of 15A1B2C3 to a file specific one that's valid in Plug-in.esp.</p>
-                    <p>To reference a record from Master3.esm in Plug-in.esp you need to add Master3.esm to the MASTer list in the File Header of Plug-in.esp. But if you just go there and do that manually, then you've just added Master3.esm with the index 03 to the file. Which means that all the records that used to belong to Plug-in.esp are suddenly considered override records for records from Master3.esm and will show up with 15xxxxxx FormIDs instead of 20xxxxxx FormIDs! A real mess.</p>
+                    <p>If you now see a record in Plugin.esp that overrides a record from Fallout3.esm, then you would see a FormID like 00123456 for it. In this particular case that record would also have the same (00123456) FormID inside the Plugin.esp module file.</p>
+                    <p>But if you have a record that overrides a record from MasterA.esm, e.g. with a FormID like 04ABCDEF (you can see the 04 as &quot;module index&quot; matches the load order of MasterA.esm) then it would be saved as 02ABCDEF in the Plugin.esp module file, because 02 is the index of MasterA.esm in the list of MASTer files in the File Header of Plugin.esp.</p>
+                    <p>And an override for a record in MasterB.esm (e.g. 10654321) would be saved as 01654321 in the Plugin.esp module file because 01 is the index of MasterB.esm in the list of MASTer files in the File Header.</p>
+                    <p>Last but not least, a NEW record in Plugin.esp which belongs to Plugin.esp and which xEdit would show you e.g. as 20FEDCBA gets stored as 03FEDCBA in the file (because 03 is equal to the number of entries in the MASTer list, as indices into that list start at 00, 03 is one higher then the highest valid index into that list).</p>
+                    <p>You will also notice that it's not possible to have an override record for a record from Master3.esm in Plugin.esp or in any other form reference such a record, because there is no way to map a load order corrected FormID of 15A1B2C3 to a file specific one that's valid in Plugin.esp.</p>
+                    <p>To reference a record from Master3.esm in Plugin.esp you need to add Master3.esm to the MASTer list in the File Header of Plugin.esp. But if you just go there and do that manually, then you've just added Master3.esm with the index 03 to the file. Which means that all the records that used to belong to Plugin.esp are suddenly considered override records for records from Master3.esm and will show up with 15xxxxxx FormIDs instead of 20xxxxxx FormIDs! A real mess.</p>
                     <p>If you instead use the Add Masters function, then xEdit will not only add then new entry into the MASTer list, it will also renumber all (file specific) 03xxxxxx FormIDs into 04xxxxxx FormIDs first to preserve their meaning (which is &quot;this record belongs to this file&quot;).</p>
                     <p>There are rare cases where editing the MAST list directly is what you actually want. e.g. when splitting an .esp into an .esm/.esp pair. In that case you would make a copy of the .esp, rename it to .esm, load it alone into xEdit to set the <abbr title="Elder Scrolls Master">ESM</abbr> flag in it's header, then restart xEdit to load both the .esm and the .esp and modify the MAST sub record in the File Header of the .esp by adding the .esm as last entry. After restarting xEdit and loading both files you will see that all records in the .esp are now considered overrides for the same records from the .esm"</p>
                 </blockquote>
@@ -114,8 +114,8 @@ title: xEdit Managing Mod Files
         <div class="level-2" id="s_6-3">
             <h2 class="ctrl">6.3 Changing Mod FormIDs</h2>
             <div class="content">
-                <p>There are times in which you may need to renumber the FormIDs for all records in a plug-in to avoid conflicts. This can become necessary if two plug-ins share the same FormIDs (or some of them), which can result in bad conflicts in-game. Renumbering FormIDs from will change all FormIDs of records belonging to the Mod-file (but not any override records which might be contained in that mod file) so that they start at the specified value.</p>
-                <p>This Function is useful if you have multiple modules that you plan to update in the future, but also want to always provide a merged version (e.g. using FO3Plug-in). By assigning non overlapping FormIDs to the different modules, you can make sure that no FormID reassignment of conflicting FormIDs has to take place when merging.</p>
+                <p>There are times in which you may need to renumber the FormIDs for all records in a plugin to avoid conflicts. This can become necessary if two plugins share the same FormIDs (or some of them), which can result in bad conflicts in-game. Renumbering FormIDs from will change all FormIDs of records belonging to the Mod-file (but not any override records which might be contained in that mod file) so that they start at the specified value.</p>
+                <p>This Function is useful if you have multiple modules that you plan to update in the future, but also want to always provide a merged version (e.g. using FO3Plugin). By assigning non overlapping FormIDs to the different modules, you can make sure that no FormID reassignment of conflicting FormIDs has to take place when merging.</p>
                 <div class="p-img">
                     <p class="img"><img  height="432" src="img/image164.jpg" width="469"></p>
                     <p>To renumber the FormIDs of a Mod file, Right-click on that mod file in the <a href="2-overview.html#s_2-3-2">Left-hand Panel</a> to present the main context menu (A). Then select, "Renumber FormIDs from&#8230;" from the menu as shown in the screenshot below:</p>
@@ -144,14 +144,14 @@ title: xEdit Managing Mod Files
         </div>
         <!--/.level-2-->
         <div class="level-2" id="s_6-4">
-            <h2 class="ctrl">6.4 Merging a Plug-in into another Plug-in or Master</h2>
+            <h2 class="ctrl">6.4 Merging a Plugin into another Plugin or Master</h2>
             <div class="content">
                 <div class="p-img">
                     <p class="img"><img  height="372" src="img/image170.jpg" width="384"></p>
-                    <p>One of the common tasks that many mod authors face is the need to merge mod files together into a single plug-in or master file. Many mod players also like to merge all of their favorite plug-ins into a single master file (one modder affectionately calls it, "BORG.esm"). xEdit can be used to accomplish both of these needs, and will ensure that the resulting plug-in is synchronized correctly against it's combined references, and that the load orders are correct. The process is illustrated below, starting with loading <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a> and ordering the files correctly as shown below:</p>
+                    <p>One of the common tasks that many mod authors face is the need to merge mod files together into a single plugin or master file. Many mod players also like to merge all of their favorite plugins into a single master file (one modder affectionately calls it, "BORG.esm"). xEdit can be used to accomplish both of these needs, and will ensure that the resulting plugin is synchronized correctly against it's combined references, and that the load orders are correct. The process is illustrated below, starting with loading <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a> and ordering the files correctly as shown below:</p>
                 </div>
                 <p>In this example we will be merging Skykappa's Destructible <a href="https://www.nexusmods.com/fallout3/mods/12978">Building Materials 3000</a> ( <a href="http://www.bethsoft.com/bgsforums/index.php?showtopic=997699">WIPz</a>) (here-after referred to as DBM 3000) into the <a href="http://www.bethsoft.com/bgsforums/index.php?showtopic=970549">500 Rads Bar (WIPz)</a>, so that the Bar can utilize the destructible building materials. Note that Skykappa's DBM 3000 is a modders resource, and was released by the author to be used in other mods for the low price of mentioning in the mod's credits.</p>
-                <p>Load order is important when merging mods together, mainly because xEdit is very precise about the numbering and order of FormIDs and references amongst mods. Its is Very easy to conflict the FromIDs of mods being merged together (as is discussed at depth below). As such xEdit requires us to place the mod that is receiving the content (A) Below the mod being assimilated (B) in the load-order of <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a>. This is important, but if you get it wrong don't worry, xEdit will warn you about it (also shown below).</p>
+                <p>Load order is important when merging mods together, mainly because xEdit is very precise about the numbering and order of FormIDs and references amongst mods. Its is Very easy to conflict the FromIDs of mods being merged together (as is discussed at depth below). As such xEdit requires us to place the mod that is receiving the content (A) Below the mod being assimilated (B) in the load order of <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a>. This is important, but if you get it wrong don't worry, xEdit will warn you about it (also shown below).</p>
                 <p>You can also merge many mods into one at once, you don't have to do it one-by-one if you happen to have several mods that needs to be combined together (as in when a modder lumps everything into one giant BORG.esm). The only requirement is that the assimilator (BORG.esm) is at the bottom, below the assimilates. Once you have the load order correct, exit <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a> to save the load order.</p>
                 <div class="p-img">
                     <p class="img"><img  height="262" src="img/image172.jpg" width="576"></p>
@@ -180,7 +180,7 @@ title: xEdit Managing Mod Files
                     <p class="img"><img  height="298" src="img/image182.jpg" width="576"></p>
                     <p>If you now open the two mods, you will see how the references from <a href="https://www.nexusmods.com/fallout3/mods/6782">DBM 3000</a> are duplicated into <a href="http://www.bethsoft.com/bgsforums/index.php?showtopic=970549">500 Rads Bar</a>. Each record can be seen in the <a href="2-overview.html#s_2-3-7">View Tab</a> down to the variable and reference level, as shown below:</p>
                 </div>
-                <p>Each record can be compared in the <a href="2-overview.html#s_2-3-7">View Tab</a> as desired; showing that each has been copied into the <a href="http://www.bethsoft.com/bgsforums/index.php?showtopic=970549">500 Rads Bar</a> and will now save as part of that plug-in. Any errors that occur will show up in the <a href="2-overview.html#s_2-3-5">Messages Tab</a>, and may likely prevent a merger from taking place. If you see errors in the <a href="2-overview.html#s_2-3-5">Messages Tab</a>, you should assume that the mods did not merge and you'll need to address the errors noted.</p>
+                <p>Each record can be compared in the <a href="2-overview.html#s_2-3-7">View Tab</a> as desired; showing that each has been copied into the <a href="http://www.bethsoft.com/bgsforums/index.php?showtopic=970549">500 Rads Bar</a> and will now save as part of that plugin. Any errors that occur will show up in the <a href="2-overview.html#s_2-3-5">Messages Tab</a>, and may likely prevent a merger from taking place. If you see errors in the <a href="2-overview.html#s_2-3-5">Messages Tab</a>, you should assume that the mods did not merge and you'll need to address the errors noted.</p>
                 <div class="p-img">
                     <p class="img"><img  height="329" src="img/image184.jpg" width="282"></p>
                     <p>With the merger complete, it's time to save our newly-combined mod file! This is done most conveniently by hitting, "Alt-S" or closing xEdit. Either will present you with the Save Changed Files window as shown below:</p>
@@ -190,7 +190,7 @@ title: xEdit Managing Mod Files
                     <p class="img"><img  height="94" src="img/image186.jpg" width="576"></p>
                     <p>If you get the load order wrong in <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a> when trying to merge two mod files, xEdit will present you with the following error:</p>
                 </div>
-                <p>Note that the error is very specific about the load-order issue, in an attempt to better guide you into the right load order for whichever mods you are trying to merge. If you see this error, exit xEdit, correct the mod load-order in <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a>, re-launch xEdit and perform the merger operation again.</p>
+                <p>Note that the error is very specific about the load order issue, in an attempt to better guide you into the right load order for whichever mods you are trying to merge. If you see this error, exit xEdit, correct the mod load order in <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a>, re-launch xEdit and perform the merger operation again.</p>
                 <p>If you don't see any errors through the process or after saving, exit xEdit and either test the combined mod file or load it up in the GECK so you can start adding destructible building materials to your mod! Have a nice day, thank you for playing.</p>
             </div>
             <!--/.content-->
@@ -202,24 +202,24 @@ title: xEdit Managing Mod Files
         </div>
         <!--/.level-2-->
         <div class="level-2" id="s_6-5">
-            <h2 class="ctrl">6.5 Converting a Plug-in into a Master</h2>
+            <h2 class="ctrl">6.5 Converting a Plugin into a Master</h2>
             <div class="content">
                 <div class="p-img">
                     <p class="img"><img  height="272" src="img/image188.jpg" width="575"></p>
-                    <p>Converting a Plug-in (ESP) into a Master (<abbr title="Elder-Scrolls Master File">ESM</abbr>) file is a simple process that can be doing using xEdit in less than five minutes. The file extension of a Plug-in as well as the <abbr title="Elder Scrolls Master">ESM</abbr> flag within its file header must be changed in order to make the transition to a Master file. The screenshot below starts the action by launching xEdit:</p>
+                    <p>Converting a Plugin (ESP) into a Master (<abbr title="Elder-Scrolls Master File">ESM</abbr>) file is a simple process that can be doing using xEdit in less than five minutes. The file extension of a Plugin as well as the <abbr title="Elder Scrolls Master">ESM</abbr> flag within its file header must be changed in order to make the transition to a Master file. The screenshot below starts the action by launching xEdit:</p>
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="282" src="img/image190.jpg" width="575"></p>
-                    <p>First you need to de-select all of the mods using Right-click in the Master/Plugin Selection window (A). Then click/check just the mod your converting (B), in this example we're converting <a href="https://www.nexusmods.com/fallout3/users/60908">Antistar's</a> <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> plug-in into a master file. Click "OK" (C) to load xEdit with just the mod being changed as shown:</p>
+                    <p>First you need to de-select all of the mods using Right-click in the Master/Plugin Selection window (A). Then click/check just the mod your converting (B), in this example we're converting <a href="https://www.nexusmods.com/fallout3/users/60908">Antistar's</a> <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> plugin into a master file. Click "OK" (C) to load xEdit with just the mod being changed as shown:</p>
                 </div>
-                <p>Note that <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> is successfully loaded into xEdit (B), and that it is the only file listed aside from the Fallout3 master files (A). You are now ready to convert the Plug-in into a Master file.</p>
+                <p>Note that <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> is successfully loaded into xEdit (B), and that it is the only file listed aside from the Fallout3 master files (A). You are now ready to convert the Plugin into a Master file.</p>
                 <div class="p-img">
                     <p class="img"><img  height="392" src="img/image192.jpg" width="502"></p>
                     <p>To make the conversion, all we have to do is change one flag in the File Header, which can be accessed by Left-clicking open the <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> record in the <a href="2-overview.html#s_2-3-2">Left-hand Panel</a>. Immediately beneath name of the mod is the File Header row (A) as shown below. You will then see the File Header data printed into the <a href="2-overview.html#s_2-3-7">View Tab</a> (B):</p>
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="178" src="img/image194.jpg" width="339"></p>
-                    <p>The File Header record is divided into different sub-headings and variables, including the Record Flags, Version, Author, mod Description and any Master file references that the plug-in requires. We will be changing the Record Flags variable by Right-clicking into the open space next to it (C), which will render a small context menu. You can then click, "Edit" (D) to change the values. Doing so will present a warning window as shown below:</p>
+                    <p>The File Header record is divided into different sub-headings and variables, including the Record Flags, Version, Author, mod Description and any Master file references that the plugin requires. We will be changing the Record Flags variable by Right-clicking into the open space next to it (C), which will render a small context menu. You can then click, "Edit" (D) to change the values. Doing so will present a warning window as shown below:</p>
                 </div>
                 <p>This window is a default/standard in xEdit, and exists to make sure that anytime you are about to change a mod file for the first time, you know about it. It may seem annoying to some, but often the worst conflicts between mods come from changes that a mod author did not intend to make. Simply select, "Yes" (A) to move along.</p>
                 <div class="p-img">
@@ -235,7 +235,7 @@ title: xEdit Managing Mod Files
                     <p class="img"><img  height="245" src="img/image200.jpg" width="235"></p>
                     <p>Once done with xEdit, you will want to change the file extension from <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esp to <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esm so that the extension matches the File Header flagging. The GECK and Fallout3 don't really care about the file extension (ESP/<abbr title="Elder-Scrolls Master File">ESM</abbr>), what matters is that File Header flag. The Extension is for humans to keep them sorted correctly! Now all you need to do is exit xEdit or press, "Alt-S" and Save your new Master file as shown below:</p>
                 </div>
-                <p>It is also possible to change a Plug-in to a Master using just <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a> or other tools, but there is always the potential of problems with ONAM records. ONAM records are special records created that allow Master files to communicate with one-another when references need to be passed. xEdit ensures that as part of the conversion process, these ONAM records are built and correctly ordered. This is why it is better to make the Plug-in to Master conversion using xEdit.</p>
+                <p>It is also possible to change a Plugin to a Master using just <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a> or other tools, but there is always the potential of problems with ONAM records. ONAM records are special records created that allow Master files to communicate with one-another when references need to be passed. xEdit ensures that as part of the conversion process, these ONAM records are built and correctly ordered. This is why it is better to make the Plugin to Master conversion using xEdit.</p>
             </div>
             <!--/.content-->
             <div class="level-nav">
@@ -246,17 +246,17 @@ title: xEdit Managing Mod Files
         </div>
         <!--/.level-2-->
         <div class="level-2" id="s_6-6">
-            <h2 class="ctrl">6.6 Splitting a Plug-in into a Plug-in/Master Pair</h2>
+            <h2 class="ctrl">6.6 Splitting a Plugin into a Plugin/Master Pair</h2>
             <div class="content">
                 <div class="p-img">
                     <p class="img"><img  height="308" src="img/image202.jpg" width="444"></p>
-                    <p>Splitting a single Plug-in (ESP) into a Master (<abbr title="Elder-Scrolls Master File">ESM</abbr>)/Plug-in (ESP) pair can be useful in many situations, especially when a mod author wants to share resources from one Plug-in with other Plug-ins. The only way to share resources between Plug-ins is to convert those resources into a Master file. The split is a two-part operation in which you first split the single Plug-in into a duplicate Plug-in and Master at the file (windows explorer) level. You then change the Flagging on one of the two duplicates to turn it into a Master, and change the flagging on the Plug-in copy to make reference its new master file. The action begins in windows explorer as shown below:</p>
+                    <p>Splitting a single Plugin (ESP) into a Master (<abbr title="Elder-Scrolls Master File">ESM</abbr>)/Plugin (ESP) pair can be useful in many situations, especially when a mod author wants to share resources from one Plugin with other Plugins. The only way to share resources between Plugins is to convert those resources into a Master file. The split is a two-part operation in which you first split the single Plugin into a duplicate Plugin and Master at the file (windows explorer) level. You then change the Flagging on one of the two duplicates to turn it into a Master, and change the flagging on the Plugin copy to make reference its new master file. The action begins in windows explorer as shown below:</p>
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="247" src="img/image204.jpg" width="445"></p>
                     <p>With the mod copied, the next screenshot shows the paste:</p>
                 </div>
-                <p>This will create a duplicate of the WeaponModKits.esp Plug-in. This may seem a very basic part of the process to duplicate, but was done for thoroughness and for those who can't read English and depend on the diagrams for the process.</p>
+                <p>This will create a duplicate of the WeaponModKits.esp Plugin. This may seem a very basic part of the process to duplicate, but was done for thoroughness and for those who can't read English and depend on the diagrams for the process.</p>
                 <div class="p-img">
                     <p class="img"><img  height="317" src="img/image206.jpg" width="532"></p>
                     <p>Now we need to re-name the copy to make it our Master file version.</p>
@@ -267,7 +267,7 @@ title: xEdit Managing Mod Files
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="217" src="img/image210.jpg" width="535"></p>
-                    <p>You will then be presented with the output; both a Plug-in and Master file that are identical at this point. The screenshot below shows the Master (A) and Plug-in (B):</p>
+                    <p>You will then be presented with the output; both a Plugin and Master file that are identical at this point. The screenshot below shows the Master (A) and Plugin (B):</p>
                 </div>
                 <p>With the file duplication part done, it's time to launch the <a href="https://www.nexusmods.com/fallout3/mods/640">Fallout Mod Manager</a> ( <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a>) to set our loading order for the new Master file as shown below:</p>
                 <div class="p-img">
@@ -276,11 +276,11 @@ title: xEdit Managing Mod Files
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="243" src="img/image214.jpg" width="576"></p>
-                    <p>Here you must also ensure that the Master (<abbr title="Elder-Scrolls Master File">ESM</abbr>) version loads Before the Plug-in (ESP) version as this is a Fallout3 requirement. The recommendation is to move the Master (<abbr title="Elder-Scrolls Master File">ESM</abbr>) higher-up in the load order before all other Plug-ins, and load the Plug-in (ESP) version of <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> somewhere below the Masters. With that done, close <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a> and load xEdit. Your new load order with the <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esm loading before the <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esp should be visible in xEdits as shown below:</p>
+                    <p>Here you must also ensure that the Master (<abbr title="Elder-Scrolls Master File">ESM</abbr>) version loads Before the Plugin (ESP) version as this is a Fallout3 requirement. The recommendation is to move the Master (<abbr title="Elder-Scrolls Master File">ESM</abbr>) higher-up in the load order before all other Plugins, and load the Plugin (ESP) version of <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> somewhere below the Masters. With that done, close <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a> and load xEdit. Your new load order with the <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esm loading before the <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esp should be visible in xEdits as shown below:</p>
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="206" src="img/image216.jpg" width="538"></p>
-                    <p>To load just the Master and Plug-in, first Right-click in open space (A) and select, "None" from the context menu as shown above, and then check-off just the <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esp and <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esm files (C), and click, "OK" to load them into xEdit. This will load just the two <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> files and the Fallout3 masters into xEdit as shown below:</p>
+                    <p>To load just the Master and Plugin, first Right-click in open space (A) and select, "None" from the context menu as shown above, and then check-off just the <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esp and <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esm files (C), and click, "OK" to load them into xEdit. This will load just the two <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> files and the Fallout3 masters into xEdit as shown below:</p>
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="425" src="img/image217.jpg" width="544"></p>
@@ -288,7 +288,7 @@ title: xEdit Managing Mod Files
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="238" src="img/image219.jpg" width="454"></p>
-                    <p>With the File Header block of <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esp selected (A), Right &#8211;click in the open space next to the, "Record Flags" section (C) which will render a small context Menu. Select, "Edit" (D) from this small menu to add the <abbr title="Elder Scrolls Master">ESM</abbr> Master flag, which effectively converts the Plug-in into a Master. Before you can proceed however, you will get a warning message from xEdit about changing the mod's contents. This is normal and provided for your protection. Simply select, "Yes" (A) to continue.</p>
+                    <p>With the File Header block of <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esp selected (A), Right &#8211;click in the open space next to the, "Record Flags" section (C) which will render a small context Menu. Select, "Edit" (D) from this small menu to add the <abbr title="Elder Scrolls Master">ESM</abbr> Master flag, which effectively converts the Plugin into a Master. Before you can proceed however, you will get a warning message from xEdit about changing the mod's contents. This is normal and provided for your protection. Simply select, "Yes" (A) to continue.</p>
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="417" src="img/image220.jpg" width="334"></p>
@@ -301,12 +301,12 @@ title: xEdit Managing Mod Files
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="303" src="img/image223.jpg" width="576"></p>
-                    <p>Next we need to add the new Master version of <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> (<abbr title="Elder-Scrolls Master File">ESM</abbr>) into the Plug-in version (ESP) as a master file reference, so that the Plug-in references the Master. This will allow the Plug-in (ESP) to use the Master (<abbr title="Elder-Scrolls Master File">ESM</abbr>) records going forward. The screenshot below shows you the first step in the process of adding a Master reference:</p>
+                    <p>Next we need to add the new Master version of <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> (<abbr title="Elder-Scrolls Master File">ESM</abbr>) into the Plugin version (ESP) as a master file reference, so that the Plugin references the Master. This will allow the Plugin (ESP) to use the Master (<abbr title="Elder-Scrolls Master File">ESM</abbr>) records going forward. The screenshot below shows you the first step in the process of adding a Master reference:</p>
                 </div>
                 <p>Note that we're changing the File Header section just as we did when adding the <abbr title="Elder Scrolls Master">ESM</abbr> master flag, but this time we Right-click in the Master Files row (B), and then selecting, "Add" from the context menu.</p>
                 <div class="p-img">
                     <p class="img"><img  height="358" src="img/image225.jpg" width="576"></p>
-                    <p>This will create a new, blank Master File reference in the <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> Plug-in that you can now assign to our new Master file as shown below (D), which we can then modify as needed. For our example we need to assign the new master file entry to <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esp. To make the change simply Right-click in open space to the right of the, "MAST &#8211; Filename" entry (B), which will render a small context menu. Then select, "Edit" (C) as shown below:</p>
+                    <p>This will create a new, blank Master File reference in the <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> Plugin that you can now assign to our new Master file as shown below (D), which we can then modify as needed. For our example we need to assign the new master file entry to <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esp. To make the change simply Right-click in open space to the right of the, "MAST &#8211; Filename" entry (B), which will render a small context menu. Then select, "Edit" (C) as shown below:</p>
                 </div>
                 <div class="p-img">
                     <p class="img"><img  height="129" src="img/image227.jpg" width="576"></p>
@@ -320,9 +320,9 @@ title: xEdit Managing Mod Files
                     <p class="img"><img  height="237" src="img/image230.jpg" width="228"></p>
                     <p>And for the final step, you need to save the changes. Use, "Alt-S" or close xEdit to present the Save Files window as shown below:</p>
                 </div>
-                <p>With this, you now have a Master/Plug-in version of <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>, and the process works exactly the same for any mod that you want to split. You can change the esp file extension to <abbr title="Elder-Scrolls Master File">ESM</abbr>, then open and save it with the GECK and it will tick the <abbr title="Elder Scrolls Master">ESM</abbr> flag on, but won't produce ONAM's like xEdit will which are needed for any overrides to Fallout3.<abbr title="Elder-Scrolls Master File">ESM</abbr>'s references. Unless your Plug-in has no CELL and/or WRLD group, you're better off using xEdit.</p>
+                <p>With this, you now have a Master/Plugin version of <a href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>, and the process works exactly the same for any mod that you want to split. You can change the esp file extension to <abbr title="Elder-Scrolls Master File">ESM</abbr>, then open and save it with the GECK and it will tick the <abbr title="Elder Scrolls Master">ESM</abbr> flag on, but won't produce ONAM's like xEdit will which are needed for any overrides to Fallout3.<abbr title="Elder-Scrolls Master File">ESM</abbr>'s references. Unless your Plugin has no CELL and/or WRLD group, you're better off using xEdit.</p>
                 <p class="Note"><strong>Note:</strong>An .esp <em>can</em> be the master of another .esp.</p>
-                <p class="Note"><strong>Note:</strong>If you have a Plug-in with multiple masters, you'll have to edit your GeckCustom.ini &quot;bAllowMultipleMasterLoads=1&quot;</p>
+                <p class="Note"><strong>Note:</strong>If you have a Plugin with multiple masters, you'll have to edit your GeckCustom.ini &quot;bAllowMultipleMasterLoads=1&quot;</p>
                 <p class="Note"><strong>Note:</strong>The GECK won't edit .esm's, so you have to ESP'ify, edit in GECK, then <abbr title="Elder-Scrolls Master File">ESM</abbr>'ify.</p>
             </div>
             <!--/.content-->
