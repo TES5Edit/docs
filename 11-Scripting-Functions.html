@@ -11,7 +11,7 @@ title: xEdit Scripting Functions
         <ul class="first">
             <li><a href="index.html">1. Introduction</a></li>
             <li><a href="2-overview.html">2. Overview</a></li>
-            <li><a href="3-modgroups.html">3. Modgroups</a></li>
+            <li><a href="3-modgroups.html">3. ModGroups</a></li>
             <li><a href="4-conflict-detection-and-resolution.html">4. Conflict Detection and Resolution</a></li>
             <li><a href="5-mod-cleaning-and-error-checking.html">5. Mod Cleaning and Error Checking</a></li>
             <li><a href="6-managing-mod-files.html">6. Managing Mod Files</a></li>
@@ -461,7 +461,7 @@ title: xEdit Scripting Functions
                     <td> boolean</td>
                     <td> aeElement: IwbElement
                     </td>
-                    <td> Guaranteed to return <i>True</i> if the element can contain form IDs, but not guaranteed to
+                    <td> Guaranteed to return <i>True</i> if the element can contain FormIDs, but not guaranteed to
                         return <i>False</i> if it can't. This accesses an internal property, <i>CanContainFormIDs</i>,
                         which the internal implementation of <i>BuildRef</i> uses to skip processing certain descendant
                         elements.
@@ -807,7 +807,7 @@ title: xEdit Scripting Functions
                     </td>
                     <td> Generally the same as <i>Name</i> unless <i>aeElement</i> is a reference, cell, or similar
                         record. <i>Name</i> will return detailed information for those records, while <i>ShortName</i>
-                        will return the signature and form ID in the format <code>[XXXX:01234567]</code>.
+                        will return the signature and FormID in the format <code>[XXXX:01234567]</code>.
                     </td>
                 </tr>
                 <tr>
@@ -1115,8 +1115,8 @@ title: xEdit Scripting Functions
                     <td> cardinal</td>
                     <td> aeFile: IwbFile; aiFormID: cardinal
                     </td>
-                    <td> Converts <i>aiFormID</i> from a form ID relative to <i>aeFile</i>'s master list (like that
-                        returned by <i>FixedFormID</i>) to a load-order-relative form ID (like that returned by <i>FormID</i>).
+                    <td> Converts <i>aiFormID</i> from a FormID relative to <i>aeFile</i>'s master list (like that
+                        returned by <i>FixedFormID</i>) to a load order-relative FormID (like that returned by <i>FormID</i>).
                         See also: <i>LoadOrderFormIDtoFileFormID</i>.
                     </td>
                 </tr>
@@ -1160,7 +1160,7 @@ title: xEdit Scripting Functions
                     <td> cardinal</td>
                     <td> aeFile: IwbFile
                     </td>
-                    <td> Returns a new form ID, the same way that <code>Add(..., ..., True)</code> does.
+                    <td> Returns a new FormID, the same way that <code>Add(..., ..., True)</code> does.
                     </td>
                 </tr>
                 <tr>
@@ -1193,8 +1193,8 @@ title: xEdit Scripting Functions
                     <td> cardinal</td>
                     <td> aeFile: IwbFile; aiFormID: cardinal
                     </td>
-                    <td> Converts <i>aiFormID</i> from a load-order-relative form ID (like that returned by
-                        <i>FormID</i>) to a form ID relative to <i>aeFile</i>'s master list (like that returned by <i>FixedFormID</i>).
+                    <td> Converts <i>aiFormID</i> from a load order-relative FormID (like that returned by
+                        <i>FormID</i>) to a FormID relative to <i>aeFile</i>'s master list (like that returned by <i>FixedFormID</i>).
                         See also: <i>FileFormIDtoLoadOrderFormID</i>.
                     </td>
                 </tr>
@@ -1222,7 +1222,7 @@ title: xEdit Scripting Functions
                     <td> Returns the <a href="/index.php?title=Magic_Effect" title="Magic Effect">MGEF</a> or <a
                         href="/index.php?title=Setting&amp;action=edit&amp;redlink=1" class="new"
                         title="Setting (page does not exist)">GMST</a> record in <i>aeFile</i> that has the
-                        specified editor ID. For all other record types, use something like <code>MainRecordByEditorID(GroupBySignature(f,
+                        specified EditorID. For all other record types, use something like <code>MainRecordByEditorID(GroupBySignature(f,
                         'ECZN'), 'RandomEncounterZone1')</code>.
                     </td>
                 </tr>
@@ -1231,8 +1231,8 @@ title: xEdit Scripting Functions
                     <td> IwbMainRecord</td>
                     <td> aeFile: IwbFile;<br/> aiFormID: integer;<br/> abAllowInjected: boolean
                     </td>
-                    <td> Returns the main record in <i>aeFile</i> that has the specified form ID, or <i>Nil</i> if no
-                        records match. The form ID must be local to the file (see <i>FixedFormID</i>).
+                    <td> Returns the main record in <i>aeFile</i> that has the specified FormID, or <i>Nil</i> if no
+                        records match. The FormID must be local to the file (see <i>FixedFormID</i>).
                     </td>
                 </tr>
                 <tr>
@@ -1303,7 +1303,7 @@ title: xEdit Scripting Functions
                     <td> cardinal</td>
                     <td> aeRecord: IwbMainRecord
                     </td>
-                    <td> Appears to return the load-order-relative form ID of <i>aeRecord</i>.
+                    <td> Appears to return the load order-relative FormID of <i>aeRecord</i>.
                     </td>
                 </tr>
                 <tr>
@@ -1332,7 +1332,7 @@ title: xEdit Scripting Functions
                     <td> boolean</td>
                     <td> aeRecord: IwbMainRecord;<br/> aiOldFormID: cardinal;<br/> aiNewFormID: cardinal
                     </td>
-                    <td> Attempts to change <i>aeRecord</i>'s form ID from <i>aiOldFormID</i> to <i>aiNewFormID</i>, and
+                    <td> Attempts to change <i>aeRecord</i>'s FormID from <i>aiOldFormID</i> to <i>aiNewFormID</i>, and
                         returns <i>True</i> if the operation succeeds.
                     </td>
                 </tr>
@@ -1341,7 +1341,7 @@ title: xEdit Scripting Functions
                     <td> string</td>
                     <td> aeRecord: IwbMainRecord
                     </td>
-                    <td> Returns the record's editor ID.
+                    <td> Returns the record's EditorID.
                     </td>
                 </tr>
                 <tr>
@@ -1349,7 +1349,7 @@ title: xEdit Scripting Functions
                     <td> cardinal</td>
                     <td> aeRecord: IwbMainRecord
                     </td>
-                    <td> Returns the local FormID of the record. Local records will not have a load-order prefix (i.e.
+                    <td> Returns the local FormID of the record. Local records will not have a load order prefix (i.e.
                         0x00FFFFFF), and overrides will have a prefix relative to the record's file's masters. See also:
                         <i>FormID</i>, <i>GetLoadOrderFormID</i>.
                     </td>
@@ -1359,7 +1359,7 @@ title: xEdit Scripting Functions
                     <td> cardinal</td>
                     <td> aeRecord: IwbMainRecord
                     </td>
-                    <td> Returns the record's form ID. See also: <i>FixedFormID</i>, <i>GetLoadOrderFormID</i>.
+                    <td> Returns the record's FormID. See also: <i>FixedFormID</i>, <i>GetLoadOrderFormID</i>.
                     </td>
                 </tr>
                 <tr>
@@ -1434,7 +1434,7 @@ title: xEdit Scripting Functions
                     <td> cardinal</td>
                     <td> aeRecord: IwbMainRecord
                     </td>
-                    <td> Returns the record's form ID relative to the current load order. See also: <i>FixedFormID</i>,
+                    <td> Returns the record's FormID relative to the current load order. See also: <i>FixedFormID</i>,
                         <i>SetLoadOrderFormID</i>.
                     </td>
                 </tr>
@@ -1556,7 +1556,7 @@ title: xEdit Scripting Functions
                     <td> string</td>
                     <td> aeRecord: IwbMainRecord;<br/> asEditorID: string
                     </td>
-                    <td> Sets the record's editor ID, and then returns it.
+                    <td> Sets the record's EditorID, and then returns it.
                     </td>
                 </tr>
                 <tr>
@@ -1604,7 +1604,7 @@ title: xEdit Scripting Functions
                     <td> cardinal</td>
                     <td> aeRecord: IwbMainRecord;<br/> aiFormID: cardinal;
                     </td>
-                    <td> Modifies the record's form ID, with the specified ID relative to the current load order. See
+                    <td> Modifies the record's FormID, with the specified ID relative to the current load order. See
                         also: <i>GetLoadOrderFormID</i>.
                     </td>
                 </tr>
@@ -1728,7 +1728,7 @@ title: xEdit Scripting Functions
                     <td> IwbMainRecord</td>
                     <td> aeGroup: IwbGroupRecord;<br/> asEditorID: string
                     </td>
-                    <td> Searches <i>aeGroup</i> for a main record whose editor ID is <i>asEditorID</i> and returns the
+                    <td> Searches <i>aeGroup</i> for a main record whose EditorID is <i>asEditorID</i> and returns the
                         matching record or <i>Nil</i>. This is not a performant function.
                     </td>
                 </tr>
@@ -2329,7 +2329,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>frmFileSelect</b></td>
                     <td> TForm</td>
-                    <td> Returns a copy of the plug-in select dialog, which can be shown by calling <code>fMyDialogVariable.ShowModal</code>
+                    <td> Returns a copy of the plugin select dialog, which can be shown by calling <code>fMyDialogVariable.ShowModal</code>
                     </td>
                     <td> You can get a reference to the checkbox list (as a TCheckListBox) by calling <code>TCheckListBox(fMyDialogVariable.FindComponent('CheckListBox1'))</code>
                     </td>

@@ -43,9 +43,9 @@ title: Tome of xEdit
         <div class="level-2" id="s_3-1">
             <h2 class="ctrl">3.1 Overview</h2>
             <div class="content">
-                <p>Master Update Mode is the solution to the bugs introduced in Patch 1.5 in regards to Plug-ins, as well as the white-face bug and a number of older issues with mod conflicts. Master Update (<abbr title="Master Update Mode">MUM</abbr>) is highly recommended for all modders, as it can prevent crashes, incompatibilities and may provide you with a smoother gaming experience.</p>
-                <p>xEdit also provides the native ability to reverse the Master Update process, returning all <abbr title="Master Update Mode">MUM</abbr>(ified) plug-ings back to their original ESP state. This process is called Master Restore Mode (<abbr title="Master Restore Mode">MRM</abbr>), and will all you to edit your plug-in with the GECK. As the GECK will not allow you to set a Master (<abbr title="Elder-Scrolls Master File">ESM</abbr>) as the Active file, the <abbr title="Master Restore Mode">MRM</abbr>(er) process is required in order for you to modify your plug-ins again after running Master Update Mode.</p>
-                <p>Thus in the tradition of UNIX nomenclature, you must first <abbr title="Master Update Mode">MUM</abbr>ify your plug-ins to play, and them <abbr title="Master Restore Mode">MRM</abbr>er at them to edit them in the GECK. This section describes both processes at depth.</p>
+                <p>Master Update Mode is the solution to the bugs introduced in Patch 1.5 in regards to Plugins, as well as the white-face bug and a number of older issues with mod conflicts. Master Update (<abbr title="Master Update Mode">MUM</abbr>) is highly recommended for all modders, as it can prevent crashes, incompatibilities and may provide you with a smoother gaming experience.</p>
+                <p>xEdit also provides the native ability to reverse the Master Update process, returning all <abbr title="Master Update Mode">MUM</abbr>(ified) plugings back to their original ESP state. This process is called Master Restore Mode (<abbr title="Master Restore Mode">MRM</abbr>), and will all you to edit your plugin with the GECK. As the GECK will not allow you to set a Master (<abbr title="Elder-Scrolls Master File">ESM</abbr>) as the Active file, the <abbr title="Master Restore Mode">MRM</abbr>(er) process is required in order for you to modify your plugins again after running Master Update Mode.</p>
+                <p>Thus in the tradition of UNIX nomenclature, you must first <abbr title="Master Update Mode">MUM</abbr>ify your plugins to play, and them <abbr title="Master Restore Mode">MRM</abbr>er at them to edit them in the GECK. This section describes both processes at depth.</p>
             </div>
             <!--/.content-->
         </div>
@@ -56,9 +56,9 @@ title: Tome of xEdit
                 <p>Master Update Mode is activated by creating another copy of the program, and renaming it to, "FO3MasterUpdate.exe". When xEdit runs, it will recognize its filename and run in Master Update Mode accordingly.</p>
                 <ul>
                     <li>When Master Update Mode is activated, the following operations are performed without further user interaction:</li>
-                    <li>All modules in the Data folder are assigned into 2 groups, masters and Plug-ins, based on their file extension (.esm or .esp).</li>
+                    <li>All modules in the Data folder are assigned into 2 groups, masters and Plugins, based on their file extension (.esm or .esp).</li>
                     <li>The modules in each group are sorted by file modification date/time.</li>
-                    <li>All module files are re-dated, first all masters, then all Plug-ins, in 1 minute intervals.</li>
+                    <li>All module files are re-dated, first all masters, then all Plugins, in 1 minute intervals.</li>
                     <li>All active modules are then loaded, the <abbr title="Elder Scrolls Master">ESM</abbr> flag set in the file header if not yet present, and the ONAM sub records build if required.</li>
                     <li>Any temporary overriding world space record that has at least one previous version that is persistent is marked as persistent.</li>
                     <li>All modified modules are saved.</li>
@@ -74,7 +74,7 @@ title: Tome of xEdit
                 </div>
                 <p>You must close the program to finalize and save the settings, or your <abbr title="Master Update Mode">MUM</abbr>ifcation will not be completed. Running Fallout3 with <abbr title="Master Update Mode">MUM</abbr> open will cause problems, so make sure you close the program when you see the, "--= All Done =--"indication.</p>
                 <p>It is recommended that you create icons for both <abbr title="Master Update Mode">MUM</abbr> and <abbr title="Master Restore Mode">MRM</abbr> (along side of the xEdit Icon) so that you can conveniently run either depending on whether you're playing or modding in the GECK. This is considered the best practice.</p>
-                <p>You can safely delete the Backup files at any time; these are created for your protection. You can restore a mod from one of these backups simply by renaming the backup file to the original plug-in filename.</p>
+                <p>You can safely delete the Backup files at any time; these are created for your protection. You can restore a mod from one of these backups simply by renaming the backup file to the original plugin filename.</p>
             </div>
             <!--/.content-->
             <div class="level-nav">
@@ -135,7 +135,7 @@ title: Tome of xEdit
                         <div class="p-img">
                             <p class="img"><img  height="224" src="img/image038.jpg" width="576"></p>
                             <p>Once xEdit loads, check the <a href="2-overview.html#s_2-3-5">Messages Tab</a> (A and B) for any errors noted. If you find errors, you should either resolve them or remove the mod from your load order list. Any errors found at this stage are bad and can cause crashes later no mater what you do.</p>
-                            <p>Once satisfied that your load-order is clean, proceed forward to create the merged patch!</p>
+                            <p>Once satisfied that your load order is clean, proceed forward to create the merged patch!</p>
                         </div>
                     </li>
                     <li>
@@ -161,7 +161,7 @@ title: Tome of xEdit
                     <li>
                         <div class="p-img">
                             <p class="img"><img  height="372" src="img/image048.jpg" width="384"></p>
-                            <p>For Step #5, re-launch <abbr title="Fallout Mod Manager">FOMM</abbr> (A) and select/Left-click your new merged-patch (B), which should be listed as the last entry in the load list. Once done, close <abbr title="Fallout Mod Manager">FOMM</abbr> (C) to save the load-order to disk.</p>
+                            <p>For Step #5, re-launch <abbr title="Fallout Mod Manager">FOMM</abbr> (A) and select/Left-click your new merged-patch (B), which should be listed as the last entry in the load list. Once done, close <abbr title="Fallout Mod Manager">FOMM</abbr> (C) to save the load order to disk.</p>
                         </div>
                     </li>
                     <li>
