@@ -31,12 +31,13 @@ title: xEdit Managing Mod Files
         <ul class="second">
             <li><a href="#s_6-1">6.1 Overview</a></li>
             <li><a href="#s_6-2">6.2 Adding Master Files to a Plugin</a></li>
-            <li><a href="#s_6-3">6.3 Changing Mod FormIDs</a></li>
-            <li><a href="#s_6-4">6.4 Merging a Plugin into another Plugin or Master</a></li>
-            <li><a href="#s_6-5">6.5 Converting a Plugin into a Master</a></li>
-            <li><a href="#s_6-6">6.6 Splitting a Plugin into a Plugin/Master Pair"</a></li>
-            <li><a href="#s_6-7">6.7 Comparing Two Versions of a Mod</a></li>
-            <li><a href="#s_6-8">6.8 Assets Manager</a></li>
+            <li><a href="#s_6-3">6.3 Adding ESL flag to a Plugin</a></li>
+            <li><a href="#s_6-4">6.4 Changing Mod FormIDs</a></li>
+            <li><a href="#s_6-5">6.5 Merging a Plugin into another Plugin or Master</a></li>
+            <li><a href="#s_6-6">6.6 Converting a Plugin into a Master</a></li>
+            <li><a href="#s_6-7">6.7 Splitting a Plugin into a Plugin/Master Pair"</a></li>
+            <li><a href="#s_6-8">6.8 Comparing Two Versions of a Mod</a></li>
+            <li><a href="#s_6-9">6.9 Assets Manager</a></li>
         </ul>
     </div>
     <!--/.local-->
@@ -112,7 +113,25 @@ title: xEdit Managing Mod Files
         </div>
         <!--/.level-2-->
         <div class="level-2" id="s_6-3">
-            <h2 class="ctrl">6.3 Changing Mod FormIDs</h2>
+            <h2 class="ctrl">6.3 Adding ESL flag to a Plugin</h2>
+            <div class="content">
+                <p>Load the module you would like to add the ESL flag to and click the plus by the filename to expand the contents.  Click File Header, right click in the View Treeview and choose Edit to be presented with a list of Flags.</p>
+                <p class="img"><img src="img/edit-esl-flag.jpg" width="1028"></p>
+                <p>Check the box next to the ESL flag and click Ok.</p>
+                <p class="img"><img src="img/edit-esl-flag-check.jpg"></p>
+                <p>Chlick okay to save the plugin.</p>
+                <p class="img"><img src="img/edit-esl-flag-save.jpg"></p>
+            </div>
+            <!--/.content-->
+            <div class="level-nav">
+                <a href="#s_6-2" class="drkbtn">Previous Section</a>
+                <a href="#s_6-3" class="drkbtn">Top of this Section</a>
+            </div>
+            <!--/.level-nav-->
+        </div>
+        <!--/.level-2-->
+        <div class="level-2" id="s_6-4">
+            <h2 class="ctrl">6.4 Changing Mod FormIDs</h2>
             <div class="content">
                 <p>There are times in which you may need to renumber the FormIDs for all records in a plugin to avoid conflicts. This can become necessary if two plugins share the same FormIDs (or some of them), which can result in bad conflicts in-game. Renumbering FormIDs from will change all FormIDs of records belonging to the Mod-file (but not any override records which might be contained in that mod file) so that they start at the specified value.</p>
                 <p>This Function is useful if you have multiple modules that you plan to update in the future, but also want to always provide a merged version (e.g. using FO3Plugin). By assigning non overlapping FormIDs to the different modules, you can make sure that no FormID reassignment of conflicting FormIDs has to take place when merging.</p>
@@ -137,14 +156,14 @@ title: xEdit Managing Mod Files
             </div>
             <!--/.content-->
             <div class="level-nav">
-                <a href="#s_6-2" class="drkbtn">Previous Section</a>
-                <a href="#s_6-3" class="drkbtn">Top of this Section</a>
+                <a href="#s_6-3" class="drkbtn">Previous Section</a>
+                <a href="#s_6-4" class="drkbtn">Top of this Section</a>
             </div>
             <!--/.level-nav-->
         </div>
         <!--/.level-2-->
-        <div class="level-2" id="s_6-4">
-            <h2 class="ctrl">6.4 Merging a Plugin into another Plugin or Master</h2>
+        <div class="level-2" id="s_6-5">
+            <h2 class="ctrl">6.5 Merging a Plugin into another Plugin or Master</h2>
             <div class="content">
                 <div class="p-img">
                     <p class="img"><img  height="372" src="img/image170.jpg" width="384"></p>
@@ -195,14 +214,14 @@ title: xEdit Managing Mod Files
             </div>
             <!--/.content-->
             <div class="level-nav">
-                <a href="#s_6-3" class="drkbtn">Previous Section</a>
-                <a href="#s_6-4" class="drkbtn">Top of this Section</a>
+                <a href="#s_6-4" class="drkbtn">Previous Section</a>
+                <a href="#s_6-5" class="drkbtn">Top of this Section</a>
             </div>
             <!--/.level-nav-->
         </div>
         <!--/.level-2-->
-        <div class="level-2" id="s_6-5">
-            <h2 class="ctrl">6.5 Converting a Plugin into a Master</h2>
+        <div class="level-2" id="s_6-6">
+            <h2 class="ctrl">6.6 Converting a Plugin into a Master</h2>
             <div class="content">
                 <div class="p-img">
                     <p class="img"><img  height="272" src="img/image188.jpg" width="575"></p>
@@ -239,14 +258,14 @@ title: xEdit Managing Mod Files
             </div>
             <!--/.content-->
             <div class="level-nav">
-                <a href="#s_6-4" class="drkbtn">Previous Section</a>
-                <a href="#s_6-5" class="drkbtn">Top of this Section</a>
+                <a href="#s_6-5" class="drkbtn">Previous Section</a>
+                <a href="#s_6-6" class="drkbtn">Top of this Section</a>
             </div>
             <!--/.level-nav-->
         </div>
         <!--/.level-2-->
-        <div class="level-2" id="s_6-6">
-            <h2 class="ctrl">6.6 Splitting a Plugin into a Plugin/Master Pair</h2>
+        <div class="level-2" id="s_6-7">
+            <h2 class="ctrl">6.7 Splitting a Plugin into a Plugin/Master Pair</h2>
             <div class="content">
                 <div class="p-img">
                     <p class="img"><img  height="308" src="img/image202.jpg" width="444"></p>
@@ -327,14 +346,14 @@ title: xEdit Managing Mod Files
             </div>
             <!--/.content-->
             <div class="level-nav">
-                <a href="#s_6-5" class="drkbtn">Previous Section</a>
-                <a href="#s_6-6" class="drkbtn">Top of this Section</a>
+                <a href="#s_6-6" class="drkbtn">Previous Section</a>
+                <a href="#s_6-7" class="drkbtn">Top of this Section</a>
             </div>
             <!--/.level-nav-->
         </div>
         <!--/.level-2-->
-        <div class="level-2" id="s_6-7">
-            <h2 class="ctrl">6.7 Comparing Two Versions of a Mod</h2>
+        <div class="level-2" id="s_6-8">
+            <h2 class="ctrl">6.8 Comparing Two Versions of a Mod</h2>
             <div class="content">
                 <p>One of the common tasks that mod authors face is to compare two versions of their own mods, either during construction or in subsequent updates. There are also times when mod authors encounter difficult to solve problems with a new version of a mod, and need to revert back to a previous backup. The xEdit compare function can provide a valuable and convenient way of copying data from one version of a mod to another, without having to sort through records that don't belong to their mods. Whatever the case may be, this section is devoted to teaching you how to compare two versions of a mod file, and how to copy records over if the need arises.</p>
                 <div class="p-img">
@@ -407,14 +426,14 @@ title: xEdit Managing Mod Files
             </div>
             <!--/.content-->
             <div class="level-nav">
-                <a href="#s_6-6" class="drkbtn">Previous Section</a>
-                <a href="#s_6-7" class="drkbtn">Top of this Section</a>
+                <a href="#s_6-7" class="drkbtn">Previous Section</a>
+                <a href="#s_6-8" class="drkbtn">Top of this Section</a>
             </div>
             <!--/.level-nav-->
         </div>
         <!--/.level-2-->
-        <div class="level-2" id="s_6-8">
-            <h2 class="ctrl">6.8 Assets Manager</h2>
+        <div class="level-2" id="s_6-9">
+            <h2 class="ctrl">6.9 Assets Manager</h2>
             <div class="content">
                 <p>Allows you to check for used assets including textures, materials, etc. within meshes and copy assets used by a plugin to separate folder. You can also create a list of files in different formats including the CK assets list used for packaging files using from the CK.</p>
                 <p>Please keep in mind that the script checks only explicitly used assets defined in records. Implicitly used assets are not processed and you need to handle them yourself, for example:</p>
@@ -431,8 +450,8 @@ title: xEdit Managing Mod Files
             </div>
             <!--/.content-->
             <div class="level-nav">
-                <a href="#s_6-7" class="drkbtn">Previous Section</a>
-                <a href="#s_6-8" class="drkbtn">Top of this Section</a>
+                <a href="#s_6-8" class="drkbtn">Previous Section</a>
+                <a href="#s_6-9" class="drkbtn">Top of this Section</a>
             </div>
             <!--/.level-nav-->
         </div>
