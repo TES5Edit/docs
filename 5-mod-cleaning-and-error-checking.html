@@ -34,25 +34,33 @@ title: xEdit Cleaning and-Error Checking
             <li>
                 <a href="#s_5-3">5.3 Mod Cleaning Process</a>
                 <ul class="third">
-                    <li><a href="#s_5-3-1">5.3.1 Quick Clean Method</a></li>
-                    <li><a href="#s_5-3-2">5.3.2 Quick Auto Clean Method (Recomended)</a></li>
-                    <li><a href="#s_5-3-3">5.3.3 Sorting Master File Load Orders</a></li>
-                    <li><a href="#s_5-3-4">5.3.4 Using Clean Masters to purge un-used Master File References</a></li>
-                    <li><a href="#s_5-3-5">5.3.5 Listing Master File References from a Specific Plugin</a></li>
+                    <li><a href="#s_5-3-1">5.3.1 Choosing a cleaning method</a></li>
+                    <ul class="fourth">
+                        <li><a href="#s_5-3-1-1">5.3.1.1 Cleaning using a shortcut</a></li>
+                        <li><a href="#s_5-3-1-2">5.3.1.2 Cleaning renaming the EXE</a></li>
+                        <li><a href="#s_5-3-1-3">5.3.1.3 Cleaning using MO2</a></li>
+                        <li><a href="#s_5-3-1-4">5.3.1.4 Cleaning using Vortex</a></li>
+                    </ul>
+                    <li><a href="#s_5-3-2">5.3.2 Selecting a plugin to clean</a></li>
+                    <li><a href="#s_5-3-3">5.3.3 Quick Clean Method</a></li>
+                    <li><a href="#s_5-3-4">5.3.4 Quick Auto Clean Method (Recommended)</a></li>
+                    <li><a href="#s_5-3-5">5.3.5 Sorting Master File Load Orders</a></li>
+                    <li><a href="#s_5-3-6">5.3.6 Using Clean Masters to purge un-used Master File References</a></li>
+                    <li><a href="#s_5-3-7">5.3.7 Listing Master File References from a Specific Plugin</a></li>
                 </ul>
             </li>
             <li><a href="#s_5-4">5.4 Checking For Reference Errors</a></li>
             <li><a href="#s_5-5">5.5 Checking for Circular Leveled Lists</a></li>
-            <li><a href="#Apendix-A">Apendix A: Types of Dirty Edits</a></li>
+            <li><a href="#Apendix-A">Appendix A: Types of Dirty Edits</a></li>
             <li><a href="#Glossary">Glossary</a></li>
         </ul>
     </div>
     <!--/.local-->
 </div>
 <!--/.toc-->
-<section id="_Toc237480264">
-    <h1>5. Mod Cleaning and Error Checking</h1>
-    <div class="content clearfix">
+<section>
+    <div id="Cleaning">
+        <h1>5. Mod Cleaning and Error Checking</h1>
         <div class="level-2" id="s_5-1">
             <h2 class="ctrl">5.1 Preface</h2>
             <div class="content">
@@ -87,7 +95,6 @@ title: xEdit Cleaning and-Error Checking
                 <p class="Note"><strong>Note:</strong> Those not convinced by now to read-through and understand the mod cleaning and merging process are sloppy and should be sacked. For the honorable modders who want to contribute to the community in the right way, read-on.</p>
             </div>
             <!--/.content-->
-            <!--/.content-->
             <div class="level-nav">
                 <a href="#s_5-1" class="drkbtn">Previous Section</a>
                 <a href="#s_5-2" class="drkbtn">Top of this Group</a>
@@ -107,16 +114,117 @@ title: xEdit Cleaning and-Error Checking
                 <p>The records you are trying to clean are the records that override changes to vanilla values. It has always been explained that you can't load additional modules. It can turn "identical to master" into "identical to master, but conflict winner" which the later will not be cleaned from the module. When those are EXACTLY the records you want to clean. So cleaning while having additional modules loaded makes the complete process utterly pointless and a waste of time.</p>
                 <p>Clean one file at a time doesn't mean, load all your files, but only clean one at a time. To be clear, you can not load all your mods all at once and clean just one file at a time. You open xEdit, load the one mod you are going to clean which loads the masters for that file, clean the one mod you loaded, then close xEdit.</p>
                 <p>It has been this way since 3.0.22 of TES5Edit from 2012.</p>
-                <h3>Selecting a plugin to clean</h3>
-                <p>For either of the two procedures you select one, and only one, plugin to clean.</p>
-                <p class="img"><img src="img/clean-plug-select.jpg"></p>
-                <div class="level-nav">
-                    <a href="#s_5-2" class="drkbtn">Previous Section</a>
-                </div>
             </div>
+            <!--/.level-3-->
             <div class="content">
                 <div class="level-3" id="s_5-3-1">
-                    <h3 class="ctrl">5.3.1 Quick Clean Method</h3>
+                    <h3 class="ctrl">5.3.1 Choosing a cleaning method</h3>
+                    <div class="content">
+                        <p>You can use the quick clean method from a desktop shortcut, by renaming the EXE (which can be used as a shortcut), from MO2, or from Vortex.
+                    </div>
+                    <!----------->
+                    <div class="content">
+                        <div class="level-3" id="s_5-3-1-1">
+                            <h3 class="ctrl">5.3.1.1 Cleaning using a shortcut</h3>
+                            <div class="content">
+                                <p>When creating a shortcut go to the folder where you installed xEdit. Right click the file name and choose "Send To" and then "Desktop (create a shortcut)" to create a shortcut.</p>
+                                <p class="img"><img src="img/create shortcut.jpg"></p>
+                                <p>The parameter will go in the "Target" box.</p>
+                                <p class="img"><img src="img/shortcut properties.jpg"></p>
+                                <p>Quick video on how to add the parameter.</p>
+                                <iframe width="420" height="315"
+                                    src="https://www.youtube.com/embed/G5jL5iKfGSk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                </iframe>
+                            </div>
+                            <!--/.content-->
+                        </div>
+                        <div class="level-nav">
+                            <a href="#s_5-2" class="drkbtn">Previous Section</a>
+                            <a href="#s_5-3-1" class="drkbtn">Top of this Group</a>
+                        </div>
+                        <!--/.level-nav-->
+                    </div>
+                    <!--/.level-3-->
+                    <!----------->
+                    <div class="content">
+                        <div class="level-3" id="s_5-3-1-2">
+                            <h3 class="ctrl">5.3.1.2 Cleaning renaming the EXE</h3>
+                            <div class="content">
+                                <p>You can add "QAC" to the filename and create a shortcut to use the Quick Clean procedure. For Skyrim SE you would name it SSEEditQAC.exe as shown below.</p>
+                                <p class="img"><img src="img/clean rename exe.jpg"></p>
+                            </div>
+                            <!--/.content-->
+                        </div>
+                        <div class="level-nav">
+                            <a href="#s_5-3-1-1" class="drkbtn">Previous Section</a>
+                            <a href="#s_5-3-1" class="drkbtn">Top of this Group</a>
+                        </div>
+                        <!--/.level-nav-->
+                    </div>
+                    <!--/.level-3-->
+                    <!----------->
+                    <div class="content">
+                        <div class="level-3" id="s_5-3-1-3">
+                            <h3 class="ctrl">5.3.1.3 Cleaning using MO2</h3>
+                            <div class="content">
+                                <p>For MO2 you would add the parameter to the Arguments.</p>
+                                <p class="img"><img src="img/MO2 Application Dark-box.jpg"></p>
+                                <p>For more information you can refer to the STEP <a href="https://wiki.step-project.com/Guide:XEdit#Cleaning_plugins_with_xEdit">Guide:XEdit</a></p>
+                            </div>
+                            <!--/.content-->
+                        </div>
+                        <div class="level-nav">
+                            <a href="#s_5-3-1-2" class="drkbtn">Previous Section</a>
+                            <a href="#s_5-3-1" class="drkbtn">Top of this Group</a>
+                        </div>
+                        <!--/.level-nav-->
+                    </div>
+                    <!--/.level-3-->
+                    <!----------->
+                    <div class="content">
+                        <div class="level-3" id="s_5-3-1-4">
+                            <h3 class="ctrl">5.3.1.4 Cleaning using Vortex</h3>
+                            <div class="content">
+                                <p>For Vortex you would add the parameter to the Command Line box.</p>
+                                <p class="img"><img src="img/vortex launcher-box.jpg"></p>
+                                <p>For more information you can refer to the Nexus Wiki <a href="https://wiki.nexusmods.com/index.php/Tool_Setup:_xEdit">Tool Setup: xEdit</a></p>
+                            </div>
+                            <!--/.content-->
+                        </div>
+                        <div class="level-nav">
+                            <a href="#s_5-3-1-3" class="drkbtn">Previous Section</a>
+                            <a href="#s_5-3-1" class="drkbtn">Top of this Group</a>
+                        </div>
+                        <!--/.level-nav-->
+                    </div>
+                    <!--/.level-3-->
+                    <!----------->
+                </div>
+                <div class="level-nav">
+                    <a href="#s_5-3-1" class="drkbtn">Previous Section</a>
+                </div>
+                <!--/.level-nav-->
+            </div>
+            <!--/.level-3-->
+            <div class="content">
+                <div class="level-3" id="s_5-3-2">
+                    <h3 class="ctrl">5.3.2 Selecting a plugin to clean</h3>
+                    <div class="content">
+                        <p>When selecting a plugin to clean you can check or double click one, and only one, plugin to clean.</p>
+                        <p class="img"><img src="img/clean-plug-select.jpg"></p>
+                    </div>
+                    <!--/.content-->
+                </div>
+                <div class="level-nav">
+                    <a href="#s_5-3" class="drkbtn">Previous Section</a>
+                    <a href="#s_5-3" class="drkbtn">Top of this Group</a>
+                </div>
+                <!--/.level-nav-->
+            </div>
+            <!--/.level-3-->
+            <div class="content">
+                <div class="level-3" id="s_5-3-3">
+                    <h3 class="ctrl">5.3.3 Quick Clean Method</h3>
                     <div class="content">
                         <p>This method is for those who want to be more involved in the process.</p>
                         <p>This procedure cleans 2 times. Some DLC requires that they are cleaned twice because after saving the cleaned mod's records are updated.  The quick clean procedure does not save in between each step. When you close xEdit you will have the option to save the file with the changes or cancel. You will have to repeat this step for any DLC that requires multiple cleanings.</p>
@@ -125,11 +233,15 @@ title: xEdit Cleaning and-Error Checking
                     </div>
                 </div>
                 <div class="level-nav">
-                    <a href="#s_5-3" class="drkbtn">Previous Section</a>
+                    <a href="#s_5-3-2" class="drkbtn">Previous Section</a>
+                    <a href="#s_5-3" class="drkbtn">Top of this Group</a>
                 </div>
-                <!--/.level-3-->
-                <div class="level-3" id="s_5-3-2">
-                    <h3 class="ctrl">5.3.2 Quick Auto Clean Method (Recomended)</h3>
+                <!--/.level-nav-->
+            </div>
+            <!--/.level-3-->
+            <div class="content">
+                <div class="level-3" id="s_5-3-4">
+                    <h3 class="ctrl">5.3.4 Quick Auto Clean Method (Recommended)</h3>
                     <div class="content">
                         <p>This is the preferred and recommended method. You will have to close xEdit once the process terminates but everything is automatic.</p>
                         <p>This procedure cleans 3 times and saves in between each step. Some DLC requires that they are cleaned twice because after saving the cleaned mod's records are updated.  Because the quick auto clean procedure saves between each step, you no longer need to clean DLC multiple times with the feature. However, this process is automatic and you will not be able to stop it. You will only be able to review the changes once the process is completed.</p>
@@ -138,13 +250,15 @@ title: xEdit Cleaning and-Error Checking
                         <p>For quick auto clean you will not be given an option to save. When finished you can review the changes, copy the LOOT info, and see any errors that occurred. For quick clean you will be presented with an option to save the plugin or cancel.</p>
                     </div>
                 </div>
-                    <div class="level-nav">
-                        <a href="#s_5-3-1" class="drkbtn">Previous Section</a>
-                        <a href="#s_5-3" class="drkbtn">Top of this Group</a>
-                    </div>
-                <!--/.level-3-->
-                <div class="level-3" id="s_5-3-3">
-                    <h3 class="ctrl">5.3.3 Sorting Master File Load Orders</h3>
+                <div class="level-nav">
+                    <a href="#s_5-3-3" class="drkbtn">Previous Section</a>
+                    <a href="#s_5-3" class="drkbtn">Top of this Group</a>
+                </div>
+            </div>
+            <!--/.level-3-->
+            <div class="content">
+                <div class="level-3" id="s_5-3-5">
+                    <h3 class="ctrl">5.3.5 Sorting Master File Load Orders</h3>
                     <div class="content">
                         <p>There are times in which the load order of Master files gets switched around when you add/change load orders.  The, "Sort Masters" function corrects the master file load order in the Plugins MASTer list, and correctly renumbers all file specific FormIDs.</p>
                         <p class="img"><img src="img/image140.jpg"></p>
@@ -153,16 +267,18 @@ title: xEdit Cleaning and-Error Checking
                         <h3 class="ctrl">When should you use Sort Masters?</h3>
                         <p>According to Elminster: If a plugin has two masters that are siblings (one doesn't have the other as a master, so they can load in either order) and they are overriding the same record from an earlier master (e.g. both are overriding a record from the main game master file), then loading them in a different order will result in a different version of the overridden record being the "winner". But the plugin might depend on the winner being the one indicated by the order in which it references the masters.</p>
                     </div>
-                    <!--/.content-->
-                    <div class="level-nav">
-                        <a href="#s_5-3-2" class="drkbtn">Previous Section</a>
-                        <a href="#s_5-3" class="drkbtn">Top of this Group</a>
-                    </div>
-                    <!--/.level-nav-->
                 </div>
-                <!--/.level-3-->
-                <div class="level-3" id="s_5-3-4">
-                    <h3 class="ctrl">5.3.4 Using Clean Masters to purge un-used Master File References</h3>
+                <!--/.content-->
+                <div class="level-nav">
+                    <a href="#s_5-3-4" class="drkbtn">Previous Section</a>
+                    <a href="#s_5-3" class="drkbtn">Top of this Group</a>
+                </div>
+                <!--/.level-nav-->
+            </div>
+            <!--/.level-3-->
+            <div class="content">
+                <div class="level-3" id="s_5-3-6">
+                    <h3 class="ctrl">5.3.6 Using Clean Masters to purge un-used Master File References</h3>
                     <div class="content">
                         <p>Master File References are links or references from your Plugin to any Master files (ESMs) that it depends on to run, and stores the list in a record called, "MAST". Most Plugins have the game's ESM file in their master list, but you can have many such links in a plugin. For example for Fallout3 each file will start with Fallout3.esm. If when you create a <a href="4-conflict-detection-and-resolution.html#s_4-8">Merged Patch</a> with xEdit, it puts links to many or nearly-all of the master files in your mod list. It is possible in some cases for a Plugin to contain a link to a master file that it does not need.</p>
                         <p>For example, suppose the Plugin we are cleaning had MasterB.esm in its MASTer list but it doesn't contain any overrides for, or makes any other references to, records from MasterB.esm. In that case we would not need nor want MasterB.esm listed in the MASTer record for our Plugin! This function detects any un-used MASTer references in the Plugin we are cleaning, and removes them from the MASTer list. xEdit also renumbers any file specific FormIDs in the Plugin to ensure that it is cleaned properly.</p>
@@ -174,16 +290,18 @@ title: xEdit Cleaning and-Error Checking
                         <p>At this point you should save your mod and load it up in-game to make sure that everything is still happy.</p>
                         <p class="Note"><strong>Note:</strong> You should not remove masters from other people's mods! You will drastically effect the mod and it will no longer perform the changes the author intended. It is the responsibility of each mod author to remove unused masters. You can request that the mod author provide another version. Please be respectful if they refuse to remove masters as some mod authors intentionally override specific records in order for the mod to effect the game the way they intended.</p>
                     </div>
-                    <!--/.content-->
-                    <div class="level-nav">
-                        <a href="#s_5-3-3" class="drkbtn">Previous Section</a>
-                        <a href="#s_5-3" class="drkbtn">Top of this Group</a>
-                    </div>
-                    <!--/.level-nav-->
                 </div>
-                <!--/.level-3-->
-                <div class="level-2" id="s_5-3-5">
-                    <h3 class="ctrl">5.3.5 Listing Master File References from a specific plugin</h3>
+                <!--/.content-->
+                <div class="level-nav">
+                    <a href="#s_5-3-5" class="drkbtn">Previous Section</a>
+                    <a href="#s_5-3" class="drkbtn">Top of this Group</a>
+                </div>
+                <!--/.level-nav-->
+            </div>
+            <!--/.level-3-->
+            <div class="content">
+                <div class="level-2" id="s_5-3-7">
+                    <h3 class="ctrl">5.3.7 Listing Master File References from a specific plugin</h3>
                     <div class="content">
                         <p class="img"><img src="img/list-ref-master.jpg"></p>
                         <p>When using Clean Masters if references are still in use the Master will not be removed from the master list. In order to list references we will be using a script named <code>List records referencing specific plugin.pas</code>. This may take a while depending on how many references there are in the Plugin.</p>
@@ -192,18 +310,18 @@ title: xEdit Cleaning and-Error Checking
                         <p>A notification will appear in the messages tab when the operation is complete. All of the records referencing the plugin will be listed. You will need to properly deal with all the references before xEdit will remove the master. This could mean changing a reference to reference another master or removing the reference entirely.</p>
                         <p class="Note"><strong>Note:</strong> You should not remove masters from other people's mods! You will drastically effect the mod and it will no longer perform the changes the author intended. It is the responsibility of each mod author to remove unused masters. You can request that the mod author provide another version. Please be respectful if they refuse to remove masters as some mod authors intentionally override specific records in order for the mod to effect the game the way they intended.</p>
                     </div>
-                    <!--/.content-->
-                    <div class="level-nav">
-                        <a href="#s_5-3-4" class="drkbtn">Previous Section</a>
-                        <a href="#s_5-3" class="drkbtn">Top of this Group</a>
-                    </div>
-                    <!--/.level-nav-->
                 </div>
-                <!--/.level-3-->
+                <!--/.content-->
+                <div class="level-nav">
+                    <a href="#s_5-3-6" class="drkbtn">Previous Section</a>
+                    <a href="#s_5-3" class="drkbtn">Top of this Group</a>
+                </div>
+                <!--/.level-nav-->
             </div>
-            <!--/.content-->
+            <!--/.level-3-->
             <div class="level-nav">
-                <a href="#s_5-1" class="drkbtn">Previous Group</a>
+                <a href="#s_5-2" class="drkbtn">Previous Group</a>
+                <a href="#s_5-3" class="drkbtn">Top of this Group</a>
             </div>
             <!--/.level-nav-->
         </div>
