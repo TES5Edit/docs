@@ -1093,11 +1093,20 @@ title: xEdit Scripting Functions
                 </tr>
                 <tr>
                     <td><b>AddNewFileName</b></td>
-                    <td></td>
-                    <td> aeFile: IwbFile<br/>
+                    <td> aeFile: IwbFile</td>
+                    <td> FileName: String <br/> (optional) ESLFlag: Boolean <br/>
+		    </td>
+                    <td> Creates a new, empty plugin using FileName as the name in the game's plugin folder (Data) and adds it to the end of the
+                        plugins list. if applicable, the ESL flag can be set.
                     </td>
+                </tr>
+		<tr>
+                    <td><b>AddNewFile</b></td>
+                    <td> aeFile: IwbFile</td>
+                    <td> (optional) ESLFlag: Boolean <br/>
+		    </td>
                     <td> Creates a new, empty plugin in the game's plugin folder (Data) and adds it to the end of the
-                        plugins list.
+                        plugins list. if applicable, the ESL flag can be set.
                     </td>
                 </tr>
                 <tr>
