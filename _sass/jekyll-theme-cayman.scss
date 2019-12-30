@@ -332,6 +332,10 @@ a {
   }
 }
 
+.no-bullet {
+  list-style-type: none;
+}
+
 .main-content {
   word-wrap: break-word;
    :first-child {
