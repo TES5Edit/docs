@@ -25,7 +25,6 @@ title: xEdit Managing Mod Files
             <li><a href="14-xEditVersionInfo.html">14. xEdit Version Info</a></li>
         </ul>
     </div>
-    
     <div>
         <h3>Section Table of Contents</h3>
         <ul>
@@ -40,9 +39,7 @@ title: xEdit Managing Mod Files
             <li><a href="#s_6-9">6.9 Assets Manager</a></li>
         </ul>
     </div>
-    
 </div>
-
 <section>
     <h1>6. Managing Mod Files</h1>
     <div>
@@ -51,9 +48,7 @@ title: xEdit Managing Mod Files
             <div>
                 <p>This chapter is dedicated to mod authors, and describes a number of functions and actions that xEdit provides to make mod authors lives easier and their products more standardized. Like the chapter on <a href="5-mod-cleaning-and-error-checking.html">Mod Cleaning and Error Checking</a>, these functions hole mod authors produce products that will be less conflicting with other mods, and will open doors to possibilities that mod authors may not have known existed. Actions like merging mods, splitting them apart into Plugin/Master pairs, adding Master file references and more are documented in the sections below.</p>
             </div>
-            
         </div>
-        
         <div id="s_6-2">
             <h2>6.2 Adding Master Files to a Plugin</h2>
             <div>
@@ -104,14 +99,12 @@ title: xEdit Managing Mod Files
                     <p>There are rare cases where editing the MAST list directly is what you actually want. e.g. when splitting an .esp into an .esm/.esp pair. In that case you would make a copy of the .esp, rename it to .esm, load it alone into xEdit to set the <abbr title="Elder Scrolls Master">ESM</abbr> flag in it's header, then restart xEdit to load both the .esm and the .esp and modify the MAST sub record in the File Header of the .esp by adding the .esm as last entry. After restarting xEdit and loading both files you will see that all records in the .esp are now considered overrides for the same records from the .esm"</p>
                 </blockquote>
             </div>
-            
             <div>
                 <a href="#s_6-1" class="drkbtn">Previous Section</a>
                 <a href="#s_6-2" class="drkbtn">Top of this Section</a>
             </div>
             <!--/.level-nav-->
         </div>
-        
         <div id="s_6-3">
             <h2>6.3 Adding ESL flag to a Plugin</h2>
             <div>
@@ -122,14 +115,12 @@ title: xEdit Managing Mod Files
                 <p>Click okay to save the plugin.</p>
                 <p><img src="img/edit-esl-flag-save.jpg"></p>
             </div>
-            
             <div>
                 <a href="#s_6-2" class="drkbtn">Previous Section</a>
                 <a href="#s_6-3" class="drkbtn">Top of this Section</a>
             </div>
             <!--/.level-nav-->
         </div>
-        
         <div id="s_6-4">
             <h2>6.4 Changing Mod FormIDs</h2>
             <div>
@@ -154,14 +145,12 @@ title: xEdit Managing Mod Files
                     to FormIDs so that they will all be updated accordingly.
                 </p>
             </div>
-            
             <div>
                 <a href="#s_6-3" class="drkbtn">Previous Section</a>
                 <a href="#s_6-4" class="drkbtn">Top of this Section</a>
             </div>
             <!--/.level-nav-->
         </div>
-        
         <div id="s_6-5">
             <h2>6.5 Merging a Plugin into another Plugin or Master</h2>
             <div>
@@ -212,14 +201,12 @@ title: xEdit Managing Mod Files
                 <p>Note that the error is very specific about the load order issue, in an attempt to better guide you into the right load order for whichever mods you are trying to merge. If you see this error, exit xEdit, correct the mod load order in <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a>, re-launch xEdit and perform the merger operation again.</p>
                 <p>If you don't see any errors through the process or after saving, exit xEdit and either test the combined mod file or load it up in the GECK so you can start adding destructible building materials to your mod! Have a nice day, thank you for playing.</p>
             </div>
-            
             <div>
                 <a href="#s_6-4" class="drkbtn">Previous Section</a>
                 <a href="#s_6-5" class="drkbtn">Top of this Section</a>
             </div>
             <!--/.level-nav-->
         </div>
-        
         <div id="s_6-6">
             <h2>6.6 Converting a Plugin into a Master</h2>
             <div>
@@ -256,14 +243,12 @@ title: xEdit Managing Mod Files
                 </div>
                 <p>It is also possible to change a Plugin to a Master using just <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a> or other tools, but there is always the potential of problems with ONAM records. ONAM records are special records created that allow Master files to communicate with one-another when references need to be passed. xEdit ensures that as part of the conversion process, these ONAM records are built and correctly ordered. This is why it is better to make the Plugin to Master conversion using xEdit.</p>
             </div>
-            
             <div>
                 <a href="#s_6-5" class="drkbtn">Previous Section</a>
                 <a href="#s_6-6" class="drkbtn">Top of this Section</a>
             </div>
             <!--/.level-nav-->
         </div>
-        
         <div id="s_6-7">
             <h2>6.7 Splitting a Plugin into a Plugin/Master Pair</h2>
             <div>
@@ -344,14 +329,12 @@ title: xEdit Managing Mod Files
                 <p><strong>Note:</strong>If you have a Plugin with multiple masters, you'll have to edit your GeckCustom.ini &quot;bAllowMultipleMasterLoads=1&quot;</p>
                 <p><strong>Note:</strong>The GECK won't edit .esm's, so you have to ESP'ify, edit in GECK, then <abbr title="Elder-Scrolls Master File">ESM</abbr>'ify.</p>
             </div>
-            
             <div>
                 <a href="#s_6-6" class="drkbtn">Previous Section</a>
                 <a href="#s_6-7" class="drkbtn">Top of this Section</a>
             </div>
             <!--/.level-nav-->
         </div>
-        
         <div id="s_6-8">
             <h2>6.8 Comparing Two Versions of a Mod</h2>
             <div>
@@ -424,14 +407,12 @@ title: xEdit Managing Mod Files
                 </div>
                 <p>With that, we're done with mod comparisons and updates! Of course you should not change the <a href="https://www.nexusmods.com/fallout3/mods/3808">Unofficial Fallout3 Patch</a> as that is for <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=20313">Quarn</a> to do, but there is no harm in experimenting with the mods to learn the process (just make sure to have a backup of the files before you do!).</p>
             </div>
-            
             <div>
                 <a href="#s_6-7" class="drkbtn">Previous Section</a>
                 <a href="#s_6-8" class="drkbtn">Top of this Section</a>
             </div>
             <!--/.level-nav-->
         </div>
-        
         <div id="s_6-9">
             <h2>6.9 Assets Manager</h2>
             <div>
@@ -448,19 +429,15 @@ title: xEdit Managing Mod Files
                 <p><img src="img/assetmanager-choosescript.jpg"></p>
                 <p><img src="img/assetmanager-menu.jpg"></p>
             </div>
-            
             <div>
                 <a href="#s_6-8" class="drkbtn">Previous Section</a>
                 <a href="#s_6-9" class="drkbtn">Top of this Section</a>
             </div>
             <!--/.level-nav-->
         </div>
-        
     </div>
-    
     <div>
         <a href="5-mod-cleaning-and-error-checking.html" class="drkbtn">&laquo; Previous Page</a>
         <a href="7-mod-utilities.html" class="drkbtn">Next Page &raquo;</a>
     </div>
-    
 </section>
