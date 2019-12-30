@@ -173,43 +173,6 @@ a {
   }
 }
 
-.btngroup {
-  display: inline-block;
-  background-color: rgba(23, 130, 130, 0.9);
-  color: rgba(255, 255, 255, 1.0);
-  border-color: rgba(23, 130, 130, 0.2);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 0.3rem;
-  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-  margin: auto 0.1rem;
-  padding: 10px 24px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  @include full {
-    font-size: 0.9rem;
-  }
-  @include huge {
-    font-size: 0.9rem;
-  }
-  @include large {
-    font-size: 0.9rem;
-  }
-  @include medium {
-    font-size: 0.9rem;
-  }
-  @include small {
-    font-size: 0.9rem;
-  }
-}
-
-.btngroup:hover {
-  color: rgba(255, 255, 255, 0.8);
-  background-color: rgba(34, 195, 195, 0.7);
-  border-color: rgba(255, 255, 255, 0.3)
-}
-
 #centered_buttons {
   display: flex;
   justify-content: center;
