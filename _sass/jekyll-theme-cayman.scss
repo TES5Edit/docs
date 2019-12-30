@@ -1,6 +1,7 @@
 @import "normalize";
 @import "rouge-github";
 @import "variables";
+@import "adopted-styles.scss";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 @mixin full {
   @media screen and (min-width: #{$full-breakpoint}) {
@@ -32,6 +33,24 @@
   }
 }
 
+html {
+  @include full {
+    font-size: 16px;
+  }
+  @include huge {
+    font-size: 16px;
+  }
+  @include large {
+    font-size: 16px;
+  }
+  @include medium {
+    font-size: 16px;
+  }
+  @include small {
+    font-size: 16px;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -40,21 +59,6 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  @include full {
-    font-size: 10px;
-  }
-  @include huge {
-    font-size: 10px;
-  }
-  @include large {
-    font-size: 12px;
-  }
-  @include medium {
-    font-size: 14px;
-  }
-  @include small {
-    font-size: 16px;
-  }
   line-height: 1.5;
   color: $body-text-color;
 }
@@ -184,19 +188,19 @@ a {
   background-color: $header-bg-color;
   background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
   @include full {
-    padding: 5.25rem 3.5em;
+    padding: 3rem 4rem;
   }
   @include huge {
-    padding: 5.25rem 3.5em;
+    padding: 2rem 3rem;
   }
   @include large {
-    padding: 3rem 2rem;
+    padding: 1rem 2rem;
   }
   @include medium {
-    padding: 2rem 1rem;
+    padding: 0.9rem 1.50rem;
   }
   @include small {
-    padding: 1rem 0.5rem;
+    padding: 0.9rem 1.25rem;
   }
 }
 
@@ -222,16 +226,16 @@ a {
   margin-top: 0;
   margin-bottom: 0.1rem;
   @include full {
-    font-size: 5.6em;
+    font-size: 2.75rem;
   }
   @include huge {
-    font-size: 5.6em;
+    font-size: 2.75rem;
   }
   @include large {
-    font-size: 3.25rem;
+    font-size: 2.25rem;
   }
   @include medium {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
   @include small {
     font-size: 1.75rem;
@@ -243,16 +247,16 @@ a {
   font-weight: normal;
   opacity: 0.7;
   @include full {
-    font-size: 2.1em;
+    font-size: 2rem;
   }
   @include huge {
-    font-size: 2.1em;
+    font-size: 2rem;
   }
   @include large {
-    font-size: 1.25rem;
+    font-size: 1.50rem;
   }
   @include medium {
-    font-size: 1.15rem;
+    font-size: 1.25rem;
   }
   @include small {
     font-size: 1rem;
@@ -307,25 +311,25 @@ a {
   @include full {
     padding: 2em;
     margin: 0 auto;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
   @include huge {
     padding: 2em;
     margin: 0 auto;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
   @include large {
     padding: 2em;
     margin: 0 auto;
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   @include medium {
     padding: 2em;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
   @include small {
     padding: 2em;
-    font-size: 1rem;
+    font-size: 0.85rem;
   }
   img {
     @include full {
@@ -491,7 +495,7 @@ a {
   margin-top: 2rem;
   border-top: solid 1px $hr-border-color;
   @include full {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   @include huge {
     font-size: 1rem;
@@ -500,10 +504,10 @@ a {
     font-size: 0.9rem;
   }
   @include medium {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
   @include small {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 }
 

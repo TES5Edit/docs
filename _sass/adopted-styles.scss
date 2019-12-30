@@ -48,21 +48,29 @@ html * {
 tr:nth-child(odd) {
   background: $child-odd-bg-color;
 }
+
 tr:nth-child(even) {
   background: $child-even-bg-color;
 }
+
 tr:hover {
-    background-color: $hover-bg-color;
+  background-color: $hover-bg-color;
 }
 
 // Wrapping white-space:nowrap
 table.wontwrap td:nth-child(3n+3) {
-white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
-white-space: -webkit-pre-wrap; /*Chrome & Safari */
-white-space: -pre-wrap;      /* Opera 4-6 */
-white-space: -o-pre-wrap;    /* Opera 7 */
-white-space: pre-wrap;       /* css-3 */
-word-wrap: break-word;       /* Internet Explorer 5.5+ */
-// word-break: break-all; /* main table already has this   */
-white-space: nowrap;
+  white-space: -moz-pre-wrap !important;
+  /* Mozilla, since 1999 */
+  white-space: -webkit-pre-wrap;
+  /*Chrome & Safari */
+  white-space: -pre-wrap;
+  /* Opera 4-6 */
+  white-space: -o-pre-wrap;
+  /* Opera 7 */
+  white-space: pre-wrap;
+  /* css-3 */
+  word-wrap: break-word;
+  /* Internet Explorer 5.5+ */
+  // word-break: break-all; /* main table already has this   */
+  white-space: nowrap;
 }
