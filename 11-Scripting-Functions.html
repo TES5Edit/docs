@@ -83,7 +83,7 @@ title: xEdit Scripting Functions
             <h3 class="scriptHeader">11.2 Using the Delphi IDE to Edit TES5Edit Scripts</h3>
             <div class="main-content">
                 <p>As of TES5Edit version 3.2.1, there is a file in the <code>Edit Scripts</code> directory called <a
-                    rel="nofollow" target="_blank" class="external text"
+                    rel="nofollow" target="_blank"
                     href="https://github.com/TES5Edit/TES5Edit/blob/dev/Edit%20Scripts/xEditAPI.pas">xEditAPI.pas</a>.
                     The contents of that file match what is published here. The xEditAPI.pas includes xEdit API
                     declarations to be used for editing scripts using Delphi.
@@ -94,7 +94,7 @@ title: xEdit Scripting Functions
                 <p>For example purposes in this documentation, we assume a user created xEdit script named <code>GreatScript.pas</code>.
                     However, you can name your script almost anything. There are some limitations though,
                     because the name of the script must match the unit declaration of the script, and
-                    unit names have limitations. See <a rel="nofollow" target="_blank" class="external text"
+                    unit names have limitations. See <a rel="nofollow" target="_blank"
                         href="http://docwiki.embarcadero.com/RADStudio/Tokyo/en/Fundamental_Syntactic_Elements_(Delphi)#Identifiers">Delphi
                     Identifiers</a>
                 </p>
@@ -102,7 +102,7 @@ title: xEdit Scripting Functions
                 </p>
                 <ol>
                     <li>Download the free Delphi Starter edition, called RAD Studio (current version is 10.2) from <a
-                        rel="nofollow" target="_blank" class="external text"
+                        rel="nofollow" target="_blank"
                         href="https://www.embarcadero.com/products/delphi/starter">Embarcadero Delphi Starter</a></li>
                     <li>Create new console application project named <code>GreatScriptApp</code></li>
                     <li>Add the files <code>xEditAPI.pas</code> and <code>GreatScript.pas</code> to the project (menu
@@ -326,7 +326,7 @@ title: xEdit Scripting Functions
                         <td> boolean</td>
                         <td> aeElement: IwbElement
                         </td>
-                        <td> An extension to Delphi's native <a rel="nofollow" target="_blank" class="external text"
+                        <td> An extension to Delphi's native <a rel="nofollow" target="_blank"
                             href="http://www.delphibasics.co.uk/RTL.asp?Name=Assigned">Assigned</a>
                             function: returns true if <i>aeElement</i> is not <i>Nil</i>, and returns false otherwise.
                         </td>
@@ -847,7 +847,7 @@ title: xEdit Scripting Functions
                     </td>
                     <td> Copies an element to a record, e.g. the "Conditions" element on a <a
                         href="/index.php?title=Constructible_Object" title="Constructible Object">COBJ</a> record or
-                        a faction from an <a href="/index.php?title=ActorBase" title="ActorBase" class="mw-redirect">NPC_</a>
+                        a faction from an <a href="/index.php?title=ActorBase" title="ActorBase">NPC_</a>
                         record. Returns the copied element.
                     </td>
                 </tr>
@@ -1229,7 +1229,7 @@ title: xEdit Scripting Functions
                     <td> aeFile: IwbFile;<br/> asEditorID: string
                     </td>
                     <td> Returns the <a href="/index.php?title=Magic_Effect" title="Magic Effect">MGEF</a> or <a
-                        href="/index.php?title=Setting&amp;action=edit&amp;redlink=1" class="new"
+                        href="/index.php?title=Setting&amp;action=edit&amp;redlink=1"
                         title="Setting (page does not exist)">GMST</a> record in <i>aeFile</i> that has the
                         specified EditorID. For all other record types, use something like <code>MainRecordByEditorID(GroupBySignature(f,
                         'ECZN'), 'RandomEncounterZone1')</code>.
@@ -1329,10 +1329,10 @@ title: xEdit Scripting Functions
                     <td> aeRecord: IwbMainRecord
                     </td>
                     <td> Returns the group that <i>aeRecord</i> contains, if any. For example, a <a
-                        href="/index.php?title=Worldspace" title="Worldspace" class="mw-redirect">WRLD</a> record
+                        href="/index.php?title=Worldspace" title="Worldspace">WRLD</a> record
                         will be followed by a GRUP containing the worldspace's <a href="/index.php?title=Cell"
                             title="Cell"
-                            class="mw-redirect">CELLs</a>, and you
+                           >CELLs</a>, and you
                         would use this function to retrieve that group.
                     </td>
                 </tr>
@@ -1401,7 +1401,7 @@ title: xEdit Scripting Functions
                     <td> aeRecord: IwbMainRecord
                     </td>
                     <td> If <i>aeRecord</i> is an exterior <a href="/index.php?title=Cell" title="Cell"
-                        class="mw-redirect">cell</a>, this function will return
+                       >cell</a>, this function will return
                         its grid coordinates as a TwbGridCell; you can access the coordinates by checking <code>returnValue.x</code>
                         and <code>returnValue.y</code>.
                     </td>
@@ -1639,7 +1639,7 @@ title: xEdit Scripting Functions
                     <td> aeRecord: IwbMainRecord
                     </td>
                     <td> Returns the record's signature, a four-character code such as <a
-                        href="/index.php?title=ActorBase" title="ActorBase" class="mw-redirect">NPC_</a> or <a
+                        href="/index.php?title=ActorBase" title="ActorBase">NPC_</a> or <a
                         href="/index.php?title=Topic" title="Topic">DIAL</a>.
                     </td>
                 </tr>
@@ -1691,8 +1691,8 @@ title: xEdit Scripting Functions
                         followed by a group (GRUP) that contains its <a href="/index.php?title=Topic_Info"
                             title="Topic Info">Infos</a> (INFO); and passing
                         that GRUP to this function would retrieve the DIAL. <a href="/index.php?title=Cell" title="Cell"
-                            class="mw-redirect">Cells</a> (CELL) and
-                        <a href="/index.php?title=Worldspace" title="Worldspace" class="mw-redirect">Worldspaces</a>
+                           >Cells</a> (CELL) and
+                        <a href="/index.php?title=Worldspace" title="Worldspace">Worldspaces</a>
                         (WRLD) have their contents set up similarly to Dialogue Topics, so this function will work with
                         them as well.
                     </td>
@@ -1703,7 +1703,7 @@ title: xEdit Scripting Functions
                     <td> aeGroup: IwbGroupRecord;<br/>aiType: integer;<br/> aeMainRecord: IwbMainRecord;<br/>
                     </td>
                     <td> Finds the group record inside another group. The <i>aiType</i> value should match the
-                        group-type values used in <a rel="nofollow" target="_blank" class="external text"
+                        group-type values used in <a rel="nofollow" target="_blank"
                             href="http://en.uesp.net/wiki/Tes5Mod:Mod_File_Format#Groups">the
                         file format</a>. The "Worldspace browser.pas" script uses <code>FindChildGroup(ChildGroup(cell),
                         9, cell);</code> to get the "Temporary" group within a CELL.
@@ -1715,7 +1715,7 @@ title: xEdit Scripting Functions
                     <td> aeGroup: IwbGroupRecord
                     </td>
                     <td> Returns the raw group label, as specified in <a rel="nofollow" target="_blank"
-                        class="external text"
+                       
                         href="http://en.uesp.net/wiki/Tes5Mod:Mod_File_Format#Groups">the
                         file format</a>.
                     </td>
@@ -1726,7 +1726,7 @@ title: xEdit Scripting Functions
                     <td> aeGroup: IwbGroupRecord
                     </td>
                     <td> Returns the raw group type, as specified in <a rel="nofollow" target="_blank"
-                        class="external text"
+                       
                         href="http://en.uesp.net/wiki/Tes5Mod:Mod_File_Format#Groups">the
                         file format</a>.
                     </td>
@@ -2221,7 +2221,7 @@ title: xEdit Scripting Functions
                 <li><i>TSaveDialog</i> used in "Assets browser.pas"</li>
                 <li><i>TScrollBox' used in "ExportImportTexts.pas"</i></li>
                 <li><i>I highly recommend viewing/using MatorTheEternal's <a rel="nofollow" target="_blank"
-                    class="external text"
+                   
                     href="https://github.com/matortheeternal/TES5EditScripts/blob/master/trunk/Edit%20Scripts/mteFunctions.pas">mtefunctions.pas</a>
                     for examples as well.</i>
                 </li>
@@ -2241,7 +2241,7 @@ title: xEdit Scripting Functions
                 </tr>
                 <tr>
                     <td><b>TButton</b></td>
-                    <td><a rel="nofollow" target="_blank" class="external text"
+                    <td><a rel="nofollow" target="_blank"
                         href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TButton.html">TButton</a>
                     </td>
                     <td> Button</td>
@@ -2251,7 +2251,7 @@ title: xEdit Scripting Functions
                 </tr>
                 <tr>
                     <td><b>TCheckBox</b></td>
-                    <td><a rel="nofollow" target="_blank" class="external text"
+                    <td><a rel="nofollow" target="_blank"
                         href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TCheckBox.html">TCheckBox</a>
                     </td>
                     <td> Checkbox</td>
@@ -2265,7 +2265,7 @@ title: xEdit Scripting Functions
                 </tr>
                 <tr>
                     <td><b>TComboBox</b></td>
-                    <td><a rel="nofollow" target="_blank" class="external text"
+                    <td><a rel="nofollow" target="_blank"
                         href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TComboBox.html">TComboBox</a>
                     </td>
                     <td> Combobox</td>
@@ -2276,7 +2276,7 @@ title: xEdit Scripting Functions
                 </tr>
                 <tr>
                     <td><b>TForm</b></td>
-                    <td><a rel="nofollow" target="_blank" class="external text"
+                    <td><a rel="nofollow" target="_blank"
                         href="http://lazarus-ccr.sourceforge.net/docs/lcl/forms/tform.html">TForm</a></td>
                     <td> A dialog?</td>
                     <td> ExportImportTexts.pas</td>
@@ -2285,12 +2285,12 @@ title: xEdit Scripting Functions
                 </tr>
                 <tr>
                     <td><b>TLabel</b></td>
-                    <td><a rel="nofollow" target="_blank" class="external text"
+                    <td><a rel="nofollow" target="_blank"
                         href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TLabel.html">TLabel</a>
                     </td>
                     <td> Used to display ordinary text.</td>
                     <td> none</td>
-                    <td> Set the <a rel="nofollow" target="_blank" class="external text"
+                    <td> Set the <a rel="nofollow" target="_blank"
                         href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TStaticText_Caption.html"><code>Caption</code></a>
                         property to your text. To show line breaks, concatenate <code>#13#10</code> into your string
                         (e.g. <code>'Line 1' + #13#10 + 'Line 2'</code>).
@@ -2298,7 +2298,7 @@ title: xEdit Scripting Functions
                 </tr>
                 <tr>
                     <td><b>TPanel</b></td>
-                    <td><a rel="nofollow" target="_blank" class="external text"
+                    <td><a rel="nofollow" target="_blank"
                         href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/ExtCtrls_TPanel.html">TPanel</a>
                     </td>
                     <td> General-purpose container for UI widgets</td>
@@ -2308,7 +2308,7 @@ title: xEdit Scripting Functions
                 </tr>
                 <tr>
                     <td><b>TStaticText</b></td>
-                    <td><a rel="nofollow" target="_blank" class="external text"
+                    <td><a rel="nofollow" target="_blank"
                         href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TStaticText.html">TStaticText</a>
                     </td>
                     <td> Apparently used to display ordinary text.</td>
@@ -2401,12 +2401,12 @@ end.
         </div>
         <div id="s_11-7">
             <h3 class="scriptHeader">11.7 Pascal implementation</h3>
-            <p>TES5Edit uses JvInterpreter from <a rel="nofollow" target="_blank" class="external text"
+            <p>TES5Edit uses JvInterpreter from <a rel="nofollow" target="_blank"
                 href="https://github.com/project-jedi/jvcl">JVCL</a> to execute Delphi as a
                 scripting language. The standard libraries offered by JvInterpreter directly wrap whatever libraries the containing
                 application (xEdit) was compiled with
             </p>
-            <p>An examination of <a rel="nofollow" target="_blank" class="external text"
+            <p>An examination of <a rel="nofollow" target="_blank"
                 href="https://github.com/TES5Edit/TES5Edit/blob/dev-elminster/wbScriptAdapter.pas">xEdit's
                 own source code</a> indicates that it provides (JvInterpreter's versions of) the following standard
                 libraries to scripts, even if those scripts do not include the libraries via the <code>uses</code>
@@ -2442,7 +2442,7 @@ end.
                 </li>
                 <li>
                     JvInterpreter throws an error if any identifiers in the global scope are redeclared; reportedly,
-                    this differs from <a rel="nofollow" target="_blank" class="external text"
+                    this differs from <a rel="nofollow" target="_blank"
                         href="https://stackoverflow.com/questions/17293008/why-doesnt-the-delphi-compiler-warn-for-a-redefined-constant">the
                     behavior that Delphi has shown since 1987</a>, wherein global identifiers in later-included
                     files shadow those in earlier-included files. Defining them in <code>implementation</code> blocks
@@ -2891,7 +2891,7 @@ end.
                 <tr>
                     <td>anonymous methods
                     </td>
-                    <td>Refer to the <a rel="nofollow" target="_blank" class="external text"
+                    <td>Refer to the <a rel="nofollow" target="_blank"
                         href="http://docwiki.embarcadero.com/RADStudio/XE8/en/Anonymous_Methods_in_Delphi">Embarcadero
                         documentation</a>.
                     </td>
@@ -2924,7 +2924,7 @@ end.
                 <tr>
                     <td>procedural types
                     </td>
-                    <td>Refer to the <a rel="nofollow" target="_blank" class="external text"
+                    <td>Refer to the <a rel="nofollow" target="_blank"
                         href="http://docwiki.embarcadero.com/RADStudio/XE8/en/Procedural_Types">Embarcadero
                         documentation</a>.
                     </td>
@@ -2932,7 +2932,7 @@ end.
                 <tr>
                     <td>structured types
                     </td>
-                    <td>Refer to the <a rel="nofollow" target="_blank" class="external text"
+                    <td>Refer to the <a rel="nofollow" target="_blank"
                         href="http://docwiki.embarcadero.com/RADStudio/XE8/en/Structured_Types">Embarcadero
                         documentation</a>.
                     </td>
@@ -3051,7 +3051,7 @@ end.
                 <tr>
                     <td>object
                     </td>
-                    <td>Used to create <a rel="nofollow" target="_blank" class="external text"
+                    <td>Used to create <a rel="nofollow" target="_blank"
                         href="http://docwiki.embarcadero.com/RADStudio/Berlin/en/Classes_and_Objects_(Delphi)#Object_Types">object
                         types</a>.
                     </td>
@@ -3088,7 +3088,7 @@ end.
                         </th>
                     </tr>
                     <tr>
-                        <td><a rel="nofollow" target="_blank" class="external text"
+                        <td><a rel="nofollow" target="_blank"
                             href="http://docwiki.embarcadero.com/RADStudio/XE2/en/Variant_Support_Routines">Variant
                             support routines</a>
                         </td>
