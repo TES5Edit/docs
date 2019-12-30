@@ -46,7 +46,7 @@ title: xEdit Conflict Detection and Resolution
 <section id="_Toc237480254">
     <h1>4. Conflict Detection and Resolution</h1>
     <div class="content clearfix">
-        <div class="level-2" id="s_4-1">
+        <div id="s_4-1">
             <h2 class="ctrl">4.1 Overview</h2>
             <div class="main-content">
                 <p>One of the primary roles of xEdit is for conflict detection and resolution, so that multiple mods that modify the same records can work together successfully. Conflicts and Overrides are not always bad, and in fact the entire idea of "modding" is to make changes to the game that replace (and thus create a conflict or override for) the original records that came with Fallout3. That is why our goal is to detect conflicts, determine their nature and resolve the bad conflicts while leaving good changes in place.</p>
@@ -60,7 +60,7 @@ title: xEdit Conflict Detection and Resolution
             
         </div>
         
-        <div class="level-2" id="s_4-2">
+        <div id="s_4-2">
             <h2 class="ctrl">4.2 Differences between Conflicts and Overrides</h2>
             <div class="main-content">
                 <p>There is a huge difference between a &quot;conflict&quot; and an &quot;override&quot;. There are mods which override changes from a master file, such as changing the level cap. If for example, ModA changes the level cap to 40 from the default, this over-rides the level 20 cap in the Fallout3 master files and is a normal. Overrides are not conflicting in any way. Overrides show up in xEdit with a Yellow background color and Green text color. In most cases you don't need to do anything with Overrides.</p>
@@ -77,7 +77,7 @@ title: xEdit Conflict Detection and Resolution
             <!--/.level-nav-->
         </div>
         
-        <div class="level-2" id="s_4-3">
+        <div id="s_4-3">
             <h2 class="ctrl">4.3 Applying Conflict Filters</h2>
             <div class="main-content">
                 <p>The application of Filters is the primary means of conflict detection for xEdit. When you apply a filter, the loaded mod data in xEdit is parsed and analyzed via a complex algorithm (described below) to detect all conflicts and overrides. The list of mods in the <a href="2-overview.html#s_2-3-2">Navigation treeview</a> changes color (text and background) based on conflict status of each, and the results are shown in the <a href="2-overview.html#s_2-3-7">View Tab</a> which also changes color (text and background). The color scheme matches throughout xEdit, so you won't have to memorize more than one (described in detail below).</p>
@@ -114,7 +114,7 @@ title: xEdit Conflict Detection and Resolution
             <!--/.level-nav-->
         </div>
         
-        <div class="level-2" id="s_4-4">
+        <div id="s_4-4">
             <h2 class="ctrl">4.4 Color Schemes and Display Order</h2>
             <div class="main-content">
                 <div class="p-img">
@@ -151,7 +151,7 @@ title: xEdit Conflict Detection and Resolution
             <!--/.level-nav-->
         </div>
         
-        <div class="level-2" id="s_4-5">
+        <div id="s_4-5">
             <h2 class="ctrl">4.5 The Conflict Resolution Process</h2>
             <div class="main-content">
                 <p>Conflict Resolution is really a simple process that you repeat multiple times for each conflict in your load order. It is also the point at which your CPU (brain) gets involved in the process, as determining the action to take for each specific conflict requires your input. There are really only four options available to us for conflict resolution:</p>
@@ -197,7 +197,7 @@ title: xEdit Conflict Detection and Resolution
             <!--/.level-nav-->
         </div>
         
-        <div class="level-2" id="s_4-6">
+        <div id="s_4-6">
             <h2 class="ctrl">4.6 Understanding Patch Plugins and Merged Patches</h2>
             <div class="main-content">
                 <p>There are two methods by which you can create a patch plugin to resolve conflicts; by hand or using the automatic merged patch tool. The recommend best-practice with patch Plugins is that you use the automatic merged patch creation tool, after which you review the merged patch and add/remove/correct anything that the automatic tool did not change to your satisfaction. This is necessary because there is often not one "correct" answer to which mod should win a conflict over the same record, and sometimes what is normally deemed correct will not be to your personal liking. We describe the manual patch Plugin creation process first, and then show you how xEdit creates one automatically.</p>
@@ -209,7 +209,7 @@ title: xEdit Conflict Detection and Resolution
             <!--/.level-nav-->
         </div>
         
-        <div class="level-2" id="s_4-7">
+        <div id="s_4-7">
             <h2 class="ctrl">4.7 Creating a Patch Plugin (Manual Method)</h2>
             <div class="main-content">
                 <div class="p-img">
@@ -266,7 +266,7 @@ title: xEdit Conflict Detection and Resolution
             <!--/.level-nav-->
         </div>
         
-        <div class="level-2" id="s_4-8">
+        <div id="s_4-8">
             <h2 class="ctrl">4.8 Creating a Merged Patch (Automatic Method)</h2>
             <div class="main-content">
                 <p>Merges: LVLI, LVLC, LVLN, LVSP, CONT, FACT, RACE, FLST, CREA, NPC</p>
@@ -312,7 +312,7 @@ title: xEdit Conflict Detection and Resolution
             <!--/.level-nav-->
         </div>
         
-        <div class="level-2" id="s_4-9">
+        <div id="s_4-9">
             <h2 class="ctrl">4.9 The Conflict Detection Algorithm</h2>
             <div class="main-content">
                 <p>To round-out our discussion on conflict detection and resolution, we have included the main algorithm (in textural, descriptive form) for your reference. You do not have to read this unless you have an interest in the internal mechanism of how xEdit determines a conflict/override from un-conflicted records.</p>
