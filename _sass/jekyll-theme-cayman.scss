@@ -223,6 +223,24 @@ a {
   }
 }
 
+.project-name:before {
+  @include full {
+    content: ": Full :";
+  }
+  @include huge {
+    content: ": Huge :";
+  }
+  @include large {
+    content: ": Large :";
+  }
+  @include medium {
+    content: ": Medium :";
+  }
+  @include small {
+    content: ": Small :";
+  }
+}
+
 .project-name {
   margin-top: 0;
   margin-bottom: 0.1rem;
