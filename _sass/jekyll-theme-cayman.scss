@@ -105,22 +105,25 @@ a {
     margin-left: 1rem;
   }
   @include full {
-    padding: 1.3rem 1.75rem;
+    padding: 1.1rem;
+    font-size: 1.3rem;
   }
   @include huge {
-    padding: 1.3rem 1.75rem;
+    padding: 1rem;
+    font-size: 1.2rem;
   }
   @include large {
-    padding: 0.75rem 1rem;
+    padding: 0.90rem;
+    font-size: 1.1rem;
   }
   @include medium {
-    padding: 0.6rem 0.9rem;
-    font-size: 0.9rem;
+    padding: 0.80rem;
+    font-size: 1rem;
   }
   @include small {
     display: block;
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.70rem;
     font-size: 0.9rem;
     +.btn {
       margin-top: 1rem;
@@ -149,22 +152,25 @@ a {
     margin-left: 1rem;
   }
   @include full {
-    padding: 1.3rem 1.75rem;
+    padding: 1.1rem;
+    font-size: 1.3rem;
   }
   @include huge {
-    padding: 1.3rem 1.75rem;
+    padding: 1rem;
+    font-size: 1.2rem;
   }
   @include large {
-    padding: 0.75rem 1rem;
+    padding: 0.90rem;
+    font-size: 1.1rem;
   }
   @include medium {
-    padding: 0.6rem 0.9rem;
-    font-size: 0.9rem;
+    padding: 0.80rem;
+    font-size: 1rem;
   }
   @include small {
     display: block;
     width: 100%;
-    padding: 0.75rem;
+    padding: 0.70rem;
     font-size: 0.9rem;
     +.drkbtn {
       margin-top: 1rem;
@@ -323,7 +329,21 @@ a {
     font-size: 1rem;
   }
   img {
-    max-width: 1028px;
+    @include full {
+      max-width: 1028px;
+    }
+    @include huge {
+      max-width: 1028px;
+    }
+    @include large {
+      max-width: 80%;
+    }
+    @include medium {
+      max-width: 75%;
+    }
+    @include small {
+      max-width: 70%;
+    }
   }
   h1,
   h2,
