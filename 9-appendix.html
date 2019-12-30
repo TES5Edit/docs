@@ -48,18 +48,18 @@ title: xEdit Appendix
         <div id="s_9-1">
             <h2>9.1 Sorting is not Alignment (SINA)</h2>
             <div class="main-content">
-                <p class="img"><img src="img/sortalign-1.jpg"></p>
+                <p><img src="img/sortalign-1.jpg"></p>
                 <p><strong>Question:</strong> Why aren't the rows lining up? "NIluva [Niluva Hlaalu]" [NPC_:0001336E] are the same and, they are in both lists, aren't they?</p>
                 <p><strong>Answer:</strong> Sorting is not Alignment (SINA) and to understand that I will show some examples with both xEdit and Beyond Compare a Diff program comparing xEdit source.
-                <p class="img"><img src="img/sortalign-2.jpg"></p>
+                <p><img src="img/sortalign-2.jpg"></p>
                 <p>The above example shows the same type of issue. The block of code starting with "wbRecords(DLBR, 'Dialog Branch'..." exists on both sides. The text is not aligned because the text is out of range of the alignment algorithm. The block of text "wbRecords(SMEM, 'Story Manager Event Node'..." interferes with the alignment.</p>
-                <p class="img"><img src="img/sortalign-3.jpg"></p>
+                <p><img src="img/sortalign-3.jpg"></p>
                 <p>One of the differences with Diff programs is that you can force alignment of code. As shown in the screen shot if I choose "Align With" I can specify where the focus of the alignment should start.</p>
-                <p class="img"><img src="img/sortalign-4.jpg"></p>
+                <p><img src="img/sortalign-4.jpg"></p>
                 <p>Once that happens now "wbRecords(DLBR, 'Dialog Branch'..." is aligned on both sides but since Diff programs do not alter the text in the file prior to aligning it now "wbRecords(SMEM, , 'Story Manager Event Node'..." is no longer aligned.</p>
-                <p class="img"><img src="img/sortalign-5.jpg"></p>
+                <p><img src="img/sortalign-5.jpg"></p>
                 <p>To illustrate that I used Paint to cut and paste the information in the first column to align with the common element in the second column. This is identical to the "Align With" feature in the Diff Program. However, there is no such function to change the focus of the alignment. Even if you could the rest of the information that is not common on both sides is shifted up.</p>
-                <p class="img"><img src="img/sortalign-6.jpg"></p>
+                <p><img src="img/sortalign-6.jpg"></p>
                 <p>The only way to have all the common information aligned is to alter the order of the information which is sorting. You are no longer aligning common information within range you are sorting the information so it will align. That is not what alignment is, Diff programs have no such sort first functionality, and neither does xEdit. Sorting is not Alignment or SINA and to desire both sorting and alignment, you should repent your sins.</p>
             </div>
             
@@ -113,14 +113,14 @@ title: xEdit Appendix
                 <div id="s_9-3-1">
                     <h2>9.3.1 I Know What I'm Doing</h2>
                     <p>Beginners will be presented with the Warning screen when choosing to make changes to a module.</p>
-                    <p class="img"><img src="img/EditWarning.jpg"></p>
+                    <p><img src="img/EditWarning.jpg"></p>
                     <p>Pressing, "Yes" when prompted will allow you to make changes.</p>
-                    <p class="img"><img src="img/image136.jpg"></p>
+                    <p><img src="img/image136.jpg"></p>
                     <p>However, adding the command line parameter <code>-IKnowWhatImDoing</code> will disable that prompt.</p>
                 </div>
                 <div id="s_9-3-2">
                     <h2>9.3.2 Editing the Module's Header</h2>
-                    <p class="img"><img src="img/warn-edit-header.jpg"></p>
+                    <p><img src="img/warn-edit-header.jpg"></p>
                     <p>Unless you are an advanced user and know what you are doing you should not alter the module's header. One example is removing masters from the module's header.  Removing masters without using <a href="https://tes5edit.github.io/docs/5-mod-cleaning-and-error-checking.html#s_5-3-6">Clean Master</a> will cause unresolved references for any records that still reference the master. You should always remove masters using Clean Masters.  However, if you need to make an alteration and know exactly what you are doing then adding the command line parameter <code>-AllowMasterFilesEdit</code> along with <code>-IKnowWhatImDoing</code> will enable you to edit the module's header.</p>
                 </div>
                 <div class="level-nav">
