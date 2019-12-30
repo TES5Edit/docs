@@ -3,14 +3,20 @@
 @import "variables";
 @import "adopted-styles.scss";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@mixin full {
+  @media screen and (min-width: #{$full-breakpoint}) {
+    @content;
+  }
+}
+
 @mixin huge {
-  @media screen and (min-width: #{$huge-breakpoint}) {
+  @media screen and (min-width: #{$huge-breakpoint}) and (max-width: #{$full-breakpoint}) {
     @content;
   }
 }
 
 @mixin large {
-  @media screen and (min-width: #{$large-breakpoint}) {
+  @media screen and (min-width: #{$large-breakpoint}) and (max-width: #{$huge-breakpoint}) {
     @content;
   }
 }
@@ -84,6 +90,9 @@ a {
   +.btn {
     margin-left: 1rem;
   }
+  @include full {
+    padding: 1.3rem 1.75rem;
+  }
   @include huge {
     padding: 1.3rem 1.75rem;
   }
@@ -125,6 +134,9 @@ a {
   +.drkbtn {
     margin-left: 1rem;
   }
+  @include full {
+    padding: 1.3rem 1.75rem;
+  }
   @include huge {
     padding: 1.3rem 1.75rem;
   }
@@ -161,6 +173,15 @@ a {
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  @include full {
+    font-size: 0.9rem;
+  }
+  @include huge {
+    font-size: 0.9rem;
+  }
+  @include large {
+    font-size: 0.9rem;
+  }
   @include medium {
     font-size: 0.9rem;
   }
@@ -185,6 +206,9 @@ a {
   text-align: center;
   background-color: $header-bg-color;
   background-image: linear-gradient(120deg, $header-bg-color-secondary, $header-bg-color);
+  @include full {
+    padding: 5.25rem 3.5em;
+  }
   @include huge {
     padding: 5.25rem 3.5em;
   }
@@ -202,6 +226,9 @@ a {
 .project-name {
   margin-top: 0;
   margin-bottom: 0.1rem;
+  @include full {
+    font-size: 5.6em;
+  }
   @include huge {
     font-size: 5.6em;
   }
@@ -220,6 +247,9 @@ a {
   margin-bottom: 2rem;
   font-weight: normal;
   opacity: 0.7;
+  @include full {
+    font-size: 2.1em;
+  }
   @include huge {
     font-size: 2.1em;
   }
@@ -235,7 +265,39 @@ a {
 }
 
 .scriptTable {
-  font: 1rem Consolas;
+  @include full {
+    font: 1.3rem Consolas;
+  }
+  @include huge {
+    font: 1.2rem Consolas;
+  }
+  @include large {
+    font: 1.1rem Consolas;
+  }
+  @include medium {
+    font: 1rem Consolas;
+  }
+  @include small {
+    font: 0.9rem Consolas;
+  }
+}
+
+.scriptHeader {
+  @include full {
+    font: 1.5rem Consolas;
+  }
+  @include huge {
+    font: 1.3rem Consolas;
+  }
+  @include large {
+    font: 1.2rem Consolas;
+  }
+  @include medium {
+    font: 1.1rem Consolas;
+  }
+  @include small {
+    font: 1rem Consolas;
+  }
 }
 
 .main-content {
@@ -243,24 +305,27 @@ a {
    :first-child {
     margin-top: 0;
   }
-  @include huge {
-    min-width: 100rem;
-    padding: 3.5rem 10.5rem;
+  @include full {
+    padding: 2em;
     margin: 0 auto;
-    font-size: 1.9em;
+    font-size: 1.5rem;
+  }
+  @include huge {
+    padding: 2em;
+    margin: 0 auto;
+    font-size: 1.3rem;
   }
   @include large {
-    max-width: 64rem;
-    padding: 2rem 6rem;
+    padding: 2em;
     margin: 0 auto;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   @include medium {
-    padding: 2rem 4rem;
+    padding: 2em;
     font-size: 1.1rem;
   }
   @include small {
-    padding: 2rem 1rem;
+    padding: 2em;
     font-size: 1rem;
   }
   img {
@@ -412,17 +477,20 @@ a {
   padding-top: 2rem;
   margin-top: 2rem;
   border-top: solid 1px $hr-border-color;
+  @include full {
+    font-size: 1.1rem;
+  }
   @include huge {
-    font-size: 1.75em;
+    font-size: 1rem;
   }
   @include large {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   @include medium {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
   @include small {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 }
 

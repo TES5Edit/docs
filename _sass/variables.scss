@@ -1,7 +1,14 @@
 // Breakpoints
-$huge-breakpoint: 100em !default;
-$large-breakpoint: 64em !default;
-$medium-breakpoint: 42em !default;
+// 1920px
+$full-breakpoint: 1900px !default;
+// 1600px
+$huge-breakpoint: 1580px !default;
+// 1280px
+$large-breakpoint: 1260px !default;
+// 800px
+$medium-breakpoint: 780px !default;
+// 580px or Phone
+$small-breakpoint: 560px !default;
 
 // Headers
 $header-heading-color: #fff !default;

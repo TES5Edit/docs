@@ -73,14 +73,14 @@ title: xEdit Scripting Functions
     <div class="content clearfix">
         <div class="level-3" id="s_11-1">
             <div class="content">
-                <h3>11.1 Description</h3>
+                <h3 class="scriptHeader">11.1 Description</h3>
                 <p>Work in progress: To become the future home of scripting functions for TES5Edit. If you make scripts for TES5Edit please contribute to this page.</p>
                 <p>TES5Edit implements a script engine based on Pascal syntax. The following table enumerates the functions exported by TES5Edit to the script engine that allows interacting with the editor's elements to perform various tasks such as finding records, fixing record conflicts, etc.</p>
                 <p>The information in the table is not complete so please contribute by explaining these functions, their uses and by fixing mistakes in this information.</p>
             </div>
         </div>
         <div class="level-3" id="s_11-2">
-            <h3>11.2 Using the Delphi IDE to Edit TES5Edit Scripts</h3>
+            <h3 class="scriptHeader">11.2 Using the Delphi IDE to Edit TES5Edit Scripts</h3>
             <div class="content">
                 <p>As of TES5Edit version 3.2.1, there is a file in the <code>Edit Scripts</code> directory called <a
                     rel="nofollow" target="_blank" class="external text"
@@ -171,7 +171,7 @@ title: xEdit Scripting Functions
         </div>
         <div class="level-3" id="s_11-3">
             <div class="content">
-                <h3>11.3 TES5Edit Global Variables</h3>
+                <h3 class="scriptHeader">11.3 TES5Edit Global Variables</h3>
                 <p>These are predefined <b>read-only</b> variables that can be called at any time.
                 </p>
                 <table class="scriptTable">
@@ -240,7 +240,7 @@ title: xEdit Scripting Functions
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-4">
-            <h3>11.4 TES5Edit Scripting Functions</h3>
+            <h3 class="scriptHeader">11.4 TES5Edit Scripting Functions</h3>
             <div class="content">
                 <p>xEdit scripts only have access to a generic type called <i>IInterface</i>, which wraps around every
                     object that xEdit returns. However, different types are used internally to classify different objects.
@@ -298,7 +298,7 @@ title: xEdit Scripting Functions
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-4-1">
-            <h3>11.4.1 Global functions</h3>
+            <h3 class="scriptHeader">11.4.1 Global functions</h3>
             <div class="content">
                 <p>These functions can be called on anything and should return a meaningful result.
                 </p>
@@ -408,7 +408,7 @@ title: xEdit Scripting Functions
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-4-2">
-            <h3>11.4.2 IwbElement</h3>
+            <h3 class="scriptHeader">11.4.2 IwbElement</h3>
             <p>These functions can be called on any IwbElement IInterface.
             </p>
             <table class="scriptTable wontwrap">
@@ -860,7 +860,7 @@ title: xEdit Scripting Functions
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-4-3">
-            <h3>11.4.3 IwbContainer</h3>
+            <h3 class="scriptHeader">11.4.3 IwbContainer</h3>
             <table class="scriptTable wontwrap">
                 <tr>
                     <th> Function
@@ -1071,7 +1071,7 @@ title: xEdit Scripting Functions
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-4-4">
-            <h3>11.4.4 IwbFile</h3>
+            <h3 class="scriptHeader">11.4.4 IwbFile</h3>
             <table class="scriptTable wontwrap">
                 <tr>
                     <th> Function
@@ -1095,16 +1095,16 @@ title: xEdit Scripting Functions
                     <td><b>AddNewFileName</b></td>
                     <td> aeFile: IwbFile</td>
                     <td> FileName: String <br/> (optional) ESLFlag: Boolean <br/>
-		    </td>
+                    </td>
                     <td> Creates a new, empty plugin using FileName as the name in the game's plugin folder (Data) and adds it to the end of the
                         plugins list. if applicable, the ESL flag can be set.
                     </td>
                 </tr>
-		<tr>
+                <tr>
                     <td><b>AddNewFile</b></td>
                     <td> aeFile: IwbFile</td>
                     <td> (optional) ESLFlag: Boolean <br/>
-		    </td>
+                    </td>
                     <td> Creates a new, empty plugin in the game's plugin folder (Data) and adds it to the end of the
                         plugins list. if applicable, the ESL flag can be set.
                     </td>
@@ -1285,7 +1285,7 @@ title: xEdit Scripting Functions
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-4-5">
-            <h3>11.4.5 IwbMainRecord</h3>
+            <h3 class="scriptHeader">11.4.5 IwbMainRecord</h3>
             <table class="scriptTable wontwrap">
                 <tr>
                     <th> Function
@@ -1478,8 +1478,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>HighestOverrideOrSelf</b></td>
                     <td> IwbMainRecord</td>
-                    <td> aeRecord: IwbMainRecord <br/>
-		    	 aiMaxIndex: integer
+                    <td> aeRecord: IwbMainRecord <br/> aiMaxIndex: integer
                     </td>
                     <td> if <i>aeRecord</i> is overridden, returns the highest override. otherwise, returns <i>aeRecord<i/> See also: <i>WinningOverride</i>.
                     </td>
@@ -1670,8 +1669,7 @@ title: xEdit Scripting Functions
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-4-6">
-            <h3>
-            11.4.6 IwbGroupRecord</h4>
+            <h3 class="scriptHeader">11.4.6 IwbGroupRecord</h3>
             <table class="scriptTable wontwrap">
                 <tr>
                     <th> Function
@@ -1751,8 +1749,7 @@ title: xEdit Scripting Functions
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-4-7">
-            <h3>
-            11.4.7 IwbResource</h4>
+            <h3 class="scriptHeader">11.4.7 IwbResource</h3>
             <p>These functions are used in "Assets browser.pas", "Assets manager.pas", and "Skyrim - List used
                 scripts.pas".
             </p>
@@ -1836,8 +1833,7 @@ title: xEdit Scripting Functions
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-4-8">
-            <h3>
-            11.4.8 Misc functions</h4>
+            <h3 class="scriptHeader">11.4.8 Misc functions</h3>
             <table class="scriptTable wontwrap">
                 <tr>
                     <th> Function
@@ -2029,7 +2025,7 @@ title: xEdit Scripting Functions
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-4-8-1">
-            <h3>11.4.8.1 NIF functions</h3>
+            <h3 class="scriptHeader">11.4.8.1 NIF functions</h3>
             <table class="scriptTable wontwrap">
                 <tr>
                     <th> Function
@@ -2089,7 +2085,7 @@ title: xEdit Scripting Functions
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-4-8-2">
-            <h3>11.4.8.2 DDS functions</h3>
+            <h3 class="scriptHeader">11.4.8.2 DDS functions</h3>
             <table class="scriptTable wontwrap">
                 <tr>
                     <th> Function
@@ -2137,10 +2133,10 @@ title: xEdit Scripting Functions
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-5">
-            <h3>11.5 Script Structure</h3>
+            <h3 class="scriptHeader">11.5 Script Structure</h3>
         </div>
         <div class="level-3" id="s_11-5-1">
-            <h3>11.5.1 Base Script Functions</h3>
+            <h3 class="scriptHeader">11.5.1 Base Script Functions</h3>
             <p>The are three special functions that TES5Edit will call when a script is run:
             </p>
             <ul>
@@ -2165,7 +2161,7 @@ title: xEdit Scripting Functions
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-5-2">
-            <h3>11.5.2 Hotkeys</h3>
+            <h3 class="scriptHeader">11.5.2 Hotkeys</h3>
             <p>TES5Edit can assign <i>hotkeys</i> to scripts. The script hotkey is defined in the description like this:
             </p>
             <pre>
@@ -2187,7 +2183,7 @@ title: xEdit Scripting Functions
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-5-3">
-            <h3>11.5.3 Script References</h3>
+            <h3 class="scriptHeader">11.5.3 Script References</h3>
             <p>Scripts can use functions defined in other scripts. That allows creating <i>toolkits</i> to avoid
                 duplicating code. To make use of this feature the following instruction is used: (use below the unit
                 name)
@@ -2206,7 +2202,7 @@ title: xEdit Scripting Functions
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-5-4">
-            <h3>11.5.4 Script User Interface</h3>
+            <h3 class="scriptHeader">11.5.4 Script User Interface</h3>
             <ul>
                 <li><i>AddMessage(asMessage)</i> pushes a line to TES5Edit's Information tab.</li>
                 <li><i>InputQuery(asWindowTitle, asWindowText, out sVariableToSet)</i> displays a prompt dialog; it
@@ -2353,7 +2349,7 @@ title: xEdit Scripting Functions
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-6">
-            <h3>11.6 Simple Script Sample</h3>
+            <h3 class="scriptHeader">11.6 Simple Script Sample</h3>
             <p>This is a sample script which will only export every selected NPC to a TXT file:
             </p>
             <pre>{% highlight Pascal %}
@@ -2404,7 +2400,7 @@ end.
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-7">
-            <h3>11.7 Pascal implementation</h3>
+            <h3 class="scriptHeader">11.7 Pascal implementation</h3>
             <p>TES5Edit uses JvInterpreter from <a rel="nofollow" target="_blank" class="external text"
                 href="https://github.com/project-jedi/jvcl">JVCL</a> to execute Delphi as a
                 scripting language. The standard libraries offered by JvInterpreter directly wrap whatever libraries the containing
@@ -2515,7 +2511,7 @@ end.
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-7-1">
-            <h3>11.7.1 xEdit extensions to JvInterpreter</h3>
+            <h3 class="scriptHeader">11.7.1 xEdit extensions to JvInterpreter</h3>
             <p>xEdit extends units (standard libraries) provided by JvInterpreter with the following keywords. Note that
                 since these are automatically included in your script, you can reference them directly and unprefixed
                 (i.e. <code>Pred</code> instead of <code>System.Pred</code>).
@@ -2884,7 +2880,7 @@ end.
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-7-2">
-            <h3>11.7.2 Unsupported language features</h3>
+            <h3 class="scriptHeader">11.7.2 Unsupported language features</h3>
             <table class="scriptTable">
                 <tr>
                     <th>Feature
@@ -2963,7 +2959,7 @@ end.
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-7-3">
-            <h3>11.7.3 Unsupported operators</h3>
+            <h3 class="scriptHeader">11.7.3 Unsupported operators</h3>
             <table class="scriptTable">
                 <tr>
                     <th>Operator
@@ -3011,7 +3007,7 @@ end.
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-7-4">
-            <h3>11.7.4 Unsupported keywords</h3>
+            <h3 class="scriptHeader">11.7.4 Unsupported keywords</h3>
             <table class="scriptTable">
                 <tr>
                     <th>Keyword
@@ -3082,7 +3078,7 @@ end.
             <!--/.level-nav-->
         </div>
         <div class="level-3" id="s_11-7-5">
-            <h3>11.7.5 Unsupported classes and tools</h3>
+            <h3 class="scriptHeader">11.7.5 Unsupported classes and tools</h3>
             <div class="content">
                 <table class="scriptTable">
                     <tr>
