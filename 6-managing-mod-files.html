@@ -43,12 +43,12 @@ title: xEdit Managing Mod Files
     
 </div>
 
-<section>
+<section class="main-content">
     <h1>6. Managing Mod Files</h1>
-    <div class="main-content">
+    <div>
         <div id="s_6-1">
             <h2>6.1 Overview</h2>
-            <div class="main-content">
+            <div>
                 <p>This chapter is dedicated to mod authors, and describes a number of functions and actions that xEdit provides to make mod authors lives easier and their products more standardized. Like the chapter on <a href="5-mod-cleaning-and-error-checking.html">Mod Cleaning and Error Checking</a>, these functions hole mod authors produce products that will be less conflicting with other mods, and will open doors to possibilities that mod authors may not have known existed. Actions like merging mods, splitting them apart into Plugin/Master pairs, adding Master file references and more are documented in the sections below.</p>
             </div>
             
@@ -56,7 +56,7 @@ title: xEdit Managing Mod Files
         
         <div id="s_6-2">
             <h2>6.2 Adding Master Files to a Plugin</h2>
-            <div class="main-content">
+            <div>
                 <p>To reference a record from ExampleMaster.<abbr title="Elder-Scrolls Master File">ESM</abbr> in Plugin.esp you need to add ExampleMaster.<abbr title="Elder-Scrolls Master File">ESM</abbr> to the MASTer list in the File Header of Plugin.esp. This allows the plugin to add/change items found in the ExampleMaster.<abbr title="Elder-Scrolls Master File">ESM</abbr>. xEdit does this by adding a new master to the MAST sub record in the file header and correctly renumbering the FormIDs in the module. This can be very handy for mod authors, as it simplifies the process down to a few mouse clicks, so the mod author can focus on more important things like modding!</p>
                 <div>
                     <p><img src="img/image156.jpg"></p>
@@ -114,7 +114,7 @@ title: xEdit Managing Mod Files
         
         <div id="s_6-3">
             <h2>6.3 Adding ESL flag to a Plugin</h2>
-            <div class="main-content">
+            <div>
                 <p>Load the module you would like to add the ESL flag to and click the plus by the filename to expand the contents.  Click File Header, right click in the View Treeview and choose Edit to be presented with a list of Flags.</p>
                 <p><img src="img/edit-esl-flag.jpg" width="1028"></p>
                 <p>Check the box next to the ESL flag and click Ok.</p>
@@ -132,7 +132,7 @@ title: xEdit Managing Mod Files
         
         <div id="s_6-4">
             <h2>6.4 Changing Mod FormIDs</h2>
-            <div class="main-content">
+            <div>
                 <p>There are times in which you may need to renumber the FormIDs for all records in a plugin to avoid conflicts. This can become necessary if two plugins share the same FormIDs (or some of them), which can result in bad conflicts in-game. Renumbering FormIDs from will change all FormIDs of records belonging to the Mod-file (but not any override records which might be contained in that mod file) so that they start at the specified value.</p>
                 <p>This Function is useful if you have multiple modules that you plan to update in the future, but also want to always provide a merged version (e.g. using FO3Plugin). By assigning non overlapping FormIDs to the different modules, you can make sure that no FormID reassignment of conflicting FormIDs has to take place when merging.</p>
                 <div>
@@ -164,7 +164,7 @@ title: xEdit Managing Mod Files
         
         <div id="s_6-5">
             <h2>6.5 Merging a Plugin into another Plugin or Master</h2>
-            <div class="main-content">
+            <div>
                 <div>
                     <p><img src="img/image170.jpg"></p>
                     <p>One of the common tasks that many mod authors face is the need to merge mod files together into a single plugin or master file. Many mod players also like to merge all of their favorite plugins into a single master file (one modder affectionately calls it, "BORG.esm"). xEdit can be used to accomplish both of these needs, and will ensure that the resulting plugin is synchronized correctly against it's combined references, and that the load orders are correct. The process is illustrated below, starting with loading <a href="https://www.nexusmods.com/fallout3/mods/640"><abbr title="Fallout Mod Manager">FOMM</abbr></a> and ordering the files correctly as shown below:</p>
@@ -222,7 +222,7 @@ title: xEdit Managing Mod Files
         
         <div id="s_6-6">
             <h2>6.6 Converting a Plugin into a Master</h2>
-            <div class="main-content">
+            <div>
                 <div>
                     <p><img src="img/image188.jpg"></p>
                     <p>Converting a Plugin (ESP) into a Master (<abbr title="Elder-Scrolls Master File">ESM</abbr>) file is a simple process that can be doing using xEdit in less than five minutes. The file extension of a Plugin as well as the <abbr title="Elder Scrolls Master">ESM</abbr> flag within its file header must be changed in order to make the transition to a Master file. The screenshot below starts the action by launching xEdit:</p>
@@ -266,7 +266,7 @@ title: xEdit Managing Mod Files
         
         <div id="s_6-7">
             <h2>6.7 Splitting a Plugin into a Plugin/Master Pair</h2>
-            <div class="main-content">
+            <div>
                 <div>
                     <p><img src="img/image202.jpg"></p>
                     <p>Splitting a single Plugin (ESP) into a Master (<abbr title="Elder-Scrolls Master File">ESM</abbr>)/Plugin (ESP) pair can be useful in many situations, especially when a mod author wants to share resources from one Plugin with other Plugins. The only way to share resources between Plugins is to convert those resources into a Master file. The split is a two-part operation in which you first split the single Plugin into a duplicate Plugin and Master at the file (windows explorer) level. You then change the Flagging on one of the two duplicates to turn it into a Master, and change the flagging on the Plugin copy to make reference its new master file. The action begins in windows explorer as shown below:</p>
@@ -354,7 +354,7 @@ title: xEdit Managing Mod Files
         
         <div id="s_6-8">
             <h2>6.8 Comparing Two Versions of a Mod</h2>
-            <div class="main-content">
+            <div>
                 <p>One of the common tasks that mod authors face is to compare two versions of their own mods, either during construction or in subsequent updates. There are also times when mod authors encounter difficult to solve problems with a new version of a mod, and need to revert back to a previous backup. The xEdit compare function can provide a valuable and convenient way of copying data from one version of a mod to another, without having to sort through records that don't belong to their mods. Whatever the case may be, this section is devoted to teaching you how to compare two versions of a mod file, and how to copy records over if the need arises.</p>
                 <div>
                     <p><img src="img/image232.jpg"></p>
@@ -434,7 +434,7 @@ title: xEdit Managing Mod Files
         
         <div id="s_6-9">
             <h2>6.9 Assets Manager</h2>
-            <div class="main-content">
+            <div>
                 <p>Allows you to check for used assets including textures, materials, etc. within meshes and copy assets used by a plugin to separate folder. You can also create a list of files in different formats including the CK assets list used for packaging files using from the CK.</p>
                 <p>Please keep in mind that the script checks only explicitly used assets defined in records. Implicitly used assets are not processed and you need to handle them yourself, for example:</p>
                 <ul>
