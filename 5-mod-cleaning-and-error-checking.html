@@ -328,17 +328,17 @@ title: xEdit Cleaning and-Error Checking
         <div id="s_5-4">
             <h2>5.4 Checking For Reference Errors</h2>
             <div class="main-content">
-                <div class="p-img">
+                <div>
                     <p>The "Check for Reference Errors" function reports any case in which the information contained in a module file does not match the xEdit record definitions. There is a very minimal chance that something that's reported as an error is actually an oversight in the xEdit record definitions and not in the module, but all cases should be reported to be safe. Note that there are errors in the Fallout3.esm and the DLCs. Both <a href="https://www.nexusmods.com/newvegas/users/167469">Elminster</a> and Quarn have gone through them all to ensure they are genuine errors. Running the check is a recommended practice as part of the mod-cleaning process as shown below:</p>
                     <p class="img"><img src="img/image150.jpg"></p>
                 </div>
-                <div class="p-img">
+                <div>
                     <p>When the error-check is complete, the screenshot below shows you how the output will look when errors are found in a module:</p>
                     <p>PACK \ Locations \ PLDT - Location 1 \ Location -> Found a NULL reference, expected: ACHR,ACRE,PBEA,PGRE,PLYR,PMIS,REFR</p>
                     <p>In this example a reference was found but xEdit expected a different type of reference. These kinds of errors are not serious and should be sent to <a href="https://www.nexusmods.com/newvegas/users/167469">Elminster</a> to ensure xEdit has the right information.</p>
                     <p class="img"><img src="img/checkerrors-expected.jpg"></p>
                 </div>
-                <div class="p-img">
+                <div>
                     <p>TES4 \ ONAM - Overriden Forms \ Form #0 -> [1300DBC4] < Error: Could not be resolved ></p>
                     <p>In this example we found Unresolved Reference errors (Ouch!) These errors are very serious as they indicate a record from the mod is trying to reference something, but what it is looking for is missing from the mod or the master of the mod. Mod authors should never leave these uncorrected! They should be corrected by the mod author and not by you!.</p>
                     <p class="img"><img src="img/checkerrors-unresolved.jpg"></p>
@@ -355,7 +355,7 @@ title: xEdit Cleaning and-Error Checking
         <div id="s_5-5">
             <h2>5.5 Checking for Circular Leveled Lists</h2>
             <div class="main-content">
-                <div class="p-img">
+                <div>
                     <p class="img"><img src="img/image154.jpg"></p>
                     <p>With mods it is possible to have Leveled Lists that reference other Leveled Lists that are perfectly valid. However, it's possible in some cases that a mod builds a circular reference (with as little as 2 leveled lists directly referencing each other, or any number of additional leveled lists in the chain). When the game engine then tries to resolve that leveled lists down to a particular item/creature/NPC, it can get caught in the endless loop and crash. This function looks for such cases and identifies them if they exist:</p>
                 </div>
