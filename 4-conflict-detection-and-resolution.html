@@ -216,7 +216,7 @@ title: xEdit Conflict Detection and Resolution
                     <p><img src="img/image086.jpg"></p>
                     <p>To create a patch plugin, you must have already created your conflict detection filter (Section 4.3). To create the new patch Plugin, you right-click on a conflicted record (A) and select, "Copy as override" (B). This will open the file selection window, where you can choose, "&lt;new file&gt;" (E) by either double-clicking it or by checking it's button and clicking, "OK". This will present you with a, "New Module File" window as shown on the next page, where you can select the name of your new patch plugin.</p>
                 </div>
-                <p class="Note"><strong>Note:</strong> Note: You can, "Copy as Override" into any mod as well as &lt;new file&gt;, but we highly recommend that you only modify your own mods!</p>
+                <p><strong>Note:</strong> Note: You can, "Copy as Override" into any mod as well as &lt;new file&gt;, but we highly recommend that you only modify your own mods!</p>
                 <div>
                     <p><img src="img/image088.jpg"></p>
                     <p>The New Module File window allows you to choose any name for your patch plugin, after which you will be prompted to add the mod-name as a master from which you copied the record. The screenshot below illustrates the process:</p>
@@ -316,7 +316,7 @@ title: xEdit Conflict Detection and Resolution
             <h2>4.9 The Conflict Detection Algorithm</h2>
             <div class="main-content">
                 <p>To round-out our discussion on conflict detection and resolution, we have included the main algorithm (in textural, descriptive form) for your reference. You do not have to read this unless you have an interest in the internal mechanism of how xEdit determines a conflict/override from un-conflicted records.</p>
-                <p class="Note"><strong>Note:</strong> The Surgeon General has declared that reading code without a blood/caffeine content of 0.20 may be
+                <p><strong>Note:</strong> The Surgeon General has declared that reading code without a blood/caffeine content of 0.20 may be
                     hazardous to your sanity.
                 </p>
                 <p>xEdit uses a complex algorithm that parses the mod sub-record data at depth, and performs a number of operations on the data to detect conflicts and overrides. While you do not have to memorize this, the main conflict-detection algorithm is described below for reference (and those brave enough to noodle it out):</p>
