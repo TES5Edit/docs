@@ -333,19 +333,19 @@ a {
   }
   img {
     @include full {
-      max-width: 1028px;
+      max-width: 100%;
     }
     @include huge {
-      max-width: 1028px;
+      max-width: 100%;
     }
     @include large {
-      max-width: 80%;
+      max-width: 95%;
     }
     @include medium {
-      max-width: 75%;
+      max-width: 90%;
     }
     @include small {
-      max-width: 70%;
+      max-width: 85%;
     }
   }
   h1,
