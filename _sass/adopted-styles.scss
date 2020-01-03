@@ -1,4 +1,4 @@
-// Table Color Variables
+// Old Table Color Variables Saved for Reference
 $child-odd-bg-color: #8accab !default;
 $child-even-bg-color: #b8e0cc !default;
 $hover-bg-color: #72c19a !default;
@@ -46,15 +46,15 @@ html * {
 
 // Table Row Highlighting
 tr:nth-child(odd) {
-  background: $child-odd-bg-color;
+  background: var(--header1-background);
 }
 
 tr:nth-child(even) {
-  background: $child-even-bg-color;
+  background: var(--header2-background);
 }
 
 tr:hover {
-  background-color: $hover-bg-color;
+  background-color: var(--diff-hunk-background-color);
 }
 
 // Wrapping white-space:nowrap

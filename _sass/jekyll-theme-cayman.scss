@@ -1,5 +1,4 @@
 @import "normalize";
-@import "rouge-github";
 @import "variables";
 @import "adopted-styles.scss";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
@@ -60,9 +59,11 @@ body {
   margin: 0;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  color: $body-text-color;
+  color: var(--body-text-secondary);
+  background: var(--body-background);
 }
 
+// Unused Currently
 #skip-to-content {
   height: 1px;
   width: 1px;
@@ -81,7 +82,7 @@ body {
 }
 
 a {
-  color: $body-link-color;
+  color: var(--href-text);
   text-decoration: none;
   &:hover {
     text-decoration: underline;
@@ -91,6 +92,7 @@ a {
 .btn {
   display: inline-block;
   margin-bottom: 1rem;
+  // Preserve these colors the look goof on the header background
   color: rgba(255, 255, 255, 0.7);
   background-color: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.2);
@@ -201,24 +203,6 @@ a {
   }
   @include small {
     padding: 0.9rem 1.25rem;
-  }
-}
-
-.project-name:before {
-  @include full {
-    content: ": Full :";
-  }
-  @include huge {
-    content: ": Huge :";
-  }
-  @include large {
-    content: ": Large :";
-  }
-  @include medium {
-    content: ": Medium :";
-  }
-  @include small {
-    content: ": Small :";
   }
 }
 
@@ -357,17 +341,19 @@ a {
     margin-top: 2rem;
     margin-bottom: 1rem;
     font-weight: normal;
-    color: $section-headings-color;
+    color: var(--toc-header-text);
   }
   p {
-    margin-bottom: 1em;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    color: var(--body-text-secondary);
   }
   code {
     padding: 2px 4px;
     font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
     font-size: 0.9rem;
-    color: $code-text-color;
-    background-color: $code-bg-color;
+    color: var(--syntax-variable-color);
+    background: var(--header3-background);
     border-radius: 0.3rem;
   }
   pre {
@@ -375,16 +361,16 @@ a {
     margin-top: 0;
     margin-bottom: 1rem;
     font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    color: $code-text-color;
+    color: var(--syntax-variable-color);
+    background: var(--header3-background);
     word-wrap: normal;
-    background-color: $code-bg-color;
     border: solid 1px $border-color;
     border-radius: 0.3rem;
     >code {
       padding: 0;
       margin: 0;
       font-size: 0.9rem;
-      color: $code-text-color;
+      color: var(--syntax-variable-color);
       word-break: normal;
       white-space: pre;
       background: transparent;
@@ -430,7 +416,8 @@ a {
   blockquote {
     padding: 0 1rem;
     margin-left: 0;
-    color: $blockquote-text-color;
+    color: var(--syntax-variable-color);
+    background: var(--header3-background);
     border-left: 0.3rem solid $border-color;
     > :first-child {
       margin-top: 0;
@@ -448,12 +435,12 @@ a {
     -webkit-overflow-scrolling: touch;
     th {
       font-weight: bold;
-      background-color: $table-header-color;
+      background-color: var(--header1-border);
     }
     th,
     td {
       padding: 0.5rem 1rem;
-      border: 1px solid $table-border-color;
+      border: 1px solid var(--header1-border);
     }
   }
   dl {
@@ -475,6 +462,75 @@ a {
     margin: 1rem 0;
     background-color: $hr-border-color;
     border: 0;
+  }
+}
+
+.main-content {
+  h1.header1 {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    color: var(--header1-text);
+    background: var(--header1-background);
+    border-color: var(--header1-border);
+    display: block;
+  }
+  h2.header2 {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    color: var(--header2-text);
+    background: var(--header2-background);
+    border-color: var(--header2-border);
+    display: block;
+  }
+  h3.header3 {
+    font-style: normal;
+    color: var(--header3-text);
+    background: var(--header3-background);
+    border-color: var(--header3-border);
+    display: block;
+  }
+  h4.header4 {
+    font-style: italic;
+    color: var(--header4-text);
+    background: var(--header4-background);
+    border-color: var(--header4-border);
+    display: block;
+  }
+}
+
+font.redfont {
+  color: var(--warning-text-red);
+}
+
+// Main content for Wrte Text Paragraphs
+.main-content {
+  p.empty {
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+  }
+  p.list-1 {
+    margin-left: 0.15in;
+    text-indent: -0.15in
+  }
+  p.list-2 {
+    margin-left: 0.3in;
+    text-indent: -0.15in
+  }
+  p.list-3 {
+    margin-left: 0.45in;
+    text-indent: -0.15in
+  }
+  p.list-4 {
+    margin-left: 0.6in;
+    text-indent: -0.15in
+  }
+  p.list-5 {
+    margin-left: 0.75in;
+    text-indent: -0.15in
+  }
+  p.list-6 {
+    margin-left: 1.00in;
+    text-indent: -0.15in
   }
 }
 

@@ -3,7 +3,8 @@ description: xEdit Documentation
 google_analytics:
 # show_downloads: true
 theme: jekyll-theme-cayman
-highlighter: rouge
 
 gems:
   - jekyll-mentions
+plugins:
+  - jekyll-relative-links

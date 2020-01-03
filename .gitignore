@@ -11,3 +11,4 @@ _site/*
 .sass-cache/*
 .jekyll-cache
 
+/favicon.ico
