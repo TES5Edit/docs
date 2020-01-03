@@ -1,5 +1,5 @@
 ---
-layout: navigation
+layout: default
 title: xEdit Scripting Functions
 ---
 <head>
@@ -112,13 +112,11 @@ title: xEdit Scripting Functions
                         clauses to your script below. Afterwards, the top of your script file should look like this:
                     </li>
                     <pre>
-{% highlight Pascal %}
   unit GreatScript;
 
   interface
   implementation
   uses xEditAPI, Classes, SysUtils, StrUtils, Windows;
-{% endhighlight %}
 </pre>
                     <li>You can add additional Delphi units to the <code>uses</code> clause needed, for example <code>IniFiles</code>
                         if script works with them.
@@ -133,12 +131,11 @@ title: xEdit Scripting Functions
                         pressing <code>F9</code>. Make GreatScriptApp look something like this:
                     </li>
                     <pre>
-{% highlight Pascal %}		 
   program GreatScriptApp;
 
-  {% raw %}{$APPTYPE CONSOLE}
+  {$APPTYPE CONSOLE}
 
-  {$R *.res}{% endraw %}
+  {$R *.res}
 
   uses
     Windows,
@@ -155,7 +152,6 @@ title: xEdit Scripting Functions
         Writeln(E.ClassName, ': ', E.Message);
     end;
   end.
-{% endhighlight %}
 </pre>
                 </ol>
             </div>
@@ -572,7 +568,7 @@ title: xEdit Scripting Functions
                         finally
                         EndUpdate(e);
                         end;
-                        <pre>
+                        </pre>
                     </td>
                 </tr>
                 <tr>
@@ -2146,15 +2142,11 @@ title: xEdit Scripting Functions
             <p>TES5Edit can assign <i>hotkeys</i> to scripts. The script hotkey is defined in the description like this:
             </p>
             <pre>
-{% highlight Pascal %}
-{% raw %}
 {
 	Script description.
 	------------------------
 	Hotkey: Ctrl+Alt+Shift+E
 }
-{% endraw %}
-{% endhighlight %}
 </pre>
             <div>
                 <a href="#s_11-4-5-1" class="drkbtn">Previous Section</a>
@@ -2329,12 +2321,10 @@ title: xEdit Scripting Functions
             <h3 class="scriptHeader">11.6 Simple Script Sample</h3>
             <p>This is a sample script which will only export every selected NPC to a TXT file:
             </p>
-            <pre>{% highlight Pascal %}
-{% raw %}
+            <pre>
 {
 	Script description: Exports the FormID and EditorID of the selected NPCs
 }
-{% endraw %}
 
 // This is the unit name that will contain all the script functions
 unit ExportScripts;
@@ -2368,7 +2358,7 @@ begin
 end;
 
 end.
-{% endhighlight %}</pre>
+</pre>
             <div>
                 <a href="#s_11-5-4" class="drkbtn">Previous Section</a>
                 <a href="#s_11-6" class="drkbtn">Top of this Group</a>
