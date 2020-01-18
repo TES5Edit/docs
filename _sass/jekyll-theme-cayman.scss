@@ -483,6 +483,9 @@ body {
   ol {
     margin-top: 0;
   }
+  .list-no-bullet {
+    list-style-type: none
+  }
   blockquote {
     padding: 0 0.75rem;
     margin-left: 0;
@@ -510,7 +513,7 @@ body {
     th,
     td {
       padding: 0.25rem 0.75rem;
-      border: 1px solid var(--header1-border);
+      border: 0.13rem solid var(--header-border);
     }
   }
   dl {
