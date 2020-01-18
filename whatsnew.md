@@ -1,5 +1,5 @@
 ---
-layout: navigation
+layout: default
 title: xEdit What's New
 ---
 # What's new in xEdit 4.0.3?

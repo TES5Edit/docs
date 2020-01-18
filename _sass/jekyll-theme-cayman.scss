@@ -214,7 +214,8 @@ body {
 .gridhead2 { grid-area: image; }
 .gridhead3 { grid-area: header; }
 .gridhead4 { grid-area: padding2; }
-.gridhead5 { grid-area: buttons; }
+.gridhead5 { grid-area: nav-buttons; }
+.gridhead6 { grid-area: page-buttons; }
 
 .toc1 { grid-area: lefttoc; }
 .toc2 { grid-area: righttoc; }
@@ -233,20 +234,31 @@ body {
   div.gridhead5 {
     text-align: center;
   }
+  div.gridhead6 {
+    text-align: center;
+  }
   @include full {
-    grid-template-areas: 'padding1 image header padding2' 'buttons buttons buttons buttons';
+    grid-template-areas: 'padding1 image header padding2'
+    'nav-buttons nav-buttons nav-buttons nav-buttons'
+    'page-buttons page-buttons page-buttons page-buttons';
   }
   @include huge {
-    grid-template-areas: 'padding1 image header padding2' 'buttons buttons buttons buttons';
+    grid-template-areas: 'padding1 image header padding2'
+    'nav-buttons nav-buttons nav-buttons nav-buttons'
+    'page-buttons page-buttons page-buttons page-buttons';
   }
   @include large {
-    grid-template-areas: 'padding1 image header padding2' 'buttons buttons buttons buttons';
+    grid-template-areas: 'padding1 image header padding2'
+    'nav-buttons nav-buttons nav-buttons nav-buttons'
+    'page-buttons page-buttons page-buttons page-buttons';
   }
   @include medium {
-    grid-template-areas: 'padding1 image header padding2' 'buttons buttons buttons buttons';
+    grid-template-areas: 'padding1 image header padding2'
+    'nav-buttons nav-buttons nav-buttons nav-buttons'
+    'page-buttons page-buttons page-buttons page-buttons';
   }
   @include small {
-    grid-template-areas: 'padding1' 'image' 'header' 'padding2' 'buttons';
+    grid-template-areas: 'padding1' 'image' 'header' 'padding2' 'nav-buttons' 'page-buttons';
     div.gridhead2 {
       text-align: center;
     }
@@ -254,6 +266,9 @@ body {
       text-align: center;
     }
     div.gridhead5 {
+      text-align: center;
+    }
+    div.gridhead6 {
       text-align: center;
     }
   }
