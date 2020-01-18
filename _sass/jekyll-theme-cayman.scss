@@ -383,11 +383,12 @@ body {
   }
   figure.image-caption {
     @include full {
-      max-width: 40%;
+      max-width: 1044px;
+      height: auto;
       padding: 10px;
     }
     @include huge {
-      max-width: 40%;
+      max-width: 1024px;
       padding: 10px;
     }
     @include large {
