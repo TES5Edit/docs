@@ -3,7 +3,7 @@ description: xEdit Documentation
 google_analytics:
 exclude: [
   'pagebuilder/',
-  'idea/',
+  '.idea/',
 ]
 # show_downloads: true
 theme: jekyll-theme-cayman
