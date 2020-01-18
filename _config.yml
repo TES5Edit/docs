@@ -1,6 +1,9 @@
 title: Tome of xEdit
 description: xEdit Documentation
 google_analytics:
+exclude: [
+  'pagebuilder/',
+]
 # show_downloads: true
 theme: jekyll-theme-cayman
 

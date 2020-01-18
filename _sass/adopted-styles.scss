@@ -54,7 +54,7 @@ tr:nth-child(even) {
 }
 
 tr:hover {
-  background-color: var(--diff-hunk-background-color);
+  background-color: var(--code-background);
 }
 
 // Wrapping white-space:nowrap

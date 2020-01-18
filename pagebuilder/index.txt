@@ -1,0 +1,34 @@
+{{PAGETITLE="Tome of xEdit"}}
+## Tome of xEdit - by Miax
+<font class="green">A Comprehensive Guide to using ElminsterAU's xEdit. Original author's Miax (Kristopher Kortright) and JustinOther. HTML conversion by EpFwip. Maintained by Sharlikran. Additional updates to this site will be made using Wrye Text.</font>
+
+## Contents...
+{{CONTENTS=2}}
+
+## 1. Introduction
+
+This document is intended as a training manual for the xEdit tool created by ElminsterAU. This manual contains a tour of xEdit, a lengthy FAQ/Navigator and several Chapters of detailed instructions on how you can utilize the varied functions of xEdit successfully to improve your gaming experience.
+
+The questions answered and processes described herein are intended to help both mod-users and mod-authors to improve the quality, standardization and conformity of Bethesda mods. If you utilize more than 25 mods in your game or if you write mods you can use xEdit to resolve potential conflicts, clean mods, and smoothen the loading process. With thousands of mods already created and thousands more on the way, it has become essential to standardize mod delivery and reduce conflicts where-ever possible.
+
+{{nav:s_1-1}}
+### 1.1 About This Document
+
+This document presumes a basic understanding of what "Mods" are, and how to install them on your system. This manual is not a guide on how to build mods, and the use of xEdit for extensive mod changes is discouraged for most users "that's" what the GECK was built for.
+
+This document is a work in progress. ElminsterAU is also a prodigious coder that continues to make updates to improve the quality of xEdit. Since October of 2012 Zilav, Hlp, and Sharlikran have maintained and updated xEdit. This documentation is being updated to include new features and UI changes.
+
+This site will be replacing the [[https://www.creationkit.com/index.php?title=TES5Edit_Documentation | Bethesda Wiki]] page since too many security measures (captcha) are in place that make editing the page cumbersome. Most of the [[https://www.creationkit.com/index.php?title=Category:TES5Edit | TES5Edit Wiki]] information from the CK Wiki is repeated in these docs. Once I am completely finished, I will add more links to direct people to these pages instead.
+
+All feedback and comments about this guide should be directed to Sharlikran on the xEdit Discord:
+
+* [[https://discord.gg/5t8RnNQ | xEdit Discord]]
+* [[https://www.nexusmods.com/users/4147439 | Sharlikran]]
+
+## 2. Credits
+* Original authors of the [[https://www.nexusmods.com/fallout3/mods/8629 | FO3Edit Training Manual]] and the [[https://www.nexusmods.com/newvegas/mods/38413 | FNVEdit Training Manual]] are Miax (Kristopher Kortright) and JustinOther.
+* EpFwip for making the original HTML conversion of the FO3Edit Training Manual.
+* JustinOther, Gurgate, MadCat221, Plplecuyer, Jannifer, Computermaster, Proton, and WrinklyNinja for their revisions to the [[https://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit | TES5Edit Cleaning Guide]]. (CK Wiki Link)
+* DavidJCobb, Robboten, J.C., Hishutup, for their contributins to the [[https://www.creationkit.com/index.php?title=TES5Edit_Scripting_Functions | TES5Edit Scripting Functions]]. (CK Wiki Link)
+
+<a href="2-overview.html" class="drkbtn">Next Page &raquo;</a>
