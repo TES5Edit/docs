@@ -30,6 +30,7 @@ title: xEdit Scripting Functions
             <li><a href="#s_11-2">11.2 Using the Delphi IDE to Edit TES5Edit Scripts</a></li>
             <li><a href="#s_11-3">11.3 TES5Edit Global Variables</a></li>
             <li><a href="#s_11-4">11.4 TES5Edit Scripting Functions</a></li>
+			<li>
             <ul>
                 <li><a href="#s_11-4-1">11.4.1 Global functions</a></li>
                 <li><a href="#s_11-4-2">11.4.2 IwbElement</a></li>
@@ -39,20 +40,26 @@ title: xEdit Scripting Functions
                 <li><a href="#s_11-4-6">11.4.6 IwbGroupRecord</a></li>
                 <li><a href="#s_11-4-7">11.4.7 IwbResource</a></li>
                 <li><a href="#s_11-4-8">11.4.8 Misc functions</a></li>
+				<li>
                 <ul>
                     <li><a href="#s_11-4-8-1">11.4.8.1 NIF functions</a></li>
                     <li><a href="#s_11-4-8-2">11.4.8.2 DDS functions</a></li>
                 </ul>
+				</li>
             </ul>
+			</li>
             <li><a href="#s_11-5">11.5 Script Structure</a></li>
+			<li>
             <ul>
                 <li><a href="#s_11-5-1">11.5.1 Base Script Functions</a></li>
                 <li><a href="#s_11-5-2">11.5.2 Hotkeys</a></li>
                 <li><a href="#s_11-5-3">11.5.3 Script References</a></li>
                 <li><a href="#s_11-5-4">11.5.4 Script User Interface</a></li>
             </ul>
+			</li>
             <li><a href="#s_11-6">11.6 Simple Script Sample</a></li>
             <li><a href="#s_11-7">11.7 Pascal implementation</a></li>
+			<li>
             <ul>
                 <li><a href="#s_11-7-1">11.7.1 xEdit extensions to JvInterpreter</a></li>
                 <li><a href="#s_11-7-2">11.7.2 Unsupported language features</a></li>
@@ -60,6 +67,7 @@ title: xEdit Scripting Functions
                 <li><a href="#s_11-7-4">11.7.4 Unsupported keywords</a></li>
                 <li><a href="#s_11-7-5">11.7.5 Unsupported classes and tools</a></li>
             </ul>
+			</li>
         </ul>
     </div>
 </div>
@@ -109,13 +117,13 @@ title: xEdit Scripting Functions
                     <li>Then add/update the <code>interface</code>, <code>implementation</code>, and <code>uses</code>
                         clauses to your script below. Afterwards, the top of your script file should look like this:
                     </li>
-                    <pre>
+					<li><pre>
   unit GreatScript;
 
   interface
   implementation
   uses xEditAPI, Classes, SysUtils, StrUtils, Windows;
-</pre>
+</pre></li>
                     <li>You can add additional Delphi units to the <code>uses</code> clause needed, for example <code>IniFiles</code>
                         if script works with them.
                     </li>
@@ -128,7 +136,7 @@ title: xEdit Scripting Functions
                     <li>You can also modify the GreatScriptApp file and have it run your xEdit script from Delphi by
                         pressing <code>F9</code>. Make GreatScriptApp look something like this:
                     </li>
-                    <pre>
+                    <li><pre>
   program GreatScriptApp;
 
   {$APPTYPE CONSOLE}
@@ -150,7 +158,7 @@ title: xEdit Scripting Functions
         Writeln(E.ClassName, ': ', E.Message);
     end;
   end.
-</pre>
+</pre></li>
                 </ol>
             </div>
             <div>
@@ -372,7 +380,7 @@ title: xEdit Scripting Functions
                     <tr>
                         <td><b>wbFilterStrings</b></td>
                         <td></td>
-                        <td> akListIn: TStrings;<br/> akListOut: TStrings;<br/> asFilter: String
+                        <td> akListIn: TStrings;<br> akListOut: TStrings;<br> asFilter: String
                         </td>
                         <td> Modifies <i>akListOut</i>, adding every entry in <i>akListIn</i> that contains the substring
                             <i>asFilter</i>.
@@ -483,7 +491,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>ClearElementState</b></td>
                     <td></td>
-                    <td> aeElement: IwbElement;<br/> aiState: TwbElementState
+                    <td> aeElement: IwbElement;<br> aiState: TwbElementState
                     </td>
                     <td> Manipulates the internal flags of an element, e.g. <code>ClearElementState(eElement,
                         esModified);</code>. See also: <i>GetElementState</i>, <i>SetElementState</i>.
@@ -517,7 +525,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>ElementAssign</b></td>
                     <td> IwbElement</td>
-                    <td> aeContainer: IwbContainer;<br/> aiIndex: integer;<br/> aeSource: IwbElement;<br/> abOnlySK:
+                    <td> aeContainer: IwbContainer;<br> aiIndex: integer;<br> aeSource: IwbElement;<br> abOnlySK:
                         boolean
                     </td>
                     <td>
@@ -581,7 +589,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>Equals</b></td>
                     <td> boolean</td>
-                    <td> aeElement1: IwbElement;<br/> aeElement2: IwbElement
+                    <td> aeElement1: IwbElement;<br> aeElement2: IwbElement
                     </td>
                     <td> Compares two elements by their ElementID. This is sometimes necessary, as different IInterface
                         variables pointing to the same element don't always compare properly when using the
@@ -626,7 +634,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>GetElementState</b></td>
                     <td> TwbElementState</td>
-                    <td> aeElement: IwbElement;<br/> aiState: TwbElementState
+                    <td> aeElement: IwbElement;<br> aiState: TwbElementState
                     </td>
                     <td> Checks the internal flags of an element. See also: <i>ClearElementState</i>,
                         <i>SetElementState</i>.
@@ -745,7 +753,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>ReportRequiredMasters</b></td>
                     <td></td>
-                    <td> aeElement: IwbElement;<br/> akListOut: TStrings;<br/> akUnknown1: boolean;<br/> akUnknown2:
+                    <td> aeElement: IwbElement;<br> akListOut: TStrings;<br> akUnknown1: boolean;<br> akUnknown2:
                         boolean
                     </td>
                     <td> Checks which master files <i>aeElement</i> depends on, and adds their filenames to
@@ -756,7 +764,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>SetEditValue</b></td>
                     <td> string</td>
-                    <td> aeElement: IwbElement;<br/> asValue: string
+                    <td> aeElement: IwbElement;<br> asValue: string
                     </td>
                     <td> Sets the element's value to one that matches the string representation passed in. See also: <i>GetEditValue</i>,
                         <i>GetElementEditValues</i>, <i>SetElementEditValues</i>.
@@ -765,7 +773,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>SetElementState</b></td>
                     <td> TwbElementState</td>
-                    <td> aeElement: IwbElement;<br/> aiState: TwbElementState
+                    <td> aeElement: IwbElement;<br> aiState: TwbElementState
                     </td>
                     <td> Manipulates the internal flags of an element. Returns the value prior to modification. See
                         also: <i>ClearElementState</i>, <i>GetElementState</i>.
@@ -774,7 +782,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>SetNativeValue</b></td>
                     <td> string</td>
-                    <td> aeElement: IwbElement;<br/> avValue: variant
+                    <td> aeElement: IwbElement;<br> avValue: variant
                     </td>
                     <td> Sets the element's value. See also: <i>GetNativeValue</i>, <i>GetElementNativeValues</i>, <i>SetElementNativeValues</i>.
                     </td>
@@ -810,7 +818,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>wbCopyElementToFile</b></td>
                     <td> IwbElement</td>
-                    <td> aeElement: IwbElement;<br/> aeFile: IwbFile;<br/> abAsNew: boolean;<br/> abDeepCopy: boolean
+                    <td> aeElement: IwbElement;<br> aeFile: IwbFile;<br> abAsNew: boolean;<br> abDeepCopy: boolean
                     </td>
                     <td> Copies an IwbMainRecord, IwbGroupRecord, or IwbContainer to the specified file. The
                         <i>abAsNew</i> boolean controls whether or not you're copying the record as an override record.
@@ -820,8 +828,8 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>wbCopyElementToFileWithPrefix</b></td>
                     <td> IwbElement</td>
-                    <td> aeElement: IwbElement;<br/> aeFile: IwbFile;<br/> abAsNew: boolean;<br/> abDeepCopy:
-                        boolean;<br/> aPrefixRemove;<br/> aPrefix;<br/> aSuffix: string
+                    <td> aeElement: IwbElement;<br> aeFile: IwbFile;<br> abAsNew: boolean;<br> abDeepCopy:
+                        boolean;<br> aPrefixRemove;<br> aPrefix;<br> aSuffix: string
                     </td>
                     <td> Details unknown. Returns the copied element.
                     </td>
@@ -829,7 +837,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>wbCopyElementToRecord</b></td>
                     <td> IwbElement</td>
-                    <td> aeElement: IwbElement;<br/> aeRecord: IwbMainRecord;<br/> abAsNew: boolean;<br/> abDeepCopy:
+                    <td> aeElement: IwbElement;<br> aeRecord: IwbMainRecord;<br> abAsNew: boolean;<br> abDeepCopy:
                         boolean
                     </td>
                     <td> Copies an element to a record, e.g. the "Conditions" element on a <a
@@ -861,7 +869,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>Add</b></td>
                     <td> IwbElement</td>
-                    <td> aeContainer: IwbContainer;<br/> asNameOrSignature: string;<br/> abSilent: boolean
+                    <td> aeContainer: IwbContainer;<br> asNameOrSignature: string;<br> abSilent: boolean
                     </td>
                     <td> Creates a child element with the name-or-signature <i>asNameOrSignature</i> in
                         <i>aeContainer</i> if no such child already exists; otherwise, marks the existing child as
@@ -871,7 +879,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>AddElement</b></td>
                     <td></td>
-                    <td> aeContainer: IwbContainer;<br/> aeElement: IwbElement
+                    <td> aeContainer: IwbContainer;<br> aeElement: IwbElement
                     </td>
                     <td> Adds <i>aeElement</i> as a child of <i>aeContainer</i>. Throws an error if <i>aeElement</i>
                         already has a container.
@@ -901,7 +909,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>ElementByIndex</b></td>
                     <td> IwbElement</td>
-                    <td> aeContainer: IwbContainer;<br/> aiIndex: integer
+                    <td> aeContainer: IwbContainer;<br> aiIndex: integer
                     </td>
                     <td> Returns the <i>aiIndex</i>-th child element in <i>aeContainer</i>. See also:
                         <i>ElementCount</i>.
@@ -910,7 +918,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>ElementByName</b></td>
                     <td> IwbElement</td>
-                    <td> aeContainer: IwbContainer;<br/> asName: string
+                    <td> aeContainer: IwbContainer;<br> asName: string
                     </td>
                     <td> Searches <i>aeContainer</i> for the child element with name <i>asName</i>, and returns the
                         found element or <i>Nil</i>. See also: <i>ElementExists</i>.
@@ -919,7 +927,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>ElementByPath</b></td>
                     <td> IwbElement</td>
-                    <td> aeContainer: IwbContainer;<br/> asPath: string
+                    <td> aeContainer: IwbContainer;<br> asPath: string
                     </td>
                     <td> Searches <i>aeContainer</i> for the descendant element specified by path <i>asPath</i>, and
                         returns the found element or <i>Nil</i>.
@@ -928,7 +936,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>ElementBySignature</b></td>
                     <td> IwbElement</td>
-                    <td> aeContainer: IwbContainer;<br/> asSignature: string
+                    <td> aeContainer: IwbContainer;<br> asSignature: string
                     </td>
                     <td> Searches <i>aeContainer</i> for the child element with signature <i>asSignature</i>, and
                         returns the found element or <i>Nil</i>.
@@ -945,7 +953,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>ElementExists</b></td>
                     <td> boolean</td>
-                    <td> aeContainer: IwbContainer;<br/> asName: string
+                    <td> aeContainer: IwbContainer;<br> asName: string
                     </td>
                     <td> Returns true if <i>aeContainer</i> as a child element whose name is <i>asName</i>. See also:
                         <i>ElementByName</i>.
@@ -954,7 +962,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>GetElementEditValues</b></td>
                     <td> string</td>
-                    <td> aeContainer: IwbContainer;<br/> asPath: string
+                    <td> aeContainer: IwbContainer;<br> asPath: string
                     </td>
                     <td> Finds the element within <i>aeContainer</i> specified by <i>asPath</i>, and returns a string
                         representation of its value.
@@ -963,7 +971,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>GetElementNativeValues</b></td>
                     <td> variant</td>
-                    <td> aeContainer: IwbContainer;<br/> asPath: string
+                    <td> aeContainer: IwbContainer;<br> asPath: string
                     </td>
                     <td> Finds the element within <i>aeContainer</i> specified by <i>asPath</i>, and returns its value.
                     </td>
@@ -971,7 +979,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>IndexOf</b></td>
                     <td> integer</td>
-                    <td> aeContainer: IwbContainer;<br/> aeChild: IwbElement
+                    <td> aeContainer: IwbContainer;<br> aeChild: IwbElement
                     </td>
                     <td> Returns the index of <i>aeChild</i> in <i>aeContainer</i>, or -1 if <i>aeChild</i> is not a
                         child element of <i>aeContainer</i>.
@@ -980,7 +988,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>InsertElement</b></td>
                     <td></td>
-                    <td> aeContainer: IwbContainer;<br/> aiPosition: Integer;<br/> aeElement: IwbElement
+                    <td> aeContainer: IwbContainer;<br> aiPosition: Integer;<br> aeElement: IwbElement
                     </td>
                     <td> Inserts <i>aeElement</i> as a child of <i>aeContainer</i> at the specified position.
                     </td>
@@ -1007,7 +1015,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>RemoveByIndex</b></td>
                     <td> IwbElement</td>
-                    <td> aeContainer: IwbContainer;<br/> aiIndex: integer;<br/> abMarkModified: boolean
+                    <td> aeContainer: IwbContainer;<br> aiIndex: integer;<br> abMarkModified: boolean
                     </td>
                     <td> Removes the <i>aiIndex</i>-th child from <i>aeContainer</i>, and returns it.
                     </td>
@@ -1015,7 +1023,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>RemoveElement</b></td>
                     <td> IwbElement</td>
-                    <td> aeContainer: IwbContainer;<br/> avChild: variant
+                    <td> aeContainer: IwbContainer;<br> avChild: variant
                     </td>
                     <td> Removes <i>avChild</i> from <i>aeContainer</i> and returns the removed element. The
                         <i>avChild</i> argument can be: the index of an element to remove from an array container; the
@@ -1033,7 +1041,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>SetElementEditValues</b></td>
                     <td></td>
-                    <td> aeContainer: IwbContainer;<br/> asPath: string;<br/> asValue: string
+                    <td> aeContainer: IwbContainer;<br> asPath: string;<br> asValue: string
                     </td>
                     <td> Finds the element within <i>aeContainer</i> specified by <i>asPath</i>, and sets its value
                         based on the string representation <i>asValue</i>.
@@ -1042,7 +1050,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>SetElementNativeValues</b></td>
                     <td></td>
-                    <td> aeContainer: IwbContainer;<br/> asPath: string;<br/> avValue: variant
+                    <td> aeContainer: IwbContainer;<br> asPath: string;<br> avValue: variant
                     </td>
                     <td> Finds the element within <i>aeContainer</i> specified by <i>asPath</i>, and sets its value to
                         <i>asValue</i>.
@@ -1071,7 +1079,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>AddMasterIfMissing</b></td>
                     <td></td>
-                    <td> aeFile: IwbFile;<br/> asMasterFilename: string
+                    <td> aeFile: IwbFile;<br> asMasterFilename: string
                     </td>
                     <td> Adds the specified file as a master for <i>aeFile</i>, if it isn't already a master.
                     </td>
@@ -1079,7 +1087,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>AddNewFileName</b></td>
                     <td> aeFile: IwbFile</td>
-                    <td> FileName: String <br/> (optional) ESLFlag: Boolean <br/>
+                    <td> FileName: String <br> (optional) ESLFlag: Boolean <br>
                     </td>
                     <td> Creates a new, empty plugin using FileName as the name in the game's plugin folder (Data) and adds it to the end of the
                         plugins list. if applicable, the ESL flag can be set.
@@ -1088,7 +1096,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>AddNewFile</b></td>
                     <td> aeFile: IwbFile</td>
-                    <td> (optional) ESLFlag: Boolean <br/>
+                    <td> (optional) ESLFlag: Boolean <br>
                     </td>
                     <td> Creates a new, empty plugin in the game's plugin folder (Data) and adds it to the end of the
                         plugins list. if applicable, the ESL flag can be set.
@@ -1117,7 +1125,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>FileWriteToStream</b></td>
                     <td></td>
-                    <td> aeFile: IwbFile;<br/> akOutStream: TStream
+                    <td> aeFile: IwbFile;<br> akOutStream: TStream
                     </td>
                     <td> Writes the contents of <i>aeFile</i> to <i>akOutStream</i>. Used in "SaveAs.pas" to allow a
                         user to save a loaded file under a new name; that script creates a TFileStream object and uses
@@ -1160,7 +1168,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>GroupBySignature</b></td>
                     <td> IwbGroupRecord</td>
-                    <td> aeFile: IwbFile;<br/> asSignature: string
+                    <td> aeFile: IwbFile;<br> asSignature: string
                     </td>
                     <td> If <i>aeFile</i> has a top-level group with the specified signature, that group is returned.
                     </td>
@@ -1168,7 +1176,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>HasGroup</b></td>
                     <td> boolean</td>
-                    <td> aeFile: IwbFile;<br/> asSignature: string
+                    <td> aeFile: IwbFile;<br> asSignature: string
                     </td>
                     <td> Returns <i>True</i> if <i>aeFile</i> contains a top-level group with the specified signature.
                     </td>
@@ -1176,7 +1184,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>HasMaster</b></td>
                     <td> boolean</td>
-                    <td> aeFile: IwbFile;<br/> asMasterFilename: string
+                    <td> aeFile: IwbFile;<br> asMasterFilename: string
                     </td>
                     <td> Returns <i>True</i> if <i>aeFile</i> has a file with the name <i>asMasterFilename</i> as a
                         master.
@@ -1195,7 +1203,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>MasterByIndex</b></td>
                     <td> IwbFile</td>
-                    <td> aeFile: IwbFile;<br/> aiIndex: integer
+                    <td> aeFile: IwbFile;<br> aiIndex: integer
                     </td>
                     <td> Returns the <i>aiIndex</i>-th master file for <i>aeFile</i>.
                     </td>
@@ -1211,7 +1219,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>RecordByEditorID</b></td>
                     <td> IwbMainRecord</td>
-                    <td> aeFile: IwbFile;<br/> asEditorID: string
+                    <td> aeFile: IwbFile;<br> asEditorID: string
                     </td>
                     <td> Returns the <a href="/index.php?title=Magic_Effect" title="Magic Effect">MGEF</a> or <a
                         href="/index.php?title=Setting&amp;action=edit&amp;redlink=1"
@@ -1223,7 +1231,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>RecordByFormID</b></td>
                     <td> IwbMainRecord</td>
-                    <td> aeFile: IwbFile;<br/> aiFormID: integer;<br/> abAllowInjected: boolean
+                    <td> aeFile: IwbFile;<br> aiFormID: integer;<br> abAllowInjected: boolean
                     </td>
                     <td> Returns the main record in <i>aeFile</i> that has the specified FormID, or <i>Nil</i> if no
                         records match. The FormID must be local to the file (see <i>FixedFormID</i>).
@@ -1232,7 +1240,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>RecordByIndex</b></td>
                     <td> IwbMainRecord</td>
-                    <td> aeFile: IwbFile;<br/> aiIndex: integer
+                    <td> aeFile: IwbFile;<br> aiIndex: integer
                     </td>
                     <td> Returns the <i>aiIndex</i>-th record in <i>aeFile</i>.
                     </td>
@@ -1248,7 +1256,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>SetIsESM</b></td>
                     <td></td>
-                    <td> aeFile: IwbFile;<br/> abFlag: boolean
+                    <td> aeFile: IwbFile;<br> abFlag: boolean
                     </td>
                     <td> Modifies the ESM flag for <i>aeFile</i>. See also: <i>GetIsESM</i>.
                     </td>
@@ -1302,7 +1310,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>ChangeFormSignature</b></td>
                     <td></td>
-                    <td> aeRecord: IwbMainRecord;<br/> asNewSignature: string
+                    <td> aeRecord: IwbMainRecord;<br> asNewSignature: string
                     </td>
                     <td> Changes <i>aeRecord</i>'s signature to <i>asNewSignature</i>. No other information is modified.
                     </td>
@@ -1323,7 +1331,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>CompareExchangeFormID</b></td>
                     <td> boolean</td>
-                    <td> aeRecord: IwbMainRecord;<br/> aiOldFormID: cardinal;<br/> aiNewFormID: cardinal
+                    <td> aeRecord: IwbMainRecord;<br> aiOldFormID: cardinal;<br> aiNewFormID: cardinal
                     </td>
                     <td> Attempts to change <i>aeRecord</i>'s FormID from <i>aiOldFormID</i> to <i>aiNewFormID</i>, and
                         returns <i>True</i> if the operation succeeds.
@@ -1462,9 +1470,8 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>HighestOverrideOrSelf</b></td>
                     <td> IwbMainRecord</td>
-                    <td> aeRecord: IwbMainRecord <br/> aiMaxIndex: integer
-                    </td>
-                    <td> if <i>aeRecord</i> is overridden, returns the highest override. otherwise, returns <i>aeRecord<i/> See also: <i>WinningOverride</i>.
+                    <td> aeRecord: IwbMainRecord <br> aiMaxIndex: integer</td>
+                    <td> if <i>aeRecord</i> is overridden, returns the highest override. otherwise, returns <i>aeRecord</i> See also: <i>WinningOverride</i>.
                     </td>
                 </tr>
                 <tr>
@@ -1505,7 +1512,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>OverrideByIndex</b></td>
                     <td> IwbMainRecord</td>
-                    <td> aeRecord: IwbMainRecord;<br/> aiIndex: integer
+                    <td> aeRecord: IwbMainRecord;<br> aiIndex: integer
                     </td>
                     <td> Returns the <i>aiIndex</i>-th override of <i>aeRecord</i>.
                     </td>
@@ -1531,7 +1538,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>ReferencedByIndex</b></td>
                     <td> IwbMainRecord</td>
-                    <td> aeRecord: IwbMainRecord;<br/> aiIndex: integer
+                    <td> aeRecord: IwbMainRecord;<br> aiIndex: integer
                     </td>
                     <td> Returns the <i>aiIndex</i>-th record that references <i>aeRecord</i>.
                     </td>
@@ -1547,7 +1554,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>SetEditorID</b></td>
                     <td> string</td>
-                    <td> aeRecord: IwbMainRecord;<br/> asEditorID: string
+                    <td> aeRecord: IwbMainRecord;<br> asEditorID: string
                     </td>
                     <td> Sets the record's EditorID, and then returns it.
                     </td>
@@ -1555,7 +1562,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>SetFormVersion</b></td>
                     <td></td>
-                    <td> aeRecord: IwbMainRecord;<br/> aiVersion: cardinal
+                    <td> aeRecord: IwbMainRecord;<br> aiVersion: cardinal
                     </td>
                     <td> Set Form Version field for the record's header. See also: <i>GetFormVersion</i>.
                     </td>
@@ -1563,7 +1570,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>SetIsDeleted</b></td>
                     <td> boolean</td>
-                    <td> aeRecord: IwbMainRecord;<br/> abFlag: boolean
+                    <td> aeRecord: IwbMainRecord;<br> abFlag: boolean
                     </td>
                     <td> Modifies the record's "deleted" flag. See also: <i>GetIsDeleted</i>.
                     </td>
@@ -1571,7 +1578,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>SetIsInitiallyDisabled</b></td>
                     <td> boolean</td>
-                    <td> aeRecord: IwbMainRecord;<br/> abFlag: boolean
+                    <td> aeRecord: IwbMainRecord;<br> abFlag: boolean
                     </td>
                     <td> Modifies the record's "initially disabled" flag. See also: <i>GetIsInitiallyDisabled</i>.
                     </td>
@@ -1579,7 +1586,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>SetIsPersistent</b></td>
                     <td> boolean</td>
-                    <td> aeRecord: IwbMainRecord;<br/> abFlag: boolean
+                    <td> aeRecord: IwbMainRecord;<br> abFlag: boolean
                     </td>
                     <td> Modifies the record's "persistent" flag. See also: <i>GetIsPersistent</i>.
                     </td>
@@ -1587,7 +1594,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>SetIsVisibleWhenDistant</b></td>
                     <td> boolean</td>
-                    <td> aeRecord: IwbMainRecord;<br/> abFlag: boolean
+                    <td> aeRecord: IwbMainRecord;<br> abFlag: boolean
                     </td>
                     <td> Modifies the record's "visible when distant" flag. See also: <i>GetIsVisibleWhenDistant</i>.
                     </td>
@@ -1595,7 +1602,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>SetLoadOrderFormID</b></td>
                     <td> cardinal</td>
-                    <td> aeRecord: IwbMainRecord;<br/> aiFormID: cardinal;
+                    <td> aeRecord: IwbMainRecord;<br> aiFormID: cardinal;
                     </td>
                     <td> Modifies the record's FormID, with the specified ID relative to the current load order. See
                         also: <i>GetLoadOrderFormID</i>.
@@ -1604,7 +1611,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>SetFormVCS1</b></td>
                     <td></td>
-                    <td> aeRecord: IwbMainRecord;<br/> aiValue: cardinal
+                    <td> aeRecord: IwbMainRecord;<br> aiValue: cardinal
                     </td>
                     <td> Modifies the Version Control Info 1 field. See also: <i>GetFormVCS1</i>.
                     </td>
@@ -1612,7 +1619,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>SetFormVCS2</b></td>
                     <td></td>
-                    <td> aeRecord: IwbMainRecord;<br/> aiValue: cardinal
+                    <td> aeRecord: IwbMainRecord;<br> aiValue: cardinal
                     </td>
                     <td> Modifies the Version Control Info 2 field. See also: <i>GetFormVCS2</i>.
                     </td>
@@ -1683,7 +1690,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>FindChildGroup</b></td>
                     <td> IwbGroupRecord</td>
-                    <td> aeGroup: IwbGroupRecord;<br/>aiType: integer;<br/> aeMainRecord: IwbMainRecord;<br/>
+                    <td> aeGroup: IwbGroupRecord;<br>aiType: integer;<br> aeMainRecord: IwbMainRecord;<br>
                     </td>
                     <td> Finds the group record inside another group. The <i>aiType</i> value should match the
                         group-type values used in <a rel="nofollow" target="_blank"
@@ -1715,7 +1722,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>MainRecordByEditorID</b></td>
                     <td> IwbMainRecord</td>
-                    <td> aeGroup: IwbGroupRecord;<br/> asEditorID: string
+                    <td> aeGroup: IwbGroupRecord;<br> asEditorID: string
                     </td>
                     <td> Searches <i>aeGroup</i> for a main record whose EditorID is <i>asEditorID</i> and returns the
                         matching record or <i>Nil</i>. This is not a performant function.
@@ -1757,7 +1764,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>ResourceCopy</b></td>
                     <td></td>
-                    <td> asContainerName: string;<br/> asFilename: string;<br/> asPathOut: string
+                    <td> asContainerName: string;<br> asFilename: string;<br> asPathOut: string
                     </td>
                     <td> Retrieves the resource named <i>asFilename</i> from the resource container named <i>asContainerName</i>
                         (see <i>ResourceContainerList</i>), and saves that resource to the specified file path <i>asPathOut</i>.
@@ -1767,7 +1774,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>ResourceCount</b></td>
                     <td> cardinal</td>
-                    <td> asFilename: string;<br/> akContainers: TStrings
+                    <td> asFilename: string;<br> akContainers: TStrings
                     </td>
                     <td> Fills <i>akContainers</i> with a list of the loaded containers (BSA, BA2, Data directory) that
                         a file named <i>asFilename</i> appears in. The "Assets browser.pas" script uses this to allow
@@ -1786,7 +1793,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>ResourceList</b></td>
                     <td></td>
-                    <td> asContainerName: string;<br/> akContainers: TStrings
+                    <td> asContainerName: string;<br> akContainers: TStrings
                     </td>
                     <td> Accesses the container with the full filename <i>asContainerName</i> (see <i>ResourceContainerList</i>),
                         and adds a list of all contained filenames to <i>akContainers</i>. Note that added entries are
@@ -1796,7 +1803,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>ResourceOpenData</b></td>
                     <td> TBytesStream</td>
-                    <td> asContainerName: string;<br/> asFilename: string
+                    <td> asContainerName: string;<br> asFilename: string
                     </td>
                     <td><i>asFilename</i> should be formatted similar to the other Resource-oriented xEdit scripts. <i>asContainerName</i>
                         should be filled with a string generated by the function <i>ResourceContainerList</i>. The <i>ResourceOpenData</i>
@@ -1827,7 +1834,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>LocalizationGetStringsFromFile</b></td>
                     <td></td>
-                    <td> asFilename: string;<br/> akListOut: TStrings
+                    <td> asFilename: string;<br> akListOut: TStrings
                     </td>
                     <td>
                     </td>
@@ -1835,10 +1842,10 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>wbAlphaBlend</b></td>
                     <td> boolean</td>
-                    <td> akDestinationDeviceContext: unknown;<br/> aiDestinationX: integer;<br/> aiDestinationY:
-                        integer;<br/> aiDestinationWidth: integer;<br/> aiDestinationHeight: integer;<br/>
-                        akSourceDeviceContext: unknown;<br/> aiSourceX: integer;<br/> aiSourceY: integer;<br/>
-                        aiSourceWidth: integer;<br/> aiSourceHeight: integer;<br/> aiAlpha: integer
+                    <td> akDestinationDeviceContext: unknown;<br> aiDestinationX: integer;<br> aiDestinationY:
+                        integer;<br> aiDestinationWidth: integer;<br> aiDestinationHeight: integer;<br>
+                        akSourceDeviceContext: unknown;<br> aiSourceX: integer;<br> aiSourceY: integer;<br>
+                        aiSourceWidth: integer;<br> aiSourceHeight: integer;<br> aiAlpha: integer
                     </td>
                     <td> A wrapper for <i>Windows.AlphaBlend</i> which returns its result.
                     </td>
@@ -1879,7 +1886,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>wbFindREFRsByBase</b></td>
                     <td></td>
-                    <td> aeREFR: IwbMainRecord;<br/> asSignatures: string;<br/> aiFlags: integer;<br/> akOutList: TList
+                    <td> aeREFR: IwbMainRecord;<br> asSignatures: string;<br> aiFlags: integer;<br> akOutList: TList
                     </td>
                     <td> Searches for sibling records to <i>aeREFR</i> whose base records' signatures match <i>asSignatures</i>,
                         and adds them to <i>akOutList</i>. Further filtering can be done with <i>aiFlags</i>: specify 1
@@ -1890,7 +1897,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>wbFlipBitmap</b></td>
                     <td></td>
-                    <td> akBitmap: TBitmap;<br/> aiAxes: integer
+                    <td> akBitmap: TBitmap;<br> aiAxes: integer
                     </td>
                     <td> Flips the image data contained in <i>akBitmap</i> based on the specified axes. Specify 1 to
                         flip horizontally, 2 to flip vertically, or 0 to flip on both axes.
@@ -1899,7 +1906,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>wbGetSiblingRecords</b></td>
                     <td></td>
-                    <td> aeRecord: IwbElement;<br/> asSignatures: string;<br/> abIncludeOverrides: boolean;<br/>
+                    <td> aeRecord: IwbElement;<br> asSignatures: string;<br> abIncludeOverrides: boolean;<br>
                         akOutList: TList
                     </td>
                     <td> Adds sibling records of <i>aeRecord</i> to <i>akOutList</i> if their signatures match <i>asSignatures</i>.
@@ -1919,7 +1926,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>wbIsInGridCell</b></td>
                     <td> boolean</td>
-                    <td> akPosition: TwbVector;<br/> akGridCell: TwbGridCell
+                    <td> akPosition: TwbVector;<br> akGridCell: TwbGridCell
                     </td>
                     <td> See also: <i>wbBlockFromSubBlock</i>, <i>wbGridCellToGroupLabel</i>,
                         <i>wbPositionToGridCell</i>, <i>wbSubBlockFromGridCell</i>.
@@ -2018,7 +2025,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>NifBlockList</b></td>
                     <td> boolean</td>
-                    <td> akData: TBytes;<br/> akListOut: TStrings
+                    <td> akData: TBytes;<br> akListOut: TStrings
                     </td>
                     <td> Retrieves block information from the NIF file in <i>akData</i>, and adds it to <i>akListOut</i>.
                         Each added index in <i>akListOut</i> will match up with a string key of the form
@@ -2029,7 +2036,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>NifTextureList</b></td>
                     <td> boolean</td>
-                    <td> akData: TBytes;<br/> akListOut: TStrings
+                    <td> akData: TBytes;<br> akListOut: TStrings
                     </td>
                     <td> Searches the NIF file in <i>akData</i> for all texture paths, and adds them to <i>akListOut</i>.
                         Returns <i>True</i> if the operation succeeded.
@@ -2038,7 +2045,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>NifTextureListResource</b></td>
                     <td> boolean</td>
-                    <td> akData: variant;<br/> akListOut: TStrings
+                    <td> akData: variant;<br> akListOut: TStrings
                     </td>
                     <td> Searches the NIF file in <i>akData</i> for all texture paths, and adds them to <i>akListOut</i>.
                         Returns <i>True</i> if the operation succeeded.
@@ -2047,7 +2054,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>NifTextureListUVRange</b></td>
                     <td> boolean</td>
-                    <td> akData: TBytes;<br/> afUVRange: Single;<br/> akListOut: TStrings
+                    <td> akData: TBytes;<br> afUVRange: Single;<br> akListOut: TStrings
                     </td>
                     <td> Searches the NIF file in <i>akData</i> for all texture paths, and adds them to <i>akListOut</i>.
                         Textures are only added if none of the relevant NiTriShape's UV sets have UVs greater than <i>afUVRange</i>
@@ -2077,7 +2084,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>wbDDSStreamToBitmap</b></td>
                     <td> boolean</td>
-                    <td> akStream: TStream;<br/> akBitmapOut: TBitmap
+                    <td> akStream: TStream;<br> akBitmapOut: TBitmap
                     </td>
                     <td> Modifies <i>akBitmapOut</i> to contain the DDS information sourced from <i>akStream</i>.
                         Returns <i>True</i> if the operation succeeds.
@@ -2086,7 +2093,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>wbDDSDataToBitmap</b></td>
                     <td> boolean</td>
-                    <td> akData: TBytes;<br/> akBitmapOut: TBitmap
+                    <td> akData: TBytes;<br> akBitmapOut: TBitmap
                     </td>
                     <td> Modifies <i>akBitmapOut</i> to contain the DDS information sourced from <i>akData</i>. Returns
                         <i>True</i> if the operation succeeds.
@@ -2095,7 +2102,7 @@ title: xEdit Scripting Functions
                 <tr>
                     <td><b>wbDDSResourceToBitmap</b></td>
                     <td> boolean</td>
-                    <td> akUnknown;<br/> akBitmapOut: TBitmap
+                    <td> akUnknown;<br> akBitmapOut: TBitmap
                     </td>
                     <td> Modifies <i>akBitmapOut</i> to contain the DDS information sourced from the resource <i>akUnknown</i>.
                         Returns <i>True</i> if the operation succeeds.
@@ -2286,7 +2293,7 @@ title: xEdit Scripting Functions
                     </td>
                 </tr>
             </table>
-            <p><br/>
+            <p><br>
                 TES5Edit appears to provide the following variables:
             </p>
             <table class="scriptTable">
@@ -2341,7 +2348,7 @@ end;
 // If an entire plugin is selected then all records in the plugin will be processed
 function Process(e : IInterface) : integer;
 begin
-	if Signature(e) <> 'NPC_' then exit;
+	if Signature(e) &lt;&gt; 'NPC_' then exit;
 	NPCList.Add(IntToHex(FixedFormID(e), 8) + ';' + GetElementEditValues(e, 'EDID'));
 end;
 

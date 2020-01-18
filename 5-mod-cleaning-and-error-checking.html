@@ -32,12 +32,14 @@ title: xEdit Cleaning and-Error Checking
                 <a href="#s_5-3">5.3 Mod Cleaning Process</a>
                 <ul>
                     <li><a href="#s_5-3-1">5.3.1 Choosing a cleaning method</a></li>
-                    <ul>
-                        <li><a href="#s_5-3-1-1">5.3.1.1 Cleaning using a shortcut</a></li>
-                        <li><a href="#s_5-3-1-2">5.3.1.2 Cleaning renaming the EXE</a></li>
-                        <li><a href="#s_5-3-1-3">5.3.1.3 Cleaning using MO2</a></li>
-                        <li><a href="#s_5-3-1-4">5.3.1.4 Cleaning using Vortex</a></li>
-                    </ul>
+                    <li>
+                        <ul>
+                            <li><a href="#s_5-3-1-1">5.3.1.1 Cleaning using a shortcut</a></li>
+                            <li><a href="#s_5-3-1-2">5.3.1.2 Cleaning renaming the EXE</a></li>
+                            <li><a href="#s_5-3-1-3">5.3.1.3 Cleaning using MO2</a></li>
+                            <li><a href="#s_5-3-1-4">5.3.1.4 Cleaning using Vortex</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#s_5-3-2">5.3.2 Selecting a plugin to clean</a></li>
                     <li><a href="#s_5-3-3">5.3.3 Quick Clean Method</a></li>
                     <li><a href="#s_5-3-4">5.3.4 Quick Auto Clean Method (Recommended)</a></li>
@@ -99,7 +101,7 @@ title: xEdit Cleaning and-Error Checking
                 <p>Short video about the cleaning process and why no steps exist and why no guides are needed.</p>
                 <iframe
                     src="https://www.youtube.com/embed/sPoXUL5ty6Q"
-                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
                 </iframe>
                 <p>With the release of 4.0.x the cleaning process has been streamlined. When selecting a plugin xEdit will only load the required masters as it has always done.</p>
                 <p>The records you are trying to clean are the records that override changes to vanilla values. It has always been explained that you can't load additional modules. It can turn "identical to master" into "identical to master, but conflict winner" which the later will not be cleaned from the module. When those are EXACTLY the records you want to clean. So cleaning while having additional modules loaded makes the complete process utterly pointless and a waste of time.</p>
@@ -118,12 +120,13 @@ title: xEdit Cleaning and-Error Checking
                             <h3>5.3.1.1 Cleaning using a shortcut</h3>
                             <div>
                                 <p>When creating a shortcut go to the folder where you installed xEdit. Right click the file name and choose "Send To" and then "Desktop (create a shortcut)" to create a shortcut.</p>
-                                <p><img src="img/create shortcut.jpg"></p>
+                                <p><img src="img/create-shortcut.jpg"></p>
                                 <p>The parameter will go in the "Target" box.</p>
-                                <p><img src="img/shortcut properties.jpg"></p>
+                                <p><img src="img/shortcut-properties.jpg"></p>
                                 <p>Quick video on how to add the parameter.</p>
                                 <iframe
-                                    src="https://www.youtube.com/embed/G5jL5iKfGSk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                                    src="https://www.youtube.com/embed/G5jL5iKfGSk" 
+                                    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
                                 </iframe>
                             </div>
                         </div>
@@ -139,7 +142,7 @@ title: xEdit Cleaning and-Error Checking
                             <h3>5.3.1.2 Cleaning renaming the EXE</h3>
                             <div>
                                 <p>You can add "QAC" to the filename and create a shortcut to use the Quick Clean procedure. For Skyrim SE you would name it SSEEditQAC.exe as shown below.</p>
-                                <p><img src="img/clean rename exe.jpg"></p>
+                                <p><img src="img/clean-rename-exe.jpg"></p>
                             </div>
                         </div>
                         <div>
@@ -154,7 +157,7 @@ title: xEdit Cleaning and-Error Checking
                             <h3>5.3.1.3 Cleaning using MO2</h3>
                             <div>
                                 <p>For MO2 you would add the parameter to the Arguments.</p>
-                                <p><img src="img/MO2 Application Dark-box.jpg"></p>
+                                <p><img src="img/MO2-Application-Dark-box.jpg"></p>
                                 <p>For more information you can refer to the STEP <a href="https://wiki.step-project.com/Guide:XEdit#Cleaning_plugins_with_xEdit">Guide:XEdit</a></p>
                             </div>
                         </div>
@@ -170,7 +173,7 @@ title: xEdit Cleaning and-Error Checking
                             <h3>5.3.1.4 Cleaning using Vortex</h3>
                             <div>
                                 <p>For Vortex you would add the parameter to the Command Line box.</p>
-                                <p><img src="img/vortex launcher-box.jpg"></p>
+                                <p><img src="img/vortex-launcher-box.jpg"></p>
                                 <p>For more information you can refer to the Nexus Wiki <a href="https://wiki.nexusmods.com/index.php/Tool_Setup:_xEdit">Tool Setup: xEdit</a></p>
                             </div>
                         </div>
@@ -309,7 +312,7 @@ title: xEdit Cleaning and-Error Checking
                     <p><img src="img/checkerrors-expected.jpg"></p>
                 </div>
                 <div>
-                    <p>TES4 \ ONAM - Overriden Forms \ Form #0 -> [1300DBC4] < Error: Could not be resolved ></p>
+                    <p>TES4 \ ONAM - Overriden Forms \ Form #0 -> [1300DBC4] &lt; Error: Could not be resolved &gt;</p>
                     <p>In this example we found Unresolved Reference errors (Ouch!) These errors are very serious as they indicate a record from the mod is trying to reference something, but what it is looking for is missing from the mod or the master of the mod. Mod authors should never leave these uncorrected! They should be corrected by the mod author and not by you!.</p>
                     <p><img src="img/checkerrors-unresolved.jpg"></p>
                 </div>
@@ -341,15 +344,15 @@ title: xEdit Cleaning and-Error Checking
             <h2>Types of Dirty Edits:</h2>
             <h3>Identical To Master</h3>
             <p>Identical to Master (ITM) edits are the most common type of dirty edit. They're where a mod has overwritten something in the game without actually changing anything. If another mod higher up in the load order makes an intentional change to that thing, it will have its effect cancelled out by the ITM record, which can cause problems. ITM edits can be cleaned automatically using xEdit.</p>
-            <dl>
-                <dd><b><i>Example 1: Identical To Master Edits</i></b></dd>
-            </dl>
-            <dl>
-                <dd> Consider a quest mod in which the author has also changed the properties of some sneaking settings to better fit with other areas of the quest mod. The author then later decides the sneaking changes are unnecessary, and sets them back to their original values. If this quest mod were then loaded after a mod that overhauls the sneaking system, the sneaking overhaul's effects would be at least partially undone by the quest mod, which is not the effect intended by the author of either mod, nor the effect desired by the user.</dd>
-            </dl>
-            <dl>
-                <dd> The solution would be to clean the quest mod, which would remove the ITM edits and allow the sneaking overhaul mod to function as intended.</dd>
-            </dl>
+            <ul style="list-style-type:none">
+                <li><b><i>Example 1: Identical To Master Edits</i></b></li>
+            </ul>
+            <ul style="list-style-type:none">
+                <li> Consider a quest mod in which the author has also changed the properties of some sneaking settings to better fit with other areas of the quest mod. The author then later decides the sneaking changes are unnecessary, and sets them back to their original values. If this quest mod were then loaded after a mod that overhauls the sneaking system, the sneaking overhaul's effects would be at least partially undone by the quest mod, which is not the effect intended by the author of either mod, nor the effect desired by the user.</li>
+            </ul>
+            <ul style="list-style-type:none">
+                <li> The solution would be to clean the quest mod, which would remove the ITM edits and allow the sneaking overhaul mod to function as intended.</li>
+            </ul>
             <h3>Deleted Reference</h3>
             <p>Deleted references are a significant cause of crashes and game bugs. This is because if one mod tries to modify a reference that another mod has deleted, then the first mod cannot find the reference, and this then causes problems. A deleted reference can be fixed by undeleting then disabling the references and moving it to a position where it is no longer visible in the Creation Kit (xEdit sets the Z axis position to -30,000 units). This has the same effect as deleting the reference, without causing issues. Deleted references can be cleaned automatically using xEdit.</p>
             <h3>Deleted Navmeshes</h3>

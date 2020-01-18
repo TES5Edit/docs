@@ -378,7 +378,7 @@ Contents
 htmlHead = """
 ---
 <h1>{{ page.title }}</h1>
-<div id="tableOfContents"/>
+<div id="tableOfContents"></div>
 <h2>Main Table of Contents</h2>
 <ul>
     <li><a href="index.html">1. Introduction</a></li>
@@ -426,7 +426,7 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     def anchorReplace(maObject):
         text = maObject.group(1)
         anchor = reWd.sub('', text)
-        return '<div id="{}"/>'.format(text)
+        return '<div id="{}"></div>'.format(text)
 
     def boldReplace(maObject):
         state = states['bold'] = not states['bold']
@@ -846,7 +846,7 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
                 didContents = True
         else:
             out.write(line)
-    out.write('</div>\n')
+    # out.write('</div>\n')
     out.close()
 	
 
