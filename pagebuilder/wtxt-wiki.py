@@ -422,6 +422,11 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     if not outFile:
         import os
         outFile = '..\\' +  os.path.splitext(srcFile)[0] + '.html'
+    if srcFile:
+        if srcFile == 'index.txt':
+            page_number = 1
+        else:
+            page_number = int(srcFile.split('-', 1)[0])
     # RegEx Independent Routines ------------------------------------
     def anchorReplace(maObject):
         text = maObject.group(1)
@@ -530,8 +535,8 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     reMDash = re.compile(r'--')
     rePreBegin = re.compile('<pre>', re.I)
     rePreEnd = re.compile('</pre>', re.I)
-    reParagraph = re.compile('<pre>', re.I)
-    reCloseParagraph = re.compile('</pre>', re.I)
+    reParagraph = re.compile('<p ?(>)?>', re.I)
+    reCloseParagraph = re.compile('</p>', re.I)
     # --Bold, Italic, BoldItalic
     reBold = re.compile(r'__')
     reItalic = re.compile(r'~~')
@@ -539,11 +544,11 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     states = {'bold': False, 'italic': False, 'boldItalic': False}
     # --Links
     reLink = re.compile(r'\[\[(.*?)\]\]')
-    reHttp = re.compile(r' (http://[_~a-zA-Z0-9\./%-]+)')
-    reWww = re.compile(r' (www\.[_~a-zA-Z0-9\./%-]+)')
+    reHttp = re.compile(r' (http:\/\/[\?=_~a-zA-Z0-9\.\/%-]+)')
+    reWww = re.compile(r' (www\.[\?=_~a-zA-Z0-9\./%-]+)')
     reWd = re.compile(r'(<[^>]+>|\[[^\]]+\]|\W+)')
     rePar = re.compile(r'^([a-zA-Z]|\*\*|~~|__)')
-    reFullLink = re.compile(r'(:|#|\.[a-zA-Z0-9]{2,4}$)')
+    reFullLink = re.compile(r'(:|#|\.[a-zA-Z0-9]{2,4}(\/)?$)')
     # --Tags
     pageTitle = 'title: Your Content'
     reAnchorTag = re.compile('{{nav:(.+?)}}')
@@ -557,12 +562,14 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     reSpoilerEnd = re.compile(r'\[\[se:\]\]')
     reBlockquoteBegin = re.compile(r'\[\[bb:(.*?)\]\]')
     reBlockquoteBEnd = re.compile(r'\[\[be:\]\]')
-    reHtmlBegin = re.compile(r'(^\<font.+?\>)|(^\<code.+?\>)|(^\<a\s{1,3}href.+?\>)|(^\<img\s{1,3}src.+?\>)|(^{% include image-inline.html)|^\u00A9')
+    reHtmlBegin = re.compile(r'(^\<font.+?\>)|(^\<code.+?\>)|(^\<a\s{1,3}href.+?\>)|(^\<img\s{1,3}src.+?\>)|^\u00A9|^\<strong|^\<[bB]\>|(^{% include image-inline.html)')
+    reNavigationButtonBegin = re.compile(r'{{nbb}}')
+    reNavigationButtonEnd = re.compile(r'{{nbe}}')
     # --Open files
     inFileRoot = re.sub('\.[a-zA-Z]+$', '', srcFile)
     # --TextColors
     reTextColor = re.compile(r'({{a:(.+?)}})')
-    # --TextColors
+    # --Images
     reImageInline = re.compile(r'{{inline:.+?}}')
     reImageOnly = re.compile(r'{{image:.+?}}')
     reImageCaption = re.compile(r'({{image-caption:(.+?)}})')
@@ -609,6 +616,22 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
         spoilerText = re.sub('\]\]', '', spoilerText)
         return (spoilerID, spoilerText)
 
+    def httpReplace(line):
+        temp_text = line
+        if inNavigationButtons:
+            temp_line = reHttp.sub(r' <a href="\1" class="drkbtn">\1</a>', temp_text)
+        else:
+            temp_line = reHttp.sub(r' <a href="\1">\1</a>', temp_text)
+        return temp_line
+
+    def wwwReplace(line):
+        temp_text = line
+        if inNavigationButtons:
+            temp_line = reWww.sub(r' <a href="http://\1" class="drkbtn">\1</a>', temp_text)
+        else:
+            temp_line = reWww.sub(r' <a href="http://\1">\1</a>', temp_text)
+        return temp_line
+
     def linkReplace(maObject):
         address = text = maObject.group(1).strip()
         skipStrip = False
@@ -624,7 +647,10 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
         if not skipStrip:
             fontClass = check_color(text)
             text = strip_color(text)
-        return '<a {} href="{}">{}</a>'.format(fontClass, address, text)
+        if inNavigationButtons:
+            return '<a {} href="{}" class="drkbtn">{}</a>'.format(fontClass, address, text)
+        else:
+            return '<a {} href="{}">{}</a>'.format(fontClass, address, text)
 
     # --Defaults ----------------------------------------------------------
     level = 1
@@ -633,6 +659,7 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     # --Init
     outLines = []
     contents = [] # The list variable for the Table of Contents
+    header_match = [] # A duplicate list of the Table of Contents with numbers
     addContents = 0 # When set to 0 headers are not added to the TOC
     inPre = False
     inComment = False
@@ -640,6 +667,7 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     htmlIDSet = list()
     dupeEntryCount = 1
     blockAuthor = "Unknown"
+    inNavigationButtons = False
     # --Read source file --------------------------------------------------
     ins = file(srcFile)
     for line in ins:
@@ -675,6 +703,15 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
         maSpoilerEnd = reSpoilerEnd.match(line)
         maBlockquoteBegin = reBlockquoteBegin.match(line)
         maBlockquoteEnd = reBlockquoteBEnd.match(line)
+        maNavigationButtonBegin = reNavigationButtonBegin.match(line)
+        maNavigationButtonEnd = reNavigationButtonEnd.match(line)
+        # --Navigation Buttons ----------------------------------
+        if maNavigationButtonBegin:
+            line = '<div>\n'
+            inNavigationButtons = True
+        if maNavigationButtonEnd:
+            line = '</div>\n'
+            inNavigationButtons = False
         # --Contents ----------------------------------
         if maContents:
             if maContents.group(1):
@@ -689,7 +726,7 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
         # --Headers
         elif maHead:
             lead, text = maHead.group(1, 2)
-            text = re.sub(' *=*#?$', '', text.strip())
+            text = re.sub(' *=*$', '', text.strip())
             anchor = reWd.sub('', text)
             level = len(lead)
             if not htmlIDSet.count(anchor):
@@ -705,7 +742,7 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
         # --Green Header
         elif maHeadgreen:
             lead, text = maHeadgreen.group(1, 2)
-            text = re.sub(' *\#*#?$', '', text.strip())
+            text = re.sub(' *\#*$', '', text.strip())
             anchor = reWd.sub('', text)
             level = len(lead)
             if not htmlIDSet.count(anchor):
@@ -728,8 +765,8 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
             elif bullet == '*':
                 bullet = '&bull;'
             level = len(spaces) / 2 + 1
-            line = spaces + '<p class="list-' + `level` + '">' + bullet + '&nbsp; '
-            line = line + text + '</p>\n'
+            line = '{}<p class="list-{}">{}&nbsp; '.format(spaces, level, bullet)
+            line = '{}{}</p>\n'.format(line, text)
         # --HRule
         elif maHRule:
             line = '<hr>\n'
@@ -763,16 +800,8 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
                 author = blockAuthor
             authorLine = '<p class="attr">{}</p>\n'.format(author)
             outLines.append(authorLine)
-            # secondLine = '<div class="quote">\n'
-            # outLines.append(secondLine)
-            # openQuote = '<p class="quotetext">\n'
-            # outLines.append(openQuote)
             continue
         elif maBlockquoteEnd:
-            # closingQuote = '</p>\n'
-            # outLines.append(closingQuote)
-            # closingDiv = '</div>\n'
-            # outLines.append(closingDiv)
             line = '</section>\n'
         # --Misc. Text changes --------------------
         line = reMDash.sub('&#150', line)
@@ -790,8 +819,8 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
         line = reImageCaptionUrl.sub(imageCaptionUrl, line)
         # --Hyperlinks
         line = reLink.sub(linkReplace, line)
-        line = reHttp.sub(r' <a href="\1">\1</a>', line)
-        line = reWww.sub(r' <a href="http://\1">\1</a>', line)
+        line = httpReplace(line)
+        line = wwwReplace(line)
         # --HTML Font or Code tag first of Line ------------------
         maHtmlBegin = reHtmlBegin.match(line)
         if maHtmlBegin:
@@ -833,18 +862,53 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     out.write('---\nlayout: default\n{}'.format(pageTitle))
     out.write(htmlHead)
     didContents = False
+    countlist = [page_number, 0, 0, 0, 0, 0, 0]
     for line in outLines:
         if reContentsTag.match(line):
             if not didContents:
                 baseLevel = min([level for (level, name, text) in contents])
-                for (level, name, text) in contents:
-                    level = level - baseLevel + 1
-                    if level <= addContents:
-                        out.write(
-                            '<p class="list-%d">&bull;&nbsp; <a href="#%s">%s</a></p>\n' % (
-                            level, name, text))
+                previousLevel = baseLevel
+                for heading in contents:
+                    number = ''
+                    level = heading[0] - baseLevel + 1
+                    if heading[0] > previousLevel:
+                        countlist[level] += 1
+                        for i in range(level+1):
+                            if i == 0:
+                                number += str(countlist[i])
+                            else:
+                                number += '.' + str(countlist[i])
+                    if heading[0] < previousLevel:
+                        # Zero out everything not a duplicate
+                        for i in range(level+1, 7):
+                            countlist[i] = 0
+                        countlist[level] += 1
+                        for i in range(level+1):
+                            if i == 0:
+                                number += str(countlist[i])
+                            else:
+                                number += '.' + str(countlist[i])
+                    if heading[0] == previousLevel:
+                        countlist[level] += 1
+                        for i in range(level+1):
+                            if i == 0:
+                                number += str(countlist[i])
+                            else:
+                                number += '.' + str(countlist[i])
+                    if heading[0] <= addContents:
+                        out.write('<p class="list-{}">&bull;&nbsp; <a href="#{}">{} {}</a></p>\n'.format(level, heading[1], number, heading[2]))
+                        header_match.append((heading[1], number, heading[2]))
+                    previousLevel = heading[0]
                 didContents = True
         else:
+            maIsHeader = re.search(r'<\/h\d>$', line)
+            if maIsHeader:
+                text_search = re.sub(r'^<h.*id="(.*)">.*<\/h\d>', r'\1', line).rstrip('\n')
+                for header_to_match in header_match:
+                    if header_to_match[0] == text_search:
+                        text_replace = '{} - {}'.format(header_to_match[1], header_to_match[2])
+                        line = re.sub(r'(<h.*>)(.*)(<\/h\d>)', r'\g<1>'+text_replace+'\g<3>', line)
+                        break
             out.write(line)
     # out.write('</div>\n')
     out.close()
