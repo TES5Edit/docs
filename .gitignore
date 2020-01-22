@@ -12,3 +12,4 @@ _site/*
 .jekyll-cache
 
 /favicon.ico
+/pagebuilder/buildall.bat
