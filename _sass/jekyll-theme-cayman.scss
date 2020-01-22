@@ -409,12 +409,11 @@ body {
   }
   figure.image-caption {
     @include full {
-      max-width: 1044px;
-      height: auto;
+      max-width: 50%;
       padding: 10px;
     }
     @include huge {
-      max-width: 1024px;
+      max-width: 50%;
       padding: 10px;
     }
     @include large {
