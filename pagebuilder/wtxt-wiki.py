@@ -23,10 +23,8 @@
 # Imports ----------------------------------------------------------------------
 #--Standard
 import re
-import string
-import sys
-import types
 import os
+import sys
 
 # ------------------------------------------------------------------------------
 class Callables:
@@ -58,29 +56,33 @@ class Callables:
     # --Help
     def printHelp(self, callKey):
         """Print help for specified callKey."""
-        print help(self.callObjs[callKey])
+        print(help(self.callObjs[callKey]))
 
     # --Main
     def main(self):
         callObjs = self.callObjs
         # --Call key, tail
-        callParts = string.split(sys.argv[1], '.', 1)
-        callKey = callParts[0]
-        callTail = (len(callParts) > 1 and callParts[1])
+        # This makes no sense since if there was a dot it would be in the filename
+        # callParts = string.split(sys.argv[1], '.', 1)
+        callKey = sys.argv[1]
+        # This makes no sense because it doesn't seem to capture what is after genHtml
+        # The intent here is to use callObj.__name__ but there isn't a tail
+        # callTail = (len(callParts) > 1 and callParts[1])
         # --Help request?
         if callKey == '-h':
             self.printHelp(self)
             return
         # --Not have key?
         if callKey not in callObjs:
-            print "Unknown function/object:", callKey
+            print("Unknown function/object: {}".format(callKey))
             return
         # --Callable
         callObj = callObjs[callKey]
-        if type(callObj) == types.StringType:
+        if isinstance(callObj, str):
             callObj = eval(callObj)
-        if callTail:
-            callObj = eval('callObj.' + callTail)
+        # The intent here is to use callObj.__name__ but there isn't a tail
+        # if callTail:
+        #    callObj = eval('callObj.' + callTail)
         # --Args
         args = sys.argv[2:]
         # --Keywords?
@@ -102,7 +104,7 @@ class Callables:
             else:
                 argDex = argDex + 1
         # --Apply
-        apply(callObj, args, keywords)
+        callObj(*args, **keywords)
 
 
 # --Callables Singleton
@@ -113,226 +115,6 @@ def mainFunction(func):
     """A function for adding functions to callables."""
     callables.add(func)
     return func
-
-
-# ETXT =========================================================================
-"""This section of the module provides a single function for converting
-wtxt text files to html files."""
-etxtHeader = """
-<!DOCTYPE html>
-<HTML>
-<HEAD>
-<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
-<TITLE>%s</TITLE>
-<STYLE>
-H2 { margin-top: 0in; margin-bottom: 0in; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding: 0.02in 0in; background: #c6c63c; font-family: "Arial", serif; font-size: 12pt; page-break-before: auto; page-break-after: auto }
-H3 { margin-top: 0in; margin-bottom: 0in; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding: 0.02in 0in; background: #e6e64c; font-family: "Arial", serif; font-size: 10pt; page-break-before: auto; page-break-after: auto }
-H4 { margin-top: 0in; margin-bottom: 0in; font-family: "Arial", serif; font-size: 10pt; font-style: normal; page-break-before: auto; page-break-after: auto }
-H5 { margin-top: 0in; margin-bottom: 0in; font-family: "Arial", serif; font-style: italic; page-break-before: auto; page-break-after: auto }
-P { margin-top: 0.01in; margin-bottom: 0.01in; font-family: "Arial", serif; font-size: 10pt; page-break-before: auto; page-break-after: auto }
-P.list-1 { margin-left: 0.15in; text-indent: -0.15in }
-P.list-2 { margin-left: 0.3in; text-indent: -0.15in }
-P.list-3 { margin-left: 0.45in; text-indent: -0.15in }
-P.list-4 { margin-left: 0.6in; text-indent: -0.15in }
-P.list-5 { margin-left: 0.75in; text-indent: -0.15in }
-P.list-6 { margin-left: 1.00in; text-indent: -0.15in }
-.date0 { background-color: #FFAAAA }
-.date1 { background-color: #ffc0b3 }
-.date2 { background-color: #ffd5bb }
-.date3 { background-color: #ffeac4 }
-</STYLE>
-</HEAD>
-<BODY BGCOLOR='#ffffcc'>
-"""
-
-
-@mainFunction
-def etxtToHtml(inFileName):
-    import time
-    """Generates an html file from an etxt file."""
-    # --Re's
-    reHead2 = re.compile(r'## *([^=]*) ?=*')
-    reHead3 = re.compile(r'# *([^=]*) ?=*')
-    reHead4 = re.compile(r'@ *(.*)\s+')
-    reHead5 = re.compile(r'% *(.*)\s+')
-    reList = re.compile(r'( *)([-!?\.\+\*o]) (.*)')
-    reBlank = re.compile(r'\s+$')
-    reMDash = re.compile(r'--')
-    reBoldEsc = re.compile(r'\_')
-    reBoldOpen = re.compile(r' _')
-    reBoldClose = re.compile(r'(?<!\\)_( |$)')
-    reItalicOpen = re.compile(r' ~')
-    reItalicClose = re.compile(r'~( |$)')
-    reBoldicOpen = re.compile(r' \*')
-    reBoldicClose = re.compile(r'\*( |$)')
-    reBold = re.compile(r'\*\*([^\*]+)\*\*')
-    reItalic = re.compile(r'\*([^\*]+)\*')
-    reLink = re.compile(r'\[\[(.*?)\]\]')
-    reHttp = re.compile(r' (http://[_~a-zA-Z0-9\./%-]+)')
-    reWww = re.compile(r' (www\.[_~a-zA-Z0-9\./%-]+)')
-    reDate = re.compile(r'\[([0-9]+/[0-9]+/[0-9]+)\]')
-    reContents = re.compile(r'\[CONTENTS=?(\d+)\]\s*$')
-    reWd = re.compile(r'\W\d*')
-    rePar = re.compile(r'\^(.*)')
-    reFullLink = re.compile(r'(:|#|\.[a-zA-Z]{3,4}$)')
-    # --Date styling (Replacement function used with reDate.)
-    dateNow = time.time()
-
-    def dateReplace(maDate):
-        date = time.mktime(
-            time.strptime(maDate.group(1), '%m/%d/%Y'))  # [1/25/2005]
-        age = int((dateNow - date) / (7 * 24 * 3600))
-        if age < 0: age = 0
-        if age > 3: age = 3
-        return '<span class=date%d>%s</span>' % (age, maDate.group(1))
-
-    def linkReplace(maLink):
-        address = text = maLink.group(1).strip()
-        if '|' in text:
-            (address, text) = [chunk.strip() for chunk in text.split('|', 1)]
-        if not reFullLink.search(address):
-            address = address + '.html'
-        return '<a href="%s">%s</a>' % (address, text)
-
-    # --Defaults
-    title = ''
-    level = 1
-    spaces = ''
-    headForm = "<h%d><a name='%s'>%s</a></h%d>\n"
-    # --Open files
-    inFileRoot = re.sub('\.[a-zA-Z]+$', '', inFileName)
-    inFile = open(inFileName)
-    # --Init
-    outLines = []
-    contents = []
-    addContents = 0
-    # --Read through inFile
-    for line in inFile.readlines():
-        maHead2 = reHead2.match(line)
-        maHead3 = reHead3.match(line)
-        maHead4 = reHead4.match(line)
-        maHead5 = reHead5.match(line)
-        maPar = rePar.match(line)
-        maList = reList.match(line)
-        maBlank = reBlank.match(line)
-        maContents = reContents.match(line)
-        # --Contents
-        if maContents:
-            if maContents.group(1):
-                addContents = int(maContents.group(1))
-            else:
-                addContents = 100
-        # --Header 2?
-        if maHead2:
-            text = maHead2.group(1)
-            name = reWd.sub('', text)
-            line = headForm % (2, name, text, 3)
-            if addContents: contents.append((2, name, text))
-            # --Title?
-            if not title: title = text
-        # --Header 3?
-        elif maHead3:
-            text = maHead3.group(1)
-            name = reWd.sub('', text)
-            line = headForm % (3, name, text, 3)
-            if addContents: contents.append((3, name, text))
-            # --Title?
-            if not title: title = text
-        # --Header 4?
-        elif maHead4:
-            text = maHead4.group(1)
-            name = reWd.sub('', text)
-            line = headForm % (4, name, text, 4)
-            if addContents: contents.append((4, name, text))
-        # --Header 5?
-        elif maHead5:
-            text = maHead5.group(1)
-            name = reWd.sub('', text)
-            line = headForm % (5, name, text, 5)
-            if addContents: contents.append((5, name, text))
-        # --List item
-        elif maList:
-            spaces = maList.group(1)
-            bullet = maList.group(2)
-            text = maList.group(3)
-            if bullet == '.':
-                bullet = '&nbsp;'
-            elif bullet == '*':
-                bullet = '&bull;'
-            level = len(spaces) / 2 + 1
-            line = spaces + '<p class=list-' + `level` + '>' + bullet + '&nbsp; '
-            line = line + text + '\n'
-        # --Paragraph
-        elif maPar:
-            line = '<p>' + maPar.group(1)
-        # --Blank line
-        elif maBlank:
-            line = spaces + '<p class=list' + `level` + '>&nbsp;</p>'
-        # --Misc. Text changes
-        line = reMDash.sub('&#150', line)
-        line = reMDash.sub('&#150', line)
-        # --New bold/italic subs
-        line = reBoldOpen.sub(' <B>', line)
-        line = reItalicOpen.sub(' <I>', line)
-        line = reBoldicOpen.sub(' <I><B>', line)
-        line = reBoldClose.sub('</B> ', line)
-        line = reBoldEsc.sub('_', line)
-        line = reItalicClose.sub('</I> ', line)
-        line = reBoldicClose.sub('</B></I> ', line)
-        # --Old style bold/italic subs
-        line = reBold.sub(r'<B><I>\1</I></B>', line)
-        line = reItalic.sub(r'<I>\1</I>', line)
-        # --Date
-        line = reDate.sub(dateReplace, line)
-        # --Local links
-        line = reLink.sub(linkReplace, line)
-        # --Hyperlink
-        line = reHttp.sub(r' <a href="\1">\1</a>', line)
-        line = reWww.sub(r' <a href="http://\1">\1</a>', line)
-        # --Write it
-        # print line
-        outLines.append(line)
-    inFile.close()
-    # --Output file
-    outFile = open(inFileRoot + '.html', 'w')
-    outFile.write(etxtHeader % (title,))
-    didContents = False
-    for line in outLines:
-        if reContents.match(line):
-            if not didContents:
-                baseLevel = min([level for (level, name, text) in contents])
-                for (level, name, text) in contents:
-                    level = level - baseLevel + 1
-                    if level <= addContents:
-                        outFile.write(
-                            '<p class=list-%d>&bull;&nbsp; <a href="#%s">%s</a></p>\n' % (
-                            level, name, text))
-                didContents = True
-        else:
-            outFile.write(line)
-    outFile.write('</body>\n</html>\n')
-    outFile.close()
-    # --Done
-
-@mainFunction
-def etxtToWtxt(fileName=None):
-    """TextMunch: Converts etxt files to wtxt formatting."""
-    if fileName:
-        ins = open(fileName)
-    else:
-        import sys
-        ins = sys.stdin
-    for line in ins:
-        line = re.sub(r'^\^ ?', '', line)
-        line = re.sub(r'^## ([^=]+) =', r'= \1 ==', line)
-        line = re.sub(r'^# ([^=]+) =', r'== \1 ', line)
-        line = re.sub(r'^@ ', r'=== ', line)
-        line = re.sub(r'^% ', r'==== ', line)
-        line = re.sub(r'\[CONTENTS=(\d+)\]', r'{{CONTENTS=\1}}', line)
-        line = re.sub(r'~([^ ].+?)~', r'~~\1~~', line)
-        line = re.sub(r'_([^ ].+?)_', r'__\1__', line)
-        line = re.sub(r'\*([^ ].+?)\*', r'**\1**', line)
-        print line,
 
 
 # Wrye Text ===================================================================
@@ -377,25 +159,32 @@ Contents
 
 htmlHead = """
 ---
+<h1 class="grhead1">Main Table Of Contents</h1>
+<div id="tableOfContents" class="grid-toc">
+    <div class="toc1">
+        <h2 class="grhead2"><a href="index.html">1. Introduction</a></h2>
+        <h2 class="grhead2"><a href="2-overview.html">2. Overview</a></h2>
+        <h2 class="grhead2"><a href="3-basicuse.html">3. xEdit Basic Use</a></h2>
+        <h2 class="grhead2"><a href="4-modgroups.html">4. ModGroups</a></h2>
+        <h2 class="grhead2"><a href="5-conflict-detection-and-resolution.html">5. Conflict Detection and Resolution</a></h2>
+        <h2 class="grhead2"><a href="6-themethod.html">6. The Method</a></h2>
+        <h2 class="grhead2"><a href="7-mod-cleaning-and-error-checking.html">7. Mod Cleaning and Error Checking</a></h2>
+        <h2 class="grhead2"><a href="8-managing-mod-files.html">8. Managing Mod Files</a></h2>
+        <h2 class="grhead2"><a href="9-mod-utilities.html">9. Mod Utilities</a></h2>
+    </div>
+    <div class="toc2">
+        <h2 class="grhead2"><a href="10-fo3edit-faq.html">10. FO3Edit FAQ</a></h2>
+        <h2 class="grhead2"><a href="11-appendix.html">11. Appendix</a></h2>
+        <h2 class="grhead2"><a href="12-cheat-sheets-and-quick-reference-charts.html">12. Cheat Sheets and Quick Reference Charts</a></h2>
+        <h2 class="grhead2"><a href="13-Scripting-Functions.html">13. Scripting Functions</a></h2>
+        <h2 class="grhead2"><a href="14-Scripting-Resources.html">14. Scripting Resources</a></h2>
+        <h2 class="grhead2"><a href="15-tutorials.html">15. Tutorials</a></h2>
+        <h2 class="grhead2"><a href="16-xLODGen.html">16. xLODGen</a></h2>
+        <h2 class="grhead2"><a href="17-DynDoLod.html">17. DynDoLod</a></h2>
+        <h2 class="grhead2"><a href="18-whatsnew.html">18. xEdit What's New and Version Info</a></h2>
+    </div>
+</div>
 <h1>{{ page.title }}</h1>
-<div id="tableOfContents"></div>
-<h2>Main Table of Contents</h2>
-<ul>
-    <li><a href="index.html">1. Introduction</a></li>
-    <li><a href="2-overview.html">2. Overview</a></li>
-    <li><a href="3-modgroups.html">3. ModGroups</a></li>
-    <li><a href="4-conflict-detection-and-resolution.html">4. Conflict Detection and Resolution</a></li>
-    <li><a href="5-mod-cleaning-and-error-checking.html">5. Mod Cleaning and Error Checking</a></li>
-    <li><a href="6-managing-mod-files.html">6. Managing Mod Files</a></li>
-    <li><a href="7-mod-utilities.html">7. Mod Utilities</a></li>
-    <li><a href="8-fo3edit-faq.html">8. FO3Edit FAQ</a></li>
-    <li><a href="9-appendix.html">9. Appendix</a></li>
-    <li><a href="10-cheat-sheets-and-quick-reference-charts.html">10. Cheat Sheets and Quick Reference Charts</a></li>
-    <li><a href="11-Scripting-Functions.html">11. Scripting Functions</a></li>
-    <li><a href="12-Scripting-Resources.html">12. Scripting Resources</a></li>
-    <li><a href="13-tutorials.html">13. Tutorials</a></li>
-    <li><a href="whatsnew.html">14. xEdit What's New and Version Info</a></li>
-</ul>
 """
 defaultCss = """
 H1 { margin-top: 0in; margin-bottom: 0in; border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding: 0.02in 0in; background: #c6c63c; font-family: "Arial", serif; font-size: 12pt; page-break-before: auto; page-break-after: auto }
@@ -415,23 +204,34 @@ CODE { background-color: #FDF5E6;}
 BODY { background-color: #ffffcc; }
 """
 
+endMarkdown = """
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="17-DynDoLod.html" class="drkbtn">&laquo; Previous Page</a>
+</div>
+"""
+
 # Conversion ------------------------------------------------------------------
 @mainFunction
 def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     """Generates an html file from a wtxt file. CssDir specifies a directory to search for css files."""
+    markdown = False
     if not outFile:
-        import os
         outFile = '..\\' +  os.path.splitext(srcFile)[0] + '.html'
     if srcFile:
         if srcFile == 'index.txt':
             page_number = 1
+        elif srcFile == 'whatsnew.md':
+            page_number = 18
+            markdown = True
+            outFile = '..\\18-' +  os.path.splitext(srcFile)[0] + '.html'
         else:
             page_number = int(srcFile.split('-', 1)[0])
     # RegEx Independent Routines ------------------------------------
     def anchorReplace(maObject):
-        text = maObject.group(1)
-        anchor = reWd.sub('', text)
-        return '<div id="{}"></div>'.format(text)
+        temp = maObject.group(1)
+        anchor = reWd.sub('', temp)
+        return '<div id="{}"></div>'.format(anchor)
 
     def boldReplace(maObject):
         state = states['bold'] = not states['bold']
@@ -445,97 +245,48 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
         state = states['boldItalic'] = not states['boldItalic']
         return ('</I></B>', '<B><I>')[state]
 
-    def check_color(text):
-        fontClass = ''
-        if '{{a:black}}' in text:
-            fontClass = 'class="black"'
-        if '{{a:blue}}' in text:
-            fontClass = 'class="blue"'
-        if '{{a:brown}}' in text:
-            fontClass = 'class="brown"'
-        if '{{a:cyan}}' in text:
-            fontClass = 'class="cyan"'
-        if '{{a:dkgray}}' in text:
-            fontClass = 'class="dkgray"'
-        if '{{a:gray}}' in text:
-            fontClass = 'class="gray"'
-        if '{{a:green}}' in text:
-            fontClass = 'class="green"'
-        if '{{a:ltblue}}' in text:
-            fontClass = 'class="ltblue"'
-        if '{{a:ltgray}}' in text:
-            fontClass = 'class="ltgray"'
-        if '{{a:ltgreen}}' in text:
-            fontClass = 'class="ltgreen"'
-        if '{{a:orange}}' in text:
-            fontClass = 'class="orange"'
-        if '{{a:pink}}' in text:
-            fontClass = 'class="pink"'
-        if '{{a:purple}}' in text:
-            fontClass = 'class="purple"'
-        if '{{a:red}}' in text:
-            fontClass = 'class="red"'
-        if '{{a:tan}}' in text:
-            fontClass = 'class="tan"'
-        if '{{a:white}}' in text:
-            fontClass = 'class="white"'
-        if '{{a:yellow}}' in text:
-            fontClass = 'class="yellow"'
-        return fontClass
-
     def strip_color(text):
-        temp = text
-        if '{{a:black}}' in text:
-            temp = re.sub('{{a:black}}', '', text)
-        if '{{a:blue}}' in text:
-            temp = re.sub('{{a:blue}}', '', text)
-        if '{{a:brown}}' in text:
-            temp = re.sub('{{a:brown}}', '', text)
-        if '{{a:cyan}}' in text:
-            temp = re.sub('{{a:cyan}}', '', text)
-        if '{{a:dkgray}}' in text:
-            temp = re.sub('{{a:dkgray}}', '', text)
-        if '{{a:gray}}' in text:
-            temp = re.sub('{{a:gray}}', '', text)
-        if '{{a:green}}' in text:
-            temp = re.sub('{{a:green}}', '', text)
-        if '{{a:ltblue}}' in text:
-            temp = re.sub('{{a:ltblue}}', '', text)
-        if '{{a:ltgray}}' in text:
-            temp = re.sub('{{a:ltgray}}', '', text)
-        if '{{a:ltgreen}}' in text:
-            temp = re.sub('{{a:ltgreen}}', '', text)
-        if '{{a:orange}}' in text:
-            temp = re.sub('{{a:orange}}', '', text)
-        if '{{a:pink}}' in text:
-            temp = re.sub('{{a:pink}}', '', text)
-        if '{{a:purple}}' in text:
-            temp = re.sub('{{a:purple}}', '', text)
-        if '{{a:red}}' in text:
-            temp = re.sub('{{a:red}}', '', text)
-        if '{{a:tan}}' in text:
-            temp = re.sub('{{a:tan}}', '', text)
-        if '{{a:white}}' in text:
-            temp = re.sub('{{a:white}}', '', text)
-        if '{{a:yellow}}' in text:
-            temp = re.sub('{{a:yellow}}', '', text)
-        return temp
+        if reTextColor.search(text):
+            temp = reTextColor.search(text)
+            text_clolor = temp.group(1)
+            strip_color = temp.group(0)
+            fontClass = 'class="{}"'.format(text_clolor)
+            out_text = re.sub(strip_color, '', text)
+        else:
+            fontClass = ''
+            out_text = text
+        return fontClass, out_text
+
+    def strip_title(text):
+        if reLinkTitle.search(text):
+            temp = reLinkTitle.search(text)
+            link_title = 'title="{}"'.format(temp.group(1))
+            strip_title = temp.group(0)
+            out_text = re.sub(strip_title, '', text)
+        else:
+            link_title = ''
+            out_text = text
+        return link_title, out_text
 
     # RegEx ---------------------------------------------------------
     # --Headers
     reHead = re.compile(r'(=+) *(.+)')
     reHeadGreen = re.compile(r'(#+) *(.+)')
-    headFormat = '<h%d class="header%d" id="%s">%s</h%d>\n'
-    headFormatGreen = '<h%d id="%s">%s</h%d>\n'
+    reScriptHead = re.compile(r'(%+) *(.+)')
+    headFormat = '<h{} class="header{}" id="{}">{}</h{}>\n'
+    headFormatGreen = '<h{} id="{}">{}</h{}>\n'
+    headFormatScript = '<h{} class="scriptHeader" id="{}">{}</h{}>\n'
+    reHeaderText = re.compile(r'(<h\d {1,3}.+?>)(.*)(<\/h\d>)')
+    reHeaderID = re.compile(r'(id="(.+?)")')
     # --List
     reList = re.compile(r'( *)([-!?\.\+\*o]) (.*)')
     # --Misc. text
     reHRule = re.compile(r'^\s*-{4,}\s*$')
     reEmpty = re.compile(r'\s+$')
-    reMDash = re.compile(r'--')
+    reMDash = re.compile(r'-em-')
     rePreBegin = re.compile('<pre>', re.I)
     rePreEnd = re.compile('</pre>', re.I)
-    reParagraph = re.compile('<p ?(>)?>', re.I)
+    reParagraph = re.compile('<p[\s]+|<p>', re.I)
     reCloseParagraph = re.compile('</p>', re.I)
     # --Bold, Italic, BoldItalic
     reBold = re.compile(r'__')
@@ -543,18 +294,25 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     reBoldItalic = re.compile(r'\*\*')
     states = {'bold': False, 'italic': False, 'boldItalic': False}
     # --Links
-    reLink = re.compile(r'\[\[(.*?)\]\]')
-    reHttp = re.compile(r' (http:\/\/[\?=_~a-zA-Z0-9\.\/%-]+)')
-    reWww = re.compile(r' (www\.[\?=_~a-zA-Z0-9\./%-]+)')
+    reLink = re.compile(r'\[\[(.+?)\]\]')
+    reHttp = re.compile(r' (http:\/\/[\?=_~a-zA-Z0-9\.\/%-]+)| (https:\/\/[\?=_~a-zA-Z0-9\.\/%-]+)')
+    reWww = re.compile(r' (www\.[_~a-zA-Z0-9\./%-]+)')
     reWd = re.compile(r'(<[^>]+>|\[[^\]]+\]|\W+)')
-    rePar = re.compile(r'^([a-zA-Z]|\*\*|~~|__)')
-    reFullLink = re.compile(r'(:|#|\.[a-zA-Z0-9]{2,4}(\/)?$)')
+    rePar = re.compile(r'^([a-zA-Z\d]|\*\*|~~|__|^\.{1,}|^\*{1,}|^\"{1,})')
+    reFullLink = re.compile(r'(:|#|\.[a-zA-Z0-9]{2,4}$)')
+    reLinkWithHashtag = re.compile(r'(.*)(#(.*))$')
+    # --Tooltip
+    reTooltip = re.compile(r'{{tooltip:(.+?)}}')
+    # --LinkTitle
+    reLinkTitle = re.compile(r'{{title:(.+?)}}')
+    # --TextColors
+    reTextColor = re.compile(r'{{a:(.+?)}}')
     # --Tags
-    pageTitle = 'title: Your Content'
     reAnchorTag = re.compile('{{nav:(.+?)}}')
     reContentsTag = re.compile(r'\s*{{CONTENTS=?(\d+)}}\s*$')
     reCssTag = re.compile('\s*{{CSS:(.+?)}}\s*$')
-    reTitleTag = re.compile(r'({{PAGETITLE=")(.*)("}})$')
+    reTitleTag = re.compile(r'^{{PAGETITLE="(.+?)"}}')
+    reNoteTag = re.compile(r'^{{note:(.+?)}}')
     reComment = re.compile(r'^\/\*.+\*\/')
     reCTypeBegin = re.compile(r'^\/\*')
     reCTypeEnd = re.compile('\*\/$')
@@ -562,69 +320,64 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     reSpoilerEnd = re.compile(r'\[\[se:\]\]')
     reBlockquoteBegin = re.compile(r'\[\[bb:(.*?)\]\]')
     reBlockquoteBEnd = re.compile(r'\[\[be:\]\]')
-    reHtmlBegin = re.compile(r'(^\<font.+?\>)|(^\<code.+?\>)|(^\<a\s{1,3}href.+?\>)|(^\<img\s{1,3}src.+?\>)|^\u00A9|^\<strong|^\<[bB]\>|(^{% include image-inline.html)')
     reNavigationButtonBegin = re.compile(r'{{nbb}}')
     reNavigationButtonEnd = re.compile(r'{{nbe}}')
     # --Open files
     inFileRoot = re.sub('\.[a-zA-Z]+$', '', srcFile)
-    # --TextColors
-    reTextColor = re.compile(r'({{a:(.+?)}})')
     # --Images
-    reImageInline = re.compile(r'{{inline:.+?}}')
-    reImageOnly = re.compile(r'{{image:.+?}}')
-    reImageCaption = re.compile(r'({{image-caption:(.+?)}})')
-    reImageCaptionUrl = re.compile(r'({{image-cap-url:(.+?)}})')
+    reImageInline = re.compile(r'{{inline:(.+?)}}')
+    reImageOnly = re.compile(r'{{image:(.+?)}}')
+    reImageCaption = re.compile(r'{{image-caption:(.+?)}}')
+    reImageCaptionUrl = re.compile(r'{{image-cap-url:(.+?)}}')
+    # --Exclude from Paragraphs
+    # reHtmlBegin = re.compile(r'(^\<font.+?\>)|(^\<code.+?\>)|(^\<a\s{1,3}href.+?\>)|(^\<a\s{1,3}(class=".+?)?href.+?\>)|(^\<img\s{1,3}src.+?\>)|^\u00A9|^\<strong|^\<[bB]\>|(^{% include image)')
+    reHtmlNotPar = re.compile(r'\<h\d[>]?|<hr>|{{CONTENTS|class="drkbtn"|<[\/]?div>|<div id=|<div class=|<[\/]?iframe|<[\/]?table|<[\/]?tr>|<[\/]?td>|<[\/]?th>')
+    reLiquidOnly = re.compile(r'{% raw %}|{% endraw %}')
+    # --Markdown
+    rePreMarkdown = re.compile("^```", re.I)
+    reOpenCloseMarkdownCode = re.compile(r'`')
 
     def imageInline(maObject):
-        var1 = maObject.group(0).strip()
-        var1 = re.sub(r'{{inline:(.+?)}}', r'\1', var1)
-        var1 = re.sub(r'\n', r'', var1)
-        if '|' in var1:
-            (max_width, file_name, alt_text) = [chunk.strip() for chunk in var1.split('|', 2)]
-        return '{{% include image-inline.html max-width="{}" file="img/{}" alt="{}" %}}\n'.format(max_width, file_name, alt_text)
+        image_line = maObject.group(1).strip()
+        if '|' in image_line:
+            (max_width, file_name, alt_text) = [chunk.strip() for chunk in image_line.split('|', 2)]
+        return '{{% include image-inline.html max-width="{}" file="img/{}" alt="{}" %}}'.format(max_width, file_name, alt_text)
 
     def imageInclude(maObject):
-        var1 = maObject.group(0).strip()
-        var1 = re.sub(r'{{image:(.+?)}}', r'\1', var1)
-        var1 = re.sub(r'\n', r'', var1)
-        if '|' in var1:
-            (file_name, alt_text) = [chunk.strip() for chunk in var1.split('|', 1)]
-        return '{{% include image.html file="img/{}" alt="{}" %}}\n'.format(file_name, alt_text)
+        image_line = maObject.group(1).strip()
+        if '|' in image_line:
+            (file_name, alt_text) = [chunk.strip() for chunk in image_line.split('|', 1)]
+        return '{{% include image.html file="img/{}" alt="{}" %}}'.format(file_name, alt_text)
 
     def imageCaption(maObject):
-        var1 = maObject.group(0).strip()
-        var1 = re.sub(r'{{image-caption:(.+?)}}', r'\1', var1)
-        var1 = re.sub(r'\n', r'', var1)
-        if '|' in var1:
-            (file_name, alt_text, caption) = [chunk.strip() for chunk in var1.split('|', 2)]
-        return '{{% include image-caption.html file="img/{}" alt="{}" caption="{}" %}}\n'.format(file_name, alt_text, caption)
+        image_line = maObject.group(1).strip()
+        if '|' in image_line:
+            (file_name, alt_text, caption) = [chunk.strip() for chunk in image_line.split('|', 2)]
+        return '{{% include image-caption.html file="img/{}" alt="{}" caption="{}" %}}'.format(file_name, alt_text, caption)
 
     def imageCaptionUrl(maObject):
-        var1 = maObject.group(0).strip()
-        var1 = re.sub(r'{{image-cap-url:(.+?)}}', r'\1', var1)
-        var1 = re.sub(r'\n', r'', var1)
-        if '|' in var1:
-            (file_name, alt_text, caption, url, urlname) = [chunk.strip() for chunk in var1.split('|', 4)]
-        return '{{% include image-caption-url.html file="img/{}" alt="{}" caption="{}" url="{}" urlname="{}" %}}\n'.format(file_name, alt_text, caption, url, urlname)
+        image_line = maObject.group(1).strip()
+        if '|' in image_line:
+            (file_name, alt_text, caption, url, urlname) = [chunk.strip() for chunk in image_line.split('|', 4)]
+        return '{{% include image-caption-url.html file="img/{}" alt="{}" caption="{}" url="{}" urlname="{}" %}}'.format(file_name, alt_text, caption, url, urlname)
 
     def spoilerTag(line):
         spoilerID = ''
         spoilerText = ''
         if '|' in line:
             (spoilerID, spoilerText) = [chunk.strip() for chunk in line.split('|', 1)]
-        spoilerID = re.sub('\[\[', '', spoilerID)
-        spoilerText = re.sub('\]\]', '', spoilerText)
+        spoilerID = spoilerID.lower()
         return (spoilerID, spoilerText)
 
-    def httpReplace(line):
-        temp_text = line
+    def httpReplace(maObject):
+        temp_text = maObject.group(1)
         if inNavigationButtons:
-            temp_line = reHttp.sub(r' <a href="\1" class="drkbtn">\1</a>', temp_text)
+            temp_line = '<a href="{}" class="drkbtn">{}</a>'.format(temp_text, temp_text)
         else:
-            temp_line = reHttp.sub(r' <a href="\1">\1</a>', temp_text)
+            temp_line = '<a href="{}">{}</a>'.format(temp_text, temp_text)
         return temp_line
 
-    def wwwReplace(line):
+    def wwwReplace(maObject):
         temp_text = line
         if inNavigationButtons:
             temp_line = reWww.sub(r' <a href="http://\1" class="drkbtn">\1</a>', temp_text)
@@ -633,24 +386,36 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
         return temp_line
 
     def linkReplace(maObject):
-        address = text = maObject.group(1).strip()
-        skipStrip = False
-        if '|' in text:
-            (address, text) = [chunk.strip() for chunk in text.split('|', 1)]
-            if address == '#':
-                fontClass = check_color(text)
-                text = strip_color(text)
-                address += reWd.sub('', text)
-                skipStrip = True
-        if not reFullLink.search(address):
-            address = address + '.html'
-        if not skipStrip:
-            fontClass = check_color(text)
-            text = strip_color(text)
-        if inNavigationButtons:
-            return '<a {} href="{}" class="drkbtn">{}</a>'.format(fontClass, address, text)
+        link_object = maObject.group(1)
+        if '|' in link_object:
+            (address, text) = [chunk.strip() for chunk in link_object.split('|', 1)]
         else:
-            return '<a {} href="{}">{}</a>'.format(fontClass, address, text)
+            address = text = link_object
+        fontClass, text = strip_color(text)
+        linkTitle, text = strip_title(text)
+        text_only_object = reLinkWithHashtag.search(address)
+        if text_only_object:
+            group1 = text_only_object.group(1)
+            group2 = text_only_object.group(2)
+            group3 = text_only_object.group(3)
+            # [[#|Implementing The Method]]
+            if len(group1) == 0 and len(group3) == 0 and group2 == '#':
+                address += reWd.sub('', text)
+            # [[#Implementing The Method | Implementing The Method]]
+            if len(group1) == 0 and len(group3) > 0 and address.find('#') == 0:
+                anchor_out = reWd.sub('', group3)
+                address = '#{}'.format(anchor_out)
+            # [[5-themethod.html#Implementing The Method | Implementing The Method]]
+            if (len(group1) > 0) and (len(group3) > 0) and (address.find('#') > 0) and not (group1.find(':') > 0):
+                anchor_out = reWd.sub('', group3)
+                address = '{}#{}'.format(group1, anchor_out)
+            # [[https://wiki.step-project.com/Guide:Troubleshooting#How_do_I_restore_vanilla_Skyrim.3F | This]]
+            if (address.find('#') > 0) and group1.find(':') > 0:
+                address = '{}#{}'.format(group1, group3)
+        if inNavigationButtons:
+            return '<a {} href="{}" {} class="drkbtn">{}</a>'.format(fontClass, address, linkTitle, text)
+        else:
+            return '<a {} href="{}" {}>{}</a>'.format(fontClass, address, linkTitle, text)
 
     # --Defaults ----------------------------------------------------------
     level = 1
@@ -663,49 +428,104 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     addContents = 0 # When set to 0 headers are not added to the TOC
     inPre = False
     inComment = False
-    isInParagraph = False
     htmlIDSet = list()
     dupeEntryCount = 1
     blockAuthor = "Unknown"
     inNavigationButtons = False
+    inLiquidOnly = False
+    openquote = False
+    openPreMarkdown = False
+    isInPreMarkdown = False
+    pageTitle = 'title: Your Content'
     # --Read source file --------------------------------------------------
-    ins = file(srcFile)
+    ins = open(srcFile, 'r')
+    if markdown:
+        pageTitle = r"title: xEdit What's New and Version Info"
+        firstLine = '<h2 id="Contents">Contents...</h2>\n'
+        outLines.append(firstLine)
+        secondLine = '{{CONTENTS=5}}\n'
+        outLines.append(secondLine)
+        addContents = 5
     for line in ins:
-        isInParagraph, wasInParagraph = False, isInParagraph
-        # --Preformatted? -----------------------------
+        inLiquidOnly = False
+        # --CSS
+        maCss = reCssTag.match(line)
+        if maCss:
+            cssFile = maCss.group(1).strip()
+            continue
+        # --Preformatted Text Block -----------------------------
         maPreBegin = rePreBegin.search(line)
         maPreEnd = rePreEnd.search(line)
-        if inPre or maPreBegin or maPreEnd:
-            inPre = maPreBegin or (inPre and not maPreEnd)
+        if (inPre and not maPreEnd) or maPreBegin:
+            inPre = True
             outLines.append(line)
             continue
+        if maPreEnd:
+            inPre = False
+            outLines.append(line)
+            continue
+        maPreMarkdown = rePreMarkdown.search(line)
+        if maPreMarkdown:
+            if not openPreMarkdown:
+                line = '<pre>\n'
+            if openPreMarkdown:
+                line = '</pre>\n'
+            outLines.append(line)
+            openPreMarkdown = True if not openPreMarkdown else False
+            isInPreMarkdown = True if not isInPreMarkdown else False
+            continue
+        # --Spoiler Tag ---------------------------
+        maSpoilerBegin = reSpoilerBegin.match(line)
+        maSpoilerEnd = reSpoilerEnd.match(line)
+        if maSpoilerBegin:
+            spoilerline = maSpoilerBegin.group(1)
+            spoilerID, spoilerName = spoilerTag(spoilerline)
+            firstLine = '<input type="checkbox" id="{}" />\n'.format(spoilerID)
+            outLines.append(firstLine)
+            secondLine = '<label for="{}">{}</label>\n'.format(spoilerID, spoilerName)
+            outLines.append(secondLine)
+            thirdLine = '<div class="main-content">\n'
+            outLines.append(thirdLine)
+            continue
+        if maSpoilerEnd:
+            line = '</div>\n'
+            outLines.append(line)
+            continue
+        # --Page Title -------------------------------
         maTitleTag = reTitleTag.match(line)
+        if maTitleTag:
+            temp = reTitleTag.match(line)
+            pageTitle = 'title: {}'.format(temp.group(1))
+            continue
+        maComment = reComment.match(line)
         maCTypeBegin = reCTypeBegin.match(line)
         maCTypeEnd = reCTypeEnd.search(line)
-        maComment = reComment.match(line)
         if maComment:
             continue
         if inComment or maCTypeBegin or maCTypeEnd or maComment:
             inComment = maCTypeBegin or (inComment and not maCTypeEnd)
             continue
-        if maTitleTag:
-            pageTitle = re.sub(r'({{PAGETITLE=")(.*)("}})(\n)?', r'title: \2', line)
-        # --Re Matches -------------------------------
-        maContents = reContentsTag.match(line)
-        maCss = reCssTag.match(line)
-        maHead = reHead.match(line)
-        maHeadgreen = reHeadGreen.match(line)
-        maList = reList.match(line)
-        maPar = rePar.match(line)
-        maHRule = reHRule.match(line)
-        maEmpty = reEmpty.match(line)
-        maSpoilerBegin = reSpoilerBegin.match(line)
-        maSpoilerEnd = reSpoilerEnd.match(line)
-        maBlockquoteBegin = reBlockquoteBegin.match(line)
-        maBlockquoteEnd = reBlockquoteBEnd.match(line)
+        # --Re Markdown Matches -------------------------------
+        maOpenCloseMarkdownCode = reOpenCloseMarkdownCode.search(line)
+        if maOpenCloseMarkdownCode:
+            builder = ''
+            for i in range(len(line)):
+                if (line[i] == '`') and not openquote:
+                    openquote = True
+                    builder = builder + '<code>'
+                elif (line[i] == '`') and openquote:
+                    openquote = False
+                    builder = builder + '</code>'
+                elif (line[i] == '<') and openquote:
+                    builder = builder + '&lt;'
+                elif (line[i] == '>') and openquote:
+                    builder = builder + '&gt;'
+                else:
+                    builder = builder + line[i]
+            line = builder
+        # --Navigation Buttons ----------------------------------
         maNavigationButtonBegin = reNavigationButtonBegin.match(line)
         maNavigationButtonEnd = reNavigationButtonEnd.match(line)
-        # --Navigation Buttons ----------------------------------
         if maNavigationButtonBegin:
             line = '<div>\n'
             inNavigationButtons = True
@@ -713,18 +533,41 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
             line = '</div>\n'
             inNavigationButtons = False
         # --Contents ----------------------------------
+        maContents = reContentsTag.match(line)
         if maContents:
-            if maContents.group(1):
-                addContents = int(maContents.group(1))
-            else:
-                addContents = 100
-            inPar = False
-        # --CSS
-        elif maCss:
-            cssFile = maCss.group(1).strip()
+            temp_var = maContents.group(1)
+            addContents = int(temp_var)
+        # --Re Note -------------------------------
+        maNoteTag = reNoteTag.match(line)
+        if maNoteTag:
+            note_text = maNoteTag.group(1)
+            line = '<p class="note">{}</p>\n'.format(note_text)
+        # --Blockquote ---------------------------
+        maBlockquoteBegin = reBlockquoteBegin.match(line)
+        maBlockquoteEnd = reBlockquoteBEnd.match(line)
+        if maBlockquoteBegin:
+            firstLine = '<section class="quote">\n'
+            outLines.append(firstLine)
+            author = maBlockquoteBegin.group(1)
+            if len(author) < 1:
+                author = blockAuthor
+            authorLine = '<p class="attr">{}</p>\n'.format(author)
+            outLines.append(authorLine)
             continue
+        if maBlockquoteEnd:
+            line = '</section>\n'
+            outLines.append(line)
+            continue
+        # --Re Matches -------------------------------
+        maHead = reHead.match(line)
+        maHeadgreen = reHeadGreen.match(line)
+        maScriptHead = reScriptHead.match(line)
+        maList = reList.match(line)
+        maPar = rePar.match(line)
+        maHRule = reHRule.match(line)
+        maEmpty = reEmpty.match(line)
         # --Headers
-        elif maHead:
+        if maHead:
             lead, text = maHead.group(1, 2)
             text = re.sub(' *=*$', '', text.strip())
             anchor = reWd.sub('', text)
@@ -735,7 +578,7 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
                 anchor += str(dupeEntryCount)
                 htmlIDSet.append(anchor)
                 dupeEntryCount += 1
-            line = headFormat % (level, level, anchor, text, level)
+            line = headFormat.format(level, level, anchor, text, level)
             if addContents:
                 contents.append((level, anchor, text))
             # --Title?
@@ -751,7 +594,23 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
                 anchor += str(dupeEntryCount)
                 htmlIDSet.append(anchor)
                 dupeEntryCount += 1
-            line = headFormatGreen % (level, anchor, text, level)
+            line = headFormatGreen.format(level, anchor, text, level)
+            if addContents:
+                contents.append((level, anchor, text))
+            # --Title?
+        # --Script Header
+        elif maScriptHead:
+            lead, text = maScriptHead.group(1, 2)
+            text = re.sub(' *\%*$', '', text.strip())
+            anchor = reWd.sub('', text)
+            level = len(lead)
+            if not htmlIDSet.count(anchor):
+                htmlIDSet.append(anchor)
+            else:
+                anchor += str(dupeEntryCount)
+                htmlIDSet.append(anchor)
+                dupeEntryCount += 1
+            line = headFormatScript.format(level, anchor, text, level)
             if addContents:
                 contents.append((level, anchor, text))
             # --Title?
@@ -764,7 +623,7 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
                 bullet = '&nbsp;'
             elif bullet == '*':
                 bullet = '&bull;'
-            level = len(spaces) / 2 + 1
+            level = int(len(spaces) / 2 + 1)
             line = '{}<p class="list-{}">{}&nbsp; '.format(spaces, level, bullet)
             line = '{}{}</p>\n'.format(line, text)
         # --HRule
@@ -772,40 +631,12 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
             line = '<hr>\n'
         # --Paragraph
         elif maPar:
-            if not wasInParagraph: line = '<p>' + line.rstrip() + '</p>\n'
-            isInParagraph = True
+            line = '<p>' + line.rstrip() + '</p>\n'
         # --Empty line
         elif maEmpty:
             line = spaces + '<p class="empty">&nbsp;</p>\n'
-        # --Spoiler Tag ---------------------------
-        elif maSpoilerBegin:
-            line = re.sub('sb:', '', line)
-            spoilerID, spoilerName = spoilerTag(line)
-            spoilerID = spoilerID.lower()
-            firstLine = '<input type="checkbox" id="{}" />\n'.format(spoilerID)
-            outLines.append(firstLine)
-            secondLine = '<label for="{}">{}</label>\n'.format(spoilerID, spoilerName)
-            outLines.append(secondLine)
-            thirdLine = '<div class="spoiler">\n'
-            outLines.append(thirdLine)
-            continue
-        elif maSpoilerEnd:
-            line = '</div>\n'
-        # --Blockquote ---------------------------
-        elif maBlockquoteBegin:
-            firstLine = '<section class="quote">\n'
-            outLines.append(firstLine)
-            author = re.sub(r'\[\[bb:(.*?)\]\]\n', r'\1', line)
-            if len(author) < 1:
-                author = blockAuthor
-            authorLine = '<p class="attr">{}</p>\n'.format(author)
-            outLines.append(authorLine)
-            continue
-        elif maBlockquoteEnd:
-            line = '</section>\n'
         # --Misc. Text changes --------------------
-        line = reMDash.sub('&#150', line)
-        line = reMDash.sub('&#150', line)
+        line = reMDash.sub('&mdash;', line)
         # --Bold/Italic subs
         line = reBold.sub(boldReplace, line)
         line = reItalic.sub(italicReplace, line)
@@ -819,12 +650,27 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
         line = reImageCaptionUrl.sub(imageCaptionUrl, line)
         # --Hyperlinks
         line = reLink.sub(linkReplace, line)
-        line = httpReplace(line)
-        line = wwwReplace(line)
+        line = reHttp.sub(httpReplace, line)
+        # line = reWww.sub(wwwReplace, line)
         # --HTML Font or Code tag first of Line ------------------
-        maHtmlBegin = reHtmlBegin.match(line)
-        if maHtmlBegin:
-            maParagraph = reParagraph.match(line)
+        maHtmlNotPar = reHtmlNotPar.search(line)
+        maLiquidOnly = reLiquidOnly.search(line)
+        if maLiquidOnly:
+            if line == '{% raw %}\n' or line == '{% endraw %}\n':
+                inLiquidOnly = True
+        # --Tooltip
+        maTooltip = reTooltip.search(line)
+        if maTooltip:
+            text_split = maTooltip.group(1)
+            text_strip = maTooltip.group(0)
+            text_strip = re.sub('\|', '\|', text_strip)
+            (tooltip_text, hover_text) = [chunk.strip() for chunk in text_split.split('|', 1)]
+            newline = '<div class="tooltip"><p>{}</p>\n'.format(tooltip_text)
+            newline = newline + '    <span class="tooltiptext">{}</span>\n'.format(hover_text)
+            newline = newline + '</div>\n'
+            line = re.sub(text_strip, newline, line)
+        if not maHtmlNotPar and not inLiquidOnly:
+            maParagraph = reParagraph.search(line)
             maCloseParagraph = reCloseParagraph.search(line)
             if not maParagraph:
                 line = '<p>' + line
@@ -832,11 +678,7 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
                 line = re.sub(r'(\n)?$', '', line)
                 line = line + '</p>\n'
         # --Save line ------------------
-        # print line,
-        if maTitleTag:
-            pass
-        else:
-            outLines.append(line)
+        outLines.append(line)
     ins.close()
     # --Get Css -----------------------------------------------------------
     if not cssFile:
@@ -857,8 +699,7 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
         if '<' in css:
             raise "Non css tag in css file: " + cssFile
     # --Write Output ------------------------------------------------------
-    out = file(outFile, 'w')
-    # out.write(htmlHead % (title, css))
+    out = open(outFile, 'w')
     out.write('---\nlayout: default\n{}'.format(pageTitle))
     out.write(htmlHead)
     didContents = False
@@ -866,7 +707,19 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     for line in outLines:
         if reContentsTag.match(line):
             if not didContents:
-                baseLevel = min([level for (level, name, text) in contents])
+                if markdown:
+                    spoilerID = 'spoiler1'
+                    spoilerName = 'Contents Spoiler'
+                    thirdLine = '<input type="checkbox" id="{}" />\n'.format(spoilerID)
+                    out.write(thirdLine)
+                    fourthLine = '<label for="{}">{}</label>\n'.format(spoilerID, spoilerName)
+                    out.write(fourthLine)
+                    fifthLine = '<div class="main-content">\n'
+                    out.write(fifthLine)
+                if len(contents) > 0:
+                    baseLevel = min([level for (level, name, text) in contents])
+                else:
+                    baseLevel = 1
                 previousLevel = baseLevel
                 for heading in contents:
                     number = ''
@@ -897,20 +750,26 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
                                 number += '.' + str(countlist[i])
                     if heading[0] <= addContents:
                         out.write('<p class="list-{}">&bull;&nbsp; <a href="#{}">{} {}</a></p>\n'.format(level, heading[1], number, heading[2]))
-                        header_match.append((heading[1], number, heading[2]))
+                        header_match.append((heading[1], number))
                     previousLevel = heading[0]
                 didContents = True
+                if markdown:
+                    firstLine = '</div>\n'
+                    out.write(firstLine)
         else:
             maIsHeader = re.search(r'<\/h\d>$', line)
             if maIsHeader:
-                text_search = re.sub(r'^<h.*id="(.*)">.*<\/h\d>', r'\1', line).rstrip('\n')
+                header_id_object = reHeaderID.search(line)
+                header_id_result = header_id_object.group(2)
                 for header_to_match in header_match:
-                    if header_to_match[0] == text_search:
-                        text_replace = '{} - {}'.format(header_to_match[1], header_to_match[2])
-                        line = re.sub(r'(<h.*>)(.*)(<\/h\d>)', r'\g<1>'+text_replace+'\g<3>', line)
+                    if header_to_match[0] == header_id_result:
+                        split_line = reHeaderText.split(line)
+                        text_replace = '{} - {}'.format(header_to_match[1], split_line[2])
+                        line = '{}{}{}\n'.format(split_line[1], text_replace, split_line[3])
                         break
             out.write(line)
-    # out.write('</div>\n')
+    if markdown:
+        out.write(endMarkdown)
     out.close()
 	
 
@@ -918,8 +777,8 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
 def genHtml(fileName, outFile=None, cssDir=''):
     """Generate html from old style etxt file or from new style wtxt file."""
     ext = os.path.splitext(fileName)[1].lower()
-    if ext == '.etxt':
-        etxtToHtml(fileName)
+    if ext == '.md':
+        wtxtToHtml(fileName, outFile=None, cssDir='')
     elif ext == '.txt':
         wtxtToHtml(fileName, outFile=None, cssDir='')
         # docsDir = r'c:\program files\bethesda softworks\morrowind\data files\docs'
