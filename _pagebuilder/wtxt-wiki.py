@@ -226,7 +226,10 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
             markdown = True
             outFile = '..\\18-' +  os.path.splitext(srcFile)[0] + '.html'
         else:
-            page_number = int(srcFile.split('-', 1)[0])
+            if '-' in srcFile:
+                page_number = int(srcFile.split('-', 1)[0])
+            else:
+                page_number = 0
     # RegEx Independent Routines ------------------------------------
     def anchorReplace(maObject):
         temp = maObject.group(1)
