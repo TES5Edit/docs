@@ -803,7 +803,20 @@ a.yellow {
 
 /* Main content for Wrte Text Paragraphs */
 .main-content {
-  p.empty {
+  p.empty {}
+  p.note {
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    background-color: var(--code-background);
+    background-image: url(../../img/note.png);
+    background-position: 9px 0px;
+    background-repeat: no-repeat;
+    border: solid 0.13rem var(--header-border);
+    border-radius: 6px;
+    line-height: 18px;
+    overflow: hidden;
+    padding: 15px 60px;
+    margin: 0 1rem;
   }
   p.list-1 {
     margin-left: 0.9rem;
