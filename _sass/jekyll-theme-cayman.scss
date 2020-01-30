@@ -308,6 +308,7 @@ body {
     'lefttoc' 'righttoc';
   }
 }
+
 .grid-toc div {
   background: var(--body-background);
 }
@@ -441,10 +442,10 @@ body {
     color: var(--toc-header-text);
   }
   iframe {
-	margin: 0.38rem 0 0.38rem 0.95rem;
+    margin: 0.38rem 0 0.38rem 0.95rem;
   }
   p {
-	margin: 0 0 0 0.95rem;
+    margin: 0 0 0 0.95rem;
     color: var(--body-text);
   }
   code {
@@ -464,13 +465,13 @@ body {
     background-color: var( --code-background);
     border: solid 1px var(--cayman-border);
     border-radius: 0.3rem;
+    white-space: pre-wrap;
     >code {
       padding: 0;
       margin: 0;
       font-size: 0.9rem;
       color: var(--purple-text);
       word-break: normal;
-      white-space: pre;
       background: transparent;
       border: 0;
     }
@@ -529,14 +530,16 @@ body {
   }
   table {
     display: block;
-    width: 100%;
+    width: calc(100% - (0.9rem * 2));
     overflow: auto;
     word-break: normal;
     word-break: keep-all; /* For Firefox to horizontally scroll wider tables. */
     -webkit-overflow-scrolling: touch;
+    margin-left: 0.9rem;
+    margin-right: 0.9rem;
     th {
       font-weight: bold;
-      background-color: var(--header1-border);
+      background-color: var(--header3-background);
     }
     th,
     td {
@@ -566,6 +569,7 @@ body {
   }
 }
 
+
 /* adding none to this hides the checkbox */
 input[id^="spoiler"] {
   display: none;
@@ -590,63 +594,57 @@ input[id^="spoiler"]+label {
 input[id^="spoiler"]:checked+label {
   color: var(--purple-text);
   background-color: var(--code-background);
-  outline-style: hidden ;
+  outline-style: hidden;
 }
 
 /* the spoiler tag text box */
-input[id^="spoiler"]~.spoiler {
-  width: auto;
+input[id^="spoiler"]~.main-content {
   height: 0;
-  overflow: hidden;
+  overflow: auto;
   opacity: 0;
-  margin: 0.25rem;
-  padding: 0.25rem;
-  color: var(--purple-text);
+  margin: 0 0 0 0.95rem;
   background-color: var(--code-background);
   border: 2px;
   border-style: solid;
   border-color: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
+  font: 1rem Consolas, "Liberation Mono", Menlo, Courier, monospace;
   transition: all .6s;
-  p {
-    color: inherit;
-  }
 }
 
 /* formatting for the text in the box such as padding */
-input[id^="spoiler"]:checked+label+.spoiler {
+input[id^="spoiler"]:checked+label+.main-content {
   height: auto;
   opacity: 1;
-  padding: 10px;
 }
 
 .main-content {
   h1.grhead1 {
-	font-size: 1.40rem;
+    font-size: 1.40rem;
     margin: 0.13rem 0 0.13rem 0.9rem;
     color: var(--toc-header-text);
-	padding: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     line-height: 24px;
   }
   h2.grhead2 {
-	font-size: 1.30rem;
+    font-size: 1.30rem;
     margin: 0.13rem 0 0.13rem 1.50rem;
     color: var(--toc-header-text);
-	padding: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     line-height: 24px;
   }
   h3.grhead3 {
-	font-size: 1.20rem;
+    font-size: 1.20rem;
     margin: 0.13rem 0 0.13rem 2.10rem;
     color: var(--toc-header-text);
-	padding: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     line-height: 24px;
   }
   h4.grhead4 {
-	font-size: 1.10rem;
+    font-size: 1.10rem;
     margin: 0.13rem 0 0.13rem 2.75rem;
     color: var(--toc-header-text);
-	padding: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     line-height: 24px;
   }
 }
@@ -915,6 +913,35 @@ figure.image-caption {
   }
 }
 
+.tooltip {
+  position: relative;
+  display: block;
+}
+
+.tooltip .tooltiptext {
+  display: block;
+  visibility: hidden;
+  width: auto;
+  color: var(--header4-text);
+  background-color: var(--code-background);
+  border-color: var(--header-border);
+  border-style: solid;
+  text-align: center;
+  border-radius: 6px;
+  padding: 0;
+  position: absolute;
+  z-index: 1;
+  left: 0.9rem;
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
 .short-column {
   width: 5%;
 }
@@ -955,4 +982,26 @@ figure.image-caption {
 
 .site-footer-credits {
   color: var(--cayman-blockquote-text);
+}
+
+.cmp-no,
+.cmp-unknown,
+.cmp-yes {
+  background-repeat: no-repeat;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cmp-yes {
+  background-image: url(../../img/tick.png);
+}
+
+.cmp-no {
+  background-image: url(../../img/cross.png);
+}
+
+.cmp-unknown {
+  background-image: url(../../img/question.png);
 }
