@@ -1,0 +1,459 @@
+{{PAGETITLE="xEdit Overview"}}
+## Contents...
+{{CONTENTS=5}}
+== Introducing xEdit
+
+xEdit is short for any version for example [[https://www.nexusmods.com/skyrimspecialedition/mods/164 | SSEEdit]]. xEdit is an advanced graphical module viewer/editor and conflict detector, with many additional functions that make it akin to a Swiss-army knife for modders and mod-authors alike. The primary function of xEdit is to help you spot conflicts between mods and resolve them, as well as to prepare your mod-list for a smooth run-time.
+
+For the mod author xEdit provides the capability of viewing mod files at great depth, cleaning mod files of extraneous and duplicated records, merging mods together, changing ESPs to ESMs and scanning references in mod files for reach ability, form errors and specific references. These functions are very important to mod authors in the Fallout3 environment, as they will clean the mod of unintended changes, erroneous records and potential conflicts with other mainstream mods that players run.
+
+Thus, whether you use mods to enhance your gaming experience or create mods for others to enjoy, using xEdit is both a wise investment in time and a beneficial act for the modding community. Authors who clean and prepare their mods with xEdit will experience fewer conflict and compatibility problems once published, and Players who [[5-conflict-detection-and-resolution.html | de-conflict]] their load orders are much less likely to experience crashes and headaches. In general, the use of xEdit can only improve the inter-operability of all mods, and this can only be a good thing.
+
+If I have not convinced you by now to invest an evening to learn how to use xEdit, then you should be sacked and have a live Nuka-grenade stuffed down your trousers. If however you wish to do the right thing by the modding community, grab a coffee and let's get to work! xEdit is not a difficult tool to use, but it does require that your CPU (brain) be involved in the process, and that is what this tutorial is designed to teach.
+
+== Acquisition and Installation
+=== Downloading xEdit from the Nexus
+
+xEdit works on Windows XP, Vista, Windows 7, 8, and 10.  Other platforms or Windows simulators may or may not work and are not officially supported. xEdit is available for download from Nexus, one of the most outstanding sources for Bethesda content. Downloading from the [[https://www.nexusmods.com/skyrim/mods/25859 | TES5Edit Nexus]].
+
+{{image:image002.jpg | Download File}}
+
+The following page will display from the TES5Edit Nexus site. You will need to first click on, "Files" to display the list of xEdit versions. Once loaded, check the Version number in the upper-right corner (B) to ensure you download the most current revision. Then click on that revision of xEdit in the Main Files section (C).
+
+Once you download the program, you will need an archive extraction tool that can handle 7-Zip files (.7z), such as 7-Zip, which is available at: [[http://www.7-zip.org/ | http://www.7-zip.org/]]
+
+{{image:image004.jpg | Extract Files}}
+
+Once the archive is open, you will need to extract the TES5Edit files into the right place for it to function. That place is the Skyrim\ directory, where the TESV.exe program is installed. Do Not install into the Skyrim\Data directory or the program will not function correctly. Also refer to [[#WindowsVistaandUACSecurity | Windows Vista and UAC Security]].
+
+Technically you can run the xEdit exe from any location except the game's Data folder.
+
+Previously all xEdit packages contained a special file of hard coded values not found in the main ESM or DLC. This is now part of xEdit, and the loose file is no longer required or included. All future releases will no longer include them.
+
+If have used previous versions of xEdit, you can remove files like <code>Skyrim.Hardcoded.dat</code> as they are no longer needed.
+
+{{nbb}}
+    [[#AcquisitionandInstallation | Top of this Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+=== DirectX and Requirements - [FO3Edit/FNVEdit/TES4Edit]
+
+{{note:This does not apply to TES5Edit, SSEEedit, or FO4Edit! It also does not apply to Windows 7, 8.1 or 10}}
+
+{{image:d3dxerror.jpg | d3dxerror}}
+
+With FO3Edit, FNVEdit, or TES4Edit installed let's review some system parameters and drivers that you will need in order to successfully operate the tool for Windows XP. xEdit will require current DirectX drivers from Microsoft. You can tell if your system is up-to-spec by simply launching the tool. If xEdit loads and presents you with a Master/Plugin Selector view, your good to go but you can skip this next step. If you get an error about d3dx9_*.dll not being installed, you need to update your DirectX to at least the March 2008 Version.
+
+DirectX can be found here: [[https://www.microsoft.com/en-us/download/details.aspx?id=34429 | Microsoft DirectX® 9.0c End-User Runtime]]
+
+Once DirectX is installed, you should be able launch the xEdit application successfully. If you still get errors, please report them to ElminsterAU.
+
+{{nbb}}
+    [[#DownloadingxEditfromtheNexus | Previous Section]]
+    [[#AcquisitionandInstallation | Top of this Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+=== Windows Vista and UAC Security
+
+The UAC Security feature of Vista, Windows 7, 8, and 10 protects the Program Files directory from un-authorized access. Unfortunately, this also causes problems for xEdit and Bethesda games, and requires some manual intervention on your part to resolve. You have 3 options for dealing with UAC Security:
+
+* Disable the UAC completely, but this will leave your system more vulnerable. (not recommended)
+* Install your Bethesda game and xEdit in the C:\Games folder. For example, C:\Games\steamapps\common\Skyrim. Which is not controlled by UAC and will prevent conflicts. (recommended)
+* Assign the &quot;Users&quot; group &quot;Full Control&quot; of the C:\Games folder (and subfolders) in UAC, which will prevent UAC from causing problems.
+
+Any of the above options will work, though it is probably a better option to install your Bethesda game and xEdit into C:\Games directory and avoid the Program Files directory all-together. That leaves your system secure and averts the UAC problem for Bethesda fames.
+
+If you are unable to get past the UAC restrictions, you may want to look for forums that people frequent for additional assistance with Windows. If all went well with the install, you should be able to successfully run xEdit.
+
+{{nbb}}
+    [[#DirectXandRequirementsFO3EditFNVEditTES4Edit | Previous Section]]
+    [[#AcquisitionandInstallation | Top of this Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+== Starting xEdit
+
+When xEdit starts, you get a dialog to select which modules you want to load. Fallout 3, Fallout NV, and Oblivion use the time date stamp of the files to determine load order. Skyrim, Skyrim SE, and Fallout 4 use other files maintained by your mod manager. Load order cannot be changed with xEdit. If you need to change your load order, close xEdit and change the load order, then re-launch xEdit.
+
+{{nav:links_fomm}}
+For FO3/FNV some prefer to use FOMM as a mod manager. There are several versions available.
+* [[https://www.nexusmods.com/fallout3/mods/640 | FOMM Q and Timeslip v0.13.21(Last update 24 Nov 2010)]]
+* [[https://www.nexusmods.com/newvegas/mods/36901 | FOMM by Q, Timeslip, and kaburke v0.13.21(Last update 24 Nov 2010)]]
+* [[https://www.nexusmods.com/newvegas/mods/54991 | FOMM by NiveusEverto v0.14.14.5(Last update 16 Dec 2018)]]
+
+BOSS and LOOT will also sort mods if you are familiar with them.
+
+* [[https://github.com/boss-developers/boss/releases/tag/v2.3.2 | BOSS v2.3.2 by  deathssoul (latest version)]]
+* [[https://github.com/boss-developers/boss/releases/tag/v2.3.0 | BOSS v2.3.0 by  WrinklyNinja (last version by this author)]]
+* [[https://github.com/loot/loot/releases | LOOT v0.15.1 by  WrinklyNinja]]
+
+{{image:module_select.jpg | module_select}}
+
+Select the mods that you want to load into xEdit, which can be all (for conflict detection) or just one if you're working on a specific mod-file. Once you have confirmed that dialog the selected modules will start loading in the background. The first time you run xEdit, depending on your system, it will take several minutes to load while it creates a cache of important data. xEdit subsequently loads much faster after building the cache.
+
+{{image:image006.jpg | image006.jpg}}
+
+The Navigation Tree appears on the left and shows all active modules in their correct load order. From the Navagation Tree you can look at every single record in any of your modules. An example of a successful launch of xEdit is shown, though you may also see additional error information if errors were found during start-up.
+
+{{nbb}}
+    [[#WindowsVistaandUACSecurity | Previous Section]]
+    [[#AcquisitionandInstallation | Top of this Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+== xEdit Startup Errors
+
+When started it will automatically find your game's Data directory via the system registry (not by where it was installed). If you immediately get errors indicating that xEdit can't find the game's configuration files, it means one of two things. You moved the files to another directory or for games installed with Steam, you verified the integrity of your game cache.
+
+As a reminder, this is what verifying your game cache looks like.
+
+{{image:verifygamecache.jpg | verifygamecache}}
+
+This is what the error would look like from FNVEdit.
+
+{{image:error_part_1.jpg | error_part_1}}
+
+After you click OK xEdit will finish loading and the messages tab will display the following message.
+
+{{image:error_part_2.jpg | error_part_2}}
+
+If you moved the install it is recommended to move the files back to their original location or re-install the Game again. If you verified the game cache from Steam, run the game's official launcher. Below is an example of the Fallout 4 launcher.
+
+{{image:Fallout-4-game-launcher.jpg | Fallout-4-game-launcher}}
+
+{{nbb}}
+    [[#StartingxEdit | Previous Section]]
+    [[#AcquisitionandInstallation | Top of this Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+{{nbb}}
+    [[#IntroducingxEdit | Previous Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+== Choosing a Theme
+
+=== From the Title Bar
+
+One way to select a theme is to Right Click the title bar and go to Theme. There are around 40 Themes to choose from. The one pictured in these docs is the Tablet Dark Theme.
+
+{{image:Theme-Menu.jpg | Theme-Menu}}
+
+The requirements are Desktop Window Manager, Themes services enabled, Desktop Composition, and an Aero Theme selected.
+
+<font class="yellow">__NOTE:__</font> Your screen will be blank if you previously selected a Theme but disabled any of its requirements.
+=== From Options
+
+You can also select a theme by bringing up the xEdit contextual menu, options, and select UI Theme.
+
+{{image:theme-options.jpg | Theme-Menu}}
+
+{{nbb}}
+    [[#xEditStartupErrors | Previous Section]]
+    [[#AcquisitionandInstallation | Top of this Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+== Tour of User Interface
+
+This section of the manual will take you on a brief tour of xEdit to introduce you to the different views and screens that you will be working with. This tour is designed for beginner-level users and does not discuss the functionality of the views at any depth just yet. The tour is recommended for all levels of user, especially if you have not used xEdit within the last several months as there have been many updates.
+
+=== Master/Plugin Selection View
+
+{{image:image008.jpg | error_part_1}}
+
+The Master/Plugin Selection view is presented to you when xEdit is first launched and allows you to select/un-select the mods that you want xEdit to load. You can also Right-Click in open space to access more options, such as "Select All" or "Select None".
+
+To change the load order of mods, close xEdit and open [[#links_fomm | FOMM]]. Change the load order as desired, close FOMM and re-open xEdit.
+
+There is an additional option you can use to quickly load a single mod &#8211; simply Double-Click on a mod file in the list. Double-clicking a mod will automatically un-select all other mod files and will load the selected mod file. It's a short-cut to loading single mods.
+{{nbb}}
+    [[#TourofUserInterface | Top of this Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+=== Navigation Tree
+
+{{image:image010.jpg | image010}}
+
+The Navigation Tree shows a hierarchical data structure for all references as well as a status bar and search boxes for hunting-down specific FormIDs, EditorIDs, or by filename.
+
+The main context menu (B) contains all the major xEdit functions, including Filters, Reference hunts, Error checking, Removing Extraneous content and many more. There are also several functions that only apply to Oblivion but the rest apply to all games. We will discuss each of the important options in [[2-overview.html#MainContextMenu | Main Context Menu]].
+
+{{nbb}}
+    [[#MasterPluginSelectionView | Previous Section]]
+    [[#TourofUserInterface | Top of this Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+=== View Tab
+
+{{image:image020.jpg | image020}}
+
+The View Tab is used to display the details about any record that you click-select in the Navigation Tree. The View Tab is where most of the work of conflict resolution takes place. Each mod that has a copy/version of a selected record is shown in the view with its own Column. This way, all the mods that have a version of the same record can be shown side-by-side to more easily navigated and spot conflicts.
+
+We discuss this view at depth in the chapter on [[5-conflict-detection-and-resolution.html | Conflict Detection and Resolution]], but for now, it's only important to understand its high-level function and how to navigate to it. As in the Referenced By Tab, within the View Tab you can Right-click on any reference to receive an additional context menu. You can edit and remove any entry, as well as tell xEdit what kind of view your looking for; with or without de-conflicted rows (rows without a conflict of any kind).
+
+{{nbb}}
+    [[#NavigationTreeview | Previous Section]]
+    [[#TourofUserInterface | Top of this Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+=== Referenced By Tab
+
+{{image:image018.jpg | image018}}
+
+The Referenced By Tab is used to locate all occurrences of a reference such as Soda Bottles, Projectiles and Explosions. If you select a reference in the Navigation Tree, such as the "Glass Explosion" from the [[https://www.nexusmods.com/fallout3/mods/1904 | Destroyable Environments]] Mod by [[https://www.nexusmods.com/fallout3/users/173512 | Bigkid7834]], where every occurrence of that Glass Explosion in the in the game is displayed.
+
+You can also Left-Click on any reference in the Referenced By Tab to present a copy/remove menu. Here you can literally delete the reference of the object out of the mod or copy it into another mod (perhaps a patch plugin, discussed in detail in the chapter on [[5-conflict-detection-and-resolution.html | Conflict Detection and Resolution]]. These functions are especially useful for gaining a high-level understanding of what the mod contains, and where references can be found (a task which can be exceedingly difficult in the GECK).
+
+You can also double click entries in that list to directly jump to that record (and switch to the View tab), you can then use the backward button in the top right corner or on your mouse (if it got more than 2 buttons).
+{{nbb}}
+    [[#ViewTab | Previous Section]]
+    [[#TourofUserInterface | Top of this Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+=== Message Tab
+
+{{image:image016.jpg | image016}}
+
+The Messages Tab acts like a running log-file of what xEdit is doing in response to your actions. When you first load xEdit, the Messages Tab is displayed by default so that you can watch the loading process in real-time. This is important as any Errors in the mod files such as missing references, missing files or dirty-edits to a mod file done in a hex-editor can all result in errors. Most of these will be harmless, but some are lethal, and you can see them all in the Messages Tab while they are loaded into xEdit.
+
+Any actions that you take which result in changes to the files, such as Saving, will also print their output into the Messages Tab. Thus, it is important to check this tab often while working in xEdit, as there are cases in which a mod file won't save due to errors &#8211; and you want to know about that as soon as a problem occurs.
+
+{{nbb}}
+    [[#ReferencedByTab | Previous Section]]
+    [[#TourofUserInterface | Top of this Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+=== Information Tab
+
+{{image:image014.jpg | image010}}
+
+The Information Tab holds a textural version of the xEdit help guide, including basic information on mod conflict resolution and a legend on [[5-conflict-detection-and-resolution.html#ColorSchemesandDisplayOrder | how to interpret the color scheme]] of text and background. You can reference this tab at any time as a cheat-sheet of sorts on how to use xEdit.
+
+You can also capture any/all sections of the help information by Right-Clicking in the view-pane and selecting one of the textural options presented to you.
+
+{{nbb}}
+    [[#MessageTab | Previous Section]]
+    [[#TourofUserInterface | Top of this Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+=== Main Context Menu
+
+{{image:oblivion_context_menu.jpg | oblivion_context_menu}}
+
+The main context menu is accessed by Right-clicking in the [[2-overview.html#NavigationTree | Navigation Tree]], and acts as the main navigation and function selection point for xEdit. As such, much time and explanation are provided on how to utilize this menu, as well as a Reference Chart (shown below) to help illustrate what each function does.
+
+There are some functions such as, "Generate Object LOD" and the "Set VWD for all REFR&#8230;" options that only work on Oblivion and should not be used with Fallout3. With some functions you will be presented with additional options, while with others such as "Check for Errors", the output is sent to the [[#MessageTab | Messages Tab]] (or other tabs with other functions).
+
+Each of these functions is described in-detail within the tutorial, and Quick Links to those detailed sections can be found in the list below for easy-access. Additional description is provided below for each function on the main context menu.
+
+* [[8-managing-mod-files.html#ComparingTwoVersionsofaMod | Compare To]] -em- Loads another module at the same load order index as the one under the cursor when you right clicked. Works very well to compare 2 different versions of the same module against each other.
+* [[18-whatsnew.html#Createdeltapatchusing | Create delta patch using]] -em- After loading the old version of a module you can make a copy of only the records that have changed between the two versions of the compared modules.
+* [[2-overview.html#RemoveFilter | Remove Filter]] -em- This function will remove the current filter, so that all loaded-data will be presented and processed.
+* [[5-conflict-detection-and-resolution.html#ApplyingConflictFilters | Apply Filter]] -em- This function will present you with the [[2-overview.html#FilterMenu | Filter Menu]], where you can select options on how you want to filter (restrict) the data shown in xEdit.
+* [[5-conflict-detection-and-resolution.html#Applying The Conflict Filter | Apply Filter to show Conflicts]] -em- Automatically apply the conflict filter.
+* [[7-mod-cleaning-and-error-checking.html#CheckingForErrors | Checking for Errors]] -em- This function is used to check for reports any case where the information in the module file does not match the xEdit record definitions. This is Not a check for missing references, physical or data errors -em- that is done during the loading process with results available in the [[#MessageTab | Messages Tab]].
+* [[7-mod-cleaning-and-error-checking.html#CheckingforCircularLeveledLists | Checking for Circular Leveled Lists]] -em- Leveled Lists can reference other Leveled Lists, it's possible in this case to build a circular reference (with as little as 2 leveled lists directly referencing each other, or any number of additional leveled lists in the chain). When the game engine then tries to resolve that leveled lists down to an item/creature/NPC it can get caught in the endless loop and crash.
+* [[8-managing-mod-files.html#ChangingModFormIDs | Renumbering FormIDs]] -em- This function will re-number all references in a selected mod file, starting from a number that you specify. This function does not in any way resolve conflicts and should be used only if you know exactly what you are doing (as it will result in incompatibilities with existing save games and any module which uses this module as a master). This function was implemented for the Better Cities team, so that they could assign non-overlapping FormIDs to each of their city specific esps, to prevent the need for changing FormIDs when merging the city-specific esps into the alternative &quot;full&quot; esp which contains all cities.
+* [[9-mod-utilities.html#ApplyingScriptsInto | Applying Scripts Into]] -em- This function is used to apply a script(s) into a specific reference and writes the resulting new or override records into the specified module.
+* [[9-mod-utilities.html#s_7-8 | Set VWD for all REFR with VWD Mesh in this file]] [TES4] This function only works with Oblivion.
+* [[9-mod-utilities.html#s_7-8 | Set VWD for all REFR with VWD Mesh copy as override]] [TES4] This function only works with Oblivion.
+* [[9-mod-utilities.html#ChangingandAddingReferences | Add (Reference)]] -em- What exactly that menu shows you is depending on the context, if you right click on a file node you will get a list of all groups that don't exist yet, if you right click on a group you get a list of all records that can be added to it and so on. And yes, this can be used to add new records, so you can basically build a mod from scratch with it.
+* [[9-mod-utilities.html#MarkingNodesasModified | Mark Modified]] -em- It will mark the currently selected node and all child nodes as modified. To minimize the chance that xEdit breaks something that it doesn't fully understand when saving, only records that are marked as modified are assembled field by field, sub record by sub record. Any record or even complete group that is not marked as modified is simply copied unchanged as a blob of bytes from the old module file into the newly saved one.
+* [[8-managing-mod-files.html#AddingMasterFilestoaPlugin | Add Masters]] -em- This adds a new master to the MAST sub record in the file header and correctly renumbers the FormIDs in the module. This function is also used to create an ESM/ESP pair from a single ESP plugin.
+* [[7-mod-cleaning-and-error-checking.html#SortingMasterFileLoadOrders | Sort Masters]] -em- This function will sort the global load order of master files to match the order of global load order.
+* [[7-mod-cleaning-and-error-checking.html#UsingCleanMasterstopurgeunusedMasterFileReferences | Clean Masters]] -em- This function will scan a Plugin for Master dependencies, determine if any Masters are un-used by the plugin and remove them.
+* [[9-mod-utilities.html#CopyingandReplicatingIdleAnimations | Copy Idle Animations Into]] -em- This function is used to copy all the idle animations from one skeleton to another, which replicating monsters.
+* [[8-managing-mod-files.html#hidden | Hidden]]-em- This function hides the selected mod file(s) or references from further view/processing by xEdit.
+
+{{nbb}}
+    [[#InformationTab | Previous Section]]
+    [[#TourofUserInterface | Top of this Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+=== Other Context Menu
+
+{{image:other_context_menu.jpg | other_context_menu}}
+
+* [[5-conflict-detection-and-resolution.html#CreatingaMergedPatchAutomaticMethod | Creating a Merged Patch]] -em- This function is used to build the foundation of a merged patch-file, resulting in a new mod file using a name you select. More on this in the section on [[5-conflict-detection-and-resolution.html | Mod Conflict Resolution]].
+* [[9-mod-utilities.html#CreatingStartGameEnabledQuestSEQFilesTES5SSE | Creating Start-Game Enabled Quest (SEQ) Files]] [TES5/SSE]
+* [[9-mod-utilities.html#s_7-8 | Generate Object LOD]] Various updates have been made to LODGen mode. Thanks sheson! This mode will work for all games.
+* [[9-mod-utilities.html#BuildingReachableInformation | Building Reachable Info]] -em- This function scans all references in a selected mod and will determine which are reachable (by the player in-game) from those that cannot ever be reached or accessed by the player. This function considers the totality of all loaded modules (looking only at the contents of the winning version of each record). So, it's possible for the reachable status to be different for a record, depending on which other modules you've loaded.
+
+{{nbb}}
+    [[#MainContextMenu | Previous Section]]
+    [[#TourofUserInterface | Top of this Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+=== View Tab Context Menu
+
+{{inline:267px | viewtabcontextmenu.jpg | viewtabcontextmenu}} {{inline:263px | viewtabcontextmenu_add.jpg | viewtabcontextmenu_add}}
+
+{{note:This context menu is available from the [[#|View Tab]] when you Right-Click as shown for (D) in the View Tab's screen shot.}}
+
+=== View Tab Column Header Context Menu
+
+{{image:viewtabcolumnheadercontextmenu.jpg | viewtabcolumnheadercontextmenu}}
+
+{{note:This context menu is available from the [[#|View Tab]] when you Right-Click the column header as shown for (A) in the View Tab's screen shot.}}
+
+=== ModGroups Context Menu
+
+{{image:modgroupsmenu.png | modgroupsmenu}}
+
+{{note:This context menu is available from the [[#|View Tab]] when you Right-Click as shown for (D) in the View Tab's screen shot and hover over ModGroups.}}
+
+=== Options Menu
+
+{{image:optionsmenu.jpg | other_context_menu}}
+
+The options menu allows you to alter some of the xEdit functionality such as hiding unused or ignored information. It is best to leave things at the default settings.
+
+Unhiding the ignored and unused information will make it harder to determine valid conflict resolution. Unused and ignored information are things that the CK does not alter when editing the plugin. Therefore you do not need to worry about resolving conflicts with those values. They do not need decoding or investigating.
+
+It is also recommended to leave Simple Records checked because to edit those you need the CK to render a 3D view. xEdit does not have the capability to render the world in 3D so those records should be changed with the CK.
+
+With CELL and WRLD some of its subrecords may be altered if you know what you are doing and how the changes will affect the game.
+
+{{nbb}}
+    [[#OtherContextMenu | Previous Section]]
+    [[#TourofUserInterface | Top of this Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+=== Filter Menu
+
+{{image:image022.jpg | image022}}
+
+The Filter Menu can be used for several purposes in xEdit. Conflict resolution, reference viewing, and reach ability data are a few examples. All are achieved by activating an xEdit Filter. The Filters essentially work to restrict what data you see in xEdit to just what you want to see or are working on, and in some cases, data is parsed (such as in conflict detection). When resolving conflicts [[5-conflict-detection-and-resolution.html#Applying The Conflict Filter | Applying The Conflict Filter]] is also a filter but it is automated.
+
+=== Remove Filter
+
+{{image:image024.jpg | image024}}
+
+Removing the filter returns everything to its default state and all the expanded trees in the Navagation Tree will be closed.
+
+{{nbb}}
+    [[#FilterMenu | Previous Section]]
+    [[#TourofUserInterface | Top of this Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+{{nbb}}
+    [[#AcquisitionandInstallation | Previous Section]]
+{{nbe}}
+/* <!--/.level-nav--> */
+== Saving and Confirmation
+
+{{image:image026.jpg | image026}}
+
+You can save your changes at any time by pressing, "CTRL" and "S", and when you exit xEdit (if there are changes to save). If you have not saved for a while, xEdit may also remind you that it's a good time to save. When the, "Save changed files" window is presented, click on the mods you want to save.
+
+The output of each save is shown in the Messages Tab. It is important to check this, as sometimes errors in a mod file can prevent you from successfully saving it.
+{{nbb}}
+    [[#RemoveFilter | Previous Section]]
+{{nbe}}
+/* <!--/.level-nav--> */
+== Quick Tips and Shortcuts
+
+There are several important keyboard short-cuts that can make your usage of xEdit more efficient with less keystrokes for some common functions.
+
+=== Command Line Switches
+
+* <code>-cp-general:&lt;codepage&gt;</code> where <code>&lt;codepage&gt;</code> is either <code>utf8</code> or a [[18-whatsnew.html#Languages | codepage number]]. <font class="yellow">NOTE:</font> It should not be necessary to override this.
+* <code>-cp:&lt;codepage&gt;</code> or <code>-cp-trans:&lt;codepage&gt;</code> sets <code>&lt;codepage&gt;</code> for [[18-whatsnew.html#Translatablestrings | Translatable Strings]] to a [[18-whatsnew.html#Languages | codepage number]] or <code>utf8</code>
+* <code>-l:&lt;language&gt;</code> Sets [[18-whatsnew.html#Defaultlanguage | Language]], affects used <code>&lt;codepage&gt;</code> and .strings files
+* <code>-edit</code> Enables Edit Mode
+* <code>-view</code> Enables View Mode
+* <code>-saves</code> Enable Saves Mode <font class="green">View Mode Only</font>
+* <code>-IgnoreESL</code> Will load all modules as full modules, even if ESL flagged. 
+* <code>-PseudoESL</code> Will check if the module falls within ESL constraints and loads the file like an ESL if possible. ESL specifications are explained in the [[11-appendix.html#ESLvsESM | Appendix:ESL vs ESM]]
+* <code>-DontCache</code> Completely disables ref caching
+* <code>-DontCacheLoad</code> Don't load cache files if present, but save if possible
+* <code>-DontCacheSave</code> Don't save cache files after building refs
+* <code>-AllowDirectSaves:&lt;filename list&gt;</code> The file may be an .esm, .esl, or .esp. Without a list of files, this will load non-official (official = game master, official dlcs, CCs) modules without using memory mapped files. Optionally you can specify a list of files. Which will only load the listed modules without using memory mapped files. This optional list may include official modules.
+* <code>-&lt;gamemode&gt;</code> Specifies which game mode to use. <code>&lt;gamemode&gt;</code> can be any of the following: <code>['tes5vr', 'fo4vr', 'tes4', 'tes5', 'enderal', 'sse', 'fo3', 'fnv', 'fo4', 'fo76']</code>
+* <code>-moprofile:&lt;profilename&gt;</code> Opens the plugin selection from the MO profile named in the switch.
+* <code>-setesm</code> [Set ESM flag. Plugin selection screen will appear.]
+* <code>-clearesm</code> [Remove ESM flag. Plugin selection screen will appear.]
+* <code>-quickshowconflicts</code> or <code>-qsc</code>
+* <code>-veryquickshowconflicts</code> <code>-vqsc</code> [loads all modules according to plugins.txt without showing module selection, except if CTRL is pressed on start]
+* <code>-quickclean</code> or <code>-qc</code> [cleans and prompts to save the file]
+* <code>-quickautoclean</code> or <code>-qac</code> [Cleans 3 times and saves in between each step]
+* <code>-autogamelink</code> or <code>-agl</code>
+* <code>-NoAutoMarkModified</code> prevents mark modified from being applied to Dawnguard.esm (resulting in the Soul Cairn error described below)
+* <code>-ForceMarkModified</code> always applies mark modified to the cleaned file (if there was anything to clean)
+* <code>-C:&lt;path&gt;</code> [path to use for cache files]
+* <code>-S:&lt;path&gt;</code> [Path to look for scripts]
+* <code>-T:&lt;path&gt;</code> [Temporary Directory]
+* <code>-D:&lt;path&gt;</code> [Specify a Data Directory]
+* <code>-O:&lt;path&gt;</code> [Specify path for generated LOD files]
+* <code>-I:&lt;path&gt;</code> [Game INI Files]
+* <code>-G:&lt;path&gt;</code> [Save Game Path]
+* <code>-P:&lt;path&gt;&lt;filename&gt;</code> [Custom Plugins.txt file]
+* <code>-B:&lt;path&gt;</code> [Backups path i.e. Edit Backups\]
+* <code>-R:&lt;path&gt;&lt;filename&gt;</code> [Custom xEdit Log Filename]
+
+All path parameters must be specified with trailing backslash. For example <code>C:\SomePath\for_xedit_xache\</code>
+
+=== Keyboard Shortcuts
+
+* Holding <code>Shift+Ctrl+Alt</code> while starting shows a dialog asking if the setting file should be deleted.
+* Holding <code>Shift</code> while starting to reset window position
+
+=== Module Selection Treeview
+
+* <code>Hold SHIFT</code> to skip building/loading references for all plugins.
+* <code>[UP/DOWN]</code> arrow to navigate plugin list. If multiple plugins are selected, this will deselect them.
+* <code>[Space]</code> to check or uncheck selected plugins.
+
+=== Main Treeview
+
+* <code>Ctrl + S</code> Opens the Save Files dialog.
+* <code>Ctrl + F3</code> to open Assets Browser
+* <code>Alt + F3</code> to open Worldspace Browser
+
+=== Navagation Treeview
+
+* <code>Ctrl + 1 through 5</code> to set a Bookmark.
+* <code>ALT + 1 through 5</code> to jump to a Bookmark.
+* Press <code>F2</code> with the record selected in the Navigation Tree:  Edit the FormID of the selected Record.
+* <code>Ctrl or Shift</code> while clicking to select several records/plugins at once
+* <code>Del</code> To delete a record or a group of records
+* <code>Alt + Click</code> to fully expand a tree. This can take a lot of time when expanding large trees.
+* <code>[Right Arrow]</code> or <code>+</code> to expand current node
+* <code>[Left Arrow]</code> or <code>-</code> to collapse current node
+* <code>*</code> Expand treview (recursive)
+* <code>/</code> Collapse treeview (recursive)
+
+=== View Tab
+
+* <code>Ctrl + UP/DOWN</code> to move elements in unordered lists.
+* Press <code>F2</code> with the field selected in the View Tab:  Edit the field with the In-Place Editor.
+* <code>Ctrl + Click</code> on a FormID in the View Tab: Jump to the selected Record in the Navagation treeview
+* <code>[Double Click]</code> on text field to open multiline viewer
+* <code>[Double Click]</code> on <code>[Integer, Float, or FormID]</code> to open In-Place Editor
+* <code>Shift + [Double Click]</code> on text field to open multiline editor
+* <code>Ctrl + C</code> to copy to clipboard
+* <code>Ctrl + W</code> from a weather record to open the visual weather editor
+* <code>Alt + CRSR</code> while in View Tab to navigate within the Navagation Treeview
+
+=== Messages Tab
+
+* <code>CTRL + [Double Click]</code> on FormID to switch focus to that record
+
+=== Referenced By Tab:
+
+* <code>Double click</code> on an entry in the Referenced By Tab:  Jump to the selected Record in the Navagation Tree.
+
+=== Modgroup Editor
+
+* <code>CTRL UP/DOWN</code> - Move entry
+* <code>INSERT</code> - Insert entry (Insert Module or CRC depending on which is selected)
+* <code>SHIFT + INSERT</code> - Insert crc (when on a module)
+* <code>DELETE</code> - Delete a module or crc
+* <code>SPACE / Mouse Click</code> - toggle flag when a flag is currently focused
+
+{{nbb}}
+    [[#SavingandConfirmation | Previous Section]]
+{{nbe}}
+/* <!--/.level-nav--> */
+{{nbb}}
+    [[index.html | &laquo; Previous Page]]
+    [[3-basicuse.html | Next Page &raquo;]]
+{{nbe}}
+/* <!--/.level-nav--> */
