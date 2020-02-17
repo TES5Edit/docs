@@ -1,0 +1,39 @@
+{{PAGETITLE="xEdit Scripting Resources"}}
+## Contents...
+{{CONTENTS=3}}
+== Overview
+
+This page is dedicated to Scripting Resources. The scripts can help make modding easier. However, they can also automate too many things. Please use scripts wisely and know what you are doing. These scripts are not supported by the xEdit team. If you ask, you will be directed to the script author.
+
+== Mator's Scripts
+<font class="orange">NOTE:</font> The spoiler tag contains links to Mator's Merge Plugins Script and this Standalone EXE.  Both are depreciated. The Merge Plugins Script only supports <code>TES5Edit/TES4Edit/FNVEdit</code>. The Standalone EXE includes support for Fallout 4 and Skyrim SE.
+<font class="green">NOTE:</font> Older xEdit scripts like Real Shelter require files from Automation tools. Minor updates for Automation Tools are provided at the link in the spoiler tag.
+
+You should be using <font class="green">zMerge</font> if you are going to merge plugins.
+
+* [[https://github.com/z-edit/zedit/releases | zMerge Download]]
+
+[[sb:Spoiler1 | Other Unsupported Resources]]
+<font class="orange">NOTE:</font> These are no longer being updated by Mator. You can use them but they will receive no updates. <font class="orange">Remember:</font> Automation tools does not include support for Skyrim SE or Fallout 4.
+* [[https://github.com/matortheeternal/TES5EditScripts | Mator's TES5EditScripts]] This includes minor updates for xEdit 4.0.x
+* [[https://www.nexusmods.com/skyrim/mods/49373 | Automation Tools for TES5Edit]]
+* [[https://www.nexusmods.com/skyrim/mods/69905 | Merge Plugins Standalone]]
+[[se:]]
+
+{{nbb}}
+    [[#121Overview | Previous Section]]
+{{nbe}}
+== VIitS' Scripts
+
+* [[https://www.nexusmods.com/fallout4/mods/13565 | Automated Formlist generation]]
+
+{{nbb}}
+    [[#122MatorsScripts | Previous Section]]
+{{nbe}}
+/* <!--/.level-nav--> */
+<hr>
+{{nbb}}
+    [[13-Scripting-Functions.html | &laquo; Previous Page]]
+    [[15-tutorials.html | Next Page &raquo;]]
+{{nbe}}
+/* <!--/.level-nav--> */
