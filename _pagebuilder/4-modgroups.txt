@@ -1,0 +1,173 @@
+{{PAGETITLE="xEdit Mod Groups"}}
+## Contents...
+{{CONTENTS=3}}
+== ModGroups
+
+#### What are ModGroups?
+[[bb:ElminsterAU]]
+One way to see mod groups is to say, "all overrides from a source file are guaranteed to contain all relevant changes from overrides in all target files listed above it, so they don't need to be shown anymore."
+
+If you create a mod group, you are saying, "I have verified that this (above) statement is true".
+[[be:]]
+
+Modgroups are the answer to the "I installed [Insert Mod Here] and everything is red! What do I do now?" question.
+
+There are groups of mods that, while raising heaps of conflict warnings, should be considered as non-conflicting. e.g. if you've installed FCOM then you are not interested in seeing conflicts between the mods that make up FCOM. The solution for this is to define a mod group. Mod groups are stored in a TES4View.modgroups file in the same directory as TES4Edit.exe.
+
+Not all modgroups defined in that file will necessarily show up in the selection list. ModGroups for which less then 2 plugins are currently active are filtered. If the load order of plugins doesn't match the order in the mod group it is also filtered.
+
+This file contains example mod groups. These are just examples and not meant as a guarantee that these specific modgroups are "clean" and conflicts can safely be ignored.
+
+{{image:examplemodgroupfiles.jpg | examplemodgroupfiles}}
+* [[Example_modgroups.zip | Example_modgroups.zip Download Link]]
+
+#### What's the effect of having a mod group active?
+
+When the detail view for a record is generated and multiple files of the same mod group modify this record, then only the newest of the files in that modgroup will be shown. So instead of seeing 5 different files with numerous conflicts you are only seeing the newest file in that mod group. This also affects conflict classification.
+
+It's worth pointing out here that if a record is overridden by both plugins in a mod group and other plugins that normal conflict detection will still work perfectly.
+
+Basically this system can be used to reduce a lot of noise from the conflict reports.
+
+== Choosing a ModGroup
+
+For a modgroup the be activatable, the order of the mods in the load order and modgroup must match.
+
+If a modgroup is active, what it essentially means is that for each record that is contained in more than one mod of the modgroup, only the last (in load order) is visible. That's it. The invisible record versions simply don't participate in the normal conflict detection mechanisms at all.
+
+A modgroup does not perform any merge or make any changes to any mod. All it does it hide away version of records that you've stated (by defining the modgroup) that you've already checked them against each other and the hidden record is simply irrelevant.
+
+{{image-caption:modgroupselect.jpg | modgroupselect | The Mod Group selection scteen will show all qualifying mod groups for activation.}}
+
+{{image-caption:modgroupreport.jpg | modgroupreport | After the mod groups are activated you will see a report in the Messages tab.}}
+
+{{nbb}}
+    [[#ModGroups | Previous Section]]
+{{nbe}}
+/* <!--/.level-nav--> */
+== Built In Editor
+            
+=== Creating a ModGroup form within xEdit
+
+{{image:Create-modgroup.jpg | modgroupreport}}
+{{image:EditModgroup.jpg | modgroupreport}}
+{{image:SaveModgroup.jpg | modgroupreport}}
+{{image:ModgroupError.jpg | modgroupreport}}
+
+{{note:If using MO2 close xEdit and move the new ModGroup from your overwrite folder to the mod folder for which the Modgroup is intended for. This can be done by double clicking overwrite and just dragging the .ModGroup file over the mod in question. It is best to keep the ModGroup with the mod. That way if you deactivate the mod its ModGroup will not show up in xEdit.}}
+
+{{nbb}}
+    [[#Choosing a ModGroup | Previous Section]]
+{{nbe}}
+/* <!--/.level-nav--> */
+=== Editing a ModGroup form within xEdit.
+{{image:editmodgroup-context.jpg | modgroupreport}}
+{{image:EditModgroup_after.jpg | modgroupreport}}
+
+You will not be able to activate the Mod Group if all the conditions are not met.
+
+{{nbb}}
+    [[#Creating a ModGroup form within xEdit | Previous Section]]
+{{nbe}}
+/* <!--/.level-nav--> */
+== ModGroup Flags
+
+* {{inline:80px | modoptionalicon.jpg | modoptionalicon}} - All modules NOT flagged as optional must be present for the ModGroup to be valid.
+* {{inline:80px | modtargeticon.jpg | modtargeticon}} - Override records in this module can be hidden.
+* {{inline:80px | modsourceicon.jpg | modsourceicon}} - A override record in this module will cause the overrides with the same FormID to be hidden from all modules flagged as Target and listed above this Source in this ModGroup.
+* {{inline:80px | modforbiddenicon.jpg | modforbiddenicon}} - If this module is loaded, the ModGroup is invalid.
+* {{inline:80px | modignoreloicon.jpg | modignoreloicon}} - If not flagged, then the module must be loaded in the same order as listed in this ModGroup. There are two possible flagged values for this column.
+  * {{inline:80px | modloalwaysicon.jpg | modloalwaysicon}} - The load order of the module does not matter at all.
+  * {{inline:80px | modloinblockicon.jpg | modloinblockicon}} - all consecutive modules with this flag form a Block. Any module above the block must be loaded before any module in the block. Any module after the block must be loaded after any module in the block. The modules inside the block can load in any order.
+  
+{{note: For more information see [[#|Quotes and summaries about ModGroups]].}}
+
+{{nbb}}
+    [[#Editing a ModGroup form within xEdit | Previous Section]]
+{{nbe}}
+== Adding and Deleting a CRC value
+
+### Adding a CRC value
+
+{{image-caption:afterdeletingcrc.jpg | afterdeletingcrc | Select the mod to add a CRC value. Once selected press [SHIFT + INS] to add a CRC.}}
+
+{{image-caption:addmodgroupcrcpopup.jpg | addmodgroupcrcpopup | Click yes to confirm you wish to add the CRC.}}
+
+{{image-caption:beforedeletingcrc.jpg | beforedeletingcrc | You may continue editing the ModGroup after adding the CRC.}}
+
+{{image-caption:clickoktosavemodgroup.jpg | clickoktosavemodgroup | Click ok to save the ModGroup.}}
+
+{{nbb}}
+    [[#ModGroup Flags | Previous Section]]
+{{nbe}}
+### Deleting a CRC value
+
+{{image-caption:beforedeletingcrc.jpg | beforedeletingcrc | First secect the CRC value. Then press [DELETE].}}
+
+{{image-caption:deletecrcpopup.jpg | deletecrcpopup | Click yes to confirm you wish to delete the CRC.}}
+
+{{image-caption:afterdeletingcrc.jpg | afterdeletingcrc | You may continue editing the ModGroup after deleting the CRC.}}
+
+{{image-caption:clickoktosavemodgroupdel.jpg | clickoktosavemodgroup | Click ok to save the ModGroup.}}
+
+{{nbb}}
+    [[#Adding a CRC value | Previous Section]]
+{{nbe}}
+== Quotes and summaries about ModGroups
+
+. Target:
+    * Override records in this module can be hidden.
+    * Target means the record can be hidden.
+    * Another way to see it is that it says: this source record preserves then intent of the changes of all these target records, so they can be ignored now.
+. Source
+    * A override record in this module will cause the overrides with the same FormID to be hidden from all modules flagged as Target and listed above this Source in this ModGroup.
+    * Source means it hides all targets above it.
+    * Source means that if a record in this mod is found, then it will hide the versions of the same record from all mods listed above it that are targets.
+. Ignore load order:
+    * The modgroup will be available regardless of the order of the mods.
+    * [[#ignoreloadorder | See Quote: Ignore Load Order]]
+* <code>&lt;filename&gt;:CRC32</code> If a module is followed by a list of one or more CRC values, the modgroup is only available if the module has one of the listed CRCs. 
+
+[[bb:ElminsterAU]]
+If you need to have modA, modB, patchAB loaded in that order, and you want unpatched records from b to override a, you would keep the default. But if a and b can be loaded in any order, you would have them as only targets and ignore lo in block
+[[be:]]
+
+[[bb:ElminsterAU]]
+For example, you could have a mod group with modA and modB as target, and patchAB as source. A record in patchAB would hide records with the same form id from both modA and modB. However, records with the same FormID in modA and modB would NOT be hidden if there is no record with the same form id in patchAB
+[[be:]]
+
+[[bb:ElminsterAU]]
+Mod groups don't "hide conflicts", they hide complete records. The fact that conflict detection against the not hidden records might then have less conflicts is only a consequence of that.
+
+When a record is found in a module that's flagged as source in a mod group, then (override) records with the same form id are hidden from all modules which are flagged as target and listed above in the same mod groups that had the source.
+[[be:]]
+
+[[bb:Quote]]
+thegamemaster1234: I don't know what "in Block" load order ignore means though
+
+ElminsterAU: It means that the load order between all mods in an uninterrupted block that are flagged as such is ignored
+[[be:]]
+
+{{nav:ignoreloadorder}}
+[[bb:ElminsterAU]]
+As for the difference between "Ignore Loadorder Always" and "Ignore Loadorder in block", the later allows you to have:
+
+<pre>
+:Block of 5 modules
+x.esp
+:Block of 3 modules
+</pre>
+
+With the order of the modules in each block being irrelevant
+[[be:]]
+
+
+{{nbb}}
+    [[#Deleting a CRC value | Previous Section]]
+{{nbe}}
+/* <!--/.level-nav--> */
+{{nbb}}
+    [[3-basicuse.html | &laquo; Previous Page]]
+    [[5-conflict-detection-and-resolution.html | Next Page &raquo;]]
+{{nbe}}
+/* <!--/.level-nav--> */

@@ -1,0 +1,212 @@
+---
+layout: default
+title: xEdit Mod Groups
+---
+<h1 class="grhead1">Main Table Of Contents</h1>
+<div id="tableOfContents" class="grid-toc">
+    <div class="toc1">
+        <h2 class="grhead2"><a href="index.html">1. Introduction</a></h2>
+        <h2 class="grhead2"><a href="2-overview.html">2. Overview</a></h2>
+        <h2 class="grhead2"><a href="3-basicuse.html">3. xEdit Basic Use</a></h2>
+        <h2 class="grhead2"><a href="4-modgroups.html">4. ModGroups</a></h2>
+        <h2 class="grhead2"><a href="5-conflict-detection-and-resolution.html">5. Conflict Detection and Resolution</a></h2>
+        <h2 class="grhead2"><a href="6-themethod.html">6. The Method</a></h2>
+        <h2 class="grhead2"><a href="7-mod-cleaning-and-error-checking.html">7. Mod Cleaning and Error Checking</a></h2>
+        <h2 class="grhead2"><a href="8-managing-mod-files.html">8. Managing Mod Files</a></h2>
+        <h2 class="grhead2"><a href="9-mod-utilities.html">9. Mod Utilities</a></h2>
+    </div>
+    <div class="toc2">
+        <h2 class="grhead2"><a href="10-fo3edit-faq.html">10. FO3Edit FAQ</a></h2>
+        <h2 class="grhead2"><a href="11-appendix.html">11. Appendix</a></h2>
+        <h2 class="grhead2"><a href="12-cheat-sheets-and-quick-reference-charts.html">12. Cheat Sheets and Quick Reference Charts</a></h2>
+        <h2 class="grhead2"><a href="13-Scripting-Functions.html">13. Scripting Functions</a></h2>
+        <h2 class="grhead2"><a href="14-Scripting-Resources.html">14. Scripting Resources</a></h2>
+        <h2 class="grhead2"><a href="15-tutorials.html">15. Tutorials</a></h2>
+        <h2 class="grhead2"><a href="16-xLODGen.html">16. xLODGen</a></h2>
+        <h2 class="grhead2"><a href="17-DynDoLod.html">17. DynDoLod</a></h2>
+        <h2 class="grhead2"><a href="18-whatsnew.html">18. xEdit What's New and Version Info</a></h2>
+    </div>
+</div>
+<h1>{{ page.title }}</h1>
+<h2 id="Contents">Contents...</h2>
+<p class="list-1">&bull;&nbsp; <a href="#ModGroups">4.1 ModGroups</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#ChoosingaModGroup">4.2 Choosing a ModGroup</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#BuiltInEditor">4.3 Built In Editor</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#CreatingaModGroupformwithinxEdit">4.3.1 Creating a ModGroup form within xEdit</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#EditingaModGroupformwithinxEdit">4.3.2 Editing a ModGroup form within xEdit.</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#ModGroupFlags">4.4 ModGroup Flags</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#AddingandDeletingaCRCvalue">4.5 Adding and Deleting a CRC value</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#AddingaCRCvalue">4.5.1 Adding a CRC value</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#DeletingaCRCvalue">4.5.2 Deleting a CRC value</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#QuotesandsummariesaboutModGroups">4.6 Quotes and summaries about ModGroups</a></p>
+<h2 class="header2" id="ModGroups">4.1 - ModGroups</h2>
+<p class="empty">&nbsp;</p>
+<h4 id="WhatareModGroups">What are ModGroups?</h4>
+<section class="quote">
+<p class="attr">ElminsterAU</p>
+<p>One way to see mod groups is to say, "all overrides from a source file are guaranteed to contain all relevant changes from overrides in all target files listed above it, so they don't need to be shown anymore."</p>
+<p class="empty">&nbsp;</p>
+<p>If you create a mod group, you are saying, "I have verified that this (above) statement is true".</p>
+</section>
+<p class="empty">&nbsp;</p>
+<p>Modgroups are the answer to the "I installed [Insert Mod Here] and everything is red! What do I do now?" question.</p>
+<p class="empty">&nbsp;</p>
+<p>There are groups of mods that, while raising heaps of conflict warnings, should be considered as non-conflicting. e.g. if you've installed FCOM then you are not interested in seeing conflicts between the mods that make up FCOM. The solution for this is to define a mod group. Mod groups are stored in a TES4View.modgroups file in the same directory as TES4Edit.exe.</p>
+<p class="empty">&nbsp;</p>
+<p>Not all modgroups defined in that file will necessarily show up in the selection list. ModGroups for which less then 2 plugins are currently active are filtered. If the load order of plugins doesn't match the order in the mod group it is also filtered.</p>
+<p class="empty">&nbsp;</p>
+<p>This file contains example mod groups. These are just examples and not meant as a guarantee that these specific modgroups are "clean" and conflicts can safely be ignored.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/examplemodgroupfiles.jpg" alt="examplemodgroupfiles" %}</p>
+<p class="list-1">&bull;&nbsp; <a  href="Example_modgroups.zip">Example_modgroups.zip Download Link</a></p>
+<p class="empty">&nbsp;</p>
+<h4 id="Whatstheeffectofhavingamodgroupactive">What's the effect of having a mod group active?</h4>
+<p class="empty">&nbsp;</p>
+<p>When the detail view for a record is generated and multiple files of the same mod group modify this record, then only the newest of the files in that modgroup will be shown. So instead of seeing 5 different files with numerous conflicts you are only seeing the newest file in that mod group. This also affects conflict classification.</p>
+<p class="empty">&nbsp;</p>
+<p>It's worth pointing out here that if a record is overridden by both plugins in a mod group and other plugins that normal conflict detection will still work perfectly.</p>
+<p class="empty">&nbsp;</p>
+<p>Basically this system can be used to reduce a lot of noise from the conflict reports.</p>
+<p class="empty">&nbsp;</p>
+<h2 class="header2" id="ChoosingaModGroup">4.2 - Choosing a ModGroup</h2>
+<p class="empty">&nbsp;</p>
+<p>For a modgroup the be activatable, the order of the mods in the load order and modgroup must match.</p>
+<p class="empty">&nbsp;</p>
+<p>If a modgroup is active, what it essentially means is that for each record that is contained in more than one mod of the modgroup, only the last (in load order) is visible. That's it. The invisible record versions simply don't participate in the normal conflict detection mechanisms at all.</p>
+<p class="empty">&nbsp;</p>
+<p>A modgroup does not perform any merge or make any changes to any mod. All it does it hide away version of records that you've stated (by defining the modgroup) that you've already checked them against each other and the hidden record is simply irrelevant.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image-caption.html file="img/modgroupselect.jpg" alt="modgroupselect" caption="The Mod Group selection scteen will show all qualifying mod groups for activation." %}</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image-caption.html file="img/modgroupreport.jpg" alt="modgroupreport" caption="After the mod groups are activated you will see a report in the Messages tab." %}</p>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#ModGroups" class="drkbtn">Previous Section</a>
+</div>
+<h2 class="header2" id="BuiltInEditor">4.3 - Built In Editor</h2>
+<p class="empty">&nbsp;</p>
+<h3 class="header3" id="CreatingaModGroupformwithinxEdit">4.3.1 - Creating a ModGroup form within xEdit</h3>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/Create-modgroup.jpg" alt="modgroupreport" %}</p>
+<p>{% include image.html file="img/EditModgroup.jpg" alt="modgroupreport" %}</p>
+<p>{% include image.html file="img/SaveModgroup.jpg" alt="modgroupreport" %}</p>
+<p>{% include image.html file="img/ModgroupError.jpg" alt="modgroupreport" %}</p>
+<p class="empty">&nbsp;</p>
+<p class="note">If using MO2 close xEdit and move the new ModGroup from your overwrite folder to the mod folder for which the Modgroup is intended for. This can be done by double clicking overwrite and just dragging the .ModGroup file over the mod in question. It is best to keep the ModGroup with the mod. That way if you deactivate the mod its ModGroup will not show up in xEdit.</p>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#ChoosingaModGroup" class="drkbtn">Previous Section</a>
+</div>
+<h3 class="header3" id="EditingaModGroupformwithinxEdit">4.3.2 - Editing a ModGroup form within xEdit.</h3>
+<p>{% include image.html file="img/editmodgroup-context.jpg" alt="modgroupreport" %}</p>
+<p>{% include image.html file="img/EditModgroup_after.jpg" alt="modgroupreport" %}</p>
+<p class="empty">&nbsp;</p>
+<p>You will not be able to activate the Mod Group if all the conditions are not met.</p>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#CreatingaModGroupformwithinxEdit" class="drkbtn">Previous Section</a>
+</div>
+<h2 class="header2" id="ModGroupFlags">4.4 - ModGroup Flags</h2>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; {% include image-inline.html max-width="80px" file="img/modoptionalicon.jpg" alt="modoptionalicon" %} - All modules NOT flagged as optional must be present for the ModGroup to be valid.</p>
+<p class="list-1">&bull;&nbsp; {% include image-inline.html max-width="80px" file="img/modtargeticon.jpg" alt="modtargeticon" %} - Override records in this module can be hidden.</p>
+<p class="list-1">&bull;&nbsp; {% include image-inline.html max-width="80px" file="img/modsourceicon.jpg" alt="modsourceicon" %} - A override record in this module will cause the overrides with the same FormID to be hidden from all modules flagged as Target and listed above this Source in this ModGroup.</p>
+<p class="list-1">&bull;&nbsp; {% include image-inline.html max-width="80px" file="img/modforbiddenicon.jpg" alt="modforbiddenicon" %} - If this module is loaded, the ModGroup is invalid.</p>
+<p class="list-1">&bull;&nbsp; {% include image-inline.html max-width="80px" file="img/modignoreloicon.jpg" alt="modignoreloicon" %} - If not flagged, then the module must be loaded in the same order as listed in this ModGroup. There are two possible flagged values for this column.</p>
+  <p class="list-2">&bull;&nbsp; {% include image-inline.html max-width="80px" file="img/modloalwaysicon.jpg" alt="modloalwaysicon" %} - The load order of the module does not matter at all.</p>
+  <p class="list-2">&bull;&nbsp; {% include image-inline.html max-width="80px" file="img/modloinblockicon.jpg" alt="modloinblockicon" %} - all consecutive modules with this flag form a Block. Any module above the block must be loaded before any module in the block. Any module after the block must be loaded after any module in the block. The modules inside the block can load in any order.</p>
+  <p class="empty">&nbsp;</p>
+<p class="note"> For more information see <a  href="#QuotesandsummariesaboutModGroups">Quotes and summaries about ModGroups</a>.</p>
+  <p class="empty">&nbsp;</p>
+<div>
+    <a  href="#EditingaModGroupformwithinxEdit" class="drkbtn">Previous Section</a>
+</div>
+<h2 class="header2" id="AddingandDeletingaCRCvalue">4.5 - Adding and Deleting a CRC value</h2>
+  <p class="empty">&nbsp;</p>
+<h3 id="AddingaCRCvalue">4.5.1 - Adding a CRC value</h3>
+  <p class="empty">&nbsp;</p>
+<p>{% include image-caption.html file="img/afterdeletingcrc.jpg" alt="afterdeletingcrc" caption="Select the mod to add a CRC value. Once selected press [SHIFT + INS] to add a CRC." %}</p>
+  <p class="empty">&nbsp;</p>
+<p>{% include image-caption.html file="img/addmodgroupcrcpopup.jpg" alt="addmodgroupcrcpopup" caption="Click yes to confirm you wish to add the CRC." %}</p>
+  <p class="empty">&nbsp;</p>
+<p>{% include image-caption.html file="img/beforedeletingcrc.jpg" alt="beforedeletingcrc" caption="You may continue editing the ModGroup after adding the CRC." %}</p>
+  <p class="empty">&nbsp;</p>
+<p>{% include image-caption.html file="img/clickoktosavemodgroup.jpg" alt="clickoktosavemodgroup" caption="Click ok to save the ModGroup." %}</p>
+  <p class="empty">&nbsp;</p>
+<div>
+    <a  href="#ModGroupFlags" class="drkbtn">Previous Section</a>
+</div>
+<h3 id="DeletingaCRCvalue">4.5.2 - Deleting a CRC value</h3>
+  <p class="empty">&nbsp;</p>
+<p>{% include image-caption.html file="img/beforedeletingcrc.jpg" alt="beforedeletingcrc" caption="First secect the CRC value. Then press [DELETE]." %}</p>
+  <p class="empty">&nbsp;</p>
+<p>{% include image-caption.html file="img/deletecrcpopup.jpg" alt="deletecrcpopup" caption="Click yes to confirm you wish to delete the CRC." %}</p>
+  <p class="empty">&nbsp;</p>
+<p>{% include image-caption.html file="img/afterdeletingcrc.jpg" alt="afterdeletingcrc" caption="You may continue editing the ModGroup after deleting the CRC." %}</p>
+  <p class="empty">&nbsp;</p>
+<p>{% include image-caption.html file="img/clickoktosavemodgroupdel.jpg" alt="clickoktosavemodgroup" caption="Click ok to save the ModGroup." %}</p>
+  <p class="empty">&nbsp;</p>
+<div>
+    <a  href="#AddingaCRCvalue" class="drkbtn">Previous Section</a>
+</div>
+<h2 class="header2" id="QuotesandsummariesaboutModGroups">4.6 - Quotes and summaries about ModGroups</h2>
+  <p class="empty">&nbsp;</p>
+<p class="list-1">&nbsp;&nbsp; Target:</p>
+    <p class="list-3">&bull;&nbsp; Override records in this module can be hidden.</p>
+    <p class="list-3">&bull;&nbsp; Target means the record can be hidden.</p>
+    <p class="list-3">&bull;&nbsp; Another way to see it is that it says: this source record preserves then intent of the changes of all these target records, so they can be ignored now.</p>
+<p class="list-1">&nbsp;&nbsp; Source</p>
+    <p class="list-3">&bull;&nbsp; A override record in this module will cause the overrides with the same FormID to be hidden from all modules flagged as Target and listed above this Source in this ModGroup.</p>
+    <p class="list-3">&bull;&nbsp; Source means it hides all targets above it.</p>
+    <p class="list-3">&bull;&nbsp; Source means that if a record in this mod is found, then it will hide the versions of the same record from all mods listed above it that are targets.</p>
+<p class="list-1">&nbsp;&nbsp; Ignore load order:</p>
+    <p class="list-3">&bull;&nbsp; The modgroup will be available regardless of the order of the mods.</p>
+    <p class="list-3">&bull;&nbsp; <a  href="#ignoreloadorder">See Quote: Ignore Load Order</a></p>
+<p class="list-1">&bull;&nbsp; <code>&lt;filename&gt;:CRC32</code> If a module is followed by a list of one or more CRC values, the modgroup is only available if the module has one of the listed CRCs. </p>
+<p class="empty">&nbsp;</p>
+<section class="quote">
+<p class="attr">ElminsterAU</p>
+<p>If you need to have modA, modB, patchAB loaded in that order, and you want unpatched records from b to override a, you would keep the default. But if a and b can be loaded in any order, you would have them as only targets and ignore lo in block</p>
+</section>
+<p class="empty">&nbsp;</p>
+<section class="quote">
+<p class="attr">ElminsterAU</p>
+<p>For example, you could have a mod group with modA and modB as target, and patchAB as source. A record in patchAB would hide records with the same form id from both modA and modB. However, records with the same FormID in modA and modB would NOT be hidden if there is no record with the same form id in patchAB</p>
+</section>
+<p class="empty">&nbsp;</p>
+<section class="quote">
+<p class="attr">ElminsterAU</p>
+<p>Mod groups don't "hide conflicts", they hide complete records. The fact that conflict detection against the not hidden records might then have less conflicts is only a consequence of that.</p>
+<p class="empty">&nbsp;</p>
+<p>When a record is found in a module that's flagged as source in a mod group, then (override) records with the same form id are hidden from all modules which are flagged as target and listed above in the same mod groups that had the source.</p>
+</section>
+<p class="empty">&nbsp;</p>
+<section class="quote">
+<p class="attr">Quote</p>
+<p>thegamemaster1234: I don't know what "in Block" load order ignore means though</p>
+<p class="empty">&nbsp;</p>
+<p>ElminsterAU: It means that the load order between all mods in an uninterrupted block that are flagged as such is ignored</p>
+</section>
+<p class="empty">&nbsp;</p>
+<div id="ignoreloadorder"></div>
+<section class="quote">
+<p class="attr">ElminsterAU</p>
+<p>As for the difference between "Ignore Loadorder Always" and "Ignore Loadorder in block", the later allows you to have:</p>
+<p class="empty">&nbsp;</p>
+<pre>
+:Block of 5 modules
+x.esp
+:Block of 3 modules
+</pre>
+<p class="empty">&nbsp;</p>
+<p>With the order of the modules in each block being irrelevant</p>
+</section>
+<p class="empty">&nbsp;</p>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#DeletingaCRCvalue" class="drkbtn">Previous Section</a>
+</div>
+<div>
+    <a  href="3-basicuse.html" class="drkbtn">&laquo; Previous Page</a>
+    <a  href="5-conflict-detection-and-resolution.html" class="drkbtn">Next Page &raquo;</a>
+</div>
