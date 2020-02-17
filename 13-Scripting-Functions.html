@@ -1,0 +1,2250 @@
+---
+layout: default
+title: xEdit Scripting Functions
+---
+<h1 class="grhead1">Main Table Of Contents</h1>
+<div id="tableOfContents" class="grid-toc">
+    <div class="toc1">
+        <h2 class="grhead2"><a href="index.html">1. Introduction</a></h2>
+        <h2 class="grhead2"><a href="2-overview.html">2. Overview</a></h2>
+        <h2 class="grhead2"><a href="3-basicuse.html">3. xEdit Basic Use</a></h2>
+        <h2 class="grhead2"><a href="4-modgroups.html">4. ModGroups</a></h2>
+        <h2 class="grhead2"><a href="5-conflict-detection-and-resolution.html">5. Conflict Detection and Resolution</a></h2>
+        <h2 class="grhead2"><a href="6-themethod.html">6. The Method</a></h2>
+        <h2 class="grhead2"><a href="7-mod-cleaning-and-error-checking.html">7. Mod Cleaning and Error Checking</a></h2>
+        <h2 class="grhead2"><a href="8-managing-mod-files.html">8. Managing Mod Files</a></h2>
+        <h2 class="grhead2"><a href="9-mod-utilities.html">9. Mod Utilities</a></h2>
+    </div>
+    <div class="toc2">
+        <h2 class="grhead2"><a href="10-fo3edit-faq.html">10. FO3Edit FAQ</a></h2>
+        <h2 class="grhead2"><a href="11-appendix.html">11. Appendix</a></h2>
+        <h2 class="grhead2"><a href="12-cheat-sheets-and-quick-reference-charts.html">12. Cheat Sheets and Quick Reference Charts</a></h2>
+        <h2 class="grhead2"><a href="13-Scripting-Functions.html">13. Scripting Functions</a></h2>
+        <h2 class="grhead2"><a href="14-Scripting-Resources.html">14. Scripting Resources</a></h2>
+        <h2 class="grhead2"><a href="15-tutorials.html">15. Tutorials</a></h2>
+        <h2 class="grhead2"><a href="16-xLODGen.html">16. xLODGen</a></h2>
+        <h2 class="grhead2"><a href="17-DynDoLod.html">17. DynDoLod</a></h2>
+        <h2 class="grhead2"><a href="18-whatsnew.html">18. xEdit What's New and Version Info</a></h2>
+    </div>
+</div>
+<h1>{{ page.title }}</h1>
+<h2 id="Contents">Contents...</h2>
+<p class="list-1">&bull;&nbsp; <a href="#Description">13.1 Description</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#UsingtheDelphiIDEtoEditTES5EditScripts">13.2 Using the Delphi IDE to Edit TES5Edit Scripts</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#InstructionstogetstartededitingxEditscriptswithDelphi">13.3 Instructions to get started editing xEdit scripts with Delphi</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#TES5EditGlobalVariables">13.4 TES5Edit Global Variables</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#TES5EditScriptingFunctions">13.5 TES5Edit Scripting Functions</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#Globalfunctions">13.6 Global functions</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#IwbElement">13.7 IwbElement</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#IwbContainer">13.8 IwbContainer</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#IwbFile">13.9 IwbFile</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#IwbMainRecord">13.10 IwbMainRecord</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#IwbGroupRecord">13.11 IwbGroupRecord</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#IwbResource">13.12 IwbResource</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#Miscfunctions">13.13 Misc functions</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#NIFfunctions">13.14 NIF functions</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#DDSfunctions">13.15 DDS functions</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#ScriptStructure">13.16 Script Structure</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#BaseScriptFunctions">13.17 Base Script Functions</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#Hotkeys">13.18 Hotkeys</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#ScriptReferences">13.19 Script References</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#ScriptUserInterface">13.20 Script User Interface</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#SimpleScriptSample">13.21 Simple Script Sample</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#Pascalimplementation">13.22 Pascal implementation</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#xEditextensionstoJvInterpreter">13.23 xEdit extensions to JvInterpreter</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#Unsupportedlanguagefeatures">13.24 Unsupported language features</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#Unsupportedoperators">13.25 Unsupported operators</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#Unsupportedkeywords">13.26 Unsupported keywords</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#Unsupportedclassesandtools">13.27 Unsupported classes and tools</a></p>
+<div id="s_11-1"></div>
+<h3 id="Description">13.1 - Description</h3>
+<p>Work in progress: To become the future home of scripting functions for TES5Edit. If you make scripts for TES5Edit please contribute to this page.</p>
+<p class="empty">&nbsp;</p>
+<p>TES5Edit implements a script engine based on Pascal syntax. The following table enumerates the functions exported by TES5Edit to the script engine that allows interacting with the editor's elements to perform various tasks such as finding records, fixing record conflicts, etc.</p>
+<p class="empty">&nbsp;</p>
+<p>The information in the table is not complete so please contribute by explaining these functions, their uses and by fixing mistakes in this information.</p>
+<p class="empty">&nbsp;</p>
+<div id="s_11-2"></div>
+<h3 id="UsingtheDelphiIDEtoEditTES5EditScripts">13.2 - Using the Delphi IDE to Edit TES5Edit Scripts</h3>
+<p>As of TES5Edit version 3.2.1, there is a file in the <code>Edit Scripts</code> directory called <a  href="href="https://github.com/TES5Edit/TES5Edit/blob/dev/Edit%20Scripts/xEditAPI.pas">xEditAPI.pas</a></p>
+<p class="empty">&nbsp;</p>
+<p>The contents of that file match what is published here. The xEditAPI.pas includes xEdit API declarations to be used for editing scripts using Delphi. With this file you can now edit xEdit scripts using Delphi. This gives you full IDE benefits like checking for warnings and errors before executing your script, as well as intellisense and code insights.</p>
+<p class="empty">&nbsp;</p>
+<p>For example purposes in this documentation, we assume a user created xEdit script named <code>GreatScript.pas</code>. However, you can name your script almost anything. There are some limitations though, because the name of the script must match the unit declaration of the script, and unit names have limitations. See <a  href="href="http://docwiki.embarcadero.com/RADStudio/Tokyo/en/Fundamental_Syntactic_Elements_(Delphi)#Identifiers">Delphi Identifiers</a></p>
+<p class="empty">&nbsp;</p>
+<h3 id="InstructionstogetstartededitingxEditscriptswithDelphi">13.3 - Instructions to get started editing xEdit scripts with Delphi</h3>
+<p class="list-1">&bull;&nbsp; Download the free Delphi Starter edition, called RAD Studio (current version is 10.2) from <a  href="https://www.embarcadero.com/products/delphi/starter">Embarcadero Delphi Starter</a></p>
+<p class="list-1">&bull;&nbsp; Create new console application project named <code>GreatScriptApp</code></p>
+<p class="list-1">&bull;&nbsp; Add the files <code>xEditAPI.pas</code> and <code>GreatScript.pas</code> to the project (menu Project -&gt; Add to project)</p>
+<p class="list-1">&bull;&nbsp; At the top of the script, modify or add the <code>unit</code> clause. The name of the unit must match exactly the filename of your script without the .pas extension.</p>
+<p class="list-1">&bull;&nbsp; Then add/update the <code>interface</code>, <code>implementation</code>, and <code>uses</code> clauses to your script below. Afterwards, the top of your script file should look like this:</p>
+<p class="empty">&nbsp;</p>
+<pre>
+  unit GreatScript;
+
+  interface
+  implementation
+  uses xEditAPI, Classes, SysUtils, StrUtils, Windows;
+</pre>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; You can add additional Delphi units to the <code>uses</code> clause needed, for example <code>IniFiles</code> if script works with them.</p>
+<p class="list-1">&bull;&nbsp; Check that project can be compiled <code>Ctrl+F9</code> and the same script can be applied in xEdit without errors.</p>
+<p class="list-1">&bull;&nbsp; While editing your script, before running it in xEdit, press <code>Ctrl+F9</code> in Delphi to compile and ensure that the code is valid.</p>
+<p class="list-1">&bull;&nbsp; You can also modify the GreatScriptApp file and have it run your xEdit script from Delphi by pressing <code>F9</code>. Make GreatScriptApp look something like this:</p>
+<p class="empty">&nbsp;</p>
+{% raw %}
+<pre>
+program GreatScriptApp;
+
+  {$APPTYPE CONSOLE}
+
+  {$R *.res}
+
+  uses
+    Windows,
+    Winapi.ShellApi,
+    System.SysUtils,
+    xEditAPI in 'C:\Games\FO4Edit 3.2\Edit Scripts\xEditAPI.pas';
+    GreatScript in 'C:\Games\FO4Edit 3.2\Edit Scripts\GreatScript.pas',
+
+  begin
+    try
+      ShellExecute(0, Nil, 'C:\Games\FO4Edit 3.2\FO4Edit.exe', '-script:&quot;GreatScript.pas&quot; -nobuildrefs', 'C:\Games\FO4Edit 3.2', SW_SHOWNORMAL);
+    except
+      on E: Exception do
+        Writeln(E.ClassName, ': ', E.Message);
+    end;
+  end.
+</pre>
+{% endraw %}
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_111" class="drkbtn">Previous Section</a>
+    <a  href="#s_112" class="drkbtn">Top of this Group</a>
+</div>
+<div id="s_11-3"></div>
+<h3 class="scriptHeader" id="TES5EditGlobalVariables">13.4 - TES5Edit Global Variables</h3>
+<p>These are predefined <b>read-only</b> variables that can be called at any time.</p>
+<p class="empty">&nbsp;</p>
+<table class="scriptTable">
+    <tr>
+        <th> Name </th>
+        <th> Type </th>
+        <th> Description </th>
+        <th> Note </th>
+    </tr>
+    <tr>
+        <td><b>DataPath</b></td>
+        <td> String</td>
+        <td> Provides the file path to Skyrim's data folder as a String</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td><b>ProgramPath</b></td>
+        <td> String</td>
+        <td> Provides the file path to Tes5edit's installation folder as a String</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td><b>ScriptsPath</b></td>
+        <td>String</td>
+        <td>Provides the file path to Tes5Edit's 'Edit Scripts' folder as a String.</td>
+        <td>If launching TES5Edit via a .tes5pas file, ScriptsPath will change to the directory where the .te5pas file is located. (therefore if your script has any .pas file it is grabbing functions from, they also need to be in the that same directory.)</td>
+    </tr>
+    <tr>
+        <td><b>FileCount</b></td>
+        <td>Integer</td>
+        <td>Provides the number of loaded files in your current TES5Edit session</td>
+        <td>"Skyrim.Hardcoded.keep.this..." (aka. Skyrim.exe) is considered a file and is reflected in this variable.</td>
+    </tr>
+    <tr>
+        <td><b>wbAppName</b></td>
+        <td> String</td>
+        <td> Returns 'TES5','TES4','FNV','FO3'</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td><b>wbVersionNumber</b></td>
+        <td> Integer</td>
+        <td> Returns xEdit version number.</td>
+        <td> </td>
+    </tr>
+</table>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_112" class="drkbtn">Previous Section</a>
+    <a  href="#s_113" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-4"></div>
+<h3 class="scriptHeader" id="TES5EditScriptingFunctions">13.5 - TES5Edit Scripting Functions</h3>
+<p class="empty">&nbsp;</p>
+<p>xEdit scripts only have access to a generic type called <i>IInterface</i>, which wraps around every object that xEdit returns. However, different types are used internally to classify different objects. To illustrate this with an example: files are coded as <i>IwbFile</i> objects, while forms are coded as <i>IwbMainRecord</i> objects. However, an xEdit script will only ever see IInterface objects, and any IInterface can be a IwbFile <i>or</i> an IwbMainRecord. Functions like <i>GetIsESM</i> can be called on any IInterface, but are designed to work with IwbFiles and will not produce a meaningful result for other types (i.e. <i>GetIsESM</i> would always return false for any other type).</p>
+<p class="empty">&nbsp;</p>
+<p>The functions below are sorted by the internal types that they operate on. This is to make it easier to find certain functions and to make this page easier to maintain (because frankly, fixing up row colors on a massive table is just a big disincentive to even editing the page).</p>
+<p class="empty">&nbsp;</p>
+<p>The relationships between internal types are as follows:</p>
+<p class="empty">&nbsp;</p>
+<p>    <a  href="#IwbElement">IwbElement</a></p>
+ <p class="list-1">+&nbsp; IwbContainerBase</p>
+ <p class="list-1">+&nbsp; <a  href="#IwbContainer">IwbContainer</a></p>
+<p>      | + IwbDataContainer</p>
+<p>      | |  + IwbFileHeader</p>
+<p>      | |  + IwbRecord</p>
+<p>      | |     + <a  href="#IwbGroupRecord">IwbGroupRecord</a></p>
+<p>      | |     + <a  href="#IwbMainRecord">IwbMainRecord</a></p>
+<p>      | |     + <a  href="#IwbSubRecord">IwbSubRecord</a></p>
+<p>      | |</p>
+<p>      | + <a  href="#IwbFile">IwbFile</a></p>
+<p>      |</p>
+ <p class="list-1">+&nbsp; IwbContainerElementRef</p>
+ <p class="empty">&nbsp;</p>
+<p>   <a  href="#IwbResource">IwbResource</a></p>
+<p>   IwbResourceContainer</p>
+    <p class="list-3">+&nbsp; IwbBA2File</p>
+    <p class="list-3">+&nbsp; IwbBSAFile</p>
+    <p class="list-3">+&nbsp; IwbFolder</p>
+    <p class="empty">&nbsp;</p>
+<p>   Other Types Used but Unknown</p>
+    <p class="list-3">+&nbsp; TwbDefType</p>
+    <p class="list-3">+&nbsp; TwbElementState</p>
+    <p class="list-3">+&nbsp; TwbElementType</p>
+    <p class="list-3">+&nbsp; TwbGridCell</p>
+    <p class="list-3">+&nbsp; TwbVector</p>
+    <p class="list-3">+&nbsp; TwbFastStringList</p>
+    <p class="list-3">+&nbsp; TGameResourceType</p>
+    <p class="empty">&nbsp;</p>
+<p>   <a  href="#Misc_functions">Misc functions</a></p>
+    <p class="list-3">+&nbsp; <a  href="#DDS_functions">DDS</a></p>
+    <p class="list-3">+&nbsp; <a  href="#NIF_functions">NIF</a></p>
+    <p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_113" class="drkbtn">Previous Section</a>
+    <a  href="#s_114" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-4-1"></div>
+<h3 class="scriptHeader" id="Globalfunctions">13.6 - Global functions</h3>
+<p>These functions can be called on anything and should return a meaningful result.</p>
+    <p class="empty">&nbsp;</p>
+<table class="scriptTable wontwrap">
+    <tr>
+        <th> Function </th>
+        <th> Returns </th>
+        <th> Arguments </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td><b>AddMessage</b></td>
+        <td></td>
+        <td> asMessage: string </td>
+        <td> Pushes a line to TES5Edit's Information tab. </td>
+    </tr>
+    <tr>
+        <td><b>Assigned</b></td>
+        <td> boolean</td>
+        <td> aeElement: IwbElement </td>
+        <td> An extension to Delphi's native <a  href="http://www.delphibasics.co.uk/RTL.asp?Name=Assigned">Assigned</a> function: returns true if <i>aeElement</i> is not <i>Nil</i>, and returns false otherwise. </td>
+    </tr>
+    <tr>
+        <td><b>ObjectToElement</b></td>
+        <td> IInterface</td>
+        <td> akObject </td>
+        <td> If you have stored an IInterface inside of a TList or TStringList, you must call this function when retrieving the object from the list, i.e. <code>ObjectToElement(myList.Items[0])</code>. </td>
+    </tr>
+    <tr>
+        <td><b>FileByIndex</b></td>
+        <td> IwbFile</td>
+        <td> aiFile: integer </td>
+        <td>Returns a file by index. 0 is Fallout4.esm, 1 is Fallout4.exe, 2 is DLC or first mod loaded. See also: <i>FileCount</i>. </td>
+    </tr>
+    <tr>
+        <td><b>FileByLoadOrder</b></td>
+        <td> IwbFile</td>
+        <td> aiLoadOrder: integer </td>
+        <td> Returns a file by load order. 0 is Fallout4.esm, 1 is DLC or first mod loaded. </td>
+    </tr>
+    <tr>
+        <td><b>FullPathToFilename</b></td>
+        <td> string</td>
+        <td> asFilename: string </td>
+        <td> Returns the full path to the filename <i>asFilename</i>. </td>
+    </tr>
+    <tr>
+        <td><b>EnableSkyrimSaveFormat</b></td>
+        <td></td>
+        <td> </td>
+        <td> As of xEdit 3.1.2, calling this function will corrupt saved plugins until xEdit is restarted. </td>
+    </tr>
+    <tr>
+        <td><b>GetRecordDefNames</b></td>
+        <td></td>
+        <td> akList: TStrings </td>
+        <td> Unverified: Modifies <i>akList</i> by adding entries based on the contents of the global <i>wbRecordDefs</i>. </td>
+    </tr>
+    <tr>
+        <td><b>wbFilterStrings</b></td>
+        <td></td>
+        <td> akListIn: TStrings;<br> akListOut: TStrings;<br> asFilter: String </td>
+        <td> Modifies <i>akListOut</i>, adding every entry in <i>akListIn</i> that contains the substring <i>asFilter</i>. </td>
+    </tr>
+    <tr>
+        <td><b>wbRemoveDuplicateStrings</b></td>
+        <td></td>
+        <td> akList: TStringList </td>
+        <td> Modifies <i>akList</i>, removing any duplicate entries that it contains. </td>
+    </tr>
+</table>
+    <p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_114" class="drkbtn">Previous Section</a>
+    <a  href="#s_1141" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-4-2"></div>
+<h3 class="scriptHeader" id="IwbElement">13.7 - IwbElement</h3>
+<p>These functions can be called on any IwbElement IInterface.</p>
+    <p class="empty">&nbsp;</p>
+<table class="scriptTable wontwrap">
+    <tr>
+        <th> Function </th>
+        <th> Returns </th>
+        <th> Arguments </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td><b>BaseName</b></td>
+        <td> string</td>
+        <td> aeElement: IwbElement </td>
+        <td>Identical to <i>Name</i> except that it handles IwbFiles differently. <i>Name</i> will prepend a load order index (i.e. <code>[02] PluginName.esp</code>), while <i>BaseName</i> will not.</td>
+    </tr>
+<p>    <tr id="BeginUpdate"></p>
+        <td><b>BeginUpdate</b></td>
+        <td></td>
+        <td>aeElement: IwbElement</td>
+        <td>
+            <p>For use on container elements only when performing a lot of operations with it like adding/removing children elements in batch. Needs to be paired with <a  href="#EndUpdate">EndUpdate</a></p>
+<pre>
+    BeginUpdate(e);
+    try
+        // do things with e
+    finally
+        EndUpdate(e);
+    end;
+</pre>
+        </td>
+    </tr>
+    <tr>
+        <td><b>BuildRef</b></td>
+        <td></td>
+        <td> aeElement: IwbElement </td>
+        <td>Builds reference information for the element and all of its descendants. Note that this function will run even if reference information has already been built.</td>
+    </tr>
+    <tr>
+        <td><b>CanContainFormIDs</b></td>
+        <td> boolean</td>
+        <td> aeElement: IwbElement </td>
+        <td>Guaranteed to return <i>True</i> if the element can contain FormIDs, but not guaranteed to return <i>False</i> if it can't. This accesses an internal property, <i>CanContainFormIDs</i>, which the internal implementation of <i>BuildRef</i> uses to skip processing certain descendant elements.</td>
+    </tr>
+    <tr>
+        <td><b>CanMoveDown</b></td>
+        <td> boolean</td>
+        <td> aeElement: IwbElement </td>
+        <td>Returns true if the element is part of an array and can be moved further down using <i>MoveDown</i>.</td>
+    </tr>
+    <tr>
+        <td><b>CanMoveUp</b></td>
+        <td> boolean</td>
+        <td> aeElement: IwbElement</td>
+        <td>Returns true if the element is part of an array and can be moved further up using <i>MoveUp</i>.</td>
+    </tr>
+    <tr>
+        <td><b>Check</b></td>
+        <td> string</td>
+        <td> aeElement: IwbElement </td>
+        <td>Returns the error message produced when the "Check for Errors" functionality is run on <i>aeElement</i>; or else an empty string if no error is found.</td>
+    </tr>
+    <tr>
+        <td><b>ClearElementState</b></td>
+        <td></td>
+        <td> aeElement: IwbElement;<br> aiState: TwbElementState</td>
+        <td>Manipulates the internal flags of an element, e.g. <code>ClearElementState(eElement, wsModified);</code>. See also: <I>GetElementState</I>, <I>SetElementState</I>.</td>
+    </tr>
+    <tr>
+        <td><b>ContainingMainRecord</b></td>
+        <td> IwbMainRecord</td>
+        <td> aeElement: IwbElement </td>
+        <td> Returns the main record that contains the element. </td>
+    </tr>
+    <tr>
+        <td><b>DefType</b></td>
+        <td> TwbDefType</td>
+        <td> aeElement: IwbElement </td>
+        <td> Returns the def-type of the element. </td>
+    </tr>
+    <tr>
+        <td><b>DisplayName</b></td>
+        <td> string</td>
+        <td> aeElement: IwbElement </td>
+        <td>Returns the display name of the element, if it has one; otherwise, this behaves identically to <i>Name</i>. See also: <i>BaseName</i>, <i>ShortName</i>.</td>
+    </tr>
+    <tr>
+        <td><b>ElementAssign</b></td>
+        <td> IwbElement</td>
+        <td>aeContainer: IwbContainer;<br> aiIndex: integer;<br> aeSource: IwbElement;<br> abOnlySK: boolean</td>
+        <td>
+<p>            Copy the contents of one element into a container element, or create and append an element to a container.</p>
+<p>            <dl></p>
+<p>                <dt>aeContainer</dt></p>
+<p>                <dd>Destination element.</dd></p>
+<p>                <dt>aiIndex</dt></p>
+<p>                <dd>Where to place the new element, if the destination is an array. Specify <i>HighInteger</i> to append. Specify <i>LowInteger</i> or a negative value to add to non-arrays.</dd></p>
+<p>                <dt>aeSource</dt></p>
+<p>                <dd>Element to copy from. Use <i>Nil</i> to create a blank element of the appropriate type.</dd></p>
+<p>                <dt>abOnlySK</dt></p>
+<p>                <dd>Sorted Key Only;&#160;: Only apply to elements participating in container sorting, for internal xEdit usage. Use False.</dd></p>
+<p>            </dl></p>
+            <p>Sample: there is a script to copy VMAD subrecords "Skyrim - Copy VMAD subrecord.pas"</p>
+        </td>
+    </tr>
+    <tr>
+        <td><b>ElementType</b></td>
+        <td> TwbElementType</td>
+        <td> aeElement: IwbElement </td>
+        <td>Returns the type of the element. This is one of the following values: etFile, etMainRecord, etGroupRecord, etSubRecord, etSubRecordStruct, etSubRecordArray, etSubRecordUnion, etArray, etStruct, etValue, etFlag, etStringListTerminator,etUnion, etStructChapter. </td>
+    </tr>
+<p>    <tr id="EndUpdate"></p>
+        <td><b>EndUpdate</b></td>
+        <td></td>
+        <td>aeElement: IwbElement</td>
+        <td>
+            <p>For use on container elements only when performing a lot of operations with it like adding/removing children elements in batch. Needs to be paired with <a  href="#BeginUpdate">BeginUpdate</a></p>
+<pre>
+    BeginUpdate(e);
+    try
+        // do things with e
+    finally
+        EndUpdate(e);
+    end;
+</pre>
+        </td>
+    </tr>
+    <tr>
+        <td><b>EnumValues</b></td>
+        <td> string</td>
+        <td> aeElement: IwbElement </td>
+        <td>If <i>aeElement</i> is a set of named enum values, this function returns the names of any values that have been set, separated with spaces.</td>
+    </tr>
+    <tr>
+        <td><b>Equals</b></td>
+        <td> boolean</td>
+        <td> aeElement1: IwbElement;<br> aeElement2: IwbElement </td>
+        <td>Compares two elements by their ElementID. This is sometimes necessary, as different IInterface variables pointing to the same element don't always compare properly when using the <code>=</code> operator.</td>
+    </tr>
+    <tr>
+        <td><b>FlagValues</b></td>
+        <td> string</td>
+        <td> aeElement: IwbElement </td>
+        <td>If <i>aeElement</i> is a set of flags, this function returns the names of all set flags, separated with spaces.</td>
+    </tr>
+    <tr>
+        <td><b>FullPath</b></td>
+        <td> string</td>
+        <td> aeElement: IwbElement </td>
+        <td>Returns the full path to the element, going all the way down to its containing file. See also: <i>Path</i>, <i>PathName</i>.</td>
+    </tr>
+    <tr>
+        <td><b>GetContainer</b></td>
+        <td> IwbContainer</td>
+        <td> aeElement: IwbElement </td>
+        <td>Returns the element's container.</td>
+    </tr>
+    <tr>
+        <td><b>GetEditValue</b></td>
+        <td> string</td>
+        <td> aeElement: IwbElement </td>
+        <td>Returns a string representation of the element's value. See also: <i>SetEditValue</i>, <i>GetElementEditValues</i>, <i>SetElementEditValues</i>.</td>
+    </tr>
+    <tr>
+        <td><b>GetElementState</b></td>
+        <td> TwbElementState</td>
+        <td> aeElement: IwbElement;<br> aiState: TwbElementState </td>
+        <td>Checks the internal flags of an element. See also: <i>ClearElementState</i>, <i>SetElementState</i>.</td>
+    </tr>
+    <tr>
+        <td><b>GetFile</b></td>
+        <td> IwbFile</td>
+        <td> aeElement: IwbElement </td>
+        <td>Returns the file that contains the element.</td>
+    </tr>
+    <tr>
+        <td><b>GetNativeValue</b></td>
+        <td> variant</td>
+        <td> aeElement: IwbElement </td>
+        <td>Returns the element's value. See also: <i>SetNativeValue</i>, <i>GetElementNativeValues</i>, <i>SetElementNativeValues</i>.</td>
+    </tr>
+    <tr>
+        <td><b>IsEditable</b></td>
+        <td> boolean</td>
+        <td> aeElement: IwbElement </td>
+        <td>Returns true if the record can be edited. In some cases, xEdit will block edits to files like Skyrim.esm.</td>
+    </tr>
+    <tr>
+        <td><b>IsInjected</b></td>
+        <td> boolean</td>
+        <td> aeElement: IwbElement </td>
+        <td> Returns true if the element is an injected record. </td>
+    </tr>
+    <tr>
+        <td><b>LinksTo</b></td>
+        <td> IwbElement</td>
+        <td> aeElement: IwbElement </td>
+        <td>Obtains the referenced element. Not to be confused with ReferencedBy Elements. Call this function on any container element (etSubRecord) to get the iwbMainRecord of that form. (Ex: Calling LinksTo() on any 'LNAM - FormID' subRecord found in a FormID List will return the IwbMainRecord of that record).</td>
+    </tr>
+    <tr>
+        <td><b>MarkModifiedRecursive</b></td>
+        <td></td>
+        <td> aeElement: IwbElement </td>
+        <td>Marks the element and all of its descendants as modified. This forces xEdit to serialize them.</td>
+    </tr>
+    <tr>
+        <td><b>MoveDown</b></td>
+        <td></td>
+        <td> aeElement: IwbElement </td>
+        <td>If the element is part of an array, this function moves it down by one slot. See also: <i>CanMoveDown</i>.</td>
+    </tr>
+    <tr>
+        <td><b>MoveUp</b></td>
+        <td></td>
+        <td> aeElement: IwbElement </td>
+        <td>If the element is part of an array, this function moves it up by one slot. See also: <i>CanMoveUp</i>.</td>
+    </tr>
+    <tr>
+        <td><b>Name</b></td>
+        <td> string</td>
+        <td> aeElement: IwbElement </td>
+        <td>Returns the name of the element, if it has one. If <i>aeElement</i> is an IwbFile or certain linds of IwbMainRecords, <i>Name</i> will return a "pretty" name, while <i>BaseName</i> or <i>ShortName</i> will return a more basic string. See also: <i>DisplayName</i>.</td>
+    </tr>
+    <tr>
+        <td><b>Path</b></td>
+        <td> string</td>
+        <td> aeElement: IwbElement </td>
+        <td>Returns the <i>path component</i> of <i>aeElement</i> &mdash; that is, <i>one single piece</i> of the path that <i>FullPath</i> would return. You could use this when manually constructing a path to supply to <i>ElementByPath</i>. See also (and don't confuse with): <i>FullPath</i>, <i>PathName</i>.</td>
+    </tr>
+    <tr>
+        <td><b>PathName</b></td>
+        <td> string</td>
+        <td> aeElement: IwbElement </td>
+        <td>
+            <p>Similar to <i>FullPath</i> except that names in the path are prefixed with brackets, to uniquely identify each element's unique position among its siblings (see <i>IndexOf</i>).</p>
+            <p>Example: <code>\[02] neromancer.esp\[7] Worldspace\[1] World Children\[1] Children of 00000D74\[0] Persistent\[2] [REFR:00100452]</code></p>
+        </td>
+    </tr>
+    <tr>
+        <td><b>Remove</b></td>
+        <td></td>
+        <td> aeElement: IwbElement </td>
+        <td> Removes the element from its file. </td>
+    </tr>
+    <tr>
+        <td><b>ReportRequiredMasters</b></td>
+        <td></td>
+        <td> aeElement: IwbElement;<br> akListOut: TStrings;<br> akUnknown1: boolean;<br> akUnknown2: boolean </td>
+        <td>Checks which master files <i>aeElement</i> depends on, and adds their filenames to <i>akListOut</i>. First boolean is Recursive to go over children elements if it is a container, second is Initial which is false by default. </td>
+    </tr>
+    <tr>
+        <td><b>SetEditValue</b></td>
+        <td> string</td>
+        <td> aeElement: IwbElement;<br> asValue: string </td>
+        <td>Sets the element's value to one that matches the string representation passed in. See also: <i>GetEditValue</i>, <i>GetElementEditValues</i>, <i>SetElementEditValues</i>. </td>
+    </tr>
+    <tr>
+        <td><b>SetElementState</b></td>
+        <td> TwbElementState</td>
+        <td> aeElement: IwbElement;<br> aiState: TwbElementState </td>
+        <td>Manipulates the internal flags of an element. Returns the value prior to modification. See also: <i>ClearElementState</i>, <i>GetElementState</i>.</td>
+    </tr>
+    <tr>
+        <td><b>SetNativeValue</b></td>
+        <td> string</td>
+        <td> aeElement: IwbElement;<br> avValue: variant </td>
+        <td>Sets the element's value. See also: <i>GetNativeValue</i>, <i>GetElementNativeValues</i>, <i>SetElementNativeValues</i>.</td>
+    </tr>
+    <tr>
+        <td><b>SetToDefault</b></td>
+        <td></td>
+        <td> aeElement: IwbElement </td>
+        <td>Resets the element's data and adds missing fields if any</td>
+    </tr>
+    <tr>
+        <td><b>ShortName</b></td>
+        <td> string</td>
+        <td> aeElement: IwbElement </td>
+        <td>Generally the same as <i>Name</i> unless <i>aeElement</i> is a reference, cell, or similar record. <i>Name</i> will return detailed information for those records, while <i>ShortName</i> will return the signature and FormID in the format <code>[XXXX:01234567]</code>. </td>
+    </tr>
+    <tr>
+        <td><b>SortKey</b></td>
+        <td> string</td>
+        <td> aeElement: IwbElement </td>
+        <td>Returns a string unique to the element entered. This can be used for sorting elements or for comparing them; for example, you could compare the SortKey for two elements in records which override each other to see if they are different from each other. </td>
+    </tr>
+    <tr>
+        <td><b>wbCopyElementToFile</b></td>
+        <td> IwbElement</td>
+        <td> aeElement: IwbElement;<br> aeFile: IwbFile;<br> abAsNew: boolean;<br> abDeepCopy: boolean </td>
+        <td>Copies an IwbMainRecord, IwbGroupRecord, or IwbContainer to the specified file. The <i>abAsNew</i> boolean controls whether or not you're copying the record as an override record. Returns the copied element. </td>
+    </tr>
+    <tr>
+        <td><b>wbCopyElementToFileWithPrefix</b></td>
+        <td> IwbElement</td>
+        <td>aeElement: IwbElement;<br> aeFile: IwbFile;<br> abAsNew: boolean;<br> abDeepCopy: boolean;<br> aPrefixRemove;<br> aPrefix;<br> aSuffix: string</td>
+        <td>Details unknown. Returns the copied element.</td>
+    </tr>
+    <tr>
+        <td><b>wbCopyElementToRecord</b></td>
+        <td> IwbElement</td>
+        <td>aeElement: IwbElement;<br> aeRecord: IwbMainRecord;<br> abAsNew: boolean;<br> abDeepCopy: boolean</td>
+        <td>Copies an element to a record, e.g. the "Conditions" element on a <a  href="https://www.creationkit.com/index.php?title=Constructible_Object">Constructible Object (COBJ)</a> record or a faction from an <a  href="https://www.creationkit.com/index.php?title=ActorBase">ActorBase (NPC_)</a> record. Returns the copied element.</td>
+    </tr>
+</table>
+    <p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_1141" class="drkbtn">Previous Section</a>
+    <a  href="#s_1142" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-4-3"></div>
+<h3 class="scriptHeader" id="IwbContainer">13.8 - IwbContainer</h3>
+<table class="scriptTable wontwrap">
+    <tr>
+        <th> Function </th>
+        <th> Returns </th>
+        <th> Arguments </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td><b>Add</b></td>
+        <td> IwbElement</td>
+        <td> aeContainer: IwbContainer;<br> asNameOrSignature: string;<br> abSilent: boolean </td>
+        <td>Creates a child element with the name-or-signature <i>asNameOrSignature</i> in <i>aeContainer</i> if no such child already exists; otherwise, marks the existing child as modified. Returns the created or existing element.</td>
+    </tr>
+    <tr>
+        <td><b>AddElement</b></td>
+        <td></td>
+        <td> aeContainer: IwbContainer;<br> aeElement: IwbElement </td>
+        <td>Adds <i>aeElement</i> as a child of <i>aeContainer</i>. Throws an error if <i>aeElement</i> already has a container.</td>
+    </tr>
+    <tr>
+        <td><b>AdditionalElementCount</b></td>
+        <td> integer</td>
+        <td> aeContainer: IwbContainer </td>
+        <td>Returns the number of "fake" elements xEdit adds before the "Record Header". For references it shows "Cell" for example. This getter accesses an internal function used internally for imposing some order on the sub-elements; it checks whether this element "counts," and if so, how many times. Seems to return 1 or 2 for (main?) records, and 0 for record fields (sub-records).</td>
+    </tr>
+    <tr>
+        <td><b>ContainerStates</b></td>
+        <td> byte</td>
+        <td> aeContainer: IwbContainer </td>
+        <td>Returns the internal container flags for <i>aeContainer</i> (e.g. whether it's initialized, or whether it has had references built) as a bitmask. Refer to "Worldspace browser.pas" for a usage example.</td>
+    </tr>
+    <tr>
+        <td><b>ElementByIndex</b></td>
+        <td> IwbElement</td>
+        <td> aeContainer: IwbContainer;<br> aiIndex: integer </td>
+        <td>Returns the <i>aiIndex</i>-th child element in <i>aeContainer</i>. See also: <i>ElementCount</i>.</td>
+    </tr>
+    <tr>
+        <td><b>ElementByName</b></td>
+        <td> IwbElement</td>
+        <td> aeContainer: IwbContainer;<br> asName: string </td>
+        <td>Searches <i>aeContainer</i> for the child element with name <i>asName</i>, and returns the found element or <i>Nil</i>. See also: <i>ElementExists</i>.</td>
+    </tr>
+    <tr>
+        <td><b>ElementByPath</b></td>
+        <td> IwbElement</td>
+        <td> aeContainer: IwbContainer;<br> asPath: string </td>
+        <td>Searches <i>aeContainer</i> for the descendant element specified by path <i>asPath</i>, and returns the found element or <i>Nil</i>.</td>
+    </tr>
+    <tr>
+        <td><b>ElementBySignature</b></td>
+        <td> IwbElement</td>
+        <td> aeContainer: IwbContainer;<br> asSignature: string </td>
+        <td>Searches <i>aeContainer</i> for the child element with signature <i>asSignature</i>, and returns the found element or <i>Nil</i>.</td>
+    </tr>
+    <tr>
+        <td><b>ElementCount</b></td>
+        <td> integer</td>
+        <td> aeContainer: IwbContainer </td>
+        <td>Returns the number of child elements in <i>aeContainer</i>. See also: <i>ElementByIndex</i>.</td>
+    </tr>
+    <tr>
+        <td><b>ElementExists</b></td>
+        <td> boolean</td>
+        <td> aeContainer: IwbContainer;<br> asName: string </td>
+        <td>Returns true if <i>aeContainer</i> as a child element whose name is <i>asName</i>. See also: <i>ElementByName</i>.</td>
+    </tr>
+    <tr>
+        <td><b>GetElementEditValues</b></td>
+        <td> string</td>
+        <td> aeContainer: IwbContainer;<br> asPath: string </td>
+        <td>Finds the element within <i>aeContainer</i> specified by <i>asPath</i>, and returns a string representation of its value.</td>
+    </tr>
+    <tr>
+        <td><b>GetElementNativeValues</b></td>
+        <td> variant</td>
+        <td> aeContainer: IwbContainer;<br> asPath: string </td>
+        <td>Finds the element within <i>aeContainer</i> specified by <i>asPath</i>, and returns its value.</td>
+    </tr>
+    <tr>
+        <td><b>IndexOf</b></td>
+        <td> integer</td>
+        <td> aeContainer: IwbContainer;<br> aeChild: IwbElement </td>
+        <td>Returns the index of <i>aeChild</i> in <i>aeContainer</i>, or -1 if <i>aeChild</i> is not a child element of <i>aeContainer</i>.</td>
+    </tr>
+    <tr>
+        <td><b>InsertElement</b></td>
+        <td></td>
+        <td> aeContainer: IwbContainer;<br> aiPosition: Integer;<br> aeElement: IwbElement </td>
+        <td>Inserts <i>aeElement</i> as a child of <i>aeContainer</i> at the specified position.</td>
+    </tr>
+    <tr>
+        <td><b>IsSorted</b></td>
+        <td> boolean</td>
+        <td> aeContainer: IwbSortableContainer </td>
+        <td>Checks whether xEdit always keeps <i>aeContainer</i> sorted. If so, this function will return <i>True</i>, and calling <i>CanMoveUp</i> and <i>CanMoveDown</i> on child elements will always return <i>False</i>.</td>
+    </tr>
+    <tr>
+        <td><b>LastElement</b></td>
+        <td> IwbElement</td>
+        <td> aeContainer: IwbContainer </td>
+        <td>Returns the last child element in <i>aeContainer</i>, or <i>Nil</i> if there are no child elements.</td>
+    </tr>
+    <tr>
+        <td><b>RemoveByIndex</b></td>
+        <td> IwbElement</td>
+        <td> aeContainer: IwbContainer;<br> aiIndex: integer;<br> abMarkModified: boolean </td>
+        <td>Removes the <i>aiIndex</i>-th child from <i>aeContainer</i>, and returns it.</td>
+    </tr>
+    <tr>
+        <td><b>RemoveElement</b></td>
+        <td> IwbElement</td>
+        <td> aeContainer: IwbContainer;<br> avChild: variant </td>
+        <td>Removes <i>avChild</i> from <i>aeContainer</i> and returns the removed element. The <i>avChild</i> argument can be: the index of an element to remove from an array container; the mame or signature of an element to remove; or an IwbElement to remove.</td>
+    </tr>
+    <tr>
+        <td><b>ReverseElements</b></td>
+        <td></td>
+        <td> aeContainer: IwbContainer </td>
+        <td>Reverses the order of the child elements in <i>aeContainer</i>.</td>
+    </tr>
+    <tr>
+        <td><b>SetElementEditValues</b></td>
+        <td></td>
+        <td> aeContainer: IwbContainer;<br> asPath: string;<br> asValue: string </td>
+        <td>Finds the element within <i>aeContainer</i> specified by <i>asPath</i>, and sets its value based on the string representation <i>asValue</i>.</td>
+    </tr>
+    <tr>
+        <td><b>SetElementNativeValues</b></td>
+        <td></td>
+        <td> aeContainer: IwbContainer;<br> asPath: string;<br> avValue: variant </td>
+        <td>Finds the element within <i>aeContainer</i> specified by <i>asPath</i>, and sets its value to <i>asValue</i>.,/td>
+    </tr>
+</table>
+    <p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_1142" class="drkbtn">Previous Section</a>
+    <a  href="#s_1143" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-4-4"></div>
+<h3 class="scriptHeader" id="IwbFile">13.9 - IwbFile</h3>
+<table class="scriptTable wontwrap">
+    <tr>
+        <th> Function </th>
+        <th> Returns </th>
+        <th> Arguments </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td><b>AddMasterIfMissing</b></td>
+        <td></td>
+        <td> aeFile: IwbFile;<br> asMasterFilename: string </td>
+        <td> Adds the specified file as a master for <i>aeFile</i>, if it isn't already a master. </td>
+    </tr>
+    <tr>
+        <td><b>AddNewFileName</b></td>
+        <td> aeFile: IwbFile</td>
+        <td> FileName: String <br> (optional) ESLFlag: Boolean <br> </td>
+        <td>Creates a new, empty plugin using FileName as the name in the game's plugin folder (Data) and adds it to the end of the plugins list. if applicable, the ESL flag can be set.</td>
+    </tr>
+    <tr>
+        <td><b>AddNewFile</b></td>
+        <td> aeFile: IwbFile</td>
+        <td> (optional) ESLFlag: Boolean <br> </td>
+        <td>Creates a new, empty plugin in the game's plugin folder (Data) and adds it to the end of the plugins list. if applicable, the ESL flag can be set.</td>
+    </tr>
+    <tr>
+        <td><b>CleanMasters</b></td>
+        <td></td>
+        <td> aeFile: IwbFile </td>
+        <td>Appears to find unnecessary files in <i>aeFile</i>'s master list and remove them, updating all form indices accordingly. Don't confuse this within "cleaning master files" as in "removing ITMs and UDRs from official DLCs." This function is used in "Skyrim - Book Covers Patch.pas". </td>
+    </tr>
+    <tr>
+        <td><b>FileFormIDtoLoadOrderFormID</b></td>
+        <td> cardinal</td>
+        <td> aeFile: IwbFile; aiFormID: cardinal </td>
+        <td> Converts <i>aiFormID</i> from a FormID relative to <i>aeFile</i>'s master list (like that returned by <i>FixedFormID</i>) to a load order-relative FormID (like that returned by <i>FormID</i>). See also: <i>LoadOrderFormIDtoFileFormID</i>. </td>
+    </tr>
+    <tr>
+        <td><b>FileWriteToStream</b></td>
+        <td></td>
+        <td> aeFile: IwbFile;<br> akOutStream: TStream </td>
+        <td> Writes the contents of <i>aeFile</i> to <i>akOutStream</i>. Used in "SaveAs.pas" to allow a user to save a loaded file under a new name; that script creates a TFileStream object and uses this function to write to it. </td>
+    </tr>
+    <tr>
+        <td><b>GetFileName</b></td>
+        <td> string</td>
+        <td> aeFile: IwbFile </td>
+        <td> Returns <i>aeFile</i>'s filename. </td>
+    </tr>
+    <tr>
+        <td><b>GetIsESM</b></td>
+        <td> boolean</td>
+        <td> aeFile: IwbFile </td>
+        <td> Returns <i>True</i> if <i>aeFile</i> is flagged as an ESM. See also: <i>SetIsESM</i>. </td>
+    </tr>
+    <tr>
+        <td><b>GetLoadOrder</b></td>
+        <td> integer</td>
+        <td> aeFile: IwbFile </td>
+        <td> Returns <i>aeFile</i>'s index in the load order, or -1 if called on something that is not an IwbFile. </td>
+    </tr>
+    <tr>
+        <td><b>GetNewFormID</b></td>
+        <td> cardinal</td>
+        <td> aeFile: IwbFile </td>
+        <td> Returns a new FormID, the same way that <code>Add(..., ..., True)</code> does. </td>
+    </tr>
+    <tr>
+        <td><b>GroupBySignature</b></td>
+        <td> IwbGroupRecord</td>
+        <td> aeFile: IwbFile;<br> asSignature: string </td>
+        <td> If <i>aeFile</i> has a top-level group with the specified signature, that group is returned. </td>
+    </tr>
+    <tr>
+        <td><b>HasGroup</b></td>
+        <td> boolean</td>
+        <td> aeFile: IwbFile;<br> asSignature: string </td>
+        <td> Returns <i>True</i> if <i>aeFile</i> contains a top-level group with the specified signature. </td>
+    </tr>
+    <tr>
+        <td><b>HasMaster</b></td>
+        <td> boolean</td>
+        <td> aeFile: IwbFile;<br> asMasterFilename: string </td>
+        <td> Returns <i>True</i> if <i>aeFile</i> has a file with the name <i>asMasterFilename</i> as a master. </td>
+    </tr>
+    <tr>
+        <td><b>LoadOrderFormIDtoFileFormID</b></td>
+        <td> cardinal</td>
+        <td> aeFile: IwbFile; aiFormID: cardinal </td>
+        <td> Converts <i>aiFormID</i> from a load order-relative FormID (like that returned by <i>FormID</i>) to a FormID relative to <i>aeFile</i>'s master list (like that returned by <i>FixedFormID</i>). See also: <i>FileFormIDtoLoadOrderFormID</i>. </td>
+    </tr>
+    <tr>
+        <td><b>MasterByIndex</b></td>
+        <td> IwbFile</td>
+        <td> aeFile: IwbFile;<br> aiIndex: integer </td>
+        <td> Returns the <i>aiIndex</i>-th master file for <i>aeFile</i>. </td>
+    </tr>
+    <tr>
+        <td><b>MasterCount</b></td>
+        <td> cardinal</td>
+        <td> aeFile: IwbFile </td>
+        <td> Returns the number of master files that <i>aeFile</i> has. </td>
+    </tr>
+    <tr>
+        <td><b>RecordByEditorID</b></td>
+        <td> IwbMainRecord</td>
+        <td> aeFile: IwbFile;<br> asEditorID: string </td>
+        <td> Returns the <a  href="https://www.creationkit.com/index.php?title=Magic_Effect">Magic Effect (MGEF)</a> or <a  href="https://www.creationkit.com/index.php?title=Category:Settings">Setting (GMST)</a> record in <i>aeFile</i> that has the specified EditorID. For all other record types, use something like <code>MainRecordByEditorID(GroupBySignature(f, 'ECZN'), 'RandomEncounterZone1')</code>. </td>
+    </tr>
+    <tr>
+        <td><b>RecordByFormID</b></td>
+        <td> IwbMainRecord</td>
+        <td> aeFile: IwbFile;<br> aiFormID: integer;<br> abAllowInjected: boolean </td>
+        <td> Returns the main record in <i>aeFile</i> that has the specified FormID, or <i>Nil</i> if no records match. The FormID must be local to the file (see <i>FixedFormID</i>). </td>
+    </tr>
+    <tr>
+        <td><b>RecordByIndex</b></td>
+        <td> IwbMainRecord</td>
+        <td> aeFile: IwbFile;<br> aiIndex: integer </td>
+        <td> Returns the <i>aiIndex</i>-th record in <i>aeFile</i>. </td>
+    </tr>
+    <tr>
+        <td><b>RecordCount</b></td>
+        <td> cardinal</td>
+        <td> aeFile: IwbFile </td>
+        <td> Returns the number of records that <i>aeFile</i> has. </td>
+    </tr>
+    <tr>
+        <td><b>SetIsESM</b></td>
+        <td></td>
+        <td> aeFile: IwbFile;<br> abFlag: boolean </td>
+        <td> Modifies the ESM flag for <i>aeFile</i>. See also: <i>GetIsESM</i>. </td>
+    </tr>
+    <tr>
+        <td><b>SortMasters</b></td>
+        <td></td>
+        <td> aeFile: IwbFile </td>
+        <td> Attempts to sort the masters for <i>aeFile</i> by their place in the current load order. </td>
+    </tr>
+</table>
+    <p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_1143" class="drkbtn">Previous Section</a>
+    <a  href="#s_1144" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-4-5"></div>
+<h3 class="scriptHeader" id="IwbMainRecord">13.10 - IwbMainRecord</h3>
+<table class="scriptTable wontwrap">
+    <tr>
+        <th> Function </th>
+        <th> Returns </th>
+        <th> Arguments </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td><b>BaseRecord</b></td>
+        <td> IwbMainRecord</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> If <i>aeRecord</i> is a <a  href="https://www.creationkit.com/index.php?title=Reference">Reference</a>, this function returns the IwbMainRecord of its base form. Otherwise, the function returns <i>Nil</i>. </td>
+    </tr>
+    <tr>
+        <td><b>BaseRecordID</b></td>
+        <td> cardinal</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Appears to return the load order-relative FormID of <i>aeRecord</i>. </td>
+    </tr>
+    <tr>
+        <td><b>ChangeFormSignature</b></td>
+        <td></td>
+        <td> aeRecord: IwbMainRecord;<br> asNewSignature: string </td>
+        <td> Changes <i>aeRecord</i>'s signature to <i>asNewSignature</i>. No other information is modified. </td>
+    </tr>
+    <tr>
+        <td><b>ChildGroup</b></td>
+        <td> IwbGroupRecord</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td>Returns the group that <i>aeRecord</i> contains, if any. For example, a <a  href="https://www.creationkit.com/index.php?title=Worldspace">Worldspace(WRLD)</a> record will be followed by a GRUP containing the worldspace's <a  href="https://www.creationkit.com/index.php?title=Cell">Cell (CELLs)</a>, and you would use this function to retrieve that group. </td>
+    </tr>
+    <tr>
+        <td><b>CompareExchangeFormID</b></td>
+        <td> boolean</td>
+        <td> aeRecord: IwbMainRecord;<br> aiOldFormID: cardinal;<br> aiNewFormID: cardinal </td>
+        <td> Attempts to change <i>aeRecord</i>'s FormID from <i>aiOldFormID</i> to <i>aiNewFormID</i>, and returns <i>True</i> if the operation succeeds. </td>
+    </tr>
+    <tr>
+        <td><b>EditorID</b></td>
+        <td> string</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Returns the record's EditorID. </td>
+    </tr>
+    <tr>
+        <td><b>FixedFormID</b></td>
+        <td> cardinal</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Returns the local FormID of the record. Local records will not have a load order prefix (i.e. 0x00FFFFFF), and overrides will have a prefix relative to the record's file's masters. See also: <i>FormID</i>, <i>GetLoadOrderFormID</i>. </td>
+    </tr>
+    <tr>
+        <td><b>FormID</b></td>
+        <td> cardinal</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Returns the record's FormID. See also: <i>FixedFormID</i>, <i>GetLoadOrderFormID</i>. </td>
+    </tr>
+    <tr>
+        <td><b>GetFormVCS1</b></td>
+        <td> cardinal</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Returns the value of the Version Control Info 1 field. See also: <i>SetFormVCS1</i>. </td>
+    </tr>
+    <tr>
+        <td><b>GetFormVCS2</b></td>
+        <td> cardinal</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Returns the value of the Version Control Info 2 field. See also: <i>SetFormVCS2</i>. </td>
+    </tr>
+    <tr>
+        <td><b>GetFormVersion</b></td>
+        <td> cardinal</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Get Form Version field from the record's header. See also: <i>SetFormVersion</i>. </td>
+    </tr>
+    <tr>
+        <td><b>GetGridCell</b></td>
+        <td> TwbGridCell</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> If <i>aeRecord</i> is an exterior <a  href="https://www.creationkit.com/index.php?title=Cell">Cell (CELL)</a>, this function will return its grid coordinates as a TwbGridCell; you can access the coordinates by checking <code>returnValue.x</code> and <code>returnValue.y</code>. </td>
+    </tr>
+    <tr>
+        <td><b>GetIsDeleted</b></td>
+        <td> boolean</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Checks the record's "deleted" flag. See also: <i>SetIsDeleted</i>. </td>
+    </tr>
+    <tr>
+        <td><b>GetIsInitiallyDisabled</b></td>
+        <td> boolean</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Checks the record's "initially disabled" flag. See also: <i>SetIsInitiallyDisabled</i>. </td>
+    </tr>
+    <tr>
+        <td><b>GetIsPersistent</b></td>
+        <td> boolean</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Checks the record's "persistent" flag. See also: <i>SetIsPersistent</i>. </td>
+    </tr>
+    <tr>
+        <td><b>GetIsVisibleWhenDistant</b></td>
+        <td> boolean</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Checks the record's "visible when distant" flag. See also: <i>SetIsVisibleWhenDistant</i>. </td>
+    </tr>
+    <tr>
+        <td><b>GetLoadOrderFormID</b></td>
+        <td> cardinal</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Returns the record's FormID relative to the current load order. See also: <i>FixedFormID</i>, <i>SetLoadOrderFormID</i>. </td>
+    </tr>
+    <tr>
+        <td><b>GetPosition</b></td>
+        <td> TwbVector</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> If <i>aeRecord</i> is a <a  href="https://www.creationkit.com/index.php?title=Reference">Reference</a> (or a subtype, like ACHR), this function will return its position. </td>
+    </tr>
+    <tr>
+        <td><b>GetRotation</b></td>
+        <td> TwbVector</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> If <i>aeRecord</i> is a <a  href="https://www.creationkit.com/index.php?title=Reference">Reference</a> (or a subtype, like ACHR), this function will return its rotation. </td>
+    </tr>
+    <tr>
+        <td><b>HasPrecombinedMesh</b></td>
+        <td> boolean</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Checks whether <i>aeRecord</i> is a Fallout 4 <a  href="https://www.creationkit.com/index.php?title=Reference">Reference</a> that has precombined mesh data generated. See also: <i>PrecombinedMesh</i>. </td>
+    </tr>
+    <tr>
+        <td><b>HighestOverrideOrSelf</b></td>
+        <td> IwbMainRecord</td>
+        <td> aeRecord: IwbMainRecord <br> aiMaxIndex: integer</td>
+        <td> if <i>aeRecord</i> is overridden, returns the highest override. otherwise, returns <i>aeRecord</i> See also: <i>WinningOverride</i>. </td>
+    </tr>
+    <tr>
+        <td><b>IsMaster</b></td>
+        <td> boolean</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Returns <i>True</i> if <i>aeRecord</i> is a master, and false if it is an override or not an IwbMainRecord. See also: <i>Master</i>, <i>MasterOrSelf</i>. </td>
+    </tr>
+    <tr>
+        <td><b>IsWinningOverride</b></td>
+        <td> boolean</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Returns <i>True</i> if <i>aeRecord</i> is the last loaded override for its master. See also: <i>Master</i>, <i>MasterOrSelf</i>. </td>
+    </tr>
+    <tr>
+        <td><b>Master</b></td>
+        <td> IwbMainRecord</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td><b>MasterOrSelf</b></td>
+        <td> IwbMainRecord</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> If <i>aeRecord</i> is an override, the function returns the master record that it overrides. Otherwise, the function returns <i>aeRecord</i> itself. See also: <i>IsMaster</i>, <i>IsWinningOverride</i>. </td>
+    </tr>
+    <tr>
+        <td><b>OverrideByIndex</b></td>
+        <td> IwbMainRecord</td>
+        <td> aeRecord: IwbMainRecord;<br> aiIndex: integer </td>
+        <td> Returns the <i>aiIndex</i>-th override of <i>aeRecord</i>. </td>
+    </tr>
+    <tr>
+        <td><b>OverrideCount</b></td>
+        <td> cardinal</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Returns the number of records that override <i>aeRecord</i>. </td>
+    </tr>
+    <tr>
+        <td><b>PrecombinedMesh</b></td>
+        <td> string</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Returns the path to <i>aeRecord</i>'s precombined mesh file, if <i>aeRecord</i> is a Fallout 4 <a  href="https://www.creationkit.com/index.php?title=Reference">Reference</a> that could have that data (i.e. not a placed actor). See also: <i>HasPrecombinedMesh</i>. </td>
+    </tr>
+    <tr>
+        <td><b>ReferencedByIndex</b></td>
+        <td> IwbMainRecord</td>
+        <td> aeRecord: IwbMainRecord;<br> aiIndex: integer </td>
+        <td> Returns the <i>aiIndex</i>-th record that references <i>aeRecord</i>. </td>
+    </tr>
+    <tr>
+        <td><b>ReferencedByCount</b></td>
+        <td> cardinal</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Returns the number of records that refer to <i>aeRecord</i>. </td>
+    </tr>
+    <tr>
+        <td><b>SetEditorID</b></td>
+        <td> string</td>
+        <td> aeRecord: IwbMainRecord;<br> asEditorID: string </td>
+        <td> Sets the record's EditorID, and then returns it. </td>
+    </tr>
+    <tr>
+        <td><b>SetFormVersion</b></td>
+        <td></td>
+        <td> aeRecord: IwbMainRecord;<br> aiVersion: cardinal </td>
+        <td> Set Form Version field for the record's header. See also: <i>GetFormVersion</i>. </td>
+    </tr>
+    <tr>
+        <td><b>SetIsDeleted</b></td>
+        <td> boolean</td>
+        <td> aeRecord: IwbMainRecord;<br> abFlag: boolean </td>
+        <td> Modifies the record's "deleted" flag. See also: <i>GetIsDeleted</i>. </td>
+    </tr>
+    <tr>
+        <td><b>SetIsInitiallyDisabled</b></td>
+        <td> boolean</td>
+        <td> aeRecord: IwbMainRecord;<br> abFlag: boolean </td>
+        <td> Modifies the record's "initially disabled" flag. See also: <i>GetIsInitiallyDisabled</i>. </td>
+    </tr>
+    <tr>
+        <td><b>SetIsPersistent</b></td>
+        <td> boolean</td>
+        <td> aeRecord: IwbMainRecord;<br> abFlag: boolean </td>
+        <td> Modifies the record's "persistent" flag. See also: <i>GetIsPersistent</i>. </td>
+    </tr>
+    <tr>
+        <td><b>SetIsVisibleWhenDistant</b></td>
+        <td> boolean</td>
+        <td> aeRecord: IwbMainRecord;<br> abFlag: boolean </td>
+        <td> Modifies the record's "visible when distant" flag. See also: <i>GetIsVisibleWhenDistant</i>. </td>
+    </tr>
+    <tr>
+        <td><b>SetLoadOrderFormID</b></td>
+        <td> cardinal</td>
+        <td> aeRecord: IwbMainRecord;<br> aiFormID: cardinal; </td>
+        <td> Modifies the record's FormID, with the specified ID relative to the current load order. See also: <i>GetLoadOrderFormID</i>. </td>
+    </tr>
+    <tr>
+        <td><b>SetFormVCS1</b></td>
+        <td></td>
+        <td> aeRecord: IwbMainRecord;<br> aiValue: cardinal </td>
+        <td> Modifies the Version Control Info 1 field. See also: <i>GetFormVCS1</i>. </td>
+    </tr>
+    <tr>
+        <td><b>SetFormVCS2</b></td>
+        <td></td>
+        <td> aeRecord: IwbMainRecord;<br> aiValue: cardinal </td>
+        <td> Modifies the Version Control Info 2 field. See also: <i>GetFormVCS2</i>. </td>
+    </tr>
+    <tr>
+        <td><b>Signature</b></td>
+        <td> string</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Returns the record's signature, a four-character code such as <a  href="https://www.creationkit.com/index.php?title=ActorBase">ActorBase(NPC_)</a> or <a  href="https://www.creationkit.com/index.php?title=Topic">Topic(DIAL)</a>. </td>
+    </tr>
+    <tr>
+        <td><b>UpdateRefs</b></td>
+        <td></td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Appears to be the same as <i>BuildRef</i>, except that it aborts if references are already in the middle of being built. </td>
+    </tr>
+    <tr>
+        <td><b>WinningOverride</b></td>
+        <td> IwbMainRecord</td>
+        <td> aeRecord: IwbMainRecord </td>
+        <td> Returns the last loaded override for <i>aeRecord</i>. See also: <i>HighestOverrideOrSelf</i>. </td>
+    </tr>
+</table>
+    <p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_1144" class="drkbtn">Previous Section</a>
+    <a  href="#s_1145" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-4-6"></div>
+<h3 class="scriptHeader" id="IwbGroupRecord">13.11 - IwbGroupRecord</h3>
+<table class="scriptTable wontwrap">
+    <tr>
+        <th> Function </th>
+        <th> Returns </th>
+        <th> Arguments </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td><b>ChildrenOf</b></td>
+        <td> IwbMainRecord</td>
+        <td> aeGroup: IwbGroupRecord </td>
+        <td>If <i>aeGroup</i> is a child group, this function returns the main record that it is associated with. For example, a <a  href="https://www.creationkit.com/index.php?title=Topic">Dialogue Topic (DIAL)</a> is followed by a group (GRUP) that contains its <a  href="https://www.creationkit.com/index.php?title=Topic_Info">Infos (INFO)</a> and passing that GRUP to this function would retrieve the DIAL. <a  href="https://www.creationkit.com/index.php?title=Cell">Cells (CELL)</a> and <a  href="https://www.creationkit.com/index.php?title=Worldspace">Worldspaces (WRLD)</a> have their contents set up similarly to Dialogue Topics, so this function will work with them as well. </td>
+    </tr>
+    <tr>
+        <td><b>FindChildGroup</b></td>
+        <td> IwbGroupRecord</td>
+        <td> aeGroup: IwbGroupRecord;<br>aiType: integer;<br> aeMainRecord: IwbMainRecord;<br> </td>
+        <td>Finds the group record inside another group. The <i>aiType</i> value should match the group-type values used in <a  href="href="http://en.uesp.net/wiki/Tes5Mod:Mod_File_Format#Groups">the file format</a>. The "Worldspace browser.pas" script uses <code>FindChildGroup(ChildGroup(cell), 9, cell);</code> to get the "Temporary" group within a CELL. </td>
+    </tr>
+    <tr>
+        <td><b>GroupLabel</b></td>
+        <td> cardinal</td>
+        <td> aeGroup: IwbGroupRecord </td>
+        <td> Returns the raw group label, as specified in <a  href="href="http://en.uesp.net/wiki/Tes5Mod:Mod_File_Format#Groups">the file format</a>. </td>
+    </tr>
+    <tr>
+        <td><b>GroupType</b></td>
+        <td> integer</td>
+        <td> aeGroup: IwbGroupRecord </td>
+        <td> Returns the raw group type, as specified in <a  href="http://en.uesp.net/wiki/Tes5Mod:Mod_File_Format#Groups">the file format</a>. </td>
+    </tr>
+    <tr>
+        <td><b>MainRecordByEditorID</b></td>
+        <td> IwbMainRecord</td>
+        <td> aeGroup: IwbGroupRecord;<br> asEditorID: string </td>
+        <td> Searches <i>aeGroup</i> for a main record whose EditorID is <i>asEditorID</i> and returns the matching record or <i>Nil</i>. This is not a performant function. </td>
+    </tr>
+</table>
+    <p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_1145" class="drkbtn">Previous Section</a>
+    <a  href="#s_1146" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-4-7"></div>
+<h3 class="scriptHeader" id="IwbResource">13.12 - IwbResource</h3>
+<p>These functions are used in "Assets browser.pas", "Assets manager.pas", and "Skyrim - List used scripts.pas".</p>
+    <p class="empty">&nbsp;</p>
+<table class="scriptTable wontwrap">
+    <tr>
+        <th> Function </th>
+        <th> Returns </th>
+        <th> Arguments </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td><b>ResourceContainerList</b></td>
+        <td></td>
+        <td> akContainers: TwbFastStringList </td>
+        <td> Fills <i>akContainers</i> with the full filenames (directory + name) of all loaded BSA and BA2 files, as well as the name of the Data directory. <i>akContainers</i> can be a TwbFastStringList or a TStringList. </td>
+    </tr>
+    <tr>
+        <td><b>ResourceCopy</b></td>
+        <td></td>
+        <td> asContainerName: string;<br> asFilename: string;<br> asPathOut: string </td>
+        <td> Retrieves the resource named <i>asFilename</i> from the resource container named <i>asContainerName</i> (see <i>ResourceContainerList</i>), and saves that resource to the specified file path <i>asPathOut</i>. The "Assets browser.pas" script uses this to let users extract a resource from a BSA/BA2. </td>
+    </tr>
+    <tr>
+        <td><b>ResourceCount</b></td>
+        <td> cardinal</td>
+        <td> asFilename: string;<br> akContainers: TStrings </td>
+        <td> Fills <i>akContainers</i> with a list of the loaded containers (BSA, BA2, Data directory) that a file named <i>asFilename</i> appears in. The "Assets browser.pas" script uses this to allow users to decide which version of a file to view, when the file is overridden at least once within their load order. </td>
+    </tr>
+    <tr>
+        <td><b>ResourceExists</b></td>
+        <td> boolean</td>
+        <td> asFilename: string </td>
+        <td> Checks whether any loaded container has a file with the specified name. </td>
+    </tr>
+    <tr>
+        <td><b>ResourceList</b></td>
+        <td></td>
+        <td> asContainerName: string;<br> akContainers: TStrings </td>
+        <td> Accesses the container with the full filename <i>asContainerName</i> (see <i>ResourceContainerList</i>), and adds a list of all contained filenames to <i>akContainers</i>. Note that added entries are unsorted, and there may be duplicates among them. </td>
+    </tr>
+    <tr>
+        <td><b>ResourceOpenData</b></td>
+        <td> TBytesStream</td>
+        <td> asContainerName: string;<br> asFilename: string </td>
+        <td><i>asFilename</i> should be formatted similar to the other Resource-oriented xEdit scripts. <i>asContainerName</i> should be filled with a string generated by the function <i>ResourceContainerList</i>. The <i>ResourceOpenData</i> function should only be used in conjunction with <i>NifTextureList</i>, as <i>ResourceCopy</i> removes any other need for this function. </td>
+    </tr>
+</table>
+    <p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_1146" class="drkbtn">Previous Section</a>
+    <a  href="#s_1147" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-4-8"></div>
+<h3 class="scriptHeader" id="Miscfunctions">13.13 - Misc functions</h3>
+<table class="scriptTable wontwrap">
+    <tr>
+        <th> Function </th>
+        <th> Returns </th>
+        <th> Arguments </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td><b>LocalizationGetStringsFromFile</b></td>
+        <td></td>
+        <td> asFilename: string;<br> akListOut: TStrings </td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td><b>wbAlphaBlend</b></td>
+        <td> boolean</td>
+        <td> akDestinationDeviceContext: unknown;<br> aiDestinationX: integer;<br> aiDestinationY: integer;<br> aiDestinationWidth: integer;<br> aiDestinationHeight: integer;<br> akSourceDeviceContext: unknown;<br> aiSourceX: integer;<br> aiSourceY: integer;<br> aiSourceWidth: integer;<br> aiSourceHeight: integer;<br> aiAlpha: integer </td>
+        <td> A wrapper for <i>Windows.AlphaBlend</i> which returns its result. </td>
+    </tr>
+    <tr>
+        <td><b>wbBlockFromSubBlock</b></td>
+        <td> TwbGridCell</td>
+        <td> akSubBlock: TwbGridCell </td>
+        <td> See also: <i>wbPositionToGridCell</i>, <i>wbSubBlockFromGridCell</i>, <i>wbGridCellToGroupLabel</i>, <i>wbIsInGridCell</i>. </td>
+    </tr>
+    <tr>
+        <td><b>wbCRC32Data</b></td>
+        <td> cardinal</td>
+        <td> akData: TBytes </td>
+        <td> See also: <i>wbCRC32File</i>, <i>wbSHA1Data</i>, <i>wbSHA1File</i>, <i>wbMD5Data</i>, <i>wbMD5File</i>. </td>
+    </tr>
+    <tr>
+        <td><b>wbCRC32File</b></td>
+        <td> cardinal</td>
+        <td> asFilename: string </td>
+        <td> See also: <i>wbCRC32Data</i>, <i>wbSHA1Data</i>, <i>wbSHA1File</i>, <i>wbMD5Data</i>, <i>wbMD5File</i>. </td>
+    </tr>
+    <tr>
+        <td><b>wbCRC32Resource</b></td>
+        <td> cardinal</td>
+        <td> asContainerName: string; asFileName: string </td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td><b>wbFindREFRsByBase</b></td>
+        <td></td>
+        <td> aeREFR: IwbMainRecord;<br> asSignatures: string;<br> aiFlags: integer;<br> akOutList: TList </td>
+        <td> Searches for sibling records to <i>aeREFR</i> whose base records' signatures match <i>asSignatures</i>, and adds them to <i>akOutList</i>. Further filtering can be done with <i>aiFlags</i>: specify 1 to exclude deleted references, 2 to exclude initially disabled references, and 4 to exclude references that have an enable parent. </td>
+    </tr>
+    <tr>
+        <td><b>wbFlipBitmap</b></td>
+        <td></td>
+        <td> akBitmap: TBitmap;<br> aiAxes: integer </td>
+        <td> Flips the image data contained in <i>akBitmap</i> based on the specified axes. Specify 1 to flip horizontally, 2 to flip vertically, or 0 to flip on both axes. </td>
+    </tr>
+    <tr>
+        <td><b>wbGetSiblingRecords</b></td>
+        <td></td>
+        <td> aeRecord: IwbElement;<br> asSignatures: string;<br> abIncludeOverrides: boolean;<br> akOutList: TList </td>
+        <td> Adds sibling records of <i>aeRecord</i> to <i>akOutList</i> if their signatures match <i>asSignatures</i>. If <i>abIncludeOverrides</i> is not <i>True</i>, then overrides will not be included in the result. </td>
+    </tr>
+    <tr>
+        <td><b>wbGridCellToGroupLabel</b></td>
+        <td> cardinal</td>
+        <td> akGridCell: TwbGridCell </td>
+        <td> Returns an integer of the format 0xXXXXYYYY. See also: <i>wbBlockFromSubBlock</i>, <i>wbPositionToGridCell</i>, <i>wbIsInGridCell</i>, <i>wbSubBlockFromGridCell</i>. </td>
+    </tr>
+    <tr>
+        <td><b>wbIsInGridCell</b></td>
+        <td> boolean</td>
+        <td> akPosition: TwbVector;<br> akGridCell: TwbGridCell </td>
+        <td> See also: <i>wbBlockFromSubBlock</i>, <i>wbGridCellToGroupLabel</i>, <i>wbPositionToGridCell</i>, <i>wbSubBlockFromGridCell</i>. </td>
+    </tr>
+    <tr>
+        <td><b>wbMD5Data</b></td>
+        <td> cardinal</td>
+        <td> akData: TBytes </td>
+        <td> See also: <i>wbCRC32Data</i>, <i>wbCRC32File</i>, <i>wbMD5File</i>, <i>SHA1Data</i>, <i>wbSH1Data</i>. </td>
+    </tr>
+    <tr>
+        <td><b>wbMD5File</b></td>
+        <td> cardinal</td>
+        <td> asFilename: string </td>
+        <td> Calculation time is about 2.5 times longer than CRC32. See also: <i>wbCRC32Data</i>, <i>wbCRC32File</i>, <i>wbMD5Data</i>, <i>SHA1Data</i>, <i>wbSH1Data</i>. </td>
+    </tr>
+    <tr>
+        <td><b>wbNormalizeResourceName</b></td>
+        <td> string</td>
+        <td> asResourceName: string; akResourceType: TGameResourceType </td>
+        <td><i>akResourceType</i> can be any of the following values: <i>resMesh</i>, <i>resTexture</i>, <i>resSound</i>, <i>resMusic</i>. </td>
+    </tr>
+    <tr>
+        <td><b>wbPositionToGridCell</b></td>
+        <td> TwbGridCell</td>
+        <td> akPosition: TwbVector </td>
+        <td> Converts <i>akPosition</i> to grid coordinates. In practice, this is done by dividing the physical coordinates by 4096, the lateral length and width of a cell. See also: <i>wbBlockFromSubBlock</i>, <i>wbGridCellToGroupLabel</i>, <i>wbIsInGridCell</i>, <i>wbSubBlockFromGridCell</i>. </td>
+    </tr>
+    <tr>
+        <td><b>wbSHA1Data</b></td>
+        <td> cardinal</td>
+        <td> akData: TBytes </td>
+        <td> See also: <i>wbCRC32Data</i>, <i>wbCRC32File</i>, <i>SHA1File</i>, <i>wbMD5Data</i>, <i>wbMD5File</i>. </td>
+    </tr>
+    <tr>
+        <td><b>wbSHA1File</b></td>
+        <td> cardinal</td>
+        <td> asFilename: string </td>
+        <td> Calculation time is about two times longer than CRC32. See also: <i>wbCRC32Data</i>, <i>wbCRC32File</i>, <i>SHA1Data</i>, <i>wbMD5Data</i>, <i>wbMD5File</i>. </td>
+    </tr>
+    <tr>
+        <td><b>wbStringListInString</b></td>
+        <td> integer</td>
+        <td> akList: TStringList; asSubstring: string </td>
+        <td> Checks if any of the strings in <i>akList</i> contains <i>asSubstring</i>. Returns the index of the first matching entry, or -1. Checks are case-insensitive. </td>
+    </tr>
+    <tr>
+        <td><b>wbSubBlockFromGridCell</b></td>
+        <td> TwbGridCell</td>
+        <td> akGridCell: TwbGridCell </td>
+        <td> See also: <i>wbBlockFromSubBlock</i>, <i>wbGridCellToGroupLabel</i>, <i>wbIsInGridCell</i>, <i>wbPositionToGridCell</i>. </td>
+    </tr>
+</table>
+    <p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_1146" class="drkbtn">Previous Section</a>
+    <a  href="#s_1147" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-4-8-1"></div>
+<h3 class="scriptHeader" id="NIFfunctions">13.14 - NIF functions</h3>
+<table class="scriptTable wontwrap">
+    <tr>
+        <th> Function </th>
+        <th> Returns </th>
+        <th> Arguments </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td><b>NifBlockList</b></td>
+        <td> boolean</td>
+        <td> akData: TBytes;<br> akListOut: TStrings </td>
+        <td> Retrieves block information from the NIF file in <i>akData</i>, and adds it to <i>akListOut</i>. Each added index in <i>akListOut</i> will match up with a string key of the form "BlockName=BlockType" and (as an object) a pointer to the NIF block's index number. Returns <i>True</i> if the operation succeeded. </td>
+    </tr>
+    <tr>
+        <td><b>NifTextureList</b></td>
+        <td> boolean</td>
+        <td> akData: TBytes;<br> akListOut: TStrings </td>
+        <td> Searches the NIF file in <i>akData</i> for all texture paths, and adds them to <i>akListOut</i>. Returns <i>True</i> if the operation succeeded. </td>
+    </tr>
+    <tr>
+        <td><b>NifTextureListResource</b></td>
+        <td> boolean</td>
+        <td> akData: variant;<br> akListOut: TStrings </td>
+        <td> Searches the NIF file in <i>akData</i> for all texture paths, and adds them to <i>akListOut</i>. Returns <i>True</i> if the operation succeeded. </td>
+    </tr>
+    <tr>
+        <td><b>NifTextureListUVRange</b></td>
+        <td> boolean</td>
+        <td> akData: TBytes;<br> afUVRange: Single;<br> akListOut: TStrings </td>
+        <td> Searches the NIF file in <i>akData</i> for all texture paths, and adds them to <i>akListOut</i>. Textures are only added if none of the relevant NiTriShape's UV sets have UVs greater than <i>afUVRange</i> or less than <i>-afUVRange</i>. Returns <i>True</i> if the operation succeeded. </td>
+    </tr>
+</table>
+    <p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_1148" class="drkbtn">Previous Section</a>
+    <a  href="#s_11481" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-4-8-2"></div>
+<h3 class="scriptHeader" id="DDSfunctions">13.15 - DDS functions</h3>
+<table class="scriptTable wontwrap">
+    <tr>
+        <th> Function </th>
+        <th> Returns </th>
+        <th> Arguments </th>
+        <th> Description </th>
+    </tr>
+    <tr>
+        <td><b>wbDDSStreamToBitmap</b></td>
+        <td> boolean</td>
+        <td> akStream: TStream;<br> akBitmapOut: TBitmap </td>
+        <td> Modifies <i>akBitmapOut</i> to contain the DDS information sourced from <i>akStream</i>. Returns <i>True</i> if the operation succeeds. </td>
+    </tr>
+    <tr>
+        <td><b>wbDDSDataToBitmap</b></td>
+        <td> boolean</td>
+        <td> akData: TBytes;<br> akBitmapOut: TBitmap </td>
+        <td> Modifies <i>akBitmapOut</i> to contain the DDS information sourced from <i>akData</i>. Returns <i>True</i> if the operation succeeds. </td>
+    </tr>
+    <tr>
+        <td><b>wbDDSResourceToBitmap</b></td>
+        <td> boolean</td>
+        <td> akUnknown;<br> akBitmapOut: TBitmap </td>
+        <td> Modifies <i>akBitmapOut</i> to contain the DDS information sourced from the resource <i>akUnknown</i>. Returns <i>True</i> if the operation succeeds. </td>
+    </tr>
+</table>
+    <p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_11481" class="drkbtn">Previous Section</a>
+    <a  href="#s_11482" class="drkbtn">Top of this Group</a>
+</div>
+<div id="s_11-5"></div>
+<h3 class="scriptHeader" id="ScriptStructure">13.16 - Script Structure</h3>
+<div id="s_11-5-1"></div>
+<h3 class="scriptHeader" id="BaseScriptFunctions">13.17 - Base Script Functions</h3>
+<p>The are three special functions that TES5Edit will call when a script is run:</p>
+<p class="list-1">&bull;&nbsp; <b>Initialize</b>: This function is called when the script starts. It's useful to initialize variables.</p>
+<p class="list-1">&bull;&nbsp; <b>Process</b>: This function is called for every record selected in the TES5Edit tree. If a plugin is selected then it will be called for each record defined in the plugin. The same happens if a record type is selected in the tree.</p>
+<p class="list-1">&bull;&nbsp; <b>Finalize</b>: This function is called when the script has finished processing every record. Generally useful for saving files and freeing the allocated resources.</p>
+<p class="empty">&nbsp;</p>
+<p>All these functions are optional, so if they are not needed they can be omitted.</p>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_11482" class="drkbtn">Previous Section</a>
+    <a  href="#s_11451" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-5-2"></div>
+<h3 class="scriptHeader" id="Hotkeys">13.18 - Hotkeys</h3>
+<p>TES5Edit can assign <i>hotkeys</i> to scripts. The script hotkey is defined in the description like this:</p>
+<p class="empty">&nbsp;</p>
+<pre>
+{
+	Script description.
+	------------------------
+	Hotkey: Ctrl+Alt+Shift+E
+}
+</pre>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_11451" class="drkbtn">Previous Section</a>
+    <a  href="#s_11452" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-5-3"></div>
+<h3 class="scriptHeader" id="ScriptReferences">13.19 - Script References</h3>
+<p>Scripts can use functions defined in other scripts. That allows creating <i>toolkits</i> to avoid duplicating code. To make use of this feature the following instruction is used: (use below the unit name)</p>
+<p class="empty">&nbsp;</p>
+<pre>
+uses 'MyTools';
+</pre>
+<p class="empty">&nbsp;</p>
+<p>With that command we instruct the script to load another script named "MyTools.pas" and the functions in that script will be available. Note that any conflict in names can be resolved by the unit name. So it's suggested to change the <i>toolkit</i> script unit name appropriately.</p>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_11452" class="drkbtn">Previous Section</a>
+    <a  href="#s_11453" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-5-4"></div>
+<h3 class="scriptHeader" id="ScriptUserInterface">13.20 - Script User Interface</h3>
+<p><ul></p>
+<p>    <li><i>AddMessage(asMessage)</i> pushes a line to TES5Edit's Information tab.</li></p>
+<p>    <li><i>InputQuery(asWindowTitle, asWindowText, out sVariableToSet)</i> displays a prompt dialog; it returns False if the user clicked Cancel or X, or True otherwise, and sets the output variable to whatever the user types if the user hits "OK." </li></p>
+<p>    <li><i>SelectDirectory(asPromptStringOfSomeKind, asInitialDirectory, asRootDirectory, nil)</i> returns a path as a string; used in "Assets browser.pas" </li></p>
+<p>    <li><i>ShellExecute</i> seen in "Execute external applications.pas", used to call another program</li></p>
+<p>    <li><i>TCheckListBox</i> used in "Copy as override.pas"</li></p>
+<p>    <li><i>TListView</i> used in "Assets browser.pas"</li></p>
+<p>    <li><i>TMemo</i> used in "Assets browser.pas"</li></p>
+<p>    <li><i>TMenuItem</i> used in "Assets browser.pas"</li></p>
+<p>    <li><i>TPopupMenu</i> used in "Assets browser.pas"</li></p>
+<p>    <li><i>TSaveDialog</i> used in "Assets browser.pas"</li></p>
+<p>    <li><i>TScrollBox' used in "ExportImportTexts.pas"</i></li></p>
+<p>    <li><i>I highly recommend viewing/using MatorTheEternal's <a  href="https://github.com/matortheeternal/TES5EditScripts/blob/master/trunk/Edit%20Scripts/mteFunctions.pas">mtefunctions.pas</a> for examples as well.</i> </li></p>
+<p></ul></p>
+<table class="scriptTable">
+    <tr>
+        <th> Class </th>
+        <th> Reference </th>
+        <th> Description </th>
+        <th> Use example </th>
+        <th> Note </th>
+    </tr>
+    <tr>
+        <td><b>TButton</b></td>
+        <td><a  href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TButton.html">TButton</a> </td>
+        <td> Button</td>
+        <td> Assets browser.pas</td>
+        <td> The button doesn't automatically expand its width to accommodate its contents. </td>
+    </tr>
+    <tr>
+        <td><b>TCheckBox</b></td>
+        <td><a  href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TCheckBox.html">TCheckBox</a> </td>
+        <td> Checkbox</td>
+        <td> none</td>
+        <td> You can apply a label using the <code>Caption</code> property; you don't need to make your own TLabel. Note, for more advanced scripts, that <code>OnChange</code> is not supported; use <code>OnClick</code> (which listens for more than just clicks) instead. Manually changing the <code>Checked</code> property will also fire an OnClick event; to avoid recursion where needed, you can set <code>OnClick</code> to <code>nil</code>, change <code>Checked</code>, and then restore <code>OnClick</code>'s value. </td>
+    </tr>
+    <tr>
+        <td><b>TComboBox</b></td>
+        <td><a  href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TComboBox.html">TComboBox</a> </td>
+        <td> Combobox</td>
+        <td> none</td>
+        <td> Set the <code>Style</code> property to <code>csDropDownList</code> to disallow custom text entry, mimicking the function of a typical drop-down menu </td>
+    </tr>
+    <tr>
+        <td><b>TForm</b></td>
+        <td><a  href="href="http://lazarus-ccr.sourceforge.net/docs/lcl/forms/tform.html">TForm</a></td>
+        <td> A dialog?</td>
+        <td> ExportImportTexts.pas</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td><b>TLabel</b></td>
+        <td><a  href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TLabel.html">TLabel</a> </td>
+        <td> Used to display ordinary text.</td>
+        <td> none</td>
+        <td>Set the <a  href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TStaticText_Caption.html"><code>Caption</code></a> property to your text. To show line breaks, concatenate <code>#13#10</code> into your string (e.g. <code>'Line 1' + #13#10 + 'Line 2'</code>). </td>
+    </tr>
+    <tr>
+        <td><b>TPanel</b></td>
+        <td><a  href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/ExtCtrls_TPanel.html">TPanel</a> </td>
+        <td> General-purpose container for UI widgets</td>
+        <td> ExportImportTexts.pas</td>
+        <td> </td>
+    </tr>
+    <tr>
+        <td><b>TStaticText</b></td>
+        <td><a  href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TStaticText.html">TStaticText</a> </td>
+        <td> Apparently used to display ordinary text.</td>
+        <td> none</td>
+        <td> Pretty much the same as a TLabel, but it cuts off any text that has line breaks. Not particularly useful. </td>
+    </tr>
+</table>
+<p class="empty">&nbsp;</p>
+<p>TES5Edit appears to provide the following variables:</p>
+<p class="empty">&nbsp;</p>
+<table class="scriptTable">
+    <tr>
+        <th> Name </th>
+        <th> Type </th>
+        <th> Description </th>
+        <th> Note </th>
+    </tr>
+    <tr>
+        <td><b>frmFileSelect</b></td>
+        <td> TForm</td>
+        <td> Returns a copy of the plugin select dialog, which can be shown by calling <code>fMyDialogVariable.ShowModal</code> </td>
+        <td> You can get a reference to the checkbox list (as a TCheckListBox) by calling <code>TCheckListBox(fMyDialogVariable.FindComponent('CheckListBox1'))</code> </td>
+    </tr>
+</table>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_11453" class="drkbtn">Previous Section</a>
+    <a  href="#s_11454" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-6"></div>
+<h3 class="scriptHeader" id="SimpleScriptSample">13.21 - Simple Script Sample</h3>
+<p>This is a sample script which will only export every selected NPC to a TXT file:</p>
+<p class="empty">&nbsp;</p>
+<pre>
+{
+	Script description: Exports the FormID and EditorID of the selected NPCs
+}
+
+// This is the unit name that will contain all the script functions
+unit ExportScripts;
+
+// Global variables
+var NPCList : TStringList;
+
+// Called when the script starts
+function Initialize : integer;
+begin
+	NPCList := TStringList.Create;
+	NPCList.Add('FormID;EditorID');
+end;
+
+// Called for each selected record in the TES5Edit tree
+// If an entire plugin is selected then all records in the plugin will be processed
+function Process(e : IInterface) : integer;
+begin
+	if Signature(e) &lt;&gt; 'NPC_' then exit;
+	NPCList.Add(IntToHex(FixedFormID(e), 8) + ';' + GetElementEditValues(e, 'EDID'));
+end;
+
+// Called after the script has finished processing every record
+function Finalize : integer;
+var filename : string;
+begin
+	filename := ProgramPath + 'Edit Scripts\NPCs.txt';
+	AddMessage('Saving NPC list to ' + filename);
+	NPCList.SaveToFile(filename);
+	NPCList.Free;
+end;
+
+end.
+</pre>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_1154" class="drkbtn">Previous Section</a>
+    <a  href="#s_116" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-7"></div>
+<h3 class="scriptHeader" id="Pascalimplementation">13.22 - Pascal implementation</h3>
+<p>TES5Edit uses JvInterpreter from <a  href="href="https://github.com/project-jedi/jvcl">JVCL</a> to execute Delphi as a scripting language. The standard libraries offered by JvInterpreter directly wrap whatever libraries the containing application (xEdit) was compiled with.</p>
+<p class="empty">&nbsp;</p>
+<p>An examination of <a  href="href="https://github.com/TES5Edit/TES5Edit/blob/dev-elminster/wbScriptAdapter.pas">xEdit's own source code</a> indicates that it provides (JvInterpreter's versions of) the following standard libraries to scripts, even if those scripts do not include the libraries via the <code>uses</code> command:</p>
+<p><ul></p>
+<p>    <li> Buttons</li></p>
+<p>    <li> Classes</li></p>
+<p>    <li> Comctrls</li></p>
+<p>    <li> Contnrs</li></p>
+<p>    <li> Controls</li></p>
+<p>    <li> Dialogs</li></p>
+<p>    <li> ExtCtrls</li></p>
+<p>    <li> Forms</li></p>
+<p>    <li> Graphics</li></p>
+<p>    <li> Menus</li></p>
+<p>    <li> StdCtrls</li></p>
+<p>    <li> System</li></p>
+<p>    <li> SysUtils</li></p>
+<p>    <li> Windows</li></p>
+<p></ul></p>
+<p>Misc notes: </p>
+<p><ul></p>
+<p>    <li> In TES5Edit's Pascal implementation, values are returned by assigning to <code>Result</code>, rather than by assigning to the function name. </li></p>
+<p>    <li> TES5Edit's Pascal implementation does not appear to support constructions such as <code>TList&lt;Integer&gt;</code>. </li></p>
+<p>    <li> If you try to store a Variant (e.g. the return value of GetElementNativeValues) in a Float variable and that variant has returned <code>nil</code>, then that Float will also contain <code>nil</code> and will throw errors when used. </li></p>
+<p>    <li></p>
+<p>        JvInterpreter throws an error if any identifiers in the global scope are redeclared; reportedly, this differs from <a  href="href="https://stackoverflow.com/questions/17293008/why-doesnt-the-delphi-compiler-warn-for-a-redefined-constant">the behavior that Delphi has shown since 1987</a>, wherein global identifiers in later-included files shadow those in earlier-included files. Defining them in <code>implementation</code> blocks doesn't make any difference.</p>
+<p>        <ul></p>
+<p>            <li></p>
+<p>                In addition to this, including a unit multiple times triggers these errors, as its own definitions conflict with themselves.</p>
+<p>                <ul></p>
+<p>                    <li> And no, Delphi has no equivalent to <code>#pragma once</code>, and JvInterpreter wouldn't support it anyway </li></p>
+<p>                </ul></p>
+<p>            </li></p>
+<p>        </ul></p>
+<p>    </li></p>
+<p>    <li> According to Delphi documentation across the web, Const directives inside of functions and procedures are supposed to define static local variables: these variables are not supposed to be constants, and their values are supposed to persist until the script has finished executing. However, in JvInterpreter, Const directives in functions and procedures just define ordinary local variables, whose values will be lost the instant the function or procedure finishes executing. Among other things, this means you can't use getters with static variables to work around the issues with global variables. </li></p>
+<p>    <li></p>
+<p>        The scripting environment will not throw errors upon encountering the <code>interface</code> or <code>implementation</code> keywords, but it also does not honor them: definitions within the implementation will be available to a file's users. It appears that these keywords are purely semantic.</p>
+<p>        <ul></p>
+<p>            <li> JvInterpreter may encounter parser errors if it finds a forward-declared function or procedure, owing to the lack of Begin and End keywords. </li></p>
+<p>            <li> JvInterpreter does not throw errors if you redefine a function within the same file, even if the redefinition changes that function's signature. Sometimes, it uses the last definition; other times, however, it uses the first definition. </li></p>
+<p>        </ul></p>
+<p>    </li></p>
+<p>    <li> JvInterpreter doesn't throw errors if multiple files use the same unit name, but having multiple files use the same unit name will break the parser. Errors like "<i>Error in unit 'UnitName' on line 42: 'begin' expected but 'x' found</i>", where "x" is the middle of another keyword, a variable name, or even a string, are common in this situation. </li></p>
+<p>    <li></p>
+<p>        JvInterpreter does not short-circuit conditions such as <code>If Assigned(myList) And (myList.IndexOf('Test')) Then</code>; even if the first clause fails, the second will still execute (and end up throwing an exception). You need to nest the conditions: <code>If A Then If B Then C;</code>.</p>
+<p>        <ul></p>
+<p>            <li> A simpler example: <code>If (myInt = 0) Or (otherInt Mod myInt = 0)</code> will yield a divide-by-zero error. </li></p>
+<p>        </ul></p>
+<p>    </li></p>
+<p>    <li> Be careful when refactoring your code. If you move functions between units, JvInterpreter will not handle this sanely; calling the function on the old unit (i.e. <code>WrongUnit.SomeFunction;</code>) is likely to cause a memory access violation without any intelligible explanation. </li></p>
+<p></ul></p>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_116" class="drkbtn">Previous Section</a>
+    <a  href="#s_117" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-7-1"></div>
+<h3 class="scriptHeader" id="xEditextensionstoJvInterpreter">13.23 - xEdit extensions to JvInterpreter</h3>
+<p>xEdit extends units (standard libraries) provided by JvInterpreter with the following keywords. Note that since these are automatically included in your script, you can reference them directly and unprefixed (i.e. <code>Pred</code> instead of <code>System.Pred</code>).</p>
+<p class="empty">&nbsp;</p>
+<p><div style="max-height:20em;overflow-y:auto;border:1px solid #AAA"></p>
+<p>    <ul></p>
+<p>        <li></p>
+<p>            Controls</p>
+<p>            <ul></p>
+<p>                <li> akLeft</li></p>
+<p>                <li> akRight</li></p>
+<p>                <li> akTop</li></p>
+<p>                <li> akBottom</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            FileCtrl</p>
+<p>            <ul></p>
+<p>                <li><i>function</i> SelectDirectory</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            Forms</p>
+<p>            <ul></p>
+<p>                <li> pmAuto</li></p>
+<p>                <li> pmExplicit</li></p>
+<p>                <li> pmNone</li></p>
+<p>                <li> poMainFormCenter</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            Math <i>[xEdit doesn't offer the module itself; only these functions are provided]</i></p>
+<p>            <ul></p>
+<p>                <li><i>function</i> Ceil</li></p>
+<p>                <li><i>function</i> Floor</li></p>
+<p>                <li><i>function</i> IntPower</li></p>
+<p>                <li><i>function</i> Max <i>(note: this casts its arguments to integers before comparing them)</i> </li></p>
+<p>                <li><i>function</i> Min <i>(note: this casts its arguments to integers before comparing them)</i> </li></p>
+<p>                <li><i>function</i> Power</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            Menus</p>
+<p>            <ul></p>
+<p>                <li> maAutomatic</li></p>
+<p>                <li> maManual</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            ShellApi</p>
+<p>            <ul></p>
+<p>                <li><i>function</i> ShellExecute</li></p>
+<p>                <li><i>function</i> ShellExecuteWait</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            System</p>
+<p>            <ul></p>
+<p>                <li><i>function</i> StringOfChar</li></p>
+<p>                <li> MaxInt</li></p>
+<p>                <li> MinInt</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            SysUtils</p>
+<p>            <ul></p>
+<p>                <li><i>function</i> Dec</li></p>
+<p>                <li><i>function</i> DirectoryExists</li></p>
+<p>                <li><i>function</i> ExcludeTrailingBackslash</li></p>
+<p>                <li><i>function</i> FileExists</li></p>
+<p>                <li><i>function</i> ForceDirectories</li></p>
+<p>                <li><i>function</i> Frac</li></p>
+<p>                <li><i>function</i> Inc</li></p>
+<p>                <li><i>function</i> IncludeTrailingBackslash</li></p>
+<p>                <li><i>function</i> Int</li></p>
+<p>                <li><i>function</i> IntToHex64</li></p>
+<p>                <li><i>function</i> Pred</li></p>
+<p>                <li><i>function</i> SameText</li></p>
+<p>                <li><i>function</i> StringReplace</li></p>
+<p>                <li><i>function</i> StrToInt64</li></p>
+<p>                <li><i>function</i> StrToInt64Def</li></p>
+<p>                <li><i>function</i> StrToFloatDef</li></p>
+<p>                <li><i>function</i> Succ</li></p>
+<p>                <li> LowInteger</li></p>
+<p>                <li> HighInteger</li></p>
+<p>                <li> cbChecked</li></p>
+<p>                <li> cbGrayed</li></p>
+<p>                <li> cbUnchecked</li></p>
+<p>                <li> fmCreate</li></p>
+<p>                <li> lpAbove</li></p>
+<p>                <li> lpBelow</li></p>
+<p>                <li> lpLeft</li></p>
+<p>                <li> lpRight</li></p>
+<p>                <li> rfReplaceAll</li></p>
+<p>                <li> rfIgnoreCase</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            Windows</p>
+<p>            <ul></p>
+<p>                <li><i>function</i> CopyFile</li></p>
+<p>                <li><i>function</i> CreateProcessWait</li></p>
+<p>                <li><i>function</i> Sleep</li></p>
+<p>                <li> SW_HIDE</li></p>
+<p>                <li> SW_MAXIMIZE</li></p>
+<p>                <li> SW_MINIMIZE</li></p>
+<p>                <li> SW_RESTORE</li></p>
+<p>                <li> SW_SHOW</li></p>
+<p>                <li> SW_SHOWDEFAULT</li></p>
+<p>                <li> SW_SHOWMAXIMIZED</li></p>
+<p>                <li> SW_SHOWMINIMIZED</li></p>
+<p>                <li> SW_SHOWMINNOACTIVE</li></p>
+<p>                <li> SW_SHOWNA</li></p>
+<p>                <li> SW_SHOWNOACTIVATE</li></p>
+<p>                <li> SW_SHOWNORMAL</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>    </ul></p>
+</div>
+<p class="empty">&nbsp;</p>
+<p>The following classes are also extended (or simply offered, if JvInterpreter didn't already offer them):</p>
+<p class="empty">&nbsp;</p>
+<p><div style="max-height:20em;overflow-y:auto;border:1px solid #AAA"></p>
+<p>    <ul></p>
+<p>        <li></p>
+<p>            TBinaryReader</p>
+<p>            <ul></p>
+<p>                <li><i>get</i> Create</li></p>
+<p>                <li><i>get</i> Read</li></p>
+<p>                <li><i>get</i> ReadBoolean</li></p>
+<p>                <li><i>get</i> ReadByte</li></p>
+<p>                <li><i>get</i> ReadBytes</li></p>
+<p>                <li><i>get</i> ReadChar</li></p>
+<p>                <li><i>get</i> ReadDouble</li></p>
+<p>                <li><i>get</i> ReadShortInt</li></p>
+<p>                <li><i>get</i> ReadSmallInt</li></p>
+<p>                <li><i>get</i> ReadUInt16</li></p>
+<p>                <li><i>get</i> ReadUInt32</li></p>
+<p>                <li><i>get</i> ReadInteger</li></p>
+<p>                <li><i>get</i> ReadSingle</li></p>
+<p>                <li><i>get</i> ReadString</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TBinaryWriter</p>
+<p>            <ul></p>
+<p>                <li><i>get</i> Create</li></p>
+<p>                <li><i>get</i> Write</li></p>
+<p>                <li><i>get</i> WriteSingle</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TBitmap</p>
+<p>            <ul></p>
+<p>                <li><i>get</i> SetSize</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li> TBoundLabel</li></p>
+<p>        <li></p>
+<p>            TBytesStream</p>
+<p>            <ul></p>
+<p>                <li><i>get</i> Create</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TCheckListBox</p>
+<p>            <ul></p>
+<p>                <li><i>get</i> Create</li></p>
+<p>                <li><i>get</i> CheckAll</li></p>
+<p>                <li><i>get/set</i> AllowGrayed</li></p>
+<p>                <li><i>get/set</i> Checked</li></p>
+<p>                <li><i>get/set</i> Header</li></p>
+<p>                <li><i>get/set</i> ItemEnabled</li></p>
+<p>                <li><i>get/set</i> State</li></p>
+<p>                <li><i>event</i> TNotifyEvent</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TComboBox</p>
+<p>            <ul></p>
+<p>                <li><i>get/set</i> DropDownCount</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TCustomForm</p>
+<p>            <ul></p>
+<p>                <li><i>get/set</i> PopupMode</li></p>
+<p>                <li><i>get/set</i> PopupParent</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TCustomIniFile</p>
+<p>            <ul></p>
+<p>                <li><i>get</i> DeleteKey</li></p>
+<p>                <li><i>get</i> EraseSection</li></p>
+<p>                <li><i>get</i> ReadBool</li></p>
+<p>                <li><i>get</i> ReadFloat</li></p>
+<p>                <li><i>get</i> ReadInteger</li></p>
+<p>                <li><i>get</i> ReadSection</li></p>
+<p>                <li><i>get</i> ReadSections</li></p>
+<p>                <li><i>get</i> ReadSectionValues</li></p>
+<p>                <li><i>get</i> ReadString</li></p>
+<p>                <li><i>get</i> SectionExists</li></p>
+<p>                <li><i>get</i> UpdateFile</li></p>
+<p>                <li><i>get</i> ValueExists</li></p>
+<p>                <li><i>get</i> WriteBool</li></p>
+<p>                <li><i>get</i> WriteFloat</li></p>
+<p>                <li><i>get</i> WriteInteger</li></p>
+<p>                <li><i>get</i> WriteString</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TCustomLabeledEdit</p>
+<p>            <ul></p>
+<p>                <li><i>get</i> Create</li></p>
+<p>                <li><i>get</i> EditLabel</li></p>
+<p>                <li><i>get/set</i> LabelPosition</li></p>
+<p>                <li><i>get/set</i> LabelSpacing</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            THashedStringList</p>
+<p>            <ul></p>
+<p>                <li><i>get</i> Create</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TLabeledEdit</p>
+<p>            <ul></p>
+<p>                <li><i>get</i> Create</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TListItem</p>
+<p>            <ul></p>
+<p>                <li><i>get/set</i> SubItems</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TListItems</p>
+<p>            <ul></p>
+<p>                <li><i>set</i> Count</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TListView</p>
+<p>            <ul></p>
+<p>                <li><i>event</i> TLVOwnerDataEvent</li></p>
+<p>                <li><i>event</i> TLVSelectItemEvent</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TIniFile</p>
+<p>            <ul></p>
+<p>                <li><i>get</i> Create</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TMemIniFile</p>
+<p>            <ul></p>
+<p>                <li><i>get</i> Create</li></p>
+<p>                <li><i>get</i> GetStrings</li></p>
+<p>                <li><i>get</i> SetStrings</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TMenu</p>
+<p>            <ul></p>
+<p>                <li><i>get/set</i> AutoHotKeys</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TMenuItem</p>
+<p>            <ul></p>
+<p>                <li><i>get</i> Clear</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TPerlRegex</p>
+<p>            <ul></p>
+<p>                <li><i>get</i> Compile</li></p>
+<p>                <li><i>get</i> Compiled</li></p>
+<p>                <li><i>get</i> ComputeReplacement</li></p>
+<p>                <li><i>get</i> Create</li></p>
+<p>                <li><i>get</i> EscapeRegexChars</li></p>
+<p>                <li><i>get</i> FoundMatch</li></p>
+<p>                <li><i>get</i> GroupCount</li></p>
+<p>                <li><i>get</i> GroupLengths</li></p>
+<p>                <li><i>get</i> GroupOffsets</li></p>
+<p>                <li><i>get</i> Match</li></p>
+<p>                <li><i>get</i> MatchAgain</li></p>
+<p>                <li><i>get</i> MatchedLength</li></p>
+<p>                <li><i>get</i> MatchedOffset</li></p>
+<p>                <li><i>get</i> MatchedText</li></p>
+<p>                <li><i>get</i> NamedGroup</li></p>
+<p>                <li><i>get/set</i> Options</li></p>
+<p>                <li><i>get/set</i> Regex</li></p>
+<p>                <li><i>get</i> Replace</li></p>
+<p>                <li><i>get</i> ReplaceAll</li></p>
+<p>                <li><i>get/set</i> Replacement</li></p>
+<p>                <li><i>get</i> Split</li></p>
+<p>                <li><i>get</i> SplitCapture</li></p>
+<p>                <li><i>get/set</i> Start</li></p>
+<p>                <li><i>get/set</i> Stop</li></p>
+<p>                <li><i>get</i> StoreGroups</li></p>
+<p>                <li><i>get</i> Studied</li></p>
+<p>                <li><i>get</i> Study</li></p>
+<p>                <li><i>get/set</i> Subject</li></p>
+<p>                <li><i>get</i> SubjectLeft</li></p>
+<p>                <li><i>get</i> SubjectRight</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TPerlRegexOptions</p>
+<p>            <ul></p>
+<p>                <li><i>const</i> preAnchored</li></p>
+<p>                <li><i>const</i> preCaseLess</li></p>
+<p>                <li><i>const</i> preExtended</li></p>
+<p>                <li><i>const</i> preMultiLine</li></p>
+<p>                <li><i>const</i> preNoAutoCapture</li></p>
+<p>                <li><i>const</i> preNotBOL</li></p>
+<p>                <li><i>const</i> preNotEmpty</li></p>
+<p>                <li><i>const</i> preNotEOL</li></p>
+<p>                <li><i>const</i> preSingleLine</li></p>
+<p>                <li><i>const</i> preUnGreedy</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TRegistryIniFile</p>
+<p>            <ul></p>
+<p>                <li><i>get</i> Create</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TStrings</p>
+<p>            <ul></p>
+<p>                <li><i>get/set</i> DelimitedText</li></p>
+<p>                <li><i>get/set</i> Delimiter</li></p>
+<p>                <li><i>set</i> NameValueSeparator</li></p>
+<p>                <li><i>set</i> StrictDelimiter</li></p>
+<p>                <li><i>get/set</i> ValueFromIndex</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TStringList</p>
+<p>            <ul></p>
+<p>                <li><i>get/set</i> CaseSensitive</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>        <li></p>
+<p>            TWinControl</p>
+<p>            <ul></p>
+<p>                <li><i>get/set</i> DoubleBuffered</li></p>
+<p>            </ul></p>
+<p>        </li></p>
+<p>    </ul></p>
+</div>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_117" class="drkbtn">Previous Section</a>
+    <a  href="#s_1171" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-7-2"></div>
+<h3 class="scriptHeader" id="Unsupportedlanguagefeatures">13.24 - Unsupported language features</h3>
+<table class="scriptTable">
+    <tr>
+        <th>Feature </th>
+        <th>Details </th>
+    </tr>
+    <tr>
+        <td>anonymous methods </td>
+        <td>Refer to the <a  href="href="http://docwiki.embarcadero.com/RADStudio/XE8/en/Anonymous_Methods_in_Delphi">Embarcadero documentation</a>. </td>
+    </tr>
+    <tr>
+        <td>array arguments </td>
+        <td>A function cannot accept an argument with a type like <code>array of integer</code>. </td>
+    </tr>
+    <tr>
+        <td>function overloading </td>
+        <td>Allows the same function to have multiple sets of arguments. </td>
+    </tr>
+    <tr>
+        <td>object types </td>
+        <td>The <code>object</code> keyword isn't implemented. </td>
+    </tr>
+    <tr>
+        <td>out parameters </td>
+        <td>Out parameters always receive default values, such as false for a boolean. Use var parameters instead. </td>
+    </tr>
+    <tr>
+        <td>procedural types </td>
+        <td>Refer to the <a  href="href="http://docwiki.embarcadero.com/RADStudio/XE8/en/Procedural_Types">Embarcadero documentation</a>. </td>
+    </tr>
+    <tr>
+        <td>structured types </td>
+        <td>Refer to the <a  href="href="http://docwiki.embarcadero.com/RADStudio/XE8/en/Structured_Types">Embarcadero documentation</a>. </td>
+    </tr>
+    <tr>
+        <td>subclasses </td>
+        <td>The <code>constructor</code> keyword isn't implemented. Subclasses without a constructor can be defined, but attempts to instantiate them (<code>MyClass.Create</code>) will always break. </td>
+    </tr>
+    <tr>
+        <td>try </td>
+        <td>Doesn't catch all runtime errors. </td>
+    </tr>
+</table>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_1171" class="drkbtn">Previous Section</a>
+    <a  href="#s_1172" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-7-3"></div>
+<h3 class="scriptHeader" id="Unsupportedoperators">13.25 - Unsupported operators</h3>
+<table class="scriptTable">
+    <tr>
+        <th>Operator </th>
+        <th>Description </th>
+    </tr>
+    <tr>
+        <td>&amp; </td>
+        <td>Prefix; suppresses parsing of a keyword (e.g. <code>&amp;For</code> is a variable named "For"). </td>
+    </tr>
+    <tr>
+        <td>@ </td>
+        <td>Prefix; retrieves the address of a variable for use as a pointer; compare to <code>&amp;</code> in C++. </td>
+    </tr>
+    <tr>
+        <td>^ </td>
+        <td>Dereferences a pointer; compare to <code>*</code> in C++. </td>
+    </tr>
+    <tr>
+        <td>&lt;&lt; </td>
+        <td>Used for bit shifting, but returns a junk result in xEdit. Use <code>Shl</code> instead. </td>
+    </tr>
+    <tr>
+        <td>&gt;&gt; </td>
+        <td>Used for bit shifting, but returns a junk result in xEdit. Use <code>Shr</code> instead. </td>
+    </tr>
+</table>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_1172" class="drkbtn">Previous Section</a>
+    <a  href="#s_1173" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-7-4"></div>
+<h3 class="scriptHeader" id="Unsupportedkeywords">13.26 - Unsupported keywords</h3>
+<table class="scriptTable">
+    <tr>
+        <th>Keyword </th>
+        <th>Description </th>
+    </tr>
+    <tr>
+        <td>absolute </td>
+        <td>Allows two or more variables to occupy the same location in memory. </td>
+    </tr>
+    <tr>
+        <td>as </td>
+        <td>Used to cast a variable to a given class. </td>
+    </tr>
+    <tr>
+        <td>constructor </td>
+        <td>Used to declare a constructor function for subclasses; absence of this keyword makes subclasses impossible to use. </td>
+    </tr>
+    <tr>
+        <td>in </td>
+        <td>Used in expressions like <code>myChar in ['a','b']</code>. It's either entirely broken or it only works in other situations. </td>
+    </tr>
+    <tr>
+        <td>is </td>
+        <td>Used to test whether a variable is an instance of a given class; for anything derived from <code>TObject</code>, you can use the <code>ClassName</code> method instead. </td>
+    </tr>
+    <tr>
+        <td>object </td>
+        <td>Used to create <a  href="href="http://docwiki.embarcadero.com/RADStudio/Berlin/en/Classes_and_Objects_(Delphi)#Object_Types">object types</a>. </td>
+    </tr>
+    <tr>
+        <td>type </td>
+        <td>Partial implementation. You can use it to alias a class name, but it's broken for every single other use and its existence is therefore pointless. </td>
+    </tr>
+    <tr>
+        <td>with </td>
+        <td>Statement. </td>
+    </tr>
+</table>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_1173" class="drkbtn">Previous Section</a>
+    <a  href="#s_1174" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<div id="s_11-7-5"></div>
+<h3 class="scriptHeader" id="Unsupportedclassesandtools">13.27 - Unsupported classes and tools</h3>
+<table class="scriptTable">
+    <tr>
+        <th>Feature </th>
+        <th>Description </th>
+    </tr>
+    <tr>
+        <td><a  href="href="http://docwiki.embarcadero.com/RADStudio/XE2/en/Variant_Support_Routines">Variant support routines</a> </td>
+        <td>Makes it easier to identify a variant's current type, and cast variants. Relevant type keywords like <code>varInteger</code> are also missing. </td>
+    </tr>
+    <tr>
+        <td>Move </td>
+        <td>This function is supposed to copy data from one memory location to another. Instead, it either throws an error, or fails silently and nulls out the target location. </td>
+    </tr>
+</table>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#s_1174" class="drkbtn">Previous Section</a>
+    <a  href="#s_1175" class="drkbtn">Top of this Group</a>
+</div>
+<p><!--/.level-nav--></p>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="12-cheat-sheets-and-quick-reference-charts.html" class="drkbtn">&laquo; Previous Page</a>
+    <a  href="14-Scripting-Resources.html" class="drkbtn">Next Page &raquo;</a>
+</div>
+<p><!--/.level-nav--></p>
