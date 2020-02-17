@@ -4,6 +4,7 @@ C:\Python27\python.exe wtxt-wiki.py genHtml 3-basicuse.txt
 C:\Python27\python.exe wtxt-wiki.py genHtml 4-modgroups.txt
 C:\Python27\python.exe wtxt-wiki.py genHtml 5-conflict-detection-and-resolution.txt
 C:\Python27\python.exe wtxt-wiki.py genHtml 6-themethod.txt
+C:\Python27\python.exe wtxt-wiki.py genHtml 6-mod-cleaning-and-error-checking.txt
 C:\Python27\python.exe wtxt-wiki.py genHtml 7-mod-cleaning-and-error-checking.txt
 C:\Python27\python.exe wtxt-wiki.py genHtml 8-managing-mod-files.txt
 C:\Python27\python.exe wtxt-wiki.py genHtml 9-mod-utilities.txt
