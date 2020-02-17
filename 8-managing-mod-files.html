@@ -1,0 +1,732 @@
+---
+layout: default
+title: xEdit Managing Mod Files
+---
+<h1 class="grhead1">Main Table Of Contents</h1>
+<div id="tableOfContents" class="grid-toc">
+    <div class="toc1">
+        <h2 class="grhead2"><a href="index.html">1. Introduction</a></h2>
+        <h2 class="grhead2"><a href="2-overview.html">2. Overview</a></h2>
+        <h2 class="grhead2"><a href="3-basicuse.html">3. xEdit Basic Use</a></h2>
+        <h2 class="grhead2"><a href="4-modgroups.html">4. ModGroups</a></h2>
+        <h2 class="grhead2"><a href="5-conflict-detection-and-resolution.html">5. Conflict Detection and Resolution</a></h2>
+        <h2 class="grhead2"><a href="6-themethod.html">6. The Method</a></h2>
+        <h2 class="grhead2"><a href="7-mod-cleaning-and-error-checking.html">7. Mod Cleaning and Error Checking</a></h2>
+        <h2 class="grhead2"><a href="8-managing-mod-files.html">8. Managing Mod Files</a></h2>
+        <h2 class="grhead2"><a href="9-mod-utilities.html">9. Mod Utilities</a></h2>
+    </div>
+    <div class="toc2">
+        <h2 class="grhead2"><a href="10-fo3edit-faq.html">10. FO3Edit FAQ</a></h2>
+        <h2 class="grhead2"><a href="11-appendix.html">11. Appendix</a></h2>
+        <h2 class="grhead2"><a href="12-cheat-sheets-and-quick-reference-charts.html">12. Cheat Sheets and Quick Reference Charts</a></h2>
+        <h2 class="grhead2"><a href="13-Scripting-Functions.html">13. Scripting Functions</a></h2>
+        <h2 class="grhead2"><a href="14-Scripting-Resources.html">14. Scripting Resources</a></h2>
+        <h2 class="grhead2"><a href="15-tutorials.html">15. Tutorials</a></h2>
+        <h2 class="grhead2"><a href="16-xLODGen.html">16. xLODGen</a></h2>
+        <h2 class="grhead2"><a href="17-DynDoLod.html">17. DynDoLod</a></h2>
+        <h2 class="grhead2"><a href="18-whatsnew.html">18. xEdit What's New and Version Info</a></h2>
+    </div>
+</div>
+<h1>{{ page.title }}</h1>
+<h2 id="Contents">Contents...</h2>
+<p class="list-1">&bull;&nbsp; <a href="#Overview">8.1 Overview</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#AddingMasterFilestoaPlugin">8.2 Adding Master Files to a Plugin</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#AddingESLflagtoaPlugin">8.3 Adding ESL flag to a Plugin</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#AddingESMflagtoaPlugin">8.4 Adding ESM flag to a Plugin</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#ChangingModFormIDs">8.5 Changing Mod FormIDs</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#MergingaPluginintoanotherPluginorMaster">8.6 Merging a Plugin into another Plugin or Master</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#ConvertingaPluginintoaMaster">8.7 Converting a Plugin into a Master</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#SplittingaPluginintoaPluginMasterPair">8.8 Splitting a Plugin into a Plugin/Master Pair</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#ComparingTwoVersionsofaMod">8.9 Comparing Two Versions of a Mod</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#TheESLFlag">8.10 The ESL Flag</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ImportantdangerswhencompactingFormIDs">8.10.1 Important dangers when compacting FormIDs</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#FirstImportantdangerwhencompactingFormIDs">8.10.1.1 First Important danger when compacting FormIDs</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#SecondimportantdangerwhencompactingFormIDs">8.10.1.2 Second important danger when compacting FormIDs</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#ThirdImportantdangerwhencompactingFormIDs">8.10.1.3 Third Important danger when compacting FormIDs</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#WhenitissafeornotsafetoaddtheESLFlag">8.10.2 When it is safe or not safe to add the ESL Flag</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#AddingtheESLflag">8.10.3 Adding the ESL flag</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#AddingtheESLflagformodusers">8.10.4 Adding the ESL flag for mod users</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#HowESLenabledgameshandleFormIDsforESLflaggedfiles">8.11 How ESL enabled games handle FormIDs for ESL flagged files</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#HowESLenabledgamesaddressrecordswithinplugins">8.11.1 How ESL enabled games address records within plugins</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#TheESLaddressformat">8.11.2 The ESL address format</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#TheDownside">8.11.3 The Downside</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#Example1">8.11.3.1 Example 1</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#Example2">8.11.3.2 Example 2</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Example3">8.11.4 Example 3</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#ESLifyingplugins">8.11.4.1 ESLifying plugins</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#ESLifyingPluginstheeasyway">8.11.4.2 ESLifying Plugins the easy way</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Compactingplugins">8.11.5 Compacting plugins</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#Credits">8.12 Credits</a></p>
+<h2 class="header2" id="Overview">8.1 - Overview</h2>
+<p class="empty">&nbsp;</p>
+<p>This chapter is dedicated to mod authors, and describes a number of functions and actions that xEdit provides to make mod authors lives easier and their products more standardized. Like the chapter on <a  href="7-mod-cleaning-and-error-checking.html">Mod Cleaning and Error Checking</a>, these functions hole mod authors produce products that will be less conflicting with other mods, and will open doors to possibilities that mod authors may not have known existed. Actions like merging mods, splitting them apart into Plugin/Master pairs, adding Master file references and more are documented in the sections below.</p>
+<p class="empty">&nbsp;</p>
+<h2 class="header2" id="AddingMasterFilestoaPlugin">8.2 - Adding Master Files to a Plugin</h2>
+<p class="empty">&nbsp;</p>
+<p>To reference a record from ExampleMaster.ESM in Plugin.esp you need to add ExampleMaster.ESM to the MASTer list in the File Header of Plugin.esp. This allows the plugin to add/change items found in the ExampleMaster.ESM. xEdit does this by adding a new master to the MAST sub record in the file header and correctly renumbering the FormIDs in the module. This can be very handy for mod authors, as it simplifies the process down to a few mouse clicks, so the mod author can focus on more important things like modding!</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image156.jpg" alt="image156" %}</p>
+<p class="empty">&nbsp;</p>
+<p>In this example we showcase <a  href="https://www.nexusmods.com/fallout3/mods/5178">Saiden Storm's Weapon Effects</a> mod and the taylorsd's <a  href="https://www.nexusmods.com/fallout3/mods/503">Better Frag Grenade Physics</a> mods, two excellent enhancements to Fallout3. Here we will add the SS Weapon Effects.esm Master file to the Better Frag Grenade Physics plugin, so that we can add one of Saiden Storm's cool plasma blasts to a frag grenade for kicks! To start the action, select "Add Masters" from the context menu as shown:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image158.jpg" alt="image158" %}</p>
+<p class="empty">&nbsp;</p>
+<p>This will present the File selection menu, from which you can Check the Master file(s) that you want to add as references in the Plugin's header as shown:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image160.jpg" alt="image160" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Once xEdit adds the master file as a reference in the Plugin, you see results similar to the screenshot below showing the <a  href="2-overview.html#MessageTab">Messages Tab</a> log-entry:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image162.jpg" alt="image162" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Note that "SS Weapon Effects.esm" has now be added to RealFragGrenade3.esp, making it possible to attach one of <a  href="https://www.nexusmods.com/fallout3/mods/5178">Saiden Storm's Weapon Effects</a> explosions to the grenade effect in <a  href="https://www.nexusmods.com/fallout3/mods/503">Better Frag Grenade Physics</a>. The View Tab shows the specific entry:</p>
+<p class="empty">&nbsp;</p>
+<p><B>Note:</B>  If you plan to release a mod to the public, then you should ONLY do this with permission from the modauthor, in this case Saiden Storm. If you wanted to use his weapon effects in a mod of your own and release it, you need permission!</p>
+<p class="empty">&nbsp;</p>
+<p>Below <a  href="https://www.nexusmods.com/newvegas/users/167469">Elminster</a> describes why this function is important for mod authors wanting to add master file references to their own mods:</p>
+<section class="quote">
+<p class="attr">Elminster</p>
+<p>"With FormIDs it's important to realize that the FormIDs that xEdit shows you are NOT the ones that are actually written into the module file. The FormIDs that xEdit shows you are &quot;load order corrected&quot; ones, while the FormIDs in the file itself are &quot;file specific&quot; ones.</p>
+<p class="empty">&nbsp;</p>
+<p>FormIDs are made up of 2 parts, the first byte (2 characters) is the &quot;module index&quot;, the last 3 bytes (6 characters) are the &quot;module specific ID&quot;.</p>
+<p class="empty">&nbsp;</p>
+<p>Mapping from &quot;file specific&quot; to &quot;load order corrected&quot; FormIDs and back only affects the &quot;module index&quot; and leaves the &quot;module specific ID&quot; untouched.</p>
+<p class="empty">&nbsp;</p>
+<p>An example, suppose you got a bunch of modules loaded:</p>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; [00] Fallout3.esm</p>
+<p class="list-1">&bull;&nbsp; [04] MasterA.esm</p>
+<p class="list-1">&bull;&nbsp; [10] MasterB.esm</p>
+<p class="list-1">&bull;&nbsp; [15] MasterC.esm</p>
+<p class="list-1">&bull;&nbsp; [20] Plugin.esp</p>
+<p class="empty">&nbsp;</p>
+<p>And lets suppose the MAST sub record in the File Header of Plugin.esp lists:</p>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; Fallout3.esm</p>
+<p class="list-1">&bull;&nbsp; MasterB.esm</p>
+<p class="list-1">&bull;&nbsp; MasterA.esm</p>
+<p class="empty">&nbsp;</p>
+<p>If you now see a record in Plugin.esp that overrides a record from Fallout3.esm, then you would see a FormID like 00123456 for it. In this particular case that record would also have the same (00123456) FormID inside the Plugin.esp module file.</p>
+<p class="empty">&nbsp;</p>
+<p>But if you have a record that overrides a record from MasterA.esm, e.g. with a FormID like 04ABCDEF (you can see the 04 as &quot;module index&quot; matches the load order of MasterA.esm) then it would be saved as 02ABCDEF in the Plugin.esp module file, because 02 is the index of MasterA.esm in the list of MASTer files in the File Header of Plugin.esp.</p>
+<p class="empty">&nbsp;</p>
+<p>And an override for a record in MasterB.esm (e.g. 10654321) would be saved as 01654321 in the Plugin.esp module file because 01 is the index of MasterB.esm in the list of MASTer files in the File Header.</p>
+<p class="empty">&nbsp;</p>
+<p>Last but not least, a NEW record in Plugin.esp which belongs to Plugin.esp and which xEdit would show you e.g. as 20FEDCBA gets stored as 03FEDCBA in the file (because 03 is equal to the number of entries in the MASTer list, as indices into that list start at 00, 03 is one higher then the highest valid index into that list).</p>
+<p class="empty">&nbsp;</p>
+<p>You will also notice that it's not possible to have an override record for a record from Master3.esm in Plugin.esp or in any other form reference such a record, because there is no way to map a load order corrected FormID of 15A1B2C3 to a file specific one that's valid in Plugin.esp.</p>
+<p class="empty">&nbsp;</p>
+<p>To reference a record from Master3.esm in Plugin.esp you need to add Master3.esm to the MASTer list in the File Header of Plugin.esp. But if you just go there and do that manually, then you've just added Master3.esm with the index 03 to the file. Which means that all the records that used to belong to Plugin.esp are suddenly considered override records for records from Master3.esm and will show up with 15xxxxxx FormIDs instead of 20xxxxxx FormIDs! A real mess.</p>
+<p class="empty">&nbsp;</p>
+<p>If you instead use the Add Masters function, then xEdit will not only add then new entry into the MASTer list, it will also renumber all (file specific) 03xxxxxx FormIDs into 04xxxxxx FormIDs first to preserve their meaning (which is &quot;this record belongs to this file&quot;).</p>
+<p class="empty">&nbsp;</p>
+<p>There are rare cases where editing the MAST list directly is what you actually want. e.g. when splitting an .esp into an .esm/.esp pair. In that case you would make a copy of the .esp, rename it to .esm, load it alone into xEdit to set the <code>ESM</code> flag in it's header, then restart xEdit to load both the .esm and the .esp and modify the MAST sub record in the File Header of the .esp by adding the .esm as last entry. After restarting xEdit and loading both files you will see that all records in the .esp are now considered overrides for the same records from the .esm"</p>
+</section>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#Overview" class="drkbtn">Previous Section</a>
+    <a  href="#AddingMasterFilestoaPlugin" class="drkbtn">Top of this Section</a>
+</div>
+<h2 class="header2" id="AddingESLflagtoaPlugin">8.3 - Adding ESL flag to a Plugin</h2>
+<p class="empty">&nbsp;</p>
+<p>Load the module you would like to add the ESL flag to and click the plus by the filename to expand the contents.  Click File Header, right click in the View Treeview and choose Edit to be presented with a list of Flags.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/edit-esl-flag.jpg" alt="edit-esl-flag" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Check the box next to the ESL flag and click Ok.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/edit-esl-flag-check.jpg" alt="edit-esl-flag-check" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Click okay to save the plugin.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/edit-esl-flag-save.jpg" alt="edit-esl-flag-save" %}</p>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#AddingMasterFilestoaPlugin" class="drkbtn">Previous Section</a>
+    <a  href="#AddingESLflagtoaPlugin" class="drkbtn">Top of this Section</a>
+</div>
+<h2 class="header2" id="AddingESMflagtoaPlugin">8.4 - Adding ESM flag to a Plugin</h2>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/edit-esl-flag.jpg" alt="edit-esl-flag" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Check the box next to the ESM flag and click Ok.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/addingesmflag.jpg" alt="edit-esl-flag-check" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Click okay to save the plugin.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/edit-esl-flag-save.jpg" alt="edit-esl-flag-save" %}</p>
+<p class="empty">&nbsp;</p>
+<h2 class="header2" id="ChangingModFormIDs">8.5 - Changing Mod FormIDs</h2>
+<p class="empty">&nbsp;</p>
+<p>There are times in which you may need to renumber the FormIDs for all records in a plugin to avoid conflicts. This can become necessary if two plugins share the same FormIDs (or some of them), which can result in bad conflicts in-game. Renumbering FormIDs from will change all FormIDs of records belonging to the Mod-file (but not any override records which might be contained in that mod file) so that they start at the specified value.</p>
+<p class="empty">&nbsp;</p>
+<p>This Function is useful if you have multiple modules that you plan to update in the future, but also want to always provide a merged version (e.g. using FO3Plugin). By assigning non overlapping FormIDs to the different modules, you can make sure that no FormID reassignment of conflicting FormIDs has to take place when merging.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image164.jpg" alt="image164" %}</p>
+<p class="empty">&nbsp;</p>
+<p>To renumber the FormIDs of a Mod file, Right-click on that mod file in the <a  href="2-overview.html#NavigationTree">Navigation Tree</a> to present the main context menu (A). Then select, "Renumber FormIDs from&#8230;" from the menu as shown in the screenshot below:</p>
+<p class="empty">&nbsp;</p>
+<p>When selected, the function will present a, "Start from&#8230;" window asking you what number you want to start the renumbering at as shown below.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image166.jpg" alt="image166" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Normally a FormID is 8 characters long, with the first 2 representing the mod file's index and the last 6 the reference's specific index within that specific mod. Thus pick a number between 100000 and FFFFFF in hex:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image168.jpg" alt="image168" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Once the new module specific start FormID (in hex) has been input (A) and the OK button selected (B), xEdit will begin changing the FormIDs and present the output in the <a  href="2-overview.html#MessageTab">Messages Tab</a> as shown in the screenshot below:</p>
+<p class="empty">&nbsp;</p>
+<p>When changing the FormIDs of a huge mod like <a  href="https://www.nexusmods.com/fallout3/mods/5370">Reykjavik</a> by Alexander Sigur&eth;sson, the process took 3-4 minutes on a high-end computer. The results shown in the Messges Tab reveal just a few examples of xEdit renumbering a FormID, discovering all references to it in all mod files, and correcting the numbering to prevent conflicts.</p>
+<p class="empty">&nbsp;</p>
+<p><B>Note:</B> Changing the FormIDs of an existing module will make it SaveGame incompatible and will break any other module that uses this module as master! If you have any dependant modules, you need to have them all loaded into xEdit at the time you change to FormIDs so that they will all be updated accordingly.</p>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#AddingESLflagtoaPlugin" class="drkbtn">Previous Section</a>
+    <a  href="#ChangingModFormIDs" class="drkbtn">Top of this Section</a>
+</div>
+<h2 class="header2" id="MergingaPluginintoanotherPluginorMaster">8.6 - Merging a Plugin into another Plugin or Master</h2>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image170.jpg" alt="image170" %}</p>
+<p class="empty">&nbsp;</p>
+<p>One of the common tasks that many mod authors face is the need to merge mod files together into a single plugin or master file. Many mod players also like to merge all of their favorite plugins into a single master file (one modder affectionately calls it, "BORG.esm"). xEdit can be used to accomplish both of these needs, and will ensure that the resulting plugin is synchronized correctly against it's combined references, and that the load orders are correct. The process is illustrated below, starting with loading <a  href="https://www.nexusmods.com/fallout3/mods/640">FOMM</a> and ordering the files correctly as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>In this example we will be merging Skykappa's Destructible <a  href="https://www.nexusmods.com/fallout3/mods/12978">Building Materials 3000</a> ( <a  href="http://www.bethsoft.com/bgsforums/index.php?showtopic=997699">WIPz</a>) (here-after referred to as DBM 3000) into the <a  href="http://www.bethsoft.com/bgsforums/index.php?showtopic=970549">500 Rads Bar (WIPz)</a>, so that the Bar can utilize the destructible building materials. Note that Skykappa's DBM 3000 is a modders resource, and was released by the author to be used in other mods for the low price of mentioning in the mod's credits.</p>
+<p class="empty">&nbsp;</p>
+<p>Load order is important when merging mods together, mainly because xEdit is very precise about the numbering and order of FormIDs and references amongst mods. Its is Very easy to conflict the FromIDs of mods being merged together (as is discussed at depth below). As such xEdit requires us to place the mod that is receiving the content (A) Below the mod being assimilated (B) in the load order of <a  href="https://www.nexusmods.com/fallout3/mods/640">FOMM</a>. This is important, but if you get it wrong don't worry, xEdit will warn you about it (also shown below).</p>
+<p class="empty">&nbsp;</p>
+<p>You can also merge many mods into one at once, you don't have to do it one-by-one if you happen to have several mods that needs to be combined together (as in when a modder lumps everything into one giant BORG.esm). The only requirement is that the assimilator (BORG.esm) is at the bottom, below the assimilates. Once you have the load order correct, exit <a  href="https://www.nexusmods.com/fallout3/mods/640">FOMM</a> to save the load order.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image172.jpg" alt="image172" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Now launch xEdit, which should offer the list of mods in the correct order with the assimilator at the bottom as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image174.jpg" alt="image174" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Note the load order is exactly as we specified in <a  href="https://www.nexusmods.com/fallout3/mods/640">FOMM</a>. If everything is checked, you can always Right-click in the Master/Plugin Selection window and click, "Select None" to clear all the checks. Then select the assimilator and assimilatees (A). Click okay to load the mods into xEdit (B), which yields the following output:</p>
+<p class="empty">&nbsp;</p>
+<p>Note how the only files loaded are the main Fallout3 master files and the mod files we are merging together (B and C). We are now in a position to merge the <a  href="https://www.nexusmods.com/fallout3/mods/6782">DBM 3000</a> into the <a  href="http://www.bethsoft.com/bgsforums/index.php?showtopic=970549">500 Rads Bar</a>!</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image176.jpg" alt="image176" %}</p>
+<p class="empty">&nbsp;</p>
+<p>To execute the merger, first open the assimilatee's (mod being copied) by Left-clicking on its plus sign (A), and then selecting all of the record headings within the mod (B) using the mouse and the shift-key. Next Right-click at (B) to render the context menu, and select, "Deep copy as override into&#8230;" (C) As shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image178.jpg" alt="image178" %}</p>
+<p class="empty">&nbsp;</p>
+<p>This action performs our traditional, "Copy" of the material we want to merge, and will present you with a menu option where you can select the file you want to merge these records into (our traditional, "Paste"):</p>
+<p class="empty">&nbsp;</p>
+<p>When presented with the, "Which files do&#8230;" menu, select the mod that you want to Paste the content into (A), and select OK to perform the merge (B). You may be prompted to add the copying mod as a master, select, "Yes" to this (C).</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image180.jpg" alt="image180" %}</p>
+<p class="empty">&nbsp;</p>
+<p>You will now be presented with the output, which can be seen in the <a  href="2-overview.html#MessageTab">Messages Tab</a>:</p>
+<p class="empty">&nbsp;</p>
+<p>Note how the <a  href="http://www.bethsoft.com/bgsforums/index.php?showtopic=970549">500 Rads Bar</a> now has Bold text over its name, indicating that new records have been copied into to and that it is marked as modified (A). The <a  href="2-overview.html#MessageTab">Messages Tab</a> displays the output of any master connections we made during the process (B), and any errors that may have occurred (none in this example).</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image182.jpg" alt="image182" %}</p>
+<p class="empty">&nbsp;</p>
+<p>If you now open the two mods, you will see how the references from <a  href="https://www.nexusmods.com/fallout3/mods/6782">DBM 3000</a> are duplicated into <a  href="http://www.bethsoft.com/bgsforums/index.php?showtopic=970549">500 Rads Bar</a>. Each record can be seen in the <a  href="2-overview.html#ViewTab">View Tab</a> down to the variable and reference level, as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>Each record can be compared in the <a  href="2-overview.html#ViewTab">View Tab</a> as desired; showing that each has been copied into the <a  href="http://www.bethsoft.com/bgsforums/index.php?showtopic=970549">500 Rads Bar</a> and will now save as part of that plugin. Any errors that occur will show up in the <a  href="2-overview.html#MessageTab">Messages Tab</a>, and may likely prevent a merger from taking place. If you see errors in the <a  href="2-overview.html#MessageTab">Messages Tab</a>, you should assume that the mods did not merge and you'll need to address the errors noted.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image184.jpg" alt="image184" %}</p>
+<p class="empty">&nbsp;</p>
+<p>With the merger complete, it's time to save our newly-combined mod file! This is done most conveniently by hitting, "Alt-S" or closing xEdit. Either will present you with the Save Changed Files window as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>Simply ensure the mod you just merged together is Checked for saving (A), and click "OK" to save the mod. Also note that the only file xEdit wants us to save is <a  href="http://www.bethsoft.com/bgsforums/index.php?showtopic=970549">500 Rads Bar</a>, while <a  href="https://www.nexusmods.com/fallout3/mods/6782">DBM 3000</a> is not shown. This is correct behavior, indicating that we copied stuff into <a  href="http://www.bethsoft.com/bgsforums/index.php?showtopic=970549">500 Rads Bar</a> and effectively did nothing to <a  href="https://www.nexusmods.com/fallout3/mods/6782">DBM 3000</a>.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image186.jpg" alt="image186" %}</p>
+<p class="empty">&nbsp;</p>
+<p>If you get the load order wrong in <a  href="https://www.nexusmods.com/fallout3/mods/640">FOMM</a> when trying to merge two mod files, xEdit will present you with the following error:</p>
+<p class="empty">&nbsp;</p>
+<p>Note that the error is very specific about the load order issue, in an attempt to better guide you into the right load order for whichever mods you are trying to merge. If you see this error, exit xEdit, correct the mod load order in <a  href="https://www.nexusmods.com/fallout3/mods/640">FOMM</a>, re-launch xEdit and perform the merger operation again.</p>
+<p class="empty">&nbsp;</p>
+<p>If you don't see any errors through the process or after saving, exit xEdit and either test the combined mod file or load it up in the GECK so you can start adding destructible building materials to your mod! Have a nice day, thank you for playing.</p>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="#ChangingModFormIDs" class="drkbtn">Previous Section</a>
+    <a  href="#MergingaPluginintoanotherPluginorMaster" class="drkbtn">Top of this Section</a>
+</div>
+<h2 class="header2" id="ConvertingaPluginintoaMaster">8.7 - Converting a Plugin into a Master</h2>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image188.jpg" alt="image188" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Converting a Plugin (ESP) into a Master (ESM) file is a simple process that can be doing using xEdit in less than five minutes. The file extension of a Plugin as well as the ESM flag within its file header must be changed in order to make the transition to a Master file. The screenshot below starts the action by launching xEdit:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image190.jpg" alt="image190" %}</p>
+<p class="empty">&nbsp;</p>
+<p>First you need to de-select all of the mods using Right-click in the Master/Plugin Selection window (A). Then click/check just the mod your converting (B), in this example we're converting <a  href="https://www.nexusmods.com/fallout3/users/60908">Antistar's</a> <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> plugin into a master file. Click "OK" (C) to load xEdit with just the mod being changed as shown:</p>
+<p class="empty">&nbsp;</p>
+<p>Note that <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> is successfully loaded into xEdit (B), and that it is the only file listed aside from the Fallout3 master files (A). You are now ready to convert the Plugin into a Master file.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image192.jpg" alt="image192" %}</p>
+<p class="empty">&nbsp;</p>
+<p>To make the conversion, all we have to do is change one flag in the File Header, which can be accessed by Left-clicking open the <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> record in the <a  href="2-overview.html#NavigationTree">Navigation Tree</a>. Immediately beneath name of the mod is the File Header row (A) as shown below. You will then see the File Header data printed into the <a  href="2-overview.html#ViewTab">View Tab</a> (B):</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image194.jpg" alt="image194" %}</p>
+<p class="empty">&nbsp;</p>
+<p>The File Header record is divided into different sub-headings and variables, including the Record Flags, Version, Author, mod Description and any Master file references that the plugin requires. We will be changing the Record Flags variable by Right-clicking into the open space next to it (C), which will render a small context menu. You can then click, "Edit" (D) to change the values. Doing so will present a warning window as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>This window is a default/standard in xEdit, and exists to make sure that anytime you are about to change a mod file for the first time, you know about it. It may seem annoying to some, but often the worst conflicts between mods come from changes that a mod author did not intend to make. Simply select, "Yes" (A) to move along.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image196.jpg" alt="image196" %}</p>
+<p class="empty">&nbsp;</p>
+<p>You will next be present with a menu of available/known flags that you can select:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image198.jpg" alt="image198" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Note that many of the flags are blank or unknown, because literally the community does not know what those flag values mean. Fortunately the flag we need is the first one on the list (A), simply Left-click it and then click, "OK" to save the flag settings.</p>
+<p class="empty">&nbsp;</p>
+<p>With that you are done! Note the File Header text is now Bold (A) indicating a change, and the Record Flags in the View Tab (C) show that the ESM flag is set (B).</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image200.jpg" alt="image200" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Once done with xEdit, you will want to change the file extension from <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esp to <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esm so that the extension matches the File Header flagging. The GECK and Fallout3 don't really care about the file extension (ESP/ESM), what matters is that File Header flag. The Extension is for humans to keep them sorted correctly! Now all you need to do is exit xEdit or press, "Alt-S" and Save your new Master file as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>It is also possible to change a Plugin to a Master using just <a  href="https://www.nexusmods.com/fallout3/mods/640">FOMM</a> or other tools, but there is always the potential of problems with ONAM records. ONAM records are special records created that allow Master files to communicate with one-another when references need to be passed. xEdit ensures that as part of the conversion process, these ONAM records are built and correctly ordered. This is why it is better to make the Plugin to Master conversion using xEdit.</p>
+<div>
+    <a  href="#MergingaPluginintoanotherPluginorMaster" class="drkbtn">Previous Section</a>
+    <a  href="#ConvertingaPluginintoaMaster" class="drkbtn">Top of this Section</a>
+</div>
+<h2 class="header2" id="SplittingaPluginintoaPluginMasterPair">8.8 - Splitting a Plugin into a Plugin/Master Pair</h2>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image202.jpg" alt="image202" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Splitting a single Plugin (ESP) into a Master (ESM)/Plugin (ESP) pair can be useful in many situations, especially when a mod author wants to share resources from one Plugin with other Plugins. The only way to share resources between Plugins is to convert those resources into a Master file. The split is a two-part operation in which you first split the single Plugin into a duplicate Plugin and Master at the file (windows explorer) level. You then change the Flagging on one of the two duplicates to turn it into a Master, and change the flagging on the Plugin copy to make reference its new master file. The action begins in windows explorer as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image204.jpg" alt="image204" %}</p>
+<p class="empty">&nbsp;</p>
+<p>With the mod copied, the next screenshot shows the paste:</p>
+<p class="empty">&nbsp;</p>
+<p>This will create a duplicate of the WeaponModKits.esp Plugin. This may seem a very basic part of the process to duplicate, but was done for thoroughness and for those who can't read English and depend on the diagrams for the process.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image206.jpg" alt="image206" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Now we need to re-name the copy to make it our Master file version.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image208.jpg" alt="image208" %}</p>
+<p class="empty">&nbsp;</p>
+<p>You will be presented with a warning about changing the file extension, which is a common windows warning. Simply select, "Yes" when prompted. The screenshot below shows the last part of the duplication process:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image210.jpg" alt="image210" %}</p>
+<p class="empty">&nbsp;</p>
+<p>You will then be presented with the output; both a Plugin and Master file that are identical at this point. The screenshot below shows the Master (A) and Plugin (B):</p>
+<p class="empty">&nbsp;</p>
+<p>With the file duplication part done, it's time to launch the <a  href="https://www.nexusmods.com/fallout3/mods/640">Fallout Mod Manager</a> ( <a  href="https://www.nexusmods.com/fallout3/mods/640">FOMM</a>) to set our loading order for the new Master file as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image212.jpg" alt="image212" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Once <a  href="https://www.nexusmods.com/fallout3/mods/640">FOMM</a> is loaded, find the WeaponModKits.ESP (B) and WeaponModKits.ESM (A) versions of the mod in the list and ensure that both of them are Checked/Selected to load. The screenshot shows how <a  href="https://www.nexusmods.com/fallout3/mods/640">FOMM</a> will look when first loaded after the split, showing the ESP (B) is still checked (as it was before), while the new Master we just created is not yet checked (A) as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image214.jpg" alt="image214" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Here you must also ensure that the Master (ESM) version loads Before the Plugin (ESP) version as this is a Fallout3 requirement. The recommendation is to move the Master (ESM) higher-up in the load order before all other Plugins, and load the Plugin (ESP) version of <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> somewhere below the Masters. With that done, close <a  href="https://www.nexusmods.com/fallout3/mods/640">FOMM</a> and load xEdit. Your new load order with the <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esm loading before the <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esp should be visible in xEdits as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image216.jpg" alt="image216" %}</p>
+<p class="empty">&nbsp;</p>
+<p>To load just the Master and Plugin, first Right-click in open space (A) and select, "None" from the context menu as shown above, and then check-off just the <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esp and <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esm files (C), and click, "OK" to load them into xEdit. This will load just the two <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> files and the Fallout3 masters into xEdit as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image217.jpg" alt="image217" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Note that both our Master and Plugin version of <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> is loaded and ready for conversion (A). The loader confirms a successful boot-up in the <a  href="2-overview.html#MessageTab">Messages Tab</a> (B), indicating we are good to go for the conversions. Next we need to set the Record Flags to ESM (or Master) as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image219.jpg" alt="image219" %}</p>
+<p class="empty">&nbsp;</p>
+<p>With the File Header block of <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esp selected (A), Right &#8211;click in the open space next to the, "Record Flags" section (C) which will render a small context Menu. Select, "Edit" (D) from this small menu to add the ESM Master flag, which effectively converts the Plugin into a Master. Before you can proceed however, you will get a warning message from xEdit about changing the mod's contents. This is normal and provided for your protection. Simply select, "Yes" (A) to continue.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image220.jpg" alt="image220" %}</p>
+<p class="empty">&nbsp;</p>
+<p>The screenshot below shows you the Flags menu that is rendered:</p>
+<p class="empty">&nbsp;</p>
+<p>This, "Edit Value" menu shows you all of the known (and unknown) flags available for setting in a Fallout3 mod file for Record Flags. Many of the flags are known and can be selected, while a few still remain unknown. The only flag we care about is the, "ESM" flag (A), which you should check-off and then click, "OK" (B) to accept the new flag values.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image221.jpg" alt="image221" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Once done you will be presented with the outcome as shown below, which now has the <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esp entry and its File Header in Bold text (A) in the <a  href="2-overview.html#ViewTab">View Tab</a>, indicating the change. In the Right-hand <a  href="2-overview.html#ViewTab">View Tab</a> (C), the Record Flag row is now also in Bold text with the new, "ESM" flag now populated with it (B) as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image223.jpg" alt="image223" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Next we need to add the new Master version of <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> (ESM) into the Plugin version (ESP) as a master file reference, so that the Plugin references the Master. This will allow the Plugin (ESP) to use the Master (ESM) records going forward. The screenshot below shows you the first step in the process of adding a Master reference:</p>
+<p class="empty">&nbsp;</p>
+<p>Note that we're changing the File Header section just as we did when adding the ESM master flag, but this time we Right-click in the Master Files row (B), and then selecting, "Add" from the context menu.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image225.jpg" alt="image225" %}</p>
+<p class="empty">&nbsp;</p>
+<p>This will create a new, blank Master File reference in the <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a> Plugin that you can now assign to our new Master file as shown below (D), which we can then modify as needed. For our example we need to assign the new master file entry to <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>.esp. To make the change simply Right-click in open space to the right of the, "MAST &#8211; Filename" entry (B), which will render a small context menu. Then select, "Edit" (C) as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image227.jpg" alt="image227" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Clicking Edit will open a, "Edit Value" window, allowing you to type-in the name of the Master file you want to assign as the reference (A). Click, "OK" when done (B) to save the reference, which will take you back to the View Tab.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image229.jpg" alt="image229" %}</p>
+<p class="empty">&nbsp;</p>
+<p>You should use the same case that the master file does, in this case, "WeaponModKits.esm" to ensure that there are no conflicts. And with that we're done! Note that the WeaponModKits.esm is listed next to the, "MAST &#8211; Filename" entry (B), and that the File Header also has Bold text (A) indicating the change as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image230.jpg" alt="image230" %}</p>
+<p class="empty">&nbsp;</p>
+<p>And for the final step, you need to save the changes. Use, "Alt-S" or close xEdit to present the Save Files window as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>With this, you now have a Master/Plugin version of <a  href="https://www.nexusmods.com/fallout3/mods/3388">Weapon Mod Kits</a>, and the process works exactly the same for any mod that you want to split. You can change the esp file extension to ESM, then open and save it with the GECK and it will tick the ESM flag on, but won't produce ONAM's like xEdit will which are needed for any overrides to Fallout3.ESM's references. Unless your Plugin has no CELL and/or WRLD group, you're better off using xEdit.</p>
+<p class="empty">&nbsp;</p>
+<p><B>Note:</B> An .esp can be the master of another .esp.</p>
+<p class="empty">&nbsp;</p>
+<p><B>Note:</B> If you have a Plugin with multiple masters, you'll have to edit your GeckCustom.ini &quot;bAllowMultipleMasterLoads=1&quot;</p>
+<p class="empty">&nbsp;</p>
+<p><B>Note:</B> The GECK won't edit .esm's, so you have to ESP'ify, edit in GECK, then ESM'ify.</p>
+<div>
+    <a  href="#ConvertingaPluginintoaMaster" class="drkbtn">Previous Section</a>
+    <a  href="#MergingaPluginintoanotherPluginorMaster" class="drkbtn">Top of this Section</a>
+</div>
+<h2 class="header2" id="ComparingTwoVersionsofaMod">8.9 - Comparing Two Versions of a Mod</h2>
+<p class="empty">&nbsp;</p>
+<p>One of the common tasks that mod authors face is to compare two versions of their own mods, either during construction or in subsequent updates. There are also times when mod authors encounter difficult to solve problems with a new version of a mod, and need to revert back to a previous backup. The xEdit compare function can provide a valuable and convenient way of copying data from one version of a mod to another, without having to sort through records that don't belong to their mods. Whatever the case may be, this section is devoted to teaching you how to compare two versions of a mod file, and how to copy records over if the need arises.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image232.jpg" alt="image232" %}</p>
+<p class="empty">&nbsp;</p>
+<p>For this section we feature <a  href="http://www.bethsoft.com/bgsforums/index.php?showuser=20313">Quarn's</a> <a  href="https://www.nexusmods.com/fallout3/mods/3808">Unofficial Fallout3 Patch</a>, which has helped to resolve countless bugs in Fallout3 and has improved the gaming experience for thousands of modders. To start the action, launch xEdit and select One of the two mod files that you wish to compare as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image234.jpg" alt="image234" %}</p>
+<p class="empty">&nbsp;</p>
+<p>As shown above, by Right-clicking in open-space in the Master/Plugin selection window (A), you will render the selection menu (B) where you can, "Select None". This will un-check everything on the list. Then select just One of the two mods (C) and Click "OK" to load it (D). The screenshot below shows the result:</p>
+<p class="empty">&nbsp;</p>
+<div id="hidden"></div>
+<p>Here we have just One of the two mod files loaded along with the Fallout3 master files it depends on. We will need to hide these master files from view so that we are Only looking at the mod file that we want to compare.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image236.jpg" alt="image236" %}</p>
+<p class="empty">&nbsp;</p>
+<p>To hide the master file references from view, we need to select each one of them in-turn with a Right-mouse click (A), which will present the main context menu. There you can select, "Hidden" (B), which is the last option on the list as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>You won't see any outward-change in the in the xEdit view afterwards, but you can confirm that they are marked as hidden by Right-clicking on them again &#8211; you will see a Check-mark next to, "Hidden" menu option indicating that they are hidden (from filters).</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image238.jpg" alt="image238" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Next we need to load the other version of the <a  href="https://www.nexusmods.com/fallout3/mods/3808">Unofficial Fallout3 Patch</a> mod file we're comparing (the new/current version). You can do this by Right-clicking on the loaded-version of the mod (A), which will present the main context menu. Select, "Compare to&#8230;" from the context menu (B) as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image240.jpg" alt="image240" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Selecting "Compare To" will present the, "Open" window as shown below, where you can select the current version of <a  href="https://www.nexusmods.com/fallout3/mods/3808">Unofficial Fallout3 Patch</a> (A), and then, "Open" (B) to load it into xEdit as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>The "Compare To" version of the mod is loaded as read-only into xEdit, so you will not be able to make any changes to it, but you can copy from it into the version of <a  href="https://www.nexusmods.com/fallout3/mods/3808">Unofficial Fallout3 Patch</a> that we loaded into xEdit at boot time. You can change the order and load either/any version of the mod first, so that you can edit/copy records into whatever version you loaded.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image242.jpg" alt="image242" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Once the Compare To function loads the other version of the mod as read-only into xEdit, you will see a view similar to the one below. Note the two versions that appear together in the <a  href="2-overview.html#NavigationTree">Navigation Tree</a> (A), and no errors noted in the <a  href="2-overview.html#MessageTab">Messages Tab</a> (B):</p>
+<p class="empty">&nbsp;</p>
+<p>With both versions of the mod now loaded with the Compare To function, the last step is to apply a Filter to find the changed records between them. Note that with the Fallout3 master files now listed as, "Hidden", they will not show up at all after we apply the filter &#8211; which is exactly what we want.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image244.jpg" alt="image244" %}</p>
+<p class="empty">&nbsp;</p>
+<p>To apply a Filter Right-click in open-space (A) in the Left-side Panel to render the main context menu. Click, "Apply Filter" (B) to open up the Filter menu as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image246.jpg" alt="image246" %}</p>
+<p class="empty">&nbsp;</p>
+<p>The main Filter window will render, where you can select the Mod Comparison Filter Settings as shown in the screenshot below:</p>
+<p class="empty">&nbsp;</p>
+<p>Selecting the, "By conflict status for this particular record" (A), "Identical to Master" (B), "Override without Conflict" (C) and "Conflict status inherited by Parent" (D) sets the Mod Comparison Filters. You can then select, "Filter" (E) to apply the filter.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image248.jpg" alt="image248" %}</p>
+<p class="empty">&nbsp;</p>
+<p>The Mod Comparison Filter should process quite quickly in most cases, unless you're working with a very large mod file. The screenshot below highlights the status bar, which will tell you how far along the filter operation are towards completion:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image250.jpg" alt="image250" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Once done, the screenshot below illustrates the result. Both versions of the mod (at the top level) have Yellow backgrounds in the <a  href="2-overview.html#NavigationTree">Navigation Tree</a> (A), indicating that they are not identical (of course). In the <a  href="2-overview.html#MessageTab">Message Tab</a> we see that now errors were encountered by the Filter (B), along with some statistics:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image252.jpg" alt="image252" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Opening one of the mods in the <a  href="2-overview.html#NavigationTree">Navigation Tree</a> and selecting a record highlights the similarities where they are identical between the two mods with Green backgrounds (A) and records that are different with Yellow backgrounds (B).</p>
+<p class="empty">&nbsp;</p>
+<p>At this point we are done with the comparison. You can browse through the <a  href="https://www.nexusmods.com/fallout3/mods/3808">Unofficial Fallout3 Patch</a> records between the new and old versions, and compare the differences at will. If you don't need to make changes, you can simply close xEdit when done.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image254.jpg" alt="image254" %}</p>
+<p class="empty">&nbsp;</p>
+<p>If however there is a need to copy records from one version of the mod to the other, the process below will guide you through the steps. There are a few limitations to be aware of, such as you can't drag-n-drop records from the version you loaded at boot time into the version you loaded with the "Compare To" function, but you can still copy from that version as shown below:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image256.jpg" alt="image256" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Here we Left-click-and-hold the record we want to copy with the mouse (A), and drag it horizontally to the mod we loaded when xEdit booted-up (B). Dropping the record into the row will copy that record (and all of its attributers) into the other mod. The screenshot below shows the results, with both sides now identical (A) and the background of both now Green (B) indicating they are indeed duplicates:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image258.jpg" alt="image258" %}</p>
+<p class="empty">&nbsp;</p>
+<p>The screenshot below illustrates how xEdit will prevent you from drag-n-dropping records from the loaded version of <a  href="https://www.nexusmods.com/fallout3/mods/3808">Unofficial Fallout3 Patch</a> into the "Compare To" version (which is loaded read-only). Note how when trying the drag-n-drop, you get a blocked-circle (B), indicating that you can't drop records into the read-only version:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/image260.jpg" alt="image260" %}</p>
+<p class="empty">&nbsp;</p>
+<p>When you're done making changes, you'll need to save them. You can either close xEdit or press, "Alt-S" to render the Save Changed Files window:</p>
+<p class="empty">&nbsp;</p>
+<p>With that, we're done with mod comparisons and updates! Of course you should not change the <a  href="https://www.nexusmods.com/fallout3/mods/3808">Unofficial Fallout3 Patch</a> as that is for <a  href="http://www.bethsoft.com/bgsforums/index.php?showuser=20313">Quarn</a> to do, but there is no harm in experimenting with the mods to learn the process (just make sure to have a backup of the files before you do!).</p>
+<div>
+    <a  href="#SplittingaPluginintoaPluginMasterPair" class="drkbtn">Previous Section</a>
+    <a  href="#ComparingTwoVersionsofaMod" class="drkbtn">Top of this Section</a>
+</div>
+<h2 class="header2" id="TheESLFlag">8.10 - The ESL Flag</h2>
+<p class="empty">&nbsp;</p>
+<h3 class="header3" id="ImportantdangerswhencompactingFormIDs">8.10.1 - Important dangers when compacting FormIDs</h3>
+<p class="empty">&nbsp;</p>
+<h4 id="FirstImportantdangerwhencompactingFormIDs">8.10.1.1 - First Important danger when compacting FormIDs</h4>
+<p class="empty">&nbsp;</p>
+<p>Before you consider compacting a file whether or not you are a mod author or user understand compacting a mod changes the FormIDs. Once the FormIDs have changed that is the same as uninstalling the mod. Making certain changes may not affect anything while other changes will have a serious impact on the game and your save game.</p>
+<p class="empty">&nbsp;</p>
+<p>The range of FormIDs is limited for ESL flagged files. Since there isn't much to work with as the FormIDs are renumbered you should consider this. They are renumbered sequentially. Once the process finishes you could end up with a FormID that is the same as the previous version, but the record is an entirely different record type then it was previously. Which may not just cause issues but render the save game unusable because of the changes unless you revert back to the version of the mod prior to compacting it.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/uninstallmodsnotsupported.jpg" alt="uninstallmodsnotsupported" %}</p>
+<p class="empty">&nbsp;</p>
+<p>The bottom portion is blurred out because it is part of a 2 part question. The first being the effect and support of uninstalling a mod and the second the effect of changing a script and continuing to use the same save game. Smkviper is a Bethesda employee and Papyrus specialist for Bethesda having written in part of fully written the Papyrus engine.</p>
+<p class="empty">&nbsp;</p>
+<p class="note">While many people do uninstall mods and continue with a save game and it usually works fine, once you do, no matter what happens, any further testing is invalid and before reporting any issue to any mod author you should make a new save game. Period.</p>
+<p class="empty">&nbsp;</p>
+<h4 id="SecondimportantdangerwhencompactingFormIDs">8.10.1.2 - Second important danger when compacting FormIDs</h4>
+<p class="empty">&nbsp;</p>
+<p>Patches to the mod will no longer be compatible because the FormID changed. It is not good modding practice to change FormIDs and then require other mod authors to create new patches. This is inconvenient for both mod authors and mod users.  <a  href="#Example2">Example 2</a> below shows how a FormID that would not qualify for an ESL flagged file changes. This is what would happen for patches. Once the FormID is renumbered the patch can not find the old FormID anymore.</p>
+<p class="empty">&nbsp;</p>
+<h4 id="ThirdImportantdangerwhencompactingFormIDs">8.10.1.3 - Third Important danger when compacting FormIDs</h4>
+<p class="empty">&nbsp;</p>
+<p>You should not compact FormIDs if the mod uses <code>GetFormFromFile()</code>. The script will not be able to find the Form used by the mod author when he created the script. Below is an example from <a  href="https://www.creationkit.com/fallout4/index.php?title=GetFormFromFile_-_Game">GetFormFromFile - Game</a> in the CK Wiki. This is another example of how a FormID that does not qualify for an ESL flagged file could be renumbered as shown in <a  href="#Example2">Example 2</a> and cause the script to malfunction.</p>
+<p class="empty">&nbsp;</p>
+<pre>
+; Obtain form 0400ABCD we expect to be added by the KillerBees plugin
+; Note the top most byte in the given ID is unused so 0400ABCD
+FormList beekillerlist = Game.GetFormFromFile(0x0400ABCD, "KillerBees.esp") as FormList
+; If "KillerBees.esp" is not loaded the form will be NONE. Otherwise, add our weapon to the list.
+if ( beekillerlist )
+  beekillerlist.AddForm( WeapBeeSlayer )
+endif
+</pre>
+<p class="empty">&nbsp;</p>
+<p>In the above example <code>0400ABCD</code> would not qualify to be in a file with the ESL flag. It would be renumbered and would be given the next available number in sequence as mentioned. For example it could be changed from <code>0400ABCD</code> to <code>[FE:004][005]</code>.</p>
+<p class="empty">&nbsp;</p>
+<p>Sometimes mods use <a  href="https://en.uesp.net/wiki/Tes5Mod:Archive_File_Format">Bethesda Archive Files</a> or <code>.bsa</code> or <code>.ba2</code> files. Some mod authors do not provide the source for their scripts. To look for the <code>GetFormFromFile()</code> function you will need to extract the script files and if the source is not provided you will need to decompile the <code>.pex</code> files first.</p>
+<p class="empty">&nbsp;</p>
+<p class="note">This is not practical for users to look for in a mod. There are no utilities that will automatically look at the plugin, search for all the scripts used, and then go through a process of finding this function for the user and warning them of the dangers of compacting the file.</p>
+<p class="empty">&nbsp;</p>
+<h3 class="header3" id="WhenitissafeornotsafetoaddtheESLFlag">8.10.2 - When it is safe or not safe to add the ESL Flag</h3>
+<p class="empty">&nbsp;</p>
+<h3 id="AddingtheESLflag">8.10.3 - Adding the ESL flag</h3>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; When an ESL flagged file also has the ESM flag and contains a new CELL or WRLD record, any mod (patch or otherwise) also altering the new CELL or WRLD record can cause items to disappear.</p>
+<p class="list-1">&bull;&nbsp; Any file with the .esl extension will have the ESM flag forced at runtime. Files with the .esl extension will also have the same issue with CELL or WRLD records as mentioned previously.</p>
+<p class="list-1">&bull;&nbsp; Compacting a mod and adding the ESL flag that has not been released to the public is safe.</p>
+<p class="list-1">&bull;&nbsp; Compacting a mod and adding the ESL flag that has already been released to the public is not safe because compacting changes the FormIDs. Refer to <a  href="#ImportantdangerswhencompactingFormIDs">Important dangers when compacting FormIDs</a>.</p>
+<p class="list-1">&bull;&nbsp; After compacting a mod with NPCs you will need to generate the FaceGen data for the NPCs with the Creation Kit because the FormIDs changed.</p>
+<p class="list-1">&bull;&nbsp; After compacting a mod with custom voiced actors or NPCs, you will need to rename the Voice files because the FormIDs changed. Remember the file name for voice files is not contained in the plugin. You have to know what it is already or make a blank empty file with the CK in order to see what the CK will name it. After you know the name the CK has chosen then you can rename the voice files accordingly.</p>
+<p class="list-1">&bull;&nbsp; For mods that use xEdit or zEdit scripts. Adding the ESL flag to mod files you will be processing with xEdit type scripts can impact how the script works. You should process the files without the ESL flag. You should be able add the ESL flag after the process completes. If you are required to run any xEdit type scripts each time you add or remove files in the Data folder this can impact how the script functions. You may need to remove the flag and add the flag prior to and after running the script which could be tedious.</p>
+<p class="empty">&nbsp;</p>
+<p class="note">The issue having both the ESM and ESL falg (or .esl extension) and CELL or WRLD records does not seem to affect Fallout 4. There is no word on whether or not this will be addressed by Bethesda for Skyrim SE.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="AddingtheESLflagformodusers">8.10.4 - Adding the ESL flag for mod users</h3>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; Normally adding the ESL flag to simple weapon or armor mods is safe because they usually do not have patches and are not masters of other files.</p>
+<p class="list-1">&bull;&nbsp; Adding the ESL flag to patches is safe because the patch only affects its masters.</p>
+<p class="list-1">&bull;&nbsp; Adding the ESL flag to a mod that has a patch should not matter unless you compacted the FormIDs. If you did refer to <a  href="#ImportantdangerswhencompactingFormIDs">Important dangers when compacting FormIDs</a>.</p>
+<p class="list-1">&bull;&nbsp; When adding a new mod to your load order and if you review <a  href="#ImportantdangerswhencompactingFormIDs">Important dangers when compacting FormIDs</a> first prior to compacting FormIDs then you should be able to compact the mod and add the ESL flag.</p>
+<p class="empty">&nbsp;</p>
+<p>Adding an ESL flag to any .esp file that qualifies to have the flag is not safe to do when you do not know how that will affect the mod. There is no list of mods safe to flag and it is not appropriate to constantly ask mod authors whether or not it is safe to add the ESL flag to their mod. If you read through the section <a  href="#AddingtheESLflag">Adding the ESL flag</a> and do not understand what any of that means then you should be cautious of adding the ESL flag to your mods.</p>
+<p class="empty">&nbsp;</p>
+<p>If you feel you must add the ESL flag and have no other resources telling you whether or not it is safe then it is recommended to flag one file at a time and test it in game. If the mod malfunctions then you can remove the flag and revert to a previous save game.</p>
+<p class="empty">&nbsp;</p>
+<h2 class="header2" id="HowESLenabledgameshandleFormIDsforESLflaggedfiles">8.11 - How ESL enabled games handle FormIDs for ESL flagged files</h2>
+<p class="empty">&nbsp;</p>
+<p>You might have already noticed FormIDs in some tutorial (for example removing cities from JKs Skyrim), while getting items via console cheat (player.additem) or somewhere else but dont know what they actually are. Heres one example:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/desktopscreenshot2019nsjvq.png" alt="desktopscreenshot2019nsjvq" %}</p>
+<p class="empty">&nbsp;</p>
+<p>The interesting part is on the far right side: Base Form and Ref Form.</p>
+<p class="empty">&nbsp;</p>
+<p>Lets stick with the tree that Ive marked in the screenshot for a moment. The Base Form (00051126) is an entry in Skyrim.esm and stands for TreePineForest05. It doesnt say anything about where the tree is located, about the size of the tree, its rotation or anything else. The entry in Skyrim.esm just defines a few basic parameters of that tree type like the type of the entry (TREE) and where the 3D model of that tree is located in the meshes folder of the game (Landscape&#92;Trees&#92;TreePineForest05.nif).</p>
+<p class="empty">&nbsp;</p>
+<p>Now, if you got a mod (or the vanilla game) that places this kind of tree somewhere in the game world, that specific tree (like the one that is clipping through the floor in my screenshot) gets a Ref Form, which in this example is 0D00517E. For this you can define its position in the world, its size, its rotation and lots of other properties. The Ref Form is the FormID well be looking at. It can be divided into two parts:</p>
+<p class="empty">&nbsp;</p>
+<p><code>[0D] [00517E]</code></p>
+<p class="empty">&nbsp;</p>
+<p>The first part might look familiar for anyone using Mod Organizer 2 or any other mod manager that shows the load order of plugins like MO2 does. It defines where in the load order a mod is located using a two digits hexadecimal number. The mod with the lowest number gets loaded first, the higher ones are loaded later and overwrite the earlier ones. Your typical load order would look like this:</p>
+<p class="empty">&nbsp;</p>
+<pre>
+┌─[00] Skyrim.esm
+├─[01] Update.esm
+├─[02] Dawnguard.esm
+├─[03] HearthFires.esm
+├─[04] Dragonborn.esm
+├─[05] SomeMod.esm
+├─[06] SomeOtherMod.esm
+│ [Other Files]
+├─[0C] AnotherMod.esp
+├─[0D] Enhanced Landscapes.esp (the one from our example screenshot)
+│ [Other Files]
+</pre>
+<p class="empty">&nbsp;</p>
+<p>As hexadecimal digits go from 0 to F (F stands for 15) and as we got two digits, the largest number you can put together is FF = 255, just like the largest number for the decimal system would be 99. This is where Skyrims theoretical plugin limit of 255 comes from. Its actually a bit less than that but that shouldnt bother us here. This limit is what forces people to stop adding mods to their game or start merging them which gets trickier the more mods you want to add.</p>
+<p class="empty">&nbsp;</p>
+<h3 class="header3" id="HowESLenabledgamesaddressrecordswithinplugins">8.11.1 - How ESL enabled games address records within plugins</h3>
+<p class="empty">&nbsp;</p>
+<p>Now, what about the other six digits?</p>
+<p class="empty">&nbsp;</p>
+<p>Those are used as addresses for entries (records) within plugins. The tree from the screenshot got 00517E, another tree might have 00517F, some NPC added by the same mod could have 077F20 and so on. These addresses within plugins are hexadecimal too, so the last address and highest amount of objects in one plugin would be FFFFFF, which is 16,777,215 in decimal. This means that a mod author could theoretically stuff over 16 million things (TREEs, NPCs, BOOKs, ACTIvators,...) into one single esp file. More than that isnt possible as we would be running out of addresses again but who needs that many objects within one plugin anyway.</p>
+<p class="empty">&nbsp;</p>
+<h3 class="header3" id="TheESLaddressformat">8.11.2 - The ESL address format</h3>
+<p class="empty">&nbsp;</p>
+<p>So, were maniacs who already added as many mods as possible to our game and already start to get Too many plugins errors from various tools and the game itself. But, of course, theres at least twenty more immersion mods out there that NEED to be added to our mod list. And then theres those 50 patches for all our mods we forgot to install earlier.</p>
+<p class="empty">&nbsp;</p>
+<p>In the past this would have been the point where we would have fired up the (undoubtedly cool) tool MergePlugins and trial-and-error our way through our modlist in order to combine as many mods as possible, just so we stay below the magical FF/255 mark. But now theres an alternative. Skyrim Special Edition does not only understand master files (those .ESM files from the main game and large mods) and regular ESP plugins (any other mod) that all count towards that 256 plugins limit but also ESL files (I believe the Creation Club mods come with these) and ESP files with the so called ESL flag. And while pure ESL files suck as theyre always loaded first and cant really be sorted, those ESP files with the ESL flags are gold and exactly what we need. They behave just like regular ESP plugins and even look the same from outside but theyre not loaded in a regular load order spot like [A4] or [0D] but theyre all squished into the [FE] spot, which now is a whole new address space by itself.</p>
+<p class="empty">&nbsp;</p>
+<p>[FE:0A8]</p>
+<p class="empty">&nbsp;</p>
+<pre>
+├─[FB] RandomMod1.esp
+├─[FC] RandomMod2.esp
+├─[FD] RandomMod3.esp
+├─[FE:000] RandomESLFlaggedMod1.esp
+├─[FE:001] RandomESLFlaggedMod2.esp
+├─[FE:002] RandomESLFlaggedMod3.esp
+│ [Other Files]
+├─[FE:0C3] RandomESLFlaggedMod196.esp
+├─[FE:0C4] RandomESLFlaggedMod197.esp
+│ [Other Files]
+├─[FE:FA9] RandomESLFlaggedMod4009.esp
+├─[FE:FAA] RandomESLFlaggedMod4010.esp
+├─[FE:FAB] RandomESLFlaggedMod4011.esp
+</pre>
+<p class="empty">&nbsp;</p>
+<p>This is what the load order address of an ESL flagged plugin looks like. And this is what a bunch of ESL flagged plugins in your load order would look like:</p>
+<p class="empty">&nbsp;</p>
+<p>Wait, what? Mod 4011?</p>
+<p class="empty">&nbsp;</p>
+<p>As [FE:FFF] would be the highest address for an ESL flagged plugin and as the FE-part always stays the same as thats the position of the whole bunch of ESL flagged plugins in the regular load order, FFF is the maximum amount of plugins we can have in this address space. And thats a whopping 4096 of them!</p>
+<p class="empty">&nbsp;</p>
+<p class="empty">&nbsp;</p>
+<p>This effectively means we're not limited to 256 plugins anymore but to 254 (as the FE-slot is blocked) plus 4096 = 4351 plugins!</p>
+<p class="empty">&nbsp;</p>
+<h3 class="header3" id="TheDownside">8.11.3 - The Downside</h3>
+<p class="empty">&nbsp;</p>
+<p>As you might have guessed there has to be a downside. And of course you are right. As the address of the plugin itself in the load order now takes up five instead of just two digits, theres less digits left to address stuff within the plugin. Instead of six digits (000000-FFFFFF = over 16 million) for records we can use for NPCs, TREEs and other things inside our plugin we only got three digits (000-FFF = 4096) left. This gets clear when we compare them side to side:</p>
+<p class="empty">&nbsp;</p>
+<pre>
+Regular:  [0D]  [000012]
+ESL-flag: [FE:00D] [012]
+</pre>
+<p class="empty">&nbsp;</p>
+<p>At a first glance this doesnt seam too bad as 4096 is still a large amount of records within a plugin. But theres a few problems that might be in the way. Let me demonstrate with three examples:</p>
+<p class="empty">&nbsp;</p>
+<h4 class="header4" id="Example1">8.11.3.1 - Example 1</h4>
+<p class="empty">&nbsp;</p>
+<p>The hypothetical plugin in position [A4] we want to flag as ESL has three records 000001, 000002 and 000003.</p>
+<p class="empty">&nbsp;</p>
+<pre>
+[A4] [000001]
+[A4] [000002]
+[A4] [000003]
+</pre>
+<p class="empty">&nbsp;</p>
+<p>A plugin like that can be easily flagged as ESL as theres less than 4096 records and the records would still fit well into the ESL address space. There would be no issues and apart from setting the flag nothing else would have to be done. The result would look like this:</p>
+<p class="empty">&nbsp;</p>
+<pre>
+[FE:001] [001]
+[FE:001] [002]
+[FE:001] [003]
+</pre>
+<p class="empty">&nbsp;</p>
+<p>As the addresses within the plugin would not change, any patches or addons with that plugin as a master would still find the records inside theyre trying to reference to. In case you're wondering if the game notices the missing zeros, it does not. Leading zeros are ignored. You can test this by setting the weather via the ingame console with <code>fw 0010a243</code> and with <code>fw 10a243</code>. The result will be the same.</p>
+<p class="empty">&nbsp;</p>
+<h4 class="header4" id="Example2">8.11.3.2 - Example 2</h4>
+<p class="empty">&nbsp;</p>
+<p>The hypothetical plugin in position [A4] we want to flag as ESL got three records: 000001, 000002 and 0FA322</p>
+<p class="empty">&nbsp;</p>
+<pre>
+[A4] [000001]
+[A4] [000002]
+[A4] [0FA322]
+</pre>
+<p class="empty">&nbsp;</p>
+<p>A plugin like that cannot be flagged as ESL just like that. The records 000001 and 000002 would be fine just like in Example 1 but 0FA322 does not fit into the three digits address space of an ESL flagged ESP. The consequence of this: we need to compact the plugin to be able to fit in all its records. Theres a feature in xEdit that does just that. If we did that, the following would happen:</p>
+<p class="empty">&nbsp;</p>
+<pre>
+[A4] [000001] -&gt; no further action
+[A4] [000002] -&gt; no further action
+[A4] [0FA322] -&gt; changed to [A4] [000003]
+</pre>
+<p class="empty">&nbsp;</p>
+<p>Again resulting in</p>
+<p class="empty">&nbsp;</p>
+<pre>
+[FE:001] [001]
+[FE:001] [002]
+[FE:001] [003]
+</pre>
+<p class="empty">&nbsp;</p>
+<p>Now all records fit into the three digits and the ESL flag would be set. You can do this to small patches and other uncomplicated mods that got no patches or addons themselves. Once such a compacted plugin got another plugin thats referencing to it we got a problem tho. Something in the other plugin could try to reference to 0FA322 but it would not find anything at that address anymore as that record was changed to 003. This could lead to various annoyances or even crashes. In the end, we would have to manually edit the patch/addon and change all entries of 0FA322 inside them to 003. Which would be really annoying as even small plugins not only got 3 records but dozens or hundreds of them. Still, if we know exactly that a plugin got no patches or addons that rely on it, compacting is still a viable way.</p>
+<p class="empty">&nbsp;</p>
+<h3 class="header3" id="Example3">8.11.4 - Example 3</h3>
+<p class="empty">&nbsp;</p>
+<p>The hypothetical plugin in position [A4] we want to flag as ESL got more than 4096 records. This is usually the case for quest mods, large player homes and compilations like Immersive Armors. As our address space within an ESL flagged plugin is limited to 4096 entries we simply cannot set the flag or compact the plugin. Bad luck.</p>
+<p class="empty">&nbsp;</p>
+<h4 id="ESLifyingplugins">8.11.4.1 - ESLifying plugins</h4>
+<p class="empty">&nbsp;</p>
+<p>Now, what do we have to do to make use of ESL flags? First, we should ESLify all plugins that can be flagged without any further changes. For this we will need xEdit, just get the latest version from <a  href="https://github.com/TES5Edit/TES5Edit/releases">github</a>. With xEdit there is an easy way to scan your load order for plugins that are small enough and dont need to be changed in order to get the ESL flag.</p>
+<p class="empty">&nbsp;</p>
+<h4 id="ESLifyingPluginstheeasyway">8.11.4.2 - ESLifying Plugins the easy way</h4>
+<p class="empty">&nbsp;</p>
+<p>This can be done for all plugins that are like in our Example 1 above. Youll need to start xEdit with the arguments <code>-PseudoESL</code> and <code>-autoload</code>. PseudoESL will display all flaggable plugins, no matter if they already got the flag or not, with [FE:XXX] load order numbers. This will be useful in a minute. Autoload skips the initial dialogue where xEdit asks you which plugins to load.</p>
+<p class="empty">&nbsp;</p>
+<p>In Mod Organizer 2 you would go to the executables menu (the gear icon top left) and add SSEEdit.exe as a new executable like displayed on the left hand side. In Vortex it would look like on the right side.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/eslifypseudoesl73k9u.png" alt="eslifypseudoesl73k9u" %}</p>
+<p class="empty">&nbsp;</p>
+<p>Now start xEdit with those arguments. For MO2 this works by starting QuickESLCheck from the dropdown menu, in the Vortex example it would be named SSEEdit-eslcheck but its really up to you how you name the link. After loading has finished were presented with our load order. We will now see three types of plugins:</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/eslifyxeditresult53kxt.png" alt="eslifyxeditresult53kxt" %}</p>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; Plugins like CFTO-Lanterns.esp arent interesting to us as -PseudoESL didnt give them a [FE:XXX] load order number. This means they cant be just flagged as ESL.</p>
+<p class="list-1">&bull;&nbsp; Plugins like JKs Windhelm Relighting Skyrim Patch.esp got an [FE:XXX] load order number but they also got the &lt;ESL&gt; tag. This means theyre already flagged as ESL.</p>
+<p class="list-1">&bull;&nbsp; Plugins like Higher Bounty Rewards are what we need. They got the [FE:XXX] load order number thanks to -PseudoESL but dont have the actual ESL flag yet.</p>
+<p class="empty">&nbsp;</p>
+<p>We will change that. Click on Higher Bounty Rewards.esp (or whatever plugins like that show up for you). On the right side of xEdit you will now see some properties of that plugin like the Form Version, Version and Author. What were looking for is the Record Flag line. The one of Higher Bounty Rewards is currently empty. Right click the empty space and choose Edit. xEdit will present you with a couple of record flags you can set. Of course we will choose the ESL flag and hit OK.</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/eslifysetesllvkoi.png" alt="eslifysetesllvkoi" %}</p>
+<p class="empty">&nbsp;</p>
+<p>You can now do this to all plugins that got [FE:XXX] load order numbers but no &lt;ESL&gt; flag yet. If you got a large mod list already type [FE into the search bar at the bottom to hide all the regular non flaggable plugins like [86] CFTO-Lanterns.esp, then you will just need to look for lines without the &lt;ESL&gt; flag.</p>
+<p class="empty">&nbsp;</p>
+<p>Once you are done simply close xEdit. It will show a window with all plugins you have changed. Make sure all of them are checked and hit OK.</p>
+<p class="empty">&nbsp;</p>
+<p>Thats really it, theres nothing more to it.</p>
+<p class="empty">&nbsp;</p>
+<p>I re-do this check once in a while after adding a bunch of new mods to keep my modlist as ESLified as possible.</p>
+<p class="empty">&nbsp;</p>
+<h3 class="header3" id="Compactingplugins">8.11.5 - Compacting plugins</h3>
+<p class="empty">&nbsp;</p>
+<p class="note">Since the functionality to compact FormIDs is available from xEdit the process will be shown. However, it is not recommended for end users that are unaware of the dangers of compacting FormIDs. For more information see <a  href="#ImportantdangerswhencompactingFormIDs">Important dangers when compacting FormIDs</a></p>
+<p class="empty">&nbsp;</p>
+<p>Once you have flagged all possible plugins with the easy method above you should be fine for a while. At some point if you run into Skyrims plugin limit again, what you can do is a bit more dangerous so really think about the plugins you do this to. Again review <a  href="#ImportantdangerswhencompactingFormIDs">Important dangers when compacting FormIDs</a>.</p>
+<p class="empty">&nbsp;</p>
+<p>Start xEdit the regular way, right click any plugin and choose Compact FormIDs for ESL. Now three things can happen:</p>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; If you try to do this to a plugin that already got the ESL flag the option wont even show up</p>
+<p class="list-1">&bull;&nbsp; If you try to do this to a plugin too large to be flagged as ESL youll get an error saying The file contains too many new records for this operation and nothing happens</p>
+<p class="list-1">&bull;&nbsp; If you try to do this to a plugin with few enough records you will get a warning</p>
+<p class="empty">&nbsp;</p>
+<p>{% include image.html file="img/eslifywarninghokob.png" alt="eslifywarninghokob" %}</p>
+<p class="empty">&nbsp;</p>
+<p>If you get this you have found a plugin that can be compacted. The first line just tells you how many records will be changed. However, you should pay close attention to the second line of that warning. This tells you what kind of records will be changed and thats really important as some kinds of records will somehow break if you try to compact them. According to ElminsterAU you should really avoid compacting plugins when one of the following record types would be touched:</p>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; INFO</p>
+<p class="list-1">&bull;&nbsp; NPC_</p>
+<p class="empty">&nbsp;</p>
+<p>If that is not the case for your plugin make sure the file you are compacting is not a master of other modules. Because after compacting the plugin the FormIDs will have changed and other modules that depend on this file as a master will not find the records they are looking for anymore.</p>
+<p class="empty">&nbsp;</p>
+<p>If you are sure about everything hit yes. xEdit will compact the plugin and lists all changes in the right side of the window, looking like this:</p>
+<p class="empty">&nbsp;</p>
+<pre>
+[00:02] Changing FormID [3300B865] in file "JKs Whiterun exterior.esp" to [33000CA3]
+[00:02] Changing FormID [3300B867] in file "JKs Whiterun exterior.esp" to [33000CA4]
+[00:02] Changing FormID [3300B868] in file "JKs Whiterun exterior.esp" to [33000CA5]
+</pre>
+<p class="empty">&nbsp;</p>
+<p>Now, if you are <B>really thorough</B> you could write down <B>all</B> the changes that have been made. Then you could compact plugins that are reference the module as a master. You could also check all patches for the plugin and update the FormIDs like 00B868 in the above example to what they were changed to during the compacting process. If you are diligent and knowledgeable enough you could compact any plugin that qualifies and save even more space in your load order.</p>
+<p class="empty">&nbsp;</p>
+<p class="note">Every update to the compacted plugin or plugins related to it will break everything for your current save game.</p>
+<p class="empty">&nbsp;</p>
+<h2 class="header2" id="Credits">8.12 - Credits</h2>
+<p class="list-1">&bull;&nbsp; <B><I>elwaps</I></B>, for creating the additional information about .esl files</p>
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="7-mod-cleaning-and-error-checking.html" class="drkbtn">&laquo; Previous Page</a>
+    <a  href="9-mod-utilities.html" class="drkbtn">Next Page &raquo;</a>
+</div>
