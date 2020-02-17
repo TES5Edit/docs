@@ -2,57 +2,95 @@
 layout: default
 title: Tome of xEdit
 ---
+<h1 class="grhead1">Main Table Of Contents</h1>
+<div id="tableOfContents" class="grid-toc">
+    <div class="toc1">
+        <h2 class="grhead2"><a href="index.html">1. Introduction</a></h2>
+        <h2 class="grhead2"><a href="2-overview.html">2. Overview</a></h2>
+        <h2 class="grhead2"><a href="3-basicuse.html">3. xEdit Basic Use</a></h2>
+        <h2 class="grhead2"><a href="4-modgroups.html">4. ModGroups</a></h2>
+        <h2 class="grhead2"><a href="5-conflict-detection-and-resolution.html">5. Conflict Detection and Resolution</a></h2>
+        <h2 class="grhead2"><a href="6-themethod.html">6. The Method</a></h2>
+        <h2 class="grhead2"><a href="7-mod-cleaning-and-error-checking.html">7. Mod Cleaning and Error Checking</a></h2>
+        <h2 class="grhead2"><a href="8-managing-mod-files.html">8. Managing Mod Files</a></h2>
+        <h2 class="grhead2"><a href="9-mod-utilities.html">9. Mod Utilities</a></h2>
+    </div>
+    <div class="toc2">
+        <h2 class="grhead2"><a href="10-fo3edit-faq.html">10. FO3Edit FAQ</a></h2>
+        <h2 class="grhead2"><a href="11-appendix.html">11. Appendix</a></h2>
+        <h2 class="grhead2"><a href="12-cheat-sheets-and-quick-reference-charts.html">12. Cheat Sheets and Quick Reference Charts</a></h2>
+        <h2 class="grhead2"><a href="13-Scripting-Functions.html">13. Scripting Functions</a></h2>
+        <h2 class="grhead2"><a href="14-Scripting-Resources.html">14. Scripting Resources</a></h2>
+        <h2 class="grhead2"><a href="15-tutorials.html">15. Tutorials</a></h2>
+        <h2 class="grhead2"><a href="16-xLODGen.html">16. xLODGen</a></h2>
+        <h2 class="grhead2"><a href="17-DynDoLod.html">17. DynDoLod</a></h2>
+        <h2 class="grhead2"><a href="18-whatsnew.html">18. xEdit What's New and Version Info</a></h2>
+    </div>
+</div>
 <h1>{{ page.title }}</h1>
-<div id="tableOfContents"></div>
-<h2>Main Table of Contents</h2>
-<ul>
-    <li><a href="index.html">1. Introduction</a></li>
-    <li><a href="2-overview.html">2. Overview</a></li>
-    <li><a href="3-modgroups.html">3. ModGroups</a></li>
-    <li><a href="4-conflict-detection-and-resolution.html">4. Conflict Detection and Resolution</a></li>
-    <li><a href="5-mod-cleaning-and-error-checking.html">5. Mod Cleaning and Error Checking</a></li>
-    <li><a href="6-managing-mod-files.html">6. Managing Mod Files</a></li>
-    <li><a href="7-mod-utilities.html">7. Mod Utilities</a></li>
-    <li><a href="8-fo3edit-faq.html">8. FO3Edit FAQ</a></li>
-    <li><a href="9-appendix.html">9. Appendix</a></li>
-    <li><a href="10-cheat-sheets-and-quick-reference-charts.html">10. Cheat Sheets and Quick Reference Charts</a></li>
-    <li><a href="11-Scripting-Functions.html">11. Scripting Functions</a></li>
-    <li><a href="12-Scripting-Resources.html">12. Scripting Resources</a></li>
-    <li><a href="13-tutorials.html">13. Tutorials</a></li>
-    <li><a href="whatsnew.html">14. xEdit What's New and Version Info</a></li>
-</ul>
 <h2 id="TomeofxEditbyMiax">Tome of xEdit - by Miax</h2>
 <p><font class="green">A Comprehensive Guide to using ElminsterAU's xEdit. Original author's Miax (Kristopher Kortright) and JustinOther. HTML conversion by EpFwip. Maintained by Sharlikran. Additional updates to this site will be made using Wrye Text.</font></p>
-<p class="empty">&nbsp;</p>
 <h2 id="Contents">Contents...</h2>
-<p class="list-1">&bull;&nbsp; <a href="#1Introduction">1. Introduction</a></p>
-<p class="list-2">&bull;&nbsp; <a href="#11AboutThisDocument">1.1 About This Document</a></p>
-<p class="list-1">&bull;&nbsp; <a href="#2Credits">2. Credits</a></p>
-<p class="empty">&nbsp;</p>
-<h2 id="1Introduction">1. Introduction</h2>
-<p class="empty">&nbsp;</p>
-<p>This document is intended as a training manual for the xEdit tool created by ElminsterAU. This manual contains a tour of xEdit, a lengthy FAQ/Navigator and several Chapters of detailed instructions on how you can utilize the varied functions of xEdit successfully to improve your gaming experience.</p>
+<p class="list-1">&bull;&nbsp; <a href="#Introduction">1.1 Introduction</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#AboutThisDocument">1.2 About This Document</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#Resourcesforusersandmodauthors">1.3 Resources for users and mod authors</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#NexusModTroubleshooting">1.3.1 Nexus Mod Troubleshooting</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#NexusModdersForums">1.3.2 Nexus Modders Forums</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#BethesdaForums">1.3.3 Bethesda Forums</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#BethesdaWikis">1.3.4 Bethesda Wikis</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#UnofficialElderScrollsPages">1.3.5 Unofficial Elder Scrolls Pages</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#Credits">1.4 Credits</a></p>
+<h2 id="Introduction">1.1 - Introduction</h2>
+<p>This document is intended as a manual for the xEdit tool created by ElminsterAU. This manual contains a tour of xEdit, a lengthy FAQ/Navigator and several Chapters of detailed instructions on how you can utilize the varied functions of xEdit successfully to improve your gaming experience.</p>
 <p class="empty">&nbsp;</p>
 <p>The questions answered and processes described herein are intended to help both mod-users and mod-authors to improve the quality, standardization and conformity of Bethesda mods. If you utilize more than 25 mods in your game or if you write mods you can use xEdit to resolve potential conflicts, clean mods, and smoothen the loading process. With thousands of mods already created and thousands more on the way, it has become essential to standardize mod delivery and reduce conflicts where-ever possible.</p>
-<p class="empty">&nbsp;</p>
-<div id="s_1-1"></div>
-<h3 id="11AboutThisDocument">1.1 About This Document</h3>
-<p class="empty">&nbsp;</p>
+<h2 id="AboutThisDocument">1.2 - About This Document</h2>
 <p>This document presumes a basic understanding of what "Mods" are, and how to install them on your system. This manual is not a guide on how to build mods, and the use of xEdit for extensive mod changes is discouraged for most users "that's" what the GECK was built for.</p>
 <p class="empty">&nbsp;</p>
 <p>This document is a work in progress. ElminsterAU is also a prodigious coder that continues to make updates to improve the quality of xEdit. Since October of 2012 Zilav, Hlp, and Sharlikran have maintained and updated xEdit. This documentation is being updated to include new features and UI changes.</p>
 <p class="empty">&nbsp;</p>
-<p>This site will be replacing the <a  href="https://www.creationkit.com/index.php?title=TES5Edit_Documentation">Bethesda Wiki</a> page since too many security measures (captcha) are in place that make editing the page cumbersome. Most of the <a  href="https://www.creationkit.com/index.php?title=Category:TES5Edit">TES5Edit Wiki</a> information from the CK Wiki is repeated in these docs. Once I am completely finished, I will add more links to direct people to these pages instead.</p>
+<p>This site will be replacing the <a  href="https://www.creationkit.com/index.php?title=TES5Edit_Documentation" >Bethesda Wiki</a> page since too many security measures (captcha) are in place that make editing the page cumbersome. Most of the <a  href="https://www.creationkit.com/index.php?title=Category:TES5Edit" >TES5Edit Wiki</a> information from the CK Wiki is repeated in these docs. Once I am completely finished, I will add more links to direct people to these pages instead.</p>
 <p class="empty">&nbsp;</p>
 <p>All feedback and comments about this guide should be directed to Sharlikran on the xEdit Discord:</p>
 <p class="empty">&nbsp;</p>
-<p class="list-1">&bull;&nbsp; <a  href="https://discord.gg/5t8RnNQ">xEdit Discord</a></p>
-<p class="list-1">&bull;&nbsp; <a  href="https://www.nexusmods.com/users/4147439">Sharlikran</a></p>
-<p class="empty">&nbsp;</p>
-<h2 id="2Credits">2. Credits</h2>
-<p class="list-1">&bull;&nbsp; Original authors of the <a  href="https://www.nexusmods.com/fallout3/mods/8629">FO3Edit Training Manual</a> and the <a  href="https://www.nexusmods.com/newvegas/mods/38413">FNVEdit Training Manual</a> are Miax (Kristopher Kortright) and JustinOther.</p>
+<p class="list-1">&bull;&nbsp; <a  href="https://discord.gg/5t8RnNQ" >xEdit Discord</a></p>
+<p class="list-1">&bull;&nbsp; <a  href="https://www.nexusmods.com/users/4147439" >Sharlikran</a></p>
+<h2 id="Resourcesforusersandmodauthors">1.3 - Resources for users and mod authors</h2>
+<p>The following links to self help resources are provided because it would not be possible to recreate the extensive amount of information for every supported game that is available from all these resources. The Tome of xEdit should be used as a resource on how to use xEdit. For understanding record formats and how the values in records affect the game you should use the following resources.</p>
+<h3 id="NexusModTroubleshooting">1.3.1 - Nexus Mod Troubleshooting</h3>
+<p><a  href="https://forums.nexusmods.com/index.php?/forum/288-fallout-3-mod-troubleshooting/" >Fallout 3 Mod Troubleshooting</a></p>
+<p><a  href="https://forums.nexusmods.com/index.php?/forum/355-new-vegas-mod-troubleshooting/" >New Vegas Mod Troubleshooting</a></p>
+<p><a  href="https://forums.nexusmods.com/index.php?/forum/3510-fallout-4-mod-troubleshooting/" >Fallout 4 Mod Troubleshooting</a></p>
+<p><a  href="https://forums.nexusmods.com/index.php?/forum/180-oblivion-mod-troubleshooting/" >Oblivion Mod Troubleshooting</a></p>
+<p><a  href="http://forums.nexusmods.com/index.php?/forum/421-skyrim-mod-troubleshooting/" >Skyrim Mod Troubleshooting</a></p>
+<p><a  href="https://forums.nexusmods.com/index.php?/forum/4060-skyrim-special-edition-mod-troubleshooting/" >Skyrim Special Edition Mod Troubleshooting</a></p>
+<h3 id="NexusModdersForums">1.3.2 - Nexus Modders Forums</h3>
+<p><a  href="https://forums.nexusmods.com/index.php?/forum/3960-fallout-3-geck-and-modders/" >Fallout 3 GECK and Modders</a></p>
+<p><a  href="https://forums.nexusmods.com/index.php?/forum/3960-fallout-3-geck-and-modders/" >New Vegas GECK and Modders</a></p>
+<p><a  href="https://forums.nexusmods.com/index.php?/forum/3935-fallout-4-creation-kit-and-modders/" >Fallout 4 Creation Kit and Modders</a></p>
+<p><a  href="https://forums.nexusmods.com/index.php?/forum/3945-oblivion-construction-set-and-modders/" >Oblivion Construction Set and Modders</a></p>
+<p><a  href="https://forums.nexusmods.com/index.php?/forum/3930-skyrim-creation-kit-and-modders/" >Skyrim Creation Kit and Modders</a></p>
+<p><a  href="https://forums.nexusmods.com/index.php?/forum/4070-skyrim-special-edition-creation-kit-and-modders/" >Skyrim Special Edition Creation Kit and Modders</a></p>
+<h3 id="BethesdaForums">1.3.3 - Bethesda Forums</h3>
+<p><a  href="https://bethesda.net/community/category/72/g-e-c-k-fallout-3" >Bethesda's G.E.C.K.(Fallout 3) Thread</a></p>
+<p><a  href="https://bethesda.net/community/category/76/g-e-c-k-fallout-new-vegas" >Bethesda's G.E.C.K.(Fallout: New Vegas) Thread</a></p>
+<p><a  href="https://bethesda.net/community/category/61/fallout-4" >Bethesda's Fallout 4 Creation Kit Thread</a></p>
+<p><a  href="https://bethesda.net/community/category/98/tes-construction-kit-oblivion" >Bethesda's TES Construction Kit (Oblivion) Thread</a></p>
+<p><a  href="https://bethesda.net/community/category/132/skyrim-original" >Bethesda's Skyrim (Original) Creation Kit Thread</a></p>
+<p><a  href="https://bethesda.net/community/category/88/skyrim-se" >Bethesda's Skyrim SE Creation Kit Thread</a></p>
+<h3 id="BethesdaWikis">1.3.4 - Bethesda Wikis</h3>
+<p><a  href="http://geck.bethsoft.com/index.php?title=Main_Page" >Garden of Eden Creation Kit</a></p>
+<p><a  href="https://www.creationkit.com/fallout4/index.php?title=Main_Page" >Fallout 4 Creation Kit</a></p>
+<p><a  href="https://www.creationkit.com/index.php?title=Main_Page" >Skyrim SE Creation Kit</a></p>
+<p><a  href="https://cs.elderscrolls.com/index.php?title=The_Elder_Scrolls_Construction_Set" >Oblivion Creation Set</a></p>
+<h3 id="UnofficialElderScrollsPages">1.3.5 - Unofficial Elder Scrolls Pages</h3>
+<p><a  href="https://en.uesp.net/wiki/Tes5Mod:Mod_File_Format" >Skyrim Mod File Format</a></p>
+<h2 id="Credits">1.4 - Credits</h2>
+<p class="list-1">&bull;&nbsp; Original authors of the <a  href="https://www.nexusmods.com/fallout3/mods/8629" >FO3Edit Training Manual</a> and the <a  href="https://www.nexusmods.com/newvegas/mods/38413" >FNVEdit Training Manual</a> are Miax (Kristopher Kortright) and JustinOther.</p>
 <p class="list-1">&bull;&nbsp; EpFwip for making the original HTML conversion of the FO3Edit Training Manual.</p>
-<p class="list-1">&bull;&nbsp; JustinOther, Gurgate, MadCat221, Plplecuyer, Jannifer, Computermaster, Proton, and WrinklyNinja for their revisions to the <a  href="https://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit">TES5Edit Cleaning Guide</a>. (CK Wiki Link)</p>
-<p class="list-1">&bull;&nbsp; DavidJCobb, Robboten, J.C., Hishutup, for their contributins to the <a  href="https://www.creationkit.com/index.php?title=TES5Edit_Scripting_Functions">TES5Edit Scripting Functions</a>. (CK Wiki Link)</p>
+<p class="list-1">&bull;&nbsp; JustinOther, Gurgate, MadCat221, Plplecuyer, Jannifer, Computermaster, Proton, and WrinklyNinja for their revisions to the <a  href="https://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit" >TES5Edit Cleaning Guide</a>. (CK Wiki Link)</p>
+<p class="list-1">&bull;&nbsp; DavidJCobb, Robboten, J.C., Hishutup, for their contributins to the <a  href="https://www.creationkit.com/index.php?title=TES5Edit_Scripting_Functions" >TES5Edit Scripting Functions</a>. (CK Wiki Link)</p>
 <p class="empty">&nbsp;</p>
-<p><a href="2-overview.html" class="drkbtn">Next Page &raquo;</a></p>
+<div>
+    <a  href="2-overview.html"  class="drkbtn">Next Page &raquo;</a>
+</div>

@@ -1,19 +1,13 @@
 {{PAGETITLE="Tome of xEdit"}}
 ## Tome of xEdit - by Miax
 <font class="green">A Comprehensive Guide to using ElminsterAU's xEdit. Original author's Miax (Kristopher Kortright) and JustinOther. HTML conversion by EpFwip. Maintained by Sharlikran. Additional updates to this site will be made using Wrye Text.</font>
-
 ## Contents...
-{{CONTENTS=2}}
-
-## 1. Introduction
-
-This document is intended as a training manual for the xEdit tool created by ElminsterAU. This manual contains a tour of xEdit, a lengthy FAQ/Navigator and several Chapters of detailed instructions on how you can utilize the varied functions of xEdit successfully to improve your gaming experience.
+{{CONTENTS=3}}
+## Introduction
+This document is intended as a manual for the xEdit tool created by ElminsterAU. This manual contains a tour of xEdit, a lengthy FAQ/Navigator and several Chapters of detailed instructions on how you can utilize the varied functions of xEdit successfully to improve your gaming experience.
 
 The questions answered and processes described herein are intended to help both mod-users and mod-authors to improve the quality, standardization and conformity of Bethesda mods. If you utilize more than 25 mods in your game or if you write mods you can use xEdit to resolve potential conflicts, clean mods, and smoothen the loading process. With thousands of mods already created and thousands more on the way, it has become essential to standardize mod delivery and reduce conflicts where-ever possible.
-
-{{nav:s_1-1}}
-### 1.1 About This Document
-
+## About This Document
 This document presumes a basic understanding of what "Mods" are, and how to install them on your system. This manual is not a guide on how to build mods, and the use of xEdit for extensive mod changes is discouraged for most users "that's" what the GECK was built for.
 
 This document is a work in progress. ElminsterAU is also a prodigious coder that continues to make updates to improve the quality of xEdit. Since October of 2012 Zilav, Hlp, and Sharlikran have maintained and updated xEdit. This documentation is being updated to include new features and UI changes.
@@ -24,11 +18,42 @@ All feedback and comments about this guide should be directed to Sharlikran on t
 
 * [[https://discord.gg/5t8RnNQ | xEdit Discord]]
 * [[https://www.nexusmods.com/users/4147439 | Sharlikran]]
-
-## 2. Credits
+## Resources for users and mod authors
+The following links to self help resources are provided because it would not be possible to recreate the extensive amount of information for every supported game that is available from all these resources. The Tome of xEdit should be used as a resource on how to use xEdit. For understanding record formats and how the values in records affect the game you should use the following resources.
+### Nexus Mod Troubleshooting
+[[https://forums.nexusmods.com/index.php?/forum/288-fallout-3-mod-troubleshooting/ | Fallout 3 Mod Troubleshooting]]
+[[https://forums.nexusmods.com/index.php?/forum/355-new-vegas-mod-troubleshooting/ | New Vegas Mod Troubleshooting]]
+[[https://forums.nexusmods.com/index.php?/forum/3510-fallout-4-mod-troubleshooting/ | Fallout 4 Mod Troubleshooting]]
+[[https://forums.nexusmods.com/index.php?/forum/180-oblivion-mod-troubleshooting/ | Oblivion Mod Troubleshooting]]
+[[http://forums.nexusmods.com/index.php?/forum/421-skyrim-mod-troubleshooting/ | Skyrim Mod Troubleshooting]]
+[[https://forums.nexusmods.com/index.php?/forum/4060-skyrim-special-edition-mod-troubleshooting/ | Skyrim Special Edition Mod Troubleshooting]]
+### Nexus Modders Forums
+[[https://forums.nexusmods.com/index.php?/forum/3960-fallout-3-geck-and-modders/ | Fallout 3 GECK and Modders]]
+[[https://forums.nexusmods.com/index.php?/forum/3960-fallout-3-geck-and-modders/ | New Vegas GECK and Modders]]
+[[https://forums.nexusmods.com/index.php?/forum/3935-fallout-4-creation-kit-and-modders/ | Fallout 4 Creation Kit and Modders]]
+[[https://forums.nexusmods.com/index.php?/forum/3945-oblivion-construction-set-and-modders/ | Oblivion Construction Set and Modders]]
+[[https://forums.nexusmods.com/index.php?/forum/3930-skyrim-creation-kit-and-modders/ | Skyrim Creation Kit and Modders]]
+[[https://forums.nexusmods.com/index.php?/forum/4070-skyrim-special-edition-creation-kit-and-modders/ | Skyrim Special Edition Creation Kit and Modders]]
+### Bethesda Forums
+[[https://bethesda.net/community/category/72/g-e-c-k-fallout-3 | Bethesda's G.E.C.K.(Fallout 3) Thread]]
+[[https://bethesda.net/community/category/76/g-e-c-k-fallout-new-vegas | Bethesda's G.E.C.K.(Fallout: New Vegas) Thread]]
+[[https://bethesda.net/community/category/61/fallout-4 | Bethesda's Fallout 4 Creation Kit Thread]]
+[[https://bethesda.net/community/category/98/tes-construction-kit-oblivion | Bethesda's TES Construction Kit (Oblivion) Thread]]
+[[https://bethesda.net/community/category/132/skyrim-original | Bethesda's Skyrim (Original) Creation Kit Thread]]
+[[https://bethesda.net/community/category/88/skyrim-se | Bethesda's Skyrim SE Creation Kit Thread]]
+### Bethesda Wikis
+[[http://geck.bethsoft.com/index.php?title=Main_Page | Garden of Eden Creation Kit]]
+[[https://www.creationkit.com/fallout4/index.php?title=Main_Page | Fallout 4 Creation Kit]]
+[[https://www.creationkit.com/index.php?title=Main_Page | Skyrim SE Creation Kit]]
+[[https://cs.elderscrolls.com/index.php?title=The_Elder_Scrolls_Construction_Set | Oblivion Creation Set]]
+### Unofficial Elder Scrolls Pages
+[[https://en.uesp.net/wiki/Tes5Mod:Mod_File_Format | Skyrim Mod File Format]]
+## Credits
 * Original authors of the [[https://www.nexusmods.com/fallout3/mods/8629 | FO3Edit Training Manual]] and the [[https://www.nexusmods.com/newvegas/mods/38413 | FNVEdit Training Manual]] are Miax (Kristopher Kortright) and JustinOther.
 * EpFwip for making the original HTML conversion of the FO3Edit Training Manual.
 * JustinOther, Gurgate, MadCat221, Plplecuyer, Jannifer, Computermaster, Proton, and WrinklyNinja for their revisions to the [[https://www.creationkit.com/index.php?title=TES5Edit_Cleaning_Guide_-_TES5Edit | TES5Edit Cleaning Guide]]. (CK Wiki Link)
 * DavidJCobb, Robboten, J.C., Hishutup, for their contributins to the [[https://www.creationkit.com/index.php?title=TES5Edit_Scripting_Functions | TES5Edit Scripting Functions]]. (CK Wiki Link)
 
-<a href="2-overview.html" class="drkbtn">Next Page &raquo;</a>
+{{nbb}}
+    [[2-overview.html | Next Page &raquo;]]
+{{nbe}}
