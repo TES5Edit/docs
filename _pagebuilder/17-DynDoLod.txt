@@ -1,0 +1,150 @@
+{{PAGETITLE="DynDoLod"}}
+## Contents...
+{{CONTENTS=6}}
+== Page Under Construction
+
+{{image:underconstruction.jpg | underconstruction}}
+
+{{note:Official support for [[https://forum.step-project.com/forum/101-shesons-dyndolod-support/ | Shesons DynDoLod]] is on the STEP Forums}}
+
+== Installation
+
+Watch [[https://www.youtube.com/watch?v=1_5MWqeHIzw&t=809&vq=hd1080 | DynDOLOD tutorial]] video for installation. Please consider supporting GamerPoets through [[http://goo.gl/oTXR6P | PayPal]] or [[http://goo.gl/gF9Scn | Patreon]] if you find the tutorial video useful.
+
+Install SKSE according to its documentations
+
+Install the Core Files from DynDOLOD Resources, which contain the folders 'interface', 'meshes', 'textures' and 'scripts' into Skyrims 'Data' folder. Typically overwrite any files or refer to the manual Load/Overwrite Orders. Install other options from DynDOLOD Resources as desired.
+
+Either install [[https://forum.step-project.com/topic/13716-dyndolod-dll | DynDOLOD DLL]] (overwrite papyrus scripts of DynDOLOD Resources) or PapyrusUtil according to their documentations.
+
+Install Vanilla Skyrim LOD Billboards from [[https://www.nexusmods.com/skyrim/mods/62698/ | TES5LODGen]], [[https://www.nexusmods.com/skyrim/mods/75269/ |Indistinguishable Vanilla Tree Billboards]] or [[https://www.nexusmods.com/skyrimspecialedition/mods/11446/ | Indistinguishable Billboards for Skyrim Special Edition]] and let them overwrite any DynDOLOD Resources files. Then overwrite with any LOD Billboards for mods in the load order in the same order as their mods. For STEP users all billboards are included in [[https://www.nexusmods.com/skyrim/mods/11/ | STEP Texture Compilation]].
+
+Depending on the load order, install patches from DynDOLOD Patches. Go to the __Compatibility - Some Assembly Required__ in the file <code>DynDOLOD_Manual.html</code> provided with the DynDoLod download to see if a patch is required. Patches need to overwrite files of the mods they are patching.
+
+From the DynDOLOD Standalone archive copy the content of the 'DynDOLOD' folder, which contains the files TexGen.exe/TexGenx64.exe, TexGen.exe/TexGenx64.exe, DynDOLOD_QuickStart.html and the sub folders 'Docs' and 'Edit Scripts' with all their content into a new 'DynDOLOD' folder outside of special OS folders like 'Programs Files' or 'Program Files (x86)', the SteamApps or game folders and Mod Organizers virtual file structure. Do not mix with old versions or xEdit installation.
+
+If a mod provides its own version of certain LOD textures its probably best to not overwrite them. However there are some mods that contain the same old vanilla textures again for no apparent reason. Rule of thumb: if the mod is a texture replacer, use its LOD textures. If a mod doesn't visually change textures from vanilla, overwrite its LOD textures. If in doubt visually compare the LOD textures to make a judgment call with version resembles the full textures better.
+
+If a texture replacer is used, consider updating LOD textures with <code>TexGen.exe</code> for the load order before running DynDOLOD.exe. It is a simple tool that generates some LOD textures based on the full textures of the current load order. This process is limited and can not update pre-rendered object LOD textures.
+
+Once the DynDOLOD plugins were created, let LOOT sort its load order based on its masters.
+
+== Load/Overwrite Orders
+
+In order to generate LOD several different resources are used. Lets separate the several resources and what they result in:
+
+* Billboards source textures -> generated LOD meshes/generated LOD atlas textures
+* LOD source meshes -> generated LOD meshes
+* LOD source textures -> generated LOD atlas textures
+
+The same Billboard source textures included in DynDOLOD Resources may also be included in the Vanilla+DLC billboards from TES5LODGen. DynDOLOD/Vanilla+DLC billboards need to loaded before any other billboards. Billboards for other mods need to overwrite DynDOLOD/Vanilla+DLC billboards. Billboards for other mods need to overwrite other billboards for other mods in the same order as their "parent" mods overwrites the full model trees.
+
+DynDOLOD Resources LOD source meshes need to overwrite any vanilla LOD source meshes. New lands mods often add the same vanilla LOD source meshes again for no apparent reason, but DynDOLOD Resources LOD source meshes also need to overwrite them. This more or less happens automatically because the loose DynDOLOD Resources files overwrite any vanilla LOD source meshes in BSAs. If a mod makes specific note about its own LOD source mesh to overwrite DynDOLOD Resources they need to be loose files and the mods instructions should be followed.
+
+DynDOLOD Resources LOD source textures need to overwrite any vanilla LOD source textures. New lands mods often add the same vanilla LOD source textures again for no apparent reason, but DynDOLOD Resources LOD source textures also need to overwrite them. This more or less happens automatically because the loose DynDOLOD Resources files overwrite any vanilla LOD source textures in BSAs. HOWEVER, any texture replacer mod that ships with its own LOD source textures most likely should overwrite DynDOLOD Resources LOD source textures, even if the mod makes no mention of it. Again, those files need to be loose as well.
+
+Object LOD source textures created by TexGen.exe for the current load order need to overwrite DynDOLOD Resources LOD source textures and also any LOD source textures from mods.
+
+When updating, existing DynDOLOD plugins need to load after any other plugins of the same type (e.g. highest ESM, highest ESP) when generating, so that any mod that modifies worldspaces and cells can be added as master. There will be all kinds of messages if order is out of place.
+
+Generated LOD meshes and generated LOD atlas textures should always load after any other mod and not be overwritten by anything else.
+
+Typically Generated DynDOLOD.esp can be sorted by LOOT or manually if you know what you are doing :)
+
+When LOD is generated, records from the last plugin that is the winning overwrite are copied to create the DynDOLOD plugins. Sort and finialize the load order before generating the LOD patch. If later plugins were added or their load order changed, consider to generate LOD from scratch again. It is also possible to manually patch the records in the DynDOLOD plugins (or whatever plugin is the last to overwrite a record that requires the forwarding) or sort the plugin to load after the DynDOLOD plugins in case new LOD generation is not needed or wanted.
+
+DynDOLOD Resources also contains a few updated full models and textures to fix various minor issues. They should overwrite unofficial patches and Skyrim particle patch for ENB. Typically they should be overwritten by other mods - sometimes at the expense of LOD maybe not matching as well anymore. This is depends on user preference.
+
+== Glossary
+
+xEdit is an advanced tool for manipulating Bethesda plugins. The x stands for TES4/TES5/SSE/FNV/FO3/FO4. Throughout the documentation substitute the 'x' in xEdit by the current game mode.
+
+LODGen.pas is a script for xEdit to export data for LODGen.exe. Requires version LODGen.exe 0.6 or higher.
+
+LODGen.exe/LODGenx64.exe generates static object LOD files with the export data generated by LODGen.pas, xLODGen for Objects LOD or DynDOLOD.exe.
+
+xLODGen for Objects LOD is a modfied LODGen.pas built into xEdit so Object LOD generation is available from the xEdit right click 'Other / Generate LOD' menu.
+
+xLODGen for Trees LOD is built into xEdit so tree LOD generation is available from the xEdit right click 'Other / Generate LOD' menu.
+
+Billboards are a simple 2D texture representation of trees and an optional text file defining width, height and other parameters used for tree LOD.
+
+Internal Billboard is an automatically created model with 2 planes crossing at 90 degrees. It is used when LOD trees with billboards are done in static object LOD.
+
+External Billboards are NIFs that can be used as a template for LOD trees with billboards done in static object LOD.
+
+They are all part of the xEdit download.
+
+[[https://www.nexusmods.com/skyrim/mods/62698/ | TES5LODGen]] is a combined package of xEdit.exe and LODGen.exe. xEdit.exe is renamed to TES5LODGen.exe so the built-in LODGen menu for static object LOD and tree LOD generation shows automatically. There are similar versions for other games.
+
+[[https://www.nexusmods.com/skyrimspecialedition/mods/6642/ | SSELODGen]] is a combined package of xEdit.exe and LODGen.exe. xEdit.exe is renamed to SSELODGen.exe so the built-in LODGen menu for object and tree LOD generation shows automatically. There are similar versions for other games.
+
+[[https://forum.step-project.com/topic/13451-xlodgen-terrain-lod-beta-for-fnv-fo3-fo4-fo4vr-tes5-sse-tes5vr-enderal/ | xLODGen beta]] is the latest beta version where the current development and new features are tested, like terrain LOD. It can be renamed to a number of different game modes, including TES5LODGen and SSELODGen for example.
+
+DynDOLOD Standalone refers to DynDOLOD.exe and TexGen.exe including supporting files and the entire documentation.
+
+DynDOLOD Resources is a large number of updated and new LOD meshes and textures to be used with DynDOLOD.exe.
+
+DynDOLOD Patches contains patch for some mods.
+
+DynDOLOD DLL contains a SKSE plugin and papyrus scripts and is a drop-in replacement for PapyrusUtil. See DynDOLOD DLL Manual
+
+DynDOLOD.exe/DynDOLODx64.exe is a modified xEdit.exe that automatically starts DynDOLOD Worlds.pas.
+
+DynDOLOD Worlds.pas is a main script for DynDOLOD.exe/DynDOLODx64.exe that creates or updates DynDOLOD plugins and exports data for DynDOLOD Mod and also uses a modified LODGen.pas to export data and run LODGen.exe.
+
+DynDOLOD Mod is ESP/ESM plugins and a collection of papyrus scripts for either DynDOLOD DLL or PapyrusUtil and work with the data generated by DynDOLOD.exe.
+
+DynDOLOD.esp/DynDOLOD.esm plugins are created or updated by DynDOLOD.exe and used by DynDOLOD Mod.
+
+TexGen.exe/TexGenx64.exe is a renamed DynDOLOD.exe that automatically starts DynDOLOD TexGen.pas.
+
+DynDOLOD TexGen.pas is a script for TexGen.exe/TexGenx64.exe that generates a select list of object LOD textures based on load order. See <code>DynDOLOD_TexGen.html</code>
+
+PapyrusUtil is a SKSE plugin that adds functionality to papyrus scripting which allows to work quickly with a large amounts of data stored in external files using the json format.
+
+Static object LOD generated by LODGen.exe are objects that do not change and are not animated, like buildings or landscape features like mountains and rocks.
+
+Dynamic Object LOD generated by DynDOLOD are objects that change state based on quests like military tents, ships, animated objects like waterfalls or fires or glow LOD windows that reacts to weather/sunlight.
+
+Tree LOD generated by xLODGen for Trees LOD (or CK) are so-called billboard trees that uses two simple 2-sided rectangular models using the gams engine to display traditional tree LOD.
+
+Tree LOD in static Object LOD is LOD trees done as static object LOD. This can be 3D static trees, billboards or a mixture of both - hybrid LOD trees.
+
+Terrain LOD is the distant land and large bodies (cell sized) of water. A [[https://forum.step-project.com/topic/13451-xlodgen-terrain-lod-beta-for-fnv-fo3-fo4-fo4vr-tes5-sse-tes5vr-enderal/ | beta version of xLODGen]] can generate terrain LOD meshes and textures. DynDOLOD does not create, update or otherwise change terrain LOD. LODGen.exe uses terrain LOD meshes to optimize static object LOD by removing any triangles that are below the terrain or water planes.
+
+Reference is an object that references a base element. Typically a reference defines the position and behaviour of an object that can be seen when a cell is attached.
+
+Large Reference is a reference in Skyrim Special Edition that shows its full model in a LargeReferenceGrid outside the loaded cells. See <code>SkyrimSE-LargeRefGrid.html</code> for more details and current problems.
+
+Large Reference Grid is an area past the current loaded cells where Large References show.
+
+Base element defines the full model and LOD models - if any - used by references.
+
+Attached cells is the area around the player, also known as uGridsToLoad - default 5 x 5 cells, where all the action happens and full models of everything are shown.
+
+Worldspace is a large location in the game that typically has LOD.
+
+Child worldspace is a small location in the game that is planted into a worldspace with LOD. The child worldspace replaces the attached cells of the parent worldspace and uses the parent worldspace for LOD past the attached cells. For example the inside of cities like Solitude, Riften, Whiterun, Windhlem are child worldspaces.
+
+Neverfade are references that have the Is Full LOD flag set. The flags Is Full LOD and Persistent usually cause a reference to always show across the worldspace regardless of distance.
+
+== Additional Resources
+
+For object and tree LOD generation instructions and additional resources see
+
+* [[https://www.nexusmods.com/newvegas/mods/58562 | FNVLODGen]] Nexus Mods Site
+* [[https://www.nexusmods.com/fallout3/mods/21174 | FO3LODGen ]] Nexus Mods Site
+* [[http://forum.step-project.com/topic/12466-fo4lodgen | FO4LODGen]] STEP Forum
+* [[https://www.nexusmods.com/skyrim/mods/62698 | TES5LODGen]] Nexus Mods Site
+* [[https://www.nexusmods.com/skyrimspecialedition/mods/6642 | SSELODGen]] Nexus Mods Site
+
+== Credits
+
+* [[https://www.nexusmods.com/skyrim/mods/62698/ | TES5LODGen]]
+* sheson's documentation provided with [[https://mega.nz/#!Ud4HmKzI!VEkuqVsg7_HogGfig2QFjV55EV4DbONQGLOHfISXBTI | DynDOLOD-Standalone 7 Zip File]]
+
+{{nbb}}
+    [[16-xLODGen.html | &laquo; Previous Page]]
+    [[18-whatsnew.html | Next Page &raquo;]]
+{{nbe}}
