@@ -1,0 +1,468 @@
+{{PAGETITLE="xEdit FAQ"}}
+## Contents...
+{{CONTENTS=5}}
+<div id="s_8-1">
+=== Overview
+The idea behind the FAQ is to make it easier for you to find the xEdit information that you need, without having to read this entire manual &#8211; that could put anyone into a coma. As I really don't want the hassle of law suits, it is in both of our best interest that this tutorial is simple to navigate and quick to find resolution to the tasks at hand.
+
+FAQ Navigation really means using the FAQ to direct you to the right cell (section) of the document that describes what you need to do. In some cases, the FAQ itself will be all the help that is required. In other cases, you may want/need to learn the process at depth. Each Question/Answer combination has a teleport XMarker that you can activate by holding down Control and Left-Clicking on the XMarker with your mouse. Activating the XMarker will teleport you to the appropriate cell in the document for further details.
+
+The FAQ is divided into Beginner, Intermediate and Advanced sections to better organize the questions, and further insulate your brain from over-exposure to technical documentation. The idea being that most users should start in the Beginner section and advance forward until find the answers you seek. If you do not find the answers you were looking for, please post them in the [[http://www.bethsoft.com/bgsforums/index.php?showforum=46 | Bethesda GECK Forum]] so that we can update the FAQ.
+__Note:__ All Acquisition and Installation questions are covered in Chapter 2 above.
+
+<div id="s_8-2">
+=== Beginner Questions
+The Beginner FAQ covers Conflict Detection.
+<div id="s_8-2-1">
+==== What mods do I select when I first load xEdit
+
+__Question:__  When loading xEdit, do I select all of the mods at once and apply a filter or does it need to be done individually
+Two Answers here, depending on what your trying to accomplish:
+__Answer:__  If you're [[5-conflict-detection-and-resolution.html#TheConflictDetectionAlgorithm | de-conflicting your mods]] so that you can play crash-free, then you want to select All of the mods (with the single exception of any previous patch plugin you created, you don't want to load that if you're building a new patch plugin).
+__Answer:__  If you're [[7-mod-cleaning-and-error-checking.html | cleaning your mod]] or wanting to modify/work on just your own mod, then; Right-click in the load-window and choose, "Select None". Then find your mod in the list and just select that mod. The loader will automatically pick-up any ESM master files that your mod depends on. The section on [[7-mod-cleaning-and-error-checking.html | Mod Cleaning and Error Checking]] will describe the process at depth.
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-2-2">
+==== Appling conflict filters shows almost every mod has conflicts!
+__Question:__  When I apply my conflict detection filter, almost all of the mods in my list have Red backgrounds! Am I totally conflicted here
+__Answer:__  Red isn't necessarily bad, although it does point you to conflicts. With that many mods, a [[5-conflict-detection-and-resolution.html#CreatingaMergedPatchAutomaticMethod | merged patch Plugin]] is a must. Following the instructions in the section on [[5-conflict-detection-and-resolution.html#UnderstandingPatchPluginsandMergedPatches | Patch Plugins]], and you should see that all of the intended edits will be playing nicer with each other. The chapter on [[5-conflict-detection-and-resolution.html | Conflict Detection and Resolution]] will show you the differences.
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-2-3">
+==== Should I make changes to the mods if there is a conflict
+__Question:__  When [[5-conflict-detection-and-resolution.html | de-conflicting my mod]], is it okay to drag/drop changes into the mod with a conflict, or just edit the field in the mod to fix the conflict right in that mod file
+__Answer:__  No, you shouldn't be modifying mods you didn't create yourself like that or you'll just get into trouble the next time one of these mods is updated. Instead you should use &quot;copy as override into&quot; a new Plugin on the currently winning record version and then drag n' drop the changes from all other record versions together. [[5-conflict-detection-and-resolution.html#UnderstandingPatchPluginsandMergedPatches | Creating a patch plugin]] which can be loaded after all the conflicting mods to resolve these conflicts. The chapter on [[5-conflict-detection-and-resolution.html | Conflict Detection and Resolution]] will show you the differences.
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-2-4">
+==== Where in the load order should my patch plugin be placed
+__Question:__  Where in the load order should my patch plugin be placed
+__Answer:__  Yes your [[5-conflict-detection-and-resolution.html#UnderstandingPatchPluginsandMergedPatches | merged-patch]] loads last, and the masters (.ESM files) which it patches (.esm's and .esp's) will be automatically added.
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-2-5">
+==== What does the patch plugin really do for my Fallout3 load order
+__Question:__  What does the patch plugin really do for my Fallout3 load order? Do I really need to go through this trouble to create one
+__Answer:__  If you run more than 25 mods, you really do need to create a patch plugin in most cases. What the patch does is to join edits to a mod in such a way that both edits will work on the same thing.
+
+Say for example mod #1 says you'll find raiders with flamers and mod #2 adds rocket launchers to them instead. If mod #2 loads last, it will be the conflict winner and you'll find raiders with flamers. [[5-conflict-detection-and-resolution.html#UnderstandingPatchPluginsandMergedPatches | If you use a patch Plugin]], you'll find raiders with both flamers and rocket launchers. It doesn't always work out this smoothly, but it does in most cases. For an in-depth discussion see the chapter on [[5-conflict-detection-and-resolution.html | Conflict Detection and Resolution]].
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-2-6">
+==== Does xEdit correct the white face bug
+__Question:__  Does xEdit correct the white face bug
+__Answer:__ No, you need facegen files packed in BSA, they don't work as loose files.
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-2-7">
+==== What version of Fallout3 edit do I need xEdit for
+__Question:__  Do I need to run xEdit under Fallout3 v1.4 first and then apply the v1.5 patch
+__Answer:__  No you don't need to reinstall. You can run xEdit under any version of Fallout3.
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-2-8">
+==== Does xEdit fix Enclave radio broken by the Broken Steel
+__Question:__  Can the MasterUpdate using xEdit cause Enclave radio to come back on air during broken steel
+__Answer:__  I'm pretty sure I've heard about people complaining about this here on the Forum. I would guess it's one of (many) bugs in BrokenSteel.esm or a conflict with some other mod you've installed.
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-2-9">
+==== What happens if I can't get rid of my conflicts
+__Question:__  What happens if I still have mod conflicts in-game even after creating a patch Plugin
+__Answer:__  There is frankly nothing that xEdit can do different. Conflicts are the result of either:
+* General bugs in Patch release your running.
+* A problem specific to how masters are handled.
+* A module file that's broken in some way (which might show up more or at all because 1.5+ ESM is now doing something RIGHT at the engine level).
+* Conflicts between installed modules (ditto)
+* See the chapter on [[5-conflict-detection-and-resolution.html | Conflict Detection and Resolution]] if you're still stuck for instructions on how to "Slay the Bug".
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-2-10">
+==== I get an error, &#8216;Record XXXX is not contained in a group
+__Question:__  What should I do when I get an error during loading xEdit like this:
+<code>Record fBloodSplatterFadeStart [GMST:080304D5] is not contained in a group.</code> and I had to disable it to get the master update to complete. Is this something I've done wrong with load order or some sort of conflict, or something that needs to be reported to the mod author to correct in the esp
+__Answer:__  As I said before, there are still many mods out there that have been hacked together in [[https://www.nexusmods.com/fallout3/mods/640 | FOMM]] and are not actually structurally valid Fallout 3 module files.
+
+Any module that gives trouble during loading or saving in xEdit is BROKEN anyway and should never be loaded into any game.
+
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-2-11">
+==== What's with all these backup files building-up in my Data directory
+__Question:__  I've been getting a lot of 0/1kb insertmodnamehere.esp save/backup files in my data folder. What exactly are these
+__Answer:__  When xEdit saves a file, it first writes a new file with .esp/m.save.&lt;datetime&gt; as extension. When you then close the program then the existing original module files are renamed to .esp/m.backup.&lt;datetime&gt; and the newest .esp/m.save.&lt;datetime&gt; file for each module is renamed to .esp/m. These can be deleted without worry of harming your game or mods, and are purely for backup purposes.
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-2-12">
+==== How many mods can FO3Edit load
+__Question:__  How many mods can FO3Edit load? I can't seem to get but just half of my mods loaded at one time. I have over 170 mod to edit am I missing something or doing something wrong
+__Answer:__  You can have 256 total mods in Fallout3 and xEdit, one more then the game engine itself. However, xEdit is uses a lot of memory to load entire mod lists and compare everything &#8211; and that goes up the more mods you add. If you find that you cannot run xEdit with a huge number of mods, check to see that your computer is not running out of memory. xEdit will warn you that memory is exhausted in most cases.
+I have made xEdit work successfully with close to 200 mods loaded on a Windows XP machine with 3 gigs of Ram.
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-2-13">
+==== After Filtering for conflicts, I don't see anything on the Left-hand side!
+__Question:__  After I run xEdit, and after filtering for conflict detection, if there's nothing on the left side, does that mean my load order is fine
+__Answer:__  Yes if you ran through the [[5-conflict-detection-and-resolution.html | conflict resolution process]] and get no red or yellow coloring, you're clean! Nice work!
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-2-14">
+==== Why does the Change Confirmation window force me to wait?!
+__Question:__  When I first make changes to a mod, I get a huge timed warning that forces me to wait before allowing me to click Yes. Is there any way to turn the three-second modify warning off
+__Answer:__  Yes, but it's there for a reason. Also, the 3 second delay gets reduced by a few fractions of a second every time you confirm that dialog till after a while it's completely gone.
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-2-15">
+==== I deleted a plugin file but xEdit seems to think it's still there
+__Question:__  I deleted a plugin file but xEdit seems to think it's still there? When xEdit load itself, I see the messages about &quot;Error: Active Plugin List contains nonexistent file &quot;merged.esp&quot;&quot;. I'm absolutely sure- I remove this ESP from load order and from disk with help of [[https://www.nexusmods.com/fallout3/mods/640 | FOMM]]. What's the deal
+__Answer:__  That means that you deleted the file from disk, but it's still listed as an active Plugin in your Plugins.txt (see the message log for the location of that file). The Plugins.txt file is used by the game engine to decide which modules to load.
+Any listed module which doesn't exist in the file system is just ignored by the game engine (and xEdit). So there is nothing to worry about with that error message. It has no further consequences. If you want to remove the error message, edit the Plugins.txt file and remove its entry from that file.
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-2-16">
+==== Should I make a new merged patch if I change my load order in [[https://www.nexusmods.com/fallout3/mods/640 | FOMM ?"]]
+[[https://www.nexusmods.com/fallout3/mods/640 | <strong>Question:</strong> So if I make a new load order in]] [[https://www.nexusmods.com/fallout3/mods/640 | FOMM]], should I make a new merged patch as well right
+__Answer:__  That is correct, if you change the load order you need to create a new merged patch so that the data is always kept in the right order. Failure to do this can result in CTD's. That's why Patch Plugin's should be a last resort and not automatically what you do to resolve conflicts.
+
+The best practice is to create a patch plugin once you are reasonably sure that your load order is settled and static for your current game/character. After you start playing, altering the load order can result in problems for that character, so it's best to put the effort into a patch plugin once you're ready to start seriously gaming OR if you have serious conflicts that can't be resolved by changing the load order alone.
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-2-17">
+==== I am having problems getting xEdit to work on Vista
+__Question:__  I am having problems getting xEdit to work on Vista in the Program Files folder. Am I doing something wrong
+__Answer:__  It is possible to install the game to the Program Files folder under Vista , but you have to deal with the UAC security first. You have three options:
+* 1.Disable the UAC completely, but this will leave your system more vulnerable.
+* 2.Install in a folder not controlled by UAC.
+* 3.A much better way to solve the problem (of write-redirection to the VirtualStore) is to simply give the &quot;Users&quot; group &quot;Full Control&quot; of the Fallout 3 folder.
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-2-18">
+==== After xEdit loads, I can't get the context menu on the left to load!
+__Question:__  After xEdit loads, I can't get the context menu on the left-hand side to load up! I can right-click in the right-window, but the left window gives me nothing. What's up with that
+__Answer:__  In these cases there is actually a problem with your files or your load order, and xEdit is unable to process them. Exit xEdit and use [[https://www.nexusmods.com/fallout3/mods/640 | FOMM]] to check/correct any load order issues. Make sure your patch plugins (if you have one) loads last as well and re-run xEdit. See the [[2-overview.html#TourofUserInterface | Interface Tour]] to gain a better understanding of the views.
+<div>
+    <a href="#s_8-2" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div>
+    <a href="#index" class="drkbtn">Top of this Page</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-3">
+=== Intermediate Questions
+<div id="s_8-3-1">
+==== Should I clean all of the mods that I use including FOOK, FWE, MMM, etc
+__Question:__  Should I clean all of the mods that I use including FOOK, FWE, MMM, etc
+__Answer:__  No, you should only clean a mod that you own or are on a team that owns. If you think that a mod is very dirty and should be cleaned, the best approach is to recommend it to the mod author on the forums. See the section on [[7-mod-cleaning-and-error-checking.html | Mod Cleaning and Error Checking]] for more information
+<div>
+    <a href="#s_8-3" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-3-2">
+==== Is there a function that pops up if you double click something
+__Question:__  Is there a function to the window that pops up if you double click something? There doesn't seem to be a way to edit anything in that window.
+__Answer:__  Yes, it makes it possible to read long texts like script source. See the section on [[9-mod-utilities.html#ChangingandAddingReferences | Adding and Editing References]] for more information.
+<div>
+    <a href="#s_8-3" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-3-3">
+==== Difference between 'copy as override' and 'deep copy as override
+__Question:__  What is the difference between 'copy as override' and 'deep copy as override
+__Answer:__  If you copy a DIAL record as override it only copies that DIAL record, if you use &quot;deep copy&quot; as override then it also copies all the INFO records underneath. See the section on creating a [[5-conflict-detection-and-resolution.html#CreatingaPatchPluginManualMethod | Manual Patch Plugin]] for examples of how to use Overrides and Deep Overrides.
+<div>
+    <a href="#s_8-3" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-3-4">
+==== Replicating a dialogue block with all topic blocks that belong to it
+__Question:__  What if I want to replicate a dialogue block with all topic blocks that belong to it
+__Answer:__  You need to get a copy of a DIAL and all INFO records under it as new records using the following:
+* 1. Use &quot;Deep Copy as Overrride into...&quot;.
+* 2. Go to the override copy of the DIAL record (you can just CTRL+Click on the &quot;Record Header \ FormID&quot; field of the override
+copy in the detail view)
+* 3. Select that record in the Navigation Treeview.
+* 4. Press F2 (opens the change FormID dialog)
+* 5. Backspace (clears the FormID)
+* 6. Enter (shows the dialog again with a newly generated unique FormID)
+* 7. Enter (confirms the change)
+* 8. Repeat for the INFO records (Cursor Down, F2, Backspace, Enter, Enter, repeat)
+* 9. See the section on creating a [[5-conflict-detection-and-resolution.html#CreatingaPatchPluginManualMethod | Manual Patch Plugin]] for examples of similar actions using Copy as Override / Deep Override Into.
+
+<div>
+    <a href="#s_8-3" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-3-5">
+==== Having troubles updating stuff from one mod version to another
+__Question:__  I am running into issues trying to update stuff from one version of a mod to another.
+__Answer:__  For comparing / moving data between 2 versions of the same mod:
+* When starting xEdit, only load ONE of the 2 versions.
+* Select the file in the Navigation Treeview.
+* context menu -&gt; Compare to
+* select the 2nd file in the file open dialog (it needs to be in the data folder for this to work currently)
+* the 2nd file now gets loaded with the same load order index as the first file
+* See the section on creating a [[5-conflict-detection-and-resolution.html#CreatingaPatchPluginManualMethod | Manual Patch Plugin]] for examples of similar actions using Copy as Override / Deep Override Into.
+
+Doing that xEdit would have recognized the records in the 2 modules as being overrides of each other which would have simplified copying stuff around a lot. Also see the section on [[8-managing-mod-files.html#ComparingTwoVersionsofaMod | Comparing Two Versions of a Mod]] for examples of how to compare them efficiently.
+
+<div>
+    <a href="#s_8-3" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-3-6">
+==== How do I convert an ESP into an ESM
+__Question:__  I'm trying to turn an esp into an esm using xEdit, but I can't seem to find a way to save the file as an esm or &quot;convert&quot; it as it were. I know that there is a way to do it, I believe there's supposed to be a copy into... function, yet I can't seem to find it.
+__Answer:__  Look at the File Header. Set the ESM Record Flag. Save. You are done. The file extensions do not matter for the game engine. But if you want you can now rename your file from .esp to .esm. See the section on [[8-managing-mod-files.html#ConvertingaPluginintoaMaster | Converting a Plugin into a Master]] for a detailed description.
+<div>
+    <a href="#s_8-3" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-3-7">
+==== Why should I "clean" my mod? It works just fine how it is!
+__Question:__  Why should I "clean" my mod? It works just fine how it is!
+__Answer:__  The large majority of mods currently in circulation are unfortunately in rather appalling condition, with dirty edits, deleted references, unintended changes, you name it. GECK makes it very easy for these things to slip in. Even worse, there are still a significant number of mods out there which have been hacked together in [[https://www.nexusmods.com/fallout3/mods/640 | FOMM]] or even hex editors that in no way shape or form conform to the implicit rules of the FO3 module file format. See the chapter on [[7-mod-cleaning-and-error-checking.html | Mod Cleaning and Error Checking]] for a detailed description of how this is done.
+
+What is needed from all mod authors is a concentrated effort to clean up their mods and in general minimize the number of vanilla records they touch to reduce conflict potential.
+<div>
+    <a href="#s_8-3" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-3-8">
+==== Many of my NPCs in-game has stark white-faces!
+__Question:__  Many of my NPCs in-game has stark white-faces! Did xEdit do this
+__Answer:__  The white face bug is Not fixed by xEdit. The bug that xEdit fixes is the white BODY bug. To fix the white face bug, you have to edit your fallout.ini and add this line below the <code>[General] statement:</code>
+<pre>
+[General]
+bLoadFaceGenHeadEGTFiles=1
+</pre>
+<div>
+    <a href="#s_8-3" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-3-9">
+==== I have FOOK and get a load error like this, did I do something wrong
+__Question:__  I have FOOK and get a load error like this, did I do something wrong
+<code>"[00:20] Background Loader: Error: record LVLI contains unexpected (or out of order) sub record LVLI 494C564C"</code>
+__Answer:__  Nothing you or xEdit did wrong. I'm aware for some time now that FOOK 1.6 contains this broken deleted record. Besides being broken, it shouldn't have been deleted in the first place and can cause CTDs.
+
+You can fix it with xEdit by loading FOOK.esp (as you are obviously doing) then going to that record (enter 0002968D into the FormID search edit above the Navigation Treeview and press enter) and then REMOVE that record from FOOK.esp. Make sure that you are removing it from the right file! (It should have the &quot;Deleted&quot; Record Flag set in FOOK.esp).
+<div>
+    <a href="#s_8-3" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-3-10">
+==== I found records that I've changed don't exist in Fallout3.esm!
+__Question:__  When opening an esp in xEdit, it shows that of all the iXPReward**** records I've changed, that these ones do not exist in fallout3.esm. The other Game Settings I've edited show the yellow/green colors of &quot;override without conflict&quot;, but these 5 are simply black on white, as if these are brand new settings. Is this a bug in xEdit
+__Answer:__  No it is not. The default values for the different GMSTs are hardcoded in the exe (both GECK and game engine). GMST sub records in Fallout3.esm are only present for the GMSTs that have been overridden by the game designers from their hardcoded default values (which were set by the programmers in source code).
+<div>
+    <a href="#s_8-3" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-3-11">
+==== How can I see individual records from a mod
+__Question:__  How can I see individual records from a mod
+__Answer:__  In the Navigation Tree you can look at every single record in any of your modules. Once a record has been selected the detailed contents of that record is shown on the right side. The detail view shows all versions of the selected record from all modules which contain it. See the [[2-overview.html#ViewTab | Right-Side View Tab]] tour for details.
+<div>
+    <a href="#s_8-3" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-3-12">
+==== How do I view all of the references in a mod, not just conflicts
+__Question:__  When I load the ESP I've been working with, which depends on 2 ESMs (Fallout3 of course, and BHRM-em-Bobblehead Remove and Move), neither the ESP, nor the additional ESM, will show me everything until I tell it to filter some of the extraneous information out. How do I view all of the references
+__Answer:__  In the [[2-overview.html#ViewTab | Right-Side View Tab]], right click and make sure &quot;hide no conflict rows&quot; is unchecked.
+<div>
+    <a href="#s_8-3" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-3-13">
+==== I cleaned my mod and am getting CTDs with NAVM errors
+__Question:__  I just cleaned my mod and am having CTD's and all sorts of errors with NAVM records? Did the cleaning process break my mod
+__Answer:__  NAVM and NAVI records work together in that the NAVI is an index of sorts for the NAVM records. Thus if the cleaning process removes any NAVM records, you must update the NAVI data as well. Thus after any cleaning which touches NAVM records you will have to simply Load and Re-Save the file GECK so that the NAVI records are re-built (which the GECK does automatically when you save).
+<div>
+    <a href="#s_8-3" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-3-14">
+==== How do I reverse an unintended change
+__Question:__  I made some unintended changes to the main game files and don't know how to un-do those changes so that the original versions return. How is this done
+__Answer:__  Normally the word &quot;remove&quot; is used to describe removing a record from a module (in which case, if it was an override record, the original will &quot;shine through&quot; again). While &quot;delete&quot; normally refers to setting the &quot;Deleted&quot; flag on a record (in which case this &quot;deleted&quot; record will hide away whatever original record it overrides).
+<div>
+    <a href="#s_8-3" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div>
+    <a href="#index" class="drkbtn">Top of this Page</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-4">
+=== Advanced Questions
+<div id="s_8-4-1">
+==== What is Fallout3.Hardcoded.esp
+__Question:__  What is Fallout3.Hardcoded.esp
+__Answer:__  This file contains some records which are hardcoded in GECK and the game engine (not contained in Fallout3.esm) but referenced from records in Fallout3.esm. PlaneMarker and PortalMarker STAT records to name just one example. The Fallout3.Hardcoded.esp must be in the same folder as the xEdit.exe and NOT in the Data folder. The game engine or GECK will never see that file and never load it.
+
+When you start GECK without loading Fallout3.esm, you can see that there are some records already defined. The reason is that these records are hardcoded in the exe already. Some of these records are overridden in Fallout3.esm. Some others are not. But Fallout3.esm contains records with references to some of these hardcoded records that are not being overridden.
+
+If you now load Fallout3.esm alone in xEdit, which doesn't have these &quot;hardcoded&quot; records in the exe itself like GECK. Then it appears as if Fallout3.esm contains a lot of invalid references. This is where Fallout3.Hardcoded.esp comes in. It contains all the hardcoded records which are not overridden in Fallout3.esm already. By loading this esp at the same load order ID as Fallout3.esm it is as if these records were defined in Fallout3.esm.
+<div>
+    <a href="#s_8-4" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-4-2">
+==== Can I have a plugin that references another plugin as its master
+__Question:__  Can I have a plugin that references another plugin as its master? xEdit seems to do this, but I don't see how to do it in the GECK.
+__Answer:__  xEdit can handle Plugins (.esp) having other Plugins as master. GECK can not, so such a file can no longer be simply opened in GECK. See the section on [[8-managing-mod-files.html#AddingMasterFilestoaPlugin | Adding Masters to a Plugin]] for more details.
+<div>
+    <a href="#s_8-4" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-4-3">
+==== Can I remove the delay between clicking an entry and the edit box
+__Question:__  When trying to Edit a cell, there is a delay between clicking an entry the second time and having the edit-box appear. Can this delay be removed
+__Answer:__  Just use F2. I'm not quite sure where that delay comes from (but probably has to wait until the system wide configured double click time expires to be sure it's a single click and not a double click).
+<div>
+    <a href="#s_8-4" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-4-4">
+==== Is there a "Goto" option in the context menu for pulling-up a FormID
+__Question:__  For sub-records which are FormIDs, it would be great to have a 'go to' option in the context menu which would then just select that FormID in the Navagation Tree.
+__Answer:__  Hold CTRL down, and then click. Also, for fields where the text doesn't fit, hold SHIFT down and move the mouse over them to get a tooltip with the full text.
+
+With the Ctrl+Click, you can do that any number of times and then simply return to where you came from with the little back and forward buttons in the top right corner. If you have a mouse with more then 2 keys you can also use the &quot;back&quot; and &quot;forward&quot; keys on your mouse.
+<div>
+    <a href="#s_8-4" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-4-5">
+==== Can you help me with the Optcodes for IsInCombat
+__Question:__  I've just got a query about how we're supposed to input conditions. I'm trying to make a perk that works when you activate something out of combat, but I can't seem to input the &quot;IsInCombat&quot; function. I've tried using the opcode from this list, and I've tried converting the opcode to decimal, but it doesn't display the name.
+__Answer:__  You have to cut off the first 1. So 1121 is 121 -&gt; 289 -&gt; IsInCombat. Just tested and works fine. The first 0/1 is for console/nonconsole. Also, there's a minor typo in the PRKC label. It's not Index, it controls the reference the CTDA is called on.
+<pre>
+0 = player
+1 = current weapon/activation target
+2 = hit target (for combat)
+</pre>
+<div>
+    <a href="#s_8-4" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-4-6">
+==== During the loading process, I notice some of the mods show Errors
+__Question:__  During the background loading process, I notice some of the mods show Errors, but xEdit seems to load them anyway.
+__Answer:__  Many files that have been hacked together using [[https://www.nexusmods.com/fallout3/mods/640 | FOMM]] or even a Hex Editor are not conforming exactly to this standard structure and xEdit will reject saving such a file (or depending on how severe the problem is might even reject loading such a file). I'd suggest loading it in [[https://www.nexusmods.com/fallout3/mods/640 | FOMM]], running the sanitize spell, resaving it and then try xEdit on it again. Sanitize will at least fix the missing group problem that xEdit doesn't like.
+<div>
+    <a href="#s_8-4" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-4-7">
+==== Is there a way to look up the records op-codes
+__Question:__  Is there a way to look up the records op-codes
+__Answer:__  The numbers there are the opcodes for the functions used. The full list of functions is here: http://fose.silverlock.org/Fallout3Commands.html.
+<div>
+    <a href="#s_8-4" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-4-8">
+==== is &quot;HasPerk&quot; available in the CTDAs
+__Question:__  Shortcut question: is &quot;HasPerk&quot; (which IS a script command) available as far as you know, in the CTDAs
+__Answer:__  Those numbers are in hexcode, you need to drop the first 1, and then convert the last 3 digits to decimal. So on that list, GetPermAV is 11EF. You drop the 1 to make it 1EF, then convert that to decimal, which gives 495. To make your life easier, HasPerk is 449.
+<div>
+    <a href="#s_8-4" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-4-9">
+==== Can we edit text in the expanded windows
+__Question:__  Can we edit text in the expanded windows? I'm trying to write a script and it's a bit inconvenient to write it in notepad and copy-paste across.
+__Answer:__  This works by double clicking while holding the shift key.
+<div>
+    <a href="#s_8-4" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-4-10">
+==== Where can I learn more about FLST Lists
+__Question:__  Where can I learn more about FLST Lists
+__Answer:__  An advanced discussion can be found on the [[http://www.bethsoft.com/bgsforums/index.php?showtopic=971140 | Bethesda Forums]].
+<div>
+    <a href="#s_8-4" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-4-11">
+==== Can we list the mod index for each master/Plugin loaded in the dump
+__Question:__  Would it be possible to list the mod index for each master/Plugin loaded (included the module specified) in the dump? Then you could determine a record's module directly from its FormID.
+__Answer:__  Different then what xEdit is showing you, the dump is NOT showing load order corrected FormIDs. You see the FormIDs as they are stored in the file. Which means that the MAST sub records from the TES4 file header directly give you all the information you need to map FormIDs to files. e.g. if there are 3 MAST sub records then FormIDs starting with 00, 01 and 02 belong to these 3 files in that order, everything starting with 03 (or higher!) belongs to the file you are dumping.
+<div>
+    <a href="#s_8-4" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-4-12">
+==== I have a lot of house-mods that are conflicting, how do I fix this
+__Question:__  My load list is smaller than most here, but I have a large selection of houses that were causing problems, as well as a few others like the vertibird that would crash if you left it and walked away. How do I fix this
+__Answer:__  First, check if any of your active modules are NOT masters. You can see that easily in [[https://www.nexusmods.com/fallout3/mods/640 | FOMM]] if any of them are not shown in bold. If yes, run xEdit and you may need to make a manual patch.
+
+If not, determine the FormID of the problematic character(s). Then start xEdit and don't make any changes to the to-be-loaded modules. Now put the FormID into the FormID search box (above the Navigation Treeview) and hit enter. Check if that record is touched by any of you installed mods. Also check the NPC record that the ACHR is based on (you can hold down CTRL and then click on the NAME field to jump to that record).
+<div>
+    <a href="#s_8-4" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-4-13">
+==== Will xEdit merge the Eyes, Hairs, Mouth pieces, etc
+__Question:__  When merging patches that modify facial characteristics, will xEdit merge the Eyes, Hairs, Mouth pieces, etc
+__Answer:__  Important with that: eyes and hairs are merged, the rest not. So if you (or anyone) have a mod which makes changes to something other then hairs or eyes, load that mod last so that the hair and eye changes get merged into it.
+
+So that means that TK's eyelash mod has to be last since it mods a lot of the head parts (like merging the whole mouth to make an open slot for the eyelashes).
+<div>
+    <a href="#s_8-4" class="drkbtn">Top of this Group</a>
+</div>
+/* <!--/.level-nav--> */
+<div id="s_8-4-14">
+==== Can I merge destruction-data into my patch plugin
+__Question:__  Is it possible to get the destruction data that I created for my mod into the merged patch or should I just do it by hand
+__Answer:__  Destruction data is not one of the things handled by the merged patch function, so you will need to add those elements by-hand to the patch Plugin.
+{{nbb}}
+    [[#s_8-4 | Top of this Group]]
+{{nbe}}
+/* <!--/.level-nav--> */
+{{nbb}}
+    [[#index | Top of this Page]]
+{{nbe}}
+/* <!--/.level-nav--> */
+{{nbb}}
+    [[9-mod-utilities.html | &laquo; Previous Page]]
+    [[11-appendix.html | Next Page &raquo;]]
+{{nbe}}
