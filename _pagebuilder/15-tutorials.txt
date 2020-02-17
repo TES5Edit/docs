@@ -1,0 +1,578 @@
+{{PAGETITLE="xEdit Tutorials"}}
+## Contents...
+{{CONTENTS=6}}
+
+== Overview
+
+This page preserves a list of links to Creation Kit tutorials and videos originally on the old [[http://forums.bethsoft.com/topic/1343653-creation-kit-video-tutorials-merged/ | Bethesda Formus]].
+
+The thread was a place to look for official video tutorials from Bethesda and unofficial tutorials from the Creation Kit modding community. The original author of the thread decided that any community-authored tutorials involving the use of third-party software, alone or in addition to the Creation Kit, will be indicated as (Advanced). Use of third-party software is at your own risk, and Bethesda Game Studios is not responsible for any damages which may result.
+
+To learn how to get the Creation Kit, do what [[https://www.youtube.com/watch?v=pqYRN1Jnu5k | this video]] shows, or follow [[https://www.creationkit.com/index.php?title=Getting_Started | these instructions]].
+{{nav:s_13-2}}
+== Video Tutorials
+{{nav:s_13-2-1}}
+=== Official
+* [[https://www.youtube.com/watch?v=gDKivlGmia4 | Introduction to the Kit]]
+* [[https://www.youtube.com/watch?v=SO-OMWk0mQs | Basic Layout]]
+* [[https://www.youtube.com/watch?v=p1Twdld0tLc | Basic Layout II]]
+* [[https://www.youtube.com/watch?v=6RzxXWiqb8M | Clutter]]
+* [[https://www.youtube.com/watch?v=raM9TBZZyQY | Navmesh]]
+* [[https://www.youtube.com/watch?v=TAih_jr233I | Basic Encounters]]
+* [[https://www.youtube.com/watch?v=PN5vCtlxvwk | Traps, Prefabs and Activate Parenting]]
+* [[https://www.youtube.com/watch?v=acfuZiQh83Y | Portals and Optimization]]
+* [[https://www.youtube.com/watch?v=5fZoIpKcJ6I | Lighting]]
+* [[https://www.youtube.com/watch?v=kTSQaUx5eKY | World Hookup]]
+{{nav:s_13-2-2}}
+=== Community-authored (alphabetically by creator)
+{{nav:s_13-2-2-1}}
+==== Alexander J. Velicky's Tutorial
+
+* [[https://www.youtube.com/watch?v=kB2rqH7Ytko | Worldspace LOD]] (Advanced)
+{{nav:s_13-2-2-2}}
+==== Azurech's Tutorials
+* [[https://www.youtube.com/show/skyrimcreationkit | YouTube Show - Skyrim Creation Kit]] (German)
+
+{{nbb}}
+    [[#s_13-2-2-1 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-3}}
+==== Baratan's Tutorial
+* [[https://www.youtube.com/watch?v=XoRcimDR8fY | Creating a Merchant NPC]] (No Audio)
+
+{{nbb}}
+    [[#s_13-2-2-2 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-4}}
+==== Best in Slot's Tutorials
+* [[https://www.youtube.com/watch?v=DZxuVY4dQ74 | Creating and Adding NPCs]]
+* [[https://www.youtube.com/watch?v=OmfP_2Rc-q8 | Creating and Adding Weapons/Armour]]
+* [[https://www.youtube.com/watch?v=7IW9067yfZw | Building a Dungeon]]
+* [[https://www.youtube.com/watch?v=sCKVOQKoB-4 | Adding Clutter to Dungeons]]
+* [[https://www.youtube.com/watch?v=T-OscsDQyAw | Creating Cave Systems]]
+* [[https://www.youtube.com/watch?v=hIstYb2Q2hY | Connecting Dungeons To The World]]
+* [[https://www.youtube.com/watch?v=AlepT3rQ8LI | Creating a Follower]]
+* [[https://www.youtube.com/watch?v=Hh8NFbigVTQ | Creating A Merchant]]
+* [[https://www.youtube.com/watch?v=lKfQ44iIejw | Making Navmesh]]
+* [[https://www.youtube.com/watch?v=9FkfB4F3ZCQ | Enemy Encounters]]
+* [[https://www.youtube.com/watch?v=E7ikxJJcVG4 | Creating New Spells]]
+* [[https://www.youtube.com/watch?v=sVfkKISOPqA | Lighting and FX]]
+* [[https://www.youtube.com/watch?v=rB1V84kNOR8 | Basic Papyrus Scripting]]
+* [[https://www.youtube.com/watch?v=AMi_21Kt-lQ | Quest Dialogue]]
+* [[https://www.youtube.com/watch?v=mVwHq3UilMg | Quest Scripting]]
+* [[https://www.youtube.com/watch?v=tfKlPw20OVw | Quest Objectives]]
+
+{{nbb}}
+    [[#s_13-2-2-3 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-5}}
+==== BigBadDaddy
+* [[https://www.youtube.com/watch?v=y1m9bJMO2zw | Creating A Custom Chair]]
+
+{{nbb}}
+    [[#s_13-2-2-4 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-6}}
+==== Bottled Zebra's Tutorials
+* [[https://www.youtube.com/watch?v=_AaPqZVVQMQ | The Basics]]
+* [[https://www.youtube.com/watch?v=SPZy_WMxL0k | Interior Decorating]]
+
+{{nbb}}
+    [[#s_13-2-2-5 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-7}}
+==== Danatoth's Tutorials
+* [[https://www.youtube.com/watch?v=x06o6tgApWY | How To Give the Player an Item from an NPC]]
+* [[https://www.youtube.com/watch?v=UkEF-pn6Qic | How To Make a Home Owner]]
+* [[https://www.youtube.com/watch?v=9cNHxmPxsWo | Making NPCs Carry Objects]]
+* [[https://www.youtube.com/watch?v=SNsKMyz1hCs | Setting up guards and a jail]]
+* [[https://www.youtube.com/watch?v=QY86frdQXkQ | Making Npc's talk to each other]]
+
+{{nbb}}
+    [[#s_13-2-2-6 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-8}}
+==== DARKFOX127 Productions' Tutorials
+{{nav:s_13-2-2-8-1}}
+===== The Basics
+* [[https://www.youtube.com/watch?v=ki3JlRMEHNM | Installation]]
+* [[https://www.youtube.com/watch?v=LWq003uZxrg | User Interface]]
+* [[https://www.youtube.com/watch?v=sDVtBzkjjxs | Render Window]]
+* [[https://www.youtube.com/watch?v=KYfSEhphHHQ | Creating &amp; Editing Cells]]
+
+{{nav:s_13-2-2-8-2}}
+===== NPCs &amp; AI
+* [[https://www.youtube.com/watch?v=DbNIr0hySFg | Create a Bard]]
+* [[https://www.youtube.com/watch?v=tLgSYzOaTnA | Detailed Followers Tutorial]]
+* [[https://www.youtube.com/watch?v=-YLDRbDQkBs | Create a Merchant]]
+* [[https://www.youtube.com/watch?v=TO2N9ZuuGMA | NPCs and Idles]]
+* [[https://www.youtube.com/watch?v=HdnPJhu1Pcg | NPCs Ride Horses]]
+* [[https://www.youtube.com/watch?v=L_viyf07kVw | AI Packages With Magic and Weapons]]
+* [[https://www.youtube.com/watch?v=l8db4k1vqlY | Factions]]
+
+{{nav:s_13-2-2-8-3}}
+===== All Things Magic
+* [[https://www.youtube.com/watch?v=8WAQjI4EldY | Magic Effects]]
+* [[https://www.youtube.com/watch?v=ERvz7IaE1LA | Create a Spell]]
+* [[https://www.youtube.com/watch?v=xrUzBgsI7y8 | Create an Enchantment]]
+* [[https://www.youtube.com/watch?v=Huf1GcDXwfw | Enchanted Arrows]]
+
+{{nav:s_13-2-2-8-4}}
+===== Scripting Series
+* [[https://www.youtube.com/watch?v=KeP05l7O77E | Scripting a Message]]
+* [[https://www.youtube.com/watch?v=Hm8GBbTLQAs | Scripting a Menu]]
+* [[https://www.youtube.com/watch?v=PYNGK2vJ418 | Scripting a Purchase System]]
+* [[https://www.youtube.com/watch?v=sUvAdAbvVAk | Teleport Spell]]
+* [[https://www.youtube.com/watch?v=BteERg_pPr4 | Light Switch and States]]
+* [[https://www.youtube.com/watch?v=fVL5yTRT2D8 | Build Your Own Home]]
+* [[https://www.youtube.com/watch?v=SZwPcVrwlEU | Weather Clipping]]
+* [[https://www.youtube.com/watch?v=o8MnUS4Z-B8 | Containers]]
+* [[https://www.youtube.com/watch?v=BBBASdwXi_o | Script Compiling Issue]]
+
+{{nav:s_13-2-2-8-5}}
+===== Mixed Bag
+* [[https://www.youtube.com/watch?v=KsB4e8isB28 | Cloud Chests]]
+* [[https://www.youtube.com/watch?v=M2c8nK-LivQ | Red Light Shadows Fix]]
+* [[https://www.youtube.com/watch?v=M9H92X4btno | Custom Music]]
+* [[https://www.youtube.com/watch?v=dsvSPW-GFrE | Lighting]]
+* [[https://www.youtube.com/watch?v=n8hr1Tp4hrI | Create a Bookshelf]]
+* [[https://www.youtube.com/watch?v=-n0Tj7rHj1g | Static Items and Havok Animation]]
+* [[https://www.youtube.com/watch?v=S85Q7Iun28w | Loading DLC]]
+* [[https://www.youtube.com/watch?v=aVtZNdA-dHQ | Crafting System]]
+
+{{nbb}}
+    [[#s_13-2-2-7 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-9}}
+==== DatenTheilt's Tutorial
+* [[https://www.youtube.com/watch?v=RLv9FRL9rGQ | Custom House Upgrade via NPC]]
+
+{{nbb}}
+    [[#s_13-2-2-8 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-10}}
+==== Doug's Tutorials
+* [[https://www.youtube.com/watch?v=Qfcet5hf5bs | Quest Starting Scene]]
+* [[https://www.youtube.com/watch?v=G3VBVF3vaGA | Extending the Quest]]
+* [[https://www.youtube.com/watch?v=rter3FIzvZs | Forcing the Player to Act]]
+* [[https://www.youtube.com/watch?v=pLAJi-JDyXM | Custom Quest AI]]
+* [[https://www.youtube.com/watch?v=iustaHoHnEE | A Courier Quest]]
+* [[https://www.youtube.com/watch?v=-3kmTpITwfI | Sleep and Kill Events]]
+
+{{nbb}}
+    [[#s_13-2-2-9 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-11}}
+==== Elec08215's Tutorial
+* [[https://www.youtube.com/watch?v=Vd53dmod_0Q | Papyrus: Basic Teleport Spell Tutorial]]
+
+{{nbb}}
+    [[#s_13-2-2-10 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-12}}
+==== GKalian's Tutorials (Russian)
+* [[https://www.youtube.com/watch?v=NQF_Z0U5A2w | Intro (Вступление)]]
+* [[https://www.youtube.com/watch?v=viXhuvW_zRQ | Basics (Основы)]]
+* [[https://www.youtube.com/watch?v=qUb1ZN9rW5A | Simple location (Создание простой локации)]]
+* [[https://www.youtube.com/watch?v=LbGFclLK6Lo | Grid (Сетка)]]
+* [[https://www.youtube.com/watch?v=7OkZJBv-IH8 | Landscape Editor (Редактор ландшафта)]]
+
+* [[https://www.youtube.com/watch?v=uU7N6r_lVLw | World Space (Закрытые миры)]] (with english subs)
+* [[https://www.youtube.com/watch?v=6mEwiyQHqUM | Import Heightmap (Импортирование карты высот)]]
+* [[https://www.youtube.com/watch?v=o61SPPkpLdw | Making LODs (создание лодов)]]
+* [[https://www.youtube.com/watch?v=EDgMpC9NhY8 | Creating and adding Weapon (Создание и добавление оружия)]]
+* [[https://www.youtube.com/watch?v=03IiBJ71Pao | Creating Merchant (Создание торговца)]]
+* [[https://www.youtube.com/watch?v=TmZPcCrwcDw | Creating Weapons Rack and Plaque (Создание стендов и стоек для оружия)]]
+* [[https://www.youtube.com/watch?v=tBXgT9-Fz8U | Creating Mannequins (Создание манекенов)]]
+* [[https://www.youtube.com/watch?v=zAg_H9XzrDQ | Creating Display Case (Создание витрин)]]
+* [[https://www.youtube.com/watch?v=O_cOyIje3d8 | Creating Bookshelf (Создание книжной полки)]]
+* [[https://www.youtube.com/watch?v=I4gIDEqdDqc | Navmeshes (Навмеши)]]
+* [[https://www.youtube.com/watch?v=yATXK1cCEhw | Lighting and FX-effects (Освещение и FX-эффекты)]]
+* [[https://www.youtube.com/watch?v=WoC8ERJdhK0 | Small advice and traps (Небольшой совет и ловушки)]]
+* [[https://www.youtube.com/watch?v=YvrJpi--dXc | Quest Creation - Part 1 (Создание квеста - часть 1)]]
+* [[https://www.youtube.com/watch?v=aPY96dn0gEs | Quest Creation - Part 2 (Создание квеста - часть 2)]]
+* [[https://www.youtube.com/watch?v=ouAV1lMnOCQ | Quest Creation - Part 3 (Создание квеста - часть 3)]]
+* [[https://www.youtube.com/watch?v=dSfZQ2raLkw | Quest Creation - Part 4 (Создание квеста - часть 4)]]
+* [[https://www.youtube.com/watch?v=ZtCloalGNmg | Creating NPC (Создание NPC)]]
+* [[https://www.youtube.com/watch?v=ZdCEOdlG8o8 | Companions &amp; Weddings (Компаньоны и свадьбы)]]
+* [[https://www.youtube.com/watch?v=2Ux_E2VNOhg | Key for estates (Ключ для поместья)]]
+* [[https://www.youtube.com/watch?v=KV4WXdo8MXQ | Script to teleport (Скрипт для телепорта)]]
+* [[https://www.youtube.com/watch?v=niWsk-ki2qY | Bonfire (once) (Разжигаемый костер (один раз))]]
+* [[https://www.youtube.com/watch?v=Esd1tguUVE0 | Light Switch (Выключатель света)]]
+* [[https://www.youtube.com/watch?v=YeF2o7D4ABg | Create a book (Создание книги)]]
+* [[https://www.youtube.com/watch?v=x0hNHNfQy2E | Water (Вода)]]
+* [[https://www.youtube.com/watch?v=-SIeH9Fg96A | Creating spells (Создание заклинания)]]
+* [[https://www.youtube.com/watch?v=mErK1v4y51Q | Create perk tree and perks (Создание перка и дерево перков)]]
+* [[https://www.youtube.com/watch?v=H3X9oDi_Akg | Weather (visual effects h. 1) (Погода (визуальное эффекты ч. 1))]]
+* [[https://www.youtube.com/watch?v=ZYVJiVjGozU | Companion - animal (Компаньон - животное)]]
+* [[https://www.youtube.com/watch?v=kDTuT6PCfL0 | Create a simple scene (Создание простой сцены)]]
+* [[https://www.youtube.com/watch?v=A-d8_XFFja4 | Object Palette Editing]]
+* [[https://www.youtube.com/watch?v=cK8rZu8Nsa0 | "Live inhabitants" (AI packages, markers) ("Живые жители" (AI пакеты, маркеры))]]
+* [[https://www.youtube.com/watch?v=3yL0MP6dbHw | How to make your retekstura (Как сделать свой ретекстур)]]
+* [[https://www.youtube.com/watch?v=KgODzMLr3lU | Creating teacher skills (Создание учителя навыковv)]]
+* [[https://www.youtube.com/watch?v=iVC2qIReNKo | Creation of a custom container (Создание кастомного контейнера)]]
+
+{{nbb}}
+    [[#s_13-2-2-11 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-13}}
+==== H4wkeye's Tutorial
+* [[https://www.youtube.com/watch?v=ik86v-P9tzQ | Custom NPC Merchant]] (No Audio but Subtitles)
+
+{{nbb}}
+    [[#s_13-2-2-12 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-14}}
+==== AwakeIsland Tutorial
+* [[https://www.youtube.com/watch?v=9MYG4IvgKGo | Creating Unique and New Species using existing models]]
+
+{{nbb}}
+    [[#s_13-2-2-13 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-15}}
+==== hellcat5's Tutorials
+{{nav:s_13-2-2-15-1}}
+===== Creation Kit Menu System
+* [[https://www.youtube.com/watch?v=mB_aYBSzK8c | menu system: file menu and properties]]
+* [[https://www.youtube.com/watch?v=G0mYzisia1Q | menu system: edit menu, batch actions, all hotkeys]]
+* [[https://www.youtube.com/watch?v=mzVL4USNsrU | menu system: view menu]]
+* [[https://www.youtube.com/watch?v=OAVogCotlE0 | menu system: world menu]]
+* [[https://www.youtube.com/watch?v=gKF5sb0UUKc | menu system: navmesh menu]]
+* [[https://www.youtube.com/watch?v=VaSiI5MvpSI | menu system: character menu, perk editing]]
+* [[https://www.youtube.com/watch?v=ZTGb6PZ7ntE | menu system: gameplay editing and form validation]]
+
+{{nav:s_13-2-2-15-2}}
+===== Creation Kit Object Window
+* [[https://www.youtube.com/watch?v=QuSdj0-DJYI | object window: actors]]
+* [[https://www.youtube.com/watch?v=Pk3paPGKdnI | object window: audio]]
+* [[https://www.youtube.com/watch?v=AkBawg_81As | object window: character]]
+* [[https://www.youtube.com/watch?v=dKixzYBXmic | object window: items]]
+* [[https://www.youtube.com/watch?v=62TF4LK50W0 | object window: magic]]
+* [[https://www.youtube.com/watch?v=vUNBTUejRLI | object window: miscellaneous]]
+* [[https://www.youtube.com/watch?v=1rJ7NvqExKM | object window: specialEffect]]
+* [[https://www.youtube.com/watch?v=ONZ5Bb5Lugg | object window: world data]]
+* [[https://www.youtube.com/watch?v=X6dkSwFNnUM | object window: world objects]]
+
+{{nav:s_13-2-2-15-3}}
+===== Troubleshooting
+* [[https://www.youtube.com/watch?v=ltFnZD0DOHA | Managing and Troubleshooting Mods]]
+* [[https://www.youtube.com/watch?v=uGSmuRWW46g | troubleshooting audio after renaming topics in a dialogue]]
+* [[https://www.youtube.com/watch?v=Xkrlh4dGGIE | optimization: validating room marker and portal alignment]]
+* [[https://www.youtube.com/watch?v=HSb7TY1ai2w | navmesh: pathing test and finalizing]]
+* [[https://www.youtube.com/watch?v=nVw23P1yQCI | quest: debugging a quest model]]
+* [[https://www.youtube.com/watch?v=_dvgtTl5h28 | quest: debugging quest alias order]]
+
+{{nav:s_13-2-2-15-4}}
+===== Voice Overs
+* [[https://www.youtube.com/watch?v=bxoZA8AM5aM | Advanced Voice Overs for Skyrim]]
+* [[https://www.youtube.com/watch?v=TobpP1BMQo8 | voice types and LIP files]]
+* [[https://www.youtube.com/watch?v=18jHfQvfJPQ | recording voice overs]]
+* [[https://www.youtube.com/watch?v=I7CYDURh7ns | adding someone's voice overs into the game]]
+
+{{nav:s_13-2-2-15-5}}
+===== Basics
+* [[https://www.youtube.com/watch?v=z8rZLHUVhSg | creating a property in script]]
+* [[https://www.youtube.com/watch?v=8Bvv2jvhCJc | how to make a dragon sit using packages]]
+* [[https://www.youtube.com/watch?v=sltZbEovTps | creating a package to program NPC behaviors]]
+* [[https://www.youtube.com/watch?v=82hP3ztwXdg | creating a lighting template]]
+* [[https://www.youtube.com/watch?v=04tamfeq5GU | creating image spaces]]
+* [[https://www.youtube.com/watch?v=SRz12_ykvf4 | controlling gamebryo animations with activators]]
+* [[https://www.youtube.com/watch?v=jPwi8_ALwcI | partial word searches on creationkit.com]]
+* [[https://www.youtube.com/watch?v=WfiuLzapJSk | scripting traps]]
+* [[https://www.youtube.com/watch?v=tcWC2BWz1JI | 31 lights in a room]]
+* [[https://www.youtube.com/watch?v=osNYgQANJDs | analysis of bethesda's courier process - detailed]]
+* [[https://www.youtube.com/watch?v=rMEAvizXO7k | creating a light switch - detailed]]
+* [[https://www.youtube.com/watch?v=FFmTiofaBvg | creating a light switch]]
+* [[https://www.youtube.com/watch?v=d3aTMsEbFPw | creating and understanding weapons racks]]
+* [[https://www.youtube.com/watch?v=pLyDZK0Fjus | how to make an NPC give you an item through quest dialog]]
+* [[https://www.youtube.com/watch?v=uj7l0dx4Pug | Creating a Race in Skyrim]]
+* [[https://www.youtube.com/watch?v=8qLg8EDZAfc | creating a .BSA file manually]]
+* [[https://www.youtube.com/watch?v=k4b0FC6o9Qo | adding depth to your dungeon with image space]]
+* [[https://www.youtube.com/watch?v=UUe-gQIgXt4 | Creating Ambushes]]
+* [[https://www.youtube.com/watch?v=4EtFXkvcgIA | Adding Triggers to Objects]]
+* [[https://www.youtube.com/watch?v=Hd0JoSJATZI | Building Mannequins - Detailed]]
+* [[https://www.youtube.com/watch?v=3EjTCgg3SXI | Building Mannequins - short version]]
+* [[https://www.youtube.com/watch?v=y3ukpdqAH1w | Adding Armor to Mannequin using Quest Alias]]
+
+{{nav:s_13-2-2-15-6}}
+===== Story Manager
+* [[https://www.youtube.com/watch?v=UhpzyEyrpog | Managing Quests with the Story Manager]]
+* [[https://www.youtube.com/watch?v=Je7b8BFWIBQ | Making Locations for the Story Manager]]
+* [[https://www.youtube.com/watch?v=wqEljR5YWb4 | Chaining Quests in Story Manager]]
+* [[https://www.youtube.com/watch?v=rBnENymGE_c | Where to Add Your Nodes in Story Manager]]
+
+{{nav:s_13-2-2-15-7}}
+===== Object Oriented Programming
+* [[https://www.youtube.com/watch?v=Rpb925uNeG8 | Object Oriented Programming 101 for Scripters]]
+* [[https://www.youtube.com/watch?v=PDxs0pLHsCg | Object Oriented Programming 102 for Scripters]]
+* [[https://www.youtube.com/watch?v=m6DSh2ygngY | Object Oriented Programming 103 - Functions]]
+* [[https://www.youtube.com/watch?v=eKg1nuUN1M4 | Object Oriented Programming 104 - arrays]]
+* [[https://www.youtube.com/watch?v=76lwpk9uSEo | Object Oriented Programming 105 - type casting]]
+* [[https://www.youtube.com/watch?v=rE7XmBO79uA | object oriented programming 106 - default values]]
+* [[https://www.youtube.com/watch?v=to-sOJuJZXk | object oriented programming 107 - events]]
+* [[https://www.youtube.com/watch?v=E9VUiKE1gug | object oriented programming 108 - expressions]]
+* [[https://www.youtube.com/watch?v=pImSAKxBlhc | object oriented programming 109 - flags]]
+* [[https://www.youtube.com/watch?v=OJTL9qu8r1I | object oriented programming 110 - identifiers]]
+* [[https://www.youtube.com/watch?v=e1w_eLGUfLA | object oriented programming 111 - Keywords]]
+* [[https://www.youtube.com/watch?v=XVIeT3aaXL0 | object oriented programming 112 - understanding language reference notation]]
+* [[https://www.youtube.com/watch?v=ZB6h0obnUeQ | object oriented programming 113 - Literals]]
+* [[https://www.youtube.com/watch?v=KEXMAW7zInU | object oriented programming 114 - operators]]
+* [[https://www.youtube.com/watch?v=eurgrJFtwx8 | object oriented programming 115 - properties]]
+* [[https://www.youtube.com/watch?v=cD5HQIHLGeA | object oriented programming 116 - statements]]
+* [[https://www.youtube.com/watch?v=Rqj-7dkRcKI | object oriented programming 117 - how to layout a script]]
+* [[https://www.youtube.com/watch?v=WBdaBKhb0oM | object oriented programming 118 - programming with states]]
+* [[https://www.youtube.com/watch?v=8Ff4hP5h7uI | object oriented programming 119 - Variables]]
+* [[https://www.youtube.com/watch?v=bLzYX_WfXVw | object oriented programming 120 - scope]]
+* [[https://www.youtube.com/watch?v=ABO15qD6T-w | object oriented programming 121 - objects]]
+
+{{nbb}}
+    [[#s_13-2-2-14 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-16}}
+==== Jim Lawrence's Tutorials
+{{nav:s_13-2-2-16-1}}
+===== Quest Aliases
+* [[https://www.youtube.com/watch?v=-gB0VokuV50 | Aliases: Why They Are Important]]
+
+{{nbb}}
+    [[#s_13-2-2-15 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-17}}
+==== LeckerHamster's Tutorials
+* [[https://www.youtube.com/watch?v=8hYHj2Dy49s | Weapon Model+Textures+Import part 1]] (Advanced)
+* [[https://www.youtube.com/watch?v=6t_yECNDXNA | Weapon Model+Textures+Import part 2]] (Advanced)
+* [[https://www.youtube.com/watch?v=CwPIUDFi5_Y | Weapon Model+Textures+Import part 3]] (Advanced)
+* [[https://www.youtube.com/watch?v=9-nKesD7p2c | Weapon Model+Textures+Import part 4]] (Advanced)
+
+{{nbb}}
+    [[#s_13-2-2-16 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-18}}
+==== LouisAT444's Tutorials
+* [[https://www.youtube.com/watch?v=E8r1MCt_dXY | Custom House Basics]]
+* [[https://www.youtube.com/watch?v=KuRRwyrN-AE | Gizmos Summary &amp; Active Files]]
+* [[https://www.youtube.com/watch?v=VM9WULMZykI | Connecting to Skyrim with Load Doors]]
+* [[https://www.youtube.com/watch?v=N99teKPuNcY | Connecting to Skyrim &amp; Map Markers]]
+* [[https://www.youtube.com/watch?v=qwnco7dDrSU | Custom House Furnishing]]
+* [[https://www.youtube.com/watch?v=781sWuTBNKU | Altering Weapon Stats]]
+* [[https://www.youtube.com/watch?v=tcdA8sDZlD8 | Creating A Mannequin]]
+* [[https://www.youtube.com/watch?v=hns088dwcvc | Creating a Bookshelf]]
+* [[https://www.youtube.com/watch?v=dfxgjhoQYVY | Creating a Display Case]]
+* [[https://www.youtube.com/watch?v=aHDqlE-T5hI | Creating a Custom Book]]
+* [[https://www.youtube.com/watch?v=UqKPrQS1KpI | Creating an Ore Vein]]
+* [[https://www.youtube.com/watch?v=qGdfilJ12l0 | Creating Weapon Racks &amp; Plaques]]
+* [[https://www.youtube.com/watch?v=EuLOEp9tdls | Water]]
+* [[https://www.youtube.com/watch?v=3Q7C1GhG7NU | Exterior Worldspace Generation]]
+* [[https://www.youtube.com/watch?v=IMopR8OE6dA | Weather &amp; Climate Basics]]
+
+{{nbb}}
+    [[#s_13-2-2-17 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-19}}
+==== M1LL3R B0Y's Tutorials
+* [[https://www.youtube.com/watch?v=EWXZFBGCQdQ | Installing the Creation Kit]]
+* [[https://www.youtube.com/watch?v=09RW9E4IVYg | Getting Started]]
+* [[https://www.youtube.com/watch?v=BFHbusKVqZ0 | Making an NPC]]
+* [[https://www.youtube.com/watch?v=VGC-JfMgycI | Making a Follower]]
+* [[https://www.youtube.com/watch?v=JLVAU_48_G4 | Making a Merchant]]
+* [[https://www.youtube.com/watch?v=It5ZzjamtMk | Making a Quest (Part 1)]]
+* [[https://www.youtube.com/watch?v=QhZBmETMFwI | Making a Quest (Part 2)]]
+* [[https://www.youtube.com/watch?v=I_6EDon5Ugg | Making a Quest (Part 3)]]
+* [[https://www.youtube.com/watch?v=UYxxADLLRo0 | Making a Quest (Part 4)]]
+
+{{nbb}}
+    [[#s_13-2-2-18 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-20}}
+==== Player Two's Tutorials
+* [[https://www.youtube.com/watch?v=lN_uHMVeUVI | Weather - Part 1]]
+* [[https://www.youtube.com/watch?v=mWyA9oCLXcY | Weather - Part 2]]
+* [[https://www.youtube.com/watch?v=Qdh1MTWEEWs | Weather - Part 3]]
+
+{{nbb}}
+    [[#s_13-2-2-19 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-21}}
+==== presidentevil4zombie's Tutorials
+* [[https://www.youtube.com/watch?v=5OC0JEYkUL0 | Basics]]
+* [[https://www.youtube.com/watch?v=oMi2-zQVIi8 | Making a Custom Weapon]]
+* [[https://www.youtube.com/watch?v=_DVGh9mRHf8 | Position, Rotation, Scale of Objects]]
+* [[https://www.youtube.com/watch?v=GpdZQkWG8pc | Making Rooms]]
+
+{{nbb}}
+    [[#s_13-2-2-20 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-22}}
+==== So Much Monsters' Tutorials
+* [[https://www.youtube.com/watch?v=pfJT0VMicFc | How To Make New Recipes and Items with the Creation Kit]]
+* [[https://www.youtube.com/watch?v=4Q8M4v1dYkc | How to Create Unique Armors in Skyrim!]]
+* [[https://www.youtube.com/watch?v=KVPicWtxTWk | How To Get Custom Weapons into Skyrim]] (Advanced)
+* [[https://www.youtube.com/watch?v=y5dvy-ncIog | How To Get Custom Weapon Blood Effects into Skyrim]] (Advanced)
+* [[https://www.youtube.com/watch?v=L40qoiuUXL4 | How To Get Custom Armor into Skyrim I]] (Advanced)
+* [[https://www.youtube.com/watch?v=w6481ZYCzkI | How To Get Custom Armor Into Skyrim II - Weight Sliders]] (Advanced)
+
+{{nbb}}
+    [[#s_13-2-2-21 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-23}}
+==== Syneris' Tutorial
+* [[https://www.youtube.com/watch?v=ECryUnMljEU | Adding Perk Ranks and New Perks to Skill Trees]]
+
+{{nbb}}
+    [[#s_13-2-2-22 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-2-2-24}}
+==== Wheeze201's Tutorial
+* [[https://www.youtube.com/watch?v=VH2oYPJh-qw | Beginner tip for seamless cave rooms]]
+* [[https://www.youtube.com/watch?v=YoPpWn24p0A | Method to fix Z-Fighting/Texture Glitches in the CK]]
+* [[https://www.youtube.com/watch?v=fufxZsqW4E4 | How to create new objects with the Creation Kit using Vanilla Skyrim Models]]
+* [[https://www.youtube.com/watch?v=WHWqoKpc9gw | Object Palette Editing]]
+
+{{nbb}}
+    [[#s_13-2-2-23 | Previous Section]]
+    [[#s_13-2-2 | Top of this Group]]
+{{nbe}}
+{{nav:s_13-3}}
+== Non-video Tutorials
+{{nav:s_13-3-1}}
+=== Official
+{{nav:s_13-3-1-1}}
+==== Bethesda Game Studios
+* [[https://www.creationkit.com/index.php?title=Tutorials | Creation Kit WIKI Tutorials section]]
+
+div id="s_13-3-2">
+==== Community-authored
+{{nav:s_13-3-2-1}}
+==== OffBeatGeek
+* [[http://skyrim.offbeatgeek.com/puzzle1.html | Pillar Puzzel Tutorial]]
+
+{{nav:s_13-3-2-2}}
+==== TES Alliance
+* [[http://tesalliance.org/forums/index.php?/forum/113-esv-skyrim-school/ | Skyrim School]]
+
+{{nav:s_13-3-2-3}}
+==== DatenTheilt
+* [[http://forums.bethsoft.com/topic/1346963-tutorial-custom-house-upgrades-via-npc/ | Custom House upgrades via NPC]]
+
+{{nav:s_13-3-2-4}}
+==== Cipscis
+* [[http://www.cipscis.com/skyrim/tutorials/beginners.aspx | Papyrus for Beginners]]
+* [[http://www.cipscis.com/skyrim/tutorials/editorids.aspx | EditorIDs in Papyrus]]
+* [[http://www.cipscis.com/skyrim/tutorials/externalaccess.aspx | External Functions and Properties]]
+
+
+{{nav:s_13-3-2-5}}
+==== Redwood Elf
+* [[http://forums.bethsoft.com/topic/1355582-tutorial-advanced-design-forced-perspective/page__view__findpost__p__20433648 | Advanced Design - Forced Perspective]]
+
+{{nav:s_Fallout3}}
+== Fallout 3 Tutorials
+Taken from a post by Miax [[http://forums.bethsoft.com/topic/952768-geck-video-tutorials-on-you-tube/ | GECK Video Tutorials on You Tube]]
+
+There are many great training videos that have been uploaded to UTube by Bethesda and folks within our community like Echonite, Spikensbror, Mercury0x0 and Metalbillyboy. Next to each You Tube video below I put the Author and the Tutorial Level in parenthesis (Author/Level) to try and help new folks from avoiding the more complex stuff until they get into it. The initial list (which will grow over time) is
+=== Beginner
+* GECK Tutorial and Layout (Bethesda/Beginner): [[https://www.youtube.com/watch?v=Y2xskfNS8HE | Tutorial #1]], [[https://www.youtube.com/watch?v=akM2ynhtdIo | Tutorial #2]]
+* How to Activate Fallout3 Mods (Metalbillyboy/Beginner): [[https://www.youtube.com/watch?v=o-xrtkmdxuY | Tutorial #1]], [[https://www.youtube.com/watch?v=o-xrtkmdxuY | Tutorial #2]]
+* Construction Sets for GECK Tutorial (Spikensbror/Beginner): [[https://www.youtube.com/watch?v=Pup89eHntqw | Tutorial #1]], [[https://www.youtube.com/watch?v=7F2AjKigYnM | Tutorial #2]], [[https://www.youtube.com/watch?v=IzizRm4mh_Q | Tutorial #3]]
+* Object Palette&#39;s (Spikensbror/Beginner): [[https://www.youtube.com/watch?v=lRq2RCxz3Cc | Tutorial]]
+* GECK Essentials (Lf751/Beginner): [[https://www.nexusmods.com/fallout3/mods/3120 | Tutorial]]
+* Using the Object Palette in the GECK (Spikensbror/Beginner): [[https://www.youtube.com/watch?v=lRq2RCxz3Cc | Tutorial]]
+* Hallway Navmesh (Bethesda/Beginner): [[https://www.youtube.com/watch?v=RYJAj-63FR4 | Tutorial]]
+* Clutter Navmesh (Bethesda/Beginner): [[https://www.youtube.com/watch?v=HgB6vgfg3xc | Tutorial]]
+* Clutter and the Object Palette (Bethesda/Beginner): [[https://www.youtube.com/watch?v=B98bUHDQRXg&amp;feature=channel_page | Tutorial]]
+
+=== Intermediate
+* NPC&#39;s and Patrol Paths (Bethesda/Intermediate): [[https://www.youtube.com/watch?v=rXTo5i-NtzI | Tutorial]]
+* Working with Traps (Bethesda/Intermediate): [[https://www.youtube.com/watch?v=ivAKpbMMXho | Tutorial]]
+* Bunker Kit &amp; Snap To Reference (Bethesda/Intermediate): [[https://www.youtube.com/watch?v=IO470Cxk3fA&amp;fmt=22 | Tutorial]]
+* Weapon Creation Part 1 (Bethesda/Intermediate): [[https://www.youtube.com/watch?v=U31arsrgkxs | Tutorial]]
+* Hiding References (Bethesda/Intermediate): [[https://www.youtube.com/watch?v=dcFPAB2q_3c | Tutorial]]
+* Using Texture Sets for Existing Objects (Echonite/Intermediate): [[https://www.youtube.com/watch?v=XS9KfwVQuQY | Tutorial]]
+* Changing Projectiles (Simon Steinmann/Intermediate): [[https://www.youtube.com/watch?v=zKH4sKssvgc | Tutorial]]
+* Object Effects (Simon Steinmann/Intermediate): [[https://www.youtube.com/watch?v=RNWhiqwgfMw | Tutorial]]
+* How to edit Weapons in GECK (gamervidproductions/Intermediate): [[https://www.youtube.com/watch?v=Q7s779dxfm8 | Tutorial]]
+* Dialogue / Quest Tutorial (Crow Bennett/Intermediate): [[https://www.nexusmods.com/fallout3/mods/5561 | Primer]], [[https://www.youtube.com/watch?v=mm_fF4VHhw4 | Part1]], [[https://www.youtube.com/watch?v=uE0FMgWbNwU&amp;feature=related | Part2]], [[https://www.youtube.com/watch?v=kTOsYEW5yGY&amp;feature=related | Part3]]
+* Radio Station Tutorial (Crow Bennett/Intermediate): [[https://www.bethsoft.com/bgsforums/index.php?showtopic=952768 | Part1]], [[https://www.youtube.com/watch?v=LbcEHTCiiqw&amp;feature=channel | Part2]], [[https://www.youtube.com/watch?v=h_A9WgDeSAU&amp;feature=channel | Part3]], [[https://www.youtube.com/watch?v=P2qGTt4Y9Sg&amp;feature=channel | Part4]], [[https://www.youtube.com/watch?v=Un-CA760mV4&amp;feature=channel | Part5]], [[https://www.youtube.com/watch?v=8WjHXSyqyoI&amp;feature=channel | Part6]]
+
+=== Advanced
+* Blender to Fallout 3 - Tutorial (Artisten/Advanced): [[https://www.nexusmods.com/fallout3/mods/4941 | Tutorial]]
+* Echo Blender Tutorials (Echonite/Advanced): [[http://www.tesnexus.com/downloads/file.php?id=19303 | Tutorial]]
+* Optimizing and Performance (Bethesda/Advanced): [[https://www.youtube.com/watch?v=vRP_G5BnglQ | Tutorial #1]], [[https://www.youtube.com/watch?v=r2Wu75-IN44 | Tutorial #2]]
+* Shop Items (Spikensbror/Advanced): [[https://www.youtube.com/watch?v=v01JB0-qzsA | Tutorial]]
+* Making Your Own Vault Doors (Mercury0x0/Advanced): [[https://www.youtube.com/watch?v=aXtjyp1eRo0 | Tutorial #1]], [[https://www.youtube.com/watch?v=kxTEao9-2so | Tutorial #2]]
+* Making Your Own Custom Weapons (Echonite/Advanced): [[https://www.youtube.com/watch?v=xf_Qt_lfMxM | Tutorial]]
+* Modifying Projectiles of Weapons (Metalbillyboy/Intermediate): [[https://www.youtube.com/watch?v=zKH4sKssvgc | Tutorial]]
+
+=== Other Tutorials
+* Creating Audio Holotapes (Miax/Intermediate): [[https://www.nexusmods.com/fallout3/mods/4800 | Tutorial]]
+* Working in World Spaces (Ar1z/Advanced): [[https://www.nexusmods.com/fallout3/mods/3541 | Tutorial]]
+* Fallout 3 Modding - Introduction (nezroy/Beginner): [[http://blog.nezroy.com/2009/02/fallout-3-modding-introduction.html | Tutorial]]
+* Multiple HUDorPIP Colours Tutorial (mobil115/Intermediate): [[https://www.nexusmods.com/fallout3/mods/4737 | Tutorial]]
+* Creating 3D Objects and Textures for Fallout3 (Miax/Intermediate): [[https://www.nexusmods.com/fallout3/mods/6107 | Tutorial]]
+
+Cheers and Happy GECKing&#33;<br /><br />Miax<br /><br /><br />Note: Some of these video have an option to select an HD format...look for that option below the video. For more details on putting a video in HD, You Tube&#39;s got you covered on what you can do: [[https://www.youtube.com/blog?entry=MhHW3ZCKufI | Here]], [[https://www.google.com/support/youtube/bin/...amp;topic=16621 | and Here]]
+== Morrowind Tutorials
+Post by Midgetalien  [[http://forums.bethsoft.com/topic/984278-list-morrowind-video-tutorials | Morrowind Video Tutorials]]
+
+Hey there, i was browsing youtube for blender  and i came across a video for making a house in morrowind. I clicked on it and it turned out to be a tutorial to the CS. I then wondered how many other video tutorials there were out there. Surprisingly theres quite a few. So i bring you this list. ITs still being updated as theres many out there. If you know of any others please post links and i will upadate the list.
+* [[https://www.youtube.com/watch?v=u5KHsksCRZE | a tutorial on how i make houses in morrowind ]] by morrowoblivion13
+This tutorial requires minimal knowledge of the CS. The Tutorial teaches the user how to copy and paste a building and to create a new interior.
+* [[https://www.youtube.com/watch?v=R7mfH3NMhYc | TES construction tutorial]] by xkillac
+very simple tutorial. No knowledge needed. Teaches the user how to load morrowind and the game world in the CS
+* [[https://www.youtube.com/watch?v=h_2O2cXC66U | Morrowind Construction Set - Tutorial 1]] by SilverMagics
+No CS Knowledge needed. This tutorial is a great beginners tutorial. It tells the user how to load up a ESM and ESP. Explains what a plugin is and gives a basic account of the CS.
+* [[https://www.youtube.com/watch?v=qzLQk6db0gM&amp;feature=channel_page | Morrowind Construction Set - Tutorial 2]] by SilverMagics
+Part 2 of silverMagics Tutorials. Teaches the user how to edit the exterior using the example of placing a shack.
+* [[https://www.youtube.com/watch?v=iiIqn43_Ag8 | Morrowind Construction Set - Tutorial 3 ]] by SilverMagics
+following on from Silvermagics first two tutorials this tutorial teaches the user how to create an interior using the example of a shack and placing statics/misc items/lights ect... Also expands upon the previous tutorial skills.
+* [[https://www.youtube.com/watch?v=funq4AJZitc&amp;feature=channel_page | Morrowind Construction Set - Tutorial 4]] by SilverMagics
+Part 2 of the &quot;create a shack&quot;. Continues on from Tutorial 3 by silvermagic. Again expands upon item placing and interior building
+* [[https://www.youtube.com/watch?v=HN17dfxijQc&amp;feature=channel_page | Morrowind construction Set - Tutorial 5]] by SilverMagics
+Testing. This video is a test of the mod created by following the pervious 4 tutorials. It stresses how you must test what you have created and shows players that what they have created goes in game.
+* [[https://www.youtube.com/watch?v=xEisM_g0jPQ&amp;feature=channel_page | Morrowind Construction Set - Tips and Tricks]] by silvermagics
+Expands upon the knowledge gained from the previous 5 tutorials. Shows the user how to use functions such as &quot;snap Grid&quot; and the &quot;rotation tool&quot; Explaning their functions.
+* [[https://www.youtube.com/watch?v=0nBwJz5nNyo | Morrowind construction tutorial]] by pancakekingdom
+Basic knowledge needed. Teaches how to add items to an NPC
+* [[https://www.youtube.com/watch?v=Cf3SefSeSvs | How to add a mod ]]by WingedTwiIight
+Teaches the user how to download and install a morrowind mod
+* [[https://www.youtube.com/watch?v=31pcVQpCD5s | How to make an army mod for morrowind]] by dapinkpwner2008
+A very basic tutorial on NPC AI. Minor information on using the CS such as loading up a master file, placing an NPC ingame.
+* [[https://www.youtube.com/watch?v=5I5uP7oxaTg | Morrowind Dungeonbuilding Tutorial]]
+Advanced Tutorial on making Dungeons/interiors/explaining interiors
+* [[https://www.youtube.com/watch?v=amtEtWH5YX8 | Morrowind Construction set 2]]
+Tutorial on placing objects and NPC editing
+* [[https://www.youtube.com/watch?v=mEgpjbs28Ag | Morrowind Worldbuilding Tutorial]]
+Very basic tutorial/guide to worldbuilding from placing items to landscaping.
+* [[https://www.youtube.com/watch?v=GDBlG4t1x5k | Morrowind TES Overview (Interior editing)]]
+Knowledge of the CS needed. Teaches the user how to do interior building, along with basic controls and room linking
+Three More Videos by Silvermagics, again showing how to make a shack. Essentially just expanding and re-using the knowldege gained from the previous shack tutorial he made
+* [[https://www.youtube.com/watch?v=CUjg0kGOxkw | http://www.youtube.c...h?v=CUjg0kGOxkw]]
+* [[https://www.youtube.com/watch?v=WZRBpl9bZIA | http://www.youtube.c...h?v=WZRBpl9bZIA]]
+* [[https://www.youtube.com/watch?v=KTWyId2ix_U | http://www.youtube.c...h?v=KTWyId2ix_U]]
+
+{{nbb}}
+    [[14-Scripting-Resources.html | &laquo; Previous Page]]
+    [[16-DynDoLod.html | Next Page &raquo;]]
+{{nbe}}
