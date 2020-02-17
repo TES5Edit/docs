@@ -1,0 +1,1880 @@
+---
+layout: default
+title: xEdit What's New and Version Info
+---
+<h1 class="grhead1">Main Table Of Contents</h1>
+<div id="tableOfContents" class="grid-toc">
+    <div class="toc1">
+        <h2 class="grhead2"><a href="index.html">1. Introduction</a></h2>
+        <h2 class="grhead2"><a href="2-overview.html">2. Overview</a></h2>
+        <h2 class="grhead2"><a href="3-basicuse.html">3. xEdit Basic Use</a></h2>
+        <h2 class="grhead2"><a href="4-modgroups.html">4. ModGroups</a></h2>
+        <h2 class="grhead2"><a href="5-conflict-detection-and-resolution.html">5. Conflict Detection and Resolution</a></h2>
+        <h2 class="grhead2"><a href="6-themethod.html">6. The Method</a></h2>
+        <h2 class="grhead2"><a href="7-mod-cleaning-and-error-checking.html">7. Mod Cleaning and Error Checking</a></h2>
+        <h2 class="grhead2"><a href="8-managing-mod-files.html">8. Managing Mod Files</a></h2>
+        <h2 class="grhead2"><a href="9-mod-utilities.html">9. Mod Utilities</a></h2>
+    </div>
+    <div class="toc2">
+        <h2 class="grhead2"><a href="10-fo3edit-faq.html">10. FO3Edit FAQ</a></h2>
+        <h2 class="grhead2"><a href="11-appendix.html">11. Appendix</a></h2>
+        <h2 class="grhead2"><a href="12-cheat-sheets-and-quick-reference-charts.html">12. Cheat Sheets and Quick Reference Charts</a></h2>
+        <h2 class="grhead2"><a href="13-Scripting-Functions.html">13. Scripting Functions</a></h2>
+        <h2 class="grhead2"><a href="14-Scripting-Resources.html">14. Scripting Resources</a></h2>
+        <h2 class="grhead2"><a href="15-tutorials.html">15. Tutorials</a></h2>
+        <h2 class="grhead2"><a href="16-xLODGen.html">16. xLODGen</a></h2>
+        <h2 class="grhead2"><a href="17-DynDoLod.html">17. DynDoLod</a></h2>
+        <h2 class="grhead2"><a href="18-whatsnew.html">18. xEdit What's New and Version Info</a></h2>
+    </div>
+</div>
+<h1>{{ page.title }}</h1>
+<h2 id="Contents">Contents...</h2>
+<input type="checkbox" id="spoiler1" />
+<label for="spoiler1">Contents Spoiler</label>
+<div class="main-content">
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit403">18.1 What's new in xEdit 4.0.3?</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Bugfixes">18.1.1 Bugfixes</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Minorchanges">18.1.2 Minor changes</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ShortenedParameters">18.1.3 Shortened Parameters</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ChangestoQuickAutoClean">18.1.4 Changes to QuickAutoClean</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit402">18.2 What's new in xEdit 4.0.2?</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#KoFi">18.2.1 Ko-Fi</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#GamerPoetsVideos">18.2.2 GamerPoets Videos</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Bugfixes1">18.2.3 Bugfixes</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#CollapsedConditions">18.2.4 Collapsed Conditions</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#CollapseArrayswithBenignConflictPrioritybyDefault">18.2.5 Collapse Arrays with Benign Conflict Priority by Default</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ManualCleaningfunctionsaredeprecated">18.2.6 Manual Cleaning functions are deprecated</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#QuickShowConflictsQuickAutoCleanandAutoGameLinkSubModes">18.2.7 [Very] Quick Show Conflicts, Quick [Auto] Clean, and Auto Game Link Sub Modes</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#AutoLoadforQuickAutoClean">18.2.8 Auto Load for Quick [Auto] Clean</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#AutoExit">18.2.9 Auto Exit</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Enderal">18.2.10 Enderal</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Fallout76">18.2.11 Fallout 76</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#SortingofINFOrecords">18.2.12 Sorting of INFO records</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ONAMUpdateMode">18.2.13 ONAMUpdate Mode</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#bsaba2Handling">18.2.14 .bsa/.ba2 Handling</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ExpertOptions">18.2.15 Expert Options</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ShrinkingSpeedButtons">18.2.16 Shrinking SpeedButtons</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit401">18.3 What's new in xEdit 4.0.1?</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Bugfixes2">18.3.1 Bugfixes</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#PayPalButton">18.3.2 PayPal Button</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#NexusModsandGitHubbuttons">18.3.3 NexusMods and GitHub buttons</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit400">18.4 What's new in xEdit 4.0.0?</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#WhatsNew">18.4.1 What's New</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#TableofContents">18.4.1.1 Table of Contents</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#Search">18.4.1.2 Search</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#Zoom">18.4.1.3 Zoom</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#UIThemes">18.4.2 UI Themes</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Themeawarenessforconflictcolour">18.4.3 Theme awareness for conflict colour</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Legendforconflictcolours">18.4.4 Legend for conflict colours</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#HighDPIaware">18.4.5 High-DPI aware</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#HamburgerMenu">18.4.6 "Hamburger" Menu</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ESLsupport">18.4.7 ESL support</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Fallout76support">18.4.8 Fallout 76 support</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ReferencedByCaching">18.4.9 Referenced By Caching</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#MultithreadedbuildingandloadingofReferencedByinformation">18.4.10 Multi-threaded building and loading of Referenced By information</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ApplicationandmoduleCRC32information">18.4.11 Application and module CRC32 information</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Improvedlanguageandcodepagesupport">18.4.12 Improved language and codepage support</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#Stringclasses">18.4.12.1 String classes</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#Languages">18.4.12.2 Languages</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#Definingcodepageforlanguageinsettingsfile">18.4.12.3 Defining codepage for language in settings file</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#Defaultlanguage">18.4.12.4 Default language</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#Localizedstrings">18.4.12.5 Localized strings</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#Translatablestrings">18.4.12.6 Translatable strings</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#Logentries">18.4.12.7 Log entries</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Loadorderhandling">18.4.13 Load order handling</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#NewModuleselectiondialogs">18.4.14 New Module selection dialogs</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#OptionalSelectionFormsrequireholdingCTRLfordoubleclick">18.4.15 Optional 'Selection Forms require holding CTRL for double click'</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Fullyimplementedcodeghostsupport">18.4.16 Fully implemented <code>.ghost</code> support</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#CompletelyreworkedModGroupssupport">18.4.17 Completely reworked ModGroups support</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#NewModGroupSelectiondialog">18.4.17.1 New ModGroup Selection dialog</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#EnableDisableandReloadModGroups">18.4.17.2 Enable/Disable and Reload ModGroups</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#CreatingModGroups">18.4.17.3 Creating ModGroups</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#ModGroupEditor">18.4.17.4 ModGroup Editor</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#modgroupsfiles">18.4.17.5 .modgroups files</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#EditingModGroups">18.4.17.6 Editing ModGroups</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#DeletingModGroups">18.4.17.7 Deleting ModGroups</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#UpdatingCRCs">18.4.17.8 Updating CRCs</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#CompareSelected">18.4.18 Compare Selected</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#AutoCompareSelected">18.4.19 Auto "Compare Selected"</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Rewrittencopymultipletoselectedrecords">18.4.20 Rewritten "copy [multiple] to selected records"</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Resettingsettingsonstart">18.4.21 Resetting settings on start</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Allowdirectsaving">18.4.22 Allow direct saving</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ShowUnsavedHintreplacespreviousAutoSaveoption">18.4.23 "Show Unsaved Hint" replaces previous "Auto Save" option</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ResetModifiedflagforelementsonSave">18.4.24 Reset Modified flag for elements on Save</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Editinginviewtreeview">18.4.25 Editing in view treeview</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ElementEditorForm">18.4.26 Element Editor Form</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Applyfilter">18.4.27 Apply filter</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Reachableinformation">18.4.28 Reachable information</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#EditingMasterFilesinFileHeader">18.4.29 Editing "Master Files" in "File Header"</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Improvementstoaddingsortingandcleaningmasters">18.4.30 Improvements to adding, sorting, and cleaning masters</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#OptionalShowFileHeaderFlags">18.4.31 Optional "Show File Header Flags"</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#PlayerRefPLYR00000014asvisiblerecordin123game125exe">18.4.32 PlayerRef [PLYR:00000014] as visible record in &#123;game&#125;.exe</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Hardcodeddatfilesupdated">18.4.33 Hardcoded.dat files updated</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Tipsupdated">18.4.34 Tips updated</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#CopytoClipboardonnavigationtreeview">18.4.35 Copy to Clipboard on navigation treeview</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#QuickShowConflicts">18.4.36 [Very] Quick Show Conflicts</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#QuickAutoClean">18.4.37 Quick [Auto] Clean</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#DragnDropofwholerecordinviewtreeview">18.4.38 Drag'n'Drop of whole record in view treeview</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#MouseshortcutforJumpTointheviewtreeview">18.4.39 Mouse shortcut for "Jump To" in the view treeview</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Navmeshimprovements">18.4.40 Nav mesh improvements</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Programshutdowncanbeinterrupted">18.4.41 Program shutdown can be interrupted</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Compareto">18.4.42 "Compare to..."</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Createdeltapatchusing">18.4.43 "Create delta patch using..."</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#esuasfullysupportedmodulefileextension">18.4.44 .esu as fully supported module file extension</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ButtonstoopenHelpNexusModsGitHubDiscordorPatreonpages">18.4.45 Buttons to open Help, NexusMods, GitHub, Discord, or Patreon pages</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Updatecheck">18.4.46 Update check</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#GitHub">18.4.46.1 GitHub</a></p>
+<p class="list-3">&bull;&nbsp; <a href="#NexusMods">18.4.46.2 NexusMods</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Patreonreminderballoonhint">18.4.47 Patreon reminder balloon hint</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Columnwidthmodes">18.4.48 Column width modes</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Hidenoconflictandemptyrows">18.4.49 Hide no conflict and empty rows</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Optiontodelayupdatingviewwhenscrollingthroughnavigationtreeview">18.4.50 Option to delay updating view when scrolling through navigation treeview</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#OptionalAlignalignablearrayelements">18.4.51 Optional "Align alignable array elements"</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#FilterforViewTreeview">18.4.52 Filter for View Treeview</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ImprovedcellfocushandlinginViewtreeview">18.4.53 Improved cell focus handling in View treeview:</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ColumnsensitiverowlabelsinViewtreeview">18.4.54 Column sensitive row labels in View treeview</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ChangetosourceforimplicitlycopiedrecordsduringDeepCopyasoverridenewinto">18.4.55 Change to source for implicitly copied records during "[Deep] Copy as override/new into..."</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Mergeintomaster">18.4.56 Merge into master</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#InjectFormsintomaster">18.4.57 "Inject Forms into master..."</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Deepcopyasoverridewithoverwritinginto">18.4.58 "[Deep] copy as override (with overwriting) into..."</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#CompactFormIDsforESL">18.4.59 "Compact FormIDs for ESL"</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#RenumberFormIDsfrom">18.4.60 "Renumber FormIDs from..."</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#GeneralizedparametersforONAMhandling">18.4.61 Generalized parameters for ONAM handling</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#CollapsibleNodesinViewtab">18.4.62 Collapsible Nodes in View tab</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#NextObjectIDinFileHeader">18.4.63 Next Object ID in File Header</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#FileHeaderinViewwhenfilenodeselected">18.4.64 File Header in View when file node selected</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Improvedfeedbackduringlongoperations">18.4.65 Improved feedback during long operations</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#autoloadcommandlineparameter">18.4.66 <code>-autoload</code> command line parameter</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#GameLinkFO4EditLink">18.4.67 GameLink / FO4EditLink</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Generalrecorddefinitionimprovementsandfixes">18.4.68 General record definition improvements and fixes</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#UsingEditorIDtoflagITMsasintentional">18.4.69 Using EditorID to flag ITMs as intentional</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Filemodificationdatetimeonsave">18.4.70 File modification date/time on save</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#AddingofCELLandROADtoWRLDandreferenceREFRACHRLANDPGRDandNAVMtoCELLviatheUIorAddfunctioninscripts">18.4.71 Adding of CELL (and ROAD) to WRLD, and reference (REFR, ACHR, ...), LAND, PGRD, and NAVM to CELL via the UI (or Add() function in scripts)</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#UpdatingcontainingCELLofreferencewhennecessary">18.4.72 Updating containing CELL of reference when necessary</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Automaticupdatingofnavigationtreeviewinreactiontostructuralchanges">18.4.73 Automatic updating of navigation treeview in reaction to structural changes</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#RemoveintheheadercontextmenuoftheViewtab">18.4.74 "Remove" in the header context menu of the View tab</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#LODGenupdated">18.4.75 LODGen updated</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Showfloatingpointanddecompressionerrors">18.4.76 Show floating point and decompression errors</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#WorkingNextMemberPreviousMemberforRUnionegAliasinQUST">18.4.77 Working Next Member / Previous Member for RUnion (e.g. Alias in QUST)</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#ApplyScriptdialogimprovements">18.4.78 "Apply Script..." dialog improvements</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Scriptingimprovements">18.4.79 Scripting improvements</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#Bugfixes3">18.4.80 Bugfixes</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit322">18.5 What's new in xEdit 3.2.2?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit321">18.6 What's new in xEdit 3.2.1?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit32">18.7 What's new in xEdit 3.2?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit313">18.8 What's new in xEdit 3.1.3?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit312">18.9 What's new in xEdit 3.1.2?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit311">18.10 What's new in xEdit 3.1.1?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit310">18.11 What's new in xEdit 3.1.0?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit3032">18.12 What's new in xEdit 3.0.32?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit3031">18.13 What's new in xEdit 3.0.31?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit3030">18.14 What's new in xEdit 3.0.30?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit3029">18.15 What's new in xEdit 3.0.29?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit3028">18.16 What's new in xEdit 3.0.28?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit3027">18.17 What's new in xEdit 3.0.27?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit3026">18.18 What's new in xEdit 3.0.26?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit3025">18.19 What's new in xEdit 3.0.25?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit3024">18.20 What's new in xEdit 3.0.24?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit3023">18.21 What's new in xEdit 3.0.23?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit3022">18.22 What's new in xEdit 3.0.22?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit3019">18.23 What's new in xEdit 3.0.19?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit3016">18.24 What's new in xEdit 3.0.16?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit3015">18.25 What's new in xEdit 3.0.15?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit253">18.26 What's new in xEdit 2.5.3?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit251">18.27 What's new in xEdit 2.5.1?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit250">18.28 What's new in xEdit 2.5.0?</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#RenumberFormIDsfrom4">18.28.1 "Renumber FormIDs from..."</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit230EXPERIMENTAL">18.29 What's new in xEdit 2.3.0 EXPERIMENTAL?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit223">18.30 What's new in xEdit 2.2.3?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit220">18.31 What's new in xEdit 2.2.0?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit12">18.32 What's new in xEdit 1.2?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#WhatsnewinxEdit11">18.33 What's new in xEdit 1.1?</a></p>
+<p class="list-1">&bull;&nbsp; <a href="#YouKnowWhatYouAreDoing">18.34 You Know What You Are Doing</a></p>
+</div>
+<h1 id="WhatsnewinxEdit403">18.1 - What's new in xEdit 4.0.3?</h1>
+<p class="empty">&nbsp;</p>
+<h2 id="Bugfixes">18.1.1 - Bugfixes</h2>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; #649 - Right pane filter bug</p>
+<p class="list-1">&bull;&nbsp; #654 - [FO4] Check for Errors: reports error when a region / object list has SCOL entries</p>
+<p class="list-1">&bull;&nbsp; #659 - When comparing records, right-clicking to Expand All produces a contextual menu that hangs the Expand All functionality</p>
+<p class="list-1">&bull;&nbsp; #669 - CELL at 0,0 may be spuriously added to worldspaces during cleaning.</p>
+<p class="list-1">&bull;&nbsp; #670 - [FO4] Damage magic effects mislabeled subrecord</p>
+<p class="list-1">&bull;&nbsp; #674 - Invalid ITMs may be reported in rare cases when form versions differ</p>
+<p class="list-1">&bull;&nbsp; #676 - Ghosted ESPs and Modgroups</p>
+<p class="list-1">&bull;&nbsp; #678 - AccessViolation while generating conflict status in rare cases</p>
+<p class="list-1">&bull;&nbsp; #691 - [FO4/FO76] Copying CELL data into a file can cause landscape collision to be re-enabled when it shouldn't</p>
+<p class="list-1">&bull;&nbsp; #694 - scheduled save from save failure not removed on subsequent successes</p>
+<p class="list-1">&bull;&nbsp; #695 - Typo in Weap&gt;DNAM&gt;Animation Type: Balistic -&gt; Ballistic</p>
+<p class="list-1">&bull;&nbsp; #682 - The path bar covers the forward and back buttons if the window is too small</p>
+<p class="list-1">&bull;&nbsp; #696 - Double Listing of "Decrease Equip Time" in Weapon Mod Effect</p>
+<p class="list-1">&bull;&nbsp; #697 - Cannot apply scripts using Classes, SysUtils, StrUtils or Windows units</p>
+<p class="list-1">&bull;&nbsp; #708 - "Clean masters" function doesn't remove all masters at first use</p>
+<p class="list-1">&bull;&nbsp; #718 - access violation when holding delete</p>
+<p class="list-1">&bull;&nbsp; #720 - wrong order for FNAM and LNAM in MUST</p>
+<p class="list-1">&bull;&nbsp; #721 - The MTNM field in RACE record is written with unnecessary terminating 0 byte</p>
+<p class="list-1">&bull;&nbsp; #729 - LODGen can fail with references that have NULL or unresolvable Base FormIDs</p>
+<p class="list-1">&bull;&nbsp; #732 - New CK leaves Base record listed for deleted REFRs, should not be marked as error</p>
+<p class="list-1">&bull;&nbsp; #733 - changing the form id of an overridden record doesn't update the link between original and override until restart</p>
+<p class="list-1">&bull;&nbsp; #734 - right side window's record overrides don't focus on currently selected mod</p>
+<p class="list-1">&bull;&nbsp; #737 - Ambiguity in Skyrim's QUST definition</p>
+<p class="list-1">&bull;&nbsp; #747 - Ambiguity in Skyrim's PACK definition</p>
+<p class="list-1">&bull;&nbsp; #748 - Changing ANAM in Skyrim's PACK does not update the CNAM prompt</p>
+<p class="list-1">&bull;&nbsp; #750 - form id override's id changes while the original fails in case id number's changed to an existing id</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - cleaning Dragonborn.esm can make Boars non-aggressive</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - crash in NAVM when triangle edge is flagged as edge link, but the number stored in the edge field can't look up a valid external NAVM via the Edge Links table</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - VeryQuickShowConflicts may very rarely not show certain conflicts</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - Hardcoded (FormID &lt; 800) records are not handled correctly in modules that don't have the game master as a master</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - adding a new module after having performed a "Compare To" puts the new module at the wrong load order</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - error when copying nif blocks with skinning</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - double click on integer and float elements does not show in-place editor if they are inside a union</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - in very rare cases, a change might not result in the file being marked as having unsaved changes</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - changing the FormID of a record might not always update the FormID of the "Children of" group for that record</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - Module selection misbehaves for modules with missing masters</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - [TES5/SSE] BOOKs teaching SPELs should not allow NULL</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - TdfElement.LoadFromResource does not report if the resource can't be found</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - Quick [Auto] Clean allows selecting the game master (which makes no sense)</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - [FO4] incorrect subrecord order in CELL</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - injected records are not showing up in drop down of FormID in-place editor</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - orphaned "Children of" groups can cause Asserts when trying to display them in the nav tree view</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Minorchanges">18.1.2 - Minor changes</h2>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; #637 - [FO4/FO76] TTEB - Unknown in RACE record is "Blend Operation"</p>
+<p class="list-1">&bull;&nbsp; #679 - [FO4/FO76] VISI and PCMB subrecords decoding</p>
+<p class="list-1">&bull;&nbsp; #722 - suffix removal during formid copying</p>
+<p class="list-1">&bull;&nbsp; #731 - [FO4] "Unknown 11" in the "Data-Flags" subrecord of CELL records is "Hidden from Interior Cell List"</p>
+<p class="list-1">&bull;&nbsp; [FO3/FNV] Flag 0 in BOOK means "Scroll"</p>
+<p class="list-1">&bull;&nbsp; [FO3/FNV] make "RuntimeScriptProfiler xSE Extension Log" available</p>
+<p class="list-1">&bull;&nbsp; Report error records in PrepareSave with full path instead of just their name</p>
+<p class="list-1">&bull;&nbsp; Show tooltip hint for View column headers</p>
+<p class="list-1">&bull;&nbsp; Show indices for unsorted SubRecord Arrays</p>
+<p class="list-1">&bull;&nbsp; [TES5/SSE] added ENCH to Knowable Forms</p>
+<p class="list-1">&bull;&nbsp; Allow assigning to deleted records</p>
+<p class="list-1">&bull;&nbsp; Experts can activate an option which enables an extended FormID space (<code>001</code>-<code>FFF</code> instead of <code>800</code>-<code>FFF</code>) when compacting for ESL</p>
+<p class="list-1">&bull;&nbsp; Check for Errors now reports invalid ObjectID in light modules and HITMEs</p>
+<p class="empty">&nbsp;</p>
+<h2 id="ShortenedParameters">18.1.3 - Shortened Parameters</h2>
+<p class="empty">&nbsp;</p>
+<p>Some parameters can be specified in a shortened way now:</p>
+<p class="list-1">&bull;&nbsp; <code>-quickshowconflicts</code> as <code>-qsc</code></p>
+<p class="list-1">&bull;&nbsp; <code>-veryquickshowconflicts</code> as <code>-vqsc</code></p>
+<p class="list-1">&bull;&nbsp; <code>-autogamelink</code> as <code>-agl</code></p>
+<p class="list-1">&bull;&nbsp; <code>-quickclean</code> as <code>-qc</code></p>
+<p class="list-1">&bull;&nbsp; <code>-quickautoclean</code> as <code>-qac</code></p>
+<p class="empty">&nbsp;</p>
+<h2 id="ChangestoQuickAutoClean">18.1.4 - Changes to QuickAutoClean</h2>
+<p class="empty">&nbsp;</p>
+<p>As a fix for a problem in Dawnguard.esm (see details below in previous version) QAC was marking all records in a to be cleaned file as modified, which made xEdit assemble these records from parsed data instead of just writing out the bytes that were read when the file was loaded.</p>
+<p class="empty">&nbsp;</p>
+<p>This resulted in problems when cleaning Dragonborn.esm (and possibly other files).</p>
+<p class="empty">&nbsp;</p>
+<p>xEdit is now only marking all records as modified in <code>Dawnguard.esm</code></p>
+<p class="empty">&nbsp;</p>
+<p>This behavior can be controlled with 2 parameters:</p>
+<p class="list-1">&bull;&nbsp; <code>-NoAutoMarkModified</code> prevents mark modified from being applied to <code>Dawnguard.esm</code> (resulting in the Soul Cairn error described below)</p>
+<p class="list-1">&bull;&nbsp; <code>-ForceMarkModified</code> always applies mark modified to the cleaned file (if there was anything to clean)</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit402">18.2 - What's new in xEdit 4.0.2?</h1>
+<p class="empty">&nbsp;</p>
+<h2 id="KoFi">18.2.1 - Ko-Fi</h2>
+<p class="empty">&nbsp;</p>
+<p>A number of users asked for a way to support xEdit development without using Patreon and/or PayPal.</p>
+<p class="empty">&nbsp;</p>
+<p>It is now possible to support xEdit development with both one time and monthly donations via Ko-Fi, charged directly to a credit card using stripe.com (or via PayPal) in AU$.</p>
+<p class="empty">&nbsp;</p>
+<p>The Ko-Fi Page is linked via the Ko-Fi button in the top right corner of the main form.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="GamerPoetsVideos">18.2.2 - GamerPoets Videos</h2>
+<p class="empty">&nbsp;</p>
+<p>A new "Videos" button has been added in the top right corner of the main form.</p>
+<p class="empty">&nbsp;</p>
+<p>This will open a YouTube playlist with xEdit specific videos by GamerPoets.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Bugfixes1">18.2.3 - Bugfixes</h2>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; #634 - [FO4] Unknown Perk Entrypoint 157</p>
+<p class="list-1">&bull;&nbsp; #636 - Adding a script fragment to a Quest's VMAD record doesn't update the fragmentCount field</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - xEdit remembers (unwantedly) if the main form was minimized when it was last closes and restores that state</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - When the same file is saved twice within the same second, it results in an error while renaming .save files on shutdown</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - [FNV] Unused at the end of BMDT is wrongly defined as variable size (should always be 3 bytes)</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - Collapsing of record storage (used when adding/removing/sorting masters) can under certain circumstances result in an assert while trying to save the file later</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - "Deep Copy as Override" does not check records in child groups when looking for masters that need to be added to the target</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - When using <code>Insert</code> key in the View, it is not possible to use Ctrl to flip the "Focus newly added elements in View" option</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - [SSE] DATA in WATR is Unused</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - Without theme, the icons in the top right corner have a black background (thanks shad0wshayd3 for the fix)</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - Saving <code>.esm</code> or <code>.esl</code> files without ESM flag for SSE stripped ONAM instead of writing it as required (the game treats files with these extension always as having ESM)</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - <code>AddMasters()</code> can be called with names that are not valid module files</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - The navigation treeview unnecessarily checks nodes of them main game masters for changes</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - [TES5/SSE] Words of Power in SHOU should not be alignable</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - [FO3/FNV] Some strings that are translatable are not flagged as such</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - [FO3/FNV] Sort FLST should be disabled by default</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - Duplicate "Children of" GRUPs should report a non-fatal error instead of asserting</p>
+<p class="empty">&nbsp;</p>
+<h2 id="CollapsedConditions">18.2.4 - Collapsed Conditions</h2>
+<p class="empty">&nbsp;</p>
+<p>Collapsed Conditions now display the condition in an easily readable compact 1 line format.</p>
+<p class="empty">&nbsp;</p>
+<p>Conditions are now collapsed by default. An option has been added to control this.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="CollapseArrayswithBenignConflictPrioritybyDefault">18.2.5 - Collapse Arrays with Benign Conflict Priority by Default</h2>
+<p class="empty">&nbsp;</p>
+<p>A new Option "Collapse Arrays with Benign Conflict Priority by Default" has been added (defaults to true).</p>
+<p class="empty">&nbsp;</p>
+<p>When this option is active, Arrays with a Conflict Priority of Benign will be initially collapsed.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="ManualCleaningfunctionsaredeprecated">18.2.6 - Manual Cleaning functions are deprecated</h2>
+<p class="empty">&nbsp;</p>
+<p>Manual Cleaning functions ('Apply Filter for Cleaning', 'Undelete and Disable References', and 'Remove "Identical to Master" records' are considered obsolete with the introduction of 'Quick Auto Clean' mode and will now only show a message explaining this.</p>
+<p class="empty">&nbsp;</p>
+<p>More information about Quick Auto Clean can be found in this What's New document (in multiple places below, use the search function).</p>
+<p class="empty">&nbsp;</p>
+<h2 id="QuickShowConflictsQuickAutoCleanandAutoGameLinkSubModes">18.2.7 - [Very] Quick Show Conflicts, Quick [Auto] Clean, and Auto Game Link Sub Modes</h2>
+<p class="empty">&nbsp;</p>
+<p>These sub modes of Edit mode can now be accessed using the name of the exe in addition to use of parameters.</p>
+<p class="empty">&nbsp;</p>
+<p>To use these modes, you can rename the as e.g.:</p>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; Very Quick Show Conflicts: <code>FO3EditVeryQuickShowConflicts.exe</code> or <code>TES4EditVQSC.exe</code></p>
+<p class="list-1">&bull;&nbsp; Quick Show Conflicts: <code>SSEEditQuickShowConflicts.exe</code> or <code>TES5EditQSC.exe</code></p>
+<p class="list-1">&bull;&nbsp; Quick Auto Clean: <code>FNVEditQuickAutoClean.exe</code> or <code>FO4EditQAC.exe</code></p>
+<p class="list-1">&bull;&nbsp; Quick Clean: <code>TES4EditQuickClean.exe</code> or <code>SSEEditQC.exe</code></p>
+<p class="list-1">&bull;&nbsp; Auto Game Link: <code>FO4EditAutoGameLink.exe</code> or <code>FO4EditAGL.exe</code></p>
+<p class="empty">&nbsp;</p>
+<p>These sub modes will now show in the Window Caption of the Main Window, to make it easy to see that xEdit has been started in one of these modes.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="AutoLoadforQuickAutoClean">18.2.8 - Auto Load for Quick [Auto] Clean</h2>
+<p class="empty">&nbsp;</p>
+<p>The <code>-autoload</code> parameter can be used together with <code>-quickautoclean</code> or <code>-quickclean</code> parameters.</p>
+<p class="empty">&nbsp;</p>
+<p>It is then necessary to specify the module that should be cleaned on the command line.</p>
+<p class="empty">&nbsp;</p>
+<p>e.g.: <code>SSEEdit.exe -quickautoclean -autoload update.esm</code></p>
+<p class="empty">&nbsp;</p>
+<h2 id="AutoExit">18.2.9 - Auto Exit</h2>
+<p class="empty">&nbsp;</p>
+<p>The new <code>-autoexit</code> parameter can be used together with a number of different modes (e.g. Quick [Auto] Clean, LODGen, Script) to have xEdit automatically close after the operation is finished.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Enderal">18.2.10 - Enderal</h2>
+<p class="empty">&nbsp;</p>
+<p>Initial support for Enderal has been added.</p>
+<p class="empty">&nbsp;</p>
+<p>xEdit can be renamed to <code>EnderalEdit.exe</code> or started with <code>-enderal</code> as parameter.</p>
+<p class="empty">&nbsp;</p>
+<p>A known problem currently is that if Enderal was installed in one location and then later moved to a different location with Steam, Steam does not update the registry with the new installation path and xEdit will be unable to find Enderal's Data path.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Fallout76">18.2.11 - Fallout 76</h2>
+<p class="empty">&nbsp;</p>
+<p>Definitions have been updated to account for increased form version in 1.0.4 and 1.0.5 patches.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="SortingofINFOrecords">18.2.12 - Sorting of INFO records</h2>
+<p class="empty">&nbsp;</p>
+<p>Problems with INFO sorting have been fixed and INFO sorting is automatically enabled by default for all games where it applies. (There should normally never be a need to turn it off, and turning it off can result in files being written that will not result in the correct INFO order when read by the game engine or CK.)</p>
+<p class="empty">&nbsp;</p>
+<p>Background Info: INFO records resolve their PNAM (previous INFO) reference at the moment they are loaded, for this to work correctly the referenced INFO record must have been loaded before. To achieve this, INFO records need to be sorted according to their PNAM before being written to file.</p>
+<p class="empty">&nbsp;</p>
+<p>The Sort INFO option has been split into "Sort INFO" (default to True) and "Fill missing PNAM" (default to False, to preserve the previous behavior were Sort INFO was turned off by default).</p>
+<p class="empty">&nbsp;</p>
+<p>The navigation treeview now by default shows the INFO children of DIAL records in the order derived from their PNAM values (the same order that they are also displayed in CK and the order in which they are processed by the game) instead of sorted by FormID. This can be changed using the context menu on the FormID column header of the navigations treeview.</p>
+<p class="empty">&nbsp;</p>
+<p>New parameters have been added to control these two options (overriding whatever has been set in the options when used): <code>-SortINFO</code>, <code>-NoSortINFO</code>, <code>-FillPNAM</code>, and <code>-NoFillPNAM</code>.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="ONAMUpdateMode">18.2.13 - ONAMUpdate Mode</h2>
+<p class="empty">&nbsp;</p>
+<p>ONAM is the signature of a subrecord in the file header that's used to list all overridden records in temporary CELL children groups in the file. It is required for ESM flagged files to allow support for loading temporary records on-demand by the game engine. xEdit already automatically correctly writes ONAM for ESM flagged files.</p>
+<p class="empty">&nbsp;</p>
+<p>ONAMUpdate mode can be used to have xEdit fully automatically create ONAM subrecords also for all non ESM flagged files. The purpose is to support a new option in SSE Engine Fixes to make the game load all files as if they were masters. Further information about this can be found in SSE Engine Fixes.</p>
+<p class="empty">&nbsp;</p>
+<p>There is no reason to use ONAMUpdate mode if you aren't going to use that function in SSE Engine Fixes.</p>
+<p class="empty">&nbsp;</p>
+<p>To run xEdit in ONAMUpdate mode, you can either rename it to <code>SSEONAMUpdate.exe</code> or start it with the <code>-ONAMUpdate</code> parameter.</p>
+<p class="empty">&nbsp;</p>
+<p>A new Option "Always save ONAM" has been added (defaults to true). When this Option is active, xEdit will write ONAM when saving not ESM flagged files. (Without the Option, saving a non-ESM flagged file will strip out ONAM.)</p>
+<p class="empty">&nbsp;</p>
+<p>When running ONAMUpdate mode, this option will be turned on and is saved in the settings file.</p>
+<p class="empty">&nbsp;</p>
+<p>The option can be forced on using the <code>-AlwaysSaveONAM</code> parameter.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="bsaba2Handling">18.2.14 - .bsa/.ba2 Handling</h2>
+<p class="empty">&nbsp;</p>
+<p>xEdit specific code for <code>.bsa</code>/<code>.ba2</code> has been completely replaced with the code from <code>BSArch</code>.</p>
+<p class="empty">&nbsp;</p>
+<p>This change adds support for TES3 <code>.bsa</code> archives as well as support for additional texture formats for FO4 and FO76 texture <code>.ba2</code> archives.</p>
+<p class="empty">&nbsp;</p>
+<p>It also fixes some issues where certain <code>.bsa</code> files (e.g. extra voices when language in Steam has been set to Polish for TES5) could result in an endless loop while starting xEdit.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="ExpertOptions">18.2.15 - Expert Options</h2>
+<p class="empty">&nbsp;</p>
+<p>Some Options have been moved to a new Experts tab which is only visible if you Know What You Are Doing.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="ShrinkingSpeedButtons">18.2.16 - Shrinking SpeedButtons</h2>
+<p class="empty">&nbsp;</p>
+<p>On the "UI Settings" tab, a new "Shrink SpeedButtons in the top right corner of the main form" Option has been added. The option is also available in the context menu of the buttons. (Thanks to shad0wshayd3 for improving the implementation.)</p>
+<p class="empty">&nbsp;</p>
+<p>Selecting this option will remove the captions from the Help / Videos / NexusMods / GitHub / Discord / Patreon / Ko-Fi / PayPal buttons.</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit401">18.3 - What's new in xEdit 4.0.1?</h1>
+<p class="empty">&nbsp;</p>
+<h2 id="Bugfixes2">18.3.1 - Bugfixes</h2>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; #618 - 3.3 and 4.0.0 fail to update records when changing form IDs (breaks auto-renumbering, merging)</p>
+<p class="list-1">&bull;&nbsp; #619 - Assertion failure when running REPLACE MODEL FILE NAME script</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - attempted reporting of encoding error might result in endless loop and crash</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - back/forward mouse buttons do not work in 64bit</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - Legend Form can show up with 0 size under some conditions</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - [FNV] TCFU in INFO should be called "Follow Up"</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - [TES5/SSE] "PlayerKnows" condition does not accept WOOP parameters</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - broken <code>.bsa</code>/<code>.ba2</code> crashes the loading instead of just giving an error message</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - Remove ITM should not apply to injected records</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - "Dialog Topic" and "Worldspace" Groups can be very slow to expand</p>
+<p class="list-1">&bull;&nbsp; (reported on Discord) - Script access to TSearchRec is broken in 64bit</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - the View tab is initially visible without a record having been selected in the navigation treeview</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - main records do not correctly cache that they have already searched for a child group</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - if the focused navigation treeview node is moved outside the current visible nodes, it is not scrolled into view automatically</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - certain scripts with <code>for</code> loops or <code>case</code> statements might fail with <code>Integer required</code> error in 64 bit</p>
+<p class="empty">&nbsp;</p>
+<h2 id="PayPalButton">18.3.2 - PayPal Button</h2>
+<p class="empty">&nbsp;</p>
+<p>By popular demand, a PayPal button has been added for people that prefer to make a one-off donation instead of pledging on Patreon.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="NexusModsandGitHubbuttons">18.3.3 - NexusMods and GitHub buttons</h2>
+<p class="empty">&nbsp;</p>
+<p>When a new update is available, the caption of the NexusMods and GitHub buttons will now be bold and underlined.</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit400">18.4 - What's new in xEdit 4.0.0?</h1>
+<p class="empty">&nbsp;</p>
+<h2 id="WhatsNew">18.4.1 - What's New</h2>
+<p class="empty">&nbsp;</p>
+<p>A "What's New" document has been created and is embedded inside the exe file.</p>
+<p class="empty">&nbsp;</p>
+<p>It is automatically shown on program start. By checking the "Don't show until changed" checkbox, it is no longer shown on future starts until the What's New document has changed (because xEdit was updated).</p>
+<p class="empty">&nbsp;</p>
+<h3 id="TableofContents">18.4.1.1 - Table of Contents</h3>
+<p class="empty">&nbsp;</p>
+<p>The TOC button in the top left corner of the What's New Form (also when docked in the What's New Tab) can be used to show or hide a Table of Contents.</p>
+<p class="empty">&nbsp;</p>
+<p><code>Double Click</code> or <code>Enter</code> in the TOC will scroll the selected header into view.</p>
+<p class="empty">&nbsp;</p>
+<p>Width of the TOC is adjustable with a splitter.</p>
+<p class="empty">&nbsp;</p>
+<p>State (visible or not) and width of the TOC is saved and restored when the Form shows again.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="Search">18.4.1.2 - Search</h3>
+<p class="empty">&nbsp;</p>
+<p>A search edit has been added to the What's New Viewer.</p>
+<p class="empty">&nbsp;</p>
+<p><code>ALT + S</code> or <code>CTRL + F</code> focus the search edit.</p>
+<p class="empty">&nbsp;</p>
+<p><code>F3</code> when the main text is focused keeps searching from the current cursor position.</p>
+<p class="empty">&nbsp;</p>
+<p><code>Enter</code> when the search edit is focused keeps searching from the current position if the search text has remained unchanged, or starts for the start if the search text has changed.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="Zoom">18.4.1.3 - Zoom</h3>
+<p class="empty">&nbsp;</p>
+<p>A zoom trackbar has been added to the What's New Viewer.</p>
+<p class="empty">&nbsp;</p>
+<p>Zoom can be controlled with <code>CTRL + 0, +, or -</code>.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="UIThemes">18.4.2 - UI Themes</h2>
+<p class="empty">&nbsp;</p>
+<p>xEdit now supports a number of build in UI Themes. They can be activated either through the "Theme" sub menu in the system menu (icon on the top left corner) of the main window, or via the UI Theme tab in the Options.</p>
+<p class="empty">&nbsp;</p>
+<p>The UI Theme tab in the Options provides a preview of the selected theme.</p>
+<p class="empty">&nbsp;</p>
+<p>In both the Theme menu and the UI Theme tab, the themes are separated into Light (darker text on lighter background) and Dark (lighter text on darker background) themes.</p>
+<p class="empty">&nbsp;</p>
+<p>Themes require desktop composition to be enabled. The option to select themes is hidden if the system requirements are not met.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Themeawarenessforconflictcolour">18.4.3 - Theme awareness for conflict colour</h2>
+<p class="empty">&nbsp;</p>
+<p>xEdit is now aware of the current colour scheme (be it the standard windows colours or from an explicitly selected Theme) as Light (darker text on lighter background) and Dark (lighter text on darker background) and will automatically use modified (lighter/darker) text and background colours based on the colours specified in the Options for signaling conflict status.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Legendforconflictcolours">18.4.4 - Legend for conflict colours</h2>
+<p class="empty">&nbsp;</p>
+<p>At the top right corner of the View tab is now a Legend button which toggles the visibility of a Legend tool window which shows all possible combinations of Conflict This (text colour) and Conflict All (background colour).</p>
+<p class="empty">&nbsp;</p>
+<p>While the Legend form is open, when changing the focused cell in the View treeview, the matching cell (Conflict This/Conflict All) in the Legend window is focused.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="HighDPIaware">18.4.5 - High-DPI aware</h2>
+<p class="empty">&nbsp;</p>
+<p>xEdit is now flagged as High-DPI aware and the UI should generally scale correctly when the scale factor is set to &gt; 100% in the windows settings. A known limitation is that window caption bars and some other elements are not scaling correctly when custom themes are used.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="HamburgerMenu">18.4.6 - "Hamburger" Menu</h2>
+<p class="empty">&nbsp;</p>
+<p>A "Hamburger Menu" button has been added to the top left corner of the main window. This button opens a menu with (currently) the following entries:</p>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; Localization</p>
+<p class="list-1">&bull;&nbsp; GameLink (if present)</p>
+<p class="list-1">&bull;&nbsp; Save</p>
+<p class="list-1">&bull;&nbsp; Options</p>
+<p class="empty">&nbsp;</p>
+<p>More menu items that are unnecessarily (= not depending on context) in different context menus may get moved to this menu in the future.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="ESLsupport">18.4.7 - ESL support</h2>
+<p class="empty">&nbsp;</p>
+<p>xEdit now fully supports the ESL flag in the file header (as well as the .esl extension which implicitly always sets the ESL flag).</p>
+<p class="empty">&nbsp;</p>
+<p>ESL flagged modules will be loaded into a "light" slot and will have their FormIDs mapped into the FExxx space. Exactly like the game engine. This means it is now possible to have up to 253 "full" modules (00 to FD) and 4096 "light" modules (FE000 to FEFFF) loaded at the same time.</p>
+<p class="empty">&nbsp;</p>
+<p>The ESL flag does not affect load order (light modules can load before full modules, the first digits of the FormID are NOT a reliable way to determine load order anymore).</p>
+<p class="empty">&nbsp;</p>
+<p>xEdit will prevent files from being saved with set ESL flag if they are not compatible (contain new records with an ObjectID, that's the last digits in the FormID, &gt; $FFF) and will warn on loading incorrectly ESL flagged modules.</p>
+<p class="empty">&nbsp;</p>
+<p>ESL support can be controlled with two parameters:</p>
+<p><code>-IgnoreESL</code> will load all modules into full slots, ignoring the ESL flag and the .esl extension</p>
+<p><code>-PseudoESL</code> will load all ESL compatible modules into light slots, even without the ESL flag and the .esl extension. This works even for games that do not have ESL support in the game engine.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Fallout76support">18.4.8 - Fallout 76 support</h2>
+<p class="empty">&nbsp;</p>
+<p>Fallout 76 mode can be enabled by renaming the exe to <code>FO76Edit.exe</code> or starting it with <code>-fo76</code> as parameter.</p>
+<p class="empty">&nbsp;</p>
+<p>All records have working definitions. Reference building is supported and it is possible to fully load SeventySix.esm with fully build references without errors.</p>
+<p class="empty">&nbsp;</p>
+<p>Fallout 76 support is generally ready to the point that anyone should be able to use it to look at SeventySix.esm without much of a chance for error messages or crashes.</p>
+<p class="empty">&nbsp;</p>
+<p>But significant amount of work remains to further refine the record definitions and identify the many new "Unknown" values that have been added.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="ReferencedByCaching">18.4.9 - Referenced By Caching</h2>
+<p class="empty">&nbsp;</p>
+<p>Referenced By information is now being cached after being build. The cache files only need to be rebuild if the CRC of the module or application changes.</p>
+<p class="empty">&nbsp;</p>
+<p>Refs are only saved to cache if reaching a threshold of more than 500 records in the file or ref building is taking more than 2 seconds.</p>
+<p class="empty">&nbsp;</p>
+<p>The message log shows if referenced information is build or loaded, and if build, if it has been saved.</p>
+<p class="empty">&nbsp;</p>
+<p>As Referenced By information is now always automatically build for the &#123;game&#125;.esm file as well, the first start after an update can take a few minutes, but all further starts will be able to read in the cached information in seconds.</p>
+<p class="empty">&nbsp;</p>
+<p>The cache files have the extension .refcache and are stored by default in "Data\&#123;game&#125; Cache\". The actual used cache path is shown in the messages log.</p>
+<p class="empty">&nbsp;</p>
+<p>The cache system can be controlled with these parameters:</p>
+<p><code>-DontCache</code> = completely disables ref caching</p>
+<p><code>-DontCacheLoad</code> = don't load cache files if present, but save if possible</p>
+<p><code>-DontCacheSave</code> = don't save cache files after building refs</p>
+<p><code>-C:&#123;path&#125;</code> = path to use for cache files</p>
+<p class="empty">&nbsp;</p>
+<h2 id="MultithreadedbuildingandloadingofReferencedByinformation">18.4.10 - Multi-threaded building and loading of Referenced By information</h2>
+<p class="empty">&nbsp;</p>
+<p>The process of building or loading Referenced By information during start is now performed in multiple threads and will scale well with the number of CPU cores available. This can significantly speed up startup time.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="ApplicationandmoduleCRC32information">18.4.11 - Application and module CRC32 information</h2>
+<p class="empty">&nbsp;</p>
+<p>The CRC32 of the application file is shown at the top of the messages log</p>
+<p>The CRC32 of loaded modules is shown during the loading and in the navigation treeview.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Improvedlanguageandcodepagesupport">18.4.12 - Improved language and codepage support</h2>
+<p class="empty">&nbsp;</p>
+<p>Module files for the supported games store their strings generally ANSI (one byte per character) strings. This requires that the correct codepage (mapping between characters and their byte values) is used. Previous versions of xEdit had very limited support for accessing module files that didn't use the same ANSI codepage as the system ANSI codepage of the local system.</p>
+<p class="empty">&nbsp;</p>
+<p>xEdit no longer simply uses the system ANSI codepage, but instead uses specific encodings for certain classes of strings.</p>
+<p class="empty">&nbsp;</p>
+<p>These changes allow explicit control of all used codepages, and make xEdit's behavior independent from the ANSI system codepage of the local OS.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="Stringclasses">18.4.12.1 - String classes</h3>
+<p class="empty">&nbsp;</p>
+<p>There are different classes of strings in regards to codepage:</p>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; General strings - These are values like file names, developer comments, internal names that are never visible to the player.</p>
+<p class="list-1">&bull;&nbsp; VMAD properties of type string or array of string - These only exist in Skyrim and later. They are strings stored in the module file, but in a distinctly different way then other strings.</p>
+<p class="list-1">&bull;&nbsp; Localized strings - These are strings stored in external <code>.strings</code> files when a module is localized.</p>
+<p class="list-1">&bull;&nbsp; Translatable strings - These are strings stored in the module file that a player of the game might get to see. For Oblivion, Fallout 3, and Fallout New Vegas, these are string fields explicitly marked as such in the xEdit record definitions. For Skyrim and newer, this also includes any localizable string (strings that will be stored in the external <code>.strings</code> files when a module is localized) if the module is not actually localized.</p>
+<p class="empty">&nbsp;</p>
+<p>General strings now always explicitly use codepage 1252 (ANSI - Latin I). This can be overridden using <code>-cp-general:&lt;codepage&gt;</code> where <code>&lt;codepage&gt;</code> is either <code>utf8</code> or a codepage number. It should normally never be necessary to override this.</p>
+<p class="empty">&nbsp;</p>
+<p>VMAD properties are always explicitly stored as UTF8. There is no way to override this. All supported games always expect these strings to be UTF8 and any other codepage would result in errors.</p>
+<p class="empty">&nbsp;</p>
+<p>Localized strings are accessed based on the language name that's part of the filename of the <code>.strings</code> files.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="Languages">18.4.12.2 - Languages</h3>
+<p class="empty">&nbsp;</p>
+<p>For Skyrim (not SE) and older, the following language names are recognized:</p>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; arabic - 1256</p>
+<p class="list-1">&bull;&nbsp; chinese - UTF8</p>
+<p class="list-1">&bull;&nbsp; czech - 1250</p>
+<p class="list-1">&bull;&nbsp; danish - 1252</p>
+<p class="list-1">&bull;&nbsp; english - 1252</p>
+<p class="list-1">&bull;&nbsp; finnish - 1252</p>
+<p class="list-1">&bull;&nbsp; french - 1252</p>
+<p class="list-1">&bull;&nbsp; german - 1252</p>
+<p class="list-1">&bull;&nbsp; greek - 1253</p>
+<p class="list-1">&bull;&nbsp; hungarian - 1250</p>
+<p class="list-1">&bull;&nbsp; italian - 1252</p>
+<p class="list-1">&bull;&nbsp; japanese - UTF8</p>
+<p class="list-1">&bull;&nbsp; norwegian - 1252</p>
+<p class="list-1">&bull;&nbsp; polish - 1250</p>
+<p class="list-1">&bull;&nbsp; portuguese - 1252</p>
+<p class="list-1">&bull;&nbsp; russian - 1251</p>
+<p class="list-1">&bull;&nbsp; spanish - 1252</p>
+<p class="list-1">&bull;&nbsp; swedish - 1252</p>
+<p class="list-1">&bull;&nbsp; turkish - 1254</p>
+<p class="empty">&nbsp;</p>
+<p>For SSE, the following language names are recognized:</p>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; english - 1252</p>
+<p class="empty">&nbsp;</p>
+<p>For Fallout 4 and Fallout 76, the following language names are recognized:</p>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; en - 1252</p>
+<p class="empty">&nbsp;</p>
+<h3 id="Definingcodepageforlanguageinsettingsfile">18.4.12.3 - Defining codepage for language in settings file</h3>
+<p class="empty">&nbsp;</p>
+<p>It is possible to set the codepage used for a language (new or overriding a default from the list above) by modifying the settings file (shown as "Using settings file:" in the messages log on start).</p>
+<p class="empty">&nbsp;</p>
+<p>There is currently no UI support for this, but the settings file can be opened in a text editor and a <code>[cpoverride]</code> section can be added or modified like this:</p>
+<p class="empty">&nbsp;</p>
+<pre>
+<p>[cpoverride]</p>
+<p>english=utf8</p>
+<p>klingon=6666</p>
+</pre>
+<p class="empty">&nbsp;</p>
+<p>The specified value must be <code>utf8</code> or a valid codepage (which <code>6666</code> isn't, that was just an example).</p>
+<p class="empty">&nbsp;</p>
+<p>The specified codepage will affect any place where a codepage is derived from language.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="Defaultlanguage">18.4.12.4 - Default language</h3>
+<p class="empty">&nbsp;</p>
+<p>xEdit used to always default to "English" ("En" for Fallout 4) as language if not explicitly specified on the command line using <code>-l:&lt;language&gt;</code>. While it is still possible to use that switch to override the language selection, xEdit will now attempt to get the correct language from the <code>&lt;game&gt;.ini</code> file, from the iLanguage key for Oblivion, and the sLanguage key for any later games.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="Localizedstrings">18.4.12.5 - Localized strings</h3>
+<p class="empty">&nbsp;</p>
+<p>xEdit will automatically use the correct codepage for localized strings, even when the language is switched at runtime using the localization context menu.</p>
+<p class="empty">&nbsp;</p>
+<p>The fallback for localized strings in unknown languages is always UTF8. (SSE, FO4, and FO76 always use UTF8 for anything except english.)</p>
+<p class="empty">&nbsp;</p>
+<p>The codepage for these files can be overridden byte creating a text file with the same name as the <code>.strings</code> file, but the extension <code>.cpoverride</code> instead. e.g. <code>Skyrim_English.cpoverride</code>. The file should contain a single line with the desired codepage.</p>
+<p class="empty">&nbsp;</p>
+<p>For localized strings, while this language setting affects the initial choice of which <code>.strings</code> files are being used for localized modules, this can be changed at runtime using the localization context menu.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="Translatablestrings">18.4.12.6 - Translatable strings</h3>
+<p class="empty">&nbsp;</p>
+<p>Translatable string use the same codepage as localized strings, but based on the language defined at program start (either from the <code>&lt;game&gt;.ini</code> or explicitly using <code>-l:&lt;language&gt;</code>) For games before Skyrim, the same list of language names and codepages as listed above applies. Changing the language through the localization context menu after xEdit has started will *not* change the codepage being used for translatable (but not localized) strings.</p>
+<p class="empty">&nbsp;</p>
+<p>The codepage used for translatable strings can be globally overridden (has priority over the language selection) using the <code>-cp:&lt;codepage&gt;</code> or <code>-cp-trans:&lt;codepage&gt;</code> command line parameter where <code>&lt;codepage&gt;</code> is either <code>utf8</code> or a codepage number. <code>-cp</code> is supported for backward compatibility, <code>-cp-trans</code> is preferred.</p>
+<p class="empty">&nbsp;</p>
+<p>The codepage can further be overridden on a per module basis by creating a <code>.cpoverride</code> file with the same name as the module, like described above for <code>.strings</code> files. e.g. <code>Dragonborn.cpoverride</code>.</p>
+<p class="empty">&nbsp;</p>
+<p>Alternatively, the codepage for translatable strings can now be overridden by placing the text <code>&lt;cp:xxxx&gt;</code> somewhere in the description (in the file header) of the module. <code>xxxx</code> can be <code>utf8</code> or any valid codepage number, e.g. <code>1252</code>. codepages with less than 4 digits must use leading 0s, e.g. <code>&lt;cp:0930&gt;</code>.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="Logentries">18.4.12.7 - Log entries</h3>
+<p class="empty">&nbsp;</p>
+<p>The following entries near the top of the message log provide information about the used language and codepages:</p>
+<pre>
+<p>Using language: russian</p>
+<p>Using general string encoding: 1252  (ANSI - Latin I)</p>
+<p>Using translatable string encoding: 1251  (ANSI - Cyrillic)</p>
+<p>Using VMAD string encoding: 65001 (UTF-8)</p>
+</pre>
+<p class="empty">&nbsp;</p>
+<p>When <code>.strings</code> files are loaded, the used encoding is shown in the log:</p>
+<pre>
+<p>[00:00] Background Loader: [Skyrim_russian.STRINGS] Using encoding: 1251  (ANSI - Cyrillic)</p>
+</pre>
+<p class="empty">&nbsp;</p>
+<p>When a <code>.cpoverride</code> is in effect, it's specifically noted:</p>
+<pre>
+<p>[Dragonborn_English.STRINGS] Using encoding (from override): 65001 (UTF-8)</p>
+</pre>
+<p class="empty">&nbsp;</p>
+<p>When a module has a <code>.cpoverride</code> applied to it, it is also recorded in the log:</p>
+<pre>
+<p>[00:04] Background Loader: [Dragonborn.esm] File loaded (CRC32:A9F83BFF)</p>
+<p>[00:04] Background Loader: [Dragonborn.esm] Using encoding (from override): 65001 (UTF-8)</p>
+<p>[00:04] Background Loader: [Dragonborn.esm] Start processing</p>
+</pre>
+<p class="empty">&nbsp;</p>
+<p>When a module has <code>&lt;cp:XXXX&gt;</code>specified in its description, it is also recorded in the log:</p>
+<pre>
+<p>[00:12] Background Loader: [CpOverrideTest.esp] Using encoding (from File Header Description): 65001 (UTF-8)</p>
+</pre>
+<p class="empty">&nbsp;</p>
+<h2 id="Loadorderhandling">18.4.13 - Load order handling</h2>
+<p class="empty">&nbsp;</p>
+<p>The load order handling has been rewritten completely from scratch and should now exactly mirror the behavior of the game engine for all supported games.</p>
+<p class="empty">&nbsp;</p>
+<p>Specifically, for TES4, FO3, and FNV load order is derived from file modify times.</p>
+<p>For TES5/SSE and FO4 from the order in <code>plugins.txt</code>.</p>
+<p>For TES5 (which does not contain inactive modules in its plugins.txt) the load order for inactive modules is supplemented from <code>loadorder.txt</code>.</p>
+<p class="empty">&nbsp;</p>
+<p>For SSE and FO4, files with the <code>.esm</code> and <code>.esl</code> extensions are always treated as having the ESM flag set, even if it is missing in the file.</p>
+<p class="empty">&nbsp;</p>
+<p>The load order is:</p>
+<p>1. <code>&#123;game&#125;.esm</code></p>
+<p>2. <code>Update.esm</code> - SSE</p>
+<p>3. Official DLC in hardcoded order - SSE and FO4</p>
+<p>4. <code>&#123;game&#125;_VR.esm</code> - SkyrimVR and Fallout 4 VR</p>
+<p>5. Creation Club files in hardcoded order - SSE and FO4</p>
+<p>6. ESM flagged files</p>
+<p>7. non-ESM flagged files</p>
+<p class="empty">&nbsp;</p>
+<p>If during loading of modules in this order a module is being loaded for which one or more required master module is not already loaded, then the required module is loaded first. This allows non-ESM flagged files to be pulled forward into the ESM block.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="NewModuleselectiondialogs">18.4.14 - New Module selection dialogs</h2>
+<p class="empty">&nbsp;</p>
+<p>The selection dialogs for modules (used for selecting active modules at start and target modules during adding masters, "copy as ... into" and similar operations) has been completely rewritten.</p>
+<p class="empty">&nbsp;</p>
+<p>It is now using a treeview which allows you to see the required masters.</p>
+<p class="empty">&nbsp;</p>
+<p>There are columns for File Order (giving the exact reason for the position in the order), ESM flag, ESL flag (for SSE and FO4), Load Order (for active modules) and FormID Prefix.</p>
+<p class="empty">&nbsp;</p>
+<p>The visible modules can be filtered using an edit above the treeview.</p>
+<p class="empty">&nbsp;</p>
+<p>Modules with missing masters are shown with <I>strike-through</I> and can't be checked.</p>
+<p class="empty">&nbsp;</p>
+<p>For selecting modules to be loaded, checked modules will implicitly check all required masters (shown with [.] instead of [X]).</p>
+<p class="empty">&nbsp;</p>
+<p>You are able to save and load named presets of checked modules.</p>
+<p class="empty">&nbsp;</p>
+<p>Double Click or Ctrl+Enter will check only the selected module and automatically close the dialog with OK.</p>
+<p class="empty">&nbsp;</p>
+<p>When used for "Copy as ... into", template entries allow you to specify the desired extension and initial ESM/ESL flag values for a new file.</p>
+<p class="empty">&nbsp;</p>
+<p>When used for "Copy as ... into", the previous selection is remembered.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="OptionalSelectionFormsrequireholdingCTRLfordoubleclick">18.4.15 - Optional 'Selection Forms require holding CTRL for double click'</h2>
+<p class="empty">&nbsp;</p>
+<p>A new option 'Selection Forms require holding CTRL for double click' has been added. Defaults to false.</p>
+<p class="empty">&nbsp;</p>
+<p>With this option active, CTRL must be held down for Double Click to be accepted in the Module, Mod Group, and (old style) file selection forms.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Fullyimplementedcodeghostsupport">18.4.16 - Fully implemented <code>.ghost</code> support</h2>
+<p class="empty">&nbsp;</p>
+<p><code>.ghost</code> files are treated everywhere (except for actual file access) as if they didn't have the <code>.ghost</code> extension.</p>
+<p class="empty">&nbsp;</p>
+<p>If a normal file and a <code>.ghost</code> file exist, the <code>.ghost</code> file is ignored.</p>
+<p class="empty">&nbsp;</p>
+<p>Except in the save dialog, the UI does not show the <code>.ghost</code> extension.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="CompletelyreworkedModGroupssupport">18.4.17 - Completely reworked ModGroups support</h2>
+<p class="empty">&nbsp;</p>
+<p>ModGroups is a feature that has been in xEdit for a long time, but has gotten very little attention in the past.</p>
+<p class="empty">&nbsp;</p>
+<p>This version totally overhauls the ModGroups support, adding many new features as well as providing complete UI integration for creating, editing and managing ModGroups.</p>
+<p class="empty">&nbsp;</p>
+<p>A ModGroup is a way to tell xEdit that certain (non-winning) overrides of a record can be hidden (because the still visible versions account for all the changes already). By hiding away these versions they no longer participate in conflict detection which can be used to prevent false positives from showing up.</p>
+<p class="empty">&nbsp;</p>
+<p>A ModGroup can never hide the winning override or the original master record.</p>
+<p class="empty">&nbsp;</p>
+<p>A setup where all real conflicts have been resolved by patches and all false positives hidden by ModGroups will show an empty navigation treeview after applying a "Filter to show conflicts". With this as the starting point, adding one new mod to an existing setup with 100's of mods will result in only the conflicts caused by the addition of that new mod to show up when running "Filter to show conflicts". This makes it very easy then to adjust the load order, created targeted patches to resolve real conflicts, and finally again create new ModGroups to hide away any false positives.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="NewModGroupSelectiondialog">18.4.17.1 - New ModGroup Selection dialog</h3>
+<p class="empty">&nbsp;</p>
+<p>When the background loader is complete, a new ModGroup Selection dialog is shown. This dialog is very similar to the new Modules Selection dialog and has most of its features.</p>
+<p class="empty">&nbsp;</p>
+<p>The dialog is based on a treeview, so you can directly expand the individual ModGroups to see their contents.</p>
+<p class="empty">&nbsp;</p>
+<p>You can filter the treeview to more easily find a specific ModGroup.</p>
+<p class="empty">&nbsp;</p>
+<p>A system for saving and loading presets is available.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="EnableDisableandReloadModGroups">18.4.17.2 - Enable/Disable and Reload ModGroups</h3>
+<p class="empty">&nbsp;</p>
+<p>The context menu on the View treeview has options to disable or enable ModGroups, as well as a function for reloading all ModGroups and show the ModGroup selection dialog again.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="CreatingModGroups">18.4.17.3 - Creating ModGroups</h3>
+<p class="empty">&nbsp;</p>
+<p>There are two ways to create ModGroups in the UI.</p>
+<p class="empty">&nbsp;</p>
+<p>The first is by selecting 2 or more modules in the navigation treeview, and then using the "Create ModGroup..." function in the context menu, or pressing Ctrl+M with the navigation treeview focused. This will create a new ModGroup consisting of the previously selected modules and open it in the ModGroup Editor.</p>
+<p class="empty">&nbsp;</p>
+<p>The second is when looking at the View tab with at least 3 records visible (master + 2 overrides). The context menu on the header of the view treeview has a "Create ModGroup..." function, which can also be called by pressing Ctrl+M while the View treeview is focused. This function will then show a Module Selection dialog listing all modules that contribute override records to the current View and where you can check the modules that should be part of this new ModGroup. After confirming the desired modules a new ModGroup will be created and the ModGroup Editor will be opened.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="ModGroupEditor">18.4.17.4 - ModGroup Editor</h3>
+<p class="empty">&nbsp;</p>
+<p>The ModGroup Editor shows the list of modules that are part of the ModGroup.</p>
+<p class="empty">&nbsp;</p>
+<p>New modules can be added by pressing Insert.</p>
+<p>Modules can be moved up or down by pressing Ctrl + Cursor Up / Cursor Down.</p>
+<p>CRCs can be added to a module by pressing Shift+Insert when that module is selected, or just Insert if one of the existing CRCs if that module is selected.</p>
+<p>A selected module or CRC can be deleted by pressing Delete.</p>
+<p class="empty">&nbsp;</p>
+<p>If one or more CRCs has been added to a module, then the CRC of the currently loaded module must match one of these CRCs, otherwise the module is treated as if it wasn't present.</p>
+<p class="empty">&nbsp;</p>
+<p>Each module has a number of flags:</p>
+<p class="list-1">&bull;&nbsp; Optional - All modules NOT flagged as optional must be present for the ModGroup to be valid.</p>
+<p class="list-1">&bull;&nbsp; Target - Override records in this module can be hidden.</p>
+<p class="list-1">&bull;&nbsp; Source - A override record in this module will cause the overrides with the same FormID to be hidden from all modules flagged as Target and listed above this Source in this ModGroup.</p>
+<p class="list-1">&bull;&nbsp; Forbidden - If this module is loaded, the ModGroup is invalid.</p>
+<p class="list-1">&bull;&nbsp; Ignore LO - If not flagged, then the module must be loaded in the same order as listed in this ModGroup. There are two possible flagged values for this column:</p>
+    <p class="list-3">&bull;&nbsp; Always - The load order of the module does not matter at all.</p>
+    <p class="list-3">&bull;&nbsp; in Block - all consecutive modules with this flag form a Block. Any module above the block must be loaded before any module in the block. Any module after the block must be loaded after any module in the block. The modules inside the block can load in any order.</p>
+    <p class="empty">&nbsp;</p>
+<p>The flags can be toggled by focusing them and pressing space, or by clicking on them with the mouse.</p>
+    <p class="empty">&nbsp;</p>
+<p>Before a ModGroup can be saved, it must be given a name. There are two functions to make this easier:</p>
+<p class="list-1">&bull;&nbsp; Pressing Ctrl+N while having a module selected will set the name of the ModGroup to the name of the module (minus extension).</p>
+<p class="list-1">&bull;&nbsp; Ctrl+C can be used on any listed module to copy its name to the clipboard which can then be pasted into the Name edit.</p>
+<p class="empty">&nbsp;</p>
+<p>After confirming the ModGroup Editor with OK, a Module Selection will be shown with all modules that are part of the ModGroup to select in which .modgroups file this ModGroup should be saved.</p>
+<p class="empty">&nbsp;</p>
+<p>After saving a ModGroup the "Reload ModGroups" function will be automatically triggered and the newly added ModGroup has automatically been checked.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="modgroupsfiles">18.4.17.5 - .modgroups files</h3>
+<p class="empty">&nbsp;</p>
+<p>.modgroups files are files with the same name as a module, but the extension .modgroups.</p>
+<p class="empty">&nbsp;</p>
+<p>These are text files that contain one or more ModGroup entries.</p>
+<p class="empty">&nbsp;</p>
+<p>The exact format is described in the online help.</p>
+<p class="empty">&nbsp;</p>
+<p>Only .modgroups files that have the same name as a module that is present will be loaded.</p>
+<p class="empty">&nbsp;</p>
+<p>ModGroups from .modgroups files that do not belong to a currently loaded module will not show errors if they are invalid.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="EditingModGroups">18.4.17.6 - Editing ModGroups</h3>
+<p class="empty">&nbsp;</p>
+<p>As long as at least one ModGroup exists, a "Edit ModGroup..." function is shown in the context menu of the navigation treeview.</p>
+<p class="empty">&nbsp;</p>
+<p>It first shows a ModGroup Selection dialog, then loads the selected ModGroup into the same ModGroup Editor as is used for creating new ModGroups.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="DeletingModGroups">18.4.17.7 - Deleting ModGroups</h3>
+<p class="empty">&nbsp;</p>
+<p>As long as at least one ModGroup exists, a "Delete ModGroups..." function is shown in the context menu of the navigation treeview.</p>
+<p class="empty">&nbsp;</p>
+<p>The ModGroup Selection that is then shown allows selecting one or more ModGroups for deletion.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="UpdatingCRCs">18.4.17.8 - Updating CRCs</h3>
+<p class="empty">&nbsp;</p>
+<p>As long as at least one ModGroup exists, an "Update CRC in ModGroups..." function is shown in the context menu of the navigation treeview.</p>
+<p class="empty">&nbsp;</p>
+<p>This function first shows a Module Selection with all modules that are part of ModGroups with either no CRC or missing the current CRC.</p>
+<p class="empty">&nbsp;</p>
+<p>After that a ModGroup Selection is shown with all ModGroups that are missing the current CRC of one or more of the previously selected modules.</p>
+<p class="empty">&nbsp;</p>
+<p>After choosing which ModGroups to update, the missing CRCs will be added to all checked ModGroups.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="CompareSelected">18.4.18 - Compare Selected</h2>
+<p class="empty">&nbsp;</p>
+<p>The Compare Selected context menu entry now shows the number of currently selected records as <code>Compare Selected (x)</code>.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="AutoCompareSelected">18.4.19 - Auto "Compare Selected"</h2>
+<p class="empty">&nbsp;</p>
+<p>A new option 'Auto "Compare Selected" when multi-selecting less than [x] records' has been added. Defaults to 5. Can be disabled by setting to a value smaller than 2.</p>
+<p class="empty">&nbsp;</p>
+<p>When multi-selecting less than the specified number of records in the navigation treeview, the "Compare Selected" function is automatically triggered, showing the selected records side by side in the view tab.</p>
+<p class="empty">&nbsp;</p>
+<p>When more records than the specified limit are selected, "Compare Selected" can still be triggered via the context menu on the navigation treeview, like before.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Rewrittencopymultipletoselectedrecords">18.4.20 - Rewritten "copy [multiple] to selected records"</h2>
+<p class="empty">&nbsp;</p>
+<p>The "Copy to selected records" function (available in the context menu of the view treeview) has been rewritten.</p>
+<p class="empty">&nbsp;</p>
+<p>It can now only be used when in "Compare Selected" mode. In return, it now behaves exactly the same as dragging the value from the focused cell to the other cells in the same row in the view treeview. This solves all previous problems with the function.</p>
+<p class="empty">&nbsp;</p>
+<p>A new "Copy multiple to selected records" functions has been added, it allows performing "Copy to selected records" for a selection from all top level entries in the current view to be performed in one operation.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Resettingsettingsonstart">18.4.21 - Resetting settings on start</h2>
+<p class="empty">&nbsp;</p>
+<p>xEdit can be started with <code>-resetsettings</code> to have it automatically reset all settings.</p>
+<p class="empty">&nbsp;</p>
+<p>Holding Shift+Ctrl+Alt when starting xEdit triggers a dialog asking if all settings should be reset.</p>
+<p class="empty">&nbsp;</p>
+<p>In either case, the existing settings file is being backed up and all settings are reset to their default values.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Allowdirectsaving">18.4.22 - Allow direct saving</h2>
+<p class="empty">&nbsp;</p>
+<p>New command line parameters have been added that allow directly saving over an existing file (instead of saving in a temporary file and waiting until xEdit is closed to rename the file) by preventing the use of memory mapped files.</p>
+<p class="empty">&nbsp;</p>
+<p><code>-AllowDirectSave</code> will load all non-official (official = game master, official dlcs, CCs) modules without using memory mapped files</p>
+<p><code>-AllowDirectSave:a.esm,b.esl,c.esp</code> will load only the listed modules without using memory mapped files. The list may include official modules.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="ShowUnsavedHintreplacespreviousAutoSaveoption">18.4.23 - "Show Unsaved Hint" replaces previous "Auto Save" option</h2>
+<p class="empty">&nbsp;</p>
+<p>When "Show Unsaved Hint" is checked in the Options (on by default) then if there are any unsaved changes older than 10 minutes a balloon hint is being shown under the Hamburger Menu, listing the unsaved files and how long they have been unsaved.</p>
+<p class="empty">&nbsp;</p>
+<p>Clicking the hint will show the usual save selection dialog.</p>
+<p class="empty">&nbsp;</p>
+<p>Clicking the [X] in the hint or ignoring it for 15 seconds until it disappears on its own will snooze it for 10 minutes.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="ResetModifiedflagforelementsonSave">18.4.24 - Reset Modified flag for elements on Save</h2>
+<p class="empty">&nbsp;</p>
+<p>A "Reset Modified (Bold) on Save" Option has been added (defaults to true).</p>
+<p class="empty">&nbsp;</p>
+<p>With this option active, saving will reset the modified flag for elements (which caused them to show in Bold).</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Editinginviewtreeview">18.4.25 - Editing in view treeview</h2>
+<p class="empty">&nbsp;</p>
+<p>Double Click in the view treeview now activates the in-place editor for Integer (includes FormID), Float, and Flag fields, and opens the editor form for everything else.</p>
+<p class="empty">&nbsp;</p>
+<p>Showing the in-place editor for fields with large drop down lists of potential values (especially FormIDs) has been hugely (multiple orders of magnitude) sped up.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="ElementEditorForm">18.4.26 - Element Editor Form</h2>
+<p class="empty">&nbsp;</p>
+<p>The Element Editor Form (opened by Double Click in the View treeview on string fields) now accepts Enter to insert line breaks and supports Ctrl+F to search in the text.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Applyfilter">18.4.27 - Apply filter</h2>
+<p class="empty">&nbsp;</p>
+<p>A huge speed up in applying certain filters has been achieved.</p>
+<p class="empty">&nbsp;</p>
+<p>"Apply Filter to show Conflict Losers" has been renamed to "Apply Filter to show Conflicts" and changed from showing [ctConflictLoses] to showing [ctIdenticalToMasterWinsConflict, ctConflictWins, ctConflictLoses].</p>
+<p class="empty">&nbsp;</p>
+<p>The 3 "Apply Filter..." menu items functions have been extended with 3 "Apply Filter... (selected files only)" functions. These behave the same as the original functions, except that only selected files are added to the treeview before the filter is being applied. This will not change the filter outcome for the nodes that have been added to the treeview, and will simply prevent nodes from files that weren't included in the selection from showing up in the result. This can dramatically speed up the filter process. e.g. when applying a filter for cleaning, it's not necessary to apply that filter to any file except the one that should be cleaned.</p>
+<p class="empty">&nbsp;</p>
+<p>When a filter is applied, the navigation treeview is "fossilized" (always has been that way). This means that all nodes in the treeview, visible or not, have been created at the time the filter was applied, and the treeview will not react to structural changes (like adding new records to a file) while the filter remains applied. This was not well understood by most users before. To prevent confusion, a hint is now shown above the navigation treeview explaining this while a filter is active.</p>
+<p class="empty">&nbsp;</p>
+<p>When "Apply filter for Cleaning" is executed, ModGroups, "Show Master and Leafs", and "Quick Show Conflict" mode are automatically disabled.</p>
+<p class="empty">&nbsp;</p>
+<p>The "By BaseRecord" check list box will now only contain records that can actually be base records (= placed in a CELL by a reference record).</p>
+<p class="empty">&nbsp;</p>
+<p>When a check list box is focused, +, -, and * keys can be used to trigger "Select All", "Select None", and "Invert Selection".</p>
+<p class="empty">&nbsp;</p>
+<p>If a preset has been selected in the Filter Options dialog, and the options have been changed after loading the preset, a confirmation dialog will now be shown to confirm if these changed options should be saved back into the preset.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Reachableinformation">18.4.28 - Reachable information</h2>
+<p class="empty">&nbsp;</p>
+<p>This function has been present in xEdit for a long time, but seems to have become non-functional.</p>
+<p class="empty">&nbsp;</p>
+<p>It is now possible to build reachable information for all games supported by xEdit.</p>
+<p class="empty">&nbsp;</p>
+<p>A record is considered "reachable" if a normal player, starting a fresh game with the current load order, and without using the console or other tricks, is able potentially to somehow interact with that record.</p>
+<p class="empty">&nbsp;</p>
+<p>Once reachable information has been build, it is possible to filter for reachable/unreachable records using the usual "Apply Filter..." function.</p>
+<p class="empty">&nbsp;</p>
+<p>Correct generation of reachable information requires a lot of fine tuning of the record definitions and is still a work in progress. It currently works probably best for SSE.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="EditingMasterFilesinFileHeader">18.4.29 - Editing "Master Files" in "File Header"</h2>
+<p class="empty">&nbsp;</p>
+<p>Previous versions allowed to freely editing Master Files in the File Header. Because adding or removing MAST sub records directly will not renumber the FormID's stored inside the file, this would lead to behavior that is unexpected (and usually destructive in nature) for people that don't have a deep understanding of the internal workings for module files.</p>
+<p class="empty">&nbsp;</p>
+<p>xEdit will now by default prevent any direct changes to Master Files. The correct way to add a master is to use the "Add Masters" function in the context menu of the navigation treeview. The correct way to remove a master is to make sure the file no longer contains any references to the master in question and use the "Clean Masters" function in the context menu.</p>
+<p class="empty">&nbsp;</p>
+<p>To allow direct editing of the Master Files again, xEdit must now be started with <code>-AllowMasterFilesEdit</code> in addition to <code>-IKnowWhatImDoing</code>. Please only use that parameter when really required and when you actually do know what you are doing.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Improvementstoaddingsortingandcleaningmasters">18.4.30 - Improvements to adding, sorting, and cleaning masters</h2>
+<p class="empty">&nbsp;</p>
+<p>"Add Masters..." now uses the new Module Selection form.</p>
+<p class="empty">&nbsp;</p>
+<p>"Sort Masters" has been renamed to "Sort Masters (to match current load order)" to make its function more clear.</p>
+<p class="empty">&nbsp;</p>
+<p>"Clean Masters" has been renamed to "Clean Masters (= Remove all unused Masters)" to make its function more clear.</p>
+<p class="empty">&nbsp;</p>
+<p>All 3 functions should perform much faster and use much less memory. They will also no longer leave Elements that needed to be internally updated (but which don't have their visual value changed) visually marked as modified.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="OptionalShowFileHeaderFlags">18.4.31 - Optional "Show File Header Flags"</h2>
+<p class="empty">&nbsp;</p>
+<p>A new "Show File Header Flags" option has been added.</p>
+<p class="empty">&nbsp;</p>
+<p>When this is active, the ESM, ESL, and Localized flags are shown for file nodes in the navigation treeview.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="PlayerRefPLYR00000014asvisiblerecordin123game125exe">18.4.32 - PlayerRef [PLYR:00000014] as visible record in &#123;game&#125;.exe</h2>
+<p class="empty">&nbsp;</p>
+<p>PlayerRef (FormID 00000014) is now a visible record in the &#123;game&#125;.exe module (instead of being treated as a special hardcoded value internally).</p>
+<p class="empty">&nbsp;</p>
+<p>This makes it possible to track the Referenced By information for this record.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Hardcodeddatfilesupdated">18.4.33 - Hardcoded.dat files updated</h2>
+<p class="empty">&nbsp;</p>
+<p>The <code>Hardcoded.dat</code> files have been updated to include more records and they are now embedded inside the exe.</p>
+<p class="empty">&nbsp;</p>
+<p>It is possible to override the data contained in the exe by placing a <code>&#123;GameName&#125;.Hardcoded.Override.dat</code> beside the exe.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Tipsupdated">18.4.34 - Tips updated</h2>
+<p class="empty">&nbsp;</p>
+<p>The Tips shown at program start have been updated to take into account changes made to xEdit.</p>
+<p class="empty">&nbsp;</p>
+<p>The Tips no longer require the external file EditTips.txt and are now embedded in the exe.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="CopytoClipboardonnavigationtreeview">18.4.35 - Copy to Clipboard on navigation treeview</h2>
+<p class="empty">&nbsp;</p>
+<p>Ctrl+C on the navigation treeview will copy the contents of the first column of the selected nodes to the clipboard.</p>
+<p>Ctrl+Alt+C will copy the following value of the 3rd column.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="QuickShowConflicts">18.4.36 - [Very] Quick Show Conflicts</h2>
+<p class="empty">&nbsp;</p>
+<p>xEdit can be started with the following parameters:</p>
+<p class="empty">&nbsp;</p>
+<p><code>-quickshowconflicts</code> - after confirming modules to be loaded, automatically load all valid mod groups and "Apply Filter to show conflicts" in a special, faster, way</p>
+<p><code>-veryquickshowconflicts</code> - same as above, but automatically loads the modules as specified in plugins.txt without showing the module selection dialog (except if CTRL is held when starting)</p>
+<p class="empty">&nbsp;</p>
+<h2 id="QuickAutoClean">18.4.37 - Quick [Auto] Clean</h2>
+<p class="empty">&nbsp;</p>
+<p>xEdit can be started with the following parameters:</p>
+<p class="empty">&nbsp;</p>
+<p><code>-quickclean</code> - after selecting a single module, the module and required masters are loaded, a filter for cleaning is automatically applied for the selected module only, and "Undelete and Disable References" and "Remove "Identical to Master" records" are executed for the selected module.</p>
+<p><code>-quickautoclean</code> - same as above, but the "Filter, UDR, Remove ITM" sequence is repeated 3 times, automatically saving the file after each iteration, and finally "BOSS/LOOT Cleaning Report" is executed.</p>
+<p class="empty">&nbsp;</p>
+<p>Quick Clean mode automatically turns off "Simple Records" (to ensure the largest number of possible ITMs are recognized) and sets "I Know What I'm Doing" mode (to prevent the edit warning).</p>
+<p class="empty">&nbsp;</p>
+<p>A user reported that after cleaning Dawnguard.esm, parts of the soul cairn worldspace do no longer load in the game. This is an old issue that's already present in 3.2.1 and probably before.</p>
+<p class="empty">&nbsp;</p>
+<p>To fix this issue, xEdit is now marking all groups and main records as modified before saving when using Quick [Auto] Clean. This forces these elements to be individually saved, instead of simply writing out the bytes from the original file.</p>
+<p class="empty">&nbsp;</p>
+<p>This means that using Quick Clean will now produce a different CRC than using the old manual method (explicitly applying filter and explicitly performing UDR and remove ITM).</p>
+<p class="empty">&nbsp;</p>
+<h2 id="DragnDropofwholerecordinviewtreeview">18.4.38 - Drag'n'Drop of whole record in view treeview</h2>
+<p class="empty">&nbsp;</p>
+<p>In the view treeview, it is now possible to copy the contents of the whole record by dragging the header (showing the file name) of one column onto another.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="MouseshortcutforJumpTointheviewtreeview">18.4.39 - Mouse shortcut for "Jump To" in the view treeview</h2>
+<p class="empty">&nbsp;</p>
+<p><code>Ctrl + Click</code> on the view treeview header performs a "Jump To" on that record.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Navmeshimprovements">18.4.40 - Nav mesh improvements</h2>
+<p class="empty">&nbsp;</p>
+<p>For TES5/SSE and FO4, triangle edges with edge links are now considered equal if they resolve to the same triangle number in the same external nav mesh, even if the edge link table index stored in them is different. (Requires "Simple Records" to be turned off.) As the CK has the habit of shuffling around the order of the entries in the edge link table, even when there were no actual changes to the edge links, this will significantly increase then number of NAVM ITMs that xEdit can detect, greatly reducing the conflict surface of cleaned mods.</p>
+<p class="empty">&nbsp;</p>
+<p>For TES5/SSE and FO4, comparison of vertices in triangles is now based on the vertex coordinates instead of the vertex number.</p>
+<p class="empty">&nbsp;</p>
+<p>Record definitions have been improved and standardized for all games with nav meshes.</p>
+<p class="empty">&nbsp;</p>
+<p>It is now possible to Ctrl+Click on Triangle numbers in NAVM (both internal triangle numbers as well as edge links in triangle edges) to jump directly to the triangle in question, just like with FormIDs.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Programshutdowncanbeinterrupted">18.4.41 - Program shutdown can be interrupted</h2>
+<p class="empty">&nbsp;</p>
+<p>When the dialog for saving changed files is shown when closing the program, closing that dialog by pressing the [X] in the top right corner, will now interrupt the closing of the program, instead of behaving like the OK button has been pressed.</p>
+<p class="empty">&nbsp;</p>
+<p>When an error happens during saving on program shutdown, the closing of the program is interrupted instead of simply continuing.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Compareto">18.4.42 - "Compare to..."</h2>
+<p class="empty">&nbsp;</p>
+<p>The "Compare to..." function now handles modules with HITMEs (FormIDs with a ModID HIgher Than Master Entries) better.</p>
+<p class="empty">&nbsp;</p>
+<p>It will now remember the last folder (even across session).</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Createdeltapatchusing">18.4.43 - "Create delta patch using..."</h2>
+<p class="empty">&nbsp;</p>
+<p>A "delta patch" is a module containing only the records that have changed between two versions of another module.</p>
+<p class="empty">&nbsp;</p>
+<p>It is, effectively, the reverse of "Merge into Master". If you have two versions of a module and produce a delta patch, then using the "Merge into Master" process of merging the delta patch into the first version of the module will result in the 2nd version of the module.</p>
+<p class="empty">&nbsp;</p>
+<p>Creating a delta patch works similar to using "Compare to...". After loading the old version of a module normally, the "Create delta patch using..." function asks for a newer version of the same module and the name of the to be created delta patch.</p>
+<p class="empty">&nbsp;</p>
+<p>It will then make a copy of the newer version into the data folder, using the specified name and .esu as extension (= Elder Scrolls Update, an extension that TES4Gecko introduced for delta patches).</p>
+<p class="empty">&nbsp;</p>
+<p>This copied file will then be loaded using the same method as "Compare to...". Any record existing in the old version of the module and not in this new version will be copied and then flagged as deleted. Any record that is identical (using the same rules as ITM detection) between the two modules will be removed from the delta patch.</p>
+<p class="empty">&nbsp;</p>
+<p>This leaves the delta patch with only the records that have changed between the two versions of the module.</p>
+<p class="empty">&nbsp;</p>
+<p>It is recommended that the delta patch is saved and xEdit closed after creating it.</p>
+<p class="empty">&nbsp;</p>
+<p>Like with "Compare to..." last folder will be remembered (even across session).</p>
+<p class="empty">&nbsp;</p>
+<p>One of the most important uses of a delta patch is when a module that another module uses as master has been updated.</p>
+<p class="empty">&nbsp;</p>
+<p>Suppose you have ModA and ModB, and a CompatPatchAB. ModA got updated and you want to figure out if CompatPatchAB must be updated.</p>
+<p class="empty">&nbsp;</p>
+<p>Create a delta patch between the old and new version of ModA, then restart xEdit and load: ModA, DeltaPatchA, ModB, CompatPatchAB.</p>
+<p class="empty">&nbsp;</p>
+<p>It is now easily possible to go through the records in DeltaPatchA (which contains only the records that have been changed in the updated version of ModA) and see side-by-side the old values in ModA, the new values in ModA, and the values in CompatPatchAB. Wherever a value has changed between ModA and DeltaPatchA, this value can be dragged over from DeltaPatchA to CompatPatchAB.</p>
+<p class="empty">&nbsp;</p>
+<p>"Create delta patch using..." can also be used to turn an .esp replacer into a patch.esp (rename outside xEdit after creating it) which can be used on top of the original .esp.</p>
+<p class="empty">&nbsp;</p>
+<p>This is especially useful in cases where for the same original .esp there are two or more .esp replacers with different functions that you normally can't use together. By changing the .esp replacers into patch.esps they can be used at the same time together with the original .esp. (May require the creation of another patch if there are conflicts between these different patches that need to be resolved.)</p>
+<p class="empty">&nbsp;</p>
+<h2 id="esuasfullysupportedmodulefileextension">18.4.44 - .esu as fully supported module file extension</h2>
+<p class="empty">&nbsp;</p>
+<p>.esu is now supported as file extension for modules, equivalent to .esp</p>
+<p class="empty">&nbsp;</p>
+<p>.esu is a file extension that the game engine doesn't recognize, which makes it suitable for files like delta patches that shouldn't normally be loaded into the game.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="ButtonstoopenHelpNexusModsGitHubDiscordorPatreonpages">18.4.45 - Buttons to open Help, NexusMods, GitHub, Discord, or Patreon pages</h2>
+<p class="empty">&nbsp;</p>
+<p>Buttons have been added to the top right corner of the main window to open:</p>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; Help - Online help for xEdit.</p>
+<p class="list-1">&bull;&nbsp; NexusMods - The NexusMods page for xEdit, adjusted for whatever game mode xEdit is currently running as.</p>
+<p class="list-1">&bull;&nbsp; GitHub - Where you can find the latest development version of xEdit, as well as report issues.</p>
+<p class="list-1">&bull;&nbsp; Discord - The xEdit Discord server. Real-time chat with other xEdit users and developers. Everyone is welcome.</p>
+<p class="list-1">&bull;&nbsp; Patreon - ElminsterAU's Patreon page for xEdit. Your support is absolutely essential to ensure ongoing future development of xEdit.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Updatecheck">18.4.46 - Update check</h2>
+<p class="empty">&nbsp;</p>
+<h3 id="GitHub">18.4.46.1 - GitHub</h3>
+<p class="empty">&nbsp;</p>
+<p>xEdit will automatically perform a check for a newer version on GitHub</p>
+<p class="empty">&nbsp;</p>
+<p>This can be turned of with the "Don't check for GitHub update" option.</p>
+<p class="empty">&nbsp;</p>
+<p>If an update is available, a balloon hint will be shown under the GitHub button on start.</p>
+<p class="empty">&nbsp;</p>
+<h3 id="NexusMods">18.4.46.2 - NexusMods</h3>
+<p class="empty">&nbsp;</p>
+<p>xEdit will automatically perform a check for a newer version on NexusMods</p>
+<p class="empty">&nbsp;</p>
+<p>This can be turned of with the "Don't check for NexusMods update" option.</p>
+<p class="empty">&nbsp;</p>
+<p>If an update is available, a balloon hint will be shown under the NexusMods button on start.</p>
+<p class="empty">&nbsp;</p>
+<p>If xEdit is an even minor version (e.g. 4.0.x, 4.2.x, ...) when it is started for the first time (after this change) then update checking on GitHub is initially disabled (but can be turned on in the Options).</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Patreonreminderballoonhint">18.4.47 - Patreon reminder balloon hint</h2>
+<p class="empty">&nbsp;</p>
+<p>A balloon hint is shown to highlight the Patreon button.</p>
+<p class="empty">&nbsp;</p>
+<p>If the button is clicked or the hint closed with the [x] then it will not be shown again for a while.</p>
+<p class="empty">&nbsp;</p>
+<p>The "I'm a patron or donor" option can be used to disable the hint if you have pledged on Patreon or directly donated on NexusMods to permanently disable the hint.</p>
+<p class="empty">&nbsp;</p>
+<p>Please consider supporting xEdit development. Future updates as extensive as this one directly depend on the level of support from the modding community.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Columnwidthmodes">18.4.48 - Column width modes</h2>
+<p class="empty">&nbsp;</p>
+<p>The Column width modes (changeable via context menu on the view treeview) have been overhauled.</p>
+<p class="empty">&nbsp;</p>
+<p>All Columns have a minimum width of half the standard width specified in Options.</p>
+<p class="empty">&nbsp;</p>
+<p>Available options are now:</p>
+<p class="list-1">&bull;&nbsp; Standard - All columns use the initial standard width specified in Options. Column width can be adjusted and will only reset when moving to a different record</p>
+<p class="list-1">&bull;&nbsp; Fit All - The title column (first column) uses the standard width, the remaining space is equally distributed among all columns. The column size is automatically adjusted if the window is resized</p>
+<p class="list-1">&bull;&nbsp; Fit Text - The width of the columns is automatically adjusted to fit all text currently visible on screen. The column widths are updated automatically when scrolling.</p>
+<p class="list-1">&bull;&nbsp; Fit Smart - Combination of Fit Text and Fit All. The width of the columns is automatically adjusted to fit all text currently visible on screen. If the total width of all columns exceeds the client width of the treeview, then all columns except the title column (first column) are proportionally shrunk so that all columns fit inside the client width of the treeview. The column widths are updated automatically when scrolling.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Hidenoconflictandemptyrows">18.4.49 - Hide no conflict and empty rows</h2>
+<p class="empty">&nbsp;</p>
+<p>The "Hide no conflict and empty rows" option can be enabled/disabled using the context menu of the view treeview.</p>
+<p class="empty">&nbsp;</p>
+<p>When active:</p>
+<p class="list-1">&bull;&nbsp; If more than one record is being displayed, all rows with a Conflict All status of Benign Conflict or lower are hidden.</p>
+<p class="list-1">&bull;&nbsp; If only a single record is being displayed (which would hide all rows), empty rows are being hidden instead.</p>
+<p class="list-1">&bull;&nbsp; If Compare Selected is active, all rows with a Conflict All status of Multiple but no conflict or lower are hidden.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Optiontodelayupdatingviewwhenscrollingthroughnavigationtreeview">18.4.50 - Option to delay updating view when scrolling through navigation treeview</h2>
+<p class="empty">&nbsp;</p>
+<p>A new option "Delay updating View when navigation treeview selection changes by [x] msec" has been added. Default being 50.</p>
+<p class="empty">&nbsp;</p>
+<p>This prevents the View from flickering while fast scrolling through the navigation treeview (e.g. by holding the cursor up or down key) by delaying the update of the View for the specified amount of time.</p>
+<p class="empty">&nbsp;</p>
+<p>Setting it to 0 disables the behavior and does instead make sure the view is updated for every record scrolled through.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="OptionalAlignalignablearrayelements">18.4.51 - Optional "Align alignable array elements"</h2>
+<p class="empty">&nbsp;</p>
+<p>A new option "Align alignable array elements" has been added. Defaults to true.</p>
+<p class="empty">&nbsp;</p>
+<p>When active, unsorted arrays (e.g. Conditions) will be aligned.</p>
+<p class="empty">&nbsp;</p>
+<p>Alignment is not sorting!</p>
+<p class="empty">&nbsp;</p>
+<p>As an example, without the option, a record with 2 overrides looked like this:</p>
+<pre>
+<p>A  B  B</p>
+<p>B  C  A</p>
+<p>C</p>
+</pre>
+<p class="empty">&nbsp;</p>
+<p>with alignment active, it will now look like this:</p>
+<pre>
+<p>A</p>
+<p>B  B  B</p>
+<p>      A</p>
+<p>C  C</p>
+</pre>
+<p class="empty">&nbsp;</p>
+<p>For arrays, their name (in the title column = first column) will have <code>(sorted)</code> or <code>(aligned)</code> added if the array is sorted or aligned.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="FilterforViewTreeview">18.4.52 - Filter for View Treeview</h2>
+<p class="empty">&nbsp;</p>
+<p>On the View tab, above the treeview, there is now a bar with filter options.</p>
+<p class="empty">&nbsp;</p>
+<p>It's possible to filter by Name and/or Value.</p>
+<p class="empty">&nbsp;</p>
+<p>The filter will only keep nodes that contain the filtered for values, as well as their parents all the way to the root.</p>
+<p class="empty">&nbsp;</p>
+<p>There is an option to keep the children, siblings, and parent's siblings of nodes matching the filter.</p>
+<p class="empty">&nbsp;</p>
+<p>To change focus with the keyboard use:</p>
+<p class="list-1">&bull;&nbsp; Alt+N or ? for by Name filter edit</p>
+<p class="list-1">&bull;&nbsp; Atl+V for by Value filter edit</p>
+<p class="list-1">&bull;&nbsp; Enter to jump: by Name -&gt; and/or -&gt; by Value -&gt; View treeview</p>
+<p class="list-1">&bull;&nbsp; Cursor Down: from by Name or by Value filter edit to View treeview</p>
+<p class="empty">&nbsp;</p>
+<h2 id="ImprovedcellfocushandlinginViewtreeview">18.4.53 - Improved cell focus handling in View treeview:</h2>
+<p class="empty">&nbsp;</p>
+<p>After Move Up/Down (menu) / Ctrl+Cursor Up/Down (keyboard) the focus will correctly stay with the moved element.</p>
+<p class="empty">&nbsp;</p>
+<p>After Add (menu) / <code>Insert</code> (keyboard) the focus will be placed on the added element. This can be turned off with the option "Focus newly added elements in View" (defaults to true). The meaning of the Option can be inverted by holding <code>CTRL</code> while using Add / <code>Insert</code>.</p>
+<p class="empty">&nbsp;</p>
+<p>After drop the focus will be placed on the dropped element.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="ColumnsensitiverowlabelsinViewtreeview">18.4.54 - Column sensitive row labels in View treeview</h2>
+<p class="empty">&nbsp;</p>
+<p>The row labels (the first column) in the View treeview will adjust based on the column which currently has the focus.</p>
+<p class="empty">&nbsp;</p>
+<p>This is especially relevant in combination with alignment and elements which type and name depends on the value of some other element.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="ChangetosourceforimplicitlycopiedrecordsduringDeepCopyasoverridenewinto">18.4.55 - Change to source for implicitly copied records during "[Deep] Copy as override/new into..."</h2>
+<p class="empty">&nbsp;</p>
+<p>When performing a "[Deep] Copy as (override/new record) into..." operation of a record that is not directly contained in a top level group (e.g. a CELL inside a WRLD or a REFR inside a CELL) it is necessary that container records are implicitly copied first.</p>
+<p class="empty">&nbsp;</p>
+<p>Previous versions of xEdit used the winning override of these implicitly copied records as source.</p>
+<p class="empty">&nbsp;</p>
+<p>From now on, xEdit will instead use the highest override visible to the target file (based on its masters) as a source.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Mergeintomaster">18.4.56 - Merge into master</h2>
+<p class="empty">&nbsp;</p>
+<p>To support "merge into master" functionality (for replacing the use of version control in CK) two new functions have been implemented:</p>
+<p class="empty">&nbsp;</p>
+<h2 id="InjectFormsintomaster">18.4.57 - "Inject Forms into master..."</h2>
+<p class="empty">&nbsp;</p>
+<p>"Inject Forms into master..." (available in the context menu of a file node in the navigation treeview) will change the FormID of all New records in the file to instead be injected records (=override records without a master record in the file where they belong according to FormID prefix).</p>
+<p class="empty">&nbsp;</p>
+<p>Optionally it's possible to try and preserve the ObjectID (the not load order dependant part of the FormID) during this operation.</p>
+<p class="empty">&nbsp;</p>
+<p>This does not actually yet copy the records into the master, but is a necessary first step.</p>
+<p class="empty">&nbsp;</p>
+<p>Warning: The function will NOT rename any external files that might contain the FormID in their file names.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Deepcopyasoverridewithoverwritinginto">18.4.58 - "[Deep] copy as override (with overwriting) into..."</h2>
+<p class="empty">&nbsp;</p>
+<p>"(with overwriting)" changes the behavior of the normal "[Deep] copy as override into..." function.</p>
+<p class="empty">&nbsp;</p>
+<p>Normally, that function will not overwrite an existing record with the same FormID in the target.</p>
+<p class="empty">&nbsp;</p>
+<p>If the "(with overwriting)" variant is used, then an existing record in the target will trigger a confirmation dialog to decide if the record should be overwritten. The dialog also gives the choice of "Yes for all" and "No for all".</p>
+<p class="empty">&nbsp;</p>
+<p>If the source record is flagged as deleted, then a confirmation dialog is shown to decide if the record should be copied (overwriting the target with a record flagged as deleted) or the existing record in the target should be removed.</p>
+<p class="empty">&nbsp;</p>
+<p>After injecting forms into master, by performing a "Deep copy as override (with overwriting) into..." from all top level groups of a module, and selecting one of its masters as the target, then selecting to overwrite all existing records and having the targets of all records flagged as deleted removed, the Version Control based functionality of CK to merge a plugin into master can be emulated.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="CompactFormIDsforESL">18.4.59 - "Compact FormIDs for ESL"</h2>
+<p class="empty">&nbsp;</p>
+<p>This function takes all New records with ObjectID &gt; $FFF and attempts to change them to a free ObjectID &lt;= $FFF. It will fail if there are too many new records in the module.</p>
+<p class="empty">&nbsp;</p>
+<p>Warning: The function will NOT rename any external files that might contain the FormID in their file names.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="RenumberFormIDsfrom">18.4.60 - "Renumber FormIDs from..."</h2>
+<p class="empty">&nbsp;</p>
+<p>This previously existing function shares its implementation with "Inject Forms into master..." and "Compact FormIDs for ESL".</p>
+<p class="empty">&nbsp;</p>
+<p>Warning: The function will NOT rename any external files that might contain the FormID in their file names.</p>
+<p class="empty">&nbsp;</p>
+<p>All 3 functions will show a list of affected record signatures before performing the renumbering.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="GeneralizedparametersforONAMhandling">18.4.61 - Generalized parameters for ONAM handling</h2>
+<p class="empty">&nbsp;</p>
+<p><code>-FixPersistence</code>/<code>-NoFixPersistence</code>and <code>-FilterONAM</code>/<code>-NoFilterONAM</code> parameters are now generally available instead of just in tmMasterUpdate and tmESMify.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="CollapsibleNodesinViewtab">18.4.62 - Collapsible Nodes in View tab</h2>
+<p class="empty">&nbsp;</p>
+<p>Nodes in the View tab now have a [-] symbol that can be used to collapse them.</p>
+<p class="empty">&nbsp;</p>
+<p>Collapsing or expanding a single node is stored in the elements and applies only for that one record. It may also get forgotten when navigating away from the record and coming back later. (This depends if the element gets freed or not, which depends on exactly which element it is and if it has been modified or not.)</p>
+<p class="empty">&nbsp;</p>
+<p>When holding control while clicking the [-] in front of the node, the collapse or expansion is stored in the type definition instead of the Element and applies to all Elements of that definition. That means it will be preserved when navigating between different records.</p>
+<p class="empty">&nbsp;</p>
+<p>It is possible to have the type collapsed and then expand individual elements, or have the type expanded and then collapse individual elements. When expanding or collapsing a type (by holding control) then the state of all individual elements of that type is reset to match the state of the type.</p>
+<p class="empty">&nbsp;</p>
+<p>In addition to clicking on the [-], nodes can also be collapsed or expanded by double clicking on the desired row in column 0 (the title column) as long as Compare Selected is not active (which already uses double click in the title column to trigger sorting by the values in that row).</p>
+<p class="empty">&nbsp;</p>
+<h2 id="NextObjectIDinFileHeader">18.4.63 - Next Object ID in File Header</h2>
+<p class="empty">&nbsp;</p>
+<p>The "Next Object ID" Element in the File Header is now displayed in Hex.</p>
+<p class="empty">&nbsp;</p>
+<p>When editing it, it can be set to ? to automatically set it to the highest Object ID in the Module + 1</p>
+<p class="empty">&nbsp;</p>
+<h2 id="FileHeaderinViewwhenfilenodeselected">18.4.64 - File Header in View when file node selected</h2>
+<p class="empty">&nbsp;</p>
+<p>The View tab will now show the File Header when the top level file node is selected in the navigation treeview. This makes it possible to scroll through the files and look at the File Header without having to expand each file node to select the File Header node.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Improvedfeedbackduringlongoperations">18.4.65 - Improved feedback during long operations</h2>
+<p class="empty">&nbsp;</p>
+<p>During long operations (building reference or reachable information, filtering, ...) the message log will now have a "still [operation]..." message added if no other message has been logged for 10 seconds and the format of the progress information in the window caption has been standardized.</p>
+<p class="empty">&nbsp;</p>
+<p>This is an ongoing change and not all long operations may have been converted to the new system yet.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="autoloadcommandlineparameter">18.4.66 - <code>-autoload</code> command line parameter</h2>
+<p class="empty">&nbsp;</p>
+<p>The <code>-autoload</code> parameter will not show the Module Selection dialog and just load all modules that are active according to plugins.txt. It also skips the ModGroup Selection and automatically loads all valid ModGroups.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="GameLinkFO4EditLink">18.4.67 - GameLink / FO4EditLink</h2>
+<p class="empty">&nbsp;</p>
+<p>A FO4EditLink plugin for F4SE is now included.</p>
+<p class="empty">&nbsp;</p>
+<p>If that plugin is loaded into FO4, and FO4Edit is started as the same time as the game, with the same load order, then it is possible to activate GameLink using the context menu of the "Path" bar at the top of the xEdit window.</p>
+<p class="empty">&nbsp;</p>
+<p>Once activated, if a reference is selected in the console in game, xEdit will automatically change the View tab to showing that record.</p>
+<p class="empty">&nbsp;</p>
+<p>This function is currently only available for FO4, but might be added to other games in the future.</p>
+<p class="empty">&nbsp;</p>
+<p>A <code>-autogamelink</code> parameter has been added. It implies <code>-autoload</code> and will automatically activate GameLink in Reference mode at the end of the Background Loader.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Generalrecorddefinitionimprovementsandfixes">18.4.68 - General record definition improvements and fixes</h2>
+<p class="empty">&nbsp;</p>
+<p>A large number of improvements and fixes have been made to the record definitions for all supported games.</p>
+<p class="empty">&nbsp;</p>
+<p>In many cases these changes should allow previously unrecognized ITMs to be correctly recognized as such now.</p>
+<p class="empty">&nbsp;</p>
+<p>A generic mechanism has been implemented to allow setting of default values in the record definitions, so that they can be automatically set when an element of that type is added. This is especially important for elements where the default of all bytes set to 0 does not result in a valid value.</p>
+<p class="empty">&nbsp;</p>
+<p>A generic mechanism has been added to allow "recursive" record definitions. This now allows VMAD Properties of type "Struct" or "Array of Struct" to contain members that are again of type "Struct" or "Array of Struct", up to arbitrary numbers of nesting levels deep.</p>
+<p class="empty">&nbsp;</p>
+<p>It is now possible to add (VMAD) Scripts and Properties through the UI (both Adding and drag'n'drop).</p>
+<p class="empty">&nbsp;</p>
+<p>Version Control Info is now decoded for all games and shows as <code>yyyy-mm-dd User: x Index: y</code> or <code>None</code> (if all 0).</p>
+<p class="empty">&nbsp;</p>
+<h2 id="UsingEditorIDtoflagITMsasintentional">18.4.69 - Using EditorID to flag ITMs as intentional</h2>
+<p class="empty">&nbsp;</p>
+<p>In TES5/SSE and FO4/FO76 EDIT is now flagged as case sensitive, with a conflict priority of cpOverride.</p>
+<p class="empty">&nbsp;</p>
+<p>That means that changes to the case of any character will be recognized as a change. But at the same time, the EditorID will never be considered to have a higher conflict level than "override without conflict".</p>
+<p class="empty">&nbsp;</p>
+<p>As the game engine treats EditorIDs always as case insensitive, changing the case of a character will not affect the game at all, but at the same time will make xEdit no longer treat the record as an ITM.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Filemodificationdatetimeonsave">18.4.70 - File modification date/time on save</h2>
+<p class="empty">&nbsp;</p>
+<p>For games where the module file modification date/time is _not_ used to control load order (TES5 and later) xEdit will no longer preserve the existing file modification date/time on save.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="AddingofCELLandROADtoWRLDandreferenceREFRACHRLANDPGRDandNAVMtoCELLviatheUIorAddfunctioninscripts">18.4.71 - Adding of CELL (and ROAD) to WRLD, and reference (REFR, ACHR, ...), LAND, PGRD, and NAVM to CELL via the UI (or Add() function in scripts)</h2>
+<p class="empty">&nbsp;</p>
+<p>In the UI, it is now possible to add CELL (and ROAD in TES4) to WRLD using the normal add menu.</p>
+<p class="empty">&nbsp;</p>
+<p>A dialog will be shown to specify persistent or temporary + x, y</p>
+<p class="empty">&nbsp;</p>
+<p>The function will the first search for an existing CELL (copying as override into the current file if necessary) and only if no existing CELL can be found will a new one be created.</p>
+<p class="empty">&nbsp;</p>
+<p>It is now also possible to add LAND, PGRD, and NAVM records to CELL through the UI.</p>
+<p class="empty">&nbsp;</p>
+<p>For LAND and PGRD (each of which can only have a single record per CELL), the same search for an existing record and copy as override if necessary is implemented as for CELLs.</p>
+<p class="empty">&nbsp;</p>
+<p>When adding a reference (REFR, ACHR, ...) to a temporary exterior CELL, its initial position is set to the centre of that CELL.</p>
+<p class="empty">&nbsp;</p>
+<p>This functionality is also available to scripts through the existing <code>Add()</code> method.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="UpdatingcontainingCELLofreferencewhennecessary">18.4.72 - Updating containing CELL of reference when necessary</h2>
+<p class="empty">&nbsp;</p>
+<p>When a reference (REFR, ACHR, ...) needs to update its containing group (position changed, persistent flag changed, ...) it will now internally use the functions above to find or create the right CELL. This also fixes an existing bug where changing the position of a temporary reference did not move the reference to the correct temporary CELL (only when the record was changed to persistent and back was the cell updated, and then only if the right cell already existed, new cells were not created when necessary).</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Automaticupdatingofnavigationtreeviewinreactiontostructuralchanges">18.4.73 - Automatic updating of navigation treeview in reaction to structural changes</h2>
+<p class="empty">&nbsp;</p>
+<p>The navigation treeview will now (if not fossilised) automatically update to reflect any structural changes to a module without the need to manually collapsing and expanding the parent node.</p>
+<p class="empty">&nbsp;</p>
+<p>If a record is copied (as new or override) into a module for which the Group where the record is placed is currently expanded, it will show up instantly. (Before it was necessary to collapse and expand that group before the record showed up.)</p>
+<p class="empty">&nbsp;</p>
+<p>This change is especially noticeable together with the automatic updating of the CELL containing a reference that was mentioned above. When the position of a reference is changed in the View tab, the navigation treeview will now instantly show that reference under it's new CELL (while keeping that reference selected in the navigation treeview).</p>
+<p class="empty">&nbsp;</p>
+<h2 id="RemoveintheheadercontextmenuoftheViewtab">18.4.74 - "Remove" in the header context menu of the View tab</h2>
+<p class="empty">&nbsp;</p>
+<p>The "Remove" function in the header context menu of the View tab (which had been removed in the past because it sometimes removed the whole parent group instead of just the desired record) is now fixed and available again.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="LODGenupdated">18.4.75 - LODGen updated</h2>
+<p class="empty">&nbsp;</p>
+<p>Various updates have been made to LODGen mode. Thanks sheson!</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Showfloatingpointanddecompressionerrors">18.4.76 - Show floating point and decompression errors</h2>
+<p class="empty">&nbsp;</p>
+<p>Messages will now be shown in the log for corrupted floating point values (showed up as NaN in the View and will continue to do so, but the message in the log is new).</p>
+<p class="empty">&nbsp;</p>
+<p>Messages will now be shown when an error occurs during decompression of compressed records.</p>
+<p class="empty">&nbsp;</p>
+<p>There are known floating point and compression errors in the original Bethesda game files. The fact that these errors are shown now instead of silently ignored as before does not mean than anything is more broken then it was. You just know about it now.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="WorkingNextMemberPreviousMemberforRUnionegAliasinQUST">18.4.77 - Working Next Member / Previous Member for RUnion (e.g. Alias in QUST)</h2>
+<p class="empty">&nbsp;</p>
+<p>For elements where it is possible for different type of sub records to occur (e.g. ALST = Reference Alias vs. ALCS = Collection Alias vs. ALLS = Location Alias) it is now possible to switch between the different options using the Next Member and Previous Member options in the context menu of the RUnion element.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="ApplyScriptdialogimprovements">18.4.78 - "Apply Script..." dialog improvements</h2>
+<p class="empty">&nbsp;</p>
+<p>A Filter edit has been added above the script selection combobox. This filter edit will limit entries in the script combobox to ones that contain the filter text anywhere in their name.</p>
+<p class="empty">&nbsp;</p>
+<p>When changing the selected script, if the current script has been modified, a confirmation dialog asks if the changes should be saved first. (Silently discarded changes previously).</p>
+<p class="empty">&nbsp;</p>
+<p>When the dialog is closed, if the current script has been modified, a confirmation dialog asks if the changes should be saved. (Silently overwrote the existing script previously). When closing and not saving, the modified script is still the one that's executed.</p>
+<p class="empty">&nbsp;</p>
+<p>When saving a script and the file already exists, a backup copy will be made before overwriting the file.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Scriptingimprovements">18.4.79 - Scripting improvements</h2>
+<p class="empty">&nbsp;</p>
+<p class="empty">&nbsp;</p>
+<p><code>procedure AddMasterIfMissing(aeFile: IwbFile; asMasterFilename: string; aSortMasters: Boolean = True);</code> now takes an optional boolean parameter (defaults to true) to turn off automatic sorting of masters after adding</p>
+<p><code>procedure AddMasters(aeFile: IwbFile; aMasters: TStrings);</code> Adds the list of masters in aMasters to aeFile. If sorting is desired an explicit call to SortMasters is necessary.</p>
+<p class="empty">&nbsp;</p>
+<p><code>procedure BeginUpdate(aElement: IwbElement);</code> and <code>procedure EndUpdate(aElement: IwbElement);</code> can be used to prevent change notifications from bubbling up the tree. This can hugely speed up creating / modifying larger arrays.</p>
+<p class="empty">&nbsp;</p>
+<p>It can be used like this:</p>
+<pre>
+<p>var</p>
+<p>  Properties: IwbContainer;</p>
+<p>begin</p>
+<p>  //...</p>
+<p>  BeginUpdate(Properties);</p>
+<p>  try</p>
+<p>    // add man Property entries to Properties</p>
+<p>  finally</p>
+<p>    EndUpdate(Properties);</p>
+<p>  end;</p>
+<p>end;</p>
+</pre>
+<p class="empty">&nbsp;</p>
+<p><code>procedure wbFormIDErrorCheckLock;</code> and <code>procedure wbFormIDErrorCheckUnlock;</code> can be used to disable FormID checking (e.g. to copy as override a record where the source contains unresolvable or otherwise invalid FormIDs without failing the copy).</p>
+<p class="empty">&nbsp;</p>
+<p><code>Add(WorldSpace, 'CELL[P]', True)</code> or <code>Add(WorldSpace, 'CELL[1,5]', True)</code> can be used to add a (or return an existing) persistent or temporary worldspace CELL to a Worldspace.</p>
+<p class="empty">&nbsp;</p>
+<p><code>ElementEditValue</code> and <code>ElementNativeValue</code> now always work for Flags, no matter if the flag is currently set or not.</p>
+<p class="empty">&nbsp;</p>
+<h2 id="Bugfixes3">18.4.80 - Bugfixes</h2>
+<p class="empty">&nbsp;</p>
+<p>A large number of reported bugs have been fixed. (This is list incomplete as many bugs have been fixed before keeping of this list was started.)</p>
+<p class="empty">&nbsp;</p>
+<p class="list-1">&bull;&nbsp; #574 - stick to row doesn't work with alt+navigation</p>
+<p class="list-1">&bull;&nbsp; #576 - Record flags aren't copied correctly when dragged and dropped</p>
+<p class="list-1">&bull;&nbsp; #577 - Data flags aren't copied when dragged and dropped</p>
+<p class="list-1">&bull;&nbsp; #579 - xEdit doesn't interpret string encoding in VMAD properties as UTF-8 even -cp:utf-8 is added</p>
+<p class="list-1">&bull;&nbsp; #583 - Edited scripts not marked as not modified when manually saved</p>
+<p class="list-1">&bull;&nbsp; #584 - deleting things from use template actors (sorted) sometimes moves two entries down instead of 1</p>
+<p class="list-1">&bull;&nbsp; #585 - xEdit doesn't remember which monitor it was last placed on in certain situations</p>
+<p class="list-1">&bull;&nbsp; #586 - keyboard selection in dropdown lists doesn't work</p>
+<p class="list-1">&bull;&nbsp; #587 - modified bold font doesn't fully get removed</p>
+<p class="list-1">&bull;&nbsp; #588 - dropdown in a specific part of omod's properties doesn't work</p>
+<p class="list-1">&bull;&nbsp; #589 - dropdown list's horizontal scrollbar covers up the bottommost entry</p>
+<p class="list-1">&bull;&nbsp; #590 - alt+cursor movement defaults to descriptions column if out of bound</p>
+<p class="list-1">&bull;&nbsp; #594 - "Localize plugin" function is broken</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - sorting masters can under certain circumstances result in corruption of FormIDs</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - adding/removing/sorting masters can leave the virtual "Worldspace" elements invalid (does not corrupt actual data)</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - Language selection is not aware of .strings files in .bsa/.ba2 archives</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - UTF8 encoding for localized strings needs a fallback mechanism if strings are not valid UTF8</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - ref building uses more memory than necessary</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - if the module selection form on opening has exactly one entry and it is checked, it shows up as unchecked</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - inconsistencies in the collapsing/expanding types and elements in the view tab (implementation and description below updated)</p>
+<p class="list-1">&bull;&nbsp; #600 - Reporting a null xEdit app version number</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - changing FormID of a record does not show new FormID until after saving and restarting</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - [FO4] FNAM in GLOB is wrong</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - virtual "Worldspace" element on temporary exterior cells can show invalid value after changing FormID of WRLD record</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - When using Copy as override (with overwriting), "No to All" does not work for records flagged as deleted</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - After using Copy into (and possible other situations) the View tab may (in rare cases) be blank</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - Flags do not work in Unions</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - Certain shortcuts work while the loader is still active when they shouldn't</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - Random AV after saving when closing</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - TOC building does not work on Win7</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - while in "Fit All" column width mode, it is not possible to manually increase the width of columns</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - HITMEs (FormID Prefix HIgher Than Master Entries) in GRUP labels can lead to problems</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - Compare Selected does not initially use the correct Column Width mode</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - Balloon Hint displays Caption in wrong font/colour when using custom themes</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - Various issue with xDump when running on a file that is not the game master</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - some texts are cut off in Options Form when a very wide system font is set</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - xEdit doesn't always find data path correctly if installed in the game folder</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - Clicking the OK button in the Module Selection Form does not always behave the same as pressing <code>Enter</code></p>
+<p class="list-1">&bull;&nbsp; (found by developer) - wbOffsetDataColsCounter can cause range check for modules with faulty data</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - unsaved time interval is shown wrong in unsaved hint on systems configured for 12h time display</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - deleting the last (= there are no others) modgroup will not deactivate mod groups</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - Adding, Sorting, and Cleaning Masters can lead to data corruption (Please check all modules where you made changes to masters with 3.3.6!!!)</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - What's New TOC does not initially show correctly in the What's New tab if the TOC was left open previously and the "Don't show again until changed" checkbox is checked in the What's New Form at program start</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - SSEEdit does not correctly display Version Control Info 1 for records with FormVersion 44</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - AV during reference building</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - manual cleaning of Dawnguard.esm removes 4 more records than using quick clean</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - holding the cursor down key when moving elements with ctrl+cursor in the view tab can result in errors</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - saving a file multiple times before closing xEdit leaves <code>file.save.datetime</code> files behind in the data folder</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - the right most column in the view tab is not always resizable</p>
+<p class="list-1">&bull;&nbsp; (found by developer) - Ctrl + Click on View Header does not correctly resize the columns of the View after switching to the clicked on record</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - Using the mouse wheel to change the script combobox in the Apply Script Form does not load the newly selected script</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - multi-selecting records in the navigation treeview, and then selecting just one of the previously selected records does not update the view tab</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - after applying a script, the view tab is not updated without selecting a different record first</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - saving a .strings file does not remove the modified flag for it</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - after saving, previous changes to record header flags can still show as modified</p>
+<p class="list-1">&bull;&nbsp; #611 - Filter bugs out when .esps are already expanded</p>
+<p class="list-1">&bull;&nbsp; #612 - Edit Script to detect ESL capable plugins too restrictive</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - crash from accessing a partially initialized record, caused by a pending paint event being executed if a log message is added during the initialization of the record resulting in a crash</p>
+<p class="list-1">&bull;&nbsp; (reported on discord) - "[Deep] Copy as (Override|New Record)" can under certain circumstances overlook some masters that need to be added to the target file before the copy operation</p>
+<p class="list-1">&bull;&nbsp; #614 - Problems with codepage translation</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit322">18.5 - What's new in xEdit 3.2.2?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; Updated version of modInfoDump xSE plugins.</p>
+<p class="list-1">-&nbsp; Update of the CTDA functions</p>
+<p class="list-1">-&nbsp; Update condition functions for FO3, FNV, and xSE plugins</p>
+<p class="list-1">-&nbsp; LODGen 2.2.0</p>
+<p class="list-1">-&nbsp; x64 fixes</p>
+<p class="list-1">-&nbsp; Remove unused variable after x64 updates</p>
+<p class="list-1">-&nbsp; Scripting updates</p>
+<p class="list-1">-&nbsp; New scripts</p>
+  <p class="list-2">&bull;&nbsp; Add selected items into container.</p>
+  <p class="list-2">&bull;&nbsp; Find ESP plugins which technically can be made ESL.</p>
+<p class="list-1">-&nbsp; [FO4] GNAM are INFO Group</p>
+<p class="list-1">-&nbsp; define position in case there is no CC list</p>
+<p class="list-1">-&nbsp; CC load order update</p>
+  <p class="list-2">&bull;&nbsp; Sort CC plugins right after last DLC, Other ESL after last ESM</p>
+<p class="list-1">-&nbsp; [TES5/FO4] Updated PERK</p>
+<p class="list-1">-&nbsp; [FO3/FNV] NAVM update</p>
+<p class="list-1">-&nbsp; Ensure a return value in some scripting functions</p>
+<p class="list-1">-&nbsp; fixed terrain water segments for odd origins</p>
+<p class="list-1">-&nbsp; Disable dynamic counter fields update when creating a merged patch. With built-in removal of counter fields if zero, it causes assertions while copying list elements to the merged record. It is also not needed since merging code updates all counters itself when merging is done.</p>
+<p class="list-1">-&nbsp; BSArch v0.5</p>
+<p class="list-1">-&nbsp; New <code>-share</code> parameter when packing archives to make binary identical files use the same data in archive. Data hashes are calculated using MD5 from TForge library.</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit321">18.6 - What's new in xEdit 3.2.1?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; [SSE/FO4] Creation Club support (ESL plugins), forced load order for plugins in <code>*.ccc</code> file</p>
+<p class="list-1">-&nbsp; [TE5/SSE] "Generate as Objects" LODGen option</p>
+<p class="list-1">-&nbsp; [FO3/FNV] LODGen Atlas options</p>
+<p class="list-1">-&nbsp; [FO4] FO4LODGen mode</p>
+<p class="list-1">-&nbsp; Skyrim VR and Fallout4 VR support: rename as TES5VREdit.exe or FO4VREdit.exe, or execute with -tes5vr or -fo4vr parameters</p>
+<p class="list-1">-&nbsp; filtering: if 8-digits hexadecimal FormID number is provided in "Base Record EditorID contains" field, then FormID will be checked instead</p>
+<p class="list-1">-&nbsp; multiselection in plugins window and similar ones, right click menu options apply to selection only</p>
+<p class="list-1">-&nbsp; "Reset structure" right click menu in the right view pane to add missing fields if any</p>
+<p class="list-1">-&nbsp; "Compare selected" right click menu in Referenced By tab when several records selected of the same type</p>
+<p class="list-1">-&nbsp; read (TES5|SSE)MapMarkers.txt and (TES5|SSE)QuestTypes.txt if present to replace game values with custom ones including new values</p>
+<p class="list-1">-&nbsp; improved record definitions</p>
+<p class="list-1">-&nbsp; various bug fixes and optimizations</p>
+<p class="list-1">-&nbsp; new scripts and scripting APIs to work with json, nifs, materials, lod files</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit32">18.7 - What's new in xEdit 3.2?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; [SSE] Skyrim Special Edition support</p>
+<p class="list-1">-&nbsp; [SSE] SSELODGen mode</p>
+<p class="list-1">-&nbsp; [FO4] Fallout 4 support</p>
+<p class="list-1">-&nbsp; improved record definitions and error checking</p>
+<p class="list-1">-&nbsp; various bug fixes and optimizations</p>
+<p class="list-1">-&nbsp; new scripts</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit313">18.8 - What's new in xEdit 3.1.3?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; [SSE] Skyrim Special Edition support</p>
+<p class="list-1">-&nbsp; [FO4] Fallout 4 support</p>
+<p class="list-1">-&nbsp; utf-8 support for translatable strings with -cp:utf-8 command line parameter</p>
+<p class="list-1">-&nbsp; "Stick to" right click menu in the right view pane</p>
+<p class="list-1">-&nbsp; improved record definitions</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit312">18.9 - What's new in xEdit 3.1.2?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; improved record definitions and error checking</p>
+<p class="list-1">-&nbsp; [TES5] LODGen support for glowing meshes</p>
+<p class="list-1">-&nbsp; [FO3/FNV] Fixed possible error when reading LOD meshes</p>
+<p class="list-1">-&nbsp; [TES5] TES5LODGen avoids generating trees LOD for duplicate FormID ref numbers, bug in Skyrim causes them to not switch off properly in the game</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit311">18.10 - What's new in xEdit 3.1.1?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; [FO3/FNV] Added PBEA record</p>
+<p class="list-1">-&nbsp; improved record definitions</p>
+<p class="list-1">-&nbsp; VMAD fix for empty arrays</p>
+<p class="list-1">-&nbsp; xLODGen fix reading BSA archives</p>
+<p class="list-1">-&nbsp; xLODGen improved removing of mesh faces under landscape LOD</p>
+<p class="list-1">-&nbsp; FNVLODGen and FO3LODGen</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit310">18.11 - What's new in xEdit 3.1.0?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; speed optimizations</p>
+<p class="list-1">-&nbsp; fixed memory leaks</p>
+<p class="list-1">-&nbsp; fixed sorting of INFOs in DIAL</p>
+<p class="list-1">-&nbsp; fixed float values rounding</p>
+<p class="list-1">-&nbsp; advanced ModGroups feature</p>
+<p class="list-1">-&nbsp; drag&drop and "Remove from selected records" support for individual flags</p>
+<p class="list-1">-&nbsp; fonts are changeable in Options</p>
+<p class="list-1">-&nbsp; new scripting functions</p>
+<p class="list-1">-&nbsp; new script auto execution mode with -script:"test.pas" switch or when renamed to (TES4|TES5|FO3|FNV)Script.exe</p>
+<p class="list-1">-&nbsp; xEdit associates itself with <code>*.tes5pas</code>, <code>*.tes4pas</code>, <code>*.fo3pas</code> and <code>*.fnvpas</code> extensions</p>
+<p class="list-1">-&nbsp; load Mod Organizer (1, not 2) profile internally using command line parameter <code>-moprofile:&lt;profilename&gt;</code></p>
+<p class="list-1">-&nbsp; faster <code>-quickshowconflicts</code> switch processing</p>
+<p class="list-1">-&nbsp; new <code>-O:</code> parameter to set the output folder for TES4LODGen generation (much faster), for example <code>"-O:..\ModOrganizer\mods\Generated DistantLOD"</code></p>
+<p class="list-1">-&nbsp; [FO3/FNV] Optional hiding of templated actor fields</p>
+<p class="list-1">-&nbsp; [FNV] Don't undelete refs of TREEs with LOD, bug in the game engine causes a crash</p>
+<p class="list-1">-&nbsp; [TES5] TES5LODGen, in right click menu -&gt; Other -&gt; Generate LOD</p>
+<p class="list-1">-&nbsp; [TES5] Weapon/Armor/Ammunition spreadsheets</p>
+<p class="list-1">-&nbsp; [TES5] BODT/BOD2 and different VMAD version objects are now lined up for conflict resolution</p>
+<p class="list-1">-&nbsp; [TES5] Improved DOBJ handling</p>
+<p class="list-1">-&nbsp; [TES5] Record header flags depend on record type</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit3032">18.12 - What's new in xEdit 3.0.32?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; issue 69: automatic updating of counter fields to reflect the proper amount of elements in containers</p>
+<p class="list-1">-&nbsp; issue 149: FormID indexes in master file header ONAM forms</p>
+<p class="list-1">-&nbsp; issue 162: reference rotation angle normalization (TES4LODGen hanging on several mods)</p>
+<p class="list-1">-&nbsp; hotkeys in plugins selection window (<code>Enter</code> - confirm, numpad <code>+</code> select all, <code>-</code> select none, <code>*</code> invert)</p>
+<p class="list-1">-&nbsp; hold Shift while starting xEdit to skip restoring window state (for users stuck with xEdit outside of viewable desktop area)</p>
+<p class="list-1">-&nbsp; hold Shift while clicking OK in plugins selection window for one time skipping of building references for all plugins</p>
+<p class="list-1">-&nbsp; exclude building references for plugins list available in options</p>
+<p class="list-1">-&nbsp; option to display integer values of flags and enumerations (off by default)</p>
+<p class="list-1">-&nbsp; Ctrl+C copies only Node text to clipboard, Esc closes the View window</p>
+<p class="list-1">-&nbsp; definitions update for all games to reduce false positives when checking for errors</p>
+<p class="list-1">-&nbsp; custom scripted filtering, demo 'Apply custom scripted filter.pas'</p>
+<p class="list-1">-&nbsp; new scripting functions and scripts: Weather Editor script (Ctrl+W), Worldspace Browser (Alt+F3)</p>
+<p class="list-1">-&nbsp; scripted persistent bookmarking of records: Ctrl+1..5 to set a bookmark, Alt+1..5 to go back</p>
+<p class="list-1">-&nbsp; removing offset data in WRLD is optional now, 'on' by default</p>
+<p class="list-1">-&nbsp; [TES5] TES5LODGen (beta version, has several issues)</p>
+<p class="list-1">-&nbsp; [TES5] renamed armor addon nodes (added slot numbers), please update your scripts if needed</p>
+<p class="list-1">-&nbsp; [TES5] Record definitions update (WTHR, DOBJ, NAVM, VMAD papyrus data, GetEventData condition), improved NavMeshes (thanks to jonwd7)</p>
+<p class="list-1">-&nbsp; [TES5] Added VMAD (papyrus scripts) to TREE, and LVLG (global) to LVLN. They can't be edited in CK, but it supports them and they confirmed to work in game</p>
+<p class="list-1">-&nbsp; [TES4] Added XRGD subrecord to REFR, INFO flags update</p>
+<p class="list-1">-&nbsp; [FO3] Do not remove PLD2 subrecord in PACK (as in FNV)</p>
+<p class="list-1">-&nbsp; [FNV] BPTD update to support body parts without BPTN name</p>
+<p class="list-1">-&nbsp; [FNV] Relocated CELL and WRLD groups at the end of file</p>
+<p class="list-1">-&nbsp; [TES4/TES5/FO3/FNV] WRLD offset data OFST definition (when 'Simple records' option is off)</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit3031">18.13 - What's new in xEdit 3.0.31?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; esp files can be loaded before esm</p>
+<p class="list-1">-&nbsp; issue 136: no stack overflow and progress indication for long operations</p>
+<p class="list-1">-&nbsp; issue 137: added empty subrecords were treated as ITM leading to possible erroneous cleaning</p>
+<p class="list-1">-&nbsp; fixed bug when 8 chars in square brackets were treated as FormID giving errors in various places, i.e. [$PitStop]</p>
+<p class="list-1">-&nbsp; Ctrl+DblClick on FormID numbers in messages tab could previously not work on some of them</p>
+<p class="list-1">-&nbsp; INFO records sorting is now optional instead of disabled</p>
+<p class="list-1">-&nbsp; BSA files are loaded by exact matching with plugin names for TES5, and partial matching for previous games</p>
+<p class="list-1">-&nbsp; new scripting functions, UI controls and scripts: Assets manager, Assets browser (Ctrl+F3)</p>
+<p class="list-1">-&nbsp; [TES5] added XCZR (encounter zone reference?) subrecord in REFR</p>
+<p class="list-1">-&nbsp; [TES5] added PMIS record</p>
+<p class="list-1">-&nbsp; [TES5] removed obsolete model subrecords: MODB, MOSD, FGGA, FGGS, FGTS</p>
+<p class="list-1">-&nbsp; [TES5] updated LCTN definition (showed errors in USKP before)</p>
+<p class="list-1">-&nbsp; [TES5] optional switch to resolve aliases (show ID and name)</p>
+<p class="list-1">-&nbsp; [TES5] fixed error when copying PACK record</p>
+<p class="list-1">-&nbsp; [TES5] 'Default' water height instead of '-2147483648.00000' is being added to CELLs with water but no XCLW subrecord</p>
+<p class="list-1">-&nbsp; [TES5] renamed "WRLD\Object bounds" element, please update scripts if needed</p>
+<p class="list-1">-&nbsp; [TES5] merged patch improvements and fixes</p>
+<p class="list-1">-&nbsp; [TES4] updated INFO record definition to fix flags</p>
+<p class="list-1">-&nbsp; [TES4] fixed PGRR subrecord corruption in pathgrids when saving</p>
+<p class="list-1">-&nbsp; [TES4] fixed error when copying MGEF and REFR with XLOC subrecord</p>
+<p class="list-1">-&nbsp; [TES4] fixed "Unused data in XSED" warning</p>
+<p class="list-1">-&nbsp; [FO3/FNV] fixed issues when copying NPC_, definitions update.</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit3030">18.14 - What's new in xEdit 3.0.30?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; Added Prev/NextMember for Record union. Use after adding a new one to select the appropriate.</p>
+<p class="list-1">-&nbsp; Search for required master extended upward.</p>
+<p class="list-1">-&nbsp; Added a second command line parameter to specify the game's ini file location.</p>
+<p class="list-1">-&nbsp; Ctrl+A to select all in editor window.</p>
+<p class="list-1">-&nbsp; "Jump to" option in record's header popup menu.</p>
+<p class="list-1">-&nbsp; Enable/disable autosaves in options.</p>
+<p class="list-1">-&nbsp; Log file is overwritten at 3MB.</p>
+<p class="list-1">-&nbsp; [xDump] Fatal exceptions are reported through ReportProgress to have a timestamp. It might be useful to track down the issue.</p>
+<p class="list-1">-&nbsp; [TES5] Blocks adding new script property and new scripts. Please use CK to create them.</p>
+<p class="list-1">-&nbsp; [TES4/TES5/FO3/FNV] Record definitions update (number of ITM counts may change).</p>
+<p class="empty">&nbsp;</p>
+<p>Scripting:</p>
+<p class="list-1">-&nbsp; New scripts added.</p>
+<p class="list-1">-&nbsp; New scripting functions (including regular expressions).</p>
+<p class="list-1">-&nbsp; New UI controls (TLabeledEdit, TCheckListBox).</p>
+<p class="list-1">-&nbsp; Scripts can be accessed with hotkeys (Ctrl+Shift+F to call a new find cell script demo).</p>
+<p class="list-1">-&nbsp; Removed syntax highlighter from script editor.</p>
+<p class="empty">&nbsp;</p>
+<p>Fixes:</p>
+<p class="list-1">-&nbsp; Variable size detection corrected.</p>
+<p class="list-1">-&nbsp; Out of bounds detection corrected.</p>
+<p class="list-1">-&nbsp; Issues 125, 126, 129, 128 (128 was "worked around").</p>
+<p class="empty">&nbsp;</p>
+<p>Misc:</p>
+<p class="list-1">-&nbsp; Code modified for compatibility with both Delphi XE and XE3 in the same source files.</p>
+<p class="list-1">-&nbsp; Added BaseName property so unsorted arrays can contain structured unions.</p>
+<p class="list-1">-&nbsp; ByteArray length increased to 64 bits.</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit3029">18.15 - What's new in xEdit 3.0.29?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; new icon provided by moiman100<a href="None">None</a></p>
+<p class="list-1">-&nbsp; [TES5] more information is decoded (Records ARMA, NVSI, MOD2, LVLO).</p>
+<p class="list-1">-&nbsp; [TES5] Every string value gets own ID when localizing plugin</p>
+<p class="list-1">-&nbsp; [TES5] Fixed error when copying VMAD scripts using drag&drop</p>
+<p class="list-1">-&nbsp; issue 104 : Files others than esp and esm (and ghost) are timestamped.</p>
+<p class="list-1">-&nbsp; issue  88 : Delete from the view pane column title contextual menu is disabled (due to a hard to reproduce bug). This is a workaround, not a fix.</p>
+<p class="list-1">-&nbsp; issue 119 : [TES5] The CK adds useless XLRL records when reverting a change. Those XLRL are considered benign and the record ITM.</p>
+<p class="list-1">-&nbsp; issue 110 : Check for errors now checks for invalid FormIDs. Also, new "Check for errors" sample script.</p>
+<p class="list-1">-&nbsp; Options are processed when they matter, not at the beginning.</p>
+<p class="list-1">-&nbsp; issue  82 : [TES5] Capitalization fixed in text are being treated as dirty edits. Description fields are case sensitive now.</p>
+<p class="empty">&nbsp;</p>
+<p>Scripting:</p>
+<p class="list-1">-&nbsp; Scripts can use other scripts with standard pascal "uses" keyword.</p>
+<p class="list-1">-&nbsp; New functions available.</p>
+<p class="list-1">-&nbsp; New sample scripts.</p>
+<p class="empty">&nbsp;</p>
+<p>Fixes:</p>
+<p class="list-1">-&nbsp; Compare to will not overwrite an existing file, nor will it leave temporary files behind.</p>
+<p class="list-1">-&nbsp; issue 125 : Condition added are no longer empty.</p>
+<p class="list-1">-&nbsp; issue 121 : Changing FormID of Region causes severe bugs. Reference building is delayed to after the change is done. Non region reference XCLR record are no longer removed.</p>
+<p class="list-1">-&nbsp; issue 120/118 : Reference not updated while adding a master. Reference lookup during the addition were sometime unreliable.</p>
+<p class="list-1">-&nbsp; issue 117 : Bug in script Undelete and Disable References.pas</p>
+<p class="list-1">-&nbsp; issue 112 : Option "Simple Record" malfunctioning.</p>
+<p class="list-1">-&nbsp; issue 111 : AV when saving subrecords with prefixed arrays. Sizing and memory allocation are done properly during every phase.</p>
+<p class="list-1">-&nbsp; issue 108 : Very slow saving after editing ESM flag. Background updating limited as much as possible during saves.</p>
+<p class="list-1">-&nbsp; issue 107 : Copying a quest record causes extraneous script fragment data to be generated. Sizing and memory allocation issue.</p>
+<p class="list-1">-&nbsp; issue 106 : Error adding a new master to plugin with own navmeshes. Fire Union decider when they can effectivly properly work, not before.</p>
+<p class="list-1">-&nbsp; issue 105 : Overwriting quest fragments or Quest Aliases may produce exceptions. During copy, memory is initialized properly before being used.</p>
+<p class="list-1">-&nbsp; issue 100 : Voice Type EditorID disappears. Memory sizing issue.</p>
+<p class="empty">&nbsp;</p>
+<p>Known issue:</p>
+<p class="list-1">-&nbsp; issue 123 : Using Check for errors after sort master, before saving and reloading: the Cell formID will not be updated. (that is a display issue only).</p>
+<p class="list-1">-&nbsp; issue 102 : Objects with property names but no assigned values don't display the names. The CK does not save the property name in the plugin in that case so it is correct.</p>
+<p class="empty">&nbsp;</p>
+<p>Misc:</p>
+<p class="list-1">-&nbsp; issue 115 : "Backup plugin" checkbox anchored to bottom of form.</p>
+<p class="list-1">-&nbsp; avoid firing some cached exception (to ease debugging).</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit3028">18.16 - What's new in xEdit 3.0.28?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; With this version it is important to clean all of your plugins after restoring the original Nexus or Steam workshop files. (Don't ask about this in the forum)</p>
+<p class="list-1">-&nbsp; [TES5] Papyrus (VMAD subrecord) support and other misc record updates including Dragonborn DLC</p>
+<p class="list-1">-&nbsp; [TES5] "Next Object ID" error when copying records</p>
+<p class="list-1">-&nbsp; Text fields in records are case sensitive when matching</p>
+<p class="list-1">-&nbsp; Ability to change references to FormID &lt; 800h</p>
+<p class="list-1">-&nbsp; Changeable conflict colors and default column width in options</p>
+<p class="list-1">-&nbsp; "Simple records" option for concise displaying of LAND, NAVM and NAVI records (excluding references). On by default to speed up xEdit, customizable in options</p>
+<p class="list-1">-&nbsp; Improved scripting functions, new demo scripts</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit3027">18.17 - What's new in xEdit 3.0.27?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; [TES5] Updated dialog subtypes for patch 1.8</p>
+<p class="list-1">-&nbsp; Localize/delocalize utf8 strings. Translation is disabled, highly recommended to use StrEdit or other specialized tools instead</p>
+<p class="list-1">-&nbsp; Search by FormID/EditorID skips hidden elements</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit3026">18.18 - What's new in xEdit 3.0.26?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; [TES5] BODT is unchanged (troubles with Dawnguard.esm)</p>
+<p class="list-1">-&nbsp; [TES5] Fixed bug in RACE with sorted biped object names. If you modified race records with previous versions, drag&drop biped object names from master to restore them.</p>
+<p class="list-1">-&nbsp; Additional internal functions accessible from scripts (new demo scripts)</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit3025">18.19 - What's new in xEdit 3.0.25?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; [TES5] Impact data set IPDS is now sorted</p>
+<p class="list-1">-&nbsp; [TES5] Added DEST data to ALCH (for "Destructible bottles")</p>
+<p class="list-1">-&nbsp; [TES5] BODT subrecord is autoreplaced with BOD2 in ARMA, ARMO and RACE records to conform CK 1.8 format</p>
+<p class="list-1">-&nbsp; [TES5] Additional decoding in WRLD and RACE for new data saved with CK 1.8</p>
+<p class="list-1">-&nbsp; [TES5] Added back records to Merged Patch (removed in 3.0.24) but only when the winning record has no scripts</p>
+<p class="list-1">-&nbsp; [FNV] Updated missing INFO flags</p>
+<p class="list-1">-&nbsp; [TES4] Fixed error when copying SPEL record</p>
+<p class="list-1">-&nbsp; Pascal-based scripting system and "Apply Script" menu (check available demo scripts on how to)</p>
+<p class="list-1">-&nbsp; "Options" menu</p>
+<p class="list-1">-&nbsp; "Analyze Log" menu, currently supports</p>
+  <p class="list-2">&bull;&nbsp; Skyrim papyrus log</p>
+  <p class="list-2">&bull;&nbsp; Oblivion RuntimeScriptProfiler log<a href="http://www.nexusmods.com/oblivion/mods/41863">http://www.nexusmods.com/oblivion/mods/41863</a></p>
+<p class="list-1">-&nbsp; Moved several not so often used menus to the "Other" submenu (Build ref/reachable, Merged Parch, Seq File, Localization, etc.)</p>
+<p class="list-1">-&nbsp; Full expand key modifier changed to ALT</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit3024">18.20 - What's new in xEdit 3.0.24?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; [TES5] Updated load order handling when plugins.txt is empty and no BOSS info is available</p>
+<p class="list-1">-&nbsp; [TES5] Fixed event name definition in QUST</p>
+<p class="list-1">-&nbsp; [TES5] CELL water level fixup for better conflicts detection</p>
+<p class="list-1">-&nbsp; [TES5] Autoremoving legacy RNAMs from WRLD; empty keywords from NPC_, ARMO, AMMO, WEAP, ALCH, MISC</p>
+<p class="list-1">-&nbsp; [TES5] Removed NPC_, ARMO, AMMO, WEAP records from Merged Patch (unsafe to copy possible scripts to a new plugin)</p>
+<p class="list-1">-&nbsp; [FO3] No sorting of DIAL groups</p>
+<p class="list-1">-&nbsp; [FO3/FNV] Fixed record definition for ragdolls which crashed game after cleaning several DLCs</p>
+<p class="list-1">-&nbsp; Copy "Compare to" selected file to the game's data folder if it is not there</p>
+<p class="list-1">-&nbsp; Improved registry handling on x64 systems</p>
+<p class="list-1">-&nbsp; Hold CTRL key when expanding a node for full expand</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit3023">18.21 - What's new in xEdit 3.0.23?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; [TES5] Merged patch updated for Skyrim, currently it merges:</p>
+  <p class="list-2">&bull;&nbsp; Leveled NPCs, Items, Spells</p>
+  <p class="list-2">&bull;&nbsp; NPC: Items, Spells, Head Parts, Factions</p>
+  <p class="list-2">&bull;&nbsp; Race: Hairs, Eyes, Spells</p>
+  <p class="list-2">&bull;&nbsp; Containers</p>
+  <p class="list-2">&bull;&nbsp; Relations</p>
+  <p class="list-2">&bull;&nbsp; Form Lists</p>
+  <p class="list-2">&bull;&nbsp; Keywords on: Armor, Weapon, Ammo, NPC</p>
+<p class="list-1">-&nbsp; [TES5/FNV/FO3] When performing UDR there will be a warning message for deleted NavMeshes.</p>
+<p class="list-1">-&nbsp; [TES5] Updated record definitions.</p>
+  <p class="list-2">&bull;&nbsp; BPDT was sorted by a localized name which is inconsistent for different languages (now sorted by a node name)</p>
+  <p class="list-2">&bull;&nbsp; NPC's tints are now sorted by tint index for better conflicts detection</p>
+  <p class="list-2">&bull;&nbsp; QUST aliases are no longer sorted by index</p>
+  <p class="list-2">&bull;&nbsp; QUST stages are now sorted by stage index</p>
+  <p class="list-2">&bull;&nbsp; Improved NavMeshes (thanks to Divstator)</p>
+<p class="list-1">-&nbsp; [TES5] FaceFX phonemes where empty after copying RACE record.</p>
+<p class="list-1">-&nbsp; [TES5] Fixed bugs when copying RACE and QUST (empty model was created for RACE; QUST location aliases were turning into ref ones).</p>
+<p class="list-1">-&nbsp; [TES5] Create start-enabled quests sequence SEQ file (you can select several files at once).</p>
+<p class="list-1">-&nbsp; [TES5] Improved error checking.</p>
+<p class="list-1">-&nbsp; [FNV] CHAL record was missing some challenge types from Dead Money DLC.</p>
+<p class="list-1">-&nbsp; [FNV] Disabled DIAL sorting, was causing errors when copying INFO records.</p>
+<p class="list-1">-&nbsp; No autosaves when "you know what you are doing".</p>
+<p class="list-1">-&nbsp; Compare with external tool option in Edit window.</p>
+<p class="list-1">-&nbsp; "Apply Filter for Cleaning" menu. Note that xEdit saves filter settings when you press OK button in filter window, so if you clean plugin and exit the program, your filter settings will be preserved.</p>
+<p class="list-1">-&nbsp; Filter option for deleted records.</p>
+<p class="list-1">-&nbsp; Saving messages to [TES5/FNV/FO3/TES4]Edit_log.txt upon exit.</p>
+<p class="list-1">-&nbsp; Fixed minor bug when Edit can't find game's folder. If your registry settings is invalid due to a Steam bug and Edit is unable to find your game, put it in the game's root folder where the game executable file is (Oblivion.exe, TESV.exe, etc).</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit3022">18.22 - What's new in xEdit 3.0.22?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; Skyrim Support.</p>
+<p class="list-1">-&nbsp; New exceptions handler.</p>
+<p class="list-1">-&nbsp; Optional backups in a separate directory.</p>
+<p class="list-1">-&nbsp; Remember position and state of the main window.</p>
+<p class="list-1">-&nbsp; Fixed bug when editing with Shift+DblClick.</p>
+<p class="list-1">-&nbsp; [All] Wrye Bash ghosted plugins (<code>*.esp</code>, <code>.ghost</code>) in plugin selection window.</p>
+<p class="list-1">-&nbsp; [ALL] FLST form list is no longer sorted.</p>
+<p class="list-1">-&nbsp; [ALL] EDID affects conflict detection.</p>
+<p class="list-1">-&nbsp; [TES5] Localization editor, plugin localization/delocalization with optional translation.</p>
+<p class="list-1">-&nbsp; [TES5] -l:language command line switch to chose default localization files.</p>
+<p class="list-1">-&nbsp; [TES5] Adding missed plugin files from plugins.txt/loadorder.txt to the end of plugins list.</p>
+<p class="list-1">-&nbsp; [FNV] WeaponModKit IMOD record support for various subrecords.</p>
+<p class="list-1">-&nbsp; [FNV] PLD2 subrecord is no longer removed in package.</p>
+<p class="list-1">-&nbsp; [FNV/FO3] Quest stage signed value overflow fix.</p>
+<p class="list-1">-&nbsp; [Oblivion] Fixed ownership record order in CELL.</p>
+<p class="list-1">-&nbsp; [Oblivion] Snowy weather definition fix (thanks to Arthmoor).</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit3019">18.23 - What's new in xEdit 3.0.19?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; improved record definitions to handle DeadMoney.esm better</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit3016">18.24 - What's new in xEdit 3.0.16?</h1>
+<p class="list-1">-&nbsp; FalloutNV.esm not marked as modified if duplicated groups have been merged</p>
+<p class="list-1">-&nbsp; fixed crash when looking at base effect records</p>
+<p class="list-1">-&nbsp; "unsaved changes" dialog should no longer appear if detail view is in edit mode</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit3015">18.25 - What's new in xEdit 3.0.15?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; double click on a FormID in the message view while holding CTRL jumps to that record</p>
+<p class="list-1">-&nbsp; fixed crash when changing perk effect type to Entry Point</p>
+<p class="list-1">-&nbsp; Quest Stage field for Quest + Stage Perk Effect Type now has a drop down with all stages available for the selected quest</p>
+<p class="list-1">-&nbsp; single click on an already selected field now opens the editor again</p>
+<p class="list-1">-&nbsp; fixed in-place editor to properly cover the complete field and have its text align exactly with the text normally displayed</p>
+<p class="list-1">-&nbsp; MasterUpdate and MasterRestore modes are supported (Warning: highly experimental, handle with care)</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit253">18.26 - What's new in xEdit 2.5.3?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; Fixes assert error when copying certain subrecords.</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit251">18.27 - What's new in xEdit 2.5.1?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; Bug Fix: floating point comparison is now less "fuzzy". This can result in some floating point numbers now comparing as unequal even though they are within the limit of the accuracy of single (4 byte) floating point values. But it will prevent cases where floats that should be unequal compared as equal.</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit250">18.28 - What's new in xEdit 2.5.0?</h1>
+<p class="empty">&nbsp;</p>
+<h2 id="RenumberFormIDsfrom4">18.28.1 - "Renumber FormIDs from..."</h2>
+<p class="empty">&nbsp;</p>
+<p>Context menu on file node in navigation treeview -&gt; Renumber FormIDs from...</p>
+<p class="empty">&nbsp;</p>
+<p>Renumber FormIDs from will change all FormIDs of records belonging to that file (but not any override records which might be contained in that file) so that they start at the specified value.</p>
+<p class="empty">&nbsp;</p>
+<p>This is useful if you have multiple modules that you plan to update in the future, but also want to always provide a merged version (e.g. using FO3Plugin). By assigning non overlapping FormIDs to the different modules, you can make sure that no FormID reassignment of conflicting FormIDs has to take place when merging.</p>
+<p class="empty">&nbsp;</p>
+<p><B><I>WARNING:</I></B> changing the FormIDs of an existing module will make it savegame incompatible and will break any other module that uses this module as master. If you have any dependant modules, you need to have them all loaded into FO3Edit at the time you change to FormIDs so that they will all be updated accordingly.</p>
+<p class="empty">&nbsp;</p>
+<p>Also, this version has been compiled with the "large address aware" flag and will be able to use up to 4GB when running under a 64bit version of Windows.</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit230EXPERIMENTAL">18.29 - What's new in xEdit 2.3.0 EXPERIMENTAL?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; large number of small fixes to record definition, resulting in many more cases of records correctly identified as "identical to master" and a very significant reduction in potential false positives in the "Check for Errors" function.</p>
+<p class="list-1">-&nbsp; on the fly conversion of outdated records to the most current format. This means that you will see fields show up as modified that you didn't modify yourself (mainly in Oblivion.esm, CS created files should already be up to date). It is possible to disable this function by starting FO3Edit with -nofixup as parameter. It is also possible to just these modifications (but still keep the fixups) by starting TES4Edit with -hidefixup as paramter. This function replaces the -fixupPGRD from earlier versions</p>
+<p class="list-1">-&nbsp; New function to copy idle animations</p>
+<p class="list-1">-&nbsp; Bugfix to prevent dialog choices from being sorted by FormID</p>
+<p class="list-1">-&nbsp; The Undelete and Disable function will set the Player ACHR [00000014] as Enable Parent with the "Set Enable State to Opposite of Parent" flag set. Given that the player should never end up being disabled, that should properly remove them from the gameworld, even if they are persistent references and the enabled state has already been stored in the savegame.</p>
+<p class="list-1">-&nbsp; The Undelete and Disable function will also now properly list all affected references, just like the "Remove 'Identical to Master' Record" function does.</p>
+<p class="list-1">-&nbsp; The selection dialog now allows double clicking an entry, this will automatically select that entry, deselect all others and close the dialog as if the OK button had been pressed.</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit223">18.30 - What's new in xEdit 2.2.3?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; Game Settings (GMST) will now be properly resolved based on EditorID, not FormID.</p>
+<p class="list-1">-&nbsp; A field in the Region record was improperly defined as a Float field.</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit220">18.31 - What's new in xEdit 2.2.0?</h1>
+<p class="empty">&nbsp;</p>
+<p>This version contains no major new functionality, but a number of bugfixes. Update is highly recommended.</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit12">18.32 - What's new in xEdit 1.2?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; Filtering the first time should be noticeable faster</p>
+<p class="list-1">-&nbsp; Filtering a 2nd time should be over almost instantly</p>
+<p class="list-1">-&nbsp; New conflict category "Hidden by Mod Group" which can be filtered on</p>
+<p class="list-1">-&nbsp; When sorting by EditorID or Name the files get sorted by filename instead of load order</p>
+<p class="list-1">-&nbsp; Improved parsing of Path Grids</p>
+<p class="list-1">-&nbsp; A lot of "unknown" fields and flag values now have a proper name</p>
+<p class="list-1">-&nbsp; Selection dialog (used for files, record to skip, mod groups, ..) has a context menu with "Select all", "Select None" and "Invert Selection"</p>
+<p class="list-1">-&nbsp; added a couple more mod groups for the official plugins</p>
+<p class="list-1">-&nbsp; Bugfix: Filtering could wrongly filter out records with conflicts if their parent is also a record (not a group) and didn't contain a conflict</p>
+<p class="list-1">-&nbsp; numerous tweaks to the mechanism which assigns conflict classifications</p>
+<p class="list-1">-&nbsp; When filtering it is possible to "Build reference information" (adds quite a bit of additional processing time). After this has been done a new tab "Referenced By" is available if the currently selected record is referenced by any other records.</p>
+<p class="list-1">-&nbsp; Mod groups are applied better under certain circumstances.</p>
+<p class="list-1">-&nbsp; double clicking on a row in the right side treeview will open a window that shows the text of that field in a multi line memo. So you can now easily read scripts or books</p>
+<p class="list-1">-&nbsp; everything I've forgotten about ;)</p>
+<p class="empty">&nbsp;</p>
+<h1 id="WhatsnewinxEdit11">18.33 - What's new in xEdit 1.1?</h1>
+<p class="empty">&nbsp;</p>
+<p class="list-1">-&nbsp; Game Settings are handled correctly now</p>
+<p class="list-1">-&nbsp; Function Type and Params in Conditions are decoded completely</p>
+<p class="list-1">-&nbsp; Mod Groups (more about that later)</p>
+<p class="list-1">-&nbsp; Settings (records to skip, mod groups, filter) are loaded/saved into a .tes4viewsettings file with the same path and name as the plugins.txt (or the plugin list passed on the command line)</p>
+<p class="list-1">-&nbsp; Possible range check error when loading a file with errors should be gone</p>
+<p class="empty">&nbsp;</p>
+<h1 id="YouKnowWhatYouAreDoing">18.34 - You Know What You Are Doing</h1>
+<p class="empty">&nbsp;</p>
+<p>You've read the whole What's New Document. Great! Hopefully this means that you know what you are doing now.</p>
+<p class="empty">&nbsp;</p>
+<p>If you start xEdit with a <code>-IKnowWhatImDoing</code> parameter, it will now longer show the "Edit Warning" dialog and unhide a few hidden Options and Functions.</p>
+
+<p class="empty">&nbsp;</p>
+<div>
+    <a  href="17-DynDoLod.html" class="drkbtn">&laquo; Previous Page</a>
+</div>
