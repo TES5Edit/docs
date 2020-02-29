@@ -15,9 +15,9 @@ This is the point where post people (including former me) just go Fuck this! I w
 
 But theres a WAY easier way to do this - The Method!
 
-== A not from Elminster
+== Elminster's Initial Method
 
-The system I worked out roughly goes like this.
+The system Elminster has worked out uses the following principles.
 
 Initially:
 * start with just vanilla load order (game.esm, update.esm, DLC)
