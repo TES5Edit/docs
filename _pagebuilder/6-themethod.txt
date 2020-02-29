@@ -3,17 +3,35 @@
 {{CONTENTS=5}}
 == Preface
 
-Youve probably all been at a point where youve maxed out Skyrims plugin limit or even went beyond that using MergePlugins and/or ESL flagging (see below) to stuff in all the awesome mods youve found on the Nexus (and perhaps that other site called LL too). But at some point youve encountered random crashes you couldnt fix. Youve had inconsistencies like Unique Region Names only working on certain interiors. Youve seen water seams, broken navmeshes, clipping and whatnotelse a heavily modded Skyrim may throw at you.
+You have probably all been at a point where you have maxed out Skyrims plugin limit or even went beyond that using MergePlugins and/or ESL flagging (see below) to stuff in all the awesome mods you have found on the Nexus (and perhaps that other site called LL too). But at some point you have encountered random crashes you could not fix. You have had inconsistencies like Unique Region Names only working on certain interiors. You have seen water seams, broken navmeshes, clipping and what ever else a heavily modded Skyrim may throw at you.
 
-Perhaps youve given up at that point, deleted your mods, reinstalled Skyrim and started over again. Just to run into similar problems once that new modlist became bigger.
+Perhaps you have given up at that point, deleted your mods, reinstalled Skyrim and started over again. Just to run into similar problems once that new modlist became bigger.
 
-Perhaps you went back to the Nexus and finally read all the descriptions everyone told you to carefully read before. Perhaps youve spent hours and days digging out all the patches for the mods you use. And perhaps this helped. But more probably you couldnt fix every issue and just lived with what you have.
+Perhaps you went back to the Nexus and finally read all the descriptions everyone told you to carefully read before. Perhaps you have spent hours and days digging out all the patches for the mods you use. And perhaps this helped. But more probably you could not fix every issue and just lived with what you have.
 
-Or you asked people and read tutorials and finally loaded up your build in xEdit and checked for conflicts, looking forward to solve all of them to finally get the neat and tidy Skyrim you always wanted. Just to be shocked about a wall of red. It seemed like every single mod was conflicting with all your other mods even tho you have every single patch youve found.
+Or you asked people and read tutorials and finally loaded up your build in xEdit and checked for conflicts, looking forward to solve all of them to finally get the neat and tidy Skyrim you always wanted. Just to be shocked about a wall of red. It seemed like every single mod was conflicting with all your other mods even tho you have every single patch you have found.
 
 This is the point where post people (including former me) just go Fuck this! I wont spend four hours a day for a month to fix this mess! and forget about that wall of red. Some chosen few might have actually accepted this challenge and fixed and patched all their mods until all conflicts were resolved. Those people are my heroes.
 
 But theres a WAY easier way to do this - The Method!
+
+== A not from Elminster
+
+The system I worked out roughly goes like this.
+
+Initially:
+* start with just vanilla load order (game.esm, update.esm, DLC)
+* add the Unofficial Patch for your game (name varies, e.g. USSEP for SSE)
+* create mod group for all now installed files to get you to show 0 conflicts after running -veryquickshowconflicts (the assumption here being that the UP will fix up any internal issues between the official files, and you don't need to see any of that mess anymore)
+
+Then, for each mod you install repeat:
+* install mod
+* run -veryquickshowconflicts (will ONLY show conflicts caused by that new mod now)
+* look at conflicts to see if they can be fixed or minimized by changing load order or run cleaning (on the new mod or another), if yes, do so and then run -veryquickshowconflicts again
+* look at conflicts to see what needs to be patched (you can also check if any premade patches are available and install them), when creating patches, try to to make it small focused ESL flagged patches, for just a pair of mods (make sure to save all your patches before going to the next step to have their CRC calculated)
+* after everything has been patched and you are sure everything that now shows as conflicts is false positives, create mod groups to hide them (again, small focused mod groups for particular conflicts between 2 mods, not one huge one for everything)
+* run -veryquickshowconflicts one last time to make sure you are back to 0 conflicts showing
+* repeat for next mod
 
 == Prequisites
 
@@ -44,7 +62,7 @@ The Method is all about conflict resolution. A conflict is a record from one mod
 * A certain tree might have a size (scale) of 1.0 in vanilla Skyrim. Enhanced Landscapes, which is loaded after Skyrim.esm, might scale the same tree bigger and give it a value of 1.2. As EL is loaded after Skyrim.esm the value of EL wins and the tree will have a scale of 1.2 ingame. This is a desired conflict such as almost all cases where mods overwrite values from the vanilla game, we don't need to fix that.
 * When you are facing a door leading to the wilds in an English version of Skyrim the door will always show Skyrim. But if a mod author have a localized version of the game and does his or her magic in the Creation Kit the region records in the resulting mod might be called Himmelsrand or Borderciel. If that mod is the last plugin that changes a record it will overwrite Skyrim with the localized name and you will get those translated names in some locations ingame. Thats a conflict we need to fix.
 * you are using Realistic Water Two, a mod that changes the water type of alot of rivers and lakes. Lets say you have Arthmoors Cutting Room Floor loaded after Realistic Water Two. Now, if RWT defines a certain body of water as DefaultMarshWater but gets overwritten by CRF, which might use RiverWaterFlow, the desired value from RWT gets overwritten and you might have a water seam ingame. Thats a conflict we need to fix too.
-* You have a mod that adds an awesome looking weapon that have totally ridiculous stats. Someone else made an addon for that mod with more reasonable values and that addon is loaded after your weapon mod. In that case the damage values of the addon would overwrite the ones from the weapon mod thus creating a conflict. But as youve installed the addon to do exactly that we have a desired conflict we don't need to fix.
+* You have a mod that adds an awesome looking weapon that have totally ridiculous stats. Someone else made an addon for that mod with more reasonable values and that addon is loaded after your weapon mod. In that case the damage values of the addon would overwrite the ones from the weapon mod thus creating a conflict. But as you have installed the addon to do exactly that we have a desired conflict we don't need to fix.
 
 Just ignoring all conflicts and hoping for already available patches to fix them might work on some smaller modlists. But at some point you will encounter strange behaviour, inconsistencies or worse. This is why were having an eye on conflicts throughout the creation of our modlist. Thats the core of The Method.
 == The First Step
@@ -125,7 +143,7 @@ This is basically how simple compatibility patches are created. I know this requ
 
 === Step 5: Save your created patches
 
-Once youve created patches for all conflicts that you think shouldnt be ignored close xEdit and save them.
+Once you have created patches for all conflicts that you think shouldnt be ignored close xEdit and save them.
 
 Make sure all your new esps are in the list and checked. Once you are back to MO2 you will find your new patches in the overwrite folder at the bottom of your modlist. Its not good practice to have plugins lying around in there so if you only create a single patch (and you are sure theres no other crap left in overwrite) you can create a new mod out of your overwrite folder via rightclick and Create Mod...
 
@@ -135,7 +153,7 @@ Even tho it is entirely up to you how you name and manage your mods in MO2 this 
 
 {{image:methodmo2clean7njv3.png | methodmo2clean7njv3}}
 
-Once youve acivated your patches the plugins will show up at the very bottom of your load order in the right pane. Depending on lour load order and other patches you might want to change the load order spot of your patch but at least for the first one you don't need to change anything.
+Once you have acivated your patches the plugins will show up at the very bottom of your load order in the right pane. Depending on lour load order and other patches you might want to change the load order spot of your patch but at least for the first one you don't need to change anything.
 
 === Step 6: Create new ModGroups for each new mod
 
@@ -165,7 +183,7 @@ Once we created that ModGroup the same window in xEdit should look like this:
 
 {{image:methodmodgroupreal66xj9k.png | methodmodgroupreal66xj9k}}
 
-Once youve created all ModGroups needed to hide those intentional conflicts exit xEdit, sort them into their respective mods and re-open xEdit to make sure the left pane is empty. If so, all conflicts are either solved via patches or hidden by ModGroups. If not you should go through the remaining conflicts and repeat steps 4 to 6.
+Once you have created all ModGroups needed to hide those intentional conflicts exit xEdit, sort them into their respective mods and re-open xEdit to make sure the left pane is empty. If so, all conflicts are either solved via patches or hidden by ModGroups. If not you should go through the remaining conflicts and repeat steps 4 to 6.
 
 === Step 7: Start over again
 
