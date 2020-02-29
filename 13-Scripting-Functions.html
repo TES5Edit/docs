@@ -66,14 +66,14 @@ title: xEdit Scripting Functions
 <p class="empty">&nbsp;</p>
 <div id="s_11-2"></div>
 <h3 id="UsingtheDelphiIDEtoEditTES5EditScripts">13.2 - Using the Delphi IDE to Edit TES5Edit Scripts</h3>
-<p>As of TES5Edit version 3.2.1, there is a file in the <code>Edit Scripts</code> directory called <a  href="href="https://github.com/TES5Edit/TES5Edit/blob/dev/Edit%20Scripts/xEditAPI.pas">xEditAPI.pas</a></p>
+<p>As of TES5Edit version 3.2.1, there is a file in the <code>Edit Scripts</code> directory called <a href="href="https://github.com/TES5Edit/TES5Edit/blob/dev/Edit%20Scripts/xEditAPI.pas">xEditAPI.pas</a></p>
 <p class="empty">&nbsp;</p>
 <p>The contents of that file match what is published here. The xEditAPI.pas includes xEdit API declarations to be used for editing scripts using Delphi. With this file you can now edit xEdit scripts using Delphi. This gives you full IDE benefits like checking for warnings and errors before executing your script, as well as intellisense and code insights.</p>
 <p class="empty">&nbsp;</p>
-<p>For example purposes in this documentation, we assume a user created xEdit script named <code>GreatScript.pas</code>. However, you can name your script almost anything. There are some limitations though, because the name of the script must match the unit declaration of the script, and unit names have limitations. See <a  href="href="http://docwiki.embarcadero.com/RADStudio/Tokyo/en/Fundamental_Syntactic_Elements_(Delphi)#Identifiers">Delphi Identifiers</a></p>
+<p>For example purposes in this documentation, we assume a user created xEdit script named <code>GreatScript.pas</code>. However, you can name your script almost anything. There are some limitations though, because the name of the script must match the unit declaration of the script, and unit names have limitations. See <a href="href="http://docwiki.embarcadero.com/RADStudio/Tokyo/en/Fundamental_Syntactic_Elements_(Delphi)#Identifiers">Delphi Identifiers</a></p>
 <p class="empty">&nbsp;</p>
 <h3 id="InstructionstogetstartededitingxEditscriptswithDelphi">13.3 - Instructions to get started editing xEdit scripts with Delphi</h3>
-<p class="list-1">&bull;&nbsp; Download the free Delphi Starter edition, called RAD Studio (current version is 10.2) from <a  href="https://www.embarcadero.com/products/delphi/starter">Embarcadero Delphi Starter</a></p>
+<p class="list-1">&bull;&nbsp; Download the free Delphi Starter edition, called RAD Studio (current version is 10.2) from <a href="https://www.embarcadero.com/products/delphi/starter">Embarcadero Delphi Starter</a></p>
 <p class="list-1">&bull;&nbsp; Create new console application project named <code>GreatScriptApp</code></p>
 <p class="list-1">&bull;&nbsp; Add the files <code>xEditAPI.pas</code> and <code>GreatScript.pas</code> to the project (menu Project -&gt; Add to project)</p>
 <p class="list-1">&bull;&nbsp; At the top of the script, modify or add the <code>unit</code> clause. The name of the unit must match exactly the filename of your script without the .pas extension.</p>
@@ -119,8 +119,8 @@ program GreatScriptApp;
 {% endraw %}
 <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_111" class="drkbtn">Previous Section</a>
-    <a  href="#s_112" class="drkbtn">Top of this Group</a>
+    <a href="#s_111" class="drkbtn">Previous Section</a>
+    <a href="#s_112" class="drkbtn">Top of this Group</a>
 </div>
 <div id="s_11-3"></div>
 <h3 class="scriptHeader" id="TES5EditGlobalVariables">13.4 - TES5Edit Global Variables</h3>
@@ -172,8 +172,8 @@ program GreatScriptApp;
 </table>
 <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_112" class="drkbtn">Previous Section</a>
-    <a  href="#s_113" class="drkbtn">Top of this Group</a>
+    <a href="#s_112" class="drkbtn">Previous Section</a>
+    <a href="#s_113" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-4"></div>
@@ -185,21 +185,21 @@ program GreatScriptApp;
 <p class="empty">&nbsp;</p>
 <p>The relationships between internal types are as follows:</p>
 <p class="empty">&nbsp;</p>
-<p>    <a  href="#IwbElement">IwbElement</a></p>
+<p>    <a href="#IwbElement">IwbElement</a></p>
  <p class="list-1">+&nbsp; IwbContainerBase</p>
- <p class="list-1">+&nbsp; <a  href="#IwbContainer">IwbContainer</a></p>
+ <p class="list-1">+&nbsp; <a href="#IwbContainer">IwbContainer</a></p>
 <p>      | + IwbDataContainer</p>
 <p>      | |  + IwbFileHeader</p>
 <p>      | |  + IwbRecord</p>
-<p>      | |     + <a  href="#IwbGroupRecord">IwbGroupRecord</a></p>
-<p>      | |     + <a  href="#IwbMainRecord">IwbMainRecord</a></p>
-<p>      | |     + <a  href="#IwbSubRecord">IwbSubRecord</a></p>
+<p>      | |     + <a href="#IwbGroupRecord">IwbGroupRecord</a></p>
+<p>      | |     + <a href="#IwbMainRecord">IwbMainRecord</a></p>
+<p>      | |     + <a href="#IwbSubRecord">IwbSubRecord</a></p>
 <p>      | |</p>
-<p>      | + <a  href="#IwbFile">IwbFile</a></p>
+<p>      | + <a href="#IwbFile">IwbFile</a></p>
 <p>      |</p>
  <p class="list-1">+&nbsp; IwbContainerElementRef</p>
  <p class="empty">&nbsp;</p>
-<p>   <a  href="#IwbResource">IwbResource</a></p>
+<p>   <a href="#IwbResource">IwbResource</a></p>
 <p>   IwbResourceContainer</p>
     <p class="list-3">+&nbsp; IwbBA2File</p>
     <p class="list-3">+&nbsp; IwbBSAFile</p>
@@ -214,13 +214,13 @@ program GreatScriptApp;
     <p class="list-3">+&nbsp; TwbFastStringList</p>
     <p class="list-3">+&nbsp; TGameResourceType</p>
     <p class="empty">&nbsp;</p>
-<p>   <a  href="#Misc_functions">Misc functions</a></p>
-    <p class="list-3">+&nbsp; <a  href="#DDS_functions">DDS</a></p>
-    <p class="list-3">+&nbsp; <a  href="#NIF_functions">NIF</a></p>
+<p>   <a href="#Misc_functions">Misc functions</a></p>
+    <p class="list-3">+&nbsp; <a href="#DDS_functions">DDS</a></p>
+    <p class="list-3">+&nbsp; <a href="#NIF_functions">NIF</a></p>
     <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_113" class="drkbtn">Previous Section</a>
-    <a  href="#s_114" class="drkbtn">Top of this Group</a>
+    <a href="#s_113" class="drkbtn">Previous Section</a>
+    <a href="#s_114" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-4-1"></div>
@@ -244,7 +244,7 @@ program GreatScriptApp;
         <td><b>Assigned</b></td>
         <td> boolean</td>
         <td> aeElement: IwbElement </td>
-        <td> An extension to Delphi's native <a  href="http://www.delphibasics.co.uk/RTL.asp?Name=Assigned">Assigned</a> function: returns true if <i>aeElement</i> is not <i>Nil</i>, and returns false otherwise. </td>
+        <td> An extension to Delphi's native <a href="http://www.delphibasics.co.uk/RTL.asp?Name=Assigned">Assigned</a> function: returns true if <i>aeElement</i> is not <i>Nil</i>, and returns false otherwise. </td>
     </tr>
     <tr>
         <td><b>ObjectToElement</b></td>
@@ -297,8 +297,8 @@ program GreatScriptApp;
 </table>
     <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_114" class="drkbtn">Previous Section</a>
-    <a  href="#s_1141" class="drkbtn">Top of this Group</a>
+    <a href="#s_114" class="drkbtn">Previous Section</a>
+    <a href="#s_1141" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-4-2"></div>
@@ -323,7 +323,7 @@ program GreatScriptApp;
         <td></td>
         <td>aeElement: IwbElement</td>
         <td>
-            <p>For use on container elements only when performing a lot of operations with it like adding/removing children elements in batch. Needs to be paired with <a  href="#EndUpdate">EndUpdate</a></p>
+            <p>For use on container elements only when performing a lot of operations with it like adding/removing children elements in batch. Needs to be paired with <a href="#EndUpdate">EndUpdate</a></p>
 <pre>
     BeginUpdate(e);
     try
@@ -418,7 +418,7 @@ program GreatScriptApp;
         <td></td>
         <td>aeElement: IwbElement</td>
         <td>
-            <p>For use on container elements only when performing a lot of operations with it like adding/removing children elements in batch. Needs to be paired with <a  href="#BeginUpdate">BeginUpdate</a></p>
+            <p>For use on container elements only when performing a lot of operations with it like adding/removing children elements in batch. Needs to be paired with <a href="#BeginUpdate">BeginUpdate</a></p>
 <pre>
     BeginUpdate(e);
     try
@@ -604,13 +604,13 @@ program GreatScriptApp;
         <td><b>wbCopyElementToRecord</b></td>
         <td> IwbElement</td>
         <td>aeElement: IwbElement;<br> aeRecord: IwbMainRecord;<br> abAsNew: boolean;<br> abDeepCopy: boolean</td>
-        <td>Copies an element to a record, e.g. the "Conditions" element on a <a  href="https://www.creationkit.com/index.php?title=Constructible_Object">Constructible Object (COBJ)</a> record or a faction from an <a  href="https://www.creationkit.com/index.php?title=ActorBase">ActorBase (NPC_)</a> record. Returns the copied element.</td>
+        <td>Copies an element to a record, e.g. the "Conditions" element on a <a href="https://www.creationkit.com/index.php?title=Constructible_Object">Constructible Object (COBJ)</a> record or a faction from an <a href="https://www.creationkit.com/index.php?title=ActorBase">ActorBase (NPC_)</a> record. Returns the copied element.</td>
     </tr>
 </table>
     <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_1141" class="drkbtn">Previous Section</a>
-    <a  href="#s_1142" class="drkbtn">Top of this Group</a>
+    <a href="#s_1141" class="drkbtn">Previous Section</a>
+    <a href="#s_1142" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-4-3"></div>
@@ -751,8 +751,8 @@ program GreatScriptApp;
 </table>
     <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_1142" class="drkbtn">Previous Section</a>
-    <a  href="#s_1143" class="drkbtn">Top of this Group</a>
+    <a href="#s_1142" class="drkbtn">Previous Section</a>
+    <a href="#s_1143" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-4-4"></div>
@@ -864,7 +864,7 @@ program GreatScriptApp;
         <td><b>RecordByEditorID</b></td>
         <td> IwbMainRecord</td>
         <td> aeFile: IwbFile;<br> asEditorID: string </td>
-        <td> Returns the <a  href="https://www.creationkit.com/index.php?title=Magic_Effect">Magic Effect (MGEF)</a> or <a  href="https://www.creationkit.com/index.php?title=Category:Settings">Setting (GMST)</a> record in <i>aeFile</i> that has the specified EditorID. For all other record types, use something like <code>MainRecordByEditorID(GroupBySignature(f, 'ECZN'), 'RandomEncounterZone1')</code>. </td>
+        <td> Returns the <a href="https://www.creationkit.com/index.php?title=Magic_Effect">Magic Effect (MGEF)</a> or <a href="https://www.creationkit.com/index.php?title=Category:Settings">Setting (GMST)</a> record in <i>aeFile</i> that has the specified EditorID. For all other record types, use something like <code>MainRecordByEditorID(GroupBySignature(f, 'ECZN'), 'RandomEncounterZone1')</code>. </td>
     </tr>
     <tr>
         <td><b>RecordByFormID</b></td>
@@ -899,8 +899,8 @@ program GreatScriptApp;
 </table>
     <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_1143" class="drkbtn">Previous Section</a>
-    <a  href="#s_1144" class="drkbtn">Top of this Group</a>
+    <a href="#s_1143" class="drkbtn">Previous Section</a>
+    <a href="#s_1144" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-4-5"></div>
@@ -916,7 +916,7 @@ program GreatScriptApp;
         <td><b>BaseRecord</b></td>
         <td> IwbMainRecord</td>
         <td> aeRecord: IwbMainRecord </td>
-        <td> If <i>aeRecord</i> is a <a  href="https://www.creationkit.com/index.php?title=Reference">Reference</a>, this function returns the IwbMainRecord of its base form. Otherwise, the function returns <i>Nil</i>. </td>
+        <td> If <i>aeRecord</i> is a <a href="https://www.creationkit.com/index.php?title=Reference">Reference</a>, this function returns the IwbMainRecord of its base form. Otherwise, the function returns <i>Nil</i>. </td>
     </tr>
     <tr>
         <td><b>BaseRecordID</b></td>
@@ -934,7 +934,7 @@ program GreatScriptApp;
         <td><b>ChildGroup</b></td>
         <td> IwbGroupRecord</td>
         <td> aeRecord: IwbMainRecord </td>
-        <td>Returns the group that <i>aeRecord</i> contains, if any. For example, a <a  href="https://www.creationkit.com/index.php?title=Worldspace">Worldspace(WRLD)</a> record will be followed by a GRUP containing the worldspace's <a  href="https://www.creationkit.com/index.php?title=Cell">Cell (CELLs)</a>, and you would use this function to retrieve that group. </td>
+        <td>Returns the group that <i>aeRecord</i> contains, if any. For example, a <a href="https://www.creationkit.com/index.php?title=Worldspace">Worldspace(WRLD)</a> record will be followed by a GRUP containing the worldspace's <a href="https://www.creationkit.com/index.php?title=Cell">Cell (CELLs)</a>, and you would use this function to retrieve that group. </td>
     </tr>
     <tr>
         <td><b>CompareExchangeFormID</b></td>
@@ -982,7 +982,7 @@ program GreatScriptApp;
         <td><b>GetGridCell</b></td>
         <td> TwbGridCell</td>
         <td> aeRecord: IwbMainRecord </td>
-        <td> If <i>aeRecord</i> is an exterior <a  href="https://www.creationkit.com/index.php?title=Cell">Cell (CELL)</a>, this function will return its grid coordinates as a TwbGridCell; you can access the coordinates by checking <code>returnValue.x</code> and <code>returnValue.y</code>. </td>
+        <td> If <i>aeRecord</i> is an exterior <a href="https://www.creationkit.com/index.php?title=Cell">Cell (CELL)</a>, this function will return its grid coordinates as a TwbGridCell; you can access the coordinates by checking <code>returnValue.x</code> and <code>returnValue.y</code>. </td>
     </tr>
     <tr>
         <td><b>GetIsDeleted</b></td>
@@ -1018,19 +1018,19 @@ program GreatScriptApp;
         <td><b>GetPosition</b></td>
         <td> TwbVector</td>
         <td> aeRecord: IwbMainRecord </td>
-        <td> If <i>aeRecord</i> is a <a  href="https://www.creationkit.com/index.php?title=Reference">Reference</a> (or a subtype, like ACHR), this function will return its position. </td>
+        <td> If <i>aeRecord</i> is a <a href="https://www.creationkit.com/index.php?title=Reference">Reference</a> (or a subtype, like ACHR), this function will return its position. </td>
     </tr>
     <tr>
         <td><b>GetRotation</b></td>
         <td> TwbVector</td>
         <td> aeRecord: IwbMainRecord </td>
-        <td> If <i>aeRecord</i> is a <a  href="https://www.creationkit.com/index.php?title=Reference">Reference</a> (or a subtype, like ACHR), this function will return its rotation. </td>
+        <td> If <i>aeRecord</i> is a <a href="https://www.creationkit.com/index.php?title=Reference">Reference</a> (or a subtype, like ACHR), this function will return its rotation. </td>
     </tr>
     <tr>
         <td><b>HasPrecombinedMesh</b></td>
         <td> boolean</td>
         <td> aeRecord: IwbMainRecord </td>
-        <td> Checks whether <i>aeRecord</i> is a Fallout 4 <a  href="https://www.creationkit.com/index.php?title=Reference">Reference</a> that has precombined mesh data generated. See also: <i>PrecombinedMesh</i>. </td>
+        <td> Checks whether <i>aeRecord</i> is a Fallout 4 <a href="https://www.creationkit.com/index.php?title=Reference">Reference</a> that has precombined mesh data generated. See also: <i>PrecombinedMesh</i>. </td>
     </tr>
     <tr>
         <td><b>HighestOverrideOrSelf</b></td>
@@ -1078,7 +1078,7 @@ program GreatScriptApp;
         <td><b>PrecombinedMesh</b></td>
         <td> string</td>
         <td> aeRecord: IwbMainRecord </td>
-        <td> Returns the path to <i>aeRecord</i>'s precombined mesh file, if <i>aeRecord</i> is a Fallout 4 <a  href="https://www.creationkit.com/index.php?title=Reference">Reference</a> that could have that data (i.e. not a placed actor). See also: <i>HasPrecombinedMesh</i>. </td>
+        <td> Returns the path to <i>aeRecord</i>'s precombined mesh file, if <i>aeRecord</i> is a Fallout 4 <a href="https://www.creationkit.com/index.php?title=Reference">Reference</a> that could have that data (i.e. not a placed actor). See also: <i>HasPrecombinedMesh</i>. </td>
     </tr>
     <tr>
         <td><b>ReferencedByIndex</b></td>
@@ -1150,7 +1150,7 @@ program GreatScriptApp;
         <td><b>Signature</b></td>
         <td> string</td>
         <td> aeRecord: IwbMainRecord </td>
-        <td> Returns the record's signature, a four-character code such as <a  href="https://www.creationkit.com/index.php?title=ActorBase">ActorBase(NPC_)</a> or <a  href="https://www.creationkit.com/index.php?title=Topic">Topic(DIAL)</a>. </td>
+        <td> Returns the record's signature, a four-character code such as <a href="https://www.creationkit.com/index.php?title=ActorBase">ActorBase(NPC_)</a> or <a href="https://www.creationkit.com/index.php?title=Topic">Topic(DIAL)</a>. </td>
     </tr>
     <tr>
         <td><b>UpdateRefs</b></td>
@@ -1167,8 +1167,8 @@ program GreatScriptApp;
 </table>
     <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_1144" class="drkbtn">Previous Section</a>
-    <a  href="#s_1145" class="drkbtn">Top of this Group</a>
+    <a href="#s_1144" class="drkbtn">Previous Section</a>
+    <a href="#s_1145" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-4-6"></div>
@@ -1184,25 +1184,25 @@ program GreatScriptApp;
         <td><b>ChildrenOf</b></td>
         <td> IwbMainRecord</td>
         <td> aeGroup: IwbGroupRecord </td>
-        <td>If <i>aeGroup</i> is a child group, this function returns the main record that it is associated with. For example, a <a  href="https://www.creationkit.com/index.php?title=Topic">Dialogue Topic (DIAL)</a> is followed by a group (GRUP) that contains its <a  href="https://www.creationkit.com/index.php?title=Topic_Info">Infos (INFO)</a> and passing that GRUP to this function would retrieve the DIAL. <a  href="https://www.creationkit.com/index.php?title=Cell">Cells (CELL)</a> and <a  href="https://www.creationkit.com/index.php?title=Worldspace">Worldspaces (WRLD)</a> have their contents set up similarly to Dialogue Topics, so this function will work with them as well. </td>
+        <td>If <i>aeGroup</i> is a child group, this function returns the main record that it is associated with. For example, a <a href="https://www.creationkit.com/index.php?title=Topic">Dialogue Topic (DIAL)</a> is followed by a group (GRUP) that contains its <a href="https://www.creationkit.com/index.php?title=Topic_Info">Infos (INFO)</a> and passing that GRUP to this function would retrieve the DIAL. <a href="https://www.creationkit.com/index.php?title=Cell">Cells (CELL)</a> and <a href="https://www.creationkit.com/index.php?title=Worldspace">Worldspaces (WRLD)</a> have their contents set up similarly to Dialogue Topics, so this function will work with them as well. </td>
     </tr>
     <tr>
         <td><b>FindChildGroup</b></td>
         <td> IwbGroupRecord</td>
         <td> aeGroup: IwbGroupRecord;<br>aiType: integer;<br> aeMainRecord: IwbMainRecord;<br> </td>
-        <td>Finds the group record inside another group. The <i>aiType</i> value should match the group-type values used in <a  href="href="http://en.uesp.net/wiki/Tes5Mod:Mod_File_Format#Groups">the file format</a>. The "Worldspace browser.pas" script uses <code>FindChildGroup(ChildGroup(cell), 9, cell);</code> to get the "Temporary" group within a CELL. </td>
+        <td>Finds the group record inside another group. The <i>aiType</i> value should match the group-type values used in <a href="href="http://en.uesp.net/wiki/Tes5Mod:Mod_File_Format#Groups">the file format</a>. The "Worldspace browser.pas" script uses <code>FindChildGroup(ChildGroup(cell), 9, cell);</code> to get the "Temporary" group within a CELL. </td>
     </tr>
     <tr>
         <td><b>GroupLabel</b></td>
         <td> cardinal</td>
         <td> aeGroup: IwbGroupRecord </td>
-        <td> Returns the raw group label, as specified in <a  href="href="http://en.uesp.net/wiki/Tes5Mod:Mod_File_Format#Groups">the file format</a>. </td>
+        <td> Returns the raw group label, as specified in <a href="href="http://en.uesp.net/wiki/Tes5Mod:Mod_File_Format#Groups">the file format</a>. </td>
     </tr>
     <tr>
         <td><b>GroupType</b></td>
         <td> integer</td>
         <td> aeGroup: IwbGroupRecord </td>
-        <td> Returns the raw group type, as specified in <a  href="http://en.uesp.net/wiki/Tes5Mod:Mod_File_Format#Groups">the file format</a>. </td>
+        <td> Returns the raw group type, as specified in <a href="http://en.uesp.net/wiki/Tes5Mod:Mod_File_Format#Groups">the file format</a>. </td>
     </tr>
     <tr>
         <td><b>MainRecordByEditorID</b></td>
@@ -1213,8 +1213,8 @@ program GreatScriptApp;
 </table>
     <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_1145" class="drkbtn">Previous Section</a>
-    <a  href="#s_1146" class="drkbtn">Top of this Group</a>
+    <a href="#s_1145" class="drkbtn">Previous Section</a>
+    <a href="#s_1146" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-4-7"></div>
@@ -1267,8 +1267,8 @@ program GreatScriptApp;
 </table>
     <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_1146" class="drkbtn">Previous Section</a>
-    <a  href="#s_1147" class="drkbtn">Top of this Group</a>
+    <a href="#s_1146" class="drkbtn">Previous Section</a>
+    <a href="#s_1147" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-4-8"></div>
@@ -1397,8 +1397,8 @@ program GreatScriptApp;
 </table>
     <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_1146" class="drkbtn">Previous Section</a>
-    <a  href="#s_1147" class="drkbtn">Top of this Group</a>
+    <a href="#s_1146" class="drkbtn">Previous Section</a>
+    <a href="#s_1147" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-4-8-1"></div>
@@ -1437,8 +1437,8 @@ program GreatScriptApp;
 </table>
     <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_1148" class="drkbtn">Previous Section</a>
-    <a  href="#s_11481" class="drkbtn">Top of this Group</a>
+    <a href="#s_1148" class="drkbtn">Previous Section</a>
+    <a href="#s_11481" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-4-8-2"></div>
@@ -1471,8 +1471,8 @@ program GreatScriptApp;
 </table>
     <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_11481" class="drkbtn">Previous Section</a>
-    <a  href="#s_11482" class="drkbtn">Top of this Group</a>
+    <a href="#s_11481" class="drkbtn">Previous Section</a>
+    <a href="#s_11482" class="drkbtn">Top of this Group</a>
 </div>
 <div id="s_11-5"></div>
 <h3 class="scriptHeader" id="ScriptStructure">13.16 - Script Structure</h3>
@@ -1486,8 +1486,8 @@ program GreatScriptApp;
 <p>All these functions are optional, so if they are not needed they can be omitted.</p>
 <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_11482" class="drkbtn">Previous Section</a>
-    <a  href="#s_11451" class="drkbtn">Top of this Group</a>
+    <a href="#s_11482" class="drkbtn">Previous Section</a>
+    <a href="#s_11451" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-5-2"></div>
@@ -1503,8 +1503,8 @@ program GreatScriptApp;
 </pre>
 <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_11451" class="drkbtn">Previous Section</a>
-    <a  href="#s_11452" class="drkbtn">Top of this Group</a>
+    <a href="#s_11451" class="drkbtn">Previous Section</a>
+    <a href="#s_11452" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-5-3"></div>
@@ -1518,8 +1518,8 @@ uses 'MyTools';
 <p>With that command we instruct the script to load another script named "MyTools.pas" and the functions in that script will be available. Note that any conflict in names can be resolved by the unit name. So it's suggested to change the <i>toolkit</i> script unit name appropriately.</p>
 <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_11452" class="drkbtn">Previous Section</a>
-    <a  href="#s_11453" class="drkbtn">Top of this Group</a>
+    <a href="#s_11452" class="drkbtn">Previous Section</a>
+    <a href="#s_11453" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-5-4"></div>
@@ -1536,7 +1536,7 @@ uses 'MyTools';
 <p>    <li><i>TPopupMenu</i> used in "Assets browser.pas"</li></p>
 <p>    <li><i>TSaveDialog</i> used in "Assets browser.pas"</li></p>
 <p>    <li><i>TScrollBox' used in "ExportImportTexts.pas"</i></li></p>
-<p>    <li><i>I highly recommend viewing/using MatorTheEternal's <a  href="https://github.com/matortheeternal/TES5EditScripts/blob/master/trunk/Edit%20Scripts/mteFunctions.pas">mtefunctions.pas</a> for examples as well.</i> </li></p>
+<p>    <li><i>I highly recommend viewing/using MatorTheEternal's <a href="https://github.com/matortheeternal/TES5EditScripts/blob/master/trunk/Edit%20Scripts/mteFunctions.pas">mtefunctions.pas</a> for examples as well.</i> </li></p>
 <p></ul></p>
 <table class="scriptTable">
     <tr>
@@ -1548,49 +1548,49 @@ uses 'MyTools';
     </tr>
     <tr>
         <td><b>TButton</b></td>
-        <td><a  href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TButton.html">TButton</a> </td>
+        <td><a href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TButton.html">TButton</a> </td>
         <td> Button</td>
         <td> Assets browser.pas</td>
         <td> The button doesn't automatically expand its width to accommodate its contents. </td>
     </tr>
     <tr>
         <td><b>TCheckBox</b></td>
-        <td><a  href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TCheckBox.html">TCheckBox</a> </td>
+        <td><a href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TCheckBox.html">TCheckBox</a> </td>
         <td> Checkbox</td>
         <td> none</td>
         <td> You can apply a label using the <code>Caption</code> property; you don't need to make your own TLabel. Note, for more advanced scripts, that <code>OnChange</code> is not supported; use <code>OnClick</code> (which listens for more than just clicks) instead. Manually changing the <code>Checked</code> property will also fire an OnClick event; to avoid recursion where needed, you can set <code>OnClick</code> to <code>nil</code>, change <code>Checked</code>, and then restore <code>OnClick</code>'s value. </td>
     </tr>
     <tr>
         <td><b>TComboBox</b></td>
-        <td><a  href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TComboBox.html">TComboBox</a> </td>
+        <td><a href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TComboBox.html">TComboBox</a> </td>
         <td> Combobox</td>
         <td> none</td>
         <td> Set the <code>Style</code> property to <code>csDropDownList</code> to disallow custom text entry, mimicking the function of a typical drop-down menu </td>
     </tr>
     <tr>
         <td><b>TForm</b></td>
-        <td><a  href="href="http://lazarus-ccr.sourceforge.net/docs/lcl/forms/tform.html">TForm</a></td>
+        <td><a href="href="http://lazarus-ccr.sourceforge.net/docs/lcl/forms/tform.html">TForm</a></td>
         <td> A dialog?</td>
         <td> ExportImportTexts.pas</td>
         <td> </td>
     </tr>
     <tr>
         <td><b>TLabel</b></td>
-        <td><a  href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TLabel.html">TLabel</a> </td>
+        <td><a href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TLabel.html">TLabel</a> </td>
         <td> Used to display ordinary text.</td>
         <td> none</td>
-        <td>Set the <a  href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TStaticText_Caption.html"><code>Caption</code></a> property to your text. To show line breaks, concatenate <code>#13#10</code> into your string (e.g. <code>'Line 1' + #13#10 + 'Line 2'</code>). </td>
+        <td>Set the <a href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TStaticText_Caption.html"><code>Caption</code></a> property to your text. To show line breaks, concatenate <code>#13#10</code> into your string (e.g. <code>'Line 1' + #13#10 + 'Line 2'</code>). </td>
     </tr>
     <tr>
         <td><b>TPanel</b></td>
-        <td><a  href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/ExtCtrls_TPanel.html">TPanel</a> </td>
+        <td><a href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/ExtCtrls_TPanel.html">TPanel</a> </td>
         <td> General-purpose container for UI widgets</td>
         <td> ExportImportTexts.pas</td>
         <td> </td>
     </tr>
     <tr>
         <td><b>TStaticText</b></td>
-        <td><a  href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TStaticText.html">TStaticText</a> </td>
+        <td><a href="href="http://docs.embarcadero.com/products/rad_studio/delphiAndcpp2009/HelpUpdate2/EN/html/delphivclwin32/StdCtrls_TStaticText.html">TStaticText</a> </td>
         <td> Apparently used to display ordinary text.</td>
         <td> none</td>
         <td> Pretty much the same as a TLabel, but it cuts off any text that has line breaks. Not particularly useful. </td>
@@ -1615,8 +1615,8 @@ uses 'MyTools';
 </table>
 <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_11453" class="drkbtn">Previous Section</a>
-    <a  href="#s_11454" class="drkbtn">Top of this Group</a>
+    <a href="#s_11453" class="drkbtn">Previous Section</a>
+    <a href="#s_11454" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-6"></div>
@@ -1663,15 +1663,15 @@ end.
 </pre>
 <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_1154" class="drkbtn">Previous Section</a>
-    <a  href="#s_116" class="drkbtn">Top of this Group</a>
+    <a href="#s_1154" class="drkbtn">Previous Section</a>
+    <a href="#s_116" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-7"></div>
 <h3 class="scriptHeader" id="Pascalimplementation">13.22 - Pascal implementation</h3>
-<p>TES5Edit uses JvInterpreter from <a  href="href="https://github.com/project-jedi/jvcl">JVCL</a> to execute Delphi as a scripting language. The standard libraries offered by JvInterpreter directly wrap whatever libraries the containing application (xEdit) was compiled with.</p>
+<p>TES5Edit uses JvInterpreter from <a href="href="https://github.com/project-jedi/jvcl">JVCL</a> to execute Delphi as a scripting language. The standard libraries offered by JvInterpreter directly wrap whatever libraries the containing application (xEdit) was compiled with.</p>
 <p class="empty">&nbsp;</p>
-<p>An examination of <a  href="href="https://github.com/TES5Edit/TES5Edit/blob/dev-elminster/wbScriptAdapter.pas">xEdit's own source code</a> indicates that it provides (JvInterpreter's versions of) the following standard libraries to scripts, even if those scripts do not include the libraries via the <code>uses</code> command:</p>
+<p>An examination of <a href="href="https://github.com/TES5Edit/TES5Edit/blob/dev-elminster/wbScriptAdapter.pas">xEdit's own source code</a> indicates that it provides (JvInterpreter's versions of) the following standard libraries to scripts, even if those scripts do not include the libraries via the <code>uses</code> command:</p>
 <p><ul></p>
 <p>    <li> Buttons</li></p>
 <p>    <li> Classes</li></p>
@@ -1694,7 +1694,7 @@ end.
 <p>    <li> TES5Edit's Pascal implementation does not appear to support constructions such as <code>TList&lt;Integer&gt;</code>. </li></p>
 <p>    <li> If you try to store a Variant (e.g. the return value of GetElementNativeValues) in a Float variable and that variant has returned <code>nil</code>, then that Float will also contain <code>nil</code> and will throw errors when used. </li></p>
 <p>    <li></p>
-<p>        JvInterpreter throws an error if any identifiers in the global scope are redeclared; reportedly, this differs from <a  href="href="https://stackoverflow.com/questions/17293008/why-doesnt-the-delphi-compiler-warn-for-a-redefined-constant">the behavior that Delphi has shown since 1987</a>, wherein global identifiers in later-included files shadow those in earlier-included files. Defining them in <code>implementation</code> blocks doesn't make any difference.</p>
+<p>        JvInterpreter throws an error if any identifiers in the global scope are redeclared; reportedly, this differs from <a href="href="https://stackoverflow.com/questions/17293008/why-doesnt-the-delphi-compiler-warn-for-a-redefined-constant">the behavior that Delphi has shown since 1987</a>, wherein global identifiers in later-included files shadow those in earlier-included files. Defining them in <code>implementation</code> blocks doesn't make any difference.</p>
 <p>        <ul></p>
 <p>            <li></p>
 <p>                In addition to this, including a unit multiple times triggers these errors, as its own definitions conflict with themselves.</p>
@@ -1723,8 +1723,8 @@ end.
 <p></ul></p>
 <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_116" class="drkbtn">Previous Section</a>
-    <a  href="#s_117" class="drkbtn">Top of this Group</a>
+    <a href="#s_116" class="drkbtn">Previous Section</a>
+    <a href="#s_117" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-7-1"></div>
@@ -2086,8 +2086,8 @@ end.
 </div>
 <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_117" class="drkbtn">Previous Section</a>
-    <a  href="#s_1171" class="drkbtn">Top of this Group</a>
+    <a href="#s_117" class="drkbtn">Previous Section</a>
+    <a href="#s_1171" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-7-2"></div>
@@ -2099,7 +2099,7 @@ end.
     </tr>
     <tr>
         <td>anonymous methods </td>
-        <td>Refer to the <a  href="href="http://docwiki.embarcadero.com/RADStudio/XE8/en/Anonymous_Methods_in_Delphi">Embarcadero documentation</a>. </td>
+        <td>Refer to the <a href="href="http://docwiki.embarcadero.com/RADStudio/XE8/en/Anonymous_Methods_in_Delphi">Embarcadero documentation</a>. </td>
     </tr>
     <tr>
         <td>array arguments </td>
@@ -2119,11 +2119,11 @@ end.
     </tr>
     <tr>
         <td>procedural types </td>
-        <td>Refer to the <a  href="href="http://docwiki.embarcadero.com/RADStudio/XE8/en/Procedural_Types">Embarcadero documentation</a>. </td>
+        <td>Refer to the <a href="href="http://docwiki.embarcadero.com/RADStudio/XE8/en/Procedural_Types">Embarcadero documentation</a>. </td>
     </tr>
     <tr>
         <td>structured types </td>
-        <td>Refer to the <a  href="href="http://docwiki.embarcadero.com/RADStudio/XE8/en/Structured_Types">Embarcadero documentation</a>. </td>
+        <td>Refer to the <a href="href="http://docwiki.embarcadero.com/RADStudio/XE8/en/Structured_Types">Embarcadero documentation</a>. </td>
     </tr>
     <tr>
         <td>subclasses </td>
@@ -2136,8 +2136,8 @@ end.
 </table>
 <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_1171" class="drkbtn">Previous Section</a>
-    <a  href="#s_1172" class="drkbtn">Top of this Group</a>
+    <a href="#s_1171" class="drkbtn">Previous Section</a>
+    <a href="#s_1172" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-7-3"></div>
@@ -2170,8 +2170,8 @@ end.
 </table>
 <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_1172" class="drkbtn">Previous Section</a>
-    <a  href="#s_1173" class="drkbtn">Top of this Group</a>
+    <a href="#s_1172" class="drkbtn">Previous Section</a>
+    <a href="#s_1173" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-7-4"></div>
@@ -2203,7 +2203,7 @@ end.
     </tr>
     <tr>
         <td>object </td>
-        <td>Used to create <a  href="href="http://docwiki.embarcadero.com/RADStudio/Berlin/en/Classes_and_Objects_(Delphi)#Object_Types">object types</a>. </td>
+        <td>Used to create <a href="href="http://docwiki.embarcadero.com/RADStudio/Berlin/en/Classes_and_Objects_(Delphi)#Object_Types">object types</a>. </td>
     </tr>
     <tr>
         <td>type </td>
@@ -2216,8 +2216,8 @@ end.
 </table>
 <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_1173" class="drkbtn">Previous Section</a>
-    <a  href="#s_1174" class="drkbtn">Top of this Group</a>
+    <a href="#s_1173" class="drkbtn">Previous Section</a>
+    <a href="#s_1174" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <div id="s_11-7-5"></div>
@@ -2228,7 +2228,7 @@ end.
         <th>Description </th>
     </tr>
     <tr>
-        <td><a  href="href="http://docwiki.embarcadero.com/RADStudio/XE2/en/Variant_Support_Routines">Variant support routines</a> </td>
+        <td><a href="href="http://docwiki.embarcadero.com/RADStudio/XE2/en/Variant_Support_Routines">Variant support routines</a> </td>
         <td>Makes it easier to identify a variant's current type, and cast variants. Relevant type keywords like <code>varInteger</code> are also missing. </td>
     </tr>
     <tr>
@@ -2238,13 +2238,13 @@ end.
 </table>
 <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#s_1174" class="drkbtn">Previous Section</a>
-    <a  href="#s_1175" class="drkbtn">Top of this Group</a>
+    <a href="#s_1174" class="drkbtn">Previous Section</a>
+    <a href="#s_1175" class="drkbtn">Top of this Group</a>
 </div>
 <p><!--/.level-nav--></p>
 <p class="empty">&nbsp;</p>
 <div>
-    <a  href="12-cheat-sheets-and-quick-reference-charts.html" class="drkbtn">&laquo; Previous Page</a>
-    <a  href="14-Scripting-Resources.html" class="drkbtn">Next Page &raquo;</a>
+    <a href="12-cheat-sheets-and-quick-reference-charts.html" class="drkbtn">&laquo; Previous Page</a>
+    <a href="14-Scripting-Resources.html" class="drkbtn">Next Page &raquo;</a>
 </div>
 <p><!--/.level-nav--></p>

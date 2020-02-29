@@ -54,7 +54,7 @@ title: xEdit Mod Utilities
 <p class="list-1">&bull;&nbsp; There are some limits to this. The &quot;not reachable&quot; classification is only true if you:</p>
   <p class="list-2">&bull;&nbsp; Start a new game with exactly the mods you've currently loaded.</p>
   <p class="list-2">&bull;&nbsp; Do not use the console in any way.</p>
-  <p class="list-2">&bull;&nbsp; There are no <a  href="http://fose.silverlock.org/">FOSE</a> scripts involved that use some dirty tricks to get hold of a reference to something without that something showing up in the SCRO's of the script.</p>
+  <p class="list-2">&bull;&nbsp; There are no <a href="http://fose.silverlock.org/">FOSE</a> scripts involved that use some dirty tricks to get hold of a reference to something without that something showing up in the SCRO's of the script.</p>
   <p class="empty">&nbsp;</p>
 <p>Also the meaning of &quot;reachable&quot; is sometimes a bit gray. For example; For Activator's, Statics, Weapons, Armor, and so on "reachable" means that the player character should be able to get somewhere from where he can see the object and/or somehow get it into his inventory. For Quests it means that the quest either starts enabled or that there is probably some way how it can become enabled or at least that somewhere the variables belonging to the quest script get accessed. For DIAL's and INFO's it means that it's probably possible to select the topic somewhere or hear the response somewhere. For CELL's and WRLD's it means that the player character is probably somehow able to enter it.</p>
   <p class="empty">&nbsp;</p>
@@ -62,7 +62,7 @@ title: xEdit Mod Utilities
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image271.jpg" alt="image271" %}</p>
   <p class="empty">&nbsp;</p>
-<p>Then you can select just the <a  href="https://www.nexusmods.com/fallout3/mods/334">XFO</a> mod we want to load (A) and click, "OK" (B) to bring it up into xEdit as shown below:</p>
+<p>Then you can select just the <a href="https://www.nexusmods.com/fallout3/mods/334">XFO</a> mod we want to load (A) and click, "OK" (B) to bring it up into xEdit as shown below:</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/reachableloadmod.jpg" alt="reachableloadmod" %}</p>
   <p class="empty">&nbsp;</p>
@@ -72,17 +72,17 @@ title: xEdit Mod Utilities
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image275.jpg" alt="image275" %}</p>
   <p class="empty">&nbsp;</p>
-<p>As with the <a  href="9-mod-utilities.html#BuildingReachableInformation">Build Reference Information</a> function, the build reach ability function may take some time to process all of the records depending on how many mods you are loading for the comparison. The status bar at the very top will give you indication of how far along the function is during parsing as shown below. The <a  href="2-overview.html#MessageTab">Messages Tab</a> shows the log-file output as it happens, and overall this function can take some time to complete:</p>
+<p>As with the <a href="9-mod-utilities.html#BuildingReachableInformation">Build Reference Information</a> function, the build reach ability function may take some time to process all of the records depending on how many mods you are loading for the comparison. The status bar at the very top will give you indication of how far along the function is during parsing as shown below. The <a href="2-overview.html#MessageTab">Messages Tab</a> shows the log-file output as it happens, and overall this function can take some time to complete:</p>
   <p class="empty">&nbsp;</p>
 <p>Be aware that half-way through the process, the Elapsed Time clock on top will appear to stop, and xEdit will appear to be frozen or locked-up. In truth the Elapsed Clock only counts through half of the Build Reachable Info function, so be patient &#8211; the process will complete within a minute or two.</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image277.jpg" alt="image277" %}</p>
   <p class="empty">&nbsp;</p>
-<p>Once the Build Reachable Info function is complete, you will see the, "All done!" notice in the <a  href="2-overview.html#MessageTab">Messages Tab</a> (A) along with log file output. <a  href="2-overview.html#NavigationTree">Navigation Tree</a> shows all of the records in the mod with Green Text, Yellow Background (B) as shown below:</p>
+<p>Once the Build Reachable Info function is complete, you will see the, "All done!" notice in the <a href="2-overview.html#MessageTab">Messages Tab</a> (A) along with log file output. <a href="2-overview.html#NavigationTree">Navigation Tree</a> shows all of the records in the mod with Green Text, Yellow Background (B) as shown below:</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image279.jpg" alt="image279" %}</p>
   <p class="empty">&nbsp;</p>
-<p>We're not quite done yet, next we need to apply a Filter to remove all records from the view except those that are considered, "Unreachable". To do this, Right-click on the mod in the <a  href="2-overview.html#NavigationTree">Navigation Tree</a> (A), and select, "Apply Filter" from the main context menu:</p>
+<p>We're not quite done yet, next we need to apply a Filter to remove all records from the view except those that are considered, "Unreachable". To do this, Right-click on the mod in the <a href="2-overview.html#NavigationTree">Navigation Tree</a> (A), and select, "Apply Filter" from the main context menu:</p>
   <p class="empty">&nbsp;</p>
 <p>Once Apply Filter is selected, the main Filter window view will be presented as shown below, where you can apply the Reachable Info Filter.</p>
   <p class="empty">&nbsp;</p>
@@ -92,11 +92,11 @@ title: xEdit Mod Utilities
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image283.jpg" alt="image283" %}</p>
   <p class="empty">&nbsp;</p>
-<p>This filter should not take very long to process, perhaps several seconds. Below an example is shown of the <a  href="2-overview.html#MessageTab">Messages Tab</a> output, indicating the result of the filter (B). You can also see the stricken-through records (A) that are not reachable by the player:</p>
+<p>This filter should not take very long to process, perhaps several seconds. Below an example is shown of the <a href="2-overview.html#MessageTab">Messages Tab</a> output, indicating the result of the filter (B). You can also see the stricken-through records (A) that are not reachable by the player:</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image285.jpg" alt="image285" %}</p>
   <p class="empty">&nbsp;</p>
-<p>The final results of the Build Reachable Info function are shown in the screenshot below via the <a  href="2-overview.html#ViewTab">View Tab</a> (A) and <a  href="2-overview.html#NavigationTree">Navigation Tree</a> (C), where the stricken-through records are shown with horizontal lines through the text. These stricken-through records are those which are not considered, "Reachable" by the player-character in-game. You can click-open any of the record headings in the <a  href="2-overview.html#NavigationTree">Navigation Tree</a> to see the un-reachable records by category as shown in the screenshot below:</p>
+<p>The final results of the Build Reachable Info function are shown in the screenshot below via the <a href="2-overview.html#ViewTab">View Tab</a> (A) and <a href="2-overview.html#NavigationTree">Navigation Tree</a> (C), where the stricken-through records are shown with horizontal lines through the text. These stricken-through records are those which are not considered, "Reachable" by the player-character in-game. You can click-open any of the record headings in the <a href="2-overview.html#NavigationTree">Navigation Tree</a> to see the un-reachable records by category as shown in the screenshot below:</p>
   <p class="empty">&nbsp;</p>
 <p>Note that in the FormLists you might see some things marked as unreachable which do technically have an effect on the player character. For example, the repair lists will show up as unreachable. The reason for that is that if the repair-list was marked as reachable, it would automatically mark all contained records as reachable. But that's not really right. Just because something can possibly be used to repair an object that the character has doesn't meant that this something can actually ever be acquired by the player. So really, for FormLists the reachable status doesn't mean much either way.</p>
   <p class="empty">&nbsp;</p>
@@ -107,7 +107,7 @@ title: xEdit Mod Utilities
 <p>Overall, even with all these shortcomings and gray areas, if someone ends up being marked as not reachable, that's a very strong indication that the particular thing will not normally effect the game.</p>
   <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#Overview" class="drkbtn">Previous Section</a>
+    <a href="#Overview" class="drkbtn">Previous Section</a>
 </div>
 <h2 class="header2" id="ChangingandAddingReferences">9.3 - Changing and Adding References</h2>
   <p class="empty">&nbsp;</p>
@@ -115,17 +115,17 @@ title: xEdit Mod Utilities
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image287.jpg" alt="image287" %}</p>
   <p class="empty">&nbsp;</p>
-<p>In this section we feature <a  href="http://www.bethsoft.com/bgsforums/index.php?showuser=7327">Martigen's</a> <a  href="https://www.nexusmods.com/fallout3/mods/3211">Marts Mutant Mod (MMM)</a>, which is one of the very best mods created for Fallout3. The screenshot below starts the action, in which we Right-click in open space somewhere in the Master/Plugin Selection window (A), then choose, "Select None" to un-check all of the entries. Now check-off the mod you want to change (C), and click, "OK" to load it into xEdit (D) as shown below:</p>
+<p>In this section we feature <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=7327">Martigen's</a> <a href="https://www.nexusmods.com/fallout3/mods/3211">Marts Mutant Mod (MMM)</a>, which is one of the very best mods created for Fallout3. The screenshot below starts the action, in which we Right-click in open space somewhere in the Master/Plugin Selection window (A), then choose, "Select None" to un-check all of the entries. Now check-off the mod you want to change (C), and click, "OK" to load it into xEdit (D) as shown below:</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image289.jpg" alt="image289" %}</p>
   <p class="empty">&nbsp;</p>
-<p>Once loaded, the screenshot below shows you the expected results. Here we see that only <a  href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a> is loaded (A), along with its Master file references. The <a  href="2-overview.html#MessageTab">Messages Tab</a> shows the outcome of the load, and any errors that may persist (B) as shown below:</p>
+<p>Once loaded, the screenshot below shows you the expected results. Here we see that only <a href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a> is loaded (A), along with its Master file references. The <a href="2-overview.html#MessageTab">Messages Tab</a> shows the outcome of the load, and any errors that may persist (B) as shown below:</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image291.jpg" alt="image283" %}</p>
   <p class="empty">&nbsp;</p>
 <p>With our mod loaded and on the operating table, it's time to start changing and added records! The first example below is of a reference change, in which we alter the Flags used on our test NPC, Lucky Harith (He is just THE man, so I had to feature him). The screenshot below illustrates the process:</p>
   <p class="empty">&nbsp;</p>
-<p>We start by opening-up the <a  href="2-overview.html#NavigationTree">Navigation Tree</a> record tree for <a  href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a> to the location where we want to change things (A), and choose Lucky Harith with a Left-Mouse Click (B). To edit a record, Right-click it's entry in the <a  href="2-overview.html#ViewTab">View Tab</a> (C) to render a small context menu, then select, "Edit" (D) to open the edit context menu as shown above.</p>
+<p>We start by opening-up the <a href="2-overview.html#NavigationTree">Navigation Tree</a> record tree for <a href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a> to the location where we want to change things (A), and choose Lucky Harith with a Left-Mouse Click (B). To edit a record, Right-click it's entry in the <a href="2-overview.html#ViewTab">View Tab</a> (C) to render a small context menu, then select, "Edit" (D) to open the edit context menu as shown above.</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image293.jpg" alt="image293" %}</p>
   <p class="empty">&nbsp;</p>
@@ -139,11 +139,11 @@ title: xEdit Mod Utilities
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image297.jpg" alt="image297" %}</p>
   <p class="empty">&nbsp;</p>
-<p>To add a new reference into a record, the process is very similar. Let's keep with Lucky Harith, and add some Rad-X to his inventory so that he's ready for everything! To do this, start by Left-Clicking the record you want to change (A) in the <a  href="2-overview.html#NavigationTree">Navigation Tree</a>, then Right-click the row in the <a  href="2-overview.html#ViewTab">View Tab</a> adjacent to the type of record you want to add. In this case we're adding an item, so to the right of, "Items" in the <a  href="2-overview.html#ViewTab">View Tab</a> is where you want to Right-click (B). A small context window will render, select, "Add" (C) as shown:</p>
+<p>To add a new reference into a record, the process is very similar. Let's keep with Lucky Harith, and add some Rad-X to his inventory so that he's ready for everything! To do this, start by Left-Clicking the record you want to change (A) in the <a href="2-overview.html#NavigationTree">Navigation Tree</a>, then Right-click the row in the <a href="2-overview.html#ViewTab">View Tab</a> adjacent to the type of record you want to add. In this case we're adding an item, so to the right of, "Items" in the <a href="2-overview.html#ViewTab">View Tab</a> is where you want to Right-click (B). A small context window will render, select, "Add" (C) as shown:</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image299.jpg" alt="image299" %}</p>
   <p class="empty">&nbsp;</p>
-<p>Once you click, "Add", a new blank item entry will be added into the <a  href="2-overview.html#ViewTab">View Tab</a> (A) next to the item reference (B). Also note it shows with a Yellow background (A).</p>
+<p>Once you click, "Add", a new blank item entry will be added into the <a href="2-overview.html#ViewTab">View Tab</a> (A) next to the item reference (B). Also note it shows with a Yellow background (A).</p>
   <p class="empty">&nbsp;</p>
 <p>Initially all new items get added as a "NULL" (RefID 00000000) which is obviously not right. Once added you will need to change (Edit) the new item to turn it into the Rad-X item that we want to give to Lucky Harith.<br> <br></p>
   <p class="empty">&nbsp;</p>
@@ -166,7 +166,7 @@ title: xEdit Mod Utilities
 <p>Note that different kinds of records will require different actions when adding new references, as scripts are different from items which are different from NPCs. You can take some time and explore the different types of additions as needed.</p>
   <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#BuildingReachableInformation" class="drkbtn">Previous Section</a>
+    <a href="#BuildingReachableInformation" class="drkbtn">Previous Section</a>
 </div>
 <h2 class="header2" id="MarkingNodesasModified">9.4 - Marking Nodes as Modified</h2>
   <p class="empty">&nbsp;</p>
@@ -179,33 +179,33 @@ title: xEdit Mod Utilities
 <p>{% include image.html file="img/image311.jpg" alt="image311" %}</p>
   <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#ChangingandAddingReferences" class="drkbtn">Previous Section</a>
+    <a href="#ChangingandAddingReferences" class="drkbtn">Previous Section</a>
 </div>
 <h2 class="header2" id="CopyingandReplicatingIdleAnimations">9.5 - Copying and Replicating Idle Animations</h2>
   <p class="empty">&nbsp;</p>
-<p>Copying and Replicating Idle Animations is a specialized function that was written for <a  href="http://www.bethsoft.com/bgsforums/index.php?showuser=7327">Martigen</a> in support of <a  href="https://www.nexusmods.com/fallout3/mods/3211">Marts Mutant Mod (MMM)</a>. What the function does is to copy a set of NPC idle animations from a list of available animations into an NPC. In this way, the process of creating new NPCs is dramatically improved and much less prone to errors when assigning idle animations. This process describes how that function works, and is clearly geared towards the mod author.</p>
+<p>Copying and Replicating Idle Animations is a specialized function that was written for <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=7327">Martigen</a> in support of <a href="https://www.nexusmods.com/fallout3/mods/3211">Marts Mutant Mod (MMM)</a>. What the function does is to copy a set of NPC idle animations from a list of available animations into an NPC. In this way, the process of creating new NPCs is dramatically improved and much less prone to errors when assigning idle animations. This process describes how that function works, and is clearly geared towards the mod author.</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image313.jpg" alt="image313" %}</p>
   <p class="empty">&nbsp;</p>
-<p>To start the action, launch xEdit and Right-click in open space somewhere in the window (A) to render a small context menu. Select, "Apply None" (B) from this menu to de-select everything. You can then Left-click the check box for just the mod you want to copy idle animations into (C), and then, "OK" to load it (D). As this function was written by <a  href="https://www.nexusmods.com/newvegas/users/167469">Elminster</a> for <a  href="http://www.bethsoft.com/bgsforums/index.php?showuser=7327">Martigen</a>, we of course will feature <a  href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a> in this section as shown below:</p>
+<p>To start the action, launch xEdit and Right-click in open space somewhere in the window (A) to render a small context menu. Select, "Apply None" (B) from this menu to de-select everything. You can then Left-click the check box for just the mod you want to copy idle animations into (C), and then, "OK" to load it (D). As this function was written by <a href="https://www.nexusmods.com/newvegas/users/167469">Elminster</a> for <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=7327">Martigen</a>, we of course will feature <a href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a> in this section as shown below:</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image315.jpg" alt="image315" %}</p>
   <p class="empty">&nbsp;</p>
-<p>Once loaded xEdit presents the typical output as shown below, in which <a  href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a> and its master file references are the only record-trees shown in the <a  href="2-overview.html#NavigationTree">Navigation Tree</a> (A):</p>
+<p>Once loaded xEdit presents the typical output as shown below, in which <a href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a> and its master file references are the only record-trees shown in the <a href="2-overview.html#NavigationTree">Navigation Tree</a> (A):</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image317.jpg" alt="image317" %}</p>
   <p class="empty">&nbsp;</p>
-<p>Next we'll want top open <a  href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a> up in the Left-Side Panel by Left-clicking on the record tree (A and B). This will expose the interior of the <a  href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a> plugin, and allow you to select the NPC that you want to copy Idle Animations into (C). Right-click on this NPC (C) to render the main context menu, then select, "Copy Idle Animations into&#8230;" as shown:</p>
+<p>Next we'll want top open <a href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a> up in the Left-Side Panel by Left-clicking on the record tree (A and B). This will expose the interior of the <a href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a> plugin, and allow you to select the NPC that you want to copy Idle Animations into (C). Right-click on this NPC (C) to render the main context menu, then select, "Copy Idle Animations into&#8230;" as shown:</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image319.jpg" alt="image319" %}</p>
   <p class="empty">&nbsp;</p>
-<p>You will be presented with the classic xEdit warning window, harkening doom upon the universe should you dare attempt to tamper with this mod file! Indeed, you should not change other people's mod files as a general rule. We are only changing <a  href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a> for the purposes of this tutorial; just don't save it when you're done eh?</p>
+<p>You will be presented with the classic xEdit warning window, harkening doom upon the universe should you dare attempt to tamper with this mod file! Indeed, you should not change other people's mod files as a general rule. We are only changing <a href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a> for the purposes of this tutorial; just don't save it when you're done eh?</p>
   <p class="empty">&nbsp;</p>
 <p>If you dare, select, "Yes I'm absolutely sure" to continue.</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image321.jpg" alt="image321" %}</p>
   <p class="empty">&nbsp;</p>
-<p>Next you will be presented with the, "Which Idles do you want to copy?" window, which offers the master selection of available idle animations that you can choose from. Do not ask me how to create these idle animations, as I do not know. You can ask <a  href="http://www.bethsoft.com/bgsforums/index.php?showuser=7327">Martigen</a> in the forums about this, but I recommend strong doses of Rad-X first or he may simply morph you into a night-ghoul for daring to bother him. Otherwise, take the wise choice and select one of the available groups of idle animations to copy (A) and the click, "OK" to load them into the buffer (B) as shown below:</p>
+<p>Next you will be presented with the, "Which Idles do you want to copy?" window, which offers the master selection of available idle animations that you can choose from. Do not ask me how to create these idle animations, as I do not know. You can ask <a href="http://www.bethsoft.com/bgsforums/index.php?showuser=7327">Martigen</a> in the forums about this, but I recommend strong doses of Rad-X first or he may simply morph you into a night-ghoul for daring to bother him. Otherwise, take the wise choice and select one of the available groups of idle animations to copy (A) and the click, "OK" to load them into the buffer (B) as shown below:</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image323.jpg" alt="image323" %}</p>
   <p class="empty">&nbsp;</p>
@@ -225,21 +225,21 @@ title: xEdit Mod Utilities
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image331.jpg" alt="image331" %}</p>
   <p class="empty">&nbsp;</p>
-<p>Finally we reach the last step, in which a window is presented with the available loaded mod-files that you can copy these idle animations into. For the purposes of this demo we chose <a  href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a>'s Master file (A), as shown in the screenshot below:</p>
+<p>Finally we reach the last step, in which a window is presented with the available loaded mod-files that you can copy these idle animations into. For the purposes of this demo we chose <a href="https://www.nexusmods.com/fallout3/mods/3211">MMM</a>'s Master file (A), as shown in the screenshot below:</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image333.jpg" alt="image333" %}</p>
   <p class="empty">&nbsp;</p>
 <p>Selecting, "OK" (B) will execute the paste command and place the new idle animations into the mod file you specified. The screenshot below illustrates a typical result, in which both the File Header and Idle Animation record headings show with Bold text (indicating that they have changed and are thus marked as modified for saving):</p>
   <p class="empty">&nbsp;</p>
-<p>Opening the Idle Animation record tree in the <a  href="2-overview.html#NavigationTree">Navigation Tree</a> (B) will reveal the newly-copied animations as shown below.</p>
+<p>Opening the Idle Animation record tree in the <a href="2-overview.html#NavigationTree">Navigation Tree</a> (B) will reveal the newly-copied animations as shown below.</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image335.jpg" alt="image335" %}</p>
   <p class="empty">&nbsp;</p>
-<p>The output screenshots below illustrate both the <a  href="2-overview.html#NavigationTree">Navigation Tree</a> results (below) and the <a  href="2-overview.html#ViewTab">View Tab</a> output for each new animation (bottom). Note how each animation that was copied now carries the new Prefix, "Animations" (B) as well as the new Suffix, "mmm" (C) that we chose in the four EditorID windows.</p>
+<p>The output screenshots below illustrate both the <a href="2-overview.html#NavigationTree">Navigation Tree</a> results (below) and the <a href="2-overview.html#ViewTab">View Tab</a> output for each new animation (bottom). Note how each animation that was copied now carries the new Prefix, "Animations" (B) as well as the new Suffix, "mmm" (C) that we chose in the four EditorID windows.</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image337.jpg" alt="image337" %}</p>
   <p class="empty">&nbsp;</p>
-<p>Note below the details about each idle animation as shown in the <a  href="2-overview.html#ViewTab">View Tab</a> (B). Each animation includes many variables and details that would be time consuming and error-prone to do by hand. This Copy Idle Animations function automates the process.</p>
+<p>Note below the details about each idle animation as shown in the <a href="2-overview.html#ViewTab">View Tab</a> (B). Each animation includes many variables and details that would be time consuming and error-prone to do by hand. This Copy Idle Animations function automates the process.</p>
   <p class="empty">&nbsp;</p>
 <p>{% include image.html file="img/image339.jpg" alt="image339" %}</p>
   <p class="empty">&nbsp;</p>
@@ -248,16 +248,16 @@ title: xEdit Mod Utilities
 <p>Note again that you should not be changing MMM or any other mod that you did not create. This function is purely for mod authors in creating their own mods which require many new NPCs, for which this function can automation part of the work.</p>
   <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#MarkingNodesasModified" class="drkbtn">Previous Section</a>
+    <a href="#MarkingNodesasModified" class="drkbtn">Previous Section</a>
 </div>
 <h2 class="header2" id="ApplyingScriptsInto">9.6 - Applying Scripts Into</h2>
   <p class="empty">&nbsp;</p>
-<p>Download this: <a  href="https://www.nexusmods.com/fallout3/mods/1904">Destruction V6-1 - A Destroyable Environments Mod by SP</a></p>
+<p>Download this: <a href="https://www.nexusmods.com/fallout3/mods/1904">Destruction V6-1 - A Destroyable Environments Mod by SP</a></p>
   <p class="empty">&nbsp;</p>
 <p>It makes use of this function. If you have still questions about it afterward feel free to ask.</p>
   <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#CopyingandReplicatingIdleAnimations" class="drkbtn">Previous Section</a>
+    <a href="#CopyingandReplicatingIdleAnimations" class="drkbtn">Previous Section</a>
 </div>
 <h2 class="header2" id="CreatingStartGameEnabledQuestSEQFilesTES5SSE">9.7 - Creating Start-Game Enabled Quest (SEQ) Files [TES5/SSE]</h2>
   <p class="empty">&nbsp;</p>
@@ -272,7 +272,7 @@ title: xEdit Mod Utilities
 <p>Note: you may need to repeat this process after editing your Quest</p>
 <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#ApplyingScriptsInto" class="drkbtn">Previous Section</a>
+    <a href="#ApplyingScriptsInto" class="drkbtn">Previous Section</a>
 </div>
 <h2 class="header2" id="AssetsManager">9.8 - Assets Manager</h2>
 <p class="empty">&nbsp;</p>
@@ -290,7 +290,7 @@ title: xEdit Mod Utilities
 <p>{% include image.html file="img/assetmanager-choosescript.jpg" alt="assetmanager-choosescript" %}</p>
 <p>{% include image.html file="img/assetmanager-menu.jpg" alt="assetmanager-menu" %}</p>
 <div>
-    <a  href="#CreatingStartGameEnabledQuestSEQFilesTES5SSE" class="drkbtn">Previous Section</a>
+    <a href="#CreatingStartGameEnabledQuestSEQFilesTES5SSE" class="drkbtn">Previous Section</a>
 </div>
 <h2 class="header2" id="DeprecatedxEditFunctions">9.9 - Deprecated xEdit Functions</h2>
 <p class="empty">&nbsp;</p>
@@ -300,14 +300,14 @@ title: xEdit Mod Utilities
 <p class="empty">&nbsp;</p>
 <h3 class="header3" id="ManualCleaningfunctionsaredeprecated">9.9.1 - Manual Cleaning functions are deprecated</h3>
 <p class="empty">&nbsp;</p>
-<p>The following <a  href="18-whatsnew.html#ManualCleaningfunctionsaredeprecated">Manual Cleaning functions are deprecated</a> have been depreciated.</p>
+<p>The following <a href="18-whatsnew.html#ManualCleaningfunctionsaredeprecated">Manual Cleaning functions are deprecated</a> have been depreciated.</p>
 <p class="empty">&nbsp;</p>
 <p class="list-1">&bull;&nbsp; Apply Filter for Cleaning</p>
-<p class="list-1">&bull;&nbsp; Un-deleting and Disabling References (Depreciated)&#8211; This function is used to un-delete any references in a selected mod file that were deleted in a previous edit, and instead mark them as "disabled". That will ensure that no conflicts occur if another mod depends on the object being deleted, and setting it to "disabled" will ensure that the original intent of the mod author (to remove the object from the game) is true as the player will never see a disabled object. Replaced by <a  href="7-mod-cleaning-and-error-checking.html#DifferentwaystoactivateQuickAutoClean">Quick Auto Clean</a>.</p>
-<p class="list-1">&bull;&nbsp; Removing "Identical to Master" Records (Depreciated)&#8211; This function will remove any record in a selected mod file that are identical to a record in the master files. This happens often when using the GECK, that some scripts or objects get marked as "modified" even though no changes were made. This bloats a mod file and makes it vulnerable to conflicts with other mods. Replaced by <a  href="7-mod-cleaning-and-error-checking.html#DifferentwaystoactivateQuickAutoClean">Quick Auto Clean</a>.</p>
+<p class="list-1">&bull;&nbsp; Un-deleting and Disabling References (Depreciated)&#8211; This function is used to un-delete any references in a selected mod file that were deleted in a previous edit, and instead mark them as "disabled". That will ensure that no conflicts occur if another mod depends on the object being deleted, and setting it to "disabled" will ensure that the original intent of the mod author (to remove the object from the game) is true as the player will never see a disabled object. Replaced by <a href="7-mod-cleaning-and-error-checking.html#DifferentwaystoactivateQuickAutoClean">Quick Auto Clean</a>.</p>
+<p class="list-1">&bull;&nbsp; Removing "Identical to Master" Records (Depreciated)&#8211; This function will remove any record in a selected mod file that are identical to a record in the master files. This happens often when using the GECK, that some scripts or objects get marked as "modified" even though no changes were made. This bloats a mod file and makes it vulnerable to conflicts with other mods. Replaced by <a href="7-mod-cleaning-and-error-checking.html#DifferentwaystoactivateQuickAutoClean">Quick Auto Clean</a>.</p>
 <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#AssetsManager" class="drkbtn">Previous Section</a>
+    <a href="#AssetsManager" class="drkbtn">Previous Section</a>
 </div>
 <h2 class="header2" id="ApendixACachingReferenceInformation">9.10 - Apendix A: Caching Reference Information</h2>
 <p class="empty">&nbsp;</p>
@@ -318,9 +318,9 @@ title: xEdit Mod Utilities
 <p>{% include image.html file="img/cache-referenced-by.jpg" alt="cache-referenced-by" %}</p>
 <p class="empty">&nbsp;</p>
 <div>
-    <a  href="#DeprecatedxEditFunctions" class="drkbtn">Previous Section</a>
+    <a href="#DeprecatedxEditFunctions" class="drkbtn">Previous Section</a>
 </div>
 <div>
-    <a  href="8-managing-mod-files.html" class="drkbtn">&laquo; Previous Page</a>
-    <a  href="10-fo3edit-faq.html" class="drkbtn">Next Page &raquo;</a>
+    <a href="8-managing-mod-files.html" class="drkbtn">&laquo; Previous Page</a>
+    <a href="10-fo3edit-faq.html" class="drkbtn">Next Page &raquo;</a>
 </div>
