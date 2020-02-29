@@ -253,7 +253,7 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
             temp = reTextColor.search(text)
             text_clolor = temp.group(1)
             strip_color = temp.group(0)
-            fontClass = 'class="{}"'.format(text_clolor)
+            fontClass = ' class="{}"'.format(text_clolor)
             out_text = re.sub(strip_color, '', text)
         else:
             fontClass = ''
@@ -263,7 +263,7 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     def strip_title(text):
         if reLinkTitle.search(text):
             temp = reLinkTitle.search(text)
-            link_title = 'title="{}"'.format(temp.group(1))
+            link_title = ' title="{}"'.format(temp.group(1))
             strip_title = temp.group(0)
             out_text = re.sub(strip_title, '', text)
         else:
@@ -416,9 +416,9 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
             if (address.find('#') > 0) and group1.find(':') > 0:
                 address = '{}#{}'.format(group1, group3)
         if inNavigationButtons:
-            return '<a {} href="{}" {} class="drkbtn">{}</a>'.format(fontClass, address, linkTitle, text)
+            return '<a{} href="{}"{} class="drkbtn">{}</a>'.format(fontClass, address, linkTitle, text)
         else:
-            return '<a {} href="{}" {}>{}</a>'.format(fontClass, address, linkTitle, text)
+            return '<a{} href="{}"{}>{}</a>'.format(fontClass, address, linkTitle, text)
 
     # --Defaults ----------------------------------------------------------
     level = 1
