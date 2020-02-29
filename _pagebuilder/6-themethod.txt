@@ -33,6 +33,8 @@ Then, for each mod you install repeat:
 * run -veryquickshowconflicts one last time to make sure you are back to 0 conflicts showing
 * repeat for next mod
 
+{{note:You should review this as it is the basis for what The Method is. The following information in this section was adopted from elwaps guide and uses the above guidelines.}}
+
 == Prequisites
 
 ### A clean installation of Skyrim Special Edition
