@@ -55,7 +55,7 @@ title: xEdit Cleaning and-Error Checking
 <p class="list-2">&bull;&nbsp; <a href="#CheckingForErrors">7.4.13 Checking For Errors</a></p>
 <p class="list-2">&bull;&nbsp; <a href="#CheckingforCircularLeveledLists">7.4.14 Checking for Circular Leveled Lists</a></p>
 <p class="list-1">&bull;&nbsp; <a href="#AppendixA">7.5 Appendix A</a></p>
-<p class="list-2">&bull;&nbsp; <a href="#TypesofDirtyEdits">7.5.1 Types of Dirty Edits:</a></p>
+<p class="list-2">&bull;&nbsp; <a href="#TypesofDirtyEdits">7.5.1 Types of Dirty Edits</a></p>
 <p class="list-2">&bull;&nbsp; <a href="#IdenticalToMaster">7.5.2 Identical To Master</a></p>
 <p class="list-2">&bull;&nbsp; <a href="#DeletedReference">7.5.3 Deleted Reference</a></p>
 <p class="list-2">&bull;&nbsp; <a href="#DeletedNavmeshes">7.5.4 Deleted Navmeshes</a></p>
@@ -401,11 +401,13 @@ title: xEdit Cleaning and-Error Checking
   <p class="empty">&nbsp;</p>
 <h2 class="header2" id="AppendixA">7.5 - Appendix A</h2>
   <p class="empty">&nbsp;</p>
-<h3 class="header3" id="TypesofDirtyEdits">7.5.1 - Types of Dirty Edits:</h3>
+<h3 class="header3" id="TypesofDirtyEdits">7.5.1 - Types of Dirty Edits</h3>
   <p class="empty">&nbsp;</p>
 <h3 id="IdenticalToMaster">7.5.2 - Identical To Master</h3>
   <p class="empty">&nbsp;</p>
-<p>Identical to Master (ITM) edits are the most common type of dirty edit. They're where a mod has overwritten something in the game without actually changing anything. If another mod higher up in the load order makes an intentional change to that thing, it will have its effect cancelled out by the ITM record, which can cause problems. ITM edits can be cleaned automatically using xEdit.</p>
+<p>{{note:Remember <a href="#TherearenointentionalITMs">there are no intentional ITMs</a>. Cleaning mods to remove <a href="#DeletedReference">deleted references</a> and ITMs prevents unexplained CTDs and other issues.]]</p>
+  <p class="empty">&nbsp;</p>
+<p>Identical to Master (ITM) edits are the most common type of dirty edit. They're where a mod has overwritten something in the game without actually changing anything. If another mod higher up in the load order makes an intentional change to that thing, it will have its effect canceled out by the ITM record, which can cause problems. ITM edits can be cleaned automatically using xEdit.</p>
   <p class="empty">&nbsp;</p>
   <p class="empty">&nbsp;</p>
 <p><B><I>Example 1: Identical To Master Edits</I></B></p>

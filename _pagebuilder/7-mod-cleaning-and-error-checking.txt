@@ -359,11 +359,13 @@ I have not yet found an example in any mod of such a circular leveled list, but 
 
 == Appendix A
 
-=== Types of Dirty Edits:
+=== Types of Dirty Edits
 
 ### Identical To Master
 
-Identical to Master (ITM) edits are the most common type of dirty edit. They're where a mod has overwritten something in the game without actually changing anything. If another mod higher up in the load order makes an intentional change to that thing, it will have its effect cancelled out by the ITM record, which can cause problems. ITM edits can be cleaned automatically using xEdit.
+{{note:Remember [[#There are no intentional ITMs |there are no intentional ITMs]]. Cleaning mods to remove [[#Deleted Reference | deleted references]] and ITMs prevents unexplained CTDs and other issues.]]
+
+Identical to Master (ITM) edits are the most common type of dirty edit. They're where a mod has overwritten something in the game without actually changing anything. If another mod higher up in the load order makes an intentional change to that thing, it will have its effect canceled out by the ITM record, which can cause problems. ITM edits can be cleaned automatically using xEdit.
 
 
 **Example 1: Identical To Master Edits**
