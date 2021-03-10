@@ -14,7 +14,19 @@ If I have not convinced you by now to invest an evening to learn how to use xEdi
 == Acquisition and Installation
 === Downloading xEdit from the Nexus
 
-xEdit works on Windows XP, Vista, Windows 7, 8, and 10.  Other platforms or Windows simulators may or may not work and are not officially supported. xEdit is available for download from Nexus, one of the most outstanding sources for Bethesda content. Downloading from the [[https://www.nexusmods.com/skyrim/mods/25859 | TES5Edit Nexus]].
+xEdit works on Windows XP, Vista, Windows 7, 8, and 10.  Other platforms or Windows simulators may or may not work and are not officially supported. xEdit is available for download from Nexus, one of the most outstanding sources for Bethesda content. 
+
+[[sb:Spoiler1 | Downloads]]
+[[http://www.nexusmods.com/fallout3/mods/637 | FO3Edit Nexus Link]]
+[[http://www.nexusmods.com/newvegas/mods/34703 | FNVEdit Nexus Link]]
+[[http://www.nexusmods.com/fallout4/mods/2737 | FO4Edit Nexus Link]]
+[[http://www.nexusmods.com/oblivion/mods/11536 | TES4Edit Nexus Link]]
+[[http://www.nexusmods.com/skyrim/mods/25859 | TES5Edit Nexus Link]]
+[[http://www.nexusmods.com/skyrimspecialedition/mods/164 | SSEEdit Nexus Link]]
+[[http://www.nexusmods.com/enderal/mods/23 | EnderalEdit Nexus Link]]
+[[se:]]
+
+{{note:Be sure you download the proper version for the proper game. TES5Edit is for Skyrim and SSEEdit is for Skyrim SE.}}
 
 {{image:image002.jpg | Download File}}
 
