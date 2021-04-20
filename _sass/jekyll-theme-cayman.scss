@@ -235,7 +235,7 @@ body {
   display: grid;
   color: var(--cayman-header-heading);
   background-color: var(--cayman-header-background);
-  background-image: linear-gradient(120deg, rgb(15, 64, 112), rgb(22, 89, 157), rgb(15, 112, 64), rgb(22, 157, 89));
+  background-image: linear-gradient(180deg, rgb(1, 12, 20), rgb(3, 37, 61), rgb(5, 62, 101), rgb(7, 86, 142), rgb(9, 111, 182));
   div.gridhead2 {
     text-align: right;
   }
@@ -281,6 +281,26 @@ body {
     }
     div.gridhead6 {
       text-align: center;
+    }
+  }
+  figure {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    @include full {
+      max-width: 50%;
+    }
+    @include huge {
+      max-width: 50%;
+    }
+    @include large {
+      max-width: 50%;
+    }
+    @include medium {
+      max-width: 75%;
+    }
+    @include small {
+      max-width: 90%;
     }
   }
 }
@@ -836,6 +856,31 @@ a.yellow {
   }
 }
 
+.main-content {
+  img.inline {
+    @include full {
+      max-width: 100%;
+      vertical-align: bottom;
+    }
+    @include huge {
+      max-width: 100%;
+      vertical-align: bottom;
+    }
+    @include large {
+      max-width: 100%;
+      vertical-align: bottom;
+    }
+    @include medium {
+      max-width: 100%;
+      vertical-align: bottom;
+    }
+    @include small {
+      max-width: 100%;
+      vertical-align: bottom;
+    }
+  }
+}
+
 section.quote {
   display: block;
   justify-content: center;
@@ -910,6 +955,26 @@ figure.image-caption {
     font-size: 0.90rem;
     padding: 0;
     margin: 0;
+  }
+}
+
+.main-content {
+  img.thumbnail {
+    @include full {
+      max-width: 40%;
+    }
+    @include huge {
+      max-width: 40%;
+    }
+    @include large {
+      max-width: 40%;
+    }
+    @include medium {
+      max-width: 65%;
+    }
+    @include small {
+      max-width: 80%;
+    }
   }
 }
 
