@@ -249,22 +249,26 @@ body {
     text-align: center;
   }
   @include full {
-    grid-template-areas: 'padding1 image header padding2'
+    grid-template-areas:
+    'padding1 image header padding2'
     'nav-buttons nav-buttons nav-buttons nav-buttons'
     'page-buttons page-buttons page-buttons page-buttons';
   }
   @include huge {
-    grid-template-areas: 'padding1 image header padding2'
+    grid-template-areas:
+    'padding1 image header padding2'
     'nav-buttons nav-buttons nav-buttons nav-buttons'
     'page-buttons page-buttons page-buttons page-buttons';
   }
   @include large {
-    grid-template-areas: 'padding1 image header padding2'
+    grid-template-areas:
+    'padding1 image header padding2'
     'nav-buttons nav-buttons nav-buttons nav-buttons'
     'page-buttons page-buttons page-buttons page-buttons';
   }
   @include medium {
-    grid-template-areas: 'padding1 image header padding2'
+    grid-template-areas:
+    'padding1 image header padding2'
     'nav-buttons nav-buttons nav-buttons nav-buttons'
     'page-buttons page-buttons page-buttons page-buttons';
   }
@@ -591,11 +595,14 @@ body {
 
 
 /* adding none to this hides the checkbox */
+
 input[id^="spoiler"] {
   display: none;
 }
 
+
 /* closed button */
+
 input[id^="spoiler"]+label {
   display: inline;
   margin: 0.85rem;
@@ -610,14 +617,18 @@ input[id^="spoiler"]+label {
   transition: all .6s;
 }
 
+
 /* button after opened */
+
 input[id^="spoiler"]:checked+label {
   color: var(--purple-text);
   background-color: var(--code-background);
   outline-style: hidden;
 }
 
+
 /* the spoiler tag text box */
+
 input[id^="spoiler"]~.main-content {
   height: 0;
   overflow: auto;
@@ -632,7 +643,9 @@ input[id^="spoiler"]~.main-content {
   transition: all .6s;
 }
 
+
 /* formatting for the text in the box such as padding */
+
 input[id^="spoiler"]:checked+label+.main-content {
   height: auto;
   opacity: 1;
@@ -819,7 +832,9 @@ a.yellow {
   color: var(--yellow-text);
 }
 
+
 /* Main content for Wrte Text Paragraphs */
+
 .main-content {
   p.empty {}
   p.note {
@@ -887,13 +902,31 @@ section.quote {
   align-items: center;
   margin: 0.5rem 1rem 0.5rem 1rem;
   color: rgba(150, 150, 150, 0.8);
-  background-color: rgba(150, 150, 150, 0.08);
+  background: rgba(0, 0, 0, 0.25);
   border-color: rgba(150, 150, 150, 0.2);
   border-style: solid;
-  border-width: 3px;
-  border-radius: 0.3rem;
+  border-width: 0.1rem;
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
-  box-shadow: 5px 3px 30px black;
+  border: 0.1rem solid rgba(0, 0, 0, 0.5);
+  border-radius: 10px 10px 2px 2px;
+  -webkit-box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.5),
+    inset 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 10px rgba(255, 255, 255, 0.2),
+    inset 0 10px 20px rgba(255, 255, 255, 0.25),
+    inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.5),
+    inset 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 10px rgba(255, 255, 255, 0.2),
+    inset 0 10px 20px rgba(255, 255, 255, 0.25),
+    inset 0 -15px 30px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.5),
+    inset 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 10px rgba(255, 255, 255, 0.2),
+    inset 0 10px 20px rgba(255, 255, 255, 0.25),
+    inset 0 -15px 30px rgba(0, 0, 0, 0.3);
   p {
     margin: 0;
     padding: 0;
