@@ -10,9 +10,9 @@ It's __NOT__ a good idea for everyone to just go ahead and clean their full load
 
 The problem is twofold. First, to properly clean mods usually requires an understanding of the __intent__ of the mod author. There might be implicit dependencies on other mods which are not part of the master list. Second, and following from the first, depending on how the cleaning was done, people end up with slightly different versions of these modules, which is going to make support in case of problems a nightmare for the mod author.
 
-Mod quality is a community-wide problem that needs to be properly addressed on a community level. Mod authors need to ensure that their mods are clean, because they only need to clean their mod once for all future users to benefit, whereas each and every user of a dirty mod would have to clean it themselves, which is hugely inefficient.
+Mod quality is a community-wide problem that needs to be properly addressed on a community level. Mod authors need to ensure that their mods are clean, because they only need to clean their mod once for all future users to benefit, whereas every single user of a dirty mod would have to clean it themselves, which is hugely inefficient.
 
-The LOOT team provides a focus for community efforts to raise awareness regarding mod cleaning, by accepting reports of dirty mods and attaching them to the relevant plugins in the LOOT masterlist as messages containing a link to this wiki page, along with any additional information supplied. This data is then extracted and displayed to the user by LOOT when it runs, and the data can also be accessed by other utilities that make use of the LOOT API. The result is a central repository of information that can be accessed by a large number of people.
+The LOOT team provides a focus for community efforts to raise awareness regarding mod cleaning, by accepting reports of dirty mods and attaching them to the relevant plugins in the LOOT masterlist as messages containing a link to this wiki page, along with any additional information supplied. This data is then extracted and displayed to the user by LOOT when it runs, and the data can also be accessed by other utilities that make use of the LOOT API. The result is a central repository of information that can be accessed by anyone.
 
 === For mod authors:
 
@@ -34,7 +34,7 @@ xEdit provides several tools that help mod authors to clean their mods of extran
 
 Mod quality is a community wide problem and needs to be addressed on that level. If everyone just tweaks their load order around and cleans mods they installed that's not going to move us forward as a community. It is important that if there are general issues with a mod that these be made public and the author of the mod fixes them. With many of the possibly conflicting changes that a mod makes, it becomes a question of intent when cleaning them up, and only the mod author can give an authoritative answer to that.
 
-This chapter is really dedicated to mod authors, and can be safely ignored by mod-users (whew!). Mod Authors that use the GECK should realize that the GECK can set the modified flag on a thing very easily, and that gets saved into your mod as an override to some standard object. The problem comes when players integrate your mod with others that make intentional changes to the standard object that you inadvertently saved &#8211; which is the cause of more conflicts than any other kind between mods today.
+This chapter is really dedicated to mod authors though users may also benefit from the content. Mod Authors that use the various Creation kits should realize that the CK can set the modified flag on a thing very easily, and that gets saved into your mod as an override to some standard object. The problem comes when players integrate your mod with others that make intentional changes to the standard object that you inadvertently saved &#8211; which is the cause of more conflicts than any other kind between mods today.
 
 <font class="yellow">__NOTE:__</font> Those not convinced by now to read-through and understand the mod cleaning and merging process are sloppy and should be sacked. For the honorable modders who want to contribute to the community in the right way, read-on.
 
@@ -153,7 +153,7 @@ For MO2 you would add the parameter to the Arguments.
 
 {{image:MO2-Application-Dark-box.jpg | MO2-Application-Dark-box}}
 
-For more information you can refer to the STEP [[https://wiki.step-project.com/Guide:XEdit#Cleaning_plugins_with_xEdit | Guide:XEdit]]
+For more information you can refer to the STEP [[https://stepmodifications.org/wiki/Guide:XEdit#Cleaning_plugins_with_xEdit | Guide: xEdit]]
 
 {{nbb}}
     [[#Cleaning using a Desktop Shortcut | Previous Section]]
@@ -246,7 +246,7 @@ When selecting a plugin to clean double click a plugin name, or check one and cl
 
 === Sorting Master File Load Orders
 
-There are times in which the load order of Master files gets switched around when you add/change load orders. The, "Sort Masters" function corrects the master file load order in the Plugins MASTer list, and correctly renumbers all file specific FormIDs.
+There are times in which the load order of Master files gets switched around when you add/change load orders. The, "Sort Masters" function corrects the master file load order in the Plugins master list, and correctly renumbers all file specific FormIDs
 
 {{image:image140.jpg | image140}}
 
@@ -276,7 +276,7 @@ To put it another way the header of a file is like a small history of how the mo
 
 Master File References are links or references from your Plugin to any Master files (ESMs) that it depends on to run, and stores the list in a record called, "MAST". Most Plugins have the game's ESM file in their master list, but you can have many such links in a plugin. For example for Fallout3 each file will start with Fallout3.esm. If when you create a [[5-conflict-detection-and-resolution.html#CreatingaMergedPatchAutomaticMethod | Merged Patch]] with xEdit, it puts links to many or nearly-all of the master files in your mod list. It is possible in some cases for a Plugin to contain a link to a master file that it does not need.
 
-For example, suppose the Plugin we are cleaning had MasterB.esm in its MASTer list but it doesn't contain any overrides for, or makes any other references to, records from MasterB.esm. In that case we would not need nor want MasterB.esm listed in the MASTer record for our Plugin! This function detects any un-used MASTer references in the Plugin we are cleaning, and removes them from the MASTer list. xEdit also renumbers any file specific FormIDs in the Plugin to ensure that it is cleaned properly.
+For example, suppose the Plugin we are cleaning had MasterB.esm in its master list but it doesn't contain any overrides for, or makes any other references to, records from MasterB.esm. In that case we would not need nor want MasterB.esm listed in the master record for our Plugin! This function detects any un-used master references in the Plugin we are cleaning, and removes them from the MASTer list. xEdit also renumbers any file specific FormIDs in the Plugin to ensure that it is cleaned properly.
 
 The screenshot below illustrates how to activate the, "Clean Masters" function:
 
@@ -290,7 +290,7 @@ The screenshot below illustrates how the [[https://www.nexusmods.com/fallout3/mo
 
 At this point you should save your mod and load it up in-game to make sure that everything is still happy.
 
-<font class="yellow">NOTE:</font> You should not remove masters from other people's mods! You will drastically effect the mod and it will no longer perform the changes the author intended. It is the responsibility of each mod author to remove unused masters. You can request that the mod author provide another version. Please be respectful if they refuse to remove masters as some mod authors intentionally override specific records in order for the mod to effect the game the way they intended.
+<font class="yellow">NOTE:</font> You should not remove masters from other people's mods! You will drastically affect the mod and it will no longer perform the changes the author intended. It is the responsibility of each mod author to remove unused masters. You can request that the mod author provide another version. Please be respectful if they refuse to remove masters as some mod authors intentionally override specific records for the mod to affect the game the way they intended.
 
 {{nbb}}
     [[#WhenshouldyouuseSortMasters | Previous Section]]
@@ -309,7 +309,7 @@ For the above example I chose to list the references used by 04 for <code>PointL
 
 A notification will appear in the messages tab when the operation is complete. All of the records referencing the plugin will be listed. You will need to properly deal with all the references before xEdit will remove the master. This could mean changing a reference to reference another master or removing the reference entirely.
 
-<font class="yellow">NOTE:</font> You should not remove masters from other people's mods! You will drastically effect the mod and it will no longer perform the changes the author intended. It is the responsibility of each mod author to remove unused masters. You can request that the mod author provide another version. Please be respectful if they refuse to remove masters as some mod authors intentionally override specific records in order for the mod to effect the game the way they intended.
+<font class="yellow">NOTE:</font> You should not remove masters from other people's mods! You will drastically affect the mod and it will no longer perform the changes the author intended. It is the responsibility of each mod author to remove unused masters. You can request that the mod author provide another version. Please be respectful if they refuse to remove masters as some mod authors intentionally override specific records for the mod to affect the game the way they intended.
 
 {{nbb}}
     [[#UsingCleanMasterstopurgeunusedMasterFileReferences | Previous Section]]
@@ -320,7 +320,7 @@ A notification will appear in the messages tab when the operation is complete. A
 
 {{note: There are errors in the official DLCs. Do not attempt to correct them.}}
 
-The "Check for Errors" function reports any case in which the information contained in a module file does not match the xEdit record definitions. There is a very minimal chance that something that's reported as an error is actually an oversight in the xEdit record definitions and not in the module, but all cases should be reported to be safe. Running the check is a recommended practice as part of the mod-cleaning process as shown below:
+The "Check for Errors" function reports any case in which the information contained in a module file does not match the xEdit record definitions. There is a very minimal chance that something that's reported as an error is an oversight in the xEdit record definitions and not in the module, but all cases should be reported to be safe. Running the check is a recommended practice as part of the mod-cleaning process as shown below:
 
 {{image:image150.jpg | image150}}
 
@@ -334,11 +334,11 @@ In this example a reference was found but xEdit expected a different type of ref
 
 <code>TES4 \ ONAM - Overriden Forms \ Form #0 -> [1300DBC4] &lt; Error: Could not be resolved &gt;</code>
 
-In this example we found Unresolved Reference errors (Ouch!) These errors are very serious as they indicate a record from the mod is trying to reference something, but what it is looking for is missing from the mod or the master of the mod. Mod authors should never leave these uncorrected! They should be corrected by the mod author and not by you!.
+In this example we found Unresolved Reference errors (Ouch!) These errors are very serious as they indicate a record from the mod is trying to reference something, but what it is looking for is missing from the mod or the master of the mod. Mod authors should never leave these uncorrected! They should be corrected by the mod author and not by you!
 
 {{image:checkerrors-unresolved.jpg | checkerrors-unresolved}}
 
-If other errors were found such as data that is missing, Flags or Idle Timer Settings, then those errors should be corrected by the mod author and not by you!.
+If other errors were found such as data that is missing, Flags or Idle Timer Settings, then those errors should be corrected by the mod author and not by you!
 
 {{nbb}}
     [[#ListingMasterFileReferencesfromaspecificplugin | Previous Section]]
@@ -365,12 +365,12 @@ I have not yet found an example in any mod of such a circular leveled list, but 
 
 {{note:Remember [[#There are no intentional ITMs |there are no intentional ITMs]].}}
 
-Identical to Master (ITM) edits are the most common type of dirty edit. They're where a mod has overwritten something in the game without actually changing anything. If another mod higher up in the load order makes an intentional change to that thing, it will have its effect canceled out by the ITM record, which can cause problems. ITM edits can be cleaned automatically using xEdit.
+Identical to Master (ITM) edits are the most common type of dirty edit. They're where a mod has overwritten something in the game without making an actual change. If another mod higher up in the load order makes an intentional change to that thing, it will have its effect cancelled out by the ITM record, which can cause problems. ITM edits can be cleaned automatically using xEdit.
 
 
 **Example 1: Identical To Master Edits**
 
-Consider a quest mod in which the author has also changed the properties of some sneaking settings to better fit with other areas of the quest mod. The author then later decides the sneaking changes are unnecessary, and sets them back to their original values. If this quest mod were then loaded after a mod that overhauls the sneaking system, the sneaking overhaul's effects would be at least partially undone by the quest mod, which is not the effect intended by the author of either mod, nor the effect desired by the user.
+Consider a quest mod in which the author has also changed the properties of some sneaking settings to better fit with other areas of the quest mod. The author then later decides the sneaking changes are unnecessary, setting them back to their original values. If this quest mod were then loaded after a mod that overhauls the sneaking system, the sneaking overhaul's effects would be at least partially undone by the quest mod, which is not the effect intended by the author of either mod, nor the effect desired by the user.
 
 The solution would be to clean the quest mod, which would remove the ITM edits and allow the sneaking overhaul mod to function as intended.
 
@@ -412,10 +412,10 @@ The image used is from [[https://www.afkmods.com/index.php?/topic/4110-manual-cl
 
 This glossary contains definitions for the general modding terms and cleaning-specific terms used in this guide.
 
-. __Mod:__ A modification for Skyrim. Can be player-made or official DLC.
-. __Plugin:__ A file with a .esp or .esm file extension (well, it's what's inside the file that matters, but the file extension is a pretty good clue).
+. __Mod:__ A modification for Skyrim. Can be player made or official DLC.
+. __Plugin:__ A file with an extension of .esp, .esl, or .esm (well, it's what's inside the file that matters, but the file extension is a pretty good clue).
 . __Record:__ A data structure inside a plugin that holds the information on one element of the game. For example, each type of weapon, each race, each potion, etc. have different records.
-. __Rule of One:__ Only one plugin's changes to a record can be applied by the game. If multiple plugins change the same record, then the changes from the last of those plugins in the load order will be applied. There are a few exemptions, eg. if multiple plugins put things into the same cell, then all those things will be seen in-game, but in general the rule holds for non-complex record types (and complex record types are beyond the scope of this guide).
+. __Rule of One:__ Only one plugin's changes to a record can be applied by the game. If multiple plugins change the same record, then the changes from the last of those plugins in the load order will be applied. There are a few exemptions, e.g. if multiple plugins put things into the same cell, then all those things will be seen in-game, but in general the rule holds for non-complex record types (and complex record types are beyond the scope of this guide).
 . __Load order:__ The order in which plugins are loaded.
 . __Dirty mod:__ A mod that contains dirty edits, wild edits, deleted references or any combination of them.
 . __Dirty edit:__ An edit made which is unnecessary, often caused by Creation Kit bugs or authors making unintended edits then undoing them incorrectly. Such edits can be cleaned automatically.

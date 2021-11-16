@@ -6,15 +6,15 @@
 ## Introduction
 This document is intended as a manual for the xEdit tool created by ElminsterAU. This manual contains a tour of xEdit, a lengthy FAQ/Navigator and several Chapters of detailed instructions on how you can utilize the varied functions of xEdit successfully to improve your gaming experience.
 
-The questions answered and processes described herein are intended to help both mod-users and mod-authors to improve the quality, standardization and conformity of Bethesda mods. If you utilize more than 25 mods in your game or if you write mods you can use xEdit to resolve potential conflicts, clean mods, and smoothen the loading process. With thousands of mods already created and thousands more on the way, it has become essential to standardize mod delivery and reduce conflicts where-ever possible.
+The questions answered and processes described herein are intended to help both mod-users and mod-authors to improve the quality, standardization and conformity of Bethesda mods. If you utilize any number of mods in your game or if you write mods you can use xEdit to resolve potential conflicts, clean mods, and smoothen the loading process. With tens of thousands of mods already created and thousands more on the way, it has become essential to standardize mod delivery and reduce conflicts wherever possible.
 ## About This Document
-This document presumes a basic understanding of what "Mods" are, and how to install them on your system. This manual is not a guide on how to build mods, and the use of xEdit for extensive mod changes is discouraged for most users "that's" what the GECK was built for.
+This document presumes a basic understanding of what "Mods" are, and how to install them on your system. This manual is not a guide on how to build mods, and the use of xEdit for extensive mod changes is discouraged for most users that's what the various Creation Kits (GECK, CK, CK64, FO4CK) were built for.
 
-This document is a work in progress. ElminsterAU is also a prodigious coder that continues to make updates to improve the quality of xEdit. Since October of 2012 Zilav, Hlp, and Sharlikran have maintained and updated xEdit. This documentation is being updated to include new features and UI changes.
+This document is a constant work in progress, Sharlikan is often adding more information. Between 2012 and 2018 Zilav, Hlp, and Sharlikan took over xEdit to improve existing features and add new features. ElminsterAU, the original author has since returned and is working with Zilav, Hlp, and Sharlikan to vastly enhance the quality of xEdit for now and the years to come.
 
 This site will be replacing the [[https://www.creationkit.com/index.php?title=TES5Edit_Documentation | Bethesda Wiki]] page since too many security measures (captcha) are in place that make editing the page cumbersome. Most of the [[https://www.creationkit.com/index.php?title=Category:TES5Edit | TES5Edit Wiki]] information from the CK Wiki is repeated in these docs. Once I am completely finished, I will add more links to direct people to these pages instead.
 
-All feedback and comments about this guide should be directed to Sharlikran on the xEdit Discord:
+All feedback and comments about this guide should be directed to Sharlikran on the xEdit Discord in the "docs" channel:
 
 * [[https://discord.gg/5t8RnNQ | xEdit Discord]]
 * [[https://www.nexusmods.com/users/4147439 | Sharlikran]]
