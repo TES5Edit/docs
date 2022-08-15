@@ -1,3 +1,94 @@
+# What's new in xEdit 4.1.4?
+
+## Bugfixes
+
+* #826 - FO4 VMADs with complex script properties still parse incompletely
+* #864 - subgraph data is incorrectly created/overriden
+* #888 - Plugins with no masters can't resolve references to hardcoded records
+* #897 - Assertion Failure when using Referenced By to jump to INFO
+* #904 - Any mod referred to in INOM and INOA in all present overrides will be added to a mod's master list on override
+* #908 - overriding a creature in fo3/fnv mode doesn't properly copy NIFZ and KFFZ sections
+* #954 - IMAD unknown flags in 4.1.3h
+
+## Minor changes
+
+* #856 - Ability to apply xEdit script to selected refs in Referenced By window
+* (reported on Discord) - added optional 4th `aSilent: Boolean` parameter to `AddRequiredElementMasters` script function
+
+# What's new in xEdit 4.1.x?
+
+There are a large number of changes between 4.0.x and 4.1.x which aren't currently documented here, but will be before the release of 4.2.x
+
+# What's new in xEdit 4.0.5?
+
+## Bugfixes
+
+* (reported on Discord) - .strings files may not be saved if there were no changes to the .es? file
+
+# What's new in xEdit 4.0.4?
+
+## Bugfixes
+
+* #777 - [Skyrim SE/LE] - Unknown Map Marker TNAM value 59
+* #788 - For Oblivion Copy as overrides fails for MGEF
+* #792 - Flipped indexes in display of blocks and sub-blocks
+* #803 - after cleaning, some new worldspaces from DLCs may not load their temporary records correctly
+* #813 - Unknown field in Script Fragments decoded by Creation Kit error log
+* #823 - FO3: Anchorage.esm & PointLookout.esm need Mark Modified applied during QAC
+* #848 - Records with hardcoded FormIDs show as new records instead of overrides/injected
+* #853 - FNV - cleaning dead money master erases map geometry
+* #855 - After cleaning dlcnukaworld.esm, items in Nuka-Town market vanish
+* #860 - tooltip always disappears after a second
+* #863 - FO4: DefaultObject forms (DFOB) should override via EditorID
+* #871 - Updates for Static Collections [FO4]
+* #875 - TES4Edit 4.0.3 not able to copy Magic Effect Records
+* #886 - Crash by confirming add of *no* master
+* #880 - Minor problem with double clicking during module selection
+* #894 - [Skyrim] Several RACE subrecords are not marked as required
+* #909 - xEdit should double apostrophes in generated LOOT masterlist entry names
+* #912 - TES4Edit crashes when trying to load Nehrim.esm
+* #914 - RNAM subrecord of INFO needs to be treated as case sensitive
+* #916 - DR displayed incorrectly in Armor and Armor Addons for F3/NV
+* #919 - For REFR, Linked Rooms Count needs to be updated whenever the Linked Rooms are changed
+* #926 - [FO4] Load order is being ignored
+* #946 - GetNewFormID only allows 0 argument when it needs IwbFile as the input
+* #949 - [TES4] Oblivion.esm shows as edited when using VQSC mode
+* #953 - Time passed wrong for long running scripts
+* #959 - Quick Auto Clean should force-enable "Remove OFST Data"
+* #964 - SLGM and FLOR refs are completely valid for pack data
+* #965 - Game master automatically re-added after clean masters removes it (when no masters left)
+* #972 - NPC_ 'Geared Up Weapons' should only show 1 byte
+* #973 - GetIsID condition with Hazard argument is reported as an error
+* #974 - xNVSE inline variable declarations comes up as error in error checking
+* (reported on Discord) - .esl extensions don't always force loading as ESL correctly when the module is not ESL flagged
+* (reported on Discord) - [TES4] EDID and ESCE incorrectly report "Expected 4 bytes but found 0" when running "Check for Errors" on MGEF
+* (reported on Discord) - EnderalSE mode incorrectly performs exact instead of partial matching when loading .bsa for loaded modules
+* (reported on Discord) - Long running operations like filters and scripts can't be aborted
+* (reported on Discord) - 64 bit version does not handle extended FormID range in FO4 correctly
+* (reported on Discord) - saving a file without changes could discard previously queued saves for that file, resulting in data loss
+* (reported on Discord) - loading a masterless file alone can crash xEdit if it contains references to hardcoded records
+* (found by developer) - Need to force InternalEdit for AfterSet handlers
+
+## Minor changes
+
+* #827 - Allow SSEEdit to Minimize during processing
+* #901 - "Unhide all..." option in column context menu
+* #902 - Option to ignore MHDT conflicts when using Very Quick Show Conflicts (use `-IgnoreWorldMHDT` parameter)
+
+## Enderal Special Edition
+
+Initial support for Enderal Special Edition has been added.
+
+xEdit can be renamed to `EnderalSEEdit.exe` or started with `-enderalse` as parameter.
+
+## QuickEdit
+
+By starting xEdit with a `-quickedit:somefile.esp` parameter, only that file (and it's required masters) will be initially selected in the Module Selection Form.
+
+It is possible to list multiple files, e.g. `-quickedit:dawnguard.esm dragonborn.esm`.
+
+This parameter can be combined with `-autoload` (see below).
+
 # What's new in xEdit 4.0.3?
 
 ## Bugfixes
@@ -544,13 +635,13 @@ A new option 'Selection Forms require holding CTRL for double click' has been ad
 
 With this option active, CTRL must be held down for Double Click to be accepted in the Module, Mod Group, and (old style) file selection forms.
 
-## Fully implemented `.ghost` support
+## Fully implemented .ghost support
 
-`.ghost` files are treated everywhere (except for actual file access) as if they didn't have the `.ghost` extension.
+.ghost files are treated everywhere (except for actual file access) as if they didn't have the .ghost extension.
 
-If a normal file and a `.ghost` file exist, the `.ghost` file is ignored.
+If a normal file and a .ghost file exist, the .ghost file is ignored.
 
-Except in the save dialog, the UI does not show the `.ghost` extension.
+Except in the save dialog, the UI does not show the .ghost extension.
 
 ## Completely reworked ModGroups support
 
@@ -790,8 +881,8 @@ Ctrl+Alt+C will copy the following value of the 3rd column.
 
 xEdit can be started with the following parameters:
 
-`-quickshowconflicts` - after confirming modules to be loaded, automatically load all valid mod groups and "Apply Filter to show conflicts" in a special, faster, way
-`-veryquickshowconflicts` - same as above, but automatically loads the modules as specified in plugins.txt without showing the module selection dialog (except if CTRL is held when starting)
+`-quickshowconflicts` - after confirming modules to be loaded, automatically load all valid mod groups and "Apply Filter to show conflicts", where any row with exactly 2 columns is always only considered as override
+`-veryquickshowconflicts` - same as above, but automatically loads the modules as specified in plugins.txt without showing the module selection dialog (except if CTRL is held when starting), the filter will never show the game master, and all records with less than 2 overrides are filtered without further checking conflict status
 
 ## Quick [Auto] Clean
 
@@ -1579,7 +1670,7 @@ Misc:
 - Optional backups in a separate directory.
 - Remember position and state of the main window.
 - Fixed bug when editing with Shift+DblClick.
-- [All] Wrye Bash ghosted plugins (`*.esp`, `.ghost`) in plugin selection window.
+- [All] Wrye Bash ghosted plugins (*.esp .ghost) in plugin selection window.
 - [ALL] FLST form list is no longer sorted.
 - [ALL] EDID affects conflict detection.
 - [TES5] Localization editor, plugin localization/delocalization with optional translation.
