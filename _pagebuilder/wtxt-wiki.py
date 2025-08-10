@@ -21,100 +21,72 @@
 #
 # =============================================================================
 # Imports ----------------------------------------------------------------------
-#--Standard
+# --Standard
+import argparse
 import re
 import os
 import sys
+import inspect
 
-# ------------------------------------------------------------------------------
-class Callables:
-    """A singleton set of objects (typically functions or class instances) that
-    can be called as functions from the command line.
-
-    Functions are called with their arguments, while object instances are called
-    with their method and then their functions. E.g.:
-    * bish afunction arg1 arg2 arg3
-    * bish anInstance.aMethod arg1 arg2 arg3"""
-
-    # --Ctor
-    def __init__(self):
-        """Initialization."""
-        self.callObjs = {}
-
-    # --Add a callable
-    def add(self, callObj, callKey=None):
-        """Add a callable object.
-
-        callObj:
-            A function or class instance.
-        callKey:
-            Name by which the object will be accessed from the command line.
-            If callKey is not defined, then callObj.__name__ is used."""
-        callKey = callKey or callObj.__name__
-        self.callObjs[callKey] = callObj
-
-    # --Help
-    def printHelp(self, callKey):
-        """Print help for specified callKey."""
-        print(help(self.callObjs[callKey]))
-
-    # --Main
-    def main(self):
-        callObjs = self.callObjs
-        # --Call key, tail
-        # This makes no sense since if there was a dot it would be in the filename
-        # callParts = string.split(sys.argv[1], '.', 1)
-        callKey = sys.argv[1]
-        # This makes no sense because it doesn't seem to capture what is after genHtml
-        # The intent here is to use callObj.__name__ but there isn't a tail
-        # callTail = (len(callParts) > 1 and callParts[1])
-        # --Help request?
-        if callKey == '-h':
-            self.printHelp(self)
-            return
-        # --Not have key?
-        if callKey not in callObjs:
-            print("Unknown function/object: {}".format(callKey))
-            return
-        # --Callable
-        callObj = callObjs[callKey]
-        if isinstance(callObj, str):
-            callObj = eval(callObj)
-        # The intent here is to use callObj.__name__ but there isn't a tail
-        # if callTail:
-        #    callObj = eval('callObj.' + callTail)
-        # --Args
-        args = sys.argv[2:]
-        # --Keywords?
-        keywords = {}
-        argDex = 0
-        reKeyArg = re.compile(r'^\-(\D\w+)')
-        reKeyBool = re.compile(r'^\+(\D\w+)')
-        while argDex < len(args):
-            arg = args[argDex]
-            if reKeyArg.match(arg):
-                keyword = reKeyArg.match(arg).group(1)
-                value = args[argDex + 1]
-                keywords[keyword] = value
-                del args[argDex:argDex + 2]
-            elif reKeyBool.match(arg):
-                keyword = reKeyBool.match(arg).group(1)
-                keywords[keyword] = 1
-                del args[argDex]
-            else:
-                argDex = argDex + 1
-        # --Apply
-        callObj(*args, **keywords)
-
-
-# --Callables Singleton
-callables = Callables()
+# List to hold information about callable functions
+callable_functions = []
 
 
 def mainFunction(func):
-    """A function for adding functions to callables."""
-    callables.add(func)
+    """Decorator to mark functions as callable and add them to the list."""
+    callable_functions.append(func)
     return func
+
+
+def print_help():
+    print("Available callable functions:")
+    for func in callable_functions:
+        print("- {}: {}".format(func.__name__, func.__doc__))
+
+
+def print_docstrings():
+    print("Docstrings for callable functions:")
+    for func in callable_functions:
+        print("\nFunction: {}".format(func.__name__))
+        docstring = inspect.getdoc(func)
+        if docstring:
+            encoded_docstring = docstring.encode('utf-8', errors='ignore').decode(sys.stdout.encoding)
+            print(encoded_docstring)
+        else:
+            print("No docstring available.")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="A script to perform various operations on text files.")
+    parser.add_argument("--help-functions", action="store_true", help="Print available functions and their docstrings.")
+    parser.add_argument("--list-functions", action="store_true", help="List available functions without docstrings.")
+    parser.add_argument("--usage", action="store_true", help="Display usage information.")
+    parser.add_argument("function", nargs="?", help="The name of the function to execute.")
+    parser.add_argument("args", nargs=argparse.REMAINDER, help="Arguments for the function.")
+
+    args = parser.parse_args()
+
+    if args.usage:
+        print("Usage: deleteLibStub.py function [args [args ...]]")
+        print("       deleteLibStub.py --help-functions, or help")
+        print("       deleteLibStub.py --list-functions, or list")
+    elif args.help_functions or args.function == "help":
+        print_docstrings()
+    elif args.list_functions or args.function == "list":
+        print("Available functions:")
+        for func in callable_functions:
+            print(func.__name__)
+    elif args.function:
+        function_name = args.function
+        for func in callable_functions:
+            if func.__name__ == function_name:
+                func_args = args.args
+                func(*func_args)
+                break
+        else:
+            print("Unknown function: {}".format(function_name))
+    else:
+        print("No command provided.")
 
 
 # Wrye Text ===================================================================
@@ -211,25 +183,27 @@ endMarkdown = """
 </div>
 """
 
+
 # Conversion ------------------------------------------------------------------
 @mainFunction
 def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     """Generates an html file from a wtxt file. CssDir specifies a directory to search for css files."""
     markdown = False
     if not outFile:
-        outFile = '..\\' +  os.path.splitext(srcFile)[0] + '.html'
+        outFile = '..\\' + os.path.splitext(srcFile)[0] + '.html'
     if srcFile:
         if srcFile == 'index.txt':
             page_number = 1
         elif srcFile == 'whatsnew.md':
             page_number = 18
             markdown = True
-            outFile = '..\\18-' +  os.path.splitext(srcFile)[0] + '.html'
+            outFile = '..\\18-' + os.path.splitext(srcFile)[0] + '.html'
         else:
             if '-' in srcFile:
                 page_number = int(srcFile.split('-', 1)[0])
             else:
                 page_number = 0
+
     # RegEx Independent Routines ------------------------------------
     def anchorReplace(maObject):
         temp = maObject.group(1)
@@ -426,9 +400,9 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     cssFile = None
     # --Init
     outLines = []
-    contents = [] # The list variable for the Table of Contents
-    header_match = [] # A duplicate list of the Table of Contents with numbers
-    addContents = 0 # When set to 0 headers are not added to the TOC
+    contents = []  # The list variable for the Table of Contents
+    header_match = []  # A duplicate list of the Table of Contents with numbers
+    addContents = 0  # When set to 0 headers are not added to the TOC
     inPre = False
     inComment = False
     htmlIDSet = list()
@@ -441,7 +415,7 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     isInPreMarkdown = False
     pageTitle = 'title: Your Content'
     # --Read source file --------------------------------------------------
-    ins = open(srcFile, 'r')
+    ins = open(srcFile, 'r', encoding='utf-8')
     if markdown:
         pageTitle = r"title: xEdit What's New and Version Info"
         firstLine = '<h2 id="Contents">Contents...</h2>\n'
@@ -702,7 +676,7 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
         if '<' in css:
             raise "Non css tag in css file: " + cssFile
     # --Write Output ------------------------------------------------------
-    out = open(outFile, 'w')
+    out = open(outFile, 'w', encoding='utf-8', newline='\n')
     out.write('---\nlayout: default\n{}'.format(pageTitle))
     out.write(htmlHead)
     didContents = False
@@ -729,24 +703,24 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
                     level = heading[0] - baseLevel + 1
                     if heading[0] > previousLevel:
                         countlist[level] += 1
-                        for i in range(level+1):
+                        for i in range(level + 1):
                             if i == 0:
                                 number += str(countlist[i])
                             else:
                                 number += '.' + str(countlist[i])
                     if heading[0] < previousLevel:
                         # Zero out everything not a duplicate
-                        for i in range(level+1, 7):
+                        for i in range(level + 1, 7):
                             countlist[i] = 0
                         countlist[level] += 1
-                        for i in range(level+1):
+                        for i in range(level + 1):
                             if i == 0:
                                 number += str(countlist[i])
                             else:
                                 number += '.' + str(countlist[i])
                     if heading[0] == previousLevel:
                         countlist[level] += 1
-                        for i in range(level+1):
+                        for i in range(level + 1):
                             if i == 0:
                                 number += str(countlist[i])
                             else:
@@ -774,7 +748,7 @@ def wtxtToHtml(srcFile, outFile=None, cssDir=''):
     if markdown:
         out.write(endMarkdown)
     out.close()
-	
+
 
 @mainFunction
 def genHtml(fileName, outFile=None, cssDir=''):
@@ -789,5 +763,7 @@ def genHtml(fileName, outFile=None, cssDir=''):
     else:
         raise "Unrecognized file type: " + ext
 
-if __name__ == '__main__':
-        callables.main()
+
+# To run the main function
+if __name__ == "__main__":
+    main()
