@@ -17,4 +17,3 @@ C:\Python38-64\python.exe wtxt-wiki.py genHtml 15-tutorials.txt
 C:\Python38-64\python.exe wtxt-wiki.py genHtml 16-xLODGen.txt
 C:\Python38-64\python.exe wtxt-wiki.py genHtml 17-DynDoLod.txt
 C:\Python38-64\python.exe wtxt-wiki.py genHtml whatsnew.md
-pause
